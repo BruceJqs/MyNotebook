@@ -68,6 +68,17 @@ repo_name: BruceJqs/MyNotebook # 右上角的名字
 # [Navigation]
 nav:
   - 首页: index.md
+  - CTF:
+      - Lab0: blog/CTF/Lab0 Report.md
+      - Lab1-Crypto: blog/CTF/Lab1-Crypto Report.md
+      - Lab1-Misc: blog/CTF/Lab1-Misc Report.md
+      - Lab1-Pwn: blog/CTF/Lab1-Pwn Report.md
+      - Lab1-Web: blog/CTF/Lab1-Web Report.md
+      - Lab1-Rev: blog/CTF/Lab1-Rev Report.md
+      - Lab2-Crypto: blog/CTF/Lab2-Crypto Report.md
+      - Lab2-Misc: blog/CTF/Lab2-Misc Report.md
+      - Lab3-Crypto: blog/CTF/Lab3-Crypto Report.md
+      - Lab3-Misc: blog/CTF/Lab3-Misc Report.md
   - Interning:
       - 大模型: 
           - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md

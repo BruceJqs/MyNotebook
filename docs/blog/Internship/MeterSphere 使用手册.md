@@ -38,7 +38,7 @@ https://community.fit2cloud.com/#/products/metersphere/downloads
 
 https://1panel.cn/
 
-## 平台功能——接口测试（以开放平台接口测试为例）
+## 平台功能——接口测试
 
 ### 建立项目
 
