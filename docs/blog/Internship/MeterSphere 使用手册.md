@@ -1,4 +1,4 @@
-# MeterSphere 使用手册（结合开放平台接口测试）
+# MeterSphere 使用手册
 
 **<font size=5>目录</font>**
 
