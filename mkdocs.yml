@@ -65,20 +65,20 @@ edit_uri: edit/main/docs # 编辑按钮跳转的链接
 repo_url: https://github.com/BruceJqs/MyNotebook # 右上角点击跳转的链接
 repo_name: BruceJqs/MyNotebook # 右上角的名字
 
-# [Navigtion]
+# [Navigation]
 nav:
   - 首页: index.md
-  - 实习:
+  - Interning:
       - 大模型: 
           - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
       - API 接口测试: 
           - 接口测试: blog/Internship/MeterSphere 使用手册.md
           - 压力测试: blog/Internship/Locust 压力测试工具使用手册.md
-  - 友链:
+  - Others:
       - 友链: about/link.md
-  - 关于:
+  - About:
       - 作者个人简介: about/geren.md
-      - 功能测试: about/test.md
+      # - 功能测试: about/test.md
 
 copyright: Copyright &copy; 2024 BruceJin/All Rights Reserved. # 左下角的版权声明
 
