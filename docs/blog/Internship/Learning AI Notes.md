@@ -54,31 +54,39 @@ print('Error_function:', error_function(theta, x, y)[0,0])
 ### 前向传播
 
 隐藏层输出值定义：
+
 $$
 a_h^{Hl} = W_h^{Hl} \times X_i\\
 b_n^{Hl} = f(a_h^{Hl})
 $$
+
 其中 $X_i$ 是当前节点的输入值，$W_h^{Hl}$ 是连接到此节点的权重，$a_h^{Hl}$ 是输出值。 $f$ 是当前节点的激活函数，$b_h^{Hl}$ 为当前节点的输入值经过计算后被激活的值。
 
 输出层定义：
+
 $$
 a_k = \sum (W_{hk}\times b_h^{Hl})
 $$
+
 其中 $W_{hk}$ 为输入的权重，$b_h^{Hl}$ 为最后一层隐藏层经过计算后的激活值，$a_k$ 为神经网络的最后输出值。
 
 ### 反向传播
 
 对输出层：
+
 $$
 \delta_k = \frac{\partial L}{\partial a_k}=(Y-T)
 $$
+
 其中 $\delta_k$ 为输出层的误差项，其计算值为真实值与模型计算值之间的差值，$Y$ 为计算值，$T$ 为真实值。
 
 对隐藏层：
+
 $$
 \delta_h^{Hl}=\frac{\partial L}{\partial a_h^{Hl}}=\frac{\partial L}{\partial b_h^{Hl}}\times\frac{b_h^{Hl}}{a_h^{Hl}}=\frac{\partial L}{\partial b_h^{Hl}}\times f'(a_h^{Hl}) =\frac{\partial L}{\partial a_k}\times\frac{\partial a_k}{\partial b_h^{Hl}}\times f'(a_h^{Hl})\\
 =\delta_k\times\sum W_{hk} \times f'(a_h^{Hl})=\sum (W_{hk}\times\delta_k\times f'(a_h^{Hl}))
 $$
+
 这里的 $\sum$ 有一些模糊，实际上在 $\frac{\partial a_k}{\partial b_h^{Hl}}$ 部分是单个 $W_{hk}$，但是由于对于最终隐藏层的一个点来说，这个节点输出层的结果均有一定权重的贡献，因此最后应当累加。
 
 ### 权重更新
@@ -295,11 +303,13 @@ print(image_pooled_adaptive_avg.shape)
 ### Softmax 激活函数
 
 Softmax 是一个对概率进行计算的模型，在真实的计算模型系统中，对一个实物的判定并非 100% 或者是 0%，Softmax 就是对所有的结果标签上求出一个概率。
+
 $$
 f(x)=\sum\limits_i^jw_{ij}x_j+b\\
 Softmax=\frac{e^{x_i}}{\sum\limits_0^je^{x_j}}\\
 y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 $$
+
 
 ### 卷积神经网络原理
 
@@ -805,11 +815,13 @@ model.train(agnews_title, epochs = model.epochs, total_examples = model.corpus_c
 ### 文本主题提取：基于 TF-IDF
 
 TF-IDF 是一种用于资讯检索与咨询勘测的常用加权技术。 TF-IDF 是一种统计方法，用来衡量一个词对一个文件集的重要程度。字词的重要性与其在文件中出现的次数成正比，而与其在文件集中出现的次数成反比。
+
 $$
 词频(TF)=\frac{某个词在单个文本中出现的次数}{某个词在整个语料库中出现的次数}\\
 逆文档概率(IDF)=\log(\frac{语料库的文本总数}{语料库中包含该词的文本数+1})\\
 TF-IDF=TF\times IDF
 $$
+
 
 ```python
 import csv
