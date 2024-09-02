@@ -1878,29 +1878,29 @@
 </code></pre></div></td></tr></table></div>
 <h2 id="bp">BP 神经网络<a class="headerlink" href="#bp" title="Permanent link">&para;</a></h2>
 <h3 id="_2">前向传播<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>隐藏层输出值定义：
-$$
-a_h^{Hl} = W_h^{Hl} \times X_i\
+<p>隐藏层输出值定义：</p>
+<div class="arithmatex">\[
+a_h^{Hl} = W_h^{Hl} \times X_i\\
 b_n^{Hl} = f(a_h^{Hl})
-$$
-其中 <span class="arithmatex">\(X_i\)</span> 是当前节点的输入值，<span class="arithmatex">\(W_h^{Hl}\)</span> 是连接到此节点的权重，<span class="arithmatex">\(a_h^{Hl}\)</span> 是输出值。 <span class="arithmatex">\(f\)</span> 是当前节点的激活函数，<span class="arithmatex">\(b_h^{Hl}\)</span> 为当前节点的输入值经过计算后被激活的值。</p>
-<p>输出层定义：
-$$
+\]</div>
+<p>其中 <span class="arithmatex">\(X_i\)</span> 是当前节点的输入值，<span class="arithmatex">\(W_h^{Hl}\)</span> 是连接到此节点的权重，<span class="arithmatex">\(a_h^{Hl}\)</span> 是输出值。 <span class="arithmatex">\(f\)</span> 是当前节点的激活函数，<span class="arithmatex">\(b_h^{Hl}\)</span> 为当前节点的输入值经过计算后被激活的值。</p>
+<p>输出层定义：</p>
+<div class="arithmatex">\[
 a_k = \sum (W_{hk}\times b_h^{Hl})
-$$
-其中 <span class="arithmatex">\(W_{hk}\)</span> 为输入的权重，<span class="arithmatex">\(b_h^{Hl}\)</span> 为最后一层隐藏层经过计算后的激活值，<span class="arithmatex">\(a_k\)</span> 为神经网络的最后输出值。</p>
+\]</div>
+<p>其中 <span class="arithmatex">\(W_{hk}\)</span> 为输入的权重，<span class="arithmatex">\(b_h^{Hl}\)</span> 为最后一层隐藏层经过计算后的激活值，<span class="arithmatex">\(a_k\)</span> 为神经网络的最后输出值。</p>
 <h3 id="_3">反向传播<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>对输出层：
-$$
+<p>对输出层：</p>
+<div class="arithmatex">\[
 \delta_k = \frac{\partial L}{\partial a_k}=(Y-T)
-$$
-其中 <span class="arithmatex">\(\delta_k\)</span> 为输出层的误差项，其计算值为真实值与模型计算值之间的差值，<span class="arithmatex">\(Y\)</span> 为计算值，<span class="arithmatex">\(T\)</span> 为真实值。</p>
-<p>对隐藏层：
-$$
-\delta_h^{Hl}=\frac{\partial L}{\partial a_h^{Hl}}=\frac{\partial L}{\partial b_h<sup Hl="Hl">{Hl}}\times\frac{b_h</sup>)\
+\]</div>
+<p>其中 <span class="arithmatex">\(\delta_k\)</span> 为输出层的误差项，其计算值为真实值与模型计算值之间的差值，<span class="arithmatex">\(Y\)</span> 为计算值，<span class="arithmatex">\(T\)</span> 为真实值。</p>
+<p>对隐藏层：</p>
+<div class="arithmatex">\[
+\delta_h^{Hl}=\frac{\partial L}{\partial a_h^{Hl}}=\frac{\partial L}{\partial b_h^{Hl}}\times\frac{b_h^{Hl}}{a_h^{Hl}}=\frac{\partial L}{\partial b_h^{Hl}}\times f'(a_h^{Hl}) =\frac{\partial L}{\partial a_k}\times\frac{\partial a_k}{\partial b_h^{Hl}}\times f'(a_h^{Hl})\\
 =\delta_k\times\sum W_{hk} \times f'(a_h^{Hl})=\sum (W_{hk}\times\delta_k\times f'(a_h^{Hl}))
-$$
-这里的 }}{a_h^{Hl}}=\frac{\partial L}{\partial b_h^{Hl}}\times f'(a_h^{Hl}) =\frac{\partial L}{\partial a_k}\times\frac{\partial a_k}{\partial b_h^{Hl}}\times f'(a_h^{Hl<span class="arithmatex">\(\sum\)</span> 有一些模糊，实际上在 <span class="arithmatex">\(\frac{\partial a_k}{\partial b_h^{Hl}}\)</span> 部分是单个 <span class="arithmatex">\(W_{hk}\)</span>，但是由于对于最终隐藏层的一个点来说，这个节点输出层的结果均有一定权重的贡献，因此最后应当累加。</p>
+\]</div>
+<p>这里的 <span class="arithmatex">\(\sum\)</span> 有一些模糊，实际上在 <span class="arithmatex">\(\frac{\partial a_k}{\partial b_h^{Hl}}\)</span> 部分是单个 <span class="arithmatex">\(W_{hk}\)</span>，但是由于对于最终隐藏层的一个点来说，这个节点输出层的结果均有一定权重的贡献，因此最后应当累加。</p>
 <h3 id="_4">权重更新<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
 W_{ji}=W_{ji}+a\times\delta_j^l\times x_{ji}\\
@@ -2238,12 +2238,12 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <p><img alt="image-20240717110554082" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240717110554082.png" /></p>
 <p>这里的 AdaptiveAvgPool2d 函数则是对整张图片进行池化处理（这里即为对 28*28 的每个元素取平均）</p>
 <h3 id="softmax">Softmax 激活函数<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h3>
-<p>Softmax 是一个对概率进行计算的模型，在真实的计算模型系统中，对一个实物的判定并非 100% 或者是 0%，Softmax 就是对所有的结果标签上求出一个概率。
-$$
-f(x)=\sum\limits_i^jw_{ij}x_j+b\
-Softmax=\frac{e<sup>{x_i}}{\sum\limits_0</sup>je^{x_j}}\
+<p>Softmax 是一个对概率进行计算的模型，在真实的计算模型系统中，对一个实物的判定并非 100% 或者是 0%，Softmax 就是对所有的结果标签上求出一个概率。</p>
+<div class="arithmatex">\[
+f(x)=\sum\limits_i^jw_{ij}x_j+b\\
+Softmax=\frac{e^{x_i}}{\sum\limits_0^je^{x_j}}\\
 y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
-$$</p>
+\]</div>
 <h3 id="_8">卷积神经网络原理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>卷积神经网络的处理主要包含以下 4 个步骤：</p>
 <ul>
@@ -3042,12 +3042,12 @@ $$</p>
 <a id="__codelineno-13-36" name="__codelineno-13-36"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">agnews_title</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">epochs</span><span class="p">,</span> <span class="n">total_examples</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">corpus_count</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="tf-idf">文本主题提取：基于 TF-IDF<a class="headerlink" href="#tf-idf" title="Permanent link">&para;</a></h3>
-<p>TF-IDF 是一种用于资讯检索与咨询勘测的常用加权技术。 TF-IDF 是一种统计方法，用来衡量一个词对一个文件集的重要程度。字词的重要性与其在文件中出现的次数成正比，而与其在文件集中出现的次数成反比。
-$$
-词频(TF)=\frac{某个词在单个文本中出现的次数}{某个词在整个语料库中出现的次数}\
-逆文档概率(IDF)=\log(\frac{语料库的文本总数}{语料库中包含该词的文本数+1})\
+<p>TF-IDF 是一种用于资讯检索与咨询勘测的常用加权技术。 TF-IDF 是一种统计方法，用来衡量一个词对一个文件集的重要程度。字词的重要性与其在文件中出现的次数成正比，而与其在文件集中出现的次数成反比。</p>
+<div class="arithmatex">\[
+词频(TF)=\frac{某个词在单个文本中出现的次数}{某个词在整个语料库中出现的次数}\\
+逆文档概率(IDF)=\log(\frac{语料库的文本总数}{语料库中包含该词的文本数+1})\\
 TF-IDF=TF\times IDF
-$$</p>
+\]</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
