@@ -1652,41 +1652,6 @@
 
 
 <h1 id="lab1-web-report">Lab1-Web Report<a class="headerlink" href="#lab1-web-report" title="Permanent link">&para;</a></h1>
-<p><strong><font size=5>Contents</font></strong></p>
-<div class="toc">
-<ul>
-<li><a href="#lab1-web-report">Lab1-Web Report</a><ul>
-<li><a href="#task-1dns">Task 1:DNS</a><ul>
-<li><a href="#_1">查询权威域名服务器</a></li>
-<li><a href="#ip">查找 IP 地址</a></li>
-<li><a href="#dns-a">DNS A 查询探究</a></li>
-<li><a href="#_2">寻找文本</a></li>
-<li><a href="#dns-ip">DNS 查询 IP</a></li>
-</ul>
-</li>
-<li><a href="#task-2http">Task 2:HTTP</a><ul>
-<li><a href="#_3">抓包学在浙大</a><ul>
-<li><a href="#http">HTTP 报文组成部分</a></li>
-<li><a href="#_4">保存用户登录状态</a></li>
-</ul>
-</li>
-<li><a href="#http_1">HTTP 区分不同的包</a></li>
-<li><a href="#cubicyicu">回到 cubicy.icu</a><ul>
-<li><a href="#_5">主机区分访问方式</a></li>
-<li><a href="#_6">修改报文打开主页</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#task-3">Task 3:预习</a></li>
-<li><a href="#bonus">Bonus</a><ul>
-<li><a href="#http3">HTTP/3</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
 <h2 id="task-1dns">Task 1:DNS<a class="headerlink" href="#task-1dns" title="Permanent link">&para;</a></h2>
 <h3 id="_1">查询权威域名服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>要想使用 <code>nslookup</code> 这一命令来查询 <code>cubicy.icu</code> 的权威域名服务器（Name Server），需要使用命令 <code>nslookup -type=NS cubicy.icu</code>。如下图，在Authoritative answers 中，可以得到对应的六个 IP 地址。</p>
