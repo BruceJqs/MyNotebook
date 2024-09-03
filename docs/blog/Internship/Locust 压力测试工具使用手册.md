@@ -36,15 +36,15 @@ class WebsiteUser(HttpUser):
 
 可以看到如下提示：
 
-![image-20240828160133224](/docs/img/image-20240828160133224.png)
+![image-20240828160133224](../../assets/image-20240828160133224.png)
 
 浏览器访问 https://localhost:8089 即可进入界面：
 
-![image-20240828160207269](/docs/img/image-20240828160207269.png)
+![image-20240828160207269](../../assets/image-20240828160207269.png)
 
 其中设置 Number of users（即最大用户量）和 Ramp up（每过一段时间用户的增加量），START 即可进行压力测试。
 
-![image-20240828160554053](/docs/img/image-20240828160554053.png)
+![image-20240828160554053](../../assets/image-20240828160554053.png)
 
 ### 例二：多线程任务与比例分配
 
@@ -97,5 +97,5 @@ class WebsiteUser(HttpUser):
 
 其中 `@task` 后的数字表示执行请求的权重，权重越大请求数量越多。
 
-![image-20240828163439109](/docs/img/image-20240828163439109.png)
+![image-20240828163439109](../../assets/image-20240828163439109.png)
 
