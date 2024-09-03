@@ -1,3 +1,5 @@
+# 数字逻辑设计｜Digital Design
+
 !!! Abstract 
     课程笔记全靠 wuli 夏神！：https://note.isshikih.top/cour_note/D2QD_DigitalDesign/
 
