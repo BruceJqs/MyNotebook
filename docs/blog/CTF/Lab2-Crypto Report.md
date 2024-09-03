@@ -10,7 +10,7 @@
 
 ### CBC Byte Flip
 
-![image-20240711204438155](/Users/bruce/Library/Application Support/typora-user-images/image-20240711204438155.png)
+![image-20240711204438155](../../assets/image-20240711204438155.png)
 
 我们需要的是将 OriginString 替换为 HackString，根据 CBC 自身的编码特性，将两个字符串（带 Padding）分为 16 个一组（共 4 组，但是第四组在 HackString 中已经全是 Padding 的了，对我们的解题没有帮助，所以去掉）：
 
@@ -93,7 +93,7 @@ p.interactive()
 
 运行即可得到 flag:
 
-![image-20240711203830024](/Users/bruce/Library/Application Support/typora-user-images/image-20240711203830024.png)
+![image-20240711203830024](../../assets/image-20240711203830024.png)
 
 ### Padding Oracle
 
@@ -162,7 +162,7 @@ print(flag)
 
 运行即可得到 flag:
 
-![image-20240713013721241](/Users/bruce/Library/Application Support/typora-user-images/image-20240713013721241.png)
+![image-20240713013721241](../../assets/image-20240713013721241.png)
 
 ## RSA 部分
 
@@ -170,11 +170,11 @@ print(flag)
 
 对于这样一个自动加解密的机器，要得到 flag，最简单的方法即为将`Plz give me the flag!`交给机器进行加密，然后将密文再次解密即可，但是当我们实践的时候便发现了这样的情况：
 
-![image-20240713192537663](/Users/bruce/Library/Application Support/typora-user-images/image-20240713192537663.png)
+![image-20240713192537663](../../assets/image-20240713192537663.png)
 
 这便是这道题的限制，为了获得这个字符串加密后的结果，我们将这个字符串转为十进制，分解质因数：
 
-![image-20240714155420828](/Users/bruce/Library/Application Support/typora-user-images/image-20240714155420828.png)
+![image-20240714155420828](../../assets/image-20240714155420828.png)
 
 根据 5 个质因数获得 5 个加密结果，根据模乘运算也可以获得整体加密后的结果。编写 python 程序如下：
 
@@ -268,13 +268,13 @@ p.interactive()
 
 中途遇到了非常多挫折，其中最大的便是当我们将后面两个大质数送给程序进行加密时，我们还会碰到这样的情况：
 
-![image-20240714155547759](/Users/bruce/Library/Application Support/typora-user-images/image-20240714155547759.png)
+![image-20240714155547759](../../assets/image-20240714155547759.png)
 
 这个程序还要求我们输入的明文必须都为 ASCII 字符，因此我们需要爆破这个质因数满足转换为字符串均为 ASCII 字符的倍数，通过一系列模乘模除运算最后获得准确的加密结果。
 
 最后运行我们能得到 flag：
 
-![image-20240714155755249](/Users/bruce/Library/Application Support/typora-user-images/image-20240714155755249.png)
+![image-20240714155755249](../../assets/image-20240714155755249.png)
 
 ## 格密码
 

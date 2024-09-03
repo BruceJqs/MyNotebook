@@ -156,4 +156,4 @@ https://1panel.cn/
 
 结果如下：
 
-![image-20240828104317892](/Users/bruce/Library/Application Support/typora-user-images/image-20240828104317892.png)
+![image-20240828104317892](../../assets/image-20240828104317892.png)

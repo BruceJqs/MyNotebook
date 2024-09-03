@@ -10,13 +10,13 @@
 
 用 Hex Fiend 打开图片，在翻看查找时我们发现这张图片出现了两次 JFIF，猜测这张图片是由两张图片叠加而成的，用 binwalk 查看验证：
 
-![image-20240710105929382](/Users/bruce/Library/Application Support/typora-user-images/image-20240710105929382.png)
+![image-20240710105929382](../../assets/image-20240710105929382.png)
 
 果然这里有两张 JPEG 图片，分离：
 
-![image-20240710105951652](/Users/bruce/Library/Application Support/typora-user-images/image-20240710105951652.png)
+![image-20240710105951652](../../assets/image-20240710105951652.png)
 
-![image-20240710105955094](/Users/bruce/Library/Application Support/typora-user-images/image-20240710105955094.png)
+![image-20240710105955094](../../assets/image-20240710105955094.png)
 
 得到两张图片：
 
@@ -30,7 +30,7 @@
 
 我们将网页的 HTML 文件下载下来，发现：
 
-![image-20240710110328837](/Users/bruce/Library/Application Support/typora-user-images/image-20240710110328837.png)
+![image-20240710110328837](../../assets/image-20240710110328837.png)
 
 这里面藏了一张图片，我们将网址改写为 `https://cdn.zjusec.com/Nov2/img/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg` 并访问就可以拿到图片：
 
@@ -38,17 +38,17 @@
 
 用 Hex Fiend 打开，我们会看见一个 key：
 
-![image-20240710115333134](/Users/bruce/Library/Application Support/typora-user-images/image-20240710115333134.png)
+![image-20240710115333134](../../assets/image-20240710115333134.png)
 
 合理猜想这是用现有的工具进行了隐写，我们用 steghide 来查看：
 
-![image-20240710115526438](/Users/bruce/Library/Application Support/typora-user-images/image-20240710115526438.png)
+![image-20240710115526438](../../assets/image-20240710115526438.png)
 
 果然里面藏了个 secret_file.txt，提取出来：
 
-![image-20240710115555753](/Users/bruce/Library/Application Support/typora-user-images/image-20240710115555753.png)
+![image-20240710115555753](../../assets/image-20240710115555753.png)
 
-![image-20240710115624102](/Users/bruce/Library/Application Support/typora-user-images/image-20240710115624102.png)
+![image-20240710115624102](../../assets/image-20240710115624102.png)
 
 在 CyberChef 中 From Binary 即可得到 flag:AAA{D0_Y0u_L1ke_Ste9H1de_M1a0}
 
@@ -56,7 +56,7 @@
 
 拿到图片用 stegsolve 打开，将绿色的 bit plane 设置为 0，我们可以看到：
 
-![image-20240710215124925](/Users/bruce/Library/Application Support/typora-user-images/image-20240710215124925.png)
+![image-20240710215124925](../../assets/image-20240710215124925.png)
 
 可以看到这也是一个 PNG 文件！将其导出打开，得到：
 
@@ -88,7 +88,7 @@ print(flag)
 
 得到 flag：
 
-![image-20240710231449246](/Users/bruce/Library/Application Support/typora-user-images/image-20240710231449246.png)
+![image-20240710231449246](../../assets/image-20240710231449246.png)
 
 
 
@@ -188,17 +188,17 @@ P.S.转换出来的 mp3 虽然能听出曲目了，但还是有很多杂音（�
 
 拿到一个 npz 文件，我们通过 python 能看见其包含的数组名及其内容：
 
-![image-20240711123205495](/Users/bruce/Library/Application Support/typora-user-images/image-20240711123205495.png)
+![image-20240711123205495](../../assets/image-20240711123205495.png)
 
-![image-20240711123209861](/Users/bruce/Library/Application Support/typora-user-images/image-20240711123209861.png)
+![image-20240711123209861](../../assets/image-20240711123209861.png)
 
-![image-20240711123214231](/Users/bruce/Library/Application Support/typora-user-images/image-20240711123214231.png)
+![image-20240711123214231](../../assets/image-20240711123214231.png)
 
 可以看到这里面有 index,input,output,trace 四个数组，同时 index 里面有 40 个 0-12，同时 input 里面字符也正好是 40 个一组，合理猜想这应该是一一对应的，通过解析 trace 数组，对应 index 找到 input 的字符，拼起来即为 flag。
 
 我们将 trace 数组导出为 csv 看看：
 
-![image-20240711124113708](/Users/bruce/Library/Application Support/typora-user-images/image-20240711124113708.png)
+![image-20240711124113708](../../assets/image-20240711124113708.png)
 
 在这里有特殊的一列，1-40 行仅仅有第 37 行不同，猜测这就是 flag 的一部分，编写 python 程序如下：
 
@@ -221,4 +221,4 @@ for i in range(12):
 
 得到最终 flag:
 
-![image-20240711125023721](/Users/bruce/Library/Application Support/typora-user-images/image-20240711125023721.png)
+![image-20240711125023721](../../assets/image-20240711125023721.png)

@@ -203,6 +203,7 @@ for i in range(3):
 然后我们要关注的是给出的五个字符：`AAA{}`
 
 根据加密算法，我们可以知道 `FT = MT.inverse() * RT`，因此根据矩阵乘法，针对已知的五个字符我们可以得到以下五个同余方程（记 MT.inverse() 为 MTI）：
+
 $$
 \begin{cases}
 252*MTI[0,0]+242*MTI[0,1]+29*MTI[0,2]\equiv 65(mod\space 256)\\
@@ -214,6 +215,7 @@ $$
 11*MTI[2,0]+236*MTI[2,1]+242*MTI[2,2]\equiv 125(mod\space 256)
 \end{cases}
 $$
+
 同时题目给出了条件 flag 均为可打印字符，即 FT 的值范围为 32-126。
 
 编写 sage 代码爆破 MTI：

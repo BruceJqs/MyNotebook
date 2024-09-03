@@ -385,7 +385,7 @@ for epoch in range(42):
 
 这里采用 ReLU 函数作为激活函数，ReLU(x)=max{0,x}
 
-<img src="../../assets/image-20240717125606885.png" alt="image-20240717125606885" style="zoom:50%;" />
+<img src=../../assets/image-20240717125606885.png alt="image-20240717125606885" style="zoom:50%;" />
 
 ### 深度可分离卷积
 
@@ -401,7 +401,7 @@ for epoch in range(42):
 
 - 逐点卷积：做卷积核大小为 1 的普通卷积。
 
-<img src="https://img-blog.csdnimg.cn/direct/417d4b609b624021a1e631582e2b1451.jpeg" alt="请添加图片描述" style="zoom: 50%;" />
+<img src=../../assets/417d4b609b624021a1e631582e2b1451.jpeg alt="请添加图片描述" style="zoom: 50%;" />
 
 深度可分离卷积可以有效减少待训练参数量。
 

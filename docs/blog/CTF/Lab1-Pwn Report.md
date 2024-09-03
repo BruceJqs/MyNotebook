@@ -65,7 +65,7 @@ int main()
 
 注意到第 42 行有除法操作，可以考虑除零问题，那么尝试输入 b 为 0，即可得到 flag:
 
-![image-20240706150012876](/Users/bruce/Library/Application Support/typora-user-images/image-20240706150012876.png)
+![image-20240706150012876](../../assets/image-20240706150012876.png)
 
 这里是交互的界面，我们尝试用 pwntools 来交互出 flag，编写 Python 程序如下：
 
@@ -84,7 +84,7 @@ p.interactive() # 来到交互界面，查看 flag
 
 最终结果如下：
 
-![image-20240707124829036](/Users/bruce/Library/Application Support/typora-user-images/image-20240707124829036.png)
+![image-20240707124829036](../../assets/image-20240707124829036.png)
 
 ## Task 2
 
@@ -248,11 +248,11 @@ wrong_password:
 
 这道题真正的漏洞在于最后的 `wrong_password` 部分，这里的输出是采用 `%s` 的方式输出的，这个输出方式是一直输出直到看到 `\0` 才会停止，因为这个程序存储是紧贴着的，username 紧接着就是 password ，再接着就是 password_verify，这个 password_verify 正是我们想要的东西，存储 admin 和 user 的 password。换言之，如果我们输入的 password 中没有 `\0`，那么程序会一直输出，把 password_verify 给放出来。那么我们通过交互界面来测试一下：
 
-![image-20240707131737913](/Users/bruce/Library/Application Support/typora-user-images/image-20240707131737913.png)
+![image-20240707131737913](../../assets/image-20240707131737913.png)
 
 果然，在 wrongpassword 时放出了正确的密码：I_am_very_very_strong_password!!重新输入一遍进行交互，就可以得知 flag 的前半部分：
 
-![image-20240707131837767](/Users/bruce/Library/Application Support/typora-user-images/image-20240707131837767.png)
+![image-20240707131837767](../../assets/image-20240707131837767.png)
 
 用 python 代码就这么编写：
 
@@ -273,7 +273,7 @@ p.interactive()
 
 得到：
 
-![image-20240707133439387](/Users/bruce/Library/Application Support/typora-user-images/image-20240707133439387.png)
+![image-20240707133439387](../../assets/image-20240707133439387.png)
 
 得到正确密码，用 python 代码再交互一遍：
 
@@ -294,7 +294,7 @@ p.interactive()
 
 得到 flag 第一部分：
 
-![image-20240707133945119](/Users/bruce/Library/Application Support/typora-user-images/image-20240707133945119.png)
+![image-20240707133945119](../../assets/image-20240707133945119.png)
 
 换成 admin 再来一遍，得到正确密码：
 
@@ -313,7 +313,7 @@ p.sendline("A"*32)
 p.interactive()
 ```
 
-![image-20240707134354430](/Users/bruce/Library/Application Support/typora-user-images/image-20240707134354430.png)
+![image-20240707134354430](../../assets/image-20240707134354430.png)
 
 输入正确密码，这时候根据给的代码，我们能进入远程的终端：
 
@@ -332,11 +332,11 @@ p.sendline("ILovePlayCTFbtwAlsoDota2!")
 p.interactive()
 ```
 
-![image-20240707134809312](/Users/bruce/Library/Application Support/typora-user-images/image-20240707134809312.png)
+![image-20240707134809312](../../assets/image-20240707134809312.png)
 
 通过命令行，我们能找到后半部分 flag，以及 password.txt：
 
-![image-20240707134852093](/Users/bruce/Library/Application Support/typora-user-images/image-20240707134852093.png)
+![image-20240707134852093](../../assets/image-20240707134852093.png)
 
 前后拼接起来我们就可以得到最终的 flag：AAA{Oh_D1rTy_staCK_Ne3d_C1a4n}
 
@@ -469,13 +469,13 @@ int add(int a,int b)
 
 命令行 `as add.s -o add.o`  将 add.s 文件汇编为 add.o 文件，利用命令行 `objdump -d add.o` 查看内容：
 
-![image-20240707141714159](/Users/bruce/Library/Application Support/typora-user-images/image-20240707141714159.png)
+![image-20240707141714159](../../assets/image-20240707141714159.png)
 
 这样子我们就拿到了加法的机器码。
 
 运行一下 inject_me 程序，看到整个交互的样子：
 
-![image-20240707142557603](/Users/bruce/Library/Application Support/typora-user-images/image-20240707142557603.png)
+![image-20240707142557603](../../assets/image-20240707142557603.png)
 
 编写 python 程序来交互：
 
@@ -491,7 +491,7 @@ p.sendafter(b"Request-1: give me code that performing ADD", add_code)
 p.interactive()
 ```
 
-![image-20240707142740596](/Users/bruce/Library/Application Support/typora-user-images/image-20240707142740596.png)
+![image-20240707142740596](../../assets/image-20240707142740596.png)
 
 成功进入第二个任务。按照上面的方法把 python 程序补全：
 
@@ -517,7 +517,7 @@ p.interactive()
 
 得到 flag 的第一部分：
 
-![image-20240707144539172](/Users/bruce/Library/Application Support/typora-user-images/image-20240707144539172.png)
+![image-20240707144539172](../../assets/image-20240707144539172.png)
 
 如何获得 flag 的后半部分呢？根据前面这道题，我们也希望能直接进入远程的终端找找看 flag2 所在，在 pwntools 中有一个 `shellcraft.sh()` 能让我们直接进入终端，编写 python 程序：
 
@@ -538,7 +538,7 @@ p.interactive()
 
 可以进入对方终端，那么我们就可以运用命令行得到后半部分 flag：
 
-![image-20240707150146221](/Users/bruce/Library/Application Support/typora-user-images/image-20240707150146221.png)
+![image-20240707150146221](../../assets/image-20240707150146221.png)
 
 拼接起来最终的 flag 为：AAA{SheL1c0de_T0_9E7_All_F1ag5}
 
@@ -599,7 +599,7 @@ int main(int argc, char *argv[])
 
 这里我们就需要看一下 buffer 的偏移量，用 IDA 打开 elf 文件，可以看到：
 
-![image-20240707203608549](/Users/bruce/Library/Application Support/typora-user-images/image-20240707203608549.png)
+![image-20240707203608549](../../assets/image-20240707203608549.png)
 
 那么编写 python 程序如下：
 
@@ -627,4 +627,4 @@ p.interactive()
 
 一发入魂！进入终端，拿到 flag：
 
-![image-20240707203855146](/Users/bruce/Library/Application Support/typora-user-images/image-20240707203855146.png)
+![image-20240707203855146](../../assets/image-20240707203855146.png)

@@ -36,10 +36,10 @@ x = crt(ans, pr)
 
 运行得到：
 
-![image-20240714141246074](/Users/bruce/Library/Application Support/typora-user-images/image-20240714141246074.png)
+![image-20240714141246074](../../assets/image-20240714141246074.png)
 
 在 python 里面将其转换为字符串：
 
-![image-20240714141719021](/Users/bruce/Library/Application Support/typora-user-images/image-20240714141719021.png)
+![image-20240714141719021](../../assets/image-20240714141719021.png)
 
 所以最后的 flag 为：ZJUCTF{P0h1ig_Hel1man_sm00th_d1p}
