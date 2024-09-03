@@ -1,7 +1,6 @@
 # 数据结构基础｜Fundamental Data Structure
 
-!!! warning
-<font color="red">请千万不要做一些违反 academic honesty 的事情！</font>
+!!! warning <font color="red">请千万不要做一些违反 academic honesty 的事情！</font>
 
 ## Table of Contents
 
