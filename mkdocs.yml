@@ -71,6 +71,7 @@ nav:
   - Math: 
     - 离散数学极其应用｜Discrete Mathematics:
       - "Chapter 01: The Foundations:Logic and Proofs": blog/Math/Discrete mathmatics notes-Ch01.md
+      - "Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices": blog/Math/Discrete mathmatics notes-Ch02.md
   - CTF:
     - 2023-2024 暑短学期: 
       - Lab0: blog/CTF/Lab0 Report.md
