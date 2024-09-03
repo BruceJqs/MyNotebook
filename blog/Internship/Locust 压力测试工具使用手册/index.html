@@ -1442,11 +1442,11 @@
 </code></pre></div></td></tr></table></div>
 <p>然后在 test1.py 目录下运行命令行：<code>locust -f test1.py --host=https://posdemo3.hzgolong.com:13443</code></p>
 <p>可以看到如下提示：</p>
-<p><img alt="image-20240828160133224" src="/docs/img/image-20240828160133224.png" /></p>
+<p><img alt="image-20240828160133224" src="../../../assets/image-20240828160133224.png" /></p>
 <p>浏览器访问 <a href="https://localhost:8089">https://localhost:8089</a> 即可进入界面：</p>
-<p><img alt="image-20240828160207269" src="/docs/img/image-20240828160207269.png" /></p>
+<p><img alt="image-20240828160207269" src="../../../assets/image-20240828160207269.png" /></p>
 <p>其中设置 Number of users（即最大用户量）和 Ramp up（每过一段时间用户的增加量），START 即可进行压力测试。</p>
-<p><img alt="image-20240828160554053" src="/docs/img/image-20240828160554053.png" /></p>
+<p><img alt="image-20240828160554053" src="../../../assets/image-20240828160554053.png" /></p>
 <h3 id="_5">例二：多线程任务与比例分配<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>编写 python 脚本如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -1534,7 +1534,7 @@
 <a id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>其中 <code>@task</code> 后的数字表示执行请求的权重，权重越大请求数量越多。</p>
-<p><img alt="image-20240828163439109" src="/docs/img/image-20240828163439109.png" /></p>
+<p><img alt="image-20240828163439109" src="../../../assets/image-20240828163439109.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

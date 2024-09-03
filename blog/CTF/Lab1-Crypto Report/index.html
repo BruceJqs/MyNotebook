@@ -1504,9 +1504,9 @@
 <a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
 <a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240707234317787" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240707234317787.png" /></p>
+<p><img alt="image-20240707234317787" src="../../../assets/image-20240707234317787.png" /></p>
 <p>我们会发现出现次数最多的为 <code>{gY</code> 这个词，查看其出现位置：</p>
-<p><img alt="image-20240708125637110" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708125637110.png" /></p>
+<p><img alt="image-20240708125637110" src="../../../assets/image-20240708125637110.png" /></p>
 <p>以第一次出现位置为 0 ，那么这个列表就转换为：<code>[0,58,1102,1276,1653,2088]</code> ，这六个数的最大公因数为 29，那么密钥的长度正是 29。</p>
 <p>同时，介于这个词长度为 3，我们可以猜测这个词对应的就是 the，通过加密算法编写 python 程序：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -1535,13 +1535,13 @@
 </code></pre></div></td></tr></table></div>
 <p>得到这三个字母对应的 key 为 90 67 43，为密钥的第 4,5,6 位</p>
 <p>我们抓住密钥第 4,5,6 位，还原密文的一部分，找到新的单词：（一对括号表示里面的字符已被还原，第一个是还原后字符，第二个是原来的字符）</p>
-<p><img alt="image-20240708145258194" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708145258194.png" /></p>
+<p><img alt="image-20240708145258194" src="../../../assets/image-20240708145258194.png" /></p>
 <p>猜这个词为 century，还原得到密钥的第 1,2,3,7 位为 51 14 22 17</p>
 <p>再次还原找新单词：</p>
-<p><img alt="image-20240708150241538" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708150241538.png" /></p>
+<p><img alt="image-20240708150241538" src="../../../assets/image-20240708150241538.png" /></p>
 <p>猜这个词为 melting，还原得到密钥的第 8,9,10 位为 82 48 17</p>
 <p>还原找新单词：</p>
-<p><img alt="image-20240708150749697" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708150749697.png" /></p>
+<p><img alt="image-20240708150749697" src="../../../assets/image-20240708150749697.png" /></p>
 <p>猜 possible，还原得到密钥的第 11,12,13 位为 41 33 89</p>
 <p>重复以上操作即可找到完整 key，还原整篇文章：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -1588,7 +1588,7 @@
 <a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">MT</span><span class="o">.</span><span class="n">inverse</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
 <p>得到输出：</p>
-<p><img alt="image-20240708205937260" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708205937260.png" /></p>
+<p><img alt="image-20240708205937260" src="../../../assets/image-20240708205937260.png" /></p>
 <p>将上面的输出记下，重新编写 sage 程序：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
@@ -1637,7 +1637,7 @@
 <a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">FT_cal</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>得到输出：</p>
-<p><img alt="image-20240708210800320" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708210800320.png" /></p>
+<p><img alt="image-20240708210800320" src="../../../assets/image-20240708210800320.png" /></p>
 <p>最后的 FT_cal 与 FT 完全相同。</p>
 <h3 id="hsc">HSC<a class="headerlink" href="#hsc" title="Permanent link">&para;</a></h3>
 <p>用 python 将最后输出的转换回来：</p>
@@ -1665,7 +1665,7 @@
 <a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240708213735066" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240708213735066.png" /></p>
+<p><img alt="image-20240708213735066" src="../../../assets/image-20240708213735066.png" /></p>
 <p>然后我们要关注的是给出的五个字符：<code>AAA{}</code></p>
 <p>根据加密算法，我们可以知道 <code>FT = MT.inverse() * RT</code>，因此根据矩阵乘法，针对已知的五个字符我们可以得到以下五个同余方程（记 MT.inverse() 为 MTI）：
 $$
@@ -1802,7 +1802,7 @@ $$
 <a id="__codelineno-7-60" name="__codelineno-7-60"></a>                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>得到 FT：</p>
-<p><img alt="image-20240709122827879" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240709122827879.png" /></p>
+<p><img alt="image-20240709122827879" src="../../../assets/image-20240709122827879.png" /></p>
 <p>转换为 flag 即可得到答案：AAA{sl1Hp*aB4c!1mZQT3^gTn1L&amp;1}</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -1871,7 +1871,7 @@ $$
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-03</span>
   </span>
 
     
