@@ -2447,7 +2447,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <a id="__codelineno-1-115" name="__codelineno-1-115"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>可以看到，当训练次数达到 1000000 时，结果已经非常接近 results：</p>
-<p><img alt="" src="/docs/img/image-20240717102232618.png" /></p>
+<p><img alt="" src="/docs/assets/image-20240717102232618.png" /></p>
 <h2 id="_5">卷积神经网络<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">卷积运算<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>e.g.对高速公路上的跑车的位置进行追踪，对于运动中的目标，采样时间越长，由于滞后性的原因，定位的准确率越低；采样时间越短，就越接近真实值。因此，可以对不同的时间段赋予不同的权重，即 <span class="arithmatex">\(s(t)=\int x(a)\omega(t-a)da\)</span> ，这样的运算称为卷积运算，也记为 <span class="arithmatex">\(s(t)=(x\omega)(t)\)</span>。</p>
