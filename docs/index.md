@@ -102,16 +102,6 @@ comments: false
       </font>
     </body>
     <!-- <b><span id="time"></span></b> -->
-  </div>
-  <ul>
-    <li>About Me</li>
-    <ul>
-      <li>ZJU 23级 CS 小趴菜一枚～</li>
-      <li>辅修竺可桢学院工程高级教育班（ACEE）</li>
-      <li>ZJUCSA 会长</li>
-      <li>入门级CTFer</li>
-    </ul>
-  </ul>
 </div> 
 
 [^Knowing-that-loving-you-has-no-ending]:错过黄昏晚霞，还有漫天星辰 
