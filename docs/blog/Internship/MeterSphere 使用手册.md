@@ -20,13 +20,13 @@ https://github.com/metersphere/metersphere
 
 即可直接在 docker 拉取镜像并运行容器。
 
-[![image-20240724150149457.png](https://i.postimg.cc/YCzTnrLx/image-20240724150149457.png)](https://postimg.cc/3kWLWHBy)
+![image-20240724150149457](/docs/img/image-20240724150149457.png)
 
 浏览器直接访问 http://localhost:8081 即可进入平台界面，用户名为 admin，密码为 metersphere 。
 
-[![image-20240724145727881.png](https://i.postimg.cc/13sjNk7V/image-20240724145727881.png)](https://postimg.cc/ppcZw6HP)
+![image-20240724145727881](/docs/img/image-20240724145727881.png)
 
-[![image-20240724150034612.png](https://i.postimg.cc/vZhS70Cq/image-20240724150034612.png)](https://postimg.cc/9D4pCYmZ)
+![image-20240724150034612](/docs/img/image-20240724150034612.png)
 
 #### 离线安装包安装部署（内网环境）
 
@@ -156,4 +156,4 @@ https://1panel.cn/
 
 结果如下：
 
-![image-20240828104317892](/docs/img/image-20240828104317892.png)
+![image-20240828104317892](/Users/bruce/Library/Application Support/typora-user-images/image-20240828104317892.png)
