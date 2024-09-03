@@ -13,6 +13,7 @@
 
 #### Negation（NOT）
 用 $\neg$p 表示命题 p 的否定，真值表如下：
+
 |  p   | $\neg$ p |
 | :--: | :------: |
 |  T   |    F     |
@@ -20,6 +21,7 @@
 
 #### Conjunction（AND）
 用 p$\land$q 表示 p 与 q，当 p，q 均为 T 时值为 T，真值表如下：
+
 |  p   |  q   | p$\land$q |
 | :--: | :--: | :-------: |
 |  T   |  T   |     T     |
@@ -29,6 +31,7 @@
 
 #### Disjunction（OR）
 用 p$\lor$q 表示 p 或 q，当 p，q 均为 F 时值为 F，真值表如下：
+
 |  p   |  q   | p$\lor$q |
 | :--: | :--: | :------: |
 |  T   |  T   |    T     |
@@ -38,6 +41,7 @@
 
 #### Exclusive Or（XOR）
 用 p$\bigoplus$q 表示 p 异或 q，当 p，q 仅有一个是 T 时值为 T，真值表如下：
+
 |  p   |  q   | p$\bigoplus$q |
 | :--: | :--: | :-----------: |
 |  T   |  T   |       F       |
@@ -51,6 +55,7 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 
 #### Implication（if - then）
 用 p$\rightarrow$q 表示如果 p 那么 q，当 p 为 T，q 为 F 时值为 F，真值表如下：
+
 |            p             |            q             |     p$\rightarrow$q      |
 | :----------------------: | :----------------------: | :----------------------: |
 |            T             |            T             |            T             |
@@ -75,6 +80,7 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 
 #### Biconditional（if and only if）
 用 p$\leftrightarrow$q 表示当且仅当 p,q,当 p 和 q 相同时值为 T，真值表如下：
+
 |  p   |  q   | p$\leftrightarrow$q |
 | :--: | :--: | :-----------------: |
 |  T   |  T   |          T          |
@@ -170,9 +176,9 @@ e.g.对于下列命题：
 - <font color=red>$\neg (p $~1~ $\land p$~2~ $\land ...\land p$~n~) $\equiv \neg p$~1~ $\lor \neg p$~2~ $\lor ... \lor \neg p$~n~</font>
 
 **e.g.1. Show that $\neg (p \lor (\neg p \land q))$ and $\neg p \land \neg q$ are logically equivalent.**
-![Alt text](image.png)
+![Alt text](../../assets/image.png)
 **e.g.2. Show that $((p \rightarrow q) \rightarrow r) \rightarrow ((r \rightarrow p) \rightarrow (s \rightarrow p))$ is a tautology.**
-![Alt text](image-1.png)
+![Alt text](../../assets/image-1.png)
 #### Propositional Satisfiability
 定义：对于一个复合命题，如果有一组真值取值能让其为 T，则该复合命题是可满足的（Satisfiable）；如果所有真值取值其值都为 F，则该复合命题是不可满足的（Unsatisfiable）。
 **e.g. Determine the satisfiability of the following compound propositions:
@@ -201,7 +207,7 @@ e.g.2. $S = (p \land q) \rightarrow (p \lor q) \equiv \neg (p \land q) \lor (p \
 **e.g. $(p \land q) \lor (p \land \neg q)$ 是一个析取范式，但是 $p \land (p \lor q)$ 不是一个析取范式。**
 ##### Conjunctive Normal Form（CNF）
 定义：如果一个逻辑表达式被写作<font color=red>合取形式（即均由 $\land$ 连接）</font>，其中所有的子式均为 Literal 的析取（即为析取从句)，则称这个逻辑表达式为<font color=red>合取范式（Conjunctive Normal Form）</font>。
-![Alt text](image-2.png)
+![Alt text](../../assets/image-2.png)
 ##### Theorem
 <font color=red>所有表达式 A 永远都可以与某个合取范式（或者析取范式）等价。</font>
 ##### How to obtain normal form
@@ -214,9 +220,9 @@ $\neg (p $~1~ $\lor p$~2~ $\lor ...\lor p$~n~) $\equiv \neg p$~1~ $\land \neg p$
 $\neg \neg p \equiv p$
 - 使用交换律、结合律、分配律获得范式
 **e.g.1. 将表达式 $\neg (p \lor q) \leftrightarrow (p \land q)$ 转换为范式。**
-![Alt text](image-3.png)
+![Alt text](../../assets/image-3.png)
 **e.g.2. 找到合适的 p ，q 取值，使得表达式 $(p \rightarrow q) \rightarrow p$ 值为真。**
-![Alt text](image-4.png)
+![Alt text](../../assets/image-4.png)
 ##### Full Disjunctive Normal Form
 ###### Minterm
 一个小项（Minterm）即为 Literal 的合取，其中每个命题变量都只出现一次。
@@ -228,16 +234,17 @@ $\neg \neg p \equiv p$
 首先，获得一个析取范式，利用否定律和分配律获得全析取范式。
 $A \equiv A \land (q \lor \neg q) \equiv (A \land q) \lor (A \land \neg q)$
 **e.g. 将表达式 $(p \land q) \lor (\neg p \land r) \lor (q \land r)$ 转换为全析取范式。**
-![Alt text](image-5.png)
+
+![Alt text](../../assets/image-5.png)
 
 ###### Full disjunctive normal form from truth tables
 找到使最终答案为 T 的取值情况，将这些取值情况用析取形式组合后即可。
 e.g.1.
-![Alt text](image-6.png)
+![Alt text](../../assets/image-6.png)
 e.g.2.
-![Alt text](image-7.png)
+![Alt text](../../assets/image-7.png)
 e.g.3.
-![Alt text](image-8.png)
+![Alt text](../../assets/image-8.png)
 
 ### Predicates and Quantifiers
 #### Introducing Predicate Logic
