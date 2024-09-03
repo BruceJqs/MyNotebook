@@ -230,6 +230,7 @@ extra_javascript:
 
   - https://cdn.tonycrane.cc/utils/katex.min.js
   - javascripts/katex.js
+  - javascripts/glightbox.min.js
 
 extra_css:
   - stylesheets/extra.css # 自定义CSS
@@ -237,6 +238,13 @@ extra_css:
   - stylesheets/customize.css # 搜索圆角优化
 
   - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - stylesheets/tasklist.css
+  - stylesheets/card.css
+  - stylesheets/flink.css
+  - stylesheets/glightbox.min.css
+  - stylesheets/changelog_extra.css
 
   # - stylesheets/video.css #播放器可选配置
   # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #gitalk支持
