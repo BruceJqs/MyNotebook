@@ -18,7 +18,7 @@ status: new
   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
 />
 
-<!-- <img class="img1" src="https://s2.loli.net/2024/02/01/AgiGpYk38C6ctJV.jpg"> -->
+<img class="img1" src="assets/头像.jpg">
 
 <p style="text-align: center; margin: 0px;" markdown>
   <p style="text-align: center; font-size: 30px; margin: 0px;"><strong>Bruce Jin</strong></p>
