@@ -2693,7 +2693,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <a id="__codelineno-5-62" name="__codelineno-5-62"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;epoch:&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;train_loss:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;accuracy:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <p>这里采用 ReLU 函数作为激活函数，ReLU(x)=max{0,x}</p>
-<p><img src=../../assets/image-20240717125606885.png alt="image-20240717125606885" style="zoom:50%;" /></p>
+<p><img alt="" src="../../../assets/image-20240717125606885.png" /></p>
 <h3 id="_9">深度可分离卷积<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>普通卷积：一个卷积核处理 m 个输入通道的图片信息，卷积核个数为 n（即输出通道数为 n），则有 n 个处理结果（每个结果通道数为 m），最后 n 个卷积核的结果组成最终结果。</p>
 <p><img alt="请添加图片描述" src="../../../assets/e7145875df9748c594b66983b2c83b95.jpeg" /></p>

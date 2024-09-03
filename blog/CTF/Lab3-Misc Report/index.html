@@ -1557,7 +1557,7 @@
 <p>奇怪的是这个代码运行过后打不开 png，用 Hex Fiend 打开发现有两个 PNG，去掉前面这个就能打开了，不太清楚原因，还望指正。</p>
 <p><img alt="image-20240716082224048" src="../../../assets/image-20240716082224048.png" /></p>
 <p>去掉之后得到 png，flag 就在里面：</p>
-<p><img alt="output" src="/Users/bruce/output.png" /></p>
+<p><img alt="output" src="../../../assets/output.png" /></p>
 <h2 id="challenge-3crac_zju_wlan">Challenge 3：crac_zju_wlan<a class="headerlink" href="#challenge-3crac_zju_wlan" title="Permanent link">&para;</a></h2>
 <p>解压 zip 文件得到 img 文件，挂载到 linux 上之后可以发现 crack_zju-01.cap 和一个隐藏的 .password.txt.swp 文件。</p>
 <p>经过查询，swp 文件是一个临时交换文件，用来备份缓冲区的内容，正常情况下保存好 password.txt 并退出是不会产生 swp 文件的，所以我们需要通过 swp 文件来恢复 password.txt。</p>
@@ -1732,12 +1732,12 @@
 <a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>设置相关参数（合约地址等）：</p>
-<p><img src="../../assets/image-20240721143545839.png" alt="image-20240721143545839" style="zoom:50%;" /></p>
+<p><img alt="" src="../../../assets/image-20240721143545839.png" /></p>
 <p>执行一次 attack 函数，我们可以看到在合约中 consecutiveWins 有增加：</p>
-<p><img src="../../assets/image-20240721143636354.png" alt="image-20240721143636354" style="zoom:50%;" /></p>
-<p><img src="../../assets/image-20240721143647014.png" alt="image-20240721143647014" style="zoom:50%;" /></p>
+<p><img alt="" src="../../../assets/image-20240721143636354.png" /></p>
+<p><img alt="" src="../../../assets/image-20240721143647014.png" /></p>
 <p>所以最后我们多次执行，直到其为 10，提交实例即可通过：</p>
-<p><img src="../../assets/image-20240721143726185.png" alt="image-20240721143726185" style="zoom:50%;" /></p>
+<p><img alt="" src="../../../assets/image-20240721143726185.png" /></p>
 <h3 id="delegation">Delegation<a class="headerlink" href="#delegation" title="Permanent link">&para;</a></h3>
 <p>根据题意，这个关卡要求获得合约 Delegation 的所有权，我们先查看 Delegation 的 owner：</p>
 <p><img alt="image-20240721145916285" src="../../../assets/image-20240721145916285.png" /></p>
@@ -1806,7 +1806,7 @@
 <p>通过查询相关资料，我们可以得知 delegatecall 调用后内置变量 msg 的值 A 不会修改为调用者，但执行环境为调用者的运行环境 B，也就意味着我们虽然执行的是 Delegate 合约中的函数，但是我们是在 Delegation 的环境下执行，这样也就可以更改 Delegation 的 owner 。交互如下：</p>
 <p><img alt="image-20240721150040107" src="../../../assets/image-20240721150040107.png" /></p>
 <p>成功更改 owner，提交实例即可通过：</p>
-<p><img src="../../assets/image-20240721150142117.png" alt="image-20240721150142117" style="zoom:50%;" /></p>
+<p><img alt="" src="../../../assets/image-20240721150142117.png" /></p>
 <h3 id="vault">Vault<a class="headerlink" href="#vault" title="Permanent link">&para;</a></h3>
 <p>根据题意，这个关卡需要我们将合约中的 locked 变量改为 false，代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
