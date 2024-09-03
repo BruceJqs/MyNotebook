@@ -104,7 +104,7 @@ open("output.png", "wb").write(output)
 
 去掉之后得到 png，flag 就在里面：
 
-![output](/Users/bruce/output.png)
+![output](../../assets/output.png)
 
 ## Challenge 3：crac_zju_wlan
 
@@ -262,18 +262,17 @@ contract CoinFlipAttacker{
 
 设置相关参数（合约地址等）：
 
-<img src="../../assets/image-20240721143545839.png" alt="image-20240721143545839" style="zoom:50%;" />
+![](../../assets/image-20240721143545839.png)
 
 执行一次 attack 函数，我们可以看到在合约中 consecutiveWins 有增加：
 
-<img src="../../assets/image-20240721143636354.png" alt="image-20240721143636354" style="zoom:50%;" />
+![](../../assets/image-20240721143636354.png)
 
-<img src="../../assets/image-20240721143647014.png" alt="image-20240721143647014" style="zoom:50%;" />
+![](../../assets/image-20240721143647014.png)
 
 所以最后我们多次执行，直到其为 10，提交实例即可通过：
 
-<img src="../../assets/image-20240721143726185.png" alt="image-20240721143726185" style="zoom:50%;" />
-
+![](../../assets/image-20240721143726185.png)
 ### Delegation
 
 根据题意，这个关卡要求获得合约 Delegation 的所有权，我们先查看 Delegation 的 owner：
@@ -323,7 +322,7 @@ contract Delegation {
 
 成功更改 owner，提交实例即可通过：
 
-<img src="../../assets/image-20240721150142117.png" alt="image-20240721150142117" style="zoom:50%;" />
+![](../../assets/image-20240721150142117.png)
 
 ### Vault
 

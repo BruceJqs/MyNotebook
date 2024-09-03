@@ -385,7 +385,7 @@ for epoch in range(42):
 
 这里采用 ReLU 函数作为激活函数，ReLU(x)=max{0,x}
 
-<img src=../../assets/image-20240717125606885.png alt="image-20240717125606885" style="zoom:50%;" />
+![](../../assets/image-20240717125606885.png)
 
 ### 深度可分离卷积
 
