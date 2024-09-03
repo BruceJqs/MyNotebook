@@ -1389,25 +1389,6 @@
 
 
 <h1 id="locust">Locust 压力测试工具使用手册<a class="headerlink" href="#locust" title="Permanent link">&para;</a></h1>
-<p><strong><font size=5>目录</font></strong></p>
-<div class="toc">
-<ul>
-<li><a href="#locust">Locust 压力测试工具使用手册</a><ul>
-<li><a href="#_1">工具相关信息</a><ul>
-<li><a href="#_2">安装部署</a></li>
-</ul>
-</li>
-<li><a href="#_3">工具使用方法</a><ul>
-<li><a href="#_4">例一：获取手机验证码（单一任务）</a></li>
-<li><a href="#_5">例二：多线程任务与比例分配</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div style="page-break-after:always;"></div>
-
 <h2 id="_1">工具相关信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Locust 完全基于 Python 编程语言，采用 Python 编写压测脚本，且所有请求完全基于 requests 库。除了 HTTP/HTTPS 协议，Locust 也可以测试其它协议的系统，只需要采用 Python 调用对应的库进行请求描述即可。Locust 是一个分布式用户性能测试的工具但是单台压力机也能产生数千并发请求数。</p>
 <h3 id="_2">安装部署<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -1447,11 +1428,11 @@
 </code></pre></div></td></tr></table></div>
 <p>然后在 test1.py 目录下运行命令行：<code>locust -f test1.py --host=https://posdemo3.hzgolong.com:13443</code></p>
 <p>可以看到如下提示：</p>
-<p><img alt="image-20240828160133224" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240828160133224.png" /></p>
+<p><img alt="image-20240828160133224" src="/docs/img/image-20240828160133224.png" /></p>
 <p>浏览器访问 https://localhost:8089 即可进入界面：</p>
-<p><img alt="image-20240828160207269" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240828160207269.png" /></p>
+<p><img alt="image-20240828160207269" src="/docs/img/image-20240828160207269.png" /></p>
 <p>其中设置 Number of users（即最大用户量）和 Ramp up（每过一段时间用户的增加量），START 即可进行压力测试。</p>
-<p><img alt="image-20240828160554053" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240828160554053.png" /></p>
+<p><img alt="image-20240828160554053" src="/docs/img/image-20240828160554053.png" /></p>
 <h3 id="_5">例二：多线程任务与比例分配<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>编写 python 脚本如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -1539,7 +1520,7 @@
 <a id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>其中 <code>@task</code> 后的数字表示执行请求的权重，权重越大请求数量越多。</p>
-<p><img alt="image-20240828163439109" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240828163439109.png" /></p>
+<p><img alt="image-20240828163439109" src="/docs/img/image-20240828163439109.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -1607,7 +1588,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-03</span>
   </span>
 
     

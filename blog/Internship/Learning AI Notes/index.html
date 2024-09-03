@@ -2433,7 +2433,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <a id="__codelineno-1-115" name="__codelineno-1-115"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>可以看到，当训练次数达到 1000000 时，结果已经非常接近 results：</p>
-<p>![[image-20240717102232618.png]]</p>
+<p><img alt="" src="/docs/img/image-20240717102232618.png" /></p>
 <h2 id="_5">卷积神经网络<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">卷积运算<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>e.g.对高速公路上的跑车的位置进行追踪，对于运动中的目标，采样时间越长，由于滞后性的原因，定位的准确率越低；采样时间越短，就越接近真实值。因此，可以对不同的时间段赋予不同的权重，即 <span class="arithmatex">\(s(t)=\int x(a)\omega(t-a)da\)</span> ，这样的运算称为卷积运算，也记为 <span class="arithmatex">\(s(t)=(x\omega)(t)\)</span>。</p>
@@ -2507,7 +2507,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">image_new_2</span> <span class="o">=</span> <span class="n">conv2d</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">image_new_2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240717105628030" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240717105628030.png" /></p>
+<p><img alt="" src="/docs/img/image-20240717105628030.png" /></p>
 <h3 id="_7">池化运算<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>在卷积获得了图像特征之后，我们下一步希望对这些特征进行分类。</p>
 <p>特征提取可以计算图像在一个区域上的某个特定特征的平均值（或最大值），结果不仅具有低得多的维度，同时还会改善结果（不容易过拟合），这种聚合的操作叫做池化（Pooling）。</p>
@@ -2530,7 +2530,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">image_pooled_avg</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">image_pooled_adaptive_avg</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240717110554082" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240717110554082.png" /></p>
+<p><img alt="image-20240717110554082" src="/docs/img/image-20240717110554082.png" /></p>
 <p>这里的 AdaptiveAvgPool2d 函数则是对整张图片进行池化处理（这里即为对 28*28 的每个元素取平均）</p>
 <h3 id="softmax">Softmax 激活函数<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h3>
 <p>Softmax 是一个对概率进行计算的模型，在真实的计算模型系统中，对一个实物的判定并非 100% 或者是 0%，Softmax 就是对所有的结果标签上求出一个概率。</p>
@@ -2679,7 +2679,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <a id="__codelineno-5-62" name="__codelineno-5-62"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;epoch:&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;train_loss:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;accuracy:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <p>这里采用 ReLU 函数作为激活函数，ReLU(x)=max{0,x}</p>
-<p><img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240717125606885.png" alt="image-20240717125606885" style="zoom:50%;" /></p>
+<p><img src="/docs/img/image-20240717125606885.png" alt="image-20240717125606885" style="zoom:50%;" /></p>
 <h3 id="_9">深度可分离卷积<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>普通卷积：一个卷积核处理 m 个输入通道的图片信息，卷积核个数为 n（即输出通道数为 n），则有 n 个处理结果（每个结果通道数为 m），最后 n 个卷积核的结果组成最终结果。</p>
 <p><img alt="请添加图片描述" src="https://img-blog.csdnimg.cn/direct/e7145875df9748c594b66983b2c83b95.jpeg" /></p>
@@ -2825,7 +2825,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <a id="__codelineno-6-63" name="__codelineno-6-63"></a>    <span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">y_batch</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="n">batch_size</span>
 <a id="__codelineno-6-64" name="__codelineno-6-64"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;epoch:&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;train_loss:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;accuracy:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
-<p><img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240717144817837.png" alt="image-20240717144817837" style="zoom:50%;" /></p>
+<p><img src="/docs/img/image-20240717144817837.png" alt="image-20240717144817837" style="zoom:50%;" /></p>
 <h2 id="pytorch_1">PyTorch 数据处理与模型展示<a class="headerlink" href="#pytorch_1" title="Permanent link">&para;</a></h2>
 <h3 id="torchutilsdata-dataset">torch.utils.data Dataset 封装自定义数据集<a class="headerlink" href="#torchutilsdata-dataset" title="Permanent link">&para;</a></h3>
 <p>在 PyTorch 2.0 中，数据集的自定义使用需要继承 <strong>torch.utils.data.Dataset</strong> 类，基本的 Dataset 类架构如下：</p>
@@ -2934,7 +2934,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <a id="__codelineno-8-41" name="__codelineno-8-41"></a><span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">MNIST_Dataset</span><span class="p">(</span><span class="n">transform</span> <span class="o">=</span> <span class="n">ToTensor2</span><span class="p">())</span>
 <a id="__codelineno-8-42" name="__codelineno-8-42"></a><span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p><img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240717152439180.png" alt="image-20240717152439180" style="zoom:50%;" /></p>
+<p><img src="/docs/img/image-20240717152439180.png" alt="image-20240717152439180" style="zoom:50%;" /></p>
 <h3 id="dataloader">批量输出数据的 DataLoader 类<a class="headerlink" href="#dataloader" title="Permanent link">&para;</a></h3>
 <p>DataLoader 可以解决使用 Dataset 自定义封装的数据时无法对数据进行批量化处理的问题，其定义如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
@@ -3593,7 +3593,7 @@ $$
 <p>hello -&gt; ["h","e","l","l","o"]</p>
 </blockquote>
 <p>采用 One-Hot 的方式来处理：</p>
-<p><img alt="image-20240718144844422" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240718144844422.png" /></p>
+<p><img alt="image-20240718144844422" src="/docs/img/image-20240718144844422.png" /></p>
 <p>但是对于不同长度的单词，会生成不同的矩阵，我们需要对其进行规范化处理，长的截短，短的补长。</p>
 <p>最后构建数据集。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
@@ -3995,7 +3995,7 @@ $$
 <a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="n">value</span> <span class="o">=</span> <span class="n">lazy_pinyin</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="p">)</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240718155936841" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240718155936841.png" /></p>
+<p><img alt="image-20240718155936841" src="/docs/img/image-20240718155936841.png" /></p>
 <h4 id="_20">词向量<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>较为常用，使用分词器对文本进行分词，除去停用词和副词之后制作词向量。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
@@ -4030,11 +4030,11 @@ $$
 <p><img alt="img" src="https://ai-studio-static-online.cdn.bcebos.com/36f6c180c83e48a2ad69e9d16026934709a2a056a1714127b2e8e52705bb80b4" /></p>
 <p>GRU 是循环神经网络的一种，为了解决长期记忆和反向传播中的梯度等问题，是一种用于处理序列数据的神经网络，更擅长处理序列变化的数据（例如某个单词的意思会因为上文提到的内容不同而有不同的含义）</p>
 <p>在 GRU 中有一个当前的输入 <span class="arithmatex">\(x^t\)</span> ，和上一个节点传递下来的隐藏状态（Hidden State）<span class="arithmatex">\(h^{t-1}\)</span> （包含之前节点的相关信息），结合 <span class="arithmatex">\(x^t\)</span> 和 <span class="arithmatex">\(h^{t-1}\)</span>，GRU会得到当前隐藏节点的输出 <span class="arithmatex">\(y^t\)</span> 和传递给下一个节点的隐藏状态 <span class="arithmatex">\(h^t\)</span>。</p>
-<p><img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240718163949208.png" alt="image-20240718163949208" style="zoom:50%;" /></p>
+<p><img src="/docs/img/image-20240718163949208.png" alt="image-20240718163949208" style="zoom:50%;" /></p>
 <p>GRU 利用门先通过上一个传输下来的状态 <span class="arithmatex">\(h^{t-1}\)</span> 和当前节点的输入 <span class="arithmatex">\(x^t\)</span> 来获取两个门控状态，<span class="arithmatex">\(r\)</span> 用于控制重置的门控（Reset Gate），<span class="arithmatex">\(z\)</span> 用于控制更新的门控（Update Gate）。<span class="arithmatex">\(\sigma\)</span> 为 Sigmoid 函数，通过这个函数可以将数据变换为 0-1 范围内的数值，从而来充当门控信号。</p>
-<p><img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240718165853423.png" alt="image-20240718165853423" style="zoom:50%;" /></p>
+<p><img src="/docs/img/image-20240718165853423.png" alt="image-20240718165853423" style="zoom:50%;" /></p>
 <p>得到门控信号之后，首先使用重置门控来得到重置之后的数据 <span class="arithmatex">\(h^{(t-1)'}=h^{t-1}\times r\)</span> ，再将 <span class="arithmatex">\(h^{(t-1)'}\)</span> 与输入 <span class="arithmatex">\(x^t\)</span> 进行拼接，通过一个 Tanh 激活函数来将数据所放到 -1-1 的范围内，得到 <span class="arithmatex">\(h'\)</span> ，存储当前时刻的状态。</p>
-<p><img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240718170344993.png" alt="image-20240718170344993" style="zoom:50%;" /></p>
+<p><img src="/docs/img/image-20240718170344993.png" alt="image-20240718170344993" style="zoom:50%;" /></p>
 <p>最后便是 GRU 最关键的步骤——“更新记忆”阶段，同时进行遗忘和记忆两个步骤。</p>
 <p><img src="https://i-blog.csdnimg.cn/blog_migrate/d7b12bd21b6447bf45830c9717e3e3f8.png" alt="img" style="zoom:50%;" /></p>
 <p>使用先前得到的更新门控 z，从而能够获得新的更新：<span class="arithmatex">\(h^t=zh^{t-1}+(1-z)h'\)</span></p>
