@@ -212,7 +212,7 @@ if __name__ == '__main__':
 
 可以看到，当训练次数达到 1000000 时，结果已经非常接近 results：
 
-![](https://brucejqs.github.io/MyNotebook/docs/assets/image-20240717102232618.png)
+![](../../assets/image-20240717102232618.png)
 
 ## 卷积神经网络
 
@@ -268,7 +268,7 @@ image_new_2 = conv2d(image)
 print(image_new_2.shape)
 ```
 
-![](/docs/img/image-20240717105628030.png)
+![](../../assets/image-20240717105628030.png)
 
 ### 池化运算
 
