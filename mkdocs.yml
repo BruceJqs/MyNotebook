@@ -134,6 +134,8 @@ extra:
 
 plugins:
   - search #搜索配置
+  - glightbox:
+      width: 80%
   - git-committers:
       enabled: !ENV [CI, false]
       repository: BruceJqs/MyNotebook
@@ -177,7 +179,11 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - def_list
   - footnotes
   - md_in_html
-  # - meta # 支持Markdown文件上方自定义标题标签等
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - sane_lists
+  - meta # 支持Markdown文件上方自定义标题标签等
   - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
@@ -188,6 +194,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - pymdownx.snippets
   - pymdownx.smartsymbols
   - pymdownx.tilde
+  - pymdownx.magiclink
 
   - pymdownx.superfences:
       custom_fences:
