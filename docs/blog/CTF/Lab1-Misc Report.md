@@ -1,11 +1,5 @@
 # Lab1-Misc Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## Task 1.1：乱码情形探究
 
 这里我们把 python，vscode，CyberChef 都尝试一下，输出不同的就都截图放在报告里，相同的就只选择 python 的输出结果了。

@@ -1,11 +1,5 @@
 # Lab2-Misc Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## Challenge 1
 
 用 Hex Fiend 打开图片，在翻看查找时我们发现这张图片出现了两次 JFIF，猜测这张图片是由两张图片叠加而成的，用 binwalk 查看验证：

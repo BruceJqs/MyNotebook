@@ -1,11 +1,5 @@
 # Lab2-Crypto Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## AES 部分
 
 ### CBC Byte Flip

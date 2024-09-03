@@ -1,11 +1,5 @@
 # Lab1-Pwn Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## Task 1
 
 nocrash.c 代码如下：

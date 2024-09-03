@@ -1,11 +1,5 @@
 # Lab1-Rev Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## Task 1
 
 ### Case 1:gcc+as

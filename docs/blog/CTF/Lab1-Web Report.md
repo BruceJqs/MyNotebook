@@ -1,11 +1,5 @@
 # Lab1-Web Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-
-
 ## Task 1:DNS
 
 ### 查询权威域名服务器

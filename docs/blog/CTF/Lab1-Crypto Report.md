@@ -1,11 +1,5 @@
 # Lab1-Crypto Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## Task 1
 
 阅读 python 程序：

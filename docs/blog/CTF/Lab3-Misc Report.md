@@ -1,11 +1,5 @@
 # Lab3-Misc Report
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## Challenge 1：SQR Inject Analysis
 
 将下载的 sqltest.pcapng 用 wireshark 打开，查看 HTTP 请求：
