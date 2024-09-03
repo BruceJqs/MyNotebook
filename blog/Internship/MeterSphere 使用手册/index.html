@@ -56,6 +56,20 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
     
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/card.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flink.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/glightbox.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/changelog_extra.css">
+    
       <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
@@ -1680,20 +1694,20 @@
 
 <h2 id="_1">平台相关信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">项目网址<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>https://github.com/metersphere/metersphere</p>
+<p><a href="https://github.com/metersphere/metersphere">https://github.com/metersphere/metersphere</a></p>
 <h3 id="_3">安装部署<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <h4 id="docker">Docker 部署<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h4>
 <p>运行命令行 <code>docker run -d -p 8081:8081 --name=metersphere -v ~/.metersphere/data:/opt/metersphere/data cr2.fit2cloud.com/metersphere/metersphere-ce-allinone</code></p>
 <p>即可直接在 docker 拉取镜像并运行容器。</p>
 <p><img alt="image-20240724150149457" src="/docs/img/image-20240724150149457.png" /></p>
-<p>浏览器直接访问 http://localhost:8081 即可进入平台界面，用户名为 admin，密码为 metersphere 。</p>
+<p>浏览器直接访问 <a href="http://localhost:8081">http://localhost:8081</a> 即可进入平台界面，用户名为 admin，密码为 metersphere 。</p>
 <p><img alt="image-20240724145727881" src="/docs/img/image-20240724145727881.png" /></p>
 <p><img alt="image-20240724150034612" src="/docs/img/image-20240724150034612.png" /></p>
 <h4 id="_4">离线安装包安装部署（内网环境）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>https://community.fit2cloud.com/#/products/metersphere/downloads</p>
+<p><a href="https://community.fit2cloud.com/#/products/metersphere/downloads">https://community.fit2cloud.com/#/products/metersphere/downloads</a></p>
 <p>社区版限制1个组织，1个资源池，30个用户</p>
 <h4 id="1panel">1Panel 商店部署<a class="headerlink" href="#1panel" title="Permanent link">&para;</a></h4>
-<p>https://1panel.cn/</p>
+<p><a href="https://1panel.cn/">https://1panel.cn/</a></p>
 <h2 id="_5">平台功能——接口测试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">建立项目<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>页面左上角点击即可新建项目。</p>
@@ -1717,7 +1731,7 @@
 <p>这里接口没有考虑手机号不存在的情况，默认手机号只要不为空皆可发送验证码了。</p>
 <h5 id="python">用户注册（python 环境配置、公共脚本的编写与用例引用、用例批量复制）<a class="headerlink" href="#python" title="Permanent link">&para;</a></h5>
 <p>在这里（包括后面很多用例）要求先进行一次获取验证码的请求再填入验证码，所以我们可以编写一个脚本在每一次执行步骤之前都获取好验证码并将其填入我们的请求体当中。</p>
-<p>因为脚本需要用到 requests 库，而 metersphere 本身基于 Java，python 的脚本没支持 requests 库，所以我们需要通过 virtualenv 手动安装：https://bbs.fit2cloud.com/t/topic/292</p>
+<p>因为脚本需要用到 requests 库，而 metersphere 本身基于 Java，python 的脚本没支持 requests 库，所以我们需要通过 virtualenv 手动安装：<a href="https://bbs.fit2cloud.com/t/topic/292">https://bbs.fit2cloud.com/t/topic/292</a></p>
 <p>安装完成，因为非常多的用例都需要这个获取验证码的脚本，所以我们编写公共脚本供所有用例引用：</p>
 <p><img alt="image-20240724155823543" src="/docs/img/image-20240724155823543.png" /></p>
 <p>（这里我在配置 requests 库多了一个自定义 virtualpython 的路径，所以路径与网址所说的有所不同）</p>
@@ -2151,6 +2165,8 @@
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
         <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/glightbox.min.js"></script>
       
     
     <script src="../../../assets/javascripts/custom.9458f965.min.js"></script>

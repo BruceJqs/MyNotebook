@@ -56,6 +56,20 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
     
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/card.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flink.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/glightbox.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/changelog_extra.css">
+    
       <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
@@ -2203,7 +2217,7 @@
 <p>所以最终的 flag 为 ACTF{We1com3_7o_R3_00_00_0000_0e74_0e4f_030f}</p>
 <h2 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h2>
 <h3 id="challenge-1_1">Challenge 1<a class="headerlink" href="#challenge-1_1" title="Permanent link">&para;</a></h3>
-<p>进入网页 http://pumpk1n.com/lab0.php，打开开发者工具查看 HTML 代码，我们可以看到：</p>
+<p>进入网页 <a href="http://pumpk1n.com/lab0.php">http://pumpk1n.com/lab0.php</a>，打开开发者工具查看 HTML 代码，我们可以看到：</p>
 <p><img alt="image-20240602122434480" src="/docs/img/image-20240602122434480.png" /></p>
 <p>这里可以看到 onmousemove="hide()"，结合实操可以看出，当鼠标到 click me 上时，按钮就消失了。</p>
 <p>然后我们再注意到如果成功完成点击按钮，触发与 flag 有关的 getflag()，继续寻找其代码可看到；</p>
@@ -3271,6 +3285,8 @@
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
         <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/glightbox.min.js"></script>
       
     
     <script src="../../../assets/javascripts/custom.9458f965.min.js"></script>
