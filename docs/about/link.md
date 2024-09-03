@@ -58,7 +58,17 @@ t.parentNode.insertBefore(e,t)}})();
       还是夏神！ASIO！
       </div> 
      </div> 
-    </div>   
+    </div>
+    <div class="card"> 
+     <div class="card-header"> 
+      <div> 
+       <a href="https://github.com/BruceJqs/ZJU-Courses" target="_blank">BruceJin's ZJU-Course Repository</a> 
+      </div> 
+      <div class="info">
+      BruceJin 在 ZJU 学习各课程留下的笔记资源库～
+      </div> 
+     </div> 
+    </div>    
 
    </div> 
   </div>
