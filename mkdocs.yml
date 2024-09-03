@@ -134,8 +134,6 @@ extra:
 
 plugins:
   - search #搜索配置
-  - glightbox:
-      width: 80%
   - git-committers:
       enabled: !ENV [CI, false]
       repository: BruceJqs/MyNotebook
