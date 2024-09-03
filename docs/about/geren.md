@@ -19,7 +19,7 @@ status: new
 />
 
 <figure class="figure-image">
-  <img src="/docs/assets/头像.jpg" />
+  <img src="../assets/头像.jpg" />
 </figure>
 
 <p style="text-align: center; margin: 0px;" markdown>
