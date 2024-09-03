@@ -1,0 +1,3009 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Eternity">
+      
+      
+      
+        <link rel="prev" href="../Discrete%20mathmatics%20notes-Ch01/">
+      
+      
+        <link rel="next" href="../../CTF/Lab0%20Report/">
+      
+      
+      <link rel="icon" href="../../../assets/头像.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices - BruceJin's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/card.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flink.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/glightbox.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/changelog_extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    <link rel="stylesheet" href="../../../assets/stylesheets/custom.00c04c01.min.css">
+  
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sets" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    本网站仍在努力<strong>建设开发中</strong>喵～
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="BruceJin&#39;s Notebook" class="md-header__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
+      
+  <img src="../../../assets/头像.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BruceJin's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BruceJqs/MyNotebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BruceJqs/MyNotebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Discrete%20mathmatics%20notes-Ch01/" class="md-tabs__link">
+          
+  
+    
+  
+  Math
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CTF/Lab0%20Report/" class="md-tabs__link">
+          
+  
+    
+  
+  CTF
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Internship/Learning%20AI%20Notes/" class="md-tabs__link">
+          
+  
+    
+  
+  Interning
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/link/" class="md-tabs__link">
+          
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/geren/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BruceJin&#39;s Notebook" class="md-nav__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
+      
+  <img src="../../../assets/头像.jpg" alt="logo">
+
+    </a>
+    BruceJin's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BruceJqs/MyNotebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BruceJqs/MyNotebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    离散数学极其应用｜Discrete Mathematics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            离散数学极其应用｜Discrete Mathematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Discrete%20mathmatics%20notes-Ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 01: The Foundations:Logic and Proofs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-concepts-of-set-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Concepts of Set Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-description-of-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Description of Set
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Description of Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roster-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roster Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#venn-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Venn Diagrams
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proper-subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proper Subsets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-size-of-a-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Size of a Set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cartesian Products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-set-notation-with-quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Set Notation with Quantifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truth-sets-of-quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truth Sets of Quantifiers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      Union
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intersection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetric Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-principle-of-inclusion-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Principle of Inclusion-Exclusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Identities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalized-unions-and-intersections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generalized Unions and Intersections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-representation-of-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Representation of Set
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-to-one-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-to-one Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onto-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onto Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-to-one-correspondence-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-to-one Correspondence Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-important-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Important Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-and-summations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequences and Summations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequences and Summations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequences
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-famliar-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Famliar Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrence-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recurrence Relation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cardinality-of-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinality of Sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cardinality of Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countable-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Countable Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncountable-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncountable Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncomputable-function-an-important-application-in-cs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncomputable Function-An Important Application in CS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuum-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuum Hypothesis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zero-one-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-One Matrices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CTF
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CTF
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023-2024 暑短学期
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            2023-2024 暑短学期
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab0%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Crypto%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Misc%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Pwn%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Pwn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Web%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Rev%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Rev
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab2-Crypto%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2-Crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab2-Misc%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2-Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab3-Crypto%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3-Crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab3-Misc%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3-Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Interning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    大模型
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            大模型
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internship/Learning%20AI%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    《从零开始大模型开发与微调-基于PyTorch与ChatGLM》
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API 接口测试
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            API 接口测试
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internship/MeterSphere%20%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    接口测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internship/Locust%20%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    压力测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/link/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    友链
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/geren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    作者个人简介
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-concepts-of-set-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Concepts of Set Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-description-of-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Description of Set
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Description of Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roster-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roster Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Builder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#venn-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Venn Diagrams
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proper-subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proper Subsets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-size-of-a-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Size of a Set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cartesian Products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-set-notation-with-quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Set Notation with Quantifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truth-sets-of-quantifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truth Sets of Quantifiers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      Union
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intersection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetric Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-principle-of-inclusion-exclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Principle of Inclusion-Exclusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Identities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalized-unions-and-intersections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generalized Unions and Intersections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-representation-of-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Representation of Set
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-to-one-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-to-one Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onto-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onto Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-to-one-correspondence-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      One-to-one Correspondence Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-important-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Important Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-and-summations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequences and Summations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequences and Summations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequences
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-famliar-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Famliar Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrence-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recurrence Relation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cardinality-of-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinality of Sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cardinality of Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countable-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Countable Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncountable-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncountable Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uncomputable-function-an-important-application-in-cs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncomputable Function-An Important Application in CS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuum-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuum Hypothesis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zero-one-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-One Matrices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/BruceJqs/MyNotebook/edit/main/docs/blog/Math/Discrete mathmatics notes-Ch02.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/BruceJqs/MyNotebook/raw/main/docs/blog/Math/Discrete mathmatics notes-Ch02.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices</h1>
+
+<h2 id="sets">Sets<a class="headerlink" href="#sets" title="Permanent link">&para;</a></h2>
+<h3 id="some-concepts-of-set-theory">Some Concepts of Set Theory<a class="headerlink" href="#some-concepts-of-set-theory" title="Permanent link">&para;</a></h3>
+<ul>
+<li>集合（Sets）：一个无序的对象的聚集（一般用大写字母来标记）</li>
+<li>元素（Elements）/ 成员（Members）：在集合中的对象（一般用小写字母来标记）</li>
+<li>我们称集合包含（Contain）它的元素</li>
+<li>空集（The Empty/Void/Null Set）：没有元素的集合（一般用 <span class="arithmatex">\(\phi\)</span> 或 <span class="arithmatex">\(\{\}\)</span> 表示）</li>
+<li>单元素集（Singleton Set）：只有一个元素的集合</li>
+</ul>
+<p><strong>e.g. <span class="arithmatex">\(a \in A\)</span> 表示 <span class="arithmatex">\(a\)</span> 是 <span class="arithmatex">\(A\)</span> 的一个元素/成员</strong></p>
+<p><strong><span class="arithmatex">\(a \not \in A\)</span> 表示 <span class="arithmatex">\(a\)</span> 不是 <span class="arithmatex">\(A\)</span> 的一个元素/成员</strong></p>
+<p><font color="red">注意 <span class="arithmatex">\(\phi\)</span> 和 <span class="arithmatex">\(\{\phi\}\)</span> 是不一样的，前者为空集，后者为单元素集</font></p>
+<h3 id="the-description-of-set">The Description of Set<a class="headerlink" href="#the-description-of-set" title="Permanent link">&para;</a></h3>
+<h4 id="roster-method">Roster Method<a class="headerlink" href="#roster-method" title="Permanent link">&para;</a></h4>
+<p>花名册方法（Roster Method）：当集合元素有限时，列举集合中所有的元素。</p>
+<p><strong>e.g. 小于 <span class="arithmatex">\(10\)</span> 的奇数所组成的集合 <span class="arithmatex">\(S=\{1,3,5,7,9\}\)</span></strong> </p>
+<h4 id="set-builder">Set Builder<a class="headerlink" href="#set-builder" title="Permanent link">&para;</a></h4>
+<p>集合构造器（Set Builder）：通过描述作为集合的成员必须具有的性质来刻画集合中的元素。</p>
+<p><strong>e.g. 小于 10 的奇数所组成的集合 <span class="arithmatex">\(S=\{x|x=2k+1(k=0,1,2,3,4)\}\)</span></strong></p>
+<h3 id="venn-diagrams">Venn Diagrams<a class="headerlink" href="#venn-diagrams" title="Permanent link">&para;</a></h3>
+<p>在韦恩图当中，用矩形框表达全集（Universal Set，包含所考虑的全部对象），用圆或者其他几何图形来表达集合，<font color="blue">用点来表达集合中的特定元素</font>。</p>
+<p><img alt="image-20240319124343503" src="../../../assets/image-20240319124343503.png" /></p>
+<h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
+<p>当集合 <span class="arithmatex">\(A\)</span> 中的每一个元素都是集合 <span class="arithmatex">\(B\)</span> 中的元素，称 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(B\)</span> 的一个<font color="red">子集（Subsets）</font>，用<font color="red"> <span class="arithmatex">\(A \subseteq B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \subseteq B \Leftrightarrow \forall x (x \in A \rightarrow x \in B)\)</span></font>）</p>
+<p><font color="red">对于任意集合 <span class="arithmatex">\(A\)</span> ，空集 <span class="arithmatex">\(\phi \subseteq A\)</span>，其自身 <span class="arithmatex">\(A \subseteq A\)</span></font></p>
+<p>证明 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(B\)</span> 的子集：如果要证明 <span class="arithmatex">\(A \subseteq B\)</span>，需要证明如果 <span class="arithmatex">\(x\)</span> 属于 <span class="arithmatex">\(A\)</span> 那么 <span class="arithmatex">\(x\)</span> 也属于 <span class="arithmatex">\(B\)</span> </p>
+<p>证明 <span class="arithmatex">\(A\)</span> 不是 <span class="arithmatex">\(B\)</span> 的子集：如果要证明 <span class="arithmatex">\(A \not \subseteq B\)</span>，需要找一个 <span class="arithmatex">\(x \in A\)</span> 使得 <span class="arithmatex">\(x \not \in B\)</span></p>
+<h3 id="equal">Equal<a class="headerlink" href="#equal" title="Permanent link">&para;</a></h3>
+<p>当集合 <span class="arithmatex">\(A\)</span> 和集合 <span class="arithmatex">\(B\)</span> 含有相同的元素，称 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 是<font color="red">相等（Equal）</font>的，用<font color="red"><span class="arithmatex">\(A=B\)</span></font> 来表示。（<font color="blue"><span class="arithmatex">\(A=B \Leftrightarrow \forall x[(x \in A \rightarrow x \in B) \land (x \in B \rightarrow x \in A)] \Leftrightarrow (A \subseteq B) \land (B \subseteq A)\)</span></font>）</p>
+<h3 id="proper-subsets">Proper Subsets<a class="headerlink" href="#proper-subsets" title="Permanent link">&para;</a></h3>
+<p>当集合 <span class="arithmatex">\(A\)</span> 中的每一个元素都是集合 <span class="arithmatex">\(B\)</span> 中的元素，但是集合 <span class="arithmatex">\(B\)</span> 中含有其他不属于 <span class="arithmatex">\(A\)</span> 的元素，称 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(B\)</span> 的一个<font color="red">真子集（Proper Subsets）</font>，用<font color="red"> <span class="arithmatex">\(A \subset B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \subset B \Leftrightarrow \forall x [(x \in A \rightarrow x \in B) \land \exists x(x \in B \land x \not \in A)] \Leftrightarrow (A \subseteq B) \land (A \not = B)\)</span></font>）</p>
+<h3 id="the-size-of-a-set">The Size of a Set<a class="headerlink" href="#the-size-of-a-set" title="Permanent link">&para;</a></h3>
+<p>对于集合 <span class="arithmatex">\(S\)</span>，如果 <span class="arithmatex">\(S\)</span> 中恰好含有 <span class="arithmatex">\(n\)</span> 个不同的元素（<span class="arithmatex">\(n\)</span> 为非负整数），那么我们称 <span class="arithmatex">\(S\)</span> 是一个<font color="red">有限集</font>，<span class="arithmatex">\(n\)</span> 是 <span class="arithmatex">\(S\)</span> 的<font color="red">基数（Cardinality）</font>，记为<font color="red"> <span class="arithmatex">\(|S|=n\)</span></font></p>
+<h3 id="power-sets">Power Sets<a class="headerlink" href="#power-sets" title="Permanent link">&para;</a></h3>
+<p>对于一个集合 <span class="arithmatex">\(S\)</span> ，它的<font color="red">幂集（Power Sets）</font>是它所有子集的集合，记为<font color="red"> <span class="arithmatex">\(P(S)=\{x|x \subseteq S\}\)</span></font></p>
+<p>其性质如下：</p>
+<ul>
+<li><font color="red"><span class="arithmatex">\(|S|=n \Leftrightarrow |P(S)|=2^n\)</span></font></li>
+<li><font color="red">如果 <span class="arithmatex">\(S\)</span> 是一个有限集，那么 <span class="arithmatex">\(P(S)\)</span> 也是一个有限集。</font></li>
+<li><font color="red"><span class="arithmatex">\(x \in P(S) \Rightarrow x \subseteq S\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(x \in S \Rightarrow \{x\} \in P(S)\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(S \in P(S)\)</span></font></li>
+</ul>
+<p><strong>e.g.1. 求 <span class="arithmatex">\(\{\phi\}\)</span> 和 <span class="arithmatex">\(\{\phi,\{\phi\}\}\)</span> 的幂集。</strong></p>
+<p><img alt="image-20240319153804235" src="../../../assets/image-20240319153804235.png" /></p>
+<p><strong>e.g.2. 证明 <span class="arithmatex">\(P(A) \in P(B) \Rightarrow A \in B\)</span></strong></p>
+<p><img alt="image-20240319153859219" src="../../../assets/image-20240319153859219.png" /></p>
+<h3 id="cartesian-products">Cartesian Products<a class="headerlink" href="#cartesian-products" title="Permanent link">&para;</a></h3>
+<p>以 <span class="arithmatex">\(a_1\)</span> 为第一个元素，<span class="arithmatex">\(a_2\)</span> 为第二个元素，...，<span class="arithmatex">\(a_n\)</span> 为第 <span class="arithmatex">\(n\)</span> 个元素的有序聚集被称为<font color="red">有序 <span class="arithmatex">\(n\)</span> 元组（Ordered n-tuple）</font>，用<font color="red"> <span class="arithmatex">\((a_1,a_2,...,a_n)\)</span> </font>表示。特别地，若 <span class="arithmatex">\(n=2\)</span>，二元组被称为<font color="red">序偶（Ordered Pair）</font>。</p>
+<p><font color="blue"><span class="arithmatex">\((a_1,a_2,...,a_n)=(b_1,b_2,...,b_n) \Leftrightarrow a_i=b_i(i=1,2,...,n)\)</span></font></p>
+<p>令 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 为集合，<span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 的<font color="red">笛卡尔积（Cartesian Products）</font>用 <span class="arithmatex">\(A\times B\)</span> 表示，其中<font color="blue"> <span class="arithmatex">\(A \times B=\{(a,b)|a \in A \land b \in B\}\)</span></font></p>
+<p>更一般地，<font color="red"><span class="arithmatex">\(A_1\times A_2\times...\times A_n=\{(a_1,a_2,...,a_n)|a_i \in A_i(i=1,2,...,n)\}\)</span></font></p>
+<p>其性质如下：</p>
+<ul>
+<li><font color="red">若 <span class="arithmatex">\(|A|=m,|B|=n\)</span>，那么 <span class="arithmatex">\(|A\times B|=|B\times A|=mn\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(A\times B \not =B\times A\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(A\times \phi=\phi \times A=\phi\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\((x,y)\in A \times B \Rightarrow x \in A \land y \in B\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\((x,y)\not \in A \times B \Rightarrow x \not \in A \lor y \not \in B\)</span></font></li>
+</ul>
+<p><strong>e.g. <span class="arithmatex">\(A=\{a,b\},B=\{0,1,2\}\)</span>，求 <span class="arithmatex">\(A\times B,B\times A\)</span></strong></p>
+<p><img alt="image-20240319155324775" src="../../../assets/image-20240319155324775.png" /></p>
+<h3 id="using-set-notation-with-quantifiers">Using Set Notation with Quantifiers<a class="headerlink" href="#using-set-notation-with-quantifiers" title="Permanent link">&para;</a></h3>
+<p><font color="red"><span class="arithmatex">\(\forall x \in S(P(x)) \Leftrightarrow \forall x(x \in S \rightarrow P(x))\)</span></font></p>
+<p><font color="red"><span class="arithmatex">\(\exists x \in S(P(x))\Leftrightarrow \exists x(x\in S \land P(x))\)</span></font></p>
+<h3 id="truth-sets-of-quantifiers">Truth Sets of Quantifiers<a class="headerlink" href="#truth-sets-of-quantifiers" title="Permanent link">&para;</a></h3>
+<p>给定谓词 <span class="arithmatex">\(P\)</span> 和定义域 <span class="arithmatex">\(D\)</span> ，定义 <span class="arithmatex">\(P\)</span> 的<font color="red">真值集（Truth Sets）</font>为 <span class="arithmatex">\(D\)</span> 中使 <span class="arithmatex">\(P(x)\)</span> 为真的元素 <span class="arithmatex">\(x\)</span> 组成的集合，记为<font color="red"> <span class="arithmatex">\(\{x \in D|P(x)\}\)</span></font></p>
+<p><font color="blue"><span class="arithmatex">\(\forall xP(x)\)</span> 如果在定义域 <span class="arithmatex">\(U\)</span> 上为真，等价于其真值集为 <span class="arithmatex">\(U\)</span>；<span class="arithmatex">\(\exists xP(x)\)</span> 如果在定义域 <span class="arithmatex">\(U\)</span> 上为真，等价于其真值集不为空。</font></p>
+<h2 id="set-operations">Set Operations<a class="headerlink" href="#set-operations" title="Permanent link">&para;</a></h2>
+<h3 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h3>
+<p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，其<font color="red">并集（Union）</font>是一个包含 <span class="arithmatex">\(A\)</span> 或 <span class="arithmatex">\(B\)</span> 中或同时在 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 中的元素的集合，用<font color="red"> <span class="arithmatex">\(A \bigcup B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \bigcup B=\{x|x\in A \lor x \in B\}\)</span></font>）</p>
+<p><img alt="image-20240319162317171" src="../../../assets/image-20240319162317171.png" /></p>
+<p>其性质如下：</p>
+<ul>
+<li><font color="red"><span class="arithmatex">\(A\subseteq A \bigcup B,B\subseteq B \bigcup A\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(A\subseteq C,B\subseteq C \Rightarrow A \bigcup B \subseteq C\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(|A\bigcup B|\leq |A|+|B|\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(A \bigcup B=B \Leftrightarrow A \subseteq B\)</span></font></li>
+</ul>
+<h3 id="intersection">Intersection<a class="headerlink" href="#intersection" title="Permanent link">&para;</a></h3>
+<p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，其<font color="red">交集（Intersection）</font>是一个包含同时在 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 中的元素的集合，用<font color="red"> <span class="arithmatex">\(A \bigcap B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \bigcap B=\{x|x\in A \land x \in B\}\)</span></font>）</p>
+<p><img alt="image-20240319162852934" src="../../../assets/image-20240319162852934.png" /></p>
+<p>当两个集合的交集是一个空集时，称这两个集合是<font color="red">不相交的（Disjoint）</font>（即 <font color="blue"><span class="arithmatex">\(A\bigcap B=\phi\)</span></font>）</p>
+<p>其性质如下：</p>
+<ul>
+<li><font color="red"><span class="arithmatex">\(A \bigcap B \subseteq A,A \bigcap B \subseteq B\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(C\subseteq A,C\subseteq B\Rightarrow C\subseteq A \bigcap B\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(|A\bigcap B|\leq |A|,|A\bigcap B|\leq |B|\)</span></font></li>
+<li><font color="red"><span class="arithmatex">\(A\bigcap B=A\Leftrightarrow A \subseteq B\)</span></font></li>
+</ul>
+<h3 id="complement">Complement<a class="headerlink" href="#complement" title="Permanent link">&para;</a></h3>
+<p>令 <span class="arithmatex">\(U\)</span> 为全集，<span class="arithmatex">\(A\)</span> 的<font color="red">补集（Complement）</font>为在全集中不属于 <span class="arithmatex">\(A\)</span> 的元素的集合，用<font color="red"> <span class="arithmatex">\(\overline A\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(\overline A=\{x|x\not \in A,x \in U\}=\{x|\neg x  \in A\}\)</span></font>）</p>
+<p><img alt="image-20240319172311905" src="../../../assets/image-20240319172311905.png" /></p>
+<h3 id="difference">Difference<a class="headerlink" href="#difference" title="Permanent link">&para;</a></h3>
+<p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，<span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 的<font color="red">差集（Difference）</font>是一个包含属于 <span class="arithmatex">\(A\)</span> 但不属于 <span class="arithmatex">\(B\)</span> 的元素的集合，用<font color="red"> <span class="arithmatex">\(A-B\)</span> </font>来表示，也被称为 <span class="arithmatex">\(B\)</span> 相对于 <span class="arithmatex">\(A\)</span> 的补集。（<font color="blue"><span class="arithmatex">\(A-B=\{x|x\in A \land x \not \in B\}=A \bigcap \overline B\)</span></font>）</p>
+<p><img alt="image-20240319172420848" src="../../../assets/image-20240319172420848.png" /></p>
+<h3 id="symmetric-difference">Symmetric Difference<a class="headerlink" href="#symmetric-difference" title="Permanent link">&para;</a></h3>
+<p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，<span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 的<font color="red">对称差（Symmetric Difference）</font>是一个包含属于 <span class="arithmatex">\(A\)</span> 但不属于 <span class="arithmatex">\(B\)</span> 和属于 <span class="arithmatex">\(B\)</span> 但不属于 <span class="arithmatex">\(A\)</span> 的元素的集合，用<font color="red"> <span class="arithmatex">\(A\oplus B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A\oplus B=\{x|(x\in A \land x \not \in B) \lor (x\in B \land x \not \in A)\}=(A \bigcup B)-(A \bigcap B)\)</span></font>）</p>
+<p><img alt="image-20240319173214695" src="../../../assets/image-20240319173214695.png" /></p>
+<h3 id="the-principle-of-inclusion-exclusion">The Principle of Inclusion-Exclusion<a class="headerlink" href="#the-principle-of-inclusion-exclusion" title="Permanent link">&para;</a></h3>
+<p>容斥原理（The Principle of Inclusion-Exclusion）：<font color="red"><span class="arithmatex">\(|A \bigcup B|=|A|+|B|-|A \bigcap B|\)</span></font></p>
+<p>更一般地：</p>
+<p><font color="red"><span class="arithmatex">\(|A_1\bigcup A_2\bigcup ... \bigcup A_n|=\sum\limits _{i=1} ^n|A_i|-\sum\limits _{1\leq i&lt;j \leq n}|A_i \bigcap A_j|\\+\sum\limits _{1\leq i&lt;j&lt;k \leq n}|A_i\bigcap A_j\bigcap A_k|+...+(-1)^{n-1}|A_1\bigcap A_2\bigcap ... \bigcap A_n|\)</span></font></p>
+<h3 id="set-identities">Set Identities<a class="headerlink" href="#set-identities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">identity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Identity laws<br>（恒等律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \bigcup \phi=A\)</span><br><span class="arithmatex">\(A \bigcap U=A\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Domination laws <br>（支配律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \bigcup U=U\)</span><br><span class="arithmatex">\(A \bigcap \phi=\phi\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Idempotent laws<br>（幂等律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \bigcup A=A\)</span><br><span class="arithmatex">\(A \bigcap A=A\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Complementation law<br>（补律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(\overline{\overline A}=A\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Commutative laws<br>（交换律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \bigcup B=B \bigcup A\)</span><br><span class="arithmatex">\(A \bigcap B=B\bigcap A\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Associative laws<br>（结合律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \bigcup (B \bigcup C)=(A \bigcup B)\bigcup C\)</span><br><span class="arithmatex">\(A \bigcap (B \bigcap C)=(A \bigcap B)\bigcap C\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Distributive laws<br>（分配律）</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \bigcap (B \bigcup C)=(A \bigcap B) \bigcup (A \bigcap C)\)</span><br><span class="arithmatex">\(A \bigcup (B \bigcap C)=(A \bigcup B) \bigcap (A \bigcup C)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">De Morgan's laws<br>（德摩根定理）</td>
+<td style="text-align: center;"><span class="arithmatex">\(\overline{A \bigcup B}=\overline A \bigcap \overline B\)</span><br><span class="arithmatex">\(\overline{A \bigcap B}=\overline A \bigcup \overline B\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="generalized-unions-and-intersections">Generalized Unions and Intersections<a class="headerlink" href="#generalized-unions-and-intersections" title="Permanent link">&para;</a></h3>
+<p>令 <span class="arithmatex">\(A_1,A_2,...,A_n\)</span> 为一系列已标号的集合，定义：</p>
+<p><font color="red"><span class="arithmatex">\(\stackrel{n}{\underset{i=1}{\bigcup}}A_i=A_1 \bigcup A_2 \bigcup ... \bigcup A_n\)</span>（其中<span class="arithmatex">\(\stackrel{n}{\underset{i=1}{\bigcup}}A_i\)</span> 包括的元素属于这一系列集合中至少一个集合）</font></p>
+<p><font color="red"><span class="arithmatex">\(\stackrel{n}{\underset{i=1}{\bigcap}}A_i=A_1 \bigcap A_2 \bigcap ... \bigcap A_n\)</span>（其中<span class="arithmatex">\(\stackrel{n}{\underset{i=1}{\bigcap}}A_i\)</span> 包括的元素属于这一系列所有集合）</font></p>
+<h3 id="computer-representation-of-set">Computer Representation of Set<a class="headerlink" href="#computer-representation-of-set" title="Permanent link">&para;</a></h3>
+<p>在计算机中，用<font color="red">比特串（Bit String）</font>来表示集合，设全集 <span class="arithmatex">\(U\)</span> 是一个有限集（而且大小合适，使 <span class="arithmatex">\(U\)</span> 的元素个数不超过计算机能使用的内存量）。为 <span class="arithmatex">\(U\)</span> 的元素任意规定一个顺序，例如 <span class="arithmatex">\(a_1,a_2,...,a_n\)</span>。于是可以用长度为 <span class="arithmatex">\(n\)</span> 的比特串来表示 <span class="arithmatex">\(U\)</span> 的子集 <span class="arithmatex">\(A\)</span>，其中如果 <span class="arithmatex">\(a_i \in A\)</span>，比特串中第 <span class="arithmatex">\(i\)</span> 位是 1，否则为 0。</p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>定义：令 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 为非空集合，从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的<font color="red">函数（Functions） </font><span class="arithmatex">\(f\)</span> 是对元素的一种指派，对 <span class="arithmatex">\(A\)</span> 的每一个元素恰好指派 <span class="arithmatex">\(B\)</span> 的一个元素。如果 <span class="arithmatex">\(B\)</span> 中的元素 <span class="arithmatex">\(b\)</span> 是<font color="red">唯一</font>由 <span class="arithmatex">\(A\)</span> 中的元素 <span class="arithmatex">\(a\)</span> 经函数 <span class="arithmatex">\(f\)</span> 指派的，那么我们就写为<font color="red"> <span class="arithmatex">\(f(a)=b\)</span> </font>。如果 <span class="arithmatex">\(f\)</span> 是从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的函数，就写为<font color="red"> <span class="arithmatex">\(f:A\rightarrow B\)</span></font>。</p>
+<p>函数有时也被称为<font color="red">映射（Mapping）</font> 或者<font color="red">变换（Transformation）</font>。</p>
+<p>一个函数 <span class="arithmatex">\(f:A\rightarrow B\)</span> 也可以被定义为集合 <span class="arithmatex">\(A \times B\)</span> 的子集。如果对于每一个元素 <span class="arithmatex">\(a \in A\)</span> 都有且仅有一个序偶 <span class="arithmatex">\((a,b)\)</span> ，那么它就定义了 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的一个函数 <span class="arithmatex">\(f\)</span>。这个函数可以写作 <span class="arithmatex">\(f(a)=b\)</span> 。其中这个子集满足对于序偶 <span class="arithmatex">\((a,b)\)</span>，子集中<font color="red">有且仅有这一个</font>以 <span class="arithmatex">\(a\)</span> 为第一个元素的序偶。</p>
+<p>用逻辑表达式来表述：<span class="arithmatex">\((\forall x[x\in A \rightarrow \exists y[y \in B \land (x,y)\in f]]) \land (\forall x,y_1,y_2[[(x,y_1)\in f \land (x,y_2)\in f]\rightarrow y_1=y_2])\)</span> </p>
+<p>如果 <span class="arithmatex">\(f\)</span> 是从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的函数，我们称 <span class="arithmatex">\(f\)</span> 把 <span class="arithmatex">\(A\)</span> 映射到 <span class="arithmatex">\(B\)</span> 或者 <span class="arithmatex">\(f\)</span> 是从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的映射。其中 <span class="arithmatex">\(A\)</span> 被称为 <span class="arithmatex">\(f\)</span> 的<font color="red">定义域（Domain）</font>，<span class="arithmatex">\(B\)</span> 被称为 <span class="arithmatex">\(f\)</span> 的<font color="red">陪域（Codomain）</font>。如果 <span class="arithmatex">\(f(a)=b\)</span>，那么 <span class="arithmatex">\(b\)</span> 被称为 <span class="arithmatex">\(a\)</span> 在映射 <span class="arithmatex">\(f\)</span> 下的<font color="red">像（Image）</font>，<span class="arithmatex">\(a\)</span> 被称为 <span class="arithmatex">\(b\)</span> 的<font color="red">原像（Preimage）</font>。<span class="arithmatex">\(A\)</span> 中所有元素的像的集合被称为 <span class="arithmatex">\(f\)</span> 的<font color="red">值域（Range）</font>，记作 <font color="red"><span class="arithmatex">\(f(A)\)</span></font>。</p>
+<p>如果两个函数含有相同的定义域，相同的值域，定义域中的每个元素映射到陪域中相同的元素时，称这两个函数是<font color="red">相等（Equal）</font>的。</p>
+<p>令函数 <span class="arithmatex">\(f_1\)</span> 和 <span class="arithmatex">\(f_2\)</span> 是从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(\R\)</span> 的映射，定义 <span class="arithmatex">\(f_1+f_2\)</span> 和 <span class="arithmatex">\(f_1f_2\)</span> ：
+$$
+(f_1+f_2)(x)=f_1(x)+f_2(x)\
+(f_1f_2)(x)=f_1(x)f_2(x)
+$$
+令函数 <span class="arithmatex">\(f\)</span> 是从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的映射，<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(A\)</span> 的一个子集，那么 <span class="arithmatex">\(S\)</span> 的像就是 <span class="arithmatex">\(B\)</span> 的一个子集（其中包含 <span class="arithmatex">\(S\)</span> 中元素的像），记作 <span class="arithmatex">\(f(S)\)</span> （<font color="blue">这是一个集合而非一个值！</font>）。那么有表达式 <span class="arithmatex">\(f(S)=\{f(s)|s\in S\}\)</span> 。</p>
+<h3 id="one-to-one-functions">One-to-one Functions<a class="headerlink" href="#one-to-one-functions" title="Permanent link">&para;</a></h3>
+<p>一个从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的函数 <span class="arithmatex">\(f\)</span> 被称为是<font color="red">一对一（One-to-one）</font>或<font color="red">单射（Injection/Injective）</font>函数，当且仅当对于 <span class="arithmatex">\(f\)</span> 定义域中所有的 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> ，当 <span class="arithmatex">\(f(a)=f(b)\)</span> 时有 <span class="arithmatex">\(a=b\)</span>。（即对于函数陪域中的有原像的元素 <span class="arithmatex">\(b\)</span> ，它的原像是唯一的）</p>
+<p>用逻辑表达式来表述：<span class="arithmatex">\(\forall a\forall b(a\in A \land b \in A  \land (f(a)=f(b)\rightarrow a=b))\)</span>，<span class="arithmatex">\(\forall a\forall b(a\in A \land b \in A \land (a\not= b \rightarrow f(a)\not=f(b)))\)</span></p>
+<p>一个函数是：</p>
+<ul>
+<li>递增的：<span class="arithmatex">\(\forall x\forall y(x&lt;y \rightarrow f(x)\leq f(y))\)</span></li>
+<li>严格递增的：<span class="arithmatex">\(\forall x \forall y(x&lt;y \rightarrow f(x)&lt;f(y))\)</span></li>
+<li>递减的：<span class="arithmatex">\(\forall x \forall y(x&lt;y\rightarrow f(x)\geq f(y))\)</span></li>
+<li>严格递减的：<span class="arithmatex">\(\forall x\forall y(x&lt;y \rightarrow f(x)&gt;f(y))\)</span></li>
+</ul>
+<h3 id="onto-functions">Onto Functions<a class="headerlink" href="#onto-functions" title="Permanent link">&para;</a></h3>
+<p>一个从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的函数 <span class="arithmatex">\(f\)</span> 被称为是<font color="red">映上（Onto）</font>或<font color="red">满射（Surjection/Surjective）</font>函数，当且仅当对每个 <span class="arithmatex">\(b\in B\)</span> 有元素 <span class="arithmatex">\(a\in A\)</span> 使得 <span class="arithmatex">\(f(a)=b\)</span>。（即对于函数陪域中的每个元素 <span class="arithmatex">\(b\)</span>，它都存在原像）</p>
+<p>用逻辑表达式来表述：<span class="arithmatex">\(\forall b(b\in B\rightarrow \exists a(a\in A \land f(a)=b))\)</span></p>
+<h3 id="one-to-one-correspondence-functions">One-to-one Correspondence Functions<a class="headerlink" href="#one-to-one-correspondence-functions" title="Permanent link">&para;</a></h3>
+<p>如果一个函数 <span class="arithmatex">\(f\)</span> 既是一对一的又是映上的，那么称这个函数是<font color="red">一一对应（One-to-one Correspondence）</font>或<font color="red">双射（Bijection/Bijective）</font>函数。</p>
+<p>如果从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的函数 <span class="arithmatex">\(f\)</span> 是双射函数，那么集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 含有相同的元素个数或者相同的基数。</p>
+<p>假设 <span class="arithmatex">\(f:A\rightarrow B\)</span>：</p>
+<ul>
+<li>要证明 <span class="arithmatex">\(f\)</span> 是单射的：证明对于任意 <span class="arithmatex">\(x,y\in A\)</span>，如果 <span class="arithmatex">\(f(x)=f(y)\)</span>，则 <span class="arithmatex">\(x=y\)</span></li>
+<li>要证明 <span class="arithmatex">\(f\)</span> 不是单射的：找到特定的 <span class="arithmatex">\(x,y\in A\)</span>，使得 <span class="arithmatex">\(x\not= y\)</span> 且 <span class="arithmatex">\(f(x)=f(y)\)</span> </li>
+<li>要证明 <span class="arithmatex">\(f\)</span> 是满射的：考虑任意元素 <span class="arithmatex">\(y\in B\)</span>，并找到一个元素 <span class="arithmatex">\(x\in A\)</span> 使得 <span class="arithmatex">\(f(x)=y\)</span></li>
+<li>要证明 <span class="arithmatex">\(f\)</span> 不是满射的：找到一个特定的 <span class="arithmatex">\(y\in B\)</span>，使得对于任意 <span class="arithmatex">\(x\in A\)</span> 有 <span class="arithmatex">\(f(x)\not=y\)</span></li>
+</ul>
+<h3 id="inverse-functions">Inverse Functions<a class="headerlink" href="#inverse-functions" title="Permanent link">&para;</a></h3>
+<p>令 <span class="arithmatex">\(f\)</span> 为从集合 <span class="arithmatex">\(A\)</span> 到集合 <span class="arithmatex">\(B\)</span> 的一一对应（<font color="blue">只有一一对应才有反函数！</font>）。<span class="arithmatex">\(f\)</span> 的<font color="red">反函数/逆函数（Inverse Functions）</font>将 <span class="arithmatex">\(B\)</span> 中的元素 <span class="arithmatex">\(b\)</span> 指派给 <span class="arithmatex">\(A\)</span> 中的唯一元素 <span class="arithmatex">\(a\)</span>（满足 <span class="arithmatex">\(f(a)=b\)</span>），用<font color="red"> <span class="arithmatex">\(f^{-1}\)</span> </font>来表示。（即 <span class="arithmatex">\(f(a)=b\)</span> 时，<span class="arithmatex">\(f^{-1}(b)=a\)</span>）</p>
+<h3 id="some-important-functions">Some Important Functions<a class="headerlink" href="#some-important-functions" title="Permanent link">&para;</a></h3>
+<p>向下取整函数（Floor Function）<span class="arithmatex">\(f(x)=\lfloor x \rfloor\)</span> 表示小于等于 <span class="arithmatex">\(x\)</span> 的最大整数（一般也被称为取整函数，也可记为 <span class="arithmatex">\(f(x)=[x]\)</span>）。</p>
+<p>向上取整函数（Ceiling Function）<span class="arithmatex">\(f(x)=\lceil x \rceil\)</span> 表示大于等于 <span class="arithmatex">\(x\)</span> 的最小整数。</p>
+<p>其性质如下：</p>
+<ul>
+<li><span class="arithmatex">\(\lfloor x \rfloor =n \Leftrightarrow x-1&lt;n \leq x&lt;n+1(n \in \Z)\)</span></li>
+<li><span class="arithmatex">\(\lceil x \rceil =n \Leftrightarrow n-1&lt;x\leq n&lt;x+1(n \in \Z)\)</span></li>
+<li><span class="arithmatex">\(x-1&lt;\lfloor x \rfloor\leq x \leq \lceil x \rceil &lt;x+1\)</span></li>
+<li><span class="arithmatex">\(\lfloor -x \rfloor=-\lceil x \rceil\)</span></li>
+<li><span class="arithmatex">\(\lceil -x \rceil=-\lfloor x \rfloor\)</span></li>
+<li><span class="arithmatex">\(\lfloor x+m\rfloor=\lfloor x\rfloor+m(m\in \Z)\)</span></li>
+<li><span class="arithmatex">\(\lceil x+m \rceil=\lceil x \rceil+m(m\in \Z)\)</span></li>
+</ul>
+<h2 id="sequences-and-summations">Sequences and Summations<a class="headerlink" href="#sequences-and-summations" title="Permanent link">&para;</a></h2>
+<h3 id="sequences">Sequences<a class="headerlink" href="#sequences" title="Permanent link">&para;</a></h3>
+<p><font color="red">序列（Sequence）</font>是一个从整数集的的一个子集（通常为集合 <span class="arithmatex">\(\{0,1,2,3,4,...\}\)</span> 或集合 <span class="arithmatex">\(\{1,2,3,4,...\}\)</span> 到一个集合 <span class="arithmatex">\(S\)</span> 的函数。用记号<font color="red"> <span class="arithmatex">\(a_n\)</span> </font>表示整数 <span class="arithmatex">\(n\)</span> 的像，称其为序列的一个<font color="red">项（Term）</font>，用记号<font color="red"> <span class="arithmatex">\(\{a_n\}\)</span> </font>来表示序列。</p>
+<h4 id="some-famliar-sequences">Some Famliar Sequences<a class="headerlink" href="#some-famliar-sequences" title="Permanent link">&para;</a></h4>
+<p>几何级数是形式如 <span class="arithmatex">\(a,ar,ar^2,...,ar^n,...\)</span> 的序列（其中初始项 <span class="arithmatex">\(a\)</span> 和公比 <span class="arithmatex">\(r\)</span> 都是实数）。</p>
+<p>算数级数是形式如 <span class="arithmatex">\(a,a+d,a+2d,...,a+nd,...\)</span> 的序列（其中初始项 <span class="arithmatex">\(a\)</span> 和公差 <span class="arithmatex">\(d\)</span> 都是实数）。</p>
+<h4 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h4>
+<p>有穷序列也被称为<font color="red">串（Strings）</font>，可以被记为<font color="red"> <span class="arithmatex">\(a_1a_2...a_n\)</span> </font>，串的长度是这个串的项数。空串是没有任何项的串，记作<font color="red"> <span class="arithmatex">\(\lambda\)</span> </font>，其长度为 0。</p>
+<h3 id="recurrence-relation">Recurrence Relation<a class="headerlink" href="#recurrence-relation" title="Permanent link">&para;</a></h3>
+<p>关于序列 <span class="arithmatex">\(\{a_n\}\)</span> 的<font color="red">递推关系（Recurrence Relation）</font>是一个等式，对所有满足 <span class="arithmatex">\(n \geq n_0\)</span> 的 <span class="arithmatex">\(n\)</span> ，它把 <span class="arithmatex">\(a_n\)</span> 用序列中前面的项，即 <span class="arithmatex">\(a_0,a_1,...,a_{n-1}\)</span> 的一项或多项来表示，其中 <span class="arithmatex">\(n_0\)</span> 是一个非负整数。</p>
+<p>如果一个序列的项满足递推关系，则该序列被称为是递推关系的一个<font color="red">解（Solution）</font></p>
+<p>一个序列的<font color="red">初始条件（Initial Conditions）</font>规定了在递推关系定义的首项前的那些项。</p>
+<h2 id="cardinality-of-sets">Cardinality of Sets<a class="headerlink" href="#cardinality-of-sets" title="Permanent link">&para;</a></h2>
+<h3 id="cardinality">Cardinality<a class="headerlink" href="#cardinality" title="Permanent link">&para;</a></h3>
+<p>集合 <span class="arithmatex">\(A\)</span> 和集合 <span class="arithmatex">\(B\)</span> 有相同的基数（Cardinality）<span class="arithmatex">\(\Leftrightarrow\)</span> 存在从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的一个一一对应，记为 <font color="red"><span class="arithmatex">\(|A|=|B|\)</span></font></p>
+<p><strong>e.g. 令集合 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\((a,b)\)</span> 之间所有的实数 <span class="arithmatex">\((a&lt;b)\)</span> ，集合 <span class="arithmatex">\(B\)</span> 为 <span class="arithmatex">\((0,1)\)</span> 之间所有的实数，证明 <span class="arithmatex">\(|A|=|B|\)</span> 。</strong></p>
+<p><img alt="image-20240326082453694" src="../../../assets/image-20240326082453694.png" /></p>
+<p>如果存在一个从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的一对一函数，则 <span class="arithmatex">\(A\)</span> 的基数小于等于 <span class="arithmatex">\(B\)</span> 的基数，记为<font color="red"> <span class="arithmatex">\(|A|\leq |B|\)</span> </font>，如果 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 有不同的基数时，<span class="arithmatex">\(A\)</span> 的基数小于 <span class="arithmatex">\(B\)</span> 的基数，记为<font color="red"> <span class="arithmatex">\(|A|&lt;|B|\)</span> </font></p>
+<h3 id="countable-sets">Countable Sets<a class="headerlink" href="#countable-sets" title="Permanent link">&para;</a></h3>
+<p>如果一个集合是有限集或者与自然数集具有相同的基数，那么这个集合就被称为<font color="red">可数的（Countable）</font>，否则这个集合就被称为<font color="red">不可数的（Uncountable）</font>。</p>
+<p>当一个无限集 <span class="arithmatex">\(S\)</span> 是可数的，我们用符号<font color="red"> <span class="arithmatex">\(\aleph_0\)</span> </font>来表示集合 <span class="arithmatex">\(S\)</span> 的基数，记为<font color="red"> <span class="arithmatex">\(|S|=\aleph_0\)</span> </font>，并且称 <span class="arithmatex">\(S\)</span> 有基数“阿里夫零”。</p>
+<p>一个无限集是可数的 <span class="arithmatex">\(\Leftrightarrow\)</span> 可以把集合中的元素排列成序列（以正整数为下标）。</p>
+<h3 id="uncountable-sets">Uncountable Sets<a class="headerlink" href="#uncountable-sets" title="Permanent link">&para;</a></h3>
+<p>定理：</p>
+<ul>
+<li>
+<p><font color="red"><span class="arithmatex">\((0,1)\)</span> 中所有的实数组成的集合是不可数的，更一般地，实数集 <span class="arithmatex">\(\R\)</span> 是不可数的。</font></p>
+</li>
+<li>
+<p><font color="red">任何含有不可数的子集的集合是不可数的</font></p>
+</li>
+<li><span class="arithmatex">\(|\R|=\aleph\)</span></li>
+<li><font color="red">不存在一个无限集，其基数比可数集小。</font></li>
+<li><font color="red">两个可数集的并集也是可数的。</font></li>
+</ul>
+<p><strong>e.g. 证明 <span class="arithmatex">\(|(0,1)|=|[0,1]|\)</span></strong></p>
+<p><img alt="image-20240326210247239" src="../../../assets/image-20240326210247239.png" /></p>
+<h3 id="uncomputable-function-an-important-application-in-cs">Uncomputable Function-An Important Application in CS<a class="headerlink" href="#uncomputable-function-an-important-application-in-cs" title="Permanent link">&para;</a></h3>
+<p>定义：如果存在某种编程语言写的计算机程序能计算一个函数的值，那么这个函数被称为是<font color="red">可计算的（Computable）</font>，否则被称为是<font color="red">不可计算的（Uncomputable）</font></p>
+<h3 id="continuum-hypothesis">Continuum Hypothesis<a class="headerlink" href="#continuum-hypothesis" title="Permanent link">&para;</a></h3>
+<p>康托尔定理：一个集合的基数总是小于其幂集的基数</p>
+<p>连续统假设： <span class="arithmatex">\(|P(Z^+)|=|R|=c\)</span>，不存在介于 <span class="arithmatex">\(\aleph_0\)</span> 和 <span class="arithmatex">\(c\)</span> 的基数。即不存在一个集合，它的基数比正整数集合的基数大，又比实数集集合的基数小。</p>
+<h2 id="matrices">Matrices<a class="headerlink" href="#matrices" title="Permanent link">&para;</a></h2>
+<p>基本与线性代数相同，主要的新概念有 0-1 矩阵。</p>
+<h3 id="zero-one-matrices">Zero-One Matrices<a class="headerlink" href="#zero-one-matrices" title="Permanent link">&para;</a></h3>
+<p>所有元素非 0 即 1 的矩阵称为 <font color="red">0-1矩阵（Zero-One Matrices）</font>。</p>
+<p>令 <span class="arithmatex">\(A=[a_{ij}]\)</span> 和 <span class="arithmatex">\(B=[b_{ij}]\)</span> 为 <span class="arithmatex">\(m\times n\)</span> 阶 0-1 矩阵。<span class="arithmatex">\(A\lor B\)</span> 是 0-1 矩阵，其 <span class="arithmatex">\((i,j)\)</span> 元素为 <span class="arithmatex">\(a_{ij}\lor b_{ij}\)</span>。<span class="arithmatex">\(A\land B\)</span> 是 0-1 矩阵，其 <span class="arithmatex">\((i,j)\)</span> 元素是 <span class="arithmatex">\(a_{ij}\land b_{ij}\)</span> 。</p>
+<p>令 <span class="arithmatex">\(A=[a_{ij}]\)</span> 为 <span class="arithmatex">\(m\times k\)</span> 阶 0-1 矩阵，<span class="arithmatex">\(B=[b_{ij}]\)</span> 为 <span class="arithmatex">\(k\times n\)</span> 阶 0-1 矩阵。<span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 的布尔积记作 <span class="arithmatex">\(A\bigodot B\)</span> ，是 <span class="arithmatex">\(m\times n\)</span> 矩阵 <span class="arithmatex">\([c_{ij}]\)</span> ，其中 <span class="arithmatex">\(c_{ij}=(a_{i1}\land b_{1j})\lor (a_{i2}\land b_{2j}) \lor ... \lor (a_{ik}\land b_{kj})\)</span> </p>
+<p>令 <span class="arithmatex">\(A\)</span> 为 0-1 方阵，<span class="arithmatex">\(r\)</span> 为正整数。<span class="arithmatex">\(A\)</span> 的 <span class="arithmatex">\(r\)</span> 次布尔幂记作 <span class="arithmatex">\(A^{[r]}\)</span> ，<span class="arithmatex">\(A^{[r]}=\underbrace{A\bigodot A\bigodot A\bigodot ... \bigodot A}_{(r个A)}\)</span></p>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+    
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+  <aside class="md-source-file">
+
+    <!-- Date of last update -->
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-03</span>
+  </span>
+
+    
+
+    <!-- Date of creation -->
+    
+
+    <!-- Authors (git-authors plugin) -->
+    
+
+    <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../Discrete%20mathmatics%20notes-Ch01/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: Chapter 01: The Foundations:Logic and Proofs"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Chapter 01: The Foundations:Logic and Proofs
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../../CTF/Lab0%20Report/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: Lab0"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Lab0
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 BruceJin/All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+    <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;">
+    本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+    <span id="finicount_views"></span>    &nbsp;|&nbsp;
+    <footer>
+      <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+    </footer>
+  </div>
+      </font>
+
+      <style>
+        .footer-visit-count {
+            height: fit-content;
+            min-height: 55px; /* 根据实际情况调整此高度 */
+        }
+        </style>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/BruceJqs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<brucejin1005@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/glightbox.min.js"></script>
+      
+    
+    <script src="../../../assets/javascripts/custom.9458f965.min.js"></script>
+  
+  </body>
+</html>
