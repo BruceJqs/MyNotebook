@@ -1,11 +1,5 @@
 # Learning AI Notes
 
-**<font size=5>Contents</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## 梯度下降
 
 下面这个程序使用梯度下降法计算最小二乘法：$J(\theta)=\frac{1}{2m}\sum\limits_1^m(h_{\theta}(x)-y)^2$ ，其中 $m$ 为数据点总数，$y$ 为数据集中每个点的真实 $y$ 坐标的值，$h_{\theta}(x)$ 为预测函数，$h_{\theta}(x)=\theta_0+\theta_1x$ ，寻找出最佳的 $\theta$ 组。
@@ -218,7 +212,7 @@ if __name__ == '__main__':
 
 可以看到，当训练次数达到 1000000 时，结果已经非常接近 results：
 
-![image-20240717102232618](/Users/bruce/Library/Application Support/typora-user-images/image-20240717102232618.png)
+![[image-20240717102232618.png]]
 
 ## 卷积神经网络
 
