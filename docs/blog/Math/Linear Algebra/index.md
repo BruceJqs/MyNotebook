@@ -1,6 +1,7 @@
 # 线性代数（甲）｜Linear Algebra
 
-!!! Abstract 请移步：https://github.com/BruceJqs/ZJU-Courses/tree/main/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E7%94%B2%EF%BC%89%EF%BD%9CLinear%20Algebra
+!!! Abstract 
+    请移步：https://github.com/BruceJqs/ZJU-Courses/tree/main/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E7%94%B2%EF%BC%89%EF%BD%9CLinear%20Algebra
 
 该库含线性代数（甲）课程笔记
 

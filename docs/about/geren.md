@@ -18,10 +18,6 @@ status: new
   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
 />
 
-<figure class="figure-image">
-  <img src="https://106.13.10.38/zb_users/upload/2024/03/20240314015112171035227251607.jpeg" />
-</figure>
-
 <p style="text-align: center; margin: 0px;" markdown>
   <p style="text-align: center; font-size: 30px; margin: 0px;"><strong>Bruce Jin</strong></p>
   <p style="text-align: center; font-size: 30px; margin: 0px;"><strong>A college student in ZheJiang University</strong></p>
