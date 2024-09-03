@@ -100,7 +100,7 @@ nav:
       - Lab2-Misc: blog/CTF/Lab2-Misc Report.md
       - Lab3-Crypto: blog/CTF/Lab3-Crypto Report.md
       - Lab3-Misc: blog/CTF/Lab3-Misc Report.md
-  - Interning:
+  - Internship:
     - 大模型: 
       - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
     - API 接口测试: 
