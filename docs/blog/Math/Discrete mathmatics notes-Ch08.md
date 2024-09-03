@@ -24,8 +24,6 @@
 
 ![image-20240423195716786](../../assets/image-20240423195716786.png)
 
-Divide-and-Conquer
-
 ## Generating Functions
 
 与 vjf 所学级数类似，重点概念：
