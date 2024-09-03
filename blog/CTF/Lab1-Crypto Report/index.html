@@ -1667,19 +1667,19 @@
 </code></pre></div></td></tr></table></div>
 <p><img alt="image-20240708213735066" src="../../../assets/image-20240708213735066.png" /></p>
 <p>然后我们要关注的是给出的五个字符：<code>AAA{}</code></p>
-<p>根据加密算法，我们可以知道 <code>FT = MT.inverse() * RT</code>，因此根据矩阵乘法，针对已知的五个字符我们可以得到以下五个同余方程（记 MT.inverse() 为 MTI）：
-$$
+<p>根据加密算法，我们可以知道 <code>FT = MT.inverse() * RT</code>，因此根据矩阵乘法，针对已知的五个字符我们可以得到以下五个同余方程（记 MT.inverse() 为 MTI）：</p>
+<div class="arithmatex">\[
 \begin{cases}
-252<em>MTI[0,0]+242</em>MTI[0,1]+29<em>MTI[0,2]\equiv 65(mod\space 256)\
-69</em>MTI[0,0]+247<em>MTI[0,1]+216</em>MTI[0,2]\equiv 123(mod\space 256)\
-\
-252<em>MTI[1,0]+242</em>MTI[1,1]+29<em>MTI[1,2]\equiv 65(mod\space 256)\
-\
-252</em>MTI[2,0]+242<em>MTI[2,1]+29</em>MTI[2,2]\equiv 65(mod\space 256)\
-11<em>MTI[2,0]+236</em>MTI[2,1]+242*MTI[2,2]\equiv 125(mod\space 256)
+252*MTI[0,0]+242*MTI[0,1]+29*MTI[0,2]\equiv 65(mod\space 256)\\
+69*MTI[0,0]+247*MTI[0,1]+216*MTI[0,2]\equiv 123(mod\space 256)\\
+\\
+252*MTI[1,0]+242*MTI[1,1]+29*MTI[1,2]\equiv 65(mod\space 256)\\
+\\
+252*MTI[2,0]+242*MTI[2,1]+29*MTI[2,2]\equiv 65(mod\space 256)\\
+11*MTI[2,0]+236*MTI[2,1]+242*MTI[2,2]\equiv 125(mod\space 256)
 \end{cases}
-$$
-同时题目给出了条件 flag 均为可打印字符，即 FT 的值范围为 32-126。</p>
+\]</div>
+<p>同时题目给出了条件 flag 均为可打印字符，即 FT 的值范围为 32-126。</p>
 <p>编写 sage 代码爆破 MTI：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>

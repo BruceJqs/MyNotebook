@@ -1412,30 +1412,30 @@
 
 <h2 id="challenge-1">Challenge 1<a class="headerlink" href="#challenge-1" title="Permanent link">&para;</a></h2>
 <p>用 Hex Fiend 打开图片，在翻看查找时我们发现这张图片出现了两次 JFIF，猜测这张图片是由两张图片叠加而成的，用 binwalk 查看验证：</p>
-<p><img alt="image-20240710105929382" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710105929382.png" /></p>
+<p><img alt="image-20240710105929382" src="../../../assets/image-20240710105929382.png" /></p>
 <p>果然这里有两张 JPEG 图片，分离：</p>
-<p><img alt="image-20240710105951652" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710105951652.png" /></p>
-<p><img alt="image-20240710105955094" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710105955094.png" /></p>
+<p><img alt="image-20240710105951652" src="../../../assets/image-20240710105951652.png" /></p>
+<p><img alt="image-20240710105955094" src="../../../assets/image-20240710105955094.png" /></p>
 <p>得到两张图片：</p>
 <p><img alt="extracted_image1" src="/Users/bruce/Desktop/CTF/extracted_image1.jpg" /></p>
 <p><img alt="extracted_image1" src="/Users/bruce/Desktop/CTF/extracted_image2.jpg" /></p>
 <p>得到 flag：AAA{the_true_fans_fans_nmb_-1s!}</p>
 <h2 id="challenge-2">Challenge 2<a class="headerlink" href="#challenge-2" title="Permanent link">&para;</a></h2>
 <p>我们将网页的 HTML 文件下载下来，发现：</p>
-<p><img alt="image-20240710110328837" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710110328837.png" /></p>
+<p><img alt="image-20240710110328837" src="../../../assets/image-20240710110328837.png" /></p>
 <p>这里面藏了一张图片，我们将网址改写为 <code>https://cdn.zjusec.com/Nov2/img/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg</code> 并访问就可以拿到图片：</p>
 <p><img alt="miao~870F6C667A6CDC0D1F533859E72C48E0" src="/Volumes/Files/2024.2-7 春夏学期/短学期CTF/lab2-Misc/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg" /></p>
 <p>用 Hex Fiend 打开，我们会看见一个 key：</p>
-<p><img alt="image-20240710115333134" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710115333134.png" /></p>
+<p><img alt="image-20240710115333134" src="../../../assets/image-20240710115333134.png" /></p>
 <p>合理猜想这是用现有的工具进行了隐写，我们用 steghide 来查看：</p>
-<p><img alt="image-20240710115526438" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710115526438.png" /></p>
+<p><img alt="image-20240710115526438" src="../../../assets/image-20240710115526438.png" /></p>
 <p>果然里面藏了个 secret_file.txt，提取出来：</p>
-<p><img alt="image-20240710115555753" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710115555753.png" /></p>
-<p><img alt="image-20240710115624102" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710115624102.png" /></p>
+<p><img alt="image-20240710115555753" src="../../../assets/image-20240710115555753.png" /></p>
+<p><img alt="image-20240710115624102" src="../../../assets/image-20240710115624102.png" /></p>
 <p>在 CyberChef 中 From Binary 即可得到 flag:AAA{D0_Y0u_L1ke_Ste9H1de_M1a0}</p>
 <h2 id="challenge-3">Challenge 3<a class="headerlink" href="#challenge-3" title="Permanent link">&para;</a></h2>
 <p>拿到图片用 stegsolve 打开，将绿色的 bit plane 设置为 0，我们可以看到：</p>
-<p><img alt="image-20240710215124925" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710215124925.png" /></p>
+<p><img alt="image-20240710215124925" src="../../../assets/image-20240710215124925.png" /></p>
 <p>可以看到这也是一个 PNG 文件！将其导出打开，得到：</p>
 <p><img alt="ex2" src="/Users/bruce/Desktop/CTF/ex2.png" /></p>
 <p>合理猜测这张图片被截了一半，尝试拉长高度，最终得到了 flag：</p>
@@ -1469,7 +1469,7 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>得到 flag：</p>
-<p><img alt="image-20240710231449246" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240710231449246.png" /></p>
+<p><img alt="image-20240710231449246" src="../../../assets/image-20240710231449246.png" /></p>
 <h2 id="challenge-bspectrogram">Challenge B：Spectrogram<a class="headerlink" href="#challenge-bspectrogram" title="Permanent link">&para;</a></h2>
 <p>编写 python 代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -1623,12 +1623,12 @@
 <p>P.S.转换出来的 mp3 虽然能听出曲目了，但还是有很多杂音（尤其《一剪梅》），可能转换代码还是有一点点问题，还望指正。</p>
 <h2 id="challenge-dpower-trajectory-diagram">Challenge D：Power Trajectory Diagram<a class="headerlink" href="#challenge-dpower-trajectory-diagram" title="Permanent link">&para;</a></h2>
 <p>拿到一个 npz 文件，我们通过 python 能看见其包含的数组名及其内容：</p>
-<p><img alt="image-20240711123205495" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240711123205495.png" /></p>
-<p><img alt="image-20240711123209861" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240711123209861.png" /></p>
-<p><img alt="image-20240711123214231" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240711123214231.png" /></p>
+<p><img alt="image-20240711123205495" src="../../../assets/image-20240711123205495.png" /></p>
+<p><img alt="image-20240711123209861" src="../../../assets/image-20240711123209861.png" /></p>
+<p><img alt="image-20240711123214231" src="../../../assets/image-20240711123214231.png" /></p>
 <p>可以看到这里面有 index,input,output,trace 四个数组，同时 index 里面有 40 个 0-12，同时 input 里面字符也正好是 40 个一组，合理猜想这应该是一一对应的，通过解析 trace 数组，对应 index 找到 input 的字符，拼起来即为 flag。</p>
 <p>我们将 trace 数组导出为 csv 看看：</p>
-<p><img alt="image-20240711124113708" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240711124113708.png" /></p>
+<p><img alt="image-20240711124113708" src="../../../assets/image-20240711124113708.png" /></p>
 <p>在这里有特殊的一列，1-40 行仅仅有第 37 行不同，猜测这就是 flag 的一部分，编写 python 程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
@@ -1659,7 +1659,7 @@
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="n">ansindex</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>得到最终 flag:</p>
-<p><img alt="image-20240711125023721" src="/Users/bruce/Library/Application Support/typora-user-images/image-20240711125023721.png" /></p>
+<p><img alt="image-20240711125023721" src="../../../assets/image-20240711125023721.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -1727,7 +1727,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-03</span>
   </span>
 
     

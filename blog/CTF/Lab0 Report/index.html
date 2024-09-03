@@ -2282,7 +2282,7 @@
 <p><img alt="image-20240602225055800" src="../../../assets/image-20240602225055800.png" /></p>
 <p><img alt="image-20240602225351057" src="../../../assets/image-20240602225351057.png" /></p>
 <p>可以猜想有过滤，在 Burpsuite 中爆破：</p>
-<p><img alt="img" src="https://img2020.cnblogs.com/blog/1937992/202009/1937992-20200911094122880-1747349205.png" /></p>
+<p><img alt="img" src="../../../assets/1937992-20200911094122880-1747349205.png" /></p>
 <p>长度为 472 的是没有被过滤掉的，Python 程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
@@ -2857,7 +2857,7 @@
 <p>这样我们就可以得到完整 flag：AAA{gr3@t_J08!_1et'5_P1@y_m1SC_TOG3Th3R}</p>
 <h2 id="crypto">Crypto<a class="headerlink" href="#crypto" title="Permanent link">&para;</a></h2>
 <h3 id="challenge-1_3">Challenge 1<a class="headerlink" href="#challenge-1_3" title="Permanent link">&para;</a></h3>
-<p><img alt="crypto_challenge1" src="https://courses.zjusec.com/images/crypto_challenge1.png" /></p>
+<p><img alt="crypto_challenge1" src="../../../assets/crypto_challenge1.png" /></p>
 <p>将这张图片进行同样的符号为一个字符进行字符转换，其中右上角为圈的地方视为后加空格，可以得到如下密文：</p>
 <p>ABCDEFA GAFHC IDJJ HKKDLG FGKG MJGHNG JOKG FDP AB AFG HQHCRBCGR IHKGFBONG CGHK AFG MBJDSG NAHADBC IFGKG AFG MKBTGNNDBCHJ HNNHNNDC KGGNG FDKGR IDJJ GJDPDCHAG FDP ABPBKKBI NFG IDJJ EB AB AFG IHKGFBONG HCR QGSBPG AFG TDKNA MGKNBC AB RDNSBLGK FDN SBKMNG IDAF H NAKBCE HJDQD AFGNG MBJDSG BTTDSGKN HQNBJOAGJV SHC CBA HKKGNA FGK</p>
 <p>导入到 quipquip 中可得最终结果：</p>

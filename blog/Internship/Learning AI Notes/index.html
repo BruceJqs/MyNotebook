@@ -2693,7 +2693,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <a id="__codelineno-5-62" name="__codelineno-5-62"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;epoch:&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">&quot;train_loss:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;accuracy:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <p>这里采用 ReLU 函数作为激活函数，ReLU(x)=max{0,x}</p>
-<p><img src="../../assets/image-20240717125606885.png" alt="image-20240717125606885" style="zoom:50%;" /></p>
+<p><img src=../../assets/image-20240717125606885.png alt="image-20240717125606885" style="zoom:50%;" /></p>
 <h3 id="_9">深度可分离卷积<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>普通卷积：一个卷积核处理 m 个输入通道的图片信息，卷积核个数为 n（即输出通道数为 n），则有 n 个处理结果（每个结果通道数为 m），最后 n 个卷积核的结果组成最终结果。</p>
 <p><img alt="请添加图片描述" src="../../../assets/e7145875df9748c594b66983b2c83b95.jpeg" /></p>
@@ -2705,7 +2705,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <ul>
 <li>逐点卷积：做卷积核大小为 1 的普通卷积。</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/direct/417d4b609b624021a1e631582e2b1451.jpeg" alt="请添加图片描述" style="zoom: 50%;" /></p>
+<p><img src=../../assets/417d4b609b624021a1e631582e2b1451.jpeg alt="请添加图片描述" style="zoom: 50%;" /></p>
 <p>深度可分离卷积可以有效减少待训练参数量。</p>
 <h3 id="_10">膨胀卷积<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>膨胀卷积又称空洞卷积，在卷积核中增加空洞，可以增加单位面积中计算的大小，从而扩大模型的计算视野。</p>
