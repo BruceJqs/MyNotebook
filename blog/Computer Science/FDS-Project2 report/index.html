@@ -1,0 +1,3284 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Eternity">
+      
+      
+      
+        <link rel="prev" href="../FDS-Project1%20report/">
+      
+      
+        <link rel="next" href="../FDS-Project3%20report/">
+      
+      
+      <link rel="icon" href="../../../assets/头像.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Project 2 - BruceJin's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/card.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flink.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/glightbox.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/changelog_extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+    <link rel="stylesheet" href="../../../assets/stylesheets/custom.00c04c01.min.css">
+  
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-introduction" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="不再显示此消息">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    本网站仍在努力<strong>建设开发中</strong>喵～
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="BruceJin&#39;s Notebook" class="md-header__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
+      
+  <img src="../../../assets/头像.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BruceJin's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BruceJqs/MyNotebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BruceJqs/MyNotebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../FDS-Project1%20report/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Math/Discrete%20mathmatics%20notes-Ch01/" class="md-tabs__link">
+          
+  
+    
+  
+  Math
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CTF/Lab0%20Report/" class="md-tabs__link">
+          
+  
+    
+  
+  CTF
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Internship/Learning%20AI%20Notes/" class="md-tabs__link">
+          
+  
+    
+  
+  Interning
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/link/" class="md-tabs__link">
+          
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/geren/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BruceJin&#39;s Notebook" class="md-nav__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
+      
+  <img src="../../../assets/头像.jpg" alt="logo">
+
+    </a>
+    BruceJin's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BruceJqs/MyNotebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BruceJqs/MyNotebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数据结构基础｜Fundamental Data Structure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构基础｜Fundamental Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FDS-Project1%20report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Project 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Project 2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm Analysis
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FDS-Project3%20report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    离散数学及其应用｜Discrete Mathematics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            离散数学及其应用｜Discrete Mathematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 01: The Foundations:Logic and Proofs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 03: Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 04: The Number Theory and Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 05: Induction and Recursion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 06: Counting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 07: Discrete Probability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 08: Advanced Counting Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 09: Relations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 10: Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Discrete%20mathmatics%20notes-Ch11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 11: Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Calculus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    微积分（甲）｜Calculus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Linear%20Algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数（甲）｜Linear Algebra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CTF
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CTF
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023-2024 暑短学期
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            2023-2024 暑短学期
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab0%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Crypto%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Misc%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Pwn%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Pwn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Web%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab1-Rev%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab1-Rev
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab2-Crypto%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2-Crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab2-Misc%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab2-Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab3-Crypto%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3-Crypto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CTF/Lab3-Misc%20Report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab3-Misc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Interning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    大模型
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            大模型
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internship/Learning%20AI%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    《从零开始大模型开发与微调-基于PyTorch与ChatGLM》
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API 接口测试
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            API 接口测试
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internship/MeterSphere%20%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    接口测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internship/Locust%20%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    压力测试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/link/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    友链
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/geren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    作者个人简介
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm Analysis
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/BruceJqs/MyNotebook/edit/main/docs/blog/Computer Science/FDS-Project2 report.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/BruceJqs/MyNotebook/raw/main/docs/blog/Computer Science/FDS-Project2 report.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="chapter-1-introduction">Chapter 1 : Introduction<a class="headerlink" href="#chapter-1-introduction" title="Permanent link">&para;</a></h1>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>Nowadays the application of automatic differentiation technology has greatly facilitated people's implementation and training of deep learning algorithms.Our task is to create an automatic differentiation program for algebraic expressions.</p>
+<h4 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
+<p>Input an infix expression composed of brackets,operators including power(^), multiplication(*), division(/), addition(+) and subtraction(-), variables(strings of lowercase English letters) and literal constant.</p>
+<h4 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h4>
+<p>For each variable in the expression,output an arithmetic expression that represents the derivative of the input expression with respect to the variable.</p>
+<p>Arrange the output in the lexicographical order of the variables.</p>
+<h4 id="sample-input">Sample Input<a class="headerlink" href="#sample-input" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>a+b^c*d
+</code></pre></div></td></tr></table></div>
+<h4 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>a: 1
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>b: c*1/b*b^c*d
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>c: 1*ln(b)*b^c*d
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>d: b^c*1
+</code></pre></div></td></tr></table></div>
+<h2 id="algorithm-analysis">Algorithm Analysis<a class="headerlink" href="#algorithm-analysis" title="Permanent link">&para;</a></h2>
+<p>The whole Algorithm can be devided into three main parts:</p>
+<ul>
+<li>Input the infix expression and create an expression tree.</li>
+<li>Store all the variable names in the expression and sort them in lexicographical order.</li>
+<li>Output the derivative of the input expression with respect to each variable.</li>
+</ul>
+<h1 id="chapter-2-algorithm-specification">Chapter 2 : Algorithm Specification<a class="headerlink" href="#chapter-2-algorithm-specification" title="Permanent link">&para;</a></h1>
+<h4 id="step-1-create-the-expression-tree">Step 1 : Create the expression tree<a class="headerlink" href="#step-1-create-the-expression-tree" title="Permanent link">&para;</a></h4>
+<p>We create a <strong>Struct</strong> to store the information of the nodes in the expression tree.Every nodes in the expression tree has three components.One is a string indicating the value of the node (may be an operator,a variable name or a constant number) and the other two are two pointers respectively indicating leftchild and rightchild of the node.</p>
+<p>We need the data structure <strong>Stack</strong> to assist building the expression tree.Nodestack stores the subtrees created from the expression while opstack stores all the operators.Pseudo-code is shown below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">for</span><span class="p">(</span><span class="n">every</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">expression</span><span class="p">){</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ch</span><span class="o">==</span><span class="sc">&#39;(&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="n">push</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">opstack</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ch</span><span class="o">==</span><span class="sc">&#39;)&#39;</span><span class="p">){</span><span class="c1">//build a subtree from the expression in the brackets</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="n">pop</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">opstack</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="k">operator</span><span class="o">!=</span><span class="sc">&#39;(&#39;</span><span class="p">){</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">            </span><span class="n">pop</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">            </span><span class="n">create</span><span class="w"> </span><span class="nf">subtree</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="k">operator</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">            </span><span class="n">push</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">            </span><span class="n">pop</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">opstack</span><span class="p">;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="n">pop</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">opstack</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">letter</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="n">add</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="c1">//it must be a component of variable name/a number</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">operator</span><span class="p">){</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">        </span><span class="n">pop</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">        </span><span class="n">create</span><span class="w"> </span><span class="nf">subtree</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="k">operator</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">        </span><span class="n">push</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="k">while</span><span class="p">(</span><span class="n">opstack</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">empty</span><span class="p">){</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">    </span><span class="n">pop</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">opstack</span><span class="p">;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="n">pop</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">    </span><span class="n">create</span><span class="w"> </span><span class="nf">subtree</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="k">operator</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="n">push</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="p">}</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="n">pop</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">nodestack</span><span class="p">;</span><span class="c1">//root is the root of expression tree;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="step-2-store-all-variable-names-and-sort">Step 2 : Store all variable names and sort<a class="headerlink" href="#step-2-store-all-variable-names-and-sort" title="Permanent link">&para;</a></h4>
+<p>We use a <strong>String Array</strong> to store all variable names.Pseudo-code is shown below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">for</span><span class="p">(</span><span class="n">every</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">expression</span><span class="p">){</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">letter</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="n">add</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">variable</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">array</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="n">add</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">Array</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">sort</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">names</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="step-3-output">Step 3 : Output<a class="headerlink" href="#step-3-output" title="Permanent link">&para;</a></h4>
+<p>We define a function differentiate(root,var) to build an expression tree of the answer. Pseudo-code is shown below:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">constant</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="c1">//F(x)=c,F&#39;(x)=0</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="n">var</span><span class="p">)</span><span class="c1">//F(x)=x,F&#39;(x)=1</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">operator</span><span class="p">){</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="n">left</span><span class="o">=</span><span class="n">differentiate</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">var</span><span class="p">);</span><span class="c1">//get the derivative of left expression</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="n">right</span><span class="o">=</span><span class="n">differentiate</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">var</span><span class="p">);</span><span class="c1">//get the derivative of right expression</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;+&quot;</span><span class="p">)</span><span class="c1">//F(x)=f(x)+g(x),F&#39;(x)=f&#39;(x)+g&#39;(x)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;+&quot;</span><span class="p">,</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;-&quot;</span><span class="p">)</span><span class="c1">//F(x)=f(x)-g(x),F&#39;(x)=f&#39;(x)-g&#39;(x)</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;*&quot;</span><span class="p">){</span><span class="c1">//F(x)=f(x)*g(x),F&#39;(x)=f&#39;(x)*g(x)+f(x)*g&#39;(x)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="s">&quot;+&quot;</span><span class="p">,</span><span class="n">s2</span><span class="p">);</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;/&quot;</span><span class="p">){</span><span class="c1">//F(x)=f(x)/g(x),F&#39;(x)=[f&#39;(x)*g(x)-f(x)*g&#39;(x)]/g(x)^2</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="n">s2</span><span class="p">);</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s4</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="s">&quot;^&quot;</span><span class="p">,</span><span class="s">&quot;2&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s5</span><span class="w"> </span><span class="p">(</span><span class="n">s3</span><span class="p">,</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="n">s4</span><span class="p">);</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;^&quot;</span><span class="p">){</span><span class="c1">//F(x)=f(x)^[g(x)],F&#39;(x)=[g&#39;(x)*lnf(x)+g(x)*f&#39;(x)/f(x)]*f(x)^g(x)</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">ln</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">));</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">left</span><span class="p">);</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s4</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="s">&quot;+&quot;</span><span class="p">,</span><span class="n">s3</span><span class="p">);</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">        </span><span class="n">build</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s5</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="s">&quot;^&quot;</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">subtree</span><span class="w"> </span><span class="n">s6</span><span class="w"> </span><span class="p">(</span><span class="n">s4</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="n">s5</span><span class="p">);</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="chapter-3-testing-results">Chapter 3 : Testing Results<a class="headerlink" href="#chapter-3-testing-results" title="Permanent link">&para;</a></h1>
+<h2 id="test-case-1">Test case 1<a class="headerlink" href="#test-case-1" title="Permanent link">&para;</a></h2>
+<p>Test case 1 wants to test expression including "+,-,*,/"</p>
+<h4 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>a+b*c-d/e
+</code></pre></div></td></tr></table></div>
+<h4 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>a: 1
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>b: 1*c
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>c: b*1
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>d: -1*e/e^2
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>e: -(-d*1)/e^2
+</code></pre></div></td></tr></table></div>
+<h2 id="test-case-2">Test case 2<a class="headerlink" href="#test-case-2" title="Permanent link">&para;</a></h2>
+<p>Test case 2 wants to test expression including "+,-,*,/,(,)".</p>
+<h4 id="input_2">Input<a class="headerlink" href="#input_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>(a+b)*c-(d-e)/f
+</code></pre></div></td></tr></table></div>
+<h4 id="output_2">Output<a class="headerlink" href="#output_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>a: 1*c
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>b: 1*c
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>c: (a+b)*1
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>d: -1*f/f^2
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>e: -(-1)*f/f^2
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>f: -(-(d-e)*1)/f^2
+</code></pre></div></td></tr></table></div>
+<h2 id="test-case-3">Test case 3<a class="headerlink" href="#test-case-3" title="Permanent link">&para;</a></h2>
+<p>Test case 3 wants to test expression including variables whose length is longer.</p>
+<h4 id="input_3">Input<a class="headerlink" href="#input_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>(aabbcc+ddffea)*ddfa-bb/ss*cc*(ddffs+ee)
+</code></pre></div></td></tr></table></div>
+<h4 id="output_3">Output<a class="headerlink" href="#output_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>aabbcc: 1*ddfa
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>bb: -1*ss/ss^2*cc*(ddffs+ee)
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>cc: -bb/ss*1*(ddffs+ee)
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>ddfa: (aabbcc+ddffea)*1
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>ddffea: 1*ddfa
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>ddffs: -bb/ss*cc*1
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>ee: -bb/ss*cc*1
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>ss: -(-bb*1)/ss^2*cc*(ddffs+ee)
+</code></pre></div></td></tr></table></div>
+<h2 id="test-case-4">Test case 4<a class="headerlink" href="#test-case-4" title="Permanent link">&para;</a></h2>
+<p>Test case 4 wants to test expression including forms of "^".</p>
+<h4 id="input_4">Input<a class="headerlink" href="#input_4" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>aa^2+2^aa+2^2+aa^aa
+</code></pre></div></td></tr></table></div>
+<h4 id="output_4">Output<a class="headerlink" href="#output_4" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>aa: 2*1/aa*aa^2+1*ln(2)*2^aa+(1*ln(aa)+aa*1/aa)*aa^aa
+</code></pre></div></td></tr></table></div>
+<h2 id="test-case-5">Test case 5<a class="headerlink" href="#test-case-5" title="Permanent link">&para;</a></h2>
+<p>Test case 5 mix all the situations in Test case 1,2,3,4.</p>
+<h4 id="input_5">Input<a class="headerlink" href="#input_5" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>aa*10*bb+2^ab/ab+abb^abb/aab-(ba+bba)*baa^20
+</code></pre></div></td></tr></table></div>
+<h4 id="output_5">Output<a class="headerlink" href="#output_5" title="Permanent link">&para;</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>aa: 1*10*bb
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>aab: (-abb^abb*1)/aab^2
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>ab: (1*ln(2)*2^ab*ab-2^ab*1)/ab^2
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>abb: (1*ln(abb)+abb*1/abb)*abb^abb*aab/aab^2
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a>ba: -1*baa^20
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a>baa: -(ba+bba)*20*1/baa*baa^20
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>bb: aa*10*1
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>bba: -1*baa^20
+</code></pre></div></td></tr></table></div>
+<h1 id="chapter-4-analysis-and-comments">Chapter 4 : Analysis and Comments<a class="headerlink" href="#chapter-4-analysis-and-comments" title="Permanent link">&para;</a></h1>
+<h2 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h2>
+<p>For step 1 : Creating the expression tree, we traverse all operators, variables and numbers in the expression, so the time complexity of step 1 is <span class="arithmatex">\(O(n)\)</span> (Assume the length of the expression is <span class="arithmatex">\(n\)</span>).</p>
+<p>For step 2 : Store all variable names and sort, we traverse the expression again and sort all variable names. The time complexity of Quick_sort Algorithm is <span class="arithmatex">\(O(mlogm)\)</span>, so the time complexity of step 2 is <span class="arithmatex">\(O(n)+O(mlogm)=O(n+mlogm)\)</span> (Assume there are <span class="arithmatex">\(m\)</span> variable names in the expression)</p>
+<p>For step 3 : Output, firstly we differentiate all <span class="arithmatex">\(m\)</span> variables and use the function <span class="arithmatex">\(m\)</span> times.The function differentiate traverse all operators, variables and numbers in the expression tree and extend constant number of nodes, so the time complexity of step 3 is <span class="arithmatex">\(O(mp)\)</span> (Assume there are <span class="arithmatex">\(p\)</span> nodes in the expression tree)</p>
+<p>To sum up, the total time complexity of the program is <span class="arithmatex">\(O(n+mlogm+mp)\)</span>(<span class="arithmatex">\(n\)</span> indicates the length of the expression, <span class="arithmatex">\(m\)</span> indicates the number of the variables, <span class="arithmatex">\(p\)</span> indicates the number of nodes in the expression tree)</p>
+<h2 id="space-complexity">Space Complexity<a class="headerlink" href="#space-complexity" title="Permanent link">&para;</a></h2>
+<p>The whole program construct <span class="arithmatex">\(c_1*p\)</span> nodes(<span class="arithmatex">\(c_1\)</span> is a constant) , <span class="arithmatex">\(c_2\)</span> strings(<span class="arithmatex">\(c_2\)</span> is a constant) to store the expression and a string array(but the total length is the length of the expression). So the total space complexity is <span class="arithmatex">\(O(p+n)\)</span> (<span class="arithmatex">\(n\)</span> indicates the length of the expression,  <span class="arithmatex">\(p\)</span> indicates the number of nodes in the expression tree)</p>
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
+<p>The function of this program is still limited, for it can't support mathmatic functions such as <span class="arithmatex">\(\sin x,\cos x,\tan x,\ln x,\log(x,y),\exp(x)...\)</span> . Also it can't simplify both the input expression or the output expression. It still needs to be improved. </p>
+<h1 id="appendix-source-code">Appendix : Source Code<a class="headerlink" href="#appendix-source-code" title="Permanent link">&para;</a></h1>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-15-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-15-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-15-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-15-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-15-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-15-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-15-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-15-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-15-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-15-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-15-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-15-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-15-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-15-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-15-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-15-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-15-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-15-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-15-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-15-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-15-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-15-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-15-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-15-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-15-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-15-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-15-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-15-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-15-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-15-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-15-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-15-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-15-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-15-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-15-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-15-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-15-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-15-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-15-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-15-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-15-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-15-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-15-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-15-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-15-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-15-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-15-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-15-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-15-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-15-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-15-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-15-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-15-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-15-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-15-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-15-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-15-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-15-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-15-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-15-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-15-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-15-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-15-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-15-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-15-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-15-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-15-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-15-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-15-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-15-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-15-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-15-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-15-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-15-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-15-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-15-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-15-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-15-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-15-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-15-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-15-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-15-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-15-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-15-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-15-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-15-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-15-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-15-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-15-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-15-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-15-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-15-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-15-100">100</a></span>
+<span class="normal"><a href="#__codelineno-15-101">101</a></span>
+<span class="normal"><a href="#__codelineno-15-102">102</a></span>
+<span class="normal"><a href="#__codelineno-15-103">103</a></span>
+<span class="normal"><a href="#__codelineno-15-104">104</a></span>
+<span class="normal"><a href="#__codelineno-15-105">105</a></span>
+<span class="normal"><a href="#__codelineno-15-106">106</a></span>
+<span class="normal"><a href="#__codelineno-15-107">107</a></span>
+<span class="normal"><a href="#__codelineno-15-108">108</a></span>
+<span class="normal"><a href="#__codelineno-15-109">109</a></span>
+<span class="normal"><a href="#__codelineno-15-110">110</a></span>
+<span class="normal"><a href="#__codelineno-15-111">111</a></span>
+<span class="normal"><a href="#__codelineno-15-112">112</a></span>
+<span class="normal"><a href="#__codelineno-15-113">113</a></span>
+<span class="normal"><a href="#__codelineno-15-114">114</a></span>
+<span class="normal"><a href="#__codelineno-15-115">115</a></span>
+<span class="normal"><a href="#__codelineno-15-116">116</a></span>
+<span class="normal"><a href="#__codelineno-15-117">117</a></span>
+<span class="normal"><a href="#__codelineno-15-118">118</a></span>
+<span class="normal"><a href="#__codelineno-15-119">119</a></span>
+<span class="normal"><a href="#__codelineno-15-120">120</a></span>
+<span class="normal"><a href="#__codelineno-15-121">121</a></span>
+<span class="normal"><a href="#__codelineno-15-122">122</a></span>
+<span class="normal"><a href="#__codelineno-15-123">123</a></span>
+<span class="normal"><a href="#__codelineno-15-124">124</a></span>
+<span class="normal"><a href="#__codelineno-15-125">125</a></span>
+<span class="normal"><a href="#__codelineno-15-126">126</a></span>
+<span class="normal"><a href="#__codelineno-15-127">127</a></span>
+<span class="normal"><a href="#__codelineno-15-128">128</a></span>
+<span class="normal"><a href="#__codelineno-15-129">129</a></span>
+<span class="normal"><a href="#__codelineno-15-130">130</a></span>
+<span class="normal"><a href="#__codelineno-15-131">131</a></span>
+<span class="normal"><a href="#__codelineno-15-132">132</a></span>
+<span class="normal"><a href="#__codelineno-15-133">133</a></span>
+<span class="normal"><a href="#__codelineno-15-134">134</a></span>
+<span class="normal"><a href="#__codelineno-15-135">135</a></span>
+<span class="normal"><a href="#__codelineno-15-136">136</a></span>
+<span class="normal"><a href="#__codelineno-15-137">137</a></span>
+<span class="normal"><a href="#__codelineno-15-138">138</a></span>
+<span class="normal"><a href="#__codelineno-15-139">139</a></span>
+<span class="normal"><a href="#__codelineno-15-140">140</a></span>
+<span class="normal"><a href="#__codelineno-15-141">141</a></span>
+<span class="normal"><a href="#__codelineno-15-142">142</a></span>
+<span class="normal"><a href="#__codelineno-15-143">143</a></span>
+<span class="normal"><a href="#__codelineno-15-144">144</a></span>
+<span class="normal"><a href="#__codelineno-15-145">145</a></span>
+<span class="normal"><a href="#__codelineno-15-146">146</a></span>
+<span class="normal"><a href="#__codelineno-15-147">147</a></span>
+<span class="normal"><a href="#__codelineno-15-148">148</a></span>
+<span class="normal"><a href="#__codelineno-15-149">149</a></span>
+<span class="normal"><a href="#__codelineno-15-150">150</a></span>
+<span class="normal"><a href="#__codelineno-15-151">151</a></span>
+<span class="normal"><a href="#__codelineno-15-152">152</a></span>
+<span class="normal"><a href="#__codelineno-15-153">153</a></span>
+<span class="normal"><a href="#__codelineno-15-154">154</a></span>
+<span class="normal"><a href="#__codelineno-15-155">155</a></span>
+<span class="normal"><a href="#__codelineno-15-156">156</a></span>
+<span class="normal"><a href="#__codelineno-15-157">157</a></span>
+<span class="normal"><a href="#__codelineno-15-158">158</a></span>
+<span class="normal"><a href="#__codelineno-15-159">159</a></span>
+<span class="normal"><a href="#__codelineno-15-160">160</a></span>
+<span class="normal"><a href="#__codelineno-15-161">161</a></span>
+<span class="normal"><a href="#__codelineno-15-162">162</a></span>
+<span class="normal"><a href="#__codelineno-15-163">163</a></span>
+<span class="normal"><a href="#__codelineno-15-164">164</a></span>
+<span class="normal"><a href="#__codelineno-15-165">165</a></span>
+<span class="normal"><a href="#__codelineno-15-166">166</a></span>
+<span class="normal"><a href="#__codelineno-15-167">167</a></span>
+<span class="normal"><a href="#__codelineno-15-168">168</a></span>
+<span class="normal"><a href="#__codelineno-15-169">169</a></span>
+<span class="normal"><a href="#__codelineno-15-170">170</a></span>
+<span class="normal"><a href="#__codelineno-15-171">171</a></span>
+<span class="normal"><a href="#__codelineno-15-172">172</a></span>
+<span class="normal"><a href="#__codelineno-15-173">173</a></span>
+<span class="normal"><a href="#__codelineno-15-174">174</a></span>
+<span class="normal"><a href="#__codelineno-15-175">175</a></span>
+<span class="normal"><a href="#__codelineno-15-176">176</a></span>
+<span class="normal"><a href="#__codelineno-15-177">177</a></span>
+<span class="normal"><a href="#__codelineno-15-178">178</a></span>
+<span class="normal"><a href="#__codelineno-15-179">179</a></span>
+<span class="normal"><a href="#__codelineno-15-180">180</a></span>
+<span class="normal"><a href="#__codelineno-15-181">181</a></span>
+<span class="normal"><a href="#__codelineno-15-182">182</a></span>
+<span class="normal"><a href="#__codelineno-15-183">183</a></span>
+<span class="normal"><a href="#__codelineno-15-184">184</a></span>
+<span class="normal"><a href="#__codelineno-15-185">185</a></span>
+<span class="normal"><a href="#__codelineno-15-186">186</a></span>
+<span class="normal"><a href="#__codelineno-15-187">187</a></span>
+<span class="normal"><a href="#__codelineno-15-188">188</a></span>
+<span class="normal"><a href="#__codelineno-15-189">189</a></span>
+<span class="normal"><a href="#__codelineno-15-190">190</a></span>
+<span class="normal"><a href="#__codelineno-15-191">191</a></span>
+<span class="normal"><a href="#__codelineno-15-192">192</a></span>
+<span class="normal"><a href="#__codelineno-15-193">193</a></span>
+<span class="normal"><a href="#__codelineno-15-194">194</a></span>
+<span class="normal"><a href="#__codelineno-15-195">195</a></span>
+<span class="normal"><a href="#__codelineno-15-196">196</a></span>
+<span class="normal"><a href="#__codelineno-15-197">197</a></span>
+<span class="normal"><a href="#__codelineno-15-198">198</a></span>
+<span class="normal"><a href="#__codelineno-15-199">199</a></span>
+<span class="normal"><a href="#__codelineno-15-200">200</a></span>
+<span class="normal"><a href="#__codelineno-15-201">201</a></span>
+<span class="normal"><a href="#__codelineno-15-202">202</a></span>
+<span class="normal"><a href="#__codelineno-15-203">203</a></span>
+<span class="normal"><a href="#__codelineno-15-204">204</a></span>
+<span class="normal"><a href="#__codelineno-15-205">205</a></span>
+<span class="normal"><a href="#__codelineno-15-206">206</a></span>
+<span class="normal"><a href="#__codelineno-15-207">207</a></span>
+<span class="normal"><a href="#__codelineno-15-208">208</a></span>
+<span class="normal"><a href="#__codelineno-15-209">209</a></span>
+<span class="normal"><a href="#__codelineno-15-210">210</a></span>
+<span class="normal"><a href="#__codelineno-15-211">211</a></span>
+<span class="normal"><a href="#__codelineno-15-212">212</a></span>
+<span class="normal"><a href="#__codelineno-15-213">213</a></span>
+<span class="normal"><a href="#__codelineno-15-214">214</a></span>
+<span class="normal"><a href="#__codelineno-15-215">215</a></span>
+<span class="normal"><a href="#__codelineno-15-216">216</a></span>
+<span class="normal"><a href="#__codelineno-15-217">217</a></span>
+<span class="normal"><a href="#__codelineno-15-218">218</a></span>
+<span class="normal"><a href="#__codelineno-15-219">219</a></span>
+<span class="normal"><a href="#__codelineno-15-220">220</a></span>
+<span class="normal"><a href="#__codelineno-15-221">221</a></span>
+<span class="normal"><a href="#__codelineno-15-222">222</a></span>
+<span class="normal"><a href="#__codelineno-15-223">223</a></span>
+<span class="normal"><a href="#__codelineno-15-224">224</a></span>
+<span class="normal"><a href="#__codelineno-15-225">225</a></span>
+<span class="normal"><a href="#__codelineno-15-226">226</a></span>
+<span class="normal"><a href="#__codelineno-15-227">227</a></span>
+<span class="normal"><a href="#__codelineno-15-228">228</a></span>
+<span class="normal"><a href="#__codelineno-15-229">229</a></span>
+<span class="normal"><a href="#__codelineno-15-230">230</a></span>
+<span class="normal"><a href="#__codelineno-15-231">231</a></span>
+<span class="normal"><a href="#__codelineno-15-232">232</a></span>
+<span class="normal"><a href="#__codelineno-15-233">233</a></span>
+<span class="normal"><a href="#__codelineno-15-234">234</a></span>
+<span class="normal"><a href="#__codelineno-15-235">235</a></span>
+<span class="normal"><a href="#__codelineno-15-236">236</a></span>
+<span class="normal"><a href="#__codelineno-15-237">237</a></span>
+<span class="normal"><a href="#__codelineno-15-238">238</a></span>
+<span class="normal"><a href="#__codelineno-15-239">239</a></span>
+<span class="normal"><a href="#__codelineno-15-240">240</a></span>
+<span class="normal"><a href="#__codelineno-15-241">241</a></span>
+<span class="normal"><a href="#__codelineno-15-242">242</a></span>
+<span class="normal"><a href="#__codelineno-15-243">243</a></span>
+<span class="normal"><a href="#__codelineno-15-244">244</a></span>
+<span class="normal"><a href="#__codelineno-15-245">245</a></span>
+<span class="normal"><a href="#__codelineno-15-246">246</a></span>
+<span class="normal"><a href="#__codelineno-15-247">247</a></span>
+<span class="normal"><a href="#__codelineno-15-248">248</a></span>
+<span class="normal"><a href="#__codelineno-15-249">249</a></span>
+<span class="normal"><a href="#__codelineno-15-250">250</a></span>
+<span class="normal"><a href="#__codelineno-15-251">251</a></span>
+<span class="normal"><a href="#__codelineno-15-252">252</a></span>
+<span class="normal"><a href="#__codelineno-15-253">253</a></span>
+<span class="normal"><a href="#__codelineno-15-254">254</a></span>
+<span class="normal"><a href="#__codelineno-15-255">255</a></span>
+<span class="normal"><a href="#__codelineno-15-256">256</a></span>
+<span class="normal"><a href="#__codelineno-15-257">257</a></span>
+<span class="normal"><a href="#__codelineno-15-258">258</a></span>
+<span class="normal"><a href="#__codelineno-15-259">259</a></span>
+<span class="normal"><a href="#__codelineno-15-260">260</a></span>
+<span class="normal"><a href="#__codelineno-15-261">261</a></span>
+<span class="normal"><a href="#__codelineno-15-262">262</a></span>
+<span class="normal"><a href="#__codelineno-15-263">263</a></span>
+<span class="normal"><a href="#__codelineno-15-264">264</a></span>
+<span class="normal"><a href="#__codelineno-15-265">265</a></span>
+<span class="normal"><a href="#__codelineno-15-266">266</a></span>
+<span class="normal"><a href="#__codelineno-15-267">267</a></span>
+<span class="normal"><a href="#__codelineno-15-268">268</a></span>
+<span class="normal"><a href="#__codelineno-15-269">269</a></span>
+<span class="normal"><a href="#__codelineno-15-270">270</a></span>
+<span class="normal"><a href="#__codelineno-15-271">271</a></span>
+<span class="normal"><a href="#__codelineno-15-272">272</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="cp">#include</span><span class="cpf">&lt;string&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">;</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="p">};</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Stack</span><span class="p">{</span><span class="c1">//define a stack to build the expression tree from inorder expression</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">;</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">node</span><span class="p">){</span><span class="c1">//pushing the node into the stack</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="o">=</span><span class="n">node</span><span class="p">;</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19"></a>
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="nf">pop</span><span class="p">(){</span><span class="c1">//pop and acquire the top element in the stack</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">];</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23"></a>
+<a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="nf">visit</span><span class="p">(){</span><span class="c1">//acquire the top element in the stack</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">top</span><span class="p">];</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27"></a>
+<a id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">empty</span><span class="p">(){</span><span class="c1">//judge whether the stack is empty</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">top</span><span class="o">==</span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="p">};</span>
+<a id="__codelineno-15-32" name="__codelineno-15-32"></a>
+<a id="__codelineno-15-33" name="__codelineno-15-33"></a><span class="kt">int</span><span class="w"> </span><span class="nf">precedence</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">op</span><span class="p">){</span><span class="c1">//get the precedence of the operator</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="w">    </span><span class="k">switch</span><span class="p">(</span><span class="n">op</span><span class="p">){</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;^&#39;</span><span class="p">:</span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-36" name="__codelineno-15-36"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;*&#39;</span><span class="p">:</span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;/&#39;</span><span class="p">:</span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;+&#39;</span><span class="p">:</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-39" name="__codelineno-15-39"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="p">:</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40"></a><span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="c1">//define the precedence of a number or a variable is the lowest</span>
+<a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a><span class="p">}</span>
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a>
+<a id="__codelineno-15-44" name="__codelineno-15-44"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">cmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="n">string</span><span class="w"> </span><span class="n">s2</span><span class="p">){</span><span class="c1">//the assisting function for quick_sort algorithm</span>
+<a id="__codelineno-15-45" name="__codelineno-15-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s1</span><span class="o">&lt;</span><span class="n">s2</span><span class="p">;</span>
+<a id="__codelineno-15-46" name="__codelineno-15-46"></a><span class="p">}</span>
+<a id="__codelineno-15-47" name="__codelineno-15-47"></a>
+<a id="__codelineno-15-48" name="__codelineno-15-48"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">isnumber</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="c1">//determine whether s is a number</span>
+<a id="__codelineno-15-49" name="__codelineno-15-49"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-15-50" name="__codelineno-15-50"></a><span class="w">        </span><span class="k">if</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="sc">&#39;9&#39;</span><span class="p">))</span>
+<a id="__codelineno-15-51" name="__codelineno-15-51"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-15-52" name="__codelineno-15-52"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-15-53" name="__codelineno-15-53"></a><span class="p">}</span>
+<a id="__codelineno-15-54" name="__codelineno-15-54"></a>
+<a id="__codelineno-15-55" name="__codelineno-15-55"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">isoperator</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="c1">//determine whether s is an operator</span>
+<a id="__codelineno-15-56" name="__codelineno-15-56"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;+&#39;</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;*&#39;</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;/&#39;</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;^&#39;</span><span class="p">);</span>
+<a id="__codelineno-15-57" name="__codelineno-15-57"></a><span class="p">}</span>
+<a id="__codelineno-15-58" name="__codelineno-15-58"></a>
+<a id="__codelineno-15-59" name="__codelineno-15-59"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">createnode</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="c1">//function for creating a new treenode</span>
+<a id="__codelineno-15-60" name="__codelineno-15-60"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">TreeNode</span><span class="p">;</span>
+<a id="__codelineno-15-61" name="__codelineno-15-61"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">=</span><span class="n">s</span><span class="p">;</span>
+<a id="__codelineno-15-62" name="__codelineno-15-62"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-15-63" name="__codelineno-15-63"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-15-64" name="__codelineno-15-64"></a><span class="p">}</span>
+<a id="__codelineno-15-65" name="__codelineno-15-65"></a>
+<a id="__codelineno-15-66" name="__codelineno-15-66"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">buildtree</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">expression</span><span class="p">){</span><span class="c1">//function for building a tree</span>
+<a id="__codelineno-15-67" name="__codelineno-15-67"></a><span class="w">    </span><span class="n">Stack</span><span class="w"> </span><span class="n">nodestack</span><span class="p">,</span><span class="n">opstack</span><span class="p">;</span><span class="c1">//nodestack stores variables,numbers;opstack stores operators</span>
+<a id="__codelineno-15-68" name="__codelineno-15-68"></a><span class="w">    </span><span class="n">nodestack</span><span class="p">.</span><span class="n">top</span><span class="o">=</span><span class="n">opstack</span><span class="p">.</span><span class="n">top</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span><span class="c1">//set the two tops</span>
+<a id="__codelineno-15-69" name="__codelineno-15-69"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">var</span><span class="p">;</span><span class="c1">//collect the variable name/number</span>
+<a id="__codelineno-15-70" name="__codelineno-15-70"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">expression</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-15-71" name="__codelineno-15-71"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="c1">//if we encounter left bracket,push it into opstack for encountering right bracket</span>
+<a id="__codelineno-15-72" name="__codelineno-15-72"></a><span class="w">            </span><span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">createnode</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">])));</span>
+<a id="__codelineno-15-73" name="__codelineno-15-73"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">isalnum</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="c1">//if expression[i] is a letter or number,collect it into var</span>
+<a id="__codelineno-15-74" name="__codelineno-15-74"></a><span class="w">            </span><span class="n">var</span><span class="o">+=</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-15-75" name="__codelineno-15-75"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;)&#39;</span><span class="p">){</span><span class="c1">//if we encounter right bracket,then create expression tree in the brackets</span>
+<a id="__codelineno-15-76" name="__codelineno-15-76"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">var</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="c1">//push the new variable into the stack</span>
+<a id="__codelineno-15-77" name="__codelineno-15-77"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-15-78" name="__codelineno-15-78"></a><span class="w">                </span><span class="n">nodestack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">createnode</span><span class="p">(</span><span class="n">var</span><span class="p">));</span>
+<a id="__codelineno-15-79" name="__codelineno-15-79"></a><span class="w">                </span><span class="n">var</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="c1">//clear the string and start over</span>
+<a id="__codelineno-15-80" name="__codelineno-15-80"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-81" name="__codelineno-15-81"></a><span class="w">            </span><span class="k">while</span><span class="p">((</span><span class="o">!</span><span class="n">opstack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">opstack</span><span class="p">.</span><span class="n">visit</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">!=</span><span class="s">&quot;(&quot;</span><span class="p">)){</span><span class="c1">//create until we encounter left bracket</span>
+<a id="__codelineno-15-82" name="__codelineno-15-82"></a><span class="w">                </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">op</span><span class="o">=</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="c1">//get the operator</span>
+<a id="__codelineno-15-83" name="__codelineno-15-83"></a><span class="w">                </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">rightnode</span><span class="o">=</span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="c1">//get the numbers</span>
+<a id="__codelineno-15-84" name="__codelineno-15-84"></a><span class="w">                </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">leftnode</span><span class="o">=</span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-85" name="__codelineno-15-85"></a><span class="w">                </span><span class="n">op</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">leftnode</span><span class="p">;</span><span class="n">op</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">rightnode</span><span class="p">;</span><span class="c1">//create the tree</span>
+<a id="__codelineno-15-86" name="__codelineno-15-86"></a><span class="w">                </span><span class="n">nodestack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">op</span><span class="p">);</span><span class="c1">//push the new tree back into the stack</span>
+<a id="__codelineno-15-87" name="__codelineno-15-87"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-88" name="__codelineno-15-88"></a><span class="w">            </span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="c1">//pop the left bracket</span>
+<a id="__codelineno-15-89" name="__codelineno-15-89"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-90" name="__codelineno-15-90"></a><span class="w">        </span><span class="k">else</span><span class="p">{</span><span class="c1">//if expression[i] is an operator,then get two numbers from nodestack and create the tree</span>
+<a id="__codelineno-15-91" name="__codelineno-15-91"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">var</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+<a id="__codelineno-15-92" name="__codelineno-15-92"></a><span class="w">                </span><span class="n">nodestack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">createnode</span><span class="p">(</span><span class="n">var</span><span class="p">));</span>
+<a id="__codelineno-15-93" name="__codelineno-15-93"></a><span class="w">                </span><span class="n">var</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-15-94" name="__codelineno-15-94"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-95" name="__codelineno-15-95"></a><span class="w">            </span><span class="k">while</span><span class="p">((</span><span class="o">!</span><span class="n">opstack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">precedence</span><span class="p">(</span><span class="n">opstack</span><span class="p">.</span><span class="n">visit</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">&gt;=</span><span class="n">precedence</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">]))){</span><span class="c1">//if the precedence of previous operator is greater,handle the operator first</span>
+<a id="__codelineno-15-96" name="__codelineno-15-96"></a><span class="w">                </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">op</span><span class="o">=</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-97" name="__codelineno-15-97"></a><span class="w">                </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">rightnode</span><span class="o">=</span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-98" name="__codelineno-15-98"></a><span class="w">                </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">leftnode</span><span class="o">=</span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-99" name="__codelineno-15-99"></a><span class="w">                </span><span class="n">op</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">leftnode</span><span class="p">;</span><span class="n">op</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">rightnode</span><span class="p">;</span>
+<a id="__codelineno-15-100" name="__codelineno-15-100"></a><span class="w">                </span><span class="n">nodestack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">op</span><span class="p">);</span>
+<a id="__codelineno-15-101" name="__codelineno-15-101"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-102" name="__codelineno-15-102"></a><span class="w">            </span><span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">createnode</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">])));</span><span class="c1">//push the new operator into opstack</span>
+<a id="__codelineno-15-103" name="__codelineno-15-103"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-104" name="__codelineno-15-104"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-105" name="__codelineno-15-105"></a><span class="w">    </span><span class="cm">/*there is still a variable in var,a operator in opstack,a variable in nodestack,create the tree*/</span>
+<a id="__codelineno-15-106" name="__codelineno-15-106"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">var</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+<a id="__codelineno-15-107" name="__codelineno-15-107"></a><span class="w">        </span><span class="n">nodestack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">createnode</span><span class="p">(</span><span class="n">var</span><span class="p">));</span>
+<a id="__codelineno-15-108" name="__codelineno-15-108"></a><span class="w">        </span><span class="n">var</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w">    </span>
+<a id="__codelineno-15-109" name="__codelineno-15-109"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-110" name="__codelineno-15-110"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">opstack</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+<a id="__codelineno-15-111" name="__codelineno-15-111"></a><span class="w">        </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">op</span><span class="o">=</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-112" name="__codelineno-15-112"></a><span class="w">        </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">rightnode</span><span class="o">=</span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-113" name="__codelineno-15-113"></a><span class="w">        </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">leftnode</span><span class="o">=</span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-15-114" name="__codelineno-15-114"></a><span class="w">        </span><span class="n">op</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">leftnode</span><span class="p">;</span><span class="n">op</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">rightnode</span><span class="p">;</span>
+<a id="__codelineno-15-115" name="__codelineno-15-115"></a><span class="w">        </span><span class="n">nodestack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">op</span><span class="p">);</span>
+<a id="__codelineno-15-116" name="__codelineno-15-116"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-117" name="__codelineno-15-117"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">nodestack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="c1">//return the headnode</span>
+<a id="__codelineno-15-118" name="__codelineno-15-118"></a><span class="p">}</span>
+<a id="__codelineno-15-119" name="__codelineno-15-119"></a>
+<a id="__codelineno-15-120" name="__codelineno-15-120"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">addnodes</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">,</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">){</span><span class="c1">//merge leftnode,rightnode and operator &quot;+&quot;</span>
+<a id="__codelineno-15-121" name="__codelineno-15-121"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="c1">//if left is NULL then there is no need to print &quot;+&quot;(in case &quot;+a&quot;)</span>
+<a id="__codelineno-15-122" name="__codelineno-15-122"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-123" name="__codelineno-15-123"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="c1">//if right is NULL then there is no need to print &quot;+&quot;(in case &quot;a+&quot;)</span>
+<a id="__codelineno-15-124" name="__codelineno-15-124"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<a id="__codelineno-15-125" name="__codelineno-15-125"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;+&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-126" name="__codelineno-15-126"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">left</span><span class="p">;</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-127" name="__codelineno-15-127"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-15-128" name="__codelineno-15-128"></a><span class="p">}</span>
+<a id="__codelineno-15-129" name="__codelineno-15-129"></a>
+<a id="__codelineno-15-130" name="__codelineno-15-130"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">subnodes</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">,</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">){</span><span class="c1">//merge leftnode,rightnode and operator &quot;-&quot;</span>
+<a id="__codelineno-15-131" name="__codelineno-15-131"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="c1">//if right is NULL then there is no need to print &quot;-&quot;(in case &quot;a-&quot;)</span>
+<a id="__codelineno-15-132" name="__codelineno-15-132"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<a id="__codelineno-15-133" name="__codelineno-15-133"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-134" name="__codelineno-15-134"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">left</span><span class="p">;</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-135" name="__codelineno-15-135"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-15-136" name="__codelineno-15-136"></a><span class="p">}</span>
+<a id="__codelineno-15-137" name="__codelineno-15-137"></a>
+<a id="__codelineno-15-138" name="__codelineno-15-138"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">mulnodes</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">,</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">){</span><span class="c1">//merge leftnode,rightnode and operator &quot;*&quot;</span>
+<a id="__codelineno-15-139" name="__codelineno-15-139"></a><span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">left</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">right</span><span class="o">==</span><span class="nb">NULL</span><span class="p">))</span><span class="c1">//if right or left is NULL then the whole result is 0</span>
+<a id="__codelineno-15-140" name="__codelineno-15-140"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-15-141" name="__codelineno-15-141"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-142" name="__codelineno-15-142"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">left</span><span class="p">;</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-143" name="__codelineno-15-143"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-15-144" name="__codelineno-15-144"></a><span class="p">}</span>
+<a id="__codelineno-15-145" name="__codelineno-15-145"></a>
+<a id="__codelineno-15-146" name="__codelineno-15-146"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">divnodes</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">,</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">){</span><span class="c1">//merge leftnode,rightnode and operator &quot;/&quot;</span>
+<a id="__codelineno-15-147" name="__codelineno-15-147"></a><span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">left</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">right</span><span class="o">==</span><span class="nb">NULL</span><span class="p">))</span><span class="c1">//if right or left is NULL then the whole result is 0</span>
+<a id="__codelineno-15-148" name="__codelineno-15-148"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-15-149" name="__codelineno-15-149"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-150" name="__codelineno-15-150"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">left</span><span class="p">;</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-151" name="__codelineno-15-151"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-15-152" name="__codelineno-15-152"></a><span class="p">}</span>
+<a id="__codelineno-15-153" name="__codelineno-15-153"></a>
+<a id="__codelineno-15-154" name="__codelineno-15-154"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">powernodes</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">left</span><span class="p">,</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">right</span><span class="p">){</span><span class="c1">//merge leftnode,rightnode and operator &quot;^&quot;</span>
+<a id="__codelineno-15-155" name="__codelineno-15-155"></a><span class="w">    </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;^&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-156" name="__codelineno-15-156"></a><span class="w">    </span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">=</span><span class="n">left</span><span class="p">;</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">;</span>
+<a id="__codelineno-15-157" name="__codelineno-15-157"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a id="__codelineno-15-158" name="__codelineno-15-158"></a><span class="p">}</span>
+<a id="__codelineno-15-159" name="__codelineno-15-159"></a>
+<a id="__codelineno-15-160" name="__codelineno-15-160"></a><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="nf">differentiate</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">root</span><span class="p">,</span><span class="n">string</span><span class="w"> </span><span class="n">var</span><span class="p">){</span>
+<a id="__codelineno-15-161" name="__codelineno-15-161"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-15-162" name="__codelineno-15-162"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-15-163" name="__codelineno-15-163"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">isnumber</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">))</span><span class="c1">//the derivative of constant number is 0</span>
+<a id="__codelineno-15-164" name="__codelineno-15-164"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-15-165" name="__codelineno-15-165"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="n">var</span><span class="p">)</span><span class="c1">//the derivative of the var is 1</span>
+<a id="__codelineno-15-166" name="__codelineno-15-166"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-167" name="__codelineno-15-167"></a><span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="c1">//root-&gt;value is an operator</span>
+<a id="__codelineno-15-168" name="__codelineno-15-168"></a><span class="w">        </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">leftchild</span><span class="o">=</span><span class="n">differentiate</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">var</span><span class="p">);</span><span class="c1">//get the derivative of leftchild</span>
+<a id="__codelineno-15-169" name="__codelineno-15-169"></a><span class="w">        </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">rightchild</span><span class="o">=</span><span class="n">differentiate</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">var</span><span class="p">);</span><span class="c1">//get the derivative of rightchild</span>
+<a id="__codelineno-15-170" name="__codelineno-15-170"></a>
+<a id="__codelineno-15-171" name="__codelineno-15-171"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;+&quot;</span><span class="p">)</span><span class="c1">//F(x)=f(x)+g(x),F&#39;(x)=f&#39;(x)+g&#39;(x)</span>
+<a id="__codelineno-15-172" name="__codelineno-15-172"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">addnodes</span><span class="p">(</span><span class="n">leftchild</span><span class="p">,</span><span class="n">rightchild</span><span class="p">);</span>
+<a id="__codelineno-15-173" name="__codelineno-15-173"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;-&quot;</span><span class="p">)</span><span class="c1">//F(x)=f(x)-g(x),F&#39;(x)=f&#39;(x)-g&#39;(x)</span>
+<a id="__codelineno-15-174" name="__codelineno-15-174"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">subnodes</span><span class="p">(</span><span class="n">leftchild</span><span class="p">,</span><span class="n">rightchild</span><span class="p">);</span>
+<a id="__codelineno-15-175" name="__codelineno-15-175"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;*&quot;</span><span class="p">)</span><span class="c1">//F(x)=f(x)*g(x),F&#39;(x)=f&#39;(x)*g(x)+f(x)*g&#39;(x)</span>
+<a id="__codelineno-15-176" name="__codelineno-15-176"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">addnodes</span><span class="p">(</span><span class="n">mulnodes</span><span class="p">(</span><span class="n">leftchild</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">),</span><span class="n">mulnodes</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">rightchild</span><span class="p">));</span>
+<a id="__codelineno-15-177" name="__codelineno-15-177"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;/&quot;</span><span class="p">){</span><span class="c1">//F(x)=f(x)/g(x),F&#39;(x)=[f&#39;(x)*g(x)-f(x)*g&#39;(x)]/g(x)^2</span>
+<a id="__codelineno-15-178" name="__codelineno-15-178"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">term1</span><span class="o">=</span><span class="n">mulnodes</span><span class="p">(</span><span class="n">leftchild</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-15-179" name="__codelineno-15-179"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">term2</span><span class="o">=</span><span class="n">mulnodes</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">rightchild</span><span class="p">);</span>
+<a id="__codelineno-15-180" name="__codelineno-15-180"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">term3</span><span class="o">=</span><span class="n">powernodes</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">));</span>
+<a id="__codelineno-15-181" name="__codelineno-15-181"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">divnodes</span><span class="p">(</span><span class="n">subnodes</span><span class="p">(</span><span class="n">term1</span><span class="p">,</span><span class="n">term2</span><span class="p">),</span><span class="n">term3</span><span class="p">);</span>
+<a id="__codelineno-15-182" name="__codelineno-15-182"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-183" name="__codelineno-15-183"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">==</span><span class="s">&quot;^&quot;</span><span class="p">){</span><span class="c1">//F(x)=f(x)^[g(x)],F&#39;(x)=[g&#39;(x)*lnf(x)+g(x)*f&#39;(x)/f(x)]*f(x)^g(x)</span>
+<a id="__codelineno-15-184" name="__codelineno-15-184"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">term1</span><span class="o">=</span><span class="n">mulnodes</span><span class="p">(</span><span class="n">rightchild</span><span class="p">,</span><span class="n">createnode</span><span class="p">(</span><span class="s">&quot;ln(&quot;</span><span class="o">+</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">value</span><span class="o">+</span><span class="s">&quot;)&quot;</span><span class="p">));</span>
+<a id="__codelineno-15-185" name="__codelineno-15-185"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">term2</span><span class="o">=</span><span class="n">divnodes</span><span class="p">(</span><span class="n">mulnodes</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">leftchild</span><span class="p">),</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<a id="__codelineno-15-186" name="__codelineno-15-186"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">term3</span><span class="o">=</span><span class="n">powernodes</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-15-187" name="__codelineno-15-187"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mulnodes</span><span class="p">(</span><span class="n">addnodes</span><span class="p">(</span><span class="n">term1</span><span class="p">,</span><span class="n">term2</span><span class="p">),</span><span class="n">term3</span><span class="p">);</span>
+<a id="__codelineno-15-188" name="__codelineno-15-188"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-189" name="__codelineno-15-189"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-190" name="__codelineno-15-190"></a><span class="p">}</span>
+<a id="__codelineno-15-191" name="__codelineno-15-191"></a>
+<a id="__codelineno-15-192" name="__codelineno-15-192"></a><span class="kt">void</span><span class="w"> </span><span class="nf">printtree</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">root</span><span class="p">){</span><span class="c1">//print the expression tree back to inorder expression</span>
+<a id="__codelineno-15-193" name="__codelineno-15-193"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-15-194" name="__codelineno-15-194"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-15-195" name="__codelineno-15-195"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">){</span>
+<a id="__codelineno-15-196" name="__codelineno-15-196"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">isoperator</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="n">isoperator</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)){</span>
+<a id="__codelineno-15-197" name="__codelineno-15-197"></a><span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="o">=</span><span class="n">precedence</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">&gt;</span><span class="n">precedence</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<a id="__codelineno-15-198" name="__codelineno-15-198"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="c1">//if root&#39;s operator is higher than root&#39;s leftchild&#39;s operator,then expression in leftchild need brackets</span>
+<a id="__codelineno-15-199" name="__codelineno-15-199"></a><span class="w">                </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;(&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-200" name="__codelineno-15-200"></a><span class="w">            </span><span class="n">printtree</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<a id="__codelineno-15-201" name="__codelineno-15-201"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<a id="__codelineno-15-202" name="__codelineno-15-202"></a><span class="w">                </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-203" name="__codelineno-15-203"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-204" name="__codelineno-15-204"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-15-205" name="__codelineno-15-205"></a><span class="w">            </span><span class="n">printtree</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<a id="__codelineno-15-206" name="__codelineno-15-206"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-207" name="__codelineno-15-207"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-15-208" name="__codelineno-15-208"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">){</span>
+<a id="__codelineno-15-209" name="__codelineno-15-209"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">isoperator</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="n">isoperator</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)){</span>
+<a id="__codelineno-15-210" name="__codelineno-15-210"></a><span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="o">=</span><span class="n">precedence</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">&gt;</span><span class="n">precedence</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<a id="__codelineno-15-211" name="__codelineno-15-211"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="c1">//if root&#39;s operator is higher than root&#39;s rightchild&#39;s operator,then expression in rightchild need brackets</span>
+<a id="__codelineno-15-212" name="__codelineno-15-212"></a><span class="w">                </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;(&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-213" name="__codelineno-15-213"></a><span class="w">            </span><span class="n">printtree</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-15-214" name="__codelineno-15-214"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<a id="__codelineno-15-215" name="__codelineno-15-215"></a><span class="w">                </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<a id="__codelineno-15-216" name="__codelineno-15-216"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-217" name="__codelineno-15-217"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-15-218" name="__codelineno-15-218"></a><span class="w">            </span><span class="n">printtree</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-15-219" name="__codelineno-15-219"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-220" name="__codelineno-15-220"></a><span class="p">}</span>
+<a id="__codelineno-15-221" name="__codelineno-15-221"></a>
+<a id="__codelineno-15-222" name="__codelineno-15-222"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-15-223" name="__codelineno-15-223"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span>
+<a id="__codelineno-15-224" name="__codelineno-15-224"></a><span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">expression</span><span class="p">;</span>
+<a id="__codelineno-15-225" name="__codelineno-15-225"></a>
+<a id="__codelineno-15-226" name="__codelineno-15-226"></a><span class="w">    </span><span class="cm">/*build the expression tree*/</span>
+<a id="__codelineno-15-227" name="__codelineno-15-227"></a><span class="w">    </span><span class="n">TreeNode</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="o">=</span><span class="n">buildtree</span><span class="p">(</span><span class="n">expression</span><span class="p">);</span>
+<a id="__codelineno-15-228" name="__codelineno-15-228"></a>
+<a id="__codelineno-15-229" name="__codelineno-15-229"></a><span class="w">    </span><span class="cm">/*count all the variable names*/</span>
+<a id="__codelineno-15-230" name="__codelineno-15-230"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">variables</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<a id="__codelineno-15-231" name="__codelineno-15-231"></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">var</span><span class="p">;</span>
+<a id="__codelineno-15-232" name="__codelineno-15-232"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-15-233" name="__codelineno-15-233"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">expression</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-15-234" name="__codelineno-15-234"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">isalnum</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<a id="__codelineno-15-235" name="__codelineno-15-235"></a><span class="w">            </span><span class="n">var</span><span class="o">+=</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-15-236" name="__codelineno-15-236"></a><span class="w">        </span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-15-237" name="__codelineno-15-237"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">var</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+<a id="__codelineno-15-238" name="__codelineno-15-238"></a><span class="w">                </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span><span class="c1">//flag=true means the new variable name is not in the old set of variable names</span>
+<a id="__codelineno-15-239" name="__codelineno-15-239"></a><span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">total</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-15-240" name="__codelineno-15-240"></a><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">var</span><span class="o">==</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+<a id="__codelineno-15-241" name="__codelineno-15-241"></a><span class="w">                        </span><span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-15-242" name="__codelineno-15-242"></a><span class="w">                        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-243" name="__codelineno-15-243"></a><span class="w">                    </span><span class="p">}</span>
+<a id="__codelineno-15-244" name="__codelineno-15-244"></a><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="c1">//add the new variable name</span>
+<a id="__codelineno-15-245" name="__codelineno-15-245"></a><span class="w">                    </span><span class="n">variables</span><span class="p">[</span><span class="o">++</span><span class="n">total</span><span class="p">]</span><span class="o">=</span><span class="n">var</span><span class="p">;</span>
+<a id="__codelineno-15-246" name="__codelineno-15-246"></a><span class="w">                </span><span class="n">var</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-15-247" name="__codelineno-15-247"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-248" name="__codelineno-15-248"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-249" name="__codelineno-15-249"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-250" name="__codelineno-15-250"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">var</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+<a id="__codelineno-15-251" name="__codelineno-15-251"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-15-252" name="__codelineno-15-252"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">total</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-15-253" name="__codelineno-15-253"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">var</span><span class="o">==</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+<a id="__codelineno-15-254" name="__codelineno-15-254"></a><span class="w">                </span><span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-15-255" name="__codelineno-15-255"></a><span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-256" name="__codelineno-15-256"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-15-257" name="__codelineno-15-257"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<a id="__codelineno-15-258" name="__codelineno-15-258"></a><span class="w">            </span><span class="n">variables</span><span class="p">[</span><span class="o">++</span><span class="n">total</span><span class="p">]</span><span class="o">=</span><span class="n">var</span><span class="p">;</span>
+<a id="__codelineno-15-259" name="__codelineno-15-259"></a><span class="w">        </span><span class="n">var</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<a id="__codelineno-15-260" name="__codelineno-15-260"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-261" name="__codelineno-15-261"></a><span class="w">    </span><span class="cm">/*sort all the variable name in lexicographical order*/</span>
+<a id="__codelineno-15-262" name="__codelineno-15-262"></a><span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">variables</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">variables</span><span class="o">+</span><span class="n">total</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">cmp</span><span class="p">);</span>
+<a id="__codelineno-15-263" name="__codelineno-15-263"></a>
+<a id="__codelineno-15-264" name="__codelineno-15-264"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">total</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-15-265" name="__codelineno-15-265"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">isnumber</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">])){</span>
+<a id="__codelineno-15-266" name="__codelineno-15-266"></a><span class="w">            </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="s">&quot;: &quot;</span><span class="p">;</span>
+<a id="__codelineno-15-267" name="__codelineno-15-267"></a><span class="w">            </span><span class="n">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">ans</span><span class="o">=</span><span class="n">differentiate</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="c1">//differentiate all variables</span>
+<a id="__codelineno-15-268" name="__codelineno-15-268"></a><span class="w">            </span><span class="n">printtree</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span>
+<a id="__codelineno-15-269" name="__codelineno-15-269"></a><span class="w">            </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-270" name="__codelineno-15-270"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-271" name="__codelineno-15-271"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-15-272" name="__codelineno-15-272"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="declaration">Declaration<a class="headerlink" href="#declaration" title="Permanent link">&para;</a></h1>
+<p>I hereby declare that all the work done in this project titled “Autograd for Algebraic Expressions” is of my independent effort.</p>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+    
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+  <aside class="md-source-file">
+
+    <!-- Date of last update -->
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-03</span>
+  </span>
+
+    
+
+    <!-- Date of creation -->
+    
+
+    <!-- Authors (git-authors plugin) -->
+    
+
+    <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../FDS-Project1%20report/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: Project 1"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Project 1
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../FDS-Project3%20report/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: Project 3"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Project 3
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 BruceJin/All Rights Reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+    <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;">
+    本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+    <span id="finicount_views"></span>    &nbsp;|&nbsp;
+    <footer>
+      <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+    </footer>
+  </div>
+      </font>
+
+      <style>
+        .footer-visit-count {
+            height: fit-content;
+            min-height: 55px; /* 根据实际情况调整此高度 */
+        }
+        </style>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/BruceJqs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<brucejin1005@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/glightbox.min.js"></script>
+      
+    
+    <script src="../../../assets/javascripts/custom.9458f965.min.js"></script>
+  
+  </body>
+</html>
