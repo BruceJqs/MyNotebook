@@ -1,6 +1,6 @@
-# Chapter 1 : Introduction
+## Chapter 1 : Introduction
 
-## Problem 
+### Problem 
 
 #### Description
 
@@ -31,7 +31,7 @@ c: 1*ln(b)*b^c*d
 d: b^c*1
 ```
 
-## Algorithm Analysis
+### Algorithm Analysis
 
 The whole Algorithm can be devided into three main parts:
 
@@ -39,7 +39,7 @@ The whole Algorithm can be devided into three main parts:
 - Store all the variable names in the expression and sort them in lexicographical order.
 - Output the derivative of the input expression with respect to each variable.
 
-# Chapter 2 : Algorithm Specification
+## Chapter 2 : Algorithm Specification
 
 #### Step 1 : Create the expression tree
 
@@ -133,9 +133,9 @@ if(root->value is an operator){
 }
 ```
 
-# Chapter 3 : Testing Results
+## Chapter 3 : Testing Results
 
-## Test case 1
+### Test case 1
 
 Test case 1 wants to test expression including "+,-,*,/"
 
@@ -155,7 +155,7 @@ d: -1*e/e^2
 e: -(-d*1)/e^2
 ```
 
-## Test case 2
+### Test case 2
 
 Test case 2 wants to test expression including "+,-,*,/,(,)".
 
@@ -176,7 +176,7 @@ e: -(-1)*f/f^2
 f: -(-(d-e)*1)/f^2
 ```
 
-## Test case 3
+### Test case 3
 
 Test case 3 wants to test expression including variables whose length is longer.
 
@@ -199,7 +199,7 @@ ee: -bb/ss*cc*1
 ss: -(-bb*1)/ss^2*cc*(ddffs+ee)
 ```
 
-## Test case 4
+### Test case 4
 
 Test case 4 wants to test expression including forms of "^".
 
@@ -215,7 +215,7 @@ aa^2+2^aa+2^2+aa^aa
 aa: 2*1/aa*aa^2+1*ln(2)*2^aa+(1*ln(aa)+aa*1/aa)*aa^aa
 ```
 
-## Test case 5
+### Test case 5
 
 Test case 5 mix all the situations in Test case 1,2,3,4.
 
@@ -238,9 +238,9 @@ bb: aa*10*1
 bba: -1*baa^20
 ```
 
-# Chapter 4 : Analysis and Comments
+## Chapter 4 : Analysis and Comments
 
-## Time Complexity
+### Time Complexity
 
 For step 1 : Creating the expression tree, we traverse all operators, variables and numbers in the expression, so the time complexity of step 1 is $O(n)$ (Assume the length of the expression is $n$).
 
@@ -250,15 +250,15 @@ For step 3 : Output, firstly we differentiate all $m$ variables and use the func
 
 To sum up, the total time complexity of the program is $O(n+mlogm+mp)$($n$ indicates the length of the expression, $m$ indicates the number of the variables, $p$ indicates the number of nodes in the expression tree)
 
-## Space Complexity 
+### Space Complexity 
 
 The whole program construct $c_1*p$ nodes($c_1$ is a constant) , $c_2$ strings($c_2$ is a constant) to store the expression and a string array(but the total length is the length of the expression). So the total space complexity is $O(p+n)$ ($n$ indicates the length of the expression,  $p$ indicates the number of nodes in the expression tree)
 
-## Comments
+### Comments
 
 The function of this program is still limited, for it can't support mathmatic functions such as $\sin x,\cos x,\tan x,\ln x,\log(x,y),\exp(x)...$ . Also it can't simplify both the input expression or the output expression. It still needs to be improved. 
 
-# Appendix : Source Code
+## Appendix : Source Code
 
 ```c++
 #include<iostream>
@@ -535,6 +535,6 @@ int main(){
 }
 ```
 
-# Declaration
+## Declaration
 
 I hereby declare that all the work done in this project titled “Autograd for Algebraic Expressions” is of my independent effort.

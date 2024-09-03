@@ -1,6 +1,6 @@
-# Chapter 1 : Introduction
+## Chapter 1 : Introduction
 
-## Problem 
+### Problem 
 
 #### Description
 
@@ -54,7 +54,7 @@ None
 None
 ```
 
-## Algorithm Analysis
+### Algorithm Analysis
 
 #### Dijkstra Algorithm
 
@@ -80,7 +80,7 @@ During the exploration process, once it is discovered that the original choice w
 
 Repeat this process until all solutions are obtained.
 
-# Chapter 2 : Algorithm Specification
+## Chapter 2 : Algorithm Specification
 
 #### Step 1 : Apply Dijkstra Algorithm
 
@@ -135,9 +135,9 @@ void dfs(starting point,current point){
 }
 ```
 
-# Chapter 3 : Testing Results
+## Chapter 3 : Testing Results
 
-## Test case 1
+### Test case 1
 
 Test case 1 wants to test the graph of 10 vertices and 38 edges with the threshold being 1 and query times being 5.
 
@@ -203,7 +203,7 @@ None
 
 Status : Passed
 
-## Test case 2
+### Test case 2
 
 Test case 2 wants to test the graph of 20 vertices and 137 edges with the threshold being 2 and query times being 10.
 
@@ -245,7 +245,7 @@ None
 
 Status : Passed
 
-## Test case 3
+### Test case 3
 
 Test case 3 wants to test the graph of 50 vertices and 1089 edges with the threshold being 2 and query times being 20.
 
@@ -306,7 +306,7 @@ None
 
 Status : Passed
 
-## Test case 4
+### Test case 4
 
 Test case 4 wants to the graph of 200 vertices and 8558 edges with the threshold being 1 and query times being 100.
 
@@ -335,7 +335,7 @@ Test case 4 wants to the graph of 200 vertices and 8558 edges with the threshold
 
 Status : Passed
 
-## Test case 5
+### Test case 5
 
 Test case 5 wants to test the graph of 500 vertices and 124750 edges with the threshold being 4 and query times being 500. (Maximum test cases)
 
@@ -363,9 +363,9 @@ None
 
 Status : Passed
 
-# Chapter 4 : Analysis and Comments
+## Chapter 4 : Analysis and Comments
 
-## Time Complexity
+### Time Complexity
 
 For step 1 : Apply Dijkstra Algorithm,  the time complexity of find the smallest unknown distance vertex through heap is $O(log\space n)$. Also we still need to traverse all the vertex, so the time complexity of step 1 is $O(nlog\space n)$.
 
@@ -373,7 +373,7 @@ For step 2 : Get the path and judge transportation hub. Firstly we need to trave
 
 To sum up, the total time complexity of the program is $O(nlog\space n+T*n^2)=O(T*n^2)$
 
-## Space Complexity 
+### Space Complexity 
 
 The whole program construct:
 
@@ -386,13 +386,13 @@ The whole program construct:
 
 To sum up the total space complexity of the program is $O(n^2)$
 
-## Comments
+### Comments
 
 This program successfully complete the task, but the DFS algorithm slow down the whole program, making the optimizing part of the Dijkstra algorithm a bit useless. It can be possibly improved. 
 
-# Appendix : Source Code
+## Appendix : Source Code
 
-## Source Code
+### Source Code
 
 ```c++
 #include<stdio.h>
@@ -503,7 +503,7 @@ int main(){
 }
 ```
 
-## Data Generator
+### Data Generator
 
 ```c++
 #include<bits/stdc++.h>
@@ -546,6 +546,6 @@ int main(void){
 
 
 
-# Declaration
+## Declaration
 
 I hereby declare that all the work done in this project titled “Transportation Hub” is of my independent effort.

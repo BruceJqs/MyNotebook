@@ -1,6 +1,6 @@
-# Chapter 1 : Introduction
+## Chapter 1 : Introduction
 
-## Problem 
+### Problem 
 
 #### Description
 
@@ -35,7 +35,7 @@ No.     4 :      4 +      7 =     11
 No.     5 :      5 +      6 =     11
 ```
 
-## Algorithm Analysis
+### Algorithm Analysis
 
 We have two algorithms to solve this problem. One is directly searching the pairs whose time complexity is $O(N^2)$ and another is using Binary_Search algorithm together with Quick_Sort algorithm whose time complexity is $O(NlogN)$.Introductions of Binary_Search algorithm and Quick_Sort algorithm are as follows:
 
@@ -97,9 +97,9 @@ Move elements larger than the intermediate element to right side of the sequence
 
 Continuously calculate the middle position and arrange the left and right areas until the left pointer is greater than the right pointer, indicating that the search range is empty and the sorting process is over.
 
-# Chapter 2 : Algorithm Specification
+## Chapter 2 : Algorithm Specification
 
-## Algorithm 1
+### Algorithm 1
 
 Algorithm 1 uses 2 "for" loops to solve this problem.The first loop enumerates $a$ while the second loop enumerates $b$.Then check whether $a+b=c$.Pseudo-code is shown below:
 
@@ -113,7 +113,7 @@ for i from 1~n
         }
 ```
 
-## Algorithm 2
+### Algorithm 2
 
 Algorithm 2 uses Binary_Search Algorithm and Quick_Sort Algorithm to solve this problem.We enumerate $a$ and check whether $c-a$ exists in the array.To check whether $c-a$ exists in the array,the fastest algorithm is Binary_Search Algorithm,but we still need Quick_Sort Algorithm because Binary_Search Algorithm asks the array to be in ascending order or in descending order.Pseudo-code is shown below:
 
@@ -127,7 +127,7 @@ for i from 1~n
     }
 ```
 
-# Chapter 3 : Testing Results
+## Chapter 3 : Testing Results
 
 #### Test Result Table
 
@@ -147,9 +147,9 @@ for i from 1~n
 
 ![image-20240307220743828](../../assets/image-20240307220743828.png)
 
-# Chapter 4 : Analysis and Comments
+## Chapter 4 : Analysis and Comments
 
-## Algorithm 1
+### Algorithm 1
 
 Obviously the time complexity of Algorithm 1 is $O(N^2)$ because it uses two loops of range $n$.
 
@@ -157,7 +157,7 @@ The memory complexity of Algorithm 1 is $O(N)$ because it only use the array "nu
 
 Its code is simple but the duration of time is longer as the result shows.
 
-## Algorithm 2
+### Algorithm 2
 
 The average time complexity of Quick_Sort Algorithm is $O(NlogN)$ and the worst time complexity is $O(N^2)$.The time complexity of Binary_Search Algorithm is $O(logN)$.Since we enumerate $a$ in the loop of range $n$ and use Binary_Search Algorithm to search $b$,the whole average time complexity of Algorithm 2 is $O(NlogN)$.
 
@@ -167,9 +167,9 @@ Its duration of time is shorter,consistent with the result.but there is a possib
 
 There are more algorithms to solve this problem, such as Hash-Table Algorithm.
 
-# Appendix : Source Code 
+## Appendix : Source Code 
 
-## Algorithm 1（$O(N^2)$）
+### Algorithm 1（$O(N^2)$）
 
 ```c
 #include<stdio.h>
@@ -230,7 +230,7 @@ int main(void)
 
 <div style="page-break-after:always;"></div>
 
-## Algorithm 2（$O(NlogN)$）
+### Algorithm 2（$O(NlogN)$）
 
 ```c
 #include<stdio.h>
@@ -329,7 +329,7 @@ int main(void)
 
 <div style="page-break-after:always;"></div>
 
-## Data Generator
+### Data Generator
 
 ```c
 #include<stdio.h>
@@ -381,6 +381,6 @@ int main(void)
 }
 ```
 
-# Declaration
+## Declaration
 
 I hereby declare that all the work done in this project titled “Performance Measurement（A+B）” is of my independent effort.
