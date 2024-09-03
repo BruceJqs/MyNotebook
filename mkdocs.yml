@@ -68,6 +68,11 @@ repo_name: BruceJqs/MyNotebook # 右上角的名字
 # [Navigation]
 nav:
   - 首页: index.md
+  - Computer Science:
+    - 数据结构基础｜Fundamental Data Structure: 
+      - Project 1: blog/Computer Science/FDS-Project1 report.md
+      - Project 2: blog/Computer Science/FDS-Project2 report.md
+      - Project 3: blog/Computer Science/FDS-Project3 report.md
   - Math: 
     - 离散数学及其应用｜Discrete Mathematics:
       - "Chapter 01: The Foundations:Logic and Proofs": blog/Math/Discrete mathmatics notes-Ch01.md
