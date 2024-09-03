@@ -1,7 +1,4 @@
 # Discrete Mathematics and Its Applications Notes
-[TOC]
-
-<div style="page-break-after:always;"></div>
 
 ## Chapter 1 The Foundations : Logic and Proofs
 
@@ -369,13 +366,13 @@ y:=temp;
 
 #### Translating Nested Quantifiers into English
 
-![image-20240308205542711](/Users/bruce/Library/Application Support/typora-user-images/image-20240308205542711.png)
+![image-20240308205542711](../../assets/image-20240308205542711.png)
 
-![image-20240308205553473](/Users/bruce/Library/Application Support/typora-user-images/image-20240308205553473.png)
+![image-20240308205553473](../../assets/image-20240308205553473.png)
 
-![image-20240308205559682](/Users/bruce/Library/Application Support/typora-user-images/image-20240308205559682.png)
+![image-20240308205559682](../../assets/image-20240308205559682.png)
 
-![image-20240308205605846](/Users/bruce/Library/Application Support/typora-user-images/image-20240308205605846.png)
+![image-20240308205605846](../../assets/image-20240308205605846.png)
 
 #### Negating Nested Quantifiers
 
@@ -394,7 +391,7 @@ De Morgan 定律也同样适用于嵌套量词的否定。
 
 **e.g. 将表达式 $\forall x ((\exists y R(x,y) \land \forall y \neg S(x,y)) \rightarrow \neg (\exists y M(x,y) \land P))$ 转换为前束范式。**
 
-![image-20240309153951399](/Users/bruce/Library/Application Support/typora-user-images/image-20240309153951399.png)
+![image-20240309153951399](../../assets/image-20240309153951399.png)
 
 ### Rules of Inference
 
@@ -406,7 +403,7 @@ De Morgan 定律也同样适用于嵌套量词的否定。
 
 e.g.
 
-![image-20240312084520507](/Users/bruce/Library/Application Support/typora-user-images/image-20240312084520507.png)
+![image-20240312084520507](../../assets/image-20240312084520507.png)
 
 #### Valid Arguments & Argument Form
 
@@ -420,14 +417,14 @@ e.g.
 
 |                   名称                   |                           推理规则                           |                           恒真命题                           |
 | :--------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|       Modus Ponens <br>(假言推理)        | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312085542848.png" alt="image-20240312085542848" style="zoom:50%;" /> |         $(p \land (p \rightarrow q)) \rightarrow q$          |
-|        Modus Tollens<br>(取拒式 )        | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312085800266.png" alt="image-20240312085800266" style="zoom:50%;" /> |    $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$     |
-| Hypothetical Syllogism<br>（假言三段论） | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312085938651.png" alt="image-20240312085938651" style="zoom:50%;" /> | $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$ |
-|  Disjunctive Syllogism<br>(析取三段论)   | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312090058118.png" alt="image-20240312090058118" style="zoom:50%;" /> |          $(\neg p \land (p \lor q)) \rightarrow q$           |
-|           Addition<br>(附加律)           | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312090228050.png" alt="image-20240312090228050" style="zoom:50%;" /> |                  $p \rightarrow (p \lor q)$                  |
-|        Simplification<br>(化简律)        | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312090327705.png" alt="image-20240312090327705" style="zoom:50%;" /> |                 $(p \land q) \rightarrow q$                  |
-|         Conjunction<br>(合取律)          | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312090423713.png" alt="image-20240312090423713" style="zoom:50%;" /> |          $((p) \land (q)) \rightarrow (p \land q)$           |
-|          Resolution<br>(消解律)          | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240312090535015.png" alt="image-20240312090535015" style="zoom:50%;" /> | $((\neg p \lor r) \land (p \lor q)) \rightarrow (q \lor r)$  |
+|       Modus Ponens <br>(假言推理)        | ![](../../assets/image-20240312085542848.png) |         $(p \land (p \rightarrow q)) \rightarrow q$          |
+|        Modus Tollens<br>(取拒式 )        | ![](../../assets/image-20240312085800266.png) |    $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$     |
+| Hypothetical Syllogism<br>（假言三段论） | ![](../../assets/image-20240312085938651.png) | $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$ |
+|  Disjunctive Syllogism<br>(析取三段论)   | ![](../../assets/image-20240312090058118.png) |          $(\neg p \land (p \lor q)) \rightarrow q$           |
+|           Addition<br>(附加律)           | ![](../../assets/image-20240312090228050.png) |                  $p \rightarrow (p \lor q)$                  |
+|        Simplification<br>(化简律)        | ![](../../assets/image-20240312090327705.png) |                 $(p \land q) \rightarrow q$                  |
+|         Conjunction<br>(合取律)          | ![](../../assets/image-20240312090423713.png) |          $((p) \land (q)) \rightarrow (p \land q)$           |
+|          Resolution<br>(消解律)          | ![](../../assets/image-20240312090535015.png) | $((\neg p \lor r) \land (p \lor q)) \rightarrow (q \lor r)$  |
 
 #### Build Valid Arguments
 
@@ -438,17 +435,17 @@ e.g.
 
 **e.g.1. 从命题 $p \land (p \rightarrow q)$ 说明 $q$ 是一个结论。**
 
-![image-20240312091524188](/Users/bruce/Library/Application Support/typora-user-images/image-20240312091524188.png)
+![image-20240312091524188](../../assets/image-20240312091524188.png)
 
 **e.g.2. 说明结论 $\neg w$ 来自于假设 $(w \lor r) \rightarrow v,v \rightarrow (c \lor s),s \rightarrow u,\neg c \land \neg u$**
 
-![image-20240312091906214](/Users/bruce/Library/Application Support/typora-user-images/image-20240312091906214.png)
+![image-20240312091906214](../../assets/image-20240312091906214.png)
 
 如果一个结论是以 $p \rightarrow q$ 的形式给出，那么基于 <font color=blue>$(p_1 \land p_2 \land ...\land p_n \land p) \rightarrow q \equiv (p_1 \land p_2 \land...\land p_n) \rightarrow (p \rightarrow q)$</font>，我们可以将原来的问题转换为<font color=red> $p_1 \land p_2 \land ... \land p_n \land p \Rightarrow q$ </font>
 
 **e.g.3. 说明结论 $r \rightarrow s$ 来自于假设 $p \rightarrow (q \rightarrow s),\neg r \lor p,q$** 
 
-![image-20240312092606366](/Users/bruce/Library/Application Support/typora-user-images/image-20240312092606366.png)
+![image-20240312092606366](../../assets/image-20240312092606366.png)
 
 #### Fallacies
 
@@ -462,16 +459,16 @@ e.g.
 
 |                      名称                      |                           推理规则                           |
 | :--------------------------------------------: | :----------------------------------------------------------: |
-|  Universal Instantiation(UI)<br>（全称实例）   | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240315081333284.png" alt="image-20240315081333284" style="zoom:50%;" /> |
-|  Universal Generalization(UG)<br>（全称引入）  | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240315081412950.png" alt="image-20240315081412950" style="zoom:50%;" /> |
-| Existential Instantiation(EI)<br>（存在实例）  | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240315081514941.png" alt="image-20240315081514941" style="zoom:50%;" /> |
-| Existential Generalization(EG)<br>（存在引入） | <img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240315081621783.png" alt="image-20240315081621783" style="zoom:50%;" /> |
+|  Universal Instantiation(UI)<br>（全称实例）   | ![](../../assets/image-20240315081333284.png) |
+|  Universal Generalization(UG)<br>（全称引入）  | ![](../../assets/image-20240315081412950.png) |
+| Existential Instantiation(EI)<br>（存在实例）  | ![](../../assets/image-20240315081514941.png) |
+| Existential Generalization(EG)<br>（存在引入） | ![](../../assets/image-20240315081621783.png) |
 
 **e.g. 证明以下论证是有效的：**
 
-<img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240315081857784.png" alt="image-20240315081857784" style="zoom:50%;" />
+![](../../assets/image-20240315081857784.png)
 
-<img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240315081901853.png" alt="image-20240315081901853" style="zoom:50%;" />
+![](../../assets/image-20240315081901853.png)
 
 ### Introduction to Proofs
 
@@ -491,7 +488,7 @@ e.g.
 
 **e.g. 给出定理“如果 $n$ 是个奇数，那么 $n^2$ 是个奇数”的直接证明。**
 
-![image-20240319081259375](/Users/bruce/Library/Application Support/typora-user-images/image-20240319081259375.png)
+![image-20240319081259375](../../assets/image-20240319081259375.png)
 
 ####  Proof by Contraposition
 
@@ -499,19 +496,19 @@ e.g.
 
 **e.g. 证明定理“一个完美数不是一个质数”，完美数满足除了自身所有因子的和为自身（如 $6=1+2+3$ ）**
 
-![image-20240319081944024](/Users/bruce/Library/Application Support/typora-user-images/image-20240319081944024.png)
+![image-20240319081944024](../../assets/image-20240319081944024.png)
 
 #### Vacuous Proof
 
 空证明（Vacuous Proof）：为了证明 $p \rightarrow q$ 为真，我们可以直接证明前提为假。
 
-![image-20240319082358104](/Users/bruce/Library/Application Support/typora-user-images/image-20240319082358104.png)
+![image-20240319082358104](../../assets/image-20240319082358104.png)
 
 #### Trivial Proof
 
 平凡证明（Trivial Proof）：为了证明 $p \rightarrow q$ 为真，我们可以直接证明结论为真。
 
-![image-20240319082556501](/Users/bruce/Library/Application Support/typora-user-images/image-20240319082556501.png)
+![image-20240319082556501](../../assets/image-20240319082556501.png)
 
 #### Proof by contradiction
 
@@ -519,7 +516,7 @@ e.g.
 
 **e.g. 证明有无穷多个素数**
 
-![image-20240319083107763](/Users/bruce/Library/Application Support/typora-user-images/image-20240319083107763.png)
+![image-20240319083107763](../../assets/image-20240319083107763.png)
 
 #### Proof of Equivalence
 
@@ -535,7 +532,7 @@ e.g.
 
 **e.g. 证明“如果整数 $n$ 不能被 $3$ 整除，那么 $n^2 \equiv 1(mod \space 3)$”**
 
-![image-20240319084321564](/Users/bruce/Library/Application Support/typora-user-images/image-20240319084321564.png)
+![image-20240319084321564](../../assets/image-20240319084321564.png)
 
 #### Existence Proof
 
@@ -543,13 +540,13 @@ e.g.
 
 **e.g. 证明对于每一个正整数 $n$，存在 $n$ 个连续的复数。**
 
-![image-20240319085145306](/Users/bruce/Library/Application Support/typora-user-images/image-20240319085145306.png)
+![image-20240319085145306](../../assets/image-20240319085145306.png)
 
 或者我们可以假设没有定义域中的 $c$ ，使得 $P(c)$ 为真，然后得到矛盾。
 
 **e.g. 证明存在无理数。**
 
-![image-20240319085348976](/Users/bruce/Library/Application Support/typora-user-images/image-20240319085348976.png)
+![image-20240319085348976](../../assets/image-20240319085348976.png)
 
 #### Uniqueness Proofs
 
@@ -591,7 +588,7 @@ e.g.
 
 在韦恩图当中，用矩形框表达全集（Universal Set，包含所考虑的全部对象），用圆或者其他几何图形来表达集合，<font color="blue">用点来表达集合中的特定元素</font>。
 
-![image-20240319124343503](/Users/bruce/Library/Application Support/typora-user-images/image-20240319124343503.png)
+![image-20240319124343503](../../assets/image-20240319124343503.png)
 
 #### Subsets
 
@@ -629,11 +626,11 @@ e.g.
 
 **e.g.1. 求 $\{\phi\}$ 和 $\{\phi,\{\phi\}\}$ 的幂集。**
 
-![image-20240319153804235](/Users/bruce/Library/Application Support/typora-user-images/image-20240319153804235.png)
+![image-20240319153804235](../../assets/image-20240319153804235.png)
 
 **e.g.2. 证明 $P(A) \in P(B) \Rightarrow A \in B$**
 
-![image-20240319153859219](/Users/bruce/Library/Application Support/typora-user-images/image-20240319153859219.png)
+![image-20240319153859219](../../assets/image-20240319153859219.png)
 
 #### Cartesian Products
 
@@ -655,7 +652,7 @@ e.g.
 
 **e.g. $A=\{a,b\},B=\{0,1,2\}$，求 $A\times B,B\times A$**
 
-![image-20240319155324775](/Users/bruce/Library/Application Support/typora-user-images/image-20240319155324775.png)
+![image-20240319155324775](../../assets/image-20240319155324775.png)
 
 #### Using Set Notation with Quantifiers
 
@@ -675,7 +672,7 @@ e.g.
 
 对于集合 $A$ 和 $B$，其<font color="red">并集（Union）</font>是一个包含 $A$ 或 $B$ 中或同时在 $A$ 和 $B$ 中的元素的集合，用<font color="red"> $A \bigcup B$ </font>来表示。（<font color="blue">$A \bigcup B=\{x|x\in A \lor x \in B\}$</font>）
 
-![image-20240319162317171](/Users/bruce/Library/Application Support/typora-user-images/image-20240319162317171.png)
+![image-20240319162317171](../../assets/image-20240319162317171.png)
 
 其性质如下：
 
@@ -688,7 +685,7 @@ e.g.
 
 对于集合 $A$ 和 $B$，其<font color="red">交集（Intersection）</font>是一个包含同时在 $A$ 和 $B$ 中的元素的集合，用<font color="red"> $A \bigcap B$ </font>来表示。（<font color="blue">$A \bigcap B=\{x|x\in A \land x \in B\}$</font>）
 
-![image-20240319162852934](/Users/bruce/Library/Application Support/typora-user-images/image-20240319162852934.png)
+![image-20240319162852934](../../assets/image-20240319162852934.png)
 
 当两个集合的交集是一个空集时，称这两个集合是<font color="red">不相交的（Disjoint）</font>（即 <font color="blue">$A\bigcap B=\phi$</font>）
 
@@ -703,19 +700,19 @@ e.g.
 
 令 $U$ 为全集，$A$ 的<font color="red">补集（Complement）</font>为在全集中不属于 $A$ 的元素的集合，用<font color="red"> $\overline A$ </font>来表示。（<font color="blue">$\overline A=\{x|x\not \in A,x \in U\}=\{x|\neg x  \in A\}$</font>）
 
-![image-20240319172311905](/Users/bruce/Library/Application Support/typora-user-images/image-20240319172311905.png)
+![image-20240319172311905](../../assets/image-20240319172311905.png)
 
 #### Difference
 
 对于集合 $A$ 和 $B$，$A$ 与 $B$ 的<font color="red">差集（Difference）</font>是一个包含属于 $A$ 但不属于 $B$ 的元素的集合，用<font color="red"> $A-B$ </font>来表示，也被称为 $B$ 相对于 $A$ 的补集。（<font color="blue">$A-B=\{x|x\in A \land x \not \in B\}=A \bigcap \overline B$</font>）
 
-![image-20240319172420848](/Users/bruce/Library/Application Support/typora-user-images/image-20240319172420848.png)
+![image-20240319172420848](../../assets/image-20240319172420848.png)
 
 #### Symmetric Difference
 
 对于集合 $A$ 和 $B$，$A$ 与 $B$ 的<font color="red">对称差（Symmetric Difference）</font>是一个包含属于 $A$ 但不属于 $B$ 和属于 $B$ 但不属于 $A$ 的元素的集合，用<font color="red"> $A\oplus B$ </font>来表示。（<font color="blue">$A\oplus B=\{x|(x\in A \land x \not \in B) \lor (x\in B \land x \not \in A)\}=(A \bigcup B)-(A \bigcap B)$</font>）
 
-![image-20240319173214695](/Users/bruce/Library/Application Support/typora-user-images/image-20240319173214695.png)
+![image-20240319173214695](../../assets/image-20240319173214695.png)
 
 #### The Principle of Inclusion-Exclusion
 
@@ -857,7 +854,7 @@ $$
 
 **e.g. 令集合 $A$ 为 $(a,b)$ 之间所有的实数 $(a<b)$ ，集合 $B$ 为 $(0,1)$ 之间所有的实数，证明 $|A|=|B|$ 。**
 
-![image-20240326082453694](/Users/bruce/Library/Application Support/typora-user-images/image-20240326082453694.png)
+![image-20240326082453694](../../assets/image-20240326082453694.png)
 
 如果存在一个从 $A$ 到 $B$ 的一对一函数，则 $A$ 的基数小于等于 $B$ 的基数，记为<font color="red"> $|A|\leq |B|$ </font>，如果 $A$ 和 $B$ 有不同的基数时，$A$ 的基数小于 $B$ 的基数，记为<font color="red"> $|A|<|B|$ </font>
 
@@ -882,7 +879,7 @@ $$
 
 **e.g. 证明 $|(0,1)|=|[0,1]|$**
 
-![image-20240326210247239](/Users/bruce/Library/Application Support/typora-user-images/image-20240326210247239.png)
+![image-20240326210247239](../../assets/image-20240326210247239.png)
 
 #### Uncomputable Function-An Important Application in CS
 
@@ -932,7 +929,7 @@ $$
 
 **e.g. 证明 $f(x)=x^2+2x+1$ 是 $O(x^2)$ 的。**
 
-![image-20240331134904691](/Users/bruce/Library/Application Support/typora-user-images/image-20240331134904691.png)
+![image-20240331134904691](../../assets/image-20240331134904691.png)
 
 如果两个函数 $f(x)$ 和 $g(x)$ 满足 $f(x)$ 是 $O(g(x))$ 的，以及 $g(x)$ 是 $O(f(x))$ 的，我们称 $f(x)$ 和 $g(x)$ 是<font color="red">同阶的</font>
 
@@ -950,7 +947,7 @@ $$
 
 **e.g. 证明 $f(x)=8x^3+5x^2+7$ 是 $\Omega(x^3)$ 的**
 
-![image-20240331145505743](/Users/bruce/Library/Application Support/typora-user-images/image-20240331145505743.png)
+![image-20240331145505743](../../assets/image-20240331145505743.png)
 
 #### Big-Theta
 
@@ -1014,13 +1011,13 @@ $$
 
 定理：<font color="red">如果 $n$ 是一个合数，那么 $n$ 必有一个素因子小于等于 $\sqrt{n}$</font>
 
-![image-20240407081313449](/Users/bruce/Library/Application Support/typora-user-images/image-20240407081313449.png)
+![image-20240407081313449](../../assets/image-20240407081313449.png)
 
 #### Infinitude of Primes
 
 定理：<font color="red">存在无穷多个素数</font>
 
-![image-20240407081523338](/Users/bruce/Library/Application Support/typora-user-images/image-20240407081523338.png)
+![image-20240407081523338](../../assets/image-20240407081523338.png)
 
 #### Mersenne Primes
 
@@ -1058,7 +1055,7 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 令 $a=bq+r$，其中 $a,b,q$ 和 $r$ 均为整数。则<font color="red"> $\gcd(a,b)=\gcd(b,r)$</font>
 
-![image-20240409081016436](/Users/bruce/Library/Application Support/typora-user-images/image-20240409081016436.png)
+![image-20240409081016436](../../assets/image-20240409081016436.png)
 
 欧几里得算法（Euclidean Algorithm）：辗转相除法求最大公约数。（当 $a\geq b$ 时时间复杂度为 $O(\log\space b)$
 
@@ -1068,19 +1065,19 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 **e.g. 将 $\gcd(252,198)=18$ 表达为贝祖恒等式。**
 
-![image-20240409085036349](/Users/bruce/Library/Application Support/typora-user-images/image-20240409085036349.png)
+![image-20240409085036349](../../assets/image-20240409085036349.png)
 
 由贝祖定理可以推导出如下定理：
 
 - 如果 $a,b$ 和 $c$ 为正整数，使得 $\gcd(a,b)=1$ 且 $a|bc$，则 $a|c$
 
-![image-20240409081243033](/Users/bruce/Library/Application Support/typora-user-images/image-20240409081243033.png)
+![image-20240409081243033](../../assets/image-20240409081243033.png)
 
 - 如果 $p$ 是素数，且 $p|a_1a_2...a_n$，其中 $a_i$ 为整数，则对于某个 $i$，$p|a_i$
 
 - 令 $m$ 为正整数，$a,b$ 和 $c$ 为整数。如果 $ac\equiv bc(mod\space m)$ 且 $\gcd(c,m)=1$，则 $a\equiv b(mod\space m)$
 
-![image-20240409081642694](/Users/bruce/Library/Application Support/typora-user-images/image-20240409081642694.png)
+![image-20240409081642694](../../assets/image-20240409081642694.png)
 
 ### Solving Congruences
 
@@ -1098,11 +1095,11 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 **e.g.1. 找到 3 模 7 的逆。**
 
-![image-20240409084700618](/Users/bruce/Library/Application Support/typora-user-images/image-20240409084700618.png)
+![image-20240409084700618](../../assets/image-20240409084700618.png)
 
 **e.g.2. 找到 101 模 4620 的逆。**
 
-![image-20240409084804922](/Users/bruce/Library/Application Support/typora-user-images/image-20240409084804922.png)
+![image-20240409084804922](../../assets/image-20240409084804922.png)
 
 #### Using Inverses to Solve Congruences
 
@@ -1123,7 +1120,7 @@ x\equiv a_n(mod\space m_n)
 $$
 有唯一的模 $m=m_1m_2...m_n$ 的解（即存在一个满足 $0\leq x\leq m$ 的解 $x$，而所有其他的解均与此解模 $m$ 同余）
 
-![image-20240409090913357](/Users/bruce/Library/Application Support/typora-user-images/image-20240409090913357.png)
+![image-20240409090913357](../../assets/image-20240409090913357.png)
 
 **e.g. 求解同余方程组**
 $$
@@ -1133,7 +1130,7 @@ x\equiv 3(mod\space 5)\\
 x\equiv 2(mod\space 7)
 \end{cases}
 $$
-![image-20240409091141991](/Users/bruce/Library/Application Support/typora-user-images/image-20240409091141991.png)
+![image-20240409091141991](../../assets/image-20240409091141991.png)
 
 #### Back Substitution
 
@@ -1147,7 +1144,7 @@ x\equiv 2(mod\space 6)\\
 x\equiv 3(mod\space 7)
 \end{cases}
 $$
-![image-20240409091434369](/Users/bruce/Library/Application Support/typora-user-images/image-20240409091434369.png)
+![image-20240409091434369](../../assets/image-20240409091434369.png)
 
 #### Computer Arithmetic with Large Integers
 
@@ -1155,7 +1152,7 @@ $$
 
 **e.g. 利用模数为 $99,98,97,95$ 来寻找 $123684$ 和 $413456$ 的和。**
 
-![image-20240409092458896](/Users/bruce/Library/Application Support/typora-user-images/image-20240409092458896.png)
+![image-20240409092458896](../../assets/image-20240409092458896.png)
 
 #### Fermat's Little Theorem
 
@@ -1163,7 +1160,7 @@ $$
 
 **e.g. 求 $7^{222}\space mod \space 11$**
 
-![image-20240409092924616](/Users/bruce/Library/Application Support/typora-user-images/image-20240409092924616.png)
+![image-20240409092924616](../../assets/image-20240409092924616.png)
 
 #### Pseudoprimes
 
@@ -1173,7 +1170,7 @@ $$
 
 **e.g. 561 是一个卡米切尔数。**
 
-![image-20240409093536284](/Users/bruce/Library/Application Support/typora-user-images/image-20240409093536284.png)
+![image-20240409093536284](../../assets/image-20240409093536284.png)
 
 ## Chapter 5 : Induction and Recursion
 
@@ -1183,13 +1180,13 @@ $$
 
 第一数学归纳法（The First Principle of Mathematical Induction）：$(P(1)\land\forall k(P(k)\rightarrow P(k+1)))\rightarrow\forall nP(n)$，更一般地，$\forall n[n\geq k\rightarrow P(n)]$
 
-![image-20240412082030935](/Users/bruce/Library/Application Support/typora-user-images/image-20240412082030935.png)
+![image-20240412082030935](../../assets/image-20240412082030935.png)
 
-![image-20240412082052928](/Users/bruce/Library/Application Support/typora-user-images/image-20240412082052928.png)
+![image-20240412082052928](../../assets/image-20240412082052928.png)
 
 #### Guidelines:Mathmatical Induction Proofs
 
-![image-20240412084214784](/Users/bruce/Library/Application Support/typora-user-images/image-20240412084214784.png)
+![image-20240412084214784](../../assets/image-20240412084214784.png)
 
 ### Strong Induction and Well-ordering
 
@@ -1227,7 +1224,7 @@ $$
 - 基础步骤：单个顶点 $r$ 是根树。
 - 递归步骤：假设 $T_1,T_2,...,T_n$ 是根树，分别带有树根 $r_1,r_2,...,r_n$。则如下形成的图也是根树：从树根 $r$ 开始，$r$ 不属于根树 $T_1,T_2,...,T_n$ 中的任何一个，从 $r$ 到顶点 $r_1,r_2,...,r_n$ 中的每个都加入一条边。
 
-![image-20240413164928150](/Users/bruce/Library/Application Support/typora-user-images/image-20240413164928150.png)
+![image-20240413164928150](../../assets/image-20240413164928150.png)
 
 #### Full Binary Trees
 
@@ -1236,7 +1233,7 @@ $$
 - 基础步骤：存在一个只含有单个顶点的满二叉树。
 - 递归步骤：如果 $T_1$ 和 $T_2$ 都是满二叉树，则存在一个表示为 $T_1·T_2$ 的满二叉树，它包含树根 $r$ 和连接从 $r$ 到左子树 $T_1$ 和右子树 $T_2$ 各自的根的边。
 
-![image-20240413165412790](/Users/bruce/Library/Application Support/typora-user-images/image-20240413165412790.png)
+![image-20240413165412790](../../assets/image-20240413165412790.png)
 
 #### Structural Induction
 
@@ -1252,7 +1249,7 @@ e.g. 递归地定义满二叉树 $T$ 的高度 $h(T)$。
 
 用结构归纳法证明如果 $T$ 是满二叉树，则 $n(T)\leq 2^{h(T)+1}-1$。
 
-![image-20240413170211549](/Users/bruce/Library/Application Support/typora-user-images/image-20240413170211549.png)
+![image-20240413170211549](../../assets/image-20240413170211549.png)
 
 ## Chapter 6 : Counting
 
@@ -1310,7 +1307,7 @@ e.g. 递归地定义满二叉树 $T$ 的高度 $h(T)$。
 
 帕斯卡恒等式（Pascal's Identity）：设 $n$ 和 $k$ 是满足 $n\geq k$ 的正整数，那么有 $\begin{pmatrix}n+1\\k\end{pmatrix}=\begin{pmatrix}n\\k-1\end{pmatrix}+\begin{pmatrix}n\\k\end{pmatrix}$
 
-![image-20240419085310548](/Users/bruce/Library/Application Support/typora-user-images/image-20240419085310548.png)
+![image-20240419085310548](../../assets/image-20240419085310548.png)
 
 #### Other Identity Involving Binomial Coefficients
 
@@ -1360,7 +1357,7 @@ e.g. 递归地定义满二叉树 $T$ 的高度 $h(T)$。
 
 - 假设 $\{a_n\}$ 满足线性非齐次递推关系 $a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}+F(n)$，且 $F(n)=(b_tn^t+b_{t-1}n^{t-1}+...+b_1n+b_0)s^n$ ，其中 $b_0,b_1,...,b_t$ 和 $s$ 是实数，当 $s$ 不是相伴的线性齐次递推关系的特征方程的根时，存在一个特解 $(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n$，当 $s$ 是特征方程的根且它的重数是 $m$ 时，存在一个特解 $n^m(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n$
 
-![image-20240423195716786](/Users/bruce/Library/Application Support/typora-user-images/image-20240423195716786.png)
+![image-20240423195716786](../../assets/image-20240423195716786.png)
 
 Divide-and-Conquer
 
@@ -1370,7 +1367,7 @@ Divide-and-Conquer
 
 生成函数（Generating Function）：序列 $a_0,a_1,a_2,...,a_k,...$ 的生成函数为 $G(x)=a_0+a_1x+...+a_kx^k+...=\sum\limits_{k=0}^{\infin}a_kx^k$
 
-![image-20240426152207647](/Users/bruce/Library/Application Support/typora-user-images/image-20240426152207647.png)
+![image-20240426152207647](../../assets/image-20240426152207647.png)
 
 ### 8.5-8.6 Inclusion-Exclusion and Its Application
 
@@ -1395,7 +1392,7 @@ Divide-and-Conquer
 
 **e.g.**
 
-![image-20240430090425357](/Users/bruce/Library/Application Support/typora-user-images/image-20240430090425357.png)
+![image-20240430090425357](../../assets/image-20240430090425357.png)
 
 #### Properties of Binary Relations
 
@@ -1456,7 +1453,7 @@ Divide-and-Conquer
 
 **e.g. $R=\{(a,b)|a<b,a,b\in Z\}$，求 $R$ 的自反闭包。**
 
-![image-20240507085422097](/Users/bruce/Library/Application Support/typora-user-images/image-20240507085422097.png)
+![image-20240507085422097](../../assets/image-20240507085422097.png)
 
 #### Symmetric Closure
 
@@ -1464,17 +1461,17 @@ Divide-and-Conquer
 
 <font color="red">$R=R\bigcup R^{-1}\Leftrightarrow R$ 是一个对称闭包</font>
 
-![image-20240507085710666](/Users/bruce/Library/Application Support/typora-user-images/image-20240507085710666.png)
+![image-20240507085710666](../../assets/image-20240507085710666.png)
 
 #### Transitive Closure
 
 定义：设 $R$ 是集合 $A$ 上的关系，那么 $R$ 的<font color="red">传递闭包（Transitive Closure）</font>，记为<font color="red"> $t(R)$ </font>，满足 $\forall a\in A\space\forall b\in A\space a$ 可达 $b\rightarrow (a,b)\in R$
 
-![image-20240507090346762](/Users/bruce/Library/Application Support/typora-user-images/image-20240507090346762.png)
+![image-20240507090346762](../../assets/image-20240507090346762.png)
 
 定理：设 $R$ 是集合 $A$ 上的关系，那么存在一条 $a$ 到 $b$ 长度为 $n$ 的路径 $\Leftrightarrow (a,b)\in R^n$。 
 
-![image-20240507090547878](/Users/bruce/Library/Application Support/typora-user-images/image-20240507090547878.png)
+![image-20240507090547878](../../assets/image-20240507090547878.png)
 
 #### Connectivity Relation
 
@@ -1507,9 +1504,9 @@ Divide-and-Conquer
 
 **e.g. 模 3 同余的关系 $R=\{(a,b)|a\equiv b(mod\space3),a,b\in Z\}$，证明其是一个等价关系并指出其等价类。**
 
-![image-20240510082204922](/Users/bruce/Library/Application Support/typora-user-images/image-20240510082204922.png)
+![image-20240510082204922](../../assets/image-20240510082204922.png)
 
-![image-20240510082225334](/Users/bruce/Library/Application Support/typora-user-images/image-20240510082225334.png)
+![image-20240510082225334](../../assets/image-20240510082225334.png)
 
 #### Partition of a Set
 
@@ -1552,11 +1549,11 @@ Divide-and-Conquer
 
 对于两个偏序集 $(A_1,\preccurlyeq_1)$ 和 $(A_2,\preccurlyeq_2)$ ，那么在 $A_1\times A_2$ 上的<font color="red">字典顺序（Lexicographic Order）</font>$\prec$ 定义为：$(a_1,a_2)\prec(b_1,b_2)\Leftrightarrow (a_1\prec_1b_1) \lor((a_1=b_1)\land(a_2\prec_2b_2))$
 
-![image-20240510110314098](/Users/bruce/Library/Application Support/typora-user-images/image-20240510110314098.png)
+![image-20240510110314098](../../assets/image-20240510110314098.png)
 
 #### Hasse diagrams
 
-![image-20240510110811753](/Users/bruce/Library/Application Support/typora-user-images/image-20240510110811753.png)
+![image-20240510110811753](../../assets/image-20240510110811753.png)
 
 #### Chain and Antichain
 
@@ -1638,39 +1635,39 @@ Divide-and-Conquer
 
 $n$ 个顶点的<font color="red">完全图（Complete Graphs）</font>记作<font color="red"> $K_n$</font>，是在每对不同顶点之间都恰有一条边的简单图；至少有一对不同的顶点不存在边相连的简单图称为非完全图。
 
-![image-20240521083543442](/Users/bruce/Library/Application Support/typora-user-images/image-20240521083543442.png)
+![image-20240521083543442](../../assets/image-20240521083543442.png)
 
 ##### Cycles
 
 <font color="red">圈图（Cycles）$C_n(n\geq 3)$ </font>是由 $n$ 个顶点 $v_1,v_2,...,v_n$ 以及边 $\{v_1,v_2\},\{v_2,v_3\}$$,...,\{v_{n-1},v_n\},\{v_n,v_1\}$ 组成的图。
 
-![image-20240521083602606](/Users/bruce/Library/Application Support/typora-user-images/image-20240521083602606.png)
+![image-20240521083602606](../../assets/image-20240521083602606.png)
 
 ##### Wheels
 
 当给圈图 $C_n(n\geq 3)$ 添加另一个顶点，并把这个新顶点与 $C_n$ 中的 $n$ 个顶点逐个连接时，就得到<font color="red">轮图（Wheels） $W_n$</font>。
 
-![image-20240521083618992](/Users/bruce/Library/Application Support/typora-user-images/image-20240521083618992.png)
+![image-20240521083618992](../../assets/image-20240521083618992.png)
 
 ##### n-Cubes
 
 <font color="red">$n$ 立方体图（n-Cubes）</font>记作<font color="red"> $Q_n$</font>，是用顶点表示 $2^n$ 个长度为 $n$ 的比特串的图。两个顶点相邻，当且仅当它们所表示的比特串恰恰有一位不同。
 
-![image-20240521083904405](/Users/bruce/Library/Application Support/typora-user-images/image-20240521083904405.png)
+![image-20240521083904405](../../assets/image-20240521083904405.png)
 
 可以从 $n$ 立方体图 $Q_n$ 来构造 $(n+1)$ 立方体图 $Q_{n+1}$，方法是建立 $Q_n$ 的两个副本，在 $Q_n$ 的一个副本的顶点标记前加 0，在 $Q_n$ 的另一个副本的顶点标记前加 1，并且加入连接那些标记只在第一位不同的两个顶点的边。
 
-![image-20240521084133465](/Users/bruce/Library/Application Support/typora-user-images/image-20240521084133465.png)
+![image-20240521084133465](../../assets/image-20240521084133465.png)
 
 #### Bipartite Graphs
 
 若把简单图 $G$ 的顶点集分成两个不相交的非空集合 $V_1$ 和 $V_2$，使得图中的每一条边都连接 $V_1$ 中的一个顶点与 $V_2$ 中的一个顶点（因此 $G$ 中没有边连接 $V_1$ 中的两个顶点或 $V_2$ 中的两个顶点），则 $G$ 称为<font color="red">二分图（Bipartite Graphs）</font>。当此条件成立时，称 $(V_1,V_2)$ 为 $G$ 的顶点集的一个<font color="red">二部划分（Bipartition）</font>。
 
-![image-20240521084639742](/Users/bruce/Library/Application Support/typora-user-images/image-20240521084639742.png)
+![image-20240521084639742](../../assets/image-20240521084639742.png)
 
 <font color="red">完全二分图（Complete Bipartite Graphs）$K_{m,n}$ </font>是顶点集划分成分别含有 $m$ 和 $n$ 个顶点的两个子集的图，并且两个顶点之间有边当且仅当一个顶点属于第一个子集而另一个顶点属于第二个子集。
 
-![image-20240521085035432](/Users/bruce/Library/Application Support/typora-user-images/image-20240521085035432.png)
+![image-20240521085035432](../../assets/image-20240521085035432.png)
 
 定理：一个简单图是二分图，当且仅当能够对图中的每个顶点赋予两种不同的颜色，并使得没有两个相邻的顶点被赋予相同的颜色。
 
@@ -1702,7 +1699,7 @@ $n$ 个顶点的<font color="red">完全图（Complete Graphs）</font>记作<fo
 
 关联矩阵：设 $G=(V,E)$ 是无向图。设 $v_1,v_2,...,v_n$ 是图 $G$ 的顶点，而 $e_1,e_2,...,e_m$ 是该图的边。相对于 $V$ 和 $E$ 的这个顺序的关联矩阵是 $n\times m$ 的矩阵 $M=[m_{ij}]$，其中 $m_{ij}=\begin{cases}1，当边 e_j 关联v_i 时\\0，其他情况\end{cases}$
 
-![image-20240521092523345](/Users/bruce/Library/Application Support/typora-user-images/image-20240521092523345.png)
+![image-20240521092523345](../../assets/image-20240521092523345.png)
 
 #### Isomophism Of Graphs
 
@@ -1844,7 +1841,7 @@ $\kappa(G)$ 越大，我们认为 $G$ 的连通性越好。若 $\kappa(G)\geq k$
 
 **e.g.一个图的平面表示将整个平面分为 6 个面。其中 $R_6$ 为无界面，$R_1,R_2,R_3,R_4,R_5$ 为有界面。**
 
-![image-20240531144358274](/Users/bruce/Library/Application Support/typora-user-images/image-20240531144358274.png)
+![image-20240531144358274](../../assets/image-20240531144358274.png)
 
 若一个面 $R$ 是一个连通平面简单图，则 $R$ 的度，记作 $deg(R)$，为围成面 $R$ 的边数。对一个平面图 $G=(V,E)$，有 $2E=\sum\limits_{所有面 R}deg(R)$。
 
@@ -1976,7 +1973,7 @@ $\kappa(G)$ 越大，我们认为 $G$ 的连通性越好。若 $\kappa(G)\geq k$
 
 e.g. 把 e 编码成 0，把 a 编码成 10，把 t 编码成 110，把 n 编码成 1110，把 s 编码成 1111（如下图），则编码为 11111011100 的单词为 sane。
 
-<img src="/Users/bruce/Library/Application Support/typora-user-images/image-20240606111441491.png" alt="image-20240606111441491" style="zoom:50%;" />
+![](../../assets/image-20240606111441491.png)
 
 #### Huffman Coding
 
