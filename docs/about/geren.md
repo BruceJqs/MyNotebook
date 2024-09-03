@@ -19,7 +19,7 @@ status: new
 />
 
 <figure class="figure-image">
-  <img src="../assets/头像.jpg" />
+  <img src="https://106.13.10.38/zb_users/upload/2024/03/20240314015112171035227251607.jpeg" />
 </figure>
 
 <p style="text-align: center; margin: 0px;" markdown>

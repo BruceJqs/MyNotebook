@@ -69,7 +69,7 @@ repo_name: BruceJqs/MyNotebook # 右上角的名字
 nav:
   - 首页: index.md
   - Math: 
-    - Discrete Mathematics: blog/Math/Discrete Mathematics notes.md
+    - Discrete Mathematics: blog/Math/Discrete mathematics notes.md
   - CTF:
     - 2023-2024 暑短学期: 
       - Lab0: blog/CTF/Lab0 Report.md
