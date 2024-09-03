@@ -1,9 +1,5 @@
 # Lab0 Report
 
-**<font size=6>Contents </font>**
-
-[TOC]
-
 ## Prerequisite
 
 ### Challenge 1
@@ -12,29 +8,29 @@
 
 > echo 命令可用于输出字符串
 
-![image-20240530101102372](/Users/bruce/Library/Application Support/typora-user-images/image-20240530101102372.png)
+![image-20240530101102372](/docs/img/image-20240530101102372.png)
 
 > cd 命令可用于切换路径
 >
 > ls 命令可用于列出当前路径下的文件和目录，添加 -l 可列出所有文件的详细信息
 
-![image-20240530101415302](/Users/bruce/Library/Application Support/typora-user-images/image-20240530101415302.png)
+![image-20240530101415302](/docs/img/image-20240530101415302.png)
 
 > touch 命令可用于在当前路径下新建文件
 
-![image-20240530101706809](/Users/bruce/Library/Application Support/typora-user-images/image-20240530101706809.png)
+![image-20240530101706809](/docs/img/image-20240530101706809.png)
 
 > echo 语句与重定向相结合可以将字符串写入文件，重定向 > 表示覆盖文件中的所有原内容；>> 表示不覆盖文件中的原内容，在文件后追加输入
 >
 > cat 语句可用于输出文件内容，添加 -n 可输出行号
 
-![image-20240530102009429](/Users/bruce/Library/Application Support/typora-user-images/image-20240530102009429.png)
+![image-20240530102009429](/docs/img/image-20240530102009429.png)
 
 #### 通过 ssh 远程连接到 Linux 环境
 
 连接成功界面截图如下：
 
-![image-20240530135557128](/Users/bruce/Library/Application Support/typora-user-images/image-20240530135557128.png)
+![image-20240530135557128](/docs/img/image-20240530135557128.png)
 
 ### Challenge 2
 
@@ -131,9 +127,9 @@ s.close()
 
 成功截图如下：
 
-![image-20240602003546693](/Users/bruce/Library/Application Support/typora-user-images/image-20240602003546693.png)
+![image-20240602003546693](/docs/img/image-20240602003546693.png)
 
-![image-20240602111248059](/Users/bruce/Library/Application Support/typora-user-images/image-20240602111248059.png)
+![image-20240602111248059](/docs/img/image-20240602111248059.png)
 
 ##### 法 2：使用 python pwntools 库
 
@@ -156,13 +152,13 @@ p.interactive()
 
 同样可以得到正确 flag：
 
-![image-20240702195713905](/Users/bruce/Library/Application Support/typora-user-images/image-20240702195713905.png)
+![image-20240702195713905](/docs/img/image-20240702195713905.png)
 
 ### Challenge 3
 
 #### Q1&Q2
 
-![image-20240602111513127](/Users/bruce/Library/Application Support/typora-user-images/image-20240602111513127.png)
+![image-20240602111513127](/docs/img/image-20240602111513127.png)
 
 Q1:xor 操作表示将两个寄存器中的值进行异或操作，并保存在第一个寄存器当中，在这里便是将 dh 寄存器置 0。
 
@@ -170,25 +166,25 @@ Q2:not 操作表示将寄存器中的值进行按位取反操作，并保存在�
 
 #### Q3
 
-![image-20240602112013262](/Users/bruce/Library/Application Support/typora-user-images/image-20240602112013262.png)
+![image-20240602112013262](/docs/img/image-20240602112013262.png)
 
 mov 操作表示将后一个寄存器当中的值赋值给第一个寄存器，在这里 di 寄存器的值来自 bp 寄存器，bp 寄存器的值来自 dx 寄存器，dx 寄存器的值在 Q2 中被置为 0，因此 di 寄存器最终也置为 0。
 
 #### Q4
 
-![image-20240602112459220](/Users/bruce/Library/Application Support/typora-user-images/image-20240602112459220.png)
+![image-20240602112459220](/docs/img/image-20240602112459220.png)
 
 在这里 al 为 ax 的低八位，ah 为 ax 高八位，这里将 al 赋值为 't'，将 ah 赋值为 0x0e，结合起来 ax 即为 0x0e74。
 
 #### Q5
 
-![image-20240602114034403](/Users/bruce/Library/Application Support/typora-user-images/image-20240602114034403.png)
+![image-20240602114034403](/docs/img/image-20240602114034403.png)
 
 在这里将 al 赋值为偏移地址为 si 寄存器的值的字符/字符串，在循环至第三次时，将字符串中的 O 赋值给 al，将 ah 赋值为 0x0e，那么最后 ax 为 0x0e4f。
 
 #### Q6
 
-![image-20240602115338995](/Users/bruce/Library/Application Support/typora-user-images/image-20240602115338995.png)
+![image-20240602115338995](/docs/img/image-20240602115338995.png)
 
 这里将 dh 赋值为 3，dl 赋值为 15，那么 dx 为 0x030f 。
 
@@ -202,29 +198,29 @@ mov 操作表示将后一个寄存器当中的值赋值给第一个寄存器，�
 
 进入网页 http://pumpk1n.com/lab0.php，打开开发者工具查看 HTML 代码，我们可以看到：
 
-![image-20240602122434480](/Users/bruce/Library/Application Support/typora-user-images/image-20240602122434480.png)
+![image-20240602122434480](/docs/img/image-20240602122434480.png)
 
 这里可以看到 onmousemove="hide()"，结合实操可以看出，当鼠标到 click me 上时，按钮就消失了。
 
 然后我们再注意到如果成功完成点击按钮，触发与 flag 有关的 getflag()，继续寻找其代码可看到；
 
-![image-20240602122616159](/Users/bruce/Library/Application Support/typora-user-images/image-20240602122616159.png)
+![image-20240602122616159](/docs/img/image-20240602122616159.png)
 
 我们看到这里隐藏了一个网页后缀，将其复制到网址中，可以得到：
 
-![image-20240602122805438](/Users/bruce/Library/Application Support/typora-user-images/image-20240602122805438.png)
+![image-20240602122805438](/docs/img/image-20240602122805438.png)
 
 我们尝试刷新该网页，会发现网页变为：
 
-![image-20240602122903262](/Users/bruce/Library/Application Support/typora-user-images/image-20240602122903262.png)
+![image-20240602122903262](/docs/img/image-20240602122903262.png)
 
 结合网页的 token=...，我们再回到原网页刷新，发现原 getflag 重新更新为：
 
-![image-20240602123017014](/Users/bruce/Library/Application Support/typora-user-images/image-20240602123017014.png)
+![image-20240602123017014](/docs/img/image-20240602123017014.png)
 
 可以发现 token 有所变化，重复上述操作可以得到：
 
-![image-20240602123044055](/Users/bruce/Library/Application Support/typora-user-images/image-20240602123044055.png)
+![image-20240602123044055](/docs/img/image-20240602123044055.png)
 
 至此，我们可以猜测，该任务即需要我们反复得到刷新的 token 访问网页共 1337 次，即可得到 flag。
 
@@ -254,11 +250,11 @@ while result[0] != "":
 
 在过程中，我们可以看见其中程序一遍遍访问网页：
 
-![image-20240602141216334](/Users/bruce/Library/Application Support/typora-user-images/image-20240602141216334.png)
+![image-20240602141216334](/docs/img/image-20240602141216334.png)
 
 当访问完 1337 次之后，可以看到：
 
-![image-20240602141541149](/Users/bruce/Library/Application Support/typora-user-images/image-20240602141541149.png)
+![image-20240602141541149](/docs/img/image-20240602141541149.png)
 
 所以最终的 flag 为：flag{56297ad00e70449a16700a77bf24b071}
 
@@ -268,11 +264,11 @@ while result[0] != "":
 
 由试验：
 
-![image-20240602225051953](/Users/bruce/Library/Application Support/typora-user-images/image-20240602225051953.png)
+![image-20240602225051953](/docs/img/image-20240602225051953.png)
 
-![image-20240602225055800](/Users/bruce/Library/Application Support/typora-user-images/image-20240602225055800.png)
+![image-20240602225055800](/docs/img/image-20240602225055800.png)
 
-![image-20240602225351057](/Users/bruce/Library/Application Support/typora-user-images/image-20240602225351057.png)
+![image-20240602225351057](/docs/img/image-20240602225351057.png)
 
 可以猜想有过滤，在 Burpsuite 中爆破：
 
@@ -310,11 +306,11 @@ while True:
 
 通过一个一个获得 flag 的值，最后输出 flag 为：
 
-![image-20240602232329927](/Users/bruce/Library/Application Support/typora-user-images/image-20240602232329927.png)
+![image-20240602232329927](/docs/img/image-20240602232329927.png)
 
 解题成功截图：
 
-![image-20240602232414835](/Users/bruce/Library/Application Support/typora-user-images/image-20240602232414835.png)
+![image-20240602232414835](/docs/img/image-20240602232414835.png)
 
 ## Pwn
 
@@ -458,7 +454,7 @@ int main(int argc, char *argv[]){
 
 运行输入可得该程序一直在等待输入。
 
-![image-20240703143947998](/Users/bruce/Library/Application Support/typora-user-images/image-20240703143947998.png)
+![image-20240703143947998](/docs/img/image-20240703143947998.png)
 
 第二个 c 程序体现程序的内存溢出情况：
 
@@ -503,7 +499,7 @@ int main(int argc, char *argv[]){
 
 运行输入可知程序有奇怪的字符溢出：
 
-![image-20240703144538995](/Users/bruce/Library/Application Support/typora-user-images/image-20240703144538995.png)
+![image-20240703144538995](/docs/img/image-20240703144538995.png)
 
 ### 修复程序
 
@@ -596,15 +592,15 @@ int main()
 
 将 elf 程序直接丢到 IDA 中反汇编，可以得到主程序：
 
-![image-20240703124609588](/Users/bruce/Library/Application Support/typora-user-images/image-20240703124609588.png)
+![image-20240703124609588](/docs/img/image-20240703124609588.png)
 
 判断函数：
 
-![image-20240703124545138](/Users/bruce/Library/Application Support/typora-user-images/image-20240703124545138.png)
+![image-20240703124545138](/docs/img/image-20240703124545138.png)
 
 可以看出获得 access granted 的条件即为输入的每一位字母的 ASCII 码乘 16 与 table 对应的数字相同，那么将 table 中的每一个数字除以 16 得到：65 65 65 123 72 105 82 101 118 101 114 115 101 125，翻译成字符串即为：AAA{HiReverse}
 
-![image-20240703150831008](/Users/bruce/Library/Application Support/typora-user-images/image-20240703150831008.png)
+![image-20240703150831008](/docs/img/image-20240703150831008.png)
 
 ## Misc
 
@@ -636,15 +632,15 @@ int main()
 
 将字符串放入 CyberChef Base85 加密当中：
 
-![image-20240702220201645](/Users/bruce/Library/Application Support/typora-user-images/image-20240702220201645.png)
+![image-20240702220201645](/docs/img/image-20240702220201645.png)
 
 此时得到了末尾连续 4 个等号，推测其为 Base32 加密，再次解密：
 
-![image-20240702220312572](/Users/bruce/Library/Application Support/typora-user-images/image-20240702220312572.png)
+![image-20240702220312572](/docs/img/image-20240702220312572.png)
 
 逐步排查推测其可能为 Base64，逐个尝试可得 flag：
 
-![image-20240702220628427](/Users/bruce/Library/Application Support/typora-user-images/image-20240702220628427.png)
+![image-20240702220628427](/docs/img/image-20240702220628427.png)
 
 所以最后的 flag 为：AAA{wELc0m3_t0_Ctf_5umMEr_c0UrsE_2024}
 
@@ -652,7 +648,7 @@ int main()
 
 当然在 CyberChef 中有个功能：Magic，直接导入字符串可得：
 
-![image-20240702220851871](/Users/bruce/Library/Application Support/typora-user-images/image-20240702220851871.png)
+![image-20240702220851871](/docs/img/image-20240702220851871.png)
 
 ### Challenge 2
 
@@ -660,11 +656,11 @@ LSB 隐写通过改变图片的二进制文件中每个数字的最后一位，�
 
 将图片导入 CyberChef 当中，在最后我们可以发现 flag 的后半段：
 
-![image-20240702222325332](/Users/bruce/Library/Application Support/typora-user-images/image-20240702222325332.png)
+![image-20240702222325332](/docs/img/image-20240702222325332.png)
 
 再用 CyberChef 中的View Bit Plane 功能，设定 Red 为 0 就可以得到前半段 flag：
 
-![image-20240702222633267](/Users/bruce/Library/Application Support/typora-user-images/image-20240702222633267.png)
+![image-20240702222633267](/docs/img/image-20240702222633267.png)
 
 这样我们就可以得到完整 flag：AAA{gr3@t_J08!_1et'5_P1@y_m1SC_TOG3Th3R}
 
@@ -680,7 +676,7 @@ ABCDEFA GAFHC IDJJ HKKDLG FGKG MJGHNG JOKG FDP AB AFG HQHCRBCGR IHKGFBONG CGHK A
 
 导入到 quipquip 中可得最终结果：
 
-![image-20240707153027043](/Users/bruce/Library/Application Support/typora-user-images/image-20240707153027043.png)
+![image-20240707153027043](/docs/img/image-20240707153027043.png)
 
 ### Challenge 2
 
@@ -705,4 +701,4 @@ print(long_to_bytes(m))
 
 最后运行得到 flag：AAA{Ace_Attorney_is_very_fun_Phoenix_Wright&Miles_Edgeworth}
 
-![image-20240703124407855](/Users/bruce/Library/Application Support/typora-user-images/image-20240703124407855.png)
+![image-20240703124407855](/docs/img/image-20240703124407855.png)

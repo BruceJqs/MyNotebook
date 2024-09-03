@@ -1,11 +1,5 @@
 # Locust 压力测试工具使用手册
 
-**<font size=5>目录</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## 工具相关信息
 
 Locust 完全基于 Python 编程语言，采用 Python 编写压测脚本，且所有请求完全基于 requests 库。除了 HTTP/HTTPS 协议，Locust 也可以测试其它协议的系统，只需要采用 Python 调用对应的库进行请求描述即可。Locust 是一个分布式用户性能测试的工具但是单台压力机也能产生数千并发请求数。
@@ -42,15 +36,15 @@ class WebsiteUser(HttpUser):
 
 可以看到如下提示：
 
-![image-20240828160133224](/Users/bruce/Library/Application Support/typora-user-images/image-20240828160133224.png)
+![image-20240828160133224](/docs/img/image-20240828160133224.png)
 
 浏览器访问 https://localhost:8089 即可进入界面：
 
-![image-20240828160207269](/Users/bruce/Library/Application Support/typora-user-images/image-20240828160207269.png)
+![image-20240828160207269](/docs/img/image-20240828160207269.png)
 
 其中设置 Number of users（即最大用户量）和 Ramp up（每过一段时间用户的增加量），START 即可进行压力测试。
 
-![image-20240828160554053](/Users/bruce/Library/Application Support/typora-user-images/image-20240828160554053.png)
+![image-20240828160554053](/docs/img/image-20240828160554053.png)
 
 ### 例二：多线程任务与比例分配
 
@@ -103,5 +97,5 @@ class WebsiteUser(HttpUser):
 
 其中 `@task` 后的数字表示执行请求的权重，权重越大请求数量越多。
 
-![image-20240828163439109](/Users/bruce/Library/Application Support/typora-user-images/image-20240828163439109.png)
+![image-20240828163439109](/docs/img/image-20240828163439109.png)
 
