@@ -97,8 +97,6 @@ Move elements larger than the intermediate element to right side of the sequence
 
 Continuously calculate the middle position and arrange the left and right areas until the left pointer is greater than the right pointer, indicating that the search range is empty and the sorting process is over.
 
-<div style="page-break-after:always;"></div>
-
 # Chapter 2 : Algorithm Specification
 
 ## Algorithm 1
@@ -129,8 +127,6 @@ for i from 1~n
     }
 ```
 
-<div style="page-break-after:always;"></div>
-
 # Chapter 3 : Testing Results
 
 #### Test Result Table
@@ -149,9 +145,7 @@ for i from 1~n
 
 #### Test Result Plot
 
-![image-20240307220743828](/Users/bruce/Library/Application Support/typora-user-images/image-20240307220743828.png)
-
-<div style="page-break-after:always;"></div>
+![image-20240307220743828](../../assets/image-20240307220743828.png)
 
 # Chapter 4 : Analysis and Comments
 
@@ -172,8 +166,6 @@ The memory complexity of Algorithm 2 is $O(N)$ because it only use the array "nu
 Its duration of time is shorter,consistent with the result.but there is a possible data to make Quick_Sort Algorithm's time complexity reach the worst situation $O(N^2)$.For a common set of input,Algorithm 2 is much better.
 
 There are more algorithms to solve this problem, such as Hash-Table Algorithm.
-
-<div style="page-break-after:always;"></div>
 
 # Appendix : Source Code 
 
