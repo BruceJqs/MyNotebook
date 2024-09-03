@@ -2889,46 +2889,160 @@
 复合命题（Compound Proposition）: 由逻辑连词和命题构造而成。
 逻辑连词（Logical Connectives）：否定（NOT），与（AND），或（OR），异或（XOR），条件（if-then），当且仅当（if and only if）</p>
 <h4 id="negationnot">Negation（NOT）<a class="headerlink" href="#negationnot" title="Permanent link">&para;</a></h4>
-<p>用 <span class="arithmatex">\(\neg\)</span>p 表示命题 p 的否定，真值表如下：
-|  p   | <span class="arithmatex">\(\neg\)</span> p |
-| :--: | :------: |
-|  T   |    F     |
-|  F   |    T     |</p>
+<p>用 <span class="arithmatex">\(\neg\)</span>p 表示命题 p 的否定，真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;"><span class="arithmatex">\(\neg\)</span> p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
 <h4 id="conjunctionand">Conjunction（AND）<a class="headerlink" href="#conjunctionand" title="Permanent link">&para;</a></h4>
-<p>用 p<span class="arithmatex">\(\land\)</span>q 表示 p 与 q，当 p，q 均为 T 时值为 T，真值表如下：
-|  p   |  q   | p<span class="arithmatex">\(\land\)</span>q |
-| :--: | :--: | :-------: |
-|  T   |  T   |     T     |
-|  T   |  F   |     F     |
-|  F   |  T   |     F     |
-|  F   |  F   |     F     |</p>
+<p>用 p<span class="arithmatex">\(\land\)</span>q 表示 p 与 q，当 p，q 均为 T 时值为 T，真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">q</th>
+<th style="text-align: center;">p<span class="arithmatex">\(\land\)</span>q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
 <h4 id="disjunctionor">Disjunction（OR）<a class="headerlink" href="#disjunctionor" title="Permanent link">&para;</a></h4>
-<p>用 p<span class="arithmatex">\(\lor\)</span>q 表示 p 或 q，当 p，q 均为 F 时值为 F，真值表如下：
-|  p   |  q   | p<span class="arithmatex">\(\lor\)</span>q |
-| :--: | :--: | :------: |
-|  T   |  T   |    T     |
-|  T   |  F   |    T     |
-|  F   |  T   |    T     |
-|  F   |  F   |    F     |</p>
+<p>用 p<span class="arithmatex">\(\lor\)</span>q 表示 p 或 q，当 p，q 均为 F 时值为 F，真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">q</th>
+<th style="text-align: center;">p<span class="arithmatex">\(\lor\)</span>q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
 <h4 id="exclusive-orxor">Exclusive Or（XOR）<a class="headerlink" href="#exclusive-orxor" title="Permanent link">&para;</a></h4>
-<p>用 p<span class="arithmatex">\(\bigoplus\)</span>q 表示 p 异或 q，当 p，q 仅有一个是 T 时值为 T，真值表如下：
-|  p   |  q   | p<span class="arithmatex">\(\bigoplus\)</span>q |
-| :--: | :--: | :-----------: |
-|  T   |  T   |       F       |
-|  T   |  F   |       T       |
-|  F   |  T   |       T       |
-|  F   |  F   |       F       |</p>
+<p>用 p<span class="arithmatex">\(\bigoplus\)</span>q 表示 p 异或 q，当 p，q 仅有一个是 T 时值为 T，真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">q</th>
+<th style="text-align: center;">p<span class="arithmatex">\(\bigoplus\)</span>q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
 <p>或与异或的区别：<font color=red>或可以两者皆可，异或只能二者选一。</font>
 <strong>e.g.1. Students who have taken calculus <font color=blue>or</font> computer science can take this class.<font color=red>（这里的 or 是或）</font>
 e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color=red>（这里的 or 是异或）</font></strong></p>
 <h4 id="implicationif-then">Implication（if - then）<a class="headerlink" href="#implicationif-then" title="Permanent link">&para;</a></h4>
-<p>用 p<span class="arithmatex">\(\rightarrow\)</span>q 表示如果 p 那么 q，当 p 为 T，q 为 F 时值为 F，真值表如下：
-|            p             |            q             |     p<span class="arithmatex">\(\rightarrow\)</span>q      |
-| :----------------------: | :----------------------: | :----------------------: |
-|            T             |            T             |            T             |
-|            T             |            F             |            F             |
-| <font color=red>F</font> | <font color=red>T</font> | <font color=red>T</font> |
-| <font color=red>F</font> | <font color=red>F</font> | <font color=red>T</font> |</p>
+<p>用 p<span class="arithmatex">\(\rightarrow\)</span>q 表示如果 p 那么 q，当 p 为 T，q 为 F 时值为 F，真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">q</th>
+<th style="text-align: center;">p<span class="arithmatex">\(\rightarrow\)</span>q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;"><font color=red>F</font></td>
+<td style="text-align: center;"><font color=red>T</font></td>
+<td style="text-align: center;"><font color=red>T</font></td>
+</tr>
+<tr>
+<td style="text-align: center;"><font color=red>F</font></td>
+<td style="text-align: center;"><font color=red>F</font></td>
+<td style="text-align: center;"><font color=red>T</font></td>
+</tr>
+</tbody>
+</table>
 <p>其他表达 p<span class="arithmatex">\(\rightarrow\)</span>q 的方式：
 - <strong>if p,then q</strong> 
 - <strong>p implies q</strong>
@@ -2944,13 +3058,38 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 - <strong>a necessary condition for p is q</strong>
 - <strong><font color=red>q unless <span class="arithmatex">\(\neg\)</span>p</font></strong></p>
 <h4 id="biconditionalif-and-only-if">Biconditional（if and only if）<a class="headerlink" href="#biconditionalif-and-only-if" title="Permanent link">&para;</a></h4>
-<p>用 p<span class="arithmatex">\(\leftrightarrow\)</span>q 表示当且仅当 p,q,当 p 和 q 相同时值为 T，真值表如下：
-|  p   |  q   | p<span class="arithmatex">\(\leftrightarrow\)</span>q |
-| :--: | :--: | :-----------------: |
-|  T   |  T   |          T          |
-|  T   |  F   |          F          |
-|  F   |  T   |          F          |
-|  F   |  F   |          T          |</p>
+<p>用 p<span class="arithmatex">\(\leftrightarrow\)</span>q 表示当且仅当 p,q,当 p 和 q 相同时值为 T，真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">p</th>
+<th style="text-align: center;">q</th>
+<th style="text-align: center;">p<span class="arithmatex">\(\leftrightarrow\)</span>q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
 <p>其他表达 p<span class="arithmatex">\(\leftrightarrow\)</span>q 的方式：
 - <strong>p is necessary and sufficient for q</strong>
 - <strong>if p then q and conversely（vice versa）</strong>
@@ -3110,9 +3249,9 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 <li><font color=red>$\neg (p $<sub>1</sub> <span class="arithmatex">\(\land p\)</span><sub>2</sub> <span class="arithmatex">\(\land ...\land p\)</span><sub>n</sub>) <span class="arithmatex">\(\equiv \neg p\)</span><sub>1</sub> <span class="arithmatex">\(\lor \neg p\)</span><sub>2</sub> <span class="arithmatex">\(\lor ... \lor \neg p\)</span><sub>n</sub></font></li>
 </ul>
 <p><strong>e.g.1. Show that <span class="arithmatex">\(\neg (p \lor (\neg p \land q))\)</span> and <span class="arithmatex">\(\neg p \land \neg q\)</span> are logically equivalent.</strong>
-<img alt="Alt text" src="image.png" />
+<img alt="Alt text" src="../../../assets/image.png" />
 <strong>e.g.2. Show that <span class="arithmatex">\(((p \rightarrow q) \rightarrow r) \rightarrow ((r \rightarrow p) \rightarrow (s \rightarrow p))\)</span> is a tautology.</strong>
-<img alt="Alt text" src="image-1.png" /></p>
+<img alt="Alt text" src="../../../assets/image-1.png" /></p>
 <h4 id="propositional-satisfiability">Propositional Satisfiability<a class="headerlink" href="#propositional-satisfiability" title="Permanent link">&para;</a></h4>
 <p>定义：对于一个复合命题，如果有一组真值取值能让其为 T，则该复合命题是可满足的（Satisfiable）；如果所有真值取值其值都为 F，则该复合命题是不可满足的（Unsatisfiable）。
 <strong>e.g. Determine the satisfiability of the following compound propositions:
@@ -3144,7 +3283,7 @@ e.g.2. <span class="arithmatex">\(S = (p \land q) \rightarrow (p \lor q) \equiv 
 </ul>
 <h5 id="conjunctive-normal-formcnf">Conjunctive Normal Form（CNF）<a class="headerlink" href="#conjunctive-normal-formcnf" title="Permanent link">&para;</a></h5>
 <p>定义：如果一个逻辑表达式被写作<font color=red>合取形式（即均由 <span class="arithmatex">\(\land\)</span> 连接）</font>，其中所有的子式均为 Literal 的析取（即为析取从句)，则称这个逻辑表达式为<font color=red>合取范式（Conjunctive Normal Form）</font>。
-<img alt="Alt text" src="image-2.png" /></p>
+<img alt="Alt text" src="../../../assets/image-2.png" /></p>
 <h5 id="theorem">Theorem<a class="headerlink" href="#theorem" title="Permanent link">&para;</a></h5>
 <p><font color=red>所有表达式 A 永远都可以与某个合取范式（或者析取范式）等价。</font></p>
 <h5 id="how-to-obtain-normal-form">How to obtain normal form<a class="headerlink" href="#how-to-obtain-normal-form" title="Permanent link">&para;</a></h5>
@@ -3158,9 +3297,9 @@ $\neg (p $<sub>1</sub> <span class="arithmatex">\(\lor p\)</span><sub>2</sub> <s
 <span class="arithmatex">\(\neg \neg p \equiv p\)</span></li>
 <li>使用交换律、结合律、分配律获得范式
 <strong>e.g.1. 将表达式 <span class="arithmatex">\(\neg (p \lor q) \leftrightarrow (p \land q)\)</span> 转换为范式。</strong>
-<img alt="Alt text" src="image-3.png" />
+<img alt="Alt text" src="../../../assets/image-3.png" />
 <strong>e.g.2. 找到合适的 p ，q 取值，使得表达式 <span class="arithmatex">\((p \rightarrow q) \rightarrow p\)</span> 值为真。</strong>
-<img alt="Alt text" src="image-4.png" /></li>
+<img alt="Alt text" src="../../../assets/image-4.png" /></li>
 </ul>
 <h5 id="full-disjunctive-normal-form">Full Disjunctive Normal Form<a class="headerlink" href="#full-disjunctive-normal-form" title="Permanent link">&para;</a></h5>
 <h6 id="minterm">Minterm<a class="headerlink" href="#minterm" title="Permanent link">&para;</a></h6>
@@ -3172,16 +3311,16 @@ $\neg (p $<sub>1</sub> <span class="arithmatex">\(\lor p\)</span><sub>2</sub> <s
 <h6 id="how-to-obtain-full-disjunctive-normal-form">How to obtain full disjunctive normal form<a class="headerlink" href="#how-to-obtain-full-disjunctive-normal-form" title="Permanent link">&para;</a></h6>
 <p>首先，获得一个析取范式，利用否定律和分配律获得全析取范式。
 <span class="arithmatex">\(A \equiv A \land (q \lor \neg q) \equiv (A \land q) \lor (A \land \neg q)\)</span>
-<strong>e.g. 将表达式 <span class="arithmatex">\((p \land q) \lor (\neg p \land r) \lor (q \land r)\)</span> 转换为全析取范式。</strong>
-<img alt="Alt text" src="image-5.png" /></p>
+<strong>e.g. 将表达式 <span class="arithmatex">\((p \land q) \lor (\neg p \land r) \lor (q \land r)\)</span> 转换为全析取范式。</strong></p>
+<p><img alt="Alt text" src="../../../assets/image-5.png" /></p>
 <h6 id="full-disjunctive-normal-form-from-truth-tables">Full disjunctive normal form from truth tables<a class="headerlink" href="#full-disjunctive-normal-form-from-truth-tables" title="Permanent link">&para;</a></h6>
 <p>找到使最终答案为 T 的取值情况，将这些取值情况用析取形式组合后即可。
 e.g.1.
-<img alt="Alt text" src="image-6.png" />
+<img alt="Alt text" src="../../../assets/image-6.png" />
 e.g.2.
-<img alt="Alt text" src="image-7.png" />
+<img alt="Alt text" src="../../../assets/image-7.png" />
 e.g.3.
-<img alt="Alt text" src="image-8.png" /></p>
+<img alt="Alt text" src="../../../assets/image-8.png" /></p>
 <h3 id="predicates-and-quantifiers">Predicates and Quantifiers<a class="headerlink" href="#predicates-and-quantifiers" title="Permanent link">&para;</a></h3>
 <h4 id="introducing-predicate-logic">Introducing Predicate Logic<a class="headerlink" href="#introducing-predicate-logic" title="Permanent link">&para;</a></h4>
 <p>谓词逻辑（Predicate Logic）有以下的特点：
