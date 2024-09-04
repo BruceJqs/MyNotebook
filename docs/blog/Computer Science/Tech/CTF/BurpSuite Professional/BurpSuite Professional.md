@@ -58,20 +58,20 @@ comments: true
 
 - 在 app 目录中打开终端，输入 `java -jar burp-keygen-scz.jar` 命令启用注册机
 
-![](https://i-blog.csdnimg.cn/blog_migrate/60704e20d0d3276572284d352e2f0aba.gif)
+![](../../../../../assets/60704e20d0d3276572284d352e2f0aba.gif)
 
 - 再重新打开一个 app 目录下的终端，输入 `java -noverify -javaagent:burp-loader-x-Ai.jar -jar burpsuite_pro.jar` 命令启动 BurpSuite
 
-![](https://i-blog.csdnimg.cn/blog_migrate/956d3ef1dd7cba923718e62caa543a04.gif)
+![](../../../../../assets/956d3ef1dd7cba923718e62caa543a04.gif)
 
 - 启动后还会弹出需要注册码的界面，这时候跟着下图的步骤操作即可
   
-![](https://i-blog.csdnimg.cn/blog_migrate/3011d53201ab8eca0509f1f4f11dbb6c.gif)
-![](https://i-blog.csdnimg.cn/blog_migrate/bb9a451cbef8272938fa6023fb1cd37c.gif)
-![](https://i-blog.csdnimg.cn/blog_migrate/daf6ac506ebc3a25c291b8e218faa3f6.gif)
-![](https://i-blog.csdnimg.cn/blog_migrate/bc02600ba6e907ae564c5fe2b39f439d.gif)
-![](https://i-blog.csdnimg.cn/blog_migrate/c4d1d88f6b13400f8676f157189654c6.gif)
+![](../../../../../assets/3011d53201ab8eca0509f1f4f11dbb6c.gif)
+![](../../../../../assets/bb9a451cbef8272938fa6023fb1cd37c.gif)
+![](../../../../../assets/daf6ac506ebc3a25c291b8e218faa3f6.gif)
+![](../../../../../assets/bc02600ba6e907ae564c5fe2b39f439d.gif)
+![](../../../../../assets/c4d1d88f6b13400f8676f157189654c6.gif)
 
 - 最后重新打开即可食用
   
-![](https://i-blog.csdnimg.cn/blog_migrate/d0a6a4adb0e83bd1f762d7d0170f9962.gif)
+![](../../../../../assets/d0a6a4adb0e83bd1f762d7d0170f9962.gif)
