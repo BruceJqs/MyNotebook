@@ -76,6 +76,9 @@ nav:
       - Project 3: blog/Computer Science/FDS/FDS-Project3 report.md
     - 数字逻辑设计｜Digital Design: 
       - blog/Computer Science/Digital Design/index.md
+    - 工具｜Tools:
+      - blog/Computer Science/Tech/index.md
+      - CTF 相关: blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md
   - Mathematics: 
     - 微积分（甲）｜Calculus : 
       - blog/Math/Calculus/index.md
