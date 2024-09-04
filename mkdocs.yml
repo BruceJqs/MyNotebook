@@ -96,7 +96,7 @@ nav:
       - blog/Math/Linear Algebra/index.md
   - CTF:
     - 2023-2024 暑短学期: 
-      blog/CTF/2023-2024暑短学期/index.md
+      - blog/CTF/2023-2024暑短学期/index.md
       - Lab0: blog/CTF/2023-2024暑短学期/Lab0 Report.md
       - Lab1-Crypto: blog/CTF/2023-2024暑短学期/Lab1-Crypto Report.md
       - Lab1-Misc: blog/CTF/2023-2024暑短学期/Lab1-Misc Report.md
