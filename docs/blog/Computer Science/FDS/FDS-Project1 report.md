@@ -156,7 +156,7 @@ for i from 1~n
 
 #### Test Result Plot
 
-![image-20240307220743828](../../assets/image-20240307220743828.png)
+![image-20240307220743828](../../../assets/image-20240307220743828.png)
 
 ## Chapter 4 : Analysis and Comments
 
