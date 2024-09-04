@@ -1,3 +1,14 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
+# Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices
+
 ## Sets
 
 ### Some Concepts of Set Theory

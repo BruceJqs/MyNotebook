@@ -1,3 +1,14 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
+# Chapter 01: The Foundations:Logic and Proofs
+
 ## Propositional Logic
 ### Proposition
 定义：命题是一个<font color=blue>非真即假</font>的陈述句（<font color=red>不可能既真又假</font>）

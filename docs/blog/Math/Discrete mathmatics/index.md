@@ -1,3 +1,12 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
 # 离散数学及其应用｜Discrete mathmatics
 
 ## Table of Contents

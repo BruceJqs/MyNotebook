@@ -1,3 +1,14 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
+# Chapter 08: Advanced Counting Techniques
+
 ## Applications of Recurrence Relations
 
 用递推求总方法数（e.g.Hanoi，Fibonacci...）

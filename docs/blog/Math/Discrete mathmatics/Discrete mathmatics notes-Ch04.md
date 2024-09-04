@@ -1,3 +1,14 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
+# Chapter 04: The Number Theory and Cryptography
+
 ## Divisibility and Modular Arithmetic
 
 ### Division

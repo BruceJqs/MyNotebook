@@ -1,3 +1,12 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
 # MeterSphere 使用手册
 
 **<font size=5>目录</font>**

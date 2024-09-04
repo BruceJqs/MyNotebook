@@ -1,3 +1,12 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
 # Lab1-Misc Report
 
 ## Task 1.1：乱码情形探究

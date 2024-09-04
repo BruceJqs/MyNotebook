@@ -1,3 +1,14 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
+# Chapter 03: Algorithms
+
 ## Algorithms
 
 定义：一个<font color="red">算法（Algorithm）</font>是解决一个问题的精确指令的有限集。
