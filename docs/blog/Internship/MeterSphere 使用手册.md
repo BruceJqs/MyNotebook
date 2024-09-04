@@ -9,12 +9,6 @@ comments: true
 
 # MeterSphere 使用手册
 
-**<font size=5>目录</font>**
-
-[TOC]
-
-<div style="page-break-after:always;"></div>
-
 ## 平台相关信息
 
 ### 项目网址
