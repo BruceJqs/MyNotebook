@@ -1,3 +1,12 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---   
+
 # 数字逻辑设计｜Digital Design
 
 !!! Abstract 

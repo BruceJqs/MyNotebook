@@ -1,3 +1,14 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
+
+# Project 2: Autograd for Algebraic Expressions
+
 ## Chapter 1 : Introduction
 
 ### Problem 
