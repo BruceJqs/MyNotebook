@@ -61,7 +61,7 @@ theme:
   icon:
     repo: fontawesome/brands/github #右上角图标
     logo: logo
-edit_uri: edit/main/docs # 编辑按钮跳转的链接
+# edit_uri: edit/main/docs # 编辑按钮跳转的链接
 repo_url: https://github.com/BruceJqs/MyNotebook # 右上角点击跳转的链接
 repo_name: BruceJqs/MyNotebook # 右上角的名字
 
@@ -113,9 +113,11 @@ nav:
       - 接口测试: blog/Internship/MeterSphere 使用手册.md
       - 压力测试: blog/Internship/Locust 压力测试工具使用手册.md
   - Others:
-    - 友链: about/link.md
+    - 大学英语IV｜College English Band IV: 
+      - blog/Others/College English Band IV/index.md
   - About:
     - 作者个人简介: about/geren.md
+    - 友链: about/link.md
       # - 功能测试: about/test.md
 
 copyright: Copyright &copy; 2024 BruceJin/All Rights Reserved. # 左下角的版权声明
