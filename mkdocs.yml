@@ -96,16 +96,16 @@ nav:
       - blog/Math/Linear Algebra/index.md
   - CTF:
     - 2023-2024 暑短学期: 
-      - Lab0: blog/CTF/Lab0 Report.md
-      - Lab1-Crypto: blog/CTF/Lab1-Crypto Report.md
-      - Lab1-Misc: blog/CTF/Lab1-Misc Report.md
-      - Lab1-Pwn: blog/CTF/Lab1-Pwn Report.md
-      - Lab1-Web: blog/CTF/Lab1-Web Report.md
-      - Lab1-Rev: blog/CTF/Lab1-Rev Report.md
-      - Lab2-Crypto: blog/CTF/Lab2-Crypto Report.md
-      - Lab2-Misc: blog/CTF/Lab2-Misc Report.md
-      - Lab3-Crypto: blog/CTF/Lab3-Crypto Report.md
-      - Lab3-Misc: blog/CTF/Lab3-Misc Report.md
+      - Lab0: blog/CTF/2023-2024暑短学期/Lab0 Report.md
+      - Lab1-Crypto: blog/CTF/2023-2024暑短学期/Lab1-Crypto Report.md
+      - Lab1-Misc: blog/CTF/2023-2024暑短学期/Lab1-Misc Report.md
+      - Lab1-Pwn: blog/CTF/2023-2024暑短学期/Lab1-Pwn Report.md
+      - Lab1-Web: blog/CTF/2023-2024暑短学期/Lab1-Web Report.md
+      - Lab1-Rev: blog/CTF/2023-2024暑短学期/Lab1-Rev Report.md
+      - Lab2-Crypto: blog/CTF/2023-2024暑短学期/Lab2-Crypto Report.md
+      - Lab2-Misc: blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md
+      - Lab3-Crypto: blog/CTF/2023-2024暑短学期/Lab3-Crypto Report.md
+      - Lab3-Misc: blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md
   - Internship:
     - 大模型: 
       - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
