@@ -23,7 +23,7 @@ comments: true
 
 **e.g.**
 
-![image-20240430090425357](../../assets/image-20240430090425357.png)
+![image-20240430090425357](../../../assets/image-20240430090425357.png)
 
 ### Properties of Binary Relations
 
@@ -84,7 +84,7 @@ comments: true
 
 **e.g. $R=\{(a,b)|a<b,a,b\in Z\}$，求 $R$ 的自反闭包。**
 
-![image-20240507085422097](../../assets/image-20240507085422097.png)
+![image-20240507085422097](../../../assets/image-20240507085422097.png)
 
 ### Symmetric Closure
 
@@ -92,17 +92,17 @@ comments: true
 
 <font color="red">$R=R\bigcup R^{-1}\Leftrightarrow R$ 是一个对称闭包</font>
 
-![image-20240507085710666](../../assets/image-20240507085710666.png)
+![image-20240507085710666](../../../assets/image-20240507085710666.png)
 
 ### Transitive Closure
 
 定义：设 $R$ 是集合 $A$ 上的关系，那么 $R$ 的<font color="red">传递闭包（Transitive Closure）</font>，记为<font color="red"> $t(R)$ </font>，满足 $\forall a\in A\space\forall b\in A\space a$ 可达 $b\rightarrow (a,b)\in R$
 
-![image-20240507090346762](../../assets/image-20240507090346762.png)
+![image-20240507090346762](../../../assets/image-20240507090346762.png)
 
 定理：设 $R$ 是集合 $A$ 上的关系，那么存在一条 $a$ 到 $b$ 长度为 $n$ 的路径 $\Leftrightarrow (a,b)\in R^n$。 
 
-![image-20240507090547878](../../assets/image-20240507090547878.png)
+![image-20240507090547878](../../../assets/image-20240507090547878.png)
 
 ### Connectivity Relation
 
@@ -135,9 +135,9 @@ comments: true
 
 **e.g. 模 3 同余的关系 $R=\{(a,b)|a\equiv b(mod\space3),a,b\in Z\}$，证明其是一个等价关系并指出其等价类。**
 
-![image-20240510082204922](../../assets/image-20240510082204922.png)
+![image-20240510082204922](../../../assets/image-20240510082204922.png)
 
-![image-20240510082225334](../../assets/image-20240510082225334.png)
+![image-20240510082225334](../../../assets/image-20240510082225334.png)
 
 ### Partition of a Set
 
@@ -180,11 +180,11 @@ comments: true
 
 对于两个偏序集 $(A_1,\preccurlyeq_1)$ 和 $(A_2,\preccurlyeq_2)$ ，那么在 $A_1\times A_2$ 上的<font color="red">字典顺序（Lexicographic Order）</font>$\prec$ 定义为：$(a_1,a_2)\prec(b_1,b_2)\Leftrightarrow (a_1\prec_1b_1) \lor((a_1=b_1)\land(a_2\prec_2b_2))$
 
-![image-20240510110314098](../../assets/image-20240510110314098.png)
+![image-20240510110314098](../../../assets/image-20240510110314098.png)
 
 ### Hasse diagrams
 
-![image-20240510110811753](../../assets/image-20240510110811753.png)
+![image-20240510110811753](../../../assets/image-20240510110811753.png)
 
 ### Chain and Antichain
 

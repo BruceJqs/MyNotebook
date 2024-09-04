@@ -65,13 +65,13 @@ comments: true
 
 定理：<font color="red">如果 $n$ 是一个合数，那么 $n$ 必有一个素因子小于等于 $\sqrt{n}$</font>
 
-![image-20240407081313449](../../assets/image-20240407081313449.png)
+![image-20240407081313449](../../../assets/image-20240407081313449.png)
 
 ### Infinitude of Primes
 
 定理：<font color="red">存在无穷多个素数</font>
 
-![image-20240407081523338](../../assets/image-20240407081523338.png)
+![image-20240407081523338](../../../assets/image-20240407081523338.png)
 
 ### Mersenne Primes
 
@@ -109,7 +109,7 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 令 $a=bq+r$，其中 $a,b,q$ 和 $r$ 均为整数。则<font color="red"> $\gcd(a,b)=\gcd(b,r)$</font>
 
-![image-20240409081016436](../../assets/image-20240409081016436.png)
+![image-20240409081016436](../../../assets/image-20240409081016436.png)
 
 欧几里得算法（Euclidean Algorithm）：辗转相除法求最大公约数。（当 $a\geq b$ 时时间复杂度为 $O(\log\space b)$
 
@@ -119,19 +119,19 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 **e.g. 将 $\gcd(252,198)=18$ 表达为贝祖恒等式。**
 
-![image-20240409085036349](../../assets/image-20240409085036349.png)
+![image-20240409085036349](../../../assets/image-20240409085036349.png)
 
 由贝祖定理可以推导出如下定理：
 
 - 如果 $a,b$ 和 $c$ 为正整数，使得 $\gcd(a,b)=1$ 且 $a|bc$，则 $a|c$
 
-![image-20240409081243033](../../assets/image-20240409081243033.png)
+![image-20240409081243033](../../../assets/image-20240409081243033.png)
 
 - 如果 $p$ 是素数，且 $p|a_1a_2...a_n$，其中 $a_i$ 为整数，则对于某个 $i$，$p|a_i$
 
 - 令 $m$ 为正整数，$a,b$ 和 $c$ 为整数。如果 $ac\equiv bc(mod\space m)$ 且 $\gcd(c,m)=1$，则 $a\equiv b(mod\space m)$
 
-![image-20240409081642694](../../assets/image-20240409081642694.png)
+![image-20240409081642694](../../../assets/image-20240409081642694.png)
 
 ## Solving Congruences
 
@@ -149,11 +149,11 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 **e.g.1. 找到 3 模 7 的逆。**
 
-![image-20240409084700618](../../assets/image-20240409084700618.png)
+![image-20240409084700618](../../../assets/image-20240409084700618.png)
 
 **e.g.2. 找到 101 模 4620 的逆。**
 
-![image-20240409084804922](../../assets/image-20240409084804922.png)
+![image-20240409084804922](../../../assets/image-20240409084804922.png)
 
 ### Using Inverses to Solve Congruences
 
@@ -174,7 +174,7 @@ x\equiv a_n(mod\space m_n)
 $$
 有唯一的模 $m=m_1m_2...m_n$ 的解（即存在一个满足 $0\leq x\leq m$ 的解 $x$，而所有其他的解均与此解模 $m$ 同余）
 
-![image-20240409090913357](../../assets/image-20240409090913357.png)
+![image-20240409090913357](../../../assets/image-20240409090913357.png)
 
 **e.g. 求解同余方程组**
 $$
@@ -184,7 +184,7 @@ x\equiv 3(mod\space 5)\\
 x\equiv 2(mod\space 7)
 \end{cases}
 $$
-![image-20240409091141991](../../assets/image-20240409091141991.png)
+![image-20240409091141991](../../../assets/image-20240409091141991.png)
 
 ### Back Substitution
 
@@ -198,7 +198,7 @@ x\equiv 2(mod\space 6)\\
 x\equiv 3(mod\space 7)
 \end{cases}
 $$
-![image-20240409091434369](../../assets/image-20240409091434369.png)
+![image-20240409091434369](../../../assets/image-20240409091434369.png)
 
 ### Computer Arithmetic with Large Integers
 
@@ -206,7 +206,7 @@ $$
 
 **e.g. 利用模数为 $99,98,97,95$ 来寻找 $123684$ 和 $413456$ 的和。**
 
-![image-20240409092458896](../../assets/image-20240409092458896.png)
+![image-20240409092458896](../../../assets/image-20240409092458896.png)
 
 ### Fermat's Little Theorem
 
@@ -214,7 +214,7 @@ $$
 
 **e.g. 求 $7^{222}\space mod \space 11$**
 
-![image-20240409092924616](../../assets/image-20240409092924616.png)
+![image-20240409092924616](../../../assets/image-20240409092924616.png)
 
 ### Pseudoprimes
 
@@ -224,4 +224,4 @@ $$
 
 **e.g. 561 是一个卡米切尔数。**
 
-![image-20240409093536284](../../assets/image-20240409093536284.png)
+![image-20240409093536284](../../../assets/image-20240409093536284.png)

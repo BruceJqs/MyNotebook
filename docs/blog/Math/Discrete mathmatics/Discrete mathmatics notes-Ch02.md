@@ -43,7 +43,7 @@ comments: true
 
 在韦恩图当中，用矩形框表达全集（Universal Set，包含所考虑的全部对象），用圆或者其他几何图形来表达集合，<font color="blue">用点来表达集合中的特定元素</font>。
 
-![image-20240319124343503](../../assets/image-20240319124343503.png)
+![image-20240319124343503](../../../assets/image-20240319124343503.png)
 
 ### Subsets
 
@@ -81,11 +81,11 @@ comments: true
 
 **e.g.1. 求 $\{\phi\}$ 和 $\{\phi,\{\phi\}\}$ 的幂集。**
 
-![image-20240319153804235](../../assets/image-20240319153804235.png)
+![image-20240319153804235](../../../assets/image-20240319153804235.png)
 
 **e.g.2. 证明 $P(A) \in P(B) \Rightarrow A \in B$**
 
-![image-20240319153859219](../../assets/image-20240319153859219.png)
+![image-20240319153859219](../../../assets/image-20240319153859219.png)
 
 ### Cartesian Products
 
@@ -107,7 +107,7 @@ comments: true
 
 **e.g. $A=\{a,b\},B=\{0,1,2\}$，求 $A\times B,B\times A$**
 
-![image-20240319155324775](../../assets/image-20240319155324775.png)
+![image-20240319155324775](../../../assets/image-20240319155324775.png)
 
 ### Using Set Notation with Quantifiers
 
@@ -127,7 +127,7 @@ comments: true
 
 对于集合 $A$ 和 $B$，其<font color="red">并集（Union）</font>是一个包含 $A$ 或 $B$ 中或同时在 $A$ 和 $B$ 中的元素的集合，用<font color="red"> $A \bigcup B$ </font>来表示。（<font color="blue">$A \bigcup B=\{x|x\in A \lor x \in B\}$</font>）
 
-![image-20240319162317171](../../assets/image-20240319162317171.png)
+![image-20240319162317171](../../../assets/image-20240319162317171.png)
 
 其性质如下：
 
@@ -140,7 +140,7 @@ comments: true
 
 对于集合 $A$ 和 $B$，其<font color="red">交集（Intersection）</font>是一个包含同时在 $A$ 和 $B$ 中的元素的集合，用<font color="red"> $A \bigcap B$ </font>来表示。（<font color="blue">$A \bigcap B=\{x|x\in A \land x \in B\}$</font>）
 
-![image-20240319162852934](../../assets/image-20240319162852934.png)
+![image-20240319162852934](../../../assets/image-20240319162852934.png)
 
 当两个集合的交集是一个空集时，称这两个集合是<font color="red">不相交的（Disjoint）</font>（即 <font color="blue">$A\bigcap B=\phi$</font>）
 
@@ -155,19 +155,19 @@ comments: true
 
 令 $U$ 为全集，$A$ 的<font color="red">补集（Complement）</font>为在全集中不属于 $A$ 的元素的集合，用<font color="red"> $\overline A$ </font>来表示。（<font color="blue">$\overline A=\{x|x\not \in A,x \in U\}=\{x|\neg x  \in A\}$</font>）
 
-![image-20240319172311905](../../assets/image-20240319172311905.png)
+![image-20240319172311905](../../../assets/image-20240319172311905.png)
 
 ### Difference
 
 对于集合 $A$ 和 $B$，$A$ 与 $B$ 的<font color="red">差集（Difference）</font>是一个包含属于 $A$ 但不属于 $B$ 的元素的集合，用<font color="red"> $A-B$ </font>来表示，也被称为 $B$ 相对于 $A$ 的补集。（<font color="blue">$A-B=\{x|x\in A \land x \not \in B\}=A \bigcap \overline B$</font>）
 
-![image-20240319172420848](../../assets/image-20240319172420848.png)
+![image-20240319172420848](../../../assets/image-20240319172420848.png)
 
 ### Symmetric Difference
 
 对于集合 $A$ 和 $B$，$A$ 与 $B$ 的<font color="red">对称差（Symmetric Difference）</font>是一个包含属于 $A$ 但不属于 $B$ 和属于 $B$ 但不属于 $A$ 的元素的集合，用<font color="red"> $A\oplus B$ </font>来表示。（<font color="blue">$A\oplus B=\{x|(x\in A \land x \not \in B) \lor (x\in B \land x \not \in A)\}=(A \bigcup B)-(A \bigcap B)$</font>）
 
-![image-20240319173214695](../../assets/image-20240319173214695.png)
+![image-20240319173214695](../../../assets/image-20240319173214695.png)
 
 ### The Principle of Inclusion-Exclusion
 
@@ -309,7 +309,7 @@ $$
 
 **e.g. 令集合 $A$ 为 $(a,b)$ 之间所有的实数 $(a<b)$ ，集合 $B$ 为 $(0,1)$ 之间所有的实数，证明 $|A|=|B|$ 。**
 
-![image-20240326082453694](../../assets/image-20240326082453694.png)
+![image-20240326082453694](../../../assets/image-20240326082453694.png)
 
 如果存在一个从 $A$ 到 $B$ 的一对一函数，则 $A$ 的基数小于等于 $B$ 的基数，记为<font color="red"> $|A|\leq |B|$ </font>，如果 $A$ 和 $B$ 有不同的基数时，$A$ 的基数小于 $B$ 的基数，记为<font color="red"> $|A|<|B|$ </font>
 
@@ -334,7 +334,7 @@ $$
 
 **e.g. 证明 $|(0,1)|=|[0,1]|$**
 
-![image-20240326210247239](../../assets/image-20240326210247239.png)
+![image-20240326210247239](../../../assets/image-20240326210247239.png)
 
 ### Uncomputable Function-An Important Application in CS
 

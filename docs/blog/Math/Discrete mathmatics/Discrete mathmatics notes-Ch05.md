@@ -15,13 +15,13 @@ comments: true
 
 第一数学归纳法（The First Principle of Mathematical Induction）：$(P(1)\land\forall k(P(k)\rightarrow P(k+1)))\rightarrow\forall nP(n)$，更一般地，$\forall n[n\geq k\rightarrow P(n)]$
 
-![image-20240412082030935](../../assets/image-20240412082030935.png)
+![image-20240412082030935](../../../assets/image-20240412082030935.png)
 
-![image-20240412082052928](../../assets/image-20240412082052928.png)
+![image-20240412082052928](../../../assets/image-20240412082052928.png)
 
 ### Guidelines:Mathmatical Induction Proofs
 
-![image-20240412084214784](../../assets/image-20240412084214784.png)
+![image-20240412084214784](../../../assets/image-20240412084214784.png)
 
 ## Strong Induction and Well-ordering
 
@@ -59,7 +59,7 @@ comments: true
 - 基础步骤：单个顶点 $r$ 是根树。
 - 递归步骤：假设 $T_1,T_2,...,T_n$ 是根树，分别带有树根 $r_1,r_2,...,r_n$。则如下形成的图也是根树：从树根 $r$ 开始，$r$ 不属于根树 $T_1,T_2,...,T_n$ 中的任何一个，从 $r$ 到顶点 $r_1,r_2,...,r_n$ 中的每个都加入一条边。
 
-![image-20240413164928150](../../assets/image-20240413164928150.png)
+![image-20240413164928150](../../../assets/image-20240413164928150.png)
 
 ### Full Binary Trees
 
@@ -68,7 +68,7 @@ comments: true
 - 基础步骤：存在一个只含有单个顶点的满二叉树。
 - 递归步骤：如果 $T_1$ 和 $T_2$ 都是满二叉树，则存在一个表示为 $T_1·T_2$ 的满二叉树，它包含树根 $r$ 和连接从 $r$ 到左子树 $T_1$ 和右子树 $T_2$ 各自的根的边。
 
-![image-20240413165412790](../../assets/image-20240413165412790.png)
+![image-20240413165412790](../../../assets/image-20240413165412790.png)
 
 ### Structural Induction
 
@@ -84,4 +84,4 @@ e.g. 递归地定义满二叉树 $T$ 的高度 $h(T)$。
 
 用结构归纳法证明如果 $T$ 是满二叉树，则 $n(T)\leq 2^{h(T)+1}-1$。
 
-![image-20240413170211549](../../assets/image-20240413170211549.png)
+![image-20240413170211549](../../../assets/image-20240413170211549.png)

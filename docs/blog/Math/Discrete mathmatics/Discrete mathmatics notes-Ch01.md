@@ -191,9 +191,9 @@ e.g.对于下列命题：
 - <font color=red>$\neg (p $~1~ $\land p$~2~ $\land ...\land p$~n~) $\equiv \neg p$~1~ $\lor \neg p$~2~ $\lor ... \lor \neg p$~n~</font>
 
 **e.g.1. Show that $\neg (p \lor (\neg p \land q))$ and $\neg p \land \neg q$ are logically equivalent.**
-![Alt text](../../assets/image.png)
+![Alt text](../../../assets/image.png)
 **e.g.2. Show that $((p \rightarrow q) \rightarrow r) \rightarrow ((r \rightarrow p) \rightarrow (s \rightarrow p))$ is a tautology.**
-![Alt text](../../assets/image-1.png)
+![Alt text](../../../assets/image-1.png)
 ### Propositional Satisfiability
 定义：对于一个复合命题，如果有一组真值取值能让其为 T，则该复合命题是可满足的（Satisfiable）；如果所有真值取值其值都为 F，则该复合命题是不可满足的（Unsatisfiable）。
 **e.g. Determine the satisfiability of the following compound propositions:
@@ -222,7 +222,7 @@ e.g.2. $S = (p \land q) \rightarrow (p \lor q) \equiv \neg (p \land q) \lor (p \
 **e.g. $(p \land q) \lor (p \land \neg q)$ 是一个析取范式，但是 $p \land (p \lor q)$ 不是一个析取范式。**
 #### Conjunctive Normal Form（CNF）
 定义：如果一个逻辑表达式被写作<font color=red>合取形式（即均由 $\land$ 连接）</font>，其中所有的子式均为 Literal 的析取（即为析取从句)，则称这个逻辑表达式为<font color=red>合取范式（Conjunctive Normal Form）</font>。
-![Alt text](../../assets/image-2.png)
+![Alt text](../../../assets/image-2.png)
 #### Theorem
 <font color=red>所有表达式 A 永远都可以与某个合取范式（或者析取范式）等价。</font>
 #### How to obtain normal form
@@ -235,9 +235,9 @@ $\neg (p $~1~ $\lor p$~2~ $\lor ...\lor p$~n~) $\equiv \neg p$~1~ $\land \neg p$
 $\neg \neg p \equiv p$
 - 使用交换律、结合律、分配律获得范式
 **e.g.1. 将表达式 $\neg (p \lor q) \leftrightarrow (p \land q)$ 转换为范式。**
-![Alt text](../../assets/image-3.png)
+![Alt text](../../../assets/image-3.png)
 **e.g.2. 找到合适的 p ，q 取值，使得表达式 $(p \rightarrow q) \rightarrow p$ 值为真。**
-![Alt text](../../assets/image-4.png)
+![Alt text](../../../assets/image-4.png)
 #### Full Disjunctive Normal Form
 ##### Minterm
 一个小项（Minterm）即为 Literal 的合取，其中每个命题变量都只出现一次。
@@ -250,16 +250,16 @@ $\neg \neg p \equiv p$
 $A \equiv A \land (q \lor \neg q) \equiv (A \land q) \lor (A \land \neg q)$
 **e.g. 将表达式 $(p \land q) \lor (\neg p \land r) \lor (q \land r)$ 转换为全析取范式。**
 
-![Alt text](../../assets/image-5.png)
+![Alt text](../../../assets/image-5.png)
 
 ##### Full disjunctive normal form from truth tables
 找到使最终答案为 T 的取值情况，将这些取值情况用析取形式组合后即可。
 e.g.1.
-![Alt text](../../assets/image-6.png)
+![Alt text](../../../assets/image-6.png)
 e.g.2.
-![Alt text](../../assets/image-7.png)
+![Alt text](../../../assets/image-7.png)
 e.g.3.
-![Alt text](../../assets/image-8.png)
+![Alt text](../../../assets/image-8.png)
 
 ## Predicates and Quantifiers
 ### Introducing Predicate Logic
@@ -386,13 +386,13 @@ y:=temp;
 
 ### Translating Nested Quantifiers into English
 
-![image-20240308205542711](../../assets/image-20240308205542711.png)
+![image-20240308205542711](../../../assets/image-20240308205542711.png)
 
-![image-20240308205553473](../../assets/image-20240308205553473.png)
+![image-20240308205553473](../../../assets/image-20240308205553473.png)
 
-![image-20240308205559682](../../assets/image-20240308205559682.png)
+![image-20240308205559682](../../../assets/image-20240308205559682.png)
 
-![image-20240308205605846](../../assets/image-20240308205605846.png)
+![image-20240308205605846](../../../assets/image-20240308205605846.png)
 
 ### Negating Nested Quantifiers
 
@@ -411,7 +411,7 @@ De Morgan 定律也同样适用于嵌套量词的否定。
 
 **e.g. 将表达式 $\forall x ((\exists y R(x,y) \land \forall y \neg S(x,y)) \rightarrow \neg (\exists y M(x,y) \land P))$ 转换为前束范式。**
 
-![image-20240309153951399](../../assets/image-20240309153951399.png)
+![image-20240309153951399](../../../assets/image-20240309153951399.png)
 
 ## Rules of Inference
 
@@ -423,7 +423,7 @@ De Morgan 定律也同样适用于嵌套量词的否定。
 
 e.g.
 
-![image-20240312084520507](../../assets/image-20240312084520507.png)
+![image-20240312084520507](../../../assets/image-20240312084520507.png)
 
 ### Valid Arguments & Argument Form
 
@@ -437,14 +437,14 @@ e.g.
 
 |                   名称                   |                           推理规则                           |                           恒真命题                           |
 | :--------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|       Modus Ponens <br>(假言推理)        | ![](../../assets/image-20240312085542848.png) |         $(p \land (p \rightarrow q)) \rightarrow q$          |
-|        Modus Tollens<br>(取拒式 )        | ![](../../assets/image-20240312085800266.png) |    $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$     |
-| Hypothetical Syllogism<br>（假言三段论） | ![](../../assets/image-20240312085938651.png) | $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$ |
-|  Disjunctive Syllogism<br>(析取三段论)   | ![](../../assets/image-20240312090058118.png) |          $(\neg p \land (p \lor q)) \rightarrow q$           |
-|           Addition<br>(附加律)           | ![](../../assets/image-20240312090228050.png) |                  $p \rightarrow (p \lor q)$                  |
-|        Simplification<br>(化简律)        | ![](../../assets/image-20240312090327705.png) |                 $(p \land q) \rightarrow q$                  |
-|         Conjunction<br>(合取律)          | ![](../../assets/image-20240312090423713.png) |          $((p) \land (q)) \rightarrow (p \land q)$           |
-|          Resolution<br>(消解律)          | ![](../../assets/image-20240312090535015.png) | $((\neg p \lor r) \land (p \lor q)) \rightarrow (q \lor r)$  |
+|       Modus Ponens <br>(假言推理)        | ![](../../../assets/image-20240312085542848.png) |         $(p \land (p \rightarrow q)) \rightarrow q$          |
+|        Modus Tollens<br>(取拒式 )        | ![](../../../assets/image-20240312085800266.png) |    $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$     |
+| Hypothetical Syllogism<br>（假言三段论） | ![](../../../assets/image-20240312085938651.png) | $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$ |
+|  Disjunctive Syllogism<br>(析取三段论)   | ![](../../../assets/image-20240312090058118.png) |          $(\neg p \land (p \lor q)) \rightarrow q$           |
+|           Addition<br>(附加律)           | ![](../../../assets/image-20240312090228050.png) |                  $p \rightarrow (p \lor q)$                  |
+|        Simplification<br>(化简律)        | ![](../../../assets/image-20240312090327705.png) |                 $(p \land q) \rightarrow q$                  |
+|         Conjunction<br>(合取律)          | ![](../../../assets/image-20240312090423713.png) |          $((p) \land (q)) \rightarrow (p \land q)$           |
+|          Resolution<br>(消解律)          | ![](../../../assets/image-20240312090535015.png) | $((\neg p \lor r) \land (p \lor q)) \rightarrow (q \lor r)$  |
 
 ### Build Valid Arguments
 
@@ -455,17 +455,17 @@ e.g.
 
 **e.g.1. 从命题 $p \land (p \rightarrow q)$ 说明 $q$ 是一个结论。**
 
-![image-20240312091524188](../../assets/image-20240312091524188.png)
+![image-20240312091524188](../../../assets/image-20240312091524188.png)
 
 **e.g.2. 说明结论 $\neg w$ 来自于假设 $(w \lor r) \rightarrow v,v \rightarrow (c \lor s),s \rightarrow u,\neg c \land \neg u$**
 
-![image-20240312091906214](../../assets/image-20240312091906214.png)
+![image-20240312091906214](../../../assets/image-20240312091906214.png)
 
 如果一个结论是以 $p \rightarrow q$ 的形式给出，那么基于 <font color=blue>$(p_1 \land p_2 \land ...\land p_n \land p) \rightarrow q \equiv (p_1 \land p_2 \land...\land p_n) \rightarrow (p \rightarrow q)$</font>，我们可以将原来的问题转换为<font color=red> $p_1 \land p_2 \land ... \land p_n \land p \Rightarrow q$ </font>
 
 **e.g.3. 说明结论 $r \rightarrow s$ 来自于假设 $p \rightarrow (q \rightarrow s),\neg r \lor p,q$** 
 
-![image-20240312092606366](../../assets/image-20240312092606366.png)
+![image-20240312092606366](../../../assets/image-20240312092606366.png)
 
 ### Fallacies
 
@@ -479,16 +479,16 @@ e.g.
 
 |                      名称                      |                           推理规则                           |
 | :--------------------------------------------: | :----------------------------------------------------------: |
-|  Universal Instantiation(UI)<br>（全称实例）   | ![](../../assets/image-20240315081333284.png) |
-|  Universal Generalization(UG)<br>（全称引入）  | ![](../../assets/image-20240315081412950.png) |
-| Existential Instantiation(EI)<br>（存在实例）  | ![](../../assets/image-20240315081514941.png) |
-| Existential Generalization(EG)<br>（存在引入） | ![](../../assets/image-20240315081621783.png) |
+|  Universal Instantiation(UI)<br>（全称实例）   | ![](../../../assets/image-20240315081333284.png) |
+|  Universal Generalization(UG)<br>（全称引入）  | ![](../../../assets/image-20240315081412950.png) |
+| Existential Instantiation(EI)<br>（存在实例）  | ![](../../../assets/image-20240315081514941.png) |
+| Existential Generalization(EG)<br>（存在引入） | ![](../../../assets/image-20240315081621783.png) |
 
 **e.g. 证明以下论证是有效的：**
 
-![](../../assets/image-20240315081857784.png)
+![](../../../assets/image-20240315081857784.png)
 
-![](../../assets/image-20240315081901853.png)
+![](../../../assets/image-20240315081901853.png)
 
 ## Introduction to Proofs
 
@@ -508,7 +508,7 @@ e.g.
 
 **e.g. 给出定理“如果 $n$ 是个奇数，那么 $n^2$ 是个奇数”的直接证明。**
 
-![image-20240319081259375](../../assets/image-20240319081259375.png)
+![image-20240319081259375](../../../assets/image-20240319081259375.png)
 
 ###  Proof by Contraposition
 
@@ -516,19 +516,19 @@ e.g.
 
 **e.g. 证明定理“一个完美数不是一个质数”，完美数满足除了自身所有因子的和为自身（如 $6=1+2+3$ ）**
 
-![image-20240319081944024](../../assets/image-20240319081944024.png)
+![image-20240319081944024](../../../assets/image-20240319081944024.png)
 
 ### Vacuous Proof
 
 空证明（Vacuous Proof）：为了证明 $p \rightarrow q$ 为真，我们可以直接证明前提为假。
 
-![image-20240319082358104](../../assets/image-20240319082358104.png)
+![image-20240319082358104](../../../assets/image-20240319082358104.png)
 
 ### Trivial Proof
 
 平凡证明（Trivial Proof）：为了证明 $p \rightarrow q$ 为真，我们可以直接证明结论为真。
 
-![image-20240319082556501](../../assets/image-20240319082556501.png)
+![image-20240319082556501](../../../assets/image-20240319082556501.png)
 
 ### Proof by contradiction
 
@@ -536,7 +536,7 @@ e.g.
 
 **e.g. 证明有无穷多个素数**
 
-![image-20240319083107763](../../assets/image-20240319083107763.png)
+![image-20240319083107763](../../../assets/image-20240319083107763.png)
 
 ### Proof of Equivalence
 
@@ -552,7 +552,7 @@ e.g.
 
 **e.g. 证明“如果整数 $n$ 不能被 $3$ 整除，那么 $n^2 \equiv 1(mod \space 3)$”**
 
-![image-20240319084321564](../../assets/image-20240319084321564.png)
+![image-20240319084321564](../../../assets/image-20240319084321564.png)
 
 ### Existence Proof
 
@@ -560,13 +560,13 @@ e.g.
 
 **e.g. 证明对于每一个正整数 $n$，存在 $n$ 个连续的复数。**
 
-![image-20240319085145306](../../assets/image-20240319085145306.png)
+![image-20240319085145306](../../../assets/image-20240319085145306.png)
 
 或者我们可以假设没有定义域中的 $c$ ，使得 $P(c)$ 为真，然后得到矛盾。
 
 **e.g. 证明存在无理数。**
 
-![image-20240319085348976](../../assets/image-20240319085348976.png)
+![image-20240319085348976](../../../assets/image-20240319085348976.png)
 
 ### Uniqueness Proofs
 

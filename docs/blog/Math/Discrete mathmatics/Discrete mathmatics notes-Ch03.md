@@ -31,7 +31,7 @@ comments: true
 
 **e.g. 证明 $f(x)=x^2+2x+1$ 是 $O(x^2)$ 的。**
 
-![image-20240331134904691](../../assets/image-20240331134904691.png)
+![image-20240331134904691](../../../assets/image-20240331134904691.png)
 
 如果两个函数 $f(x)$ 和 $g(x)$ 满足 $f(x)$ 是 $O(g(x))$ 的，以及 $g(x)$ 是 $O(f(x))$ 的，我们称 $f(x)$ 和 $g(x)$ 是<font color="red">同阶的</font>
 
@@ -49,7 +49,7 @@ comments: true
 
 **e.g. 证明 $f(x)=8x^3+5x^2+7$ 是 $\Omega(x^3)$ 的**
 
-![image-20240331145505743](../../assets/image-20240331145505743.png)
+![image-20240331145505743](../../../assets/image-20240331145505743.png)
 
 ### Big-Theta
 

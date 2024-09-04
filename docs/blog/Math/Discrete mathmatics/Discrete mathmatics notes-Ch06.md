@@ -63,7 +63,7 @@ comments: true
 
 帕斯卡恒等式（Pascal's Identity）：设 $n$ 和 $k$ 是满足 $n\geq k$ 的正整数，那么有 $\begin{pmatrix}n+1\\k\end{pmatrix}=\begin{pmatrix}n\\k-1\end{pmatrix}+\begin{pmatrix}n\\k\end{pmatrix}$
 
-![image-20240419085310548](../../assets/image-20240419085310548.png)
+![image-20240419085310548](../../../assets/image-20240419085310548.png)
 
 ### Other Identity Involving Binomial Coefficients
 

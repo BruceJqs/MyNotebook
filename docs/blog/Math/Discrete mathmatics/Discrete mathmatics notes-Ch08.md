@@ -33,7 +33,7 @@ comments: true
 
 - 假设 $\{a_n\}$ 满足线性非齐次递推关系 $a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}+F(n)$，且 $F(n)=(b_tn^t+b_{t-1}n^{t-1}+...+b_1n+b_0)s^n$ ，其中 $b_0,b_1,...,b_t$ 和 $s$ 是实数，当 $s$ 不是相伴的线性齐次递推关系的特征方程的根时，存在一个特解 $(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n$，当 $s$ 是特征方程的根且它的重数是 $m$ 时，存在一个特解 $n^m(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n$
 
-![image-20240423195716786](../../assets/image-20240423195716786.png)
+![image-20240423195716786](../../../assets/image-20240423195716786.png)
 
 ## Generating Functions
 
@@ -41,7 +41,7 @@ comments: true
 
 生成函数（Generating Function）：序列 $a_0,a_1,a_2,...,a_k,...$ 的生成函数为 $G(x)=a_0+a_1x+...+a_kx^k+...=\sum\limits_{k=0}^{\infin}a_kx^k$
 
-![image-20240426152207647](../../assets/image-20240426152207647.png)
+![image-20240426152207647](../../../assets/image-20240426152207647.png)
 
 ## Inclusion-Exclusion and Its Application
 
