@@ -13,15 +13,15 @@ comments: true
 
 将下载的 sqltest.pcapng 用 wireshark 打开，查看 HTTP 请求：
 
-![image-20240714190558696](../../assets/image-20240714190558696.png)
+![image-20240714190558696](../../../assets/image-20240714190558696.png)
 
 由内部的 select... 可以看出这是一个 sql 注入语句，我们将所有的类似的语句拿出来看看：
 
-![image-20240714191333172](../../assets/image-20240714191333172.png)
+![image-20240714191333172](../../../assets/image-20240714191333172.png)
 
 往下翻会发现跟 flag 字符 ASCII 值有关的语句：
 
-![image-20240714191731700](../../assets/image-20240714191731700.png)
+![image-20240714191731700](../../../assets/image-20240714191731700.png)
 
 由上图我们从第 1 行到第 10 行可以看出攻击者最后把 flag 的 ASCII 码定位在了 102，即 flag 第一位为 f，我们执行命令行 `tshark -r sqltest.pcapng -Y "http.request" -T fields -e http.request.full_uri > data.txt` 导出这些数据为 data.txt，并编写 python 程序如下：
 
@@ -43,13 +43,13 @@ print(chr(int(ans[-1][1])))
 
 运行即可得到 flag：
 
-![image-20240714210228759](../../assets/image-20240714210228759.png)
+![image-20240714210228759](../../../assets/image-20240714210228759.png)
 
 ## Challenge 2：dnscap
 
 通过 wireshark 打开 dnscap.pcap，发现全是 DNS 协议，打开看其发起的查询：
 
-![image-20240715124237630](../../assets/image-20240715124237630.png)
+![image-20240715124237630](../../../assets/image-20240715124237630.png)
 
 均为 xxx.skullsecloabs.org 格式，我们使用命令行 `tshark -r dnscap.pcap -T fields -e dns.qry.name > data.txt`  并编写 python 程序如下：
 
@@ -67,15 +67,15 @@ for line in file:
 
 得到一些信息：
 
-![image-20240715205247614](../../assets/image-20240715205247614.png)
+![image-20240715205247614](../../../assets/image-20240715205247614.png)
 
-![image-20240715210554440](../../assets/image-20240715210554440.png)
+![image-20240715210554440](../../../assets/image-20240715210554440.png)
 
 这不仅仅有重复数据，还有 PNG 和它的标准结尾 IEND，我们可以合理猜测去重以及一些不必要的数据后可以得到一个 png 文件。
 
 哪些是不必要的数据呢？我们查看 dnscat 协议文档：
 
-![image-20240715215331086](../../assets/image-20240715215331086.png)
+![image-20240715215331086](../../../assets/image-20240715215331086.png)
 
 这其中前九个 Byte 的数据均为 dns 发送端接收端等相关数据，是我们所不需要的，我们需要的是这里的 Data。
 
@@ -109,11 +109,11 @@ open("output.png", "wb").write(output)
 
 奇怪的是这个代码运行过后打不开 png，用 Hex Fiend 打开发现有两个 PNG，去掉前面这个就能打开了，不太清楚原因，还望指正。
 
-![image-20240716082224048](../../assets/image-20240716082224048.png)
+![image-20240716082224048](../../../assets/image-20240716082224048.png)
 
 去掉之后得到 png，flag 就在里面：
 
-![output](../../assets/output.png)
+![output](../../../assets/output.png)
 
 ## Challenge 3：crac_zju_wlan
 
@@ -125,7 +125,7 @@ open("output.png", "wb").write(output)
 
 最后我们使用命令行 `aircrack-ng -w password.txt -b 12:2A:E2:13:5C:84 crack_zju-01.cap` ，得到 Wi-Fi 密码：
 
-![image-20240716224952375](../../assets/image-20240716224952375.png)
+![image-20240716224952375](../../../assets/image-20240716224952375.png)
 
 所以最终 flag 为：AAA{0YcWPeLMBp}
 
@@ -133,55 +133,55 @@ open("output.png", "wb").write(output)
 
 解压 zip 文件，有错误但是也解压出了一个 mem.raw 文件，我们尝试用命令行 `strings mem.raw|grep flag` 来查看一下有没有关于 flag 的信息。
 
-![image-20240717130900274](../../assets/image-20240717130900274.png)
+![image-20240717130900274](../../../assets/image-20240717130900274.png)
 
 能发现在这个 mem 文件中有一个叫 flag.zip 的压缩包，用 foremost 语句把它分离出来：
 
-![image-20240717131240908](../../assets/image-20240717131240908.png)
+![image-20240717131240908](../../../assets/image-20240717131240908.png)
 
 查询分离出来的 zip：
 
-![image-20240717131319166](../../assets/image-20240717131319166.png)
+![image-20240717131319166](../../../assets/image-20240717131319166.png)
 
 尝试解压，发现 01377758.zip 这个文件中有 flag.txt，但是需要密码：
 
-![image-20240717131424494](../../assets/image-20240717131424494.png)
+![image-20240717131424494](../../../assets/image-20240717131424494.png)
 
 我们 volatility 一把梭，先使用命令行 `python2 volatility/vol.py -f mem.raw imageinfo` 查看操作系统：
 
-![image-20240717203641547](../../assets/image-20240717203641547.png)
+![image-20240717203641547](../../../assets/image-20240717203641547.png)
 
 可以发现是 win7x64 系统，再利用这个用命令行 `python2 volatility/vol.py -f mem.raw --profile Win7SP1x64 cmdscan`查看 cmd 历史：
 
-![image-20240717204043152](../../assets/image-20240717204043152.png)
+![image-20240717204043152](../../../assets/image-20240717204043152.png)
 
 看到有这么一句话：“Stucked?You can ask WallPaper god for help.”
 
 所以用命令行 `strings mem.raw|grep Wallpaper` 接着搜文件，看到：
 
-![image-20240717204439822](../../assets/image-20240717204439822.png)
+![image-20240717204439822](../../../assets/image-20240717204439822.png)
 
-![image-20240717204510437](../../assets/image-20240717204510437.png)
+![image-20240717204510437](../../../assets/image-20240717204510437.png)
 
 有两张图片，img0.jpeg 和 img0.jpg，我们通过命令行 `python2 volatility/vol.py -f mem.raw --profile=Win7SP1x64 filescan | grep img0 `找它们的十六进制位置：
 
-![image-20240717205135760](../../assets/image-20240717205135760.png)
+![image-20240717205135760](../../../assets/image-20240717205135760.png)
 
 利用这两个十六进制位置用命令行 `python2 volatility/vol.py -f mem.raw --profile=Win7SP1x64 dumpfiles -Q 0x000000007eee11c0/0x000000007fc48f20 -D .` 把这两个文件 dump 出来，出现两个文件 file.None.0xfffffa8001c98010.dat 和 file.None.0xfffffa80031c2c10.dat ，用命令行 `eog file.None.0xfffffa8001c98010.dat` 查看得到：
 
-![image-20240717210822108](../../assets/image-20240717210822108.png)
+![image-20240717210822108](../../../assets/image-20240717210822108.png)
 
 这里有说关于 zip 密码的内容，需要我们找到 flag.zip 不包含 Desktop 的路径，用命令行 `python2 volatility/vol.py -f mem.raw --profile=Win7SP1x64 mftparser > mftparser.txt` ，查看得到：
 
-![image-20240717211748588](../../assets/image-20240717211748588.png)
+![image-20240717211748588](../../../assets/image-20240717211748588.png)
 
 可以看出最终的路径应该是：C:\Program Files (x86)\Windows NT\Accessories\flag.zip，那么代入函数，得到 flag：
 
-![image-20240717212027456](../../assets/image-20240717212027456.png)
+![image-20240717212027456](../../../assets/image-20240717212027456.png)
 
 用这个密码成功解压 flag.zip，得到 flag.txt，查看内容：
 
-![image-20240717212431056](../../assets/image-20240717212431056.png)
+![image-20240717212431056](../../../assets/image-20240717212431056.png)
 
 所以最终 flag 为 n1ctf{0ca175b9c0f7582931d89e2c89231599}
 
@@ -191,7 +191,7 @@ open("output.png", "wb").write(output)
 
 点击 Get new instance，可以看到合约地址：
 
-![image-20240721131040204](../../assets/image-20240721131040204.png)
+![image-20240721131040204](../../../assets/image-20240721131040204.png)
 
 根据题目描述，我们需要连续 10 次猜对硬币的正反面。所给代码如下：
 
@@ -271,22 +271,22 @@ contract CoinFlipAttacker{
 
 设置相关参数（合约地址等）：
 
-![](../../assets/image-20240721143545839.png)
+![](../../../assets/image-20240721143545839.png)
 
 执行一次 attack 函数，我们可以看到在合约中 consecutiveWins 有增加：
 
-![](../../assets/image-20240721143636354.png)
+![](../../../assets/image-20240721143636354.png)
 
-![](../../assets/image-20240721143647014.png)
+![](../../../assets/image-20240721143647014.png)
 
 所以最后我们多次执行，直到其为 10，提交实例即可通过：
 
-![](../../assets/image-20240721143726185.png)
+![](../../../assets/image-20240721143726185.png)
 ### Delegation
 
 根据题意，这个关卡要求获得合约 Delegation 的所有权，我们先查看 Delegation 的 owner：
 
-![image-20240721145916285](../../assets/image-20240721145916285.png)
+![image-20240721145916285](../../../assets/image-20240721145916285.png)
 
 因此我们需要将 contract.owner()更改成 player，所给代码如下：
 
@@ -327,11 +327,11 @@ contract Delegation {
 
 通过查询相关资料，我们可以得知 delegatecall 调用后内置变量 msg 的值 A 不会修改为调用者，但执行环境为调用者的运行环境 B，也就意味着我们虽然执行的是 Delegate 合约中的函数，但是我们是在 Delegation 的环境下执行，这样也就可以更改 Delegation 的 owner 。交互如下：
 
-![image-20240721150040107](../../assets/image-20240721150040107.png)
+![image-20240721150040107](../../../assets/image-20240721150040107.png)
 
 成功更改 owner，提交实例即可通过：
 
-![](../../assets/image-20240721150142117.png)
+![](../../../assets/image-20240721150142117.png)
 
 ### Vault
 
@@ -359,12 +359,12 @@ contract Vault {
 
 可以看到，只要我们输入 password 正确，即可将 locked 改为 false，但是在这里 password 被设置成了私有：
 
-![image-20240721151002813](../../assets/image-20240721151002813.png)
+![image-20240721151002813](../../../assets/image-20240721151002813.png)
 
 我们可以通过 `web3.eth.getStorageAt` 来查看变量存储的地址，这样就便于我们找到 password 变量，传进 unlock 函数即可，交互界面如下：
 
-![image-20240721151507006](../../assets/image-20240721151507006.png)
+![image-20240721151507006](../../../assets/image-20240721151507006.png)
 
 提交实例即可通过：
 
-![image-20240721151556843](../../assets/image-20240721151556843.png)
+![image-20240721151556843](../../../assets/image-20240721151556843.png)
