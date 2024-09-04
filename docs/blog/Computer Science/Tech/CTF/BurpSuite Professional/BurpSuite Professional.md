@@ -35,7 +35,7 @@ comments: true
 
 - 按照默认操作进行安装，打开会提示输入 License Key，关闭即可。
   
-![](https://i-blog.csdnimg.cn/blog_migrate/0888abdb10fd709243a0a92705189ccc.gif)
+![](../../../../../assets/0888abdb10fd709243a0a92705189ccc.gif)
 
 ## 下载使用注册机
 
