@@ -81,6 +81,8 @@ nav:
       - CTF 相关:
         - CyberChef: blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md
         - BurpSuite Professional: blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md
+      - Iterm2:
+        - blog/Computer Science/Tech/Iterm2/Iterm2.md
   - Mathematics: 
     - 微积分（甲）｜Calculus : 
       - blog/Math/Calculus/index.md
