@@ -11,6 +11,7 @@ comments: true
 
 !!!Abstract 
     Bruce 真正入门 CTF 的一大好课！（吹爆所有 TA！）
+    
     - Lab0 为所有方向的入门 Lab
     - Lab1 为所有方向的基础 Lab
     - Lab2&Lab3 为专题方向（Bruce 选择了 Misc 和 Crypto）的专题 Lab
