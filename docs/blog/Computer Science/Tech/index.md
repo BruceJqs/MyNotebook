@@ -5,4 +5,5 @@
 
 ## CTF 相关
 
-- [CyberChef](CyberChef/CyberChef/)
+- [CyberChef](CTF/CyberChef/CyberChef/)
+- [BurpSuite Professional](CTF/BurpSuite%20Professional/BurpSuite%20Professional/)
