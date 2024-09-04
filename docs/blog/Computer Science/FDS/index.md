@@ -14,6 +14,6 @@ comments: true
 
 ## Table of Contents
 
-- [Project 1——Performance Measurement(A+B)](FDS/FDS-Project1%20report/)
-- [Project 2——Autograd for Algebraic Expressions](FDS/FDS-Project2%20report/)
-- [Project 3——Transportation Hub](FDS/FDS-Project3%20report/)
+- [Project 1——Performance Measurement(A+B)](FDS-Project1%20report/)
+- [Project 2——Autograd for Algebraic Expressions](FDS-Project2%20report/)
+- [Project 3——Transportation Hub](FDS-Project3%20report/)

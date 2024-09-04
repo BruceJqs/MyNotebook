@@ -77,6 +77,10 @@ nav:
     - 数字逻辑设计｜Digital Design: 
       - blog/Computer Science/Digital Design/index.md
   - Mathematics: 
+    - 微积分（甲）｜Calculus : 
+      - blog/Math/Calculus/index.md
+    - 线性代数（甲）｜Linear Algebra: 
+      - blog/Math/Linear Algebra/index.md
     - 离散数学及其应用｜Discrete Mathematics:
       - blog/Math/Discrete mathmatics/index.md
       - "Chapter 01: The Foundations:Logic and Proofs": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md
@@ -90,10 +94,6 @@ nav:
       - "Chapter 09: Relations": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md
       - "Chapter 10: Graphs": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md
       - "Chapter 11: Trees": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md
-    - 微积分（甲）｜Calculus : 
-      - blog/Math/Calculus/index.md
-    - 线性代数（甲）｜Linear Algebra: 
-      - blog/Math/Linear Algebra/index.md
   - CTF:
     - 2023-2024 暑短学期: 
       - blog/CTF/2023-2024暑短学期/index.md
