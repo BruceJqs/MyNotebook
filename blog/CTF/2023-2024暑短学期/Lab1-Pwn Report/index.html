@@ -2300,7 +2300,7 @@
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>注意到第 42 行有除法操作，可以考虑除零问题，那么尝试输入 b 为 0，即可得到 flag:</p>
-<p><img alt="image-20240706150012876" src="../../assets/image-20240706150012876.png" /></p>
+<p><img alt="image-20240706150012876" src="../../../../assets/image-20240706150012876.png" /></p>
 <p>这里是交互的界面，我们尝试用 pwntools 来交互出 flag，编写 Python 程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -2323,7 +2323,7 @@
 <a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span> <span class="c1"># 来到交互界面，查看 flag</span>
 </code></pre></div></td></tr></table></div>
 <p>最终结果如下：</p>
-<p><img alt="image-20240707124829036" src="../../assets/image-20240707124829036.png" /></p>
+<p><img alt="image-20240707124829036" src="../../../../assets/image-20240707124829036.png" /></p>
 <h2 id="task-2">Task 2<a class="headerlink" href="#task-2" title="Permanent link">&para;</a></h2>
 <p>代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">  1</a></span>
@@ -2616,9 +2616,9 @@
 <p><code>get_admin_password</code> 涉及一个文件叫 <code>password.txt</code>，这个文件当然是保存在远程的，我们无法拿到，在这条路堵死了。</p>
 <p><code>get_user_password</code> 这里调用了一个 <code>tea_decrypt</code> 的函数来解密一个叫 <code>KEY</code> 的东西，传回去，与我们的密码相同就给出 flag 的第一部分。</p>
 <p>这道题真正的漏洞在于最后的 <code>wrong_password</code> 部分，这里的输出是采用 <code>%s</code> 的方式输出的，这个输出方式是一直输出直到看到 <code>\0</code> 才会停止，因为这个程序存储是紧贴着的，username 紧接着就是 password ，再接着就是 password_verify，这个 password_verify 正是我们想要的东西，存储 admin 和 user 的 password。换言之，如果我们输入的 password 中没有 <code>\0</code>，那么程序会一直输出，把 password_verify 给放出来。那么我们通过交互界面来测试一下：</p>
-<p><img alt="image-20240707131737913" src="../../assets/image-20240707131737913.png" /></p>
+<p><img alt="image-20240707131737913" src="../../../../assets/image-20240707131737913.png" /></p>
 <p>果然，在 wrongpassword 时放出了正确的密码：I_am_very_very_strong_password!!重新输入一遍进行交互，就可以得知 flag 的前半部分：</p>
-<p><img alt="image-20240707131837767" src="../../assets/image-20240707131837767.png" /></p>
+<p><img alt="image-20240707131837767" src="../../../../assets/image-20240707131837767.png" /></p>
 <p>用 python 代码就这么编写：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
@@ -2645,7 +2645,7 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>得到：</p>
-<p><img alt="image-20240707133439387" src="../../assets/image-20240707133439387.png" /></p>
+<p><img alt="image-20240707133439387" src="../../../../assets/image-20240707133439387.png" /></p>
 <p>得到正确密码，用 python 代码再交互一遍：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
@@ -2672,7 +2672,7 @@
 <a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>得到 flag 第一部分：</p>
-<p><img alt="image-20240707133945119" src="../../assets/image-20240707133945119.png" /></p>
+<p><img alt="image-20240707133945119" src="../../../../assets/image-20240707133945119.png" /></p>
 <p>换成 admin 再来一遍，得到正确密码：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
@@ -2698,7 +2698,7 @@
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="o">*</span><span class="mi">32</span><span class="p">)</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240707134354430" src="../../assets/image-20240707134354430.png" /></p>
+<p><img alt="image-20240707134354430" src="../../../../assets/image-20240707134354430.png" /></p>
 <p>输入正确密码，这时候根据给的代码，我们能进入远程的终端：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
@@ -2724,9 +2724,9 @@
 <a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s2">&quot;ILovePlayCTFbtwAlsoDota2!&quot;</span><span class="p">)</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240707134809312" src="../../assets/image-20240707134809312.png" /></p>
+<p><img alt="image-20240707134809312" src="../../../../assets/image-20240707134809312.png" /></p>
 <p>通过命令行，我们能找到后半部分 flag，以及 password.txt：</p>
-<p><img alt="image-20240707134852093" src="../../assets/image-20240707134852093.png" /></p>
+<p><img alt="image-20240707134852093" src="../../../../assets/image-20240707134852093.png" /></p>
 <p>前后拼接起来我们就可以得到最终的 flag：AAA{Oh_D1rTy_staCK_Ne3d_C1a4n}</p>
 <h2 id="task-3">Task 3<a class="headerlink" href="#task-3" title="Permanent link">&para;</a></h2>
 <p>代码如下：</p>
@@ -2957,10 +2957,10 @@
 </code></pre></div></td></tr></table></div>
 <p>通过命令行 <code>gcc -S -O2 add.c</code> 将其转换为优化后的汇编代码（不加 <code>-O2</code> 汇编代码有很多不重要的代码）</p>
 <p>命令行 <code>as add.s -o add.o</code>  将 add.s 文件汇编为 add.o 文件，利用命令行 <code>objdump -d add.o</code> 查看内容：</p>
-<p><img alt="image-20240707141714159" src="../../assets/image-20240707141714159.png" /></p>
+<p><img alt="image-20240707141714159" src="../../../../assets/image-20240707141714159.png" /></p>
 <p>这样子我们就拿到了加法的机器码。</p>
 <p>运行一下 inject_me 程序，看到整个交互的样子：</p>
-<p><img alt="image-20240707142557603" src="../../assets/image-20240707142557603.png" /></p>
+<p><img alt="image-20240707142557603" src="../../../../assets/image-20240707142557603.png" /></p>
 <p>编写 python 程序来交互：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
@@ -2980,7 +2980,7 @@
 <a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="n">p</span><span class="o">.</span><span class="n">sendafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Request-1: give me code that performing ADD&quot;</span><span class="p">,</span> <span class="n">add_code</span><span class="p">)</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240707142740596" src="../../assets/image-20240707142740596.png" /></p>
+<p><img alt="image-20240707142740596" src="../../../../assets/image-20240707142740596.png" /></p>
 <p>成功进入第二个任务。按照上面的方法把 python 程序补全：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
@@ -3017,7 +3017,7 @@
 <a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>得到 flag 的第一部分：</p>
-<p><img alt="image-20240707144539172" src="../../assets/image-20240707144539172.png" /></p>
+<p><img alt="image-20240707144539172" src="../../../../assets/image-20240707144539172.png" /></p>
 <p>如何获得 flag 的后半部分呢？根据前面这道题，我们也希望能直接进入远程的终端找找看 flag2 所在，在 pwntools 中有一个 <code>shellcraft.sh()</code> 能让我们直接进入终端，编写 python 程序：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
@@ -3044,7 +3044,7 @@
 <a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>可以进入对方终端，那么我们就可以运用命令行得到后半部分 flag：</p>
-<p><img alt="image-20240707150146221" src="../../assets/image-20240707150146221.png" /></p>
+<p><img alt="image-20240707150146221" src="../../../../assets/image-20240707150146221.png" /></p>
 <p>拼接起来最终的 flag 为：AAA{SheL1c0de_T0_9E7_All_F1ag5}</p>
 <h2 id="task-4">Task 4<a class="headerlink" href="#task-4" title="Permanent link">&para;</a></h2>
 <p>代码如下：</p>
@@ -3139,7 +3139,7 @@
 <p>同样这个程序并没有包含 flag 的信息，那么我们还是希望攻入远程终端查看 flag 信息。</p>
 <p>在这里我们希望通过栈溢出的方式来攻击这个程序，我们把 shellcode 的代码注入到输入的 map_addr 地址上，通过溢出 buffer 使其跳到 map_addr 上，即打开终端。因为地址是随机的，所以我们需要多尝试几次，直到输入的包正好打到 address 即可进入远程终端。</p>
 <p>这里我们就需要看一下 buffer 的偏移量，用 IDA 打开 elf 文件，可以看到：</p>
-<p><img alt="image-20240707203608549" src="../../assets/image-20240707203608549.png" /></p>
+<p><img alt="image-20240707203608549" src="../../../../assets/image-20240707203608549.png" /></p>
 <p>那么编写 python 程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
@@ -3180,7 +3180,7 @@
 <a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>一发入魂！进入终端，拿到 flag：</p>
-<p><img alt="image-20240707203855146" src="../../assets/image-20240707203855146.png" /></p>
+<p><img alt="image-20240707203855146" src="../../../../assets/image-20240707203855146.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3250,7 +3250,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 11:16:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:06:27</span>
   </span>
 
     

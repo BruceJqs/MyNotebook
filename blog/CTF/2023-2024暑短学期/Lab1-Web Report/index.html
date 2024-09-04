@@ -2496,35 +2496,35 @@
 <h2 id="task-1dns">Task 1:DNS<a class="headerlink" href="#task-1dns" title="Permanent link">&para;</a></h2>
 <h3 id="_1">查询权威域名服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>要想使用 <code>nslookup</code> 这一命令来查询 <code>cubicy.icu</code> 的权威域名服务器（Name Server），需要使用命令 <code>nslookup -type=NS cubicy.icu</code>。如下图，在Authoritative answers 中，可以得到对应的六个 IP 地址。</p>
-<p><img alt="image-20240704184752691" src="../../assets/image-20240704184752691.png" /></p>
+<p><img alt="image-20240704184752691" src="../../../../assets/image-20240704184752691.png" /></p>
 <h3 id="ip">查找 IP 地址<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
 <p>查找 <code>cubicy.icu</code> 的 IP 地址，直接使用命令 <code>nslookup cubicy.icu</code> 即可。如下图，可以看到其有两个 IP 地址。</p>
-<p><img alt="image-20240704185721554" src="../../assets/image-20240704185721554.png" /></p>
+<p><img alt="image-20240704185721554" src="../../../../assets/image-20240704185721554.png" /></p>
 <h3 id="dns-a">DNS A 查询探究<a class="headerlink" href="#dns-a" title="Permanent link">&para;</a></h3>
 <p>多次查询 DNS A 记录，每次的响应不一样，如下图，出现了两种答案，但是总共两个不同的地址（正是上面查询出的两个 IP 地址），只是顺序不同，应该是响应的服务器有主次之分（？）。这样返回不同的 IP 地址，两个地址概率均等可以实现网络负载均衡，不会因为其中一个处理请求过多而崩溃。</p>
-<p><img alt="image-20240704190142792" src="../../assets/image-20240704190142792.png" /></p>
+<p><img alt="image-20240704190142792" src="../../../../assets/image-20240704190142792.png" /></p>
 <h3 id="_2">寻找文本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>执行命令 <code>nslookup -type=TXT cubicy.icu</code>，可以看到其中隐藏的 Base64 编码的文本，如下图：</p>
-<p><img alt="image-20240704191027700" src="../../assets/image-20240704191027700.png" /></p>
+<p><img alt="image-20240704191027700" src="../../../../assets/image-20240704191027700.png" /></p>
 <p>复制其到 CyberChef 中可以得到：</p>
-<p><img alt="image-20240704191144084" src="../../assets/image-20240704191144084.png" /></p>
+<p><img alt="image-20240704191144084" src="../../../../assets/image-20240704191144084.png" /></p>
 <h3 id="dns-ip">DNS 查询 IP<a class="headerlink" href="#dns-ip" title="Permanent link">&para;</a></h3>
 <p>分别使用命令 <code>host cubicy.icu 173.245.59.141</code> <code>host www.cubicy.icu 108.162.93.141</code> <code>host blog.cubicy.icu 172.64.34.42</code> 命令，从 DNS 服务器查找到它们的 IPv4 地址如下：</p>
-<p><img alt="image-20240704192433403" src="../../assets/image-20240704192433403.png" /></p>
-<p><img alt="image-20240704192437558" src="../../assets/image-20240704192437558.png" /></p>
-<p><img alt="image-20240704192441241" src="../../assets/image-20240704192441241.png" /></p>
+<p><img alt="image-20240704192433403" src="../../../../assets/image-20240704192433403.png" /></p>
+<p><img alt="image-20240704192437558" src="../../../../assets/image-20240704192437558.png" /></p>
+<p><img alt="image-20240704192441241" src="../../../../assets/image-20240704192441241.png" /></p>
 <p>直接访问这些 IP 地址，不能访问成功，这些地址不是服务器的真实地址。</p>
-<p><img alt="image-20240704192728296" src="../../assets/image-20240704192728296.png" /></p>
+<p><img alt="image-20240704192728296" src="../../../../assets/image-20240704192728296.png" /></p>
 <p>通过查询相关资料，结合提示，可以猜测 YYY 借助代理 IP 服务/技术，来隐藏本地的真实 IP。</p>
 <h2 id="task-2http">Task 2:HTTP<a class="headerlink" href="#task-2http" title="Permanent link">&para;</a></h2>
 <h3 id="_3">抓包学在浙大<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>使用 BurpSuite 对从输入网页连接，到统一身份验证页面完整呈现，再到输入用户名密码后，最后直到登录成功呈现学在浙大页面，一共拦截了 313 份 HTTP 报文，如下图：</p>
-<p><img alt="image-20240704205928181" src="../../assets/image-20240704205928181.png" /></p>
-<p><img alt="image-20240704205932699" src="../../assets/image-20240704205932699.png" /></p>
+<p><img alt="image-20240704205928181" src="../../../../assets/image-20240704205928181.png" /></p>
+<p><img alt="image-20240704205932699" src="../../../../assets/image-20240704205932699.png" /></p>
 <h4 id="http">HTTP 报文组成部分<a class="headerlink" href="#http" title="Permanent link">&para;</a></h4>
 <p>我们挑选其中一个报文来看：</p>
-<p><img alt="image-20240704212155475" src="../../assets/image-20240704212155475.png" /></p>
-<p><img alt="image-20240704212202230" src="../../assets/image-20240704212202230.png" /></p>
+<p><img alt="image-20240704212155475" src="../../../../assets/image-20240704212155475.png" /></p>
+<p><img alt="image-20240704212202230" src="../../../../assets/image-20240704212202230.png" /></p>
 <ul>
 <li>
 <p>请求行：即为第一行，包含 HTTP 方法（GET/POST）、请求目标 URL 和 HTTP 协议版本。</p>
@@ -2545,20 +2545,20 @@
 <p>这些都能让 HTTP 实现良好的识别与拆包。</p>
 <h3 id="cubicyicu">回到 <code>cubicy.icu</code><a class="headerlink" href="#cubicyicu" title="Permanent link">&para;</a></h3>
 <p>直接访问源服务器地址 <code>101.132.222.48</code> ，不成功：</p>
-<p><img alt="image-20240704215015559" src="../../assets/image-20240704215015559.png" /></p>
+<p><img alt="image-20240704215015559" src="../../../../assets/image-20240704215015559.png" /></p>
 <h4 id="_5">主机区分访问方式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>对访问 IP 地址和访问域名进行抓包，分析其报文就会发现，两者仅仅只是在 Host 上面有不同：</p>
-<p><img alt="image-20240704215619914" src="../../assets/image-20240704215619914.png" /></p>
-<p><img alt="image-20240704215626019" src="../../assets/image-20240704215626019.png" /></p>
+<p><img alt="image-20240704215619914" src="../../../../assets/image-20240704215619914.png" /></p>
+<p><img alt="image-20240704215626019" src="../../../../assets/image-20240704215626019.png" /></p>
 <p>所以我们可以猜测，对于主机来说，它通过 HTTP 报文中的 Host 字段判断是 IP 访问还是域名访问。</p>
 <h4 id="_6">修改报文打开主页<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>直接修改报文中的 Host，最后得到未备案（？！）</p>
-<p><img alt="image-20240704222401425" src="../../assets/image-20240704222401425.png" /></p>
+<p><img alt="image-20240704222401425" src="../../../../assets/image-20240704222401425.png" /></p>
 <p>这点不知道为什么，是因为做了反向代理嘛（？），还请指点一二。。。</p>
 <h2 id="task-3">Task 3:预习<a class="headerlink" href="#task-3" title="Permanent link">&para;</a></h2>
 <p>使用 BurpSuite 工具，从登录 zdbk 网站出发直到显示最后成绩一直抓包，得到 cookie 信息以及请求主体部分：</p>
-<p><img alt="image-20240705014154132" src="../../assets/image-20240705014154132.png" /></p>
-<p><img alt="image-20240705014157710" src="../../assets/image-20240705014157710.png" /></p>
+<p><img alt="image-20240705014154132" src="../../../../assets/image-20240705014154132.png" /></p>
+<p><img alt="image-20240705014157710" src="../../../../assets/image-20240705014157710.png" /></p>
 <p>因此编写 Python 代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -2633,7 +2633,7 @@
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">xkkh</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">kcmc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cj</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">jd</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 <p>最后可以得到结果：</p>
-<p><img alt="image-20240705014339599" src="../../assets/image-20240705014339599.png" /></p>
+<p><img alt="image-20240705014339599" src="../../../../assets/image-20240705014339599.png" /></p>
 <h2 id="bonus">Bonus<a class="headerlink" href="#bonus" title="Permanent link">&para;</a></h2>
 <h3 id="http3">HTTP/3<a class="headerlink" href="#http3" title="Permanent link">&para;</a></h3>
 <p>通过查询相关资料，原来的 HTTP/2 协议虽然大幅提升了 HTTP/1.1 的性能，但它还是基于 TCP 实现的，依旧有 TCP 具有的问题：</p>
@@ -2711,7 +2711,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 11:16:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:06:27</span>
   </span>
 
     

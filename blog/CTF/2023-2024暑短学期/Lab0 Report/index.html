@@ -2829,24 +2829,24 @@
 <blockquote>
 <p>echo 命令可用于输出字符串</p>
 </blockquote>
-<p><img alt="image-20240530101102372" src="../../assets/image-20240530101102372.png" /></p>
+<p><img alt="image-20240530101102372" src="../../../../assets/image-20240530101102372.png" /></p>
 <blockquote>
 <p>cd 命令可用于切换路径</p>
 <p>ls 命令可用于列出当前路径下的文件和目录，添加 -l 可列出所有文件的详细信息</p>
 </blockquote>
-<p><img alt="image-20240530101415302" src="../../assets/image-20240530101415302.png" /></p>
+<p><img alt="image-20240530101415302" src="../../../../assets/image-20240530101415302.png" /></p>
 <blockquote>
 <p>touch 命令可用于在当前路径下新建文件</p>
 </blockquote>
-<p><img alt="image-20240530101706809" src="../../assets/image-20240530101706809.png" /></p>
+<p><img alt="image-20240530101706809" src="../../../../assets/image-20240530101706809.png" /></p>
 <blockquote>
 <p>echo 语句与重定向相结合可以将字符串写入文件，重定向 &gt; 表示覆盖文件中的所有原内容；&gt;&gt; 表示不覆盖文件中的原内容，在文件后追加输入</p>
 <p>cat 语句可用于输出文件内容，添加 -n 可输出行号</p>
 </blockquote>
-<p><img alt="image-20240530102009429" src="../../assets/image-20240530102009429.png" /></p>
+<p><img alt="image-20240530102009429" src="../../../../assets/image-20240530102009429.png" /></p>
 <h4 id="ssh-linux">通过 ssh 远程连接到 Linux 环境<a class="headerlink" href="#ssh-linux" title="Permanent link">&para;</a></h4>
 <p>连接成功界面截图如下：</p>
-<p><img alt="image-20240530135557128" src="../../assets/image-20240530135557128.png" /></p>
+<p><img alt="image-20240530135557128" src="../../../../assets/image-20240530135557128.png" /></p>
 <h3 id="challenge-2">Challenge 2<a class="headerlink" href="#challenge-2" title="Permanent link">&para;</a></h3>
 <h4 id="_1">阅读程序解释其功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -3004,8 +3004,8 @@
 </code></pre></div></td></tr></table></div>
 <p>可以得到正确 flag 为：AAA{melody_loves_doing_calculus_qq_qun_386796080}</p>
 <p>成功截图如下：</p>
-<p><img alt="image-20240602003546693" src="../../assets/image-20240602003546693.png" /></p>
-<p><img alt="image-20240602111248059" src="../../assets/image-20240602111248059.png" /></p>
+<p><img alt="image-20240602003546693" src="../../../../assets/image-20240602003546693.png" /></p>
+<p><img alt="image-20240602111248059" src="../../../../assets/image-20240602111248059.png" /></p>
 <h5 id="2-python-pwntools">法 2：使用 python pwntools 库<a class="headerlink" href="#2-python-pwntools" title="Permanent link">&para;</a></h5>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -3036,41 +3036,41 @@
 <a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>同样可以得到正确 flag：</p>
-<p><img alt="image-20240702195713905" src="../../assets/image-20240702195713905.png" /></p>
+<p><img alt="image-20240702195713905" src="../../../../assets/image-20240702195713905.png" /></p>
 <h3 id="challenge-3">Challenge 3<a class="headerlink" href="#challenge-3" title="Permanent link">&para;</a></h3>
 <h4 id="q1q2">Q1&amp;Q2<a class="headerlink" href="#q1q2" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20240602111513127" src="../../assets/image-20240602111513127.png" /></p>
+<p><img alt="image-20240602111513127" src="../../../../assets/image-20240602111513127.png" /></p>
 <p>Q1:xor 操作表示将两个寄存器中的值进行异或操作，并保存在第一个寄存器当中，在这里便是将 dh 寄存器置 0。</p>
 <p>Q2:not 操作表示将寄存器中的值进行按位取反操作，并保存在原寄存器当中，在这里便是将原 dx 寄存器中的值 0xFFFF 取反为 0 存回 dx 寄存器中。</p>
 <h4 id="q3">Q3<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20240602112013262" src="../../assets/image-20240602112013262.png" /></p>
+<p><img alt="image-20240602112013262" src="../../../../assets/image-20240602112013262.png" /></p>
 <p>mov 操作表示将后一个寄存器当中的值赋值给第一个寄存器，在这里 di 寄存器的值来自 bp 寄存器，bp 寄存器的值来自 dx 寄存器，dx 寄存器的值在 Q2 中被置为 0，因此 di 寄存器最终也置为 0。</p>
 <h4 id="q4">Q4<a class="headerlink" href="#q4" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20240602112459220" src="../../assets/image-20240602112459220.png" /></p>
+<p><img alt="image-20240602112459220" src="../../../../assets/image-20240602112459220.png" /></p>
 <p>在这里 al 为 ax 的低八位，ah 为 ax 高八位，这里将 al 赋值为 't'，将 ah 赋值为 0x0e，结合起来 ax 即为 0x0e74。</p>
 <h4 id="q5">Q5<a class="headerlink" href="#q5" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20240602114034403" src="../../assets/image-20240602114034403.png" /></p>
+<p><img alt="image-20240602114034403" src="../../../../assets/image-20240602114034403.png" /></p>
 <p>在这里将 al 赋值为偏移地址为 si 寄存器的值的字符/字符串，在循环至第三次时，将字符串中的 O 赋值给 al，将 ah 赋值为 0x0e，那么最后 ax 为 0x0e4f。</p>
 <h4 id="q6">Q6<a class="headerlink" href="#q6" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20240602115338995" src="../../assets/image-20240602115338995.png" /></p>
+<p><img alt="image-20240602115338995" src="../../../../assets/image-20240602115338995.png" /></p>
 <p>这里将 dh 赋值为 3，dl 赋值为 15，那么 dx 为 0x030f 。</p>
 <h4 id="finally">Finally<a class="headerlink" href="#finally" title="Permanent link">&para;</a></h4>
 <p>所以最终的 flag 为 ACTF{We1com3_7o_R3_00_00_0000_0e74_0e4f_030f}</p>
 <h2 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h2>
 <h3 id="challenge-1_1">Challenge 1<a class="headerlink" href="#challenge-1_1" title="Permanent link">&para;</a></h3>
 <p>进入网页 <a href="http://pumpk1n.com/lab0.php">http://pumpk1n.com/lab0.php</a>，打开开发者工具查看 HTML 代码，我们可以看到：</p>
-<p><img alt="image-20240602122434480" src="../../assets/image-20240602122434480.png" /></p>
+<p><img alt="image-20240602122434480" src="../../../../assets/image-20240602122434480.png" /></p>
 <p>这里可以看到 onmousemove="hide()"，结合实操可以看出，当鼠标到 click me 上时，按钮就消失了。</p>
 <p>然后我们再注意到如果成功完成点击按钮，触发与 flag 有关的 getflag()，继续寻找其代码可看到；</p>
-<p><img alt="image-20240602122616159" src="../../assets/image-20240602122616159.png" /></p>
+<p><img alt="image-20240602122616159" src="../../../../assets/image-20240602122616159.png" /></p>
 <p>我们看到这里隐藏了一个网页后缀，将其复制到网址中，可以得到：</p>
-<p><img alt="image-20240602122805438" src="../../assets/image-20240602122805438.png" /></p>
+<p><img alt="image-20240602122805438" src="../../../../assets/image-20240602122805438.png" /></p>
 <p>我们尝试刷新该网页，会发现网页变为：</p>
-<p><img alt="image-20240602122903262" src="../../assets/image-20240602122903262.png" /></p>
+<p><img alt="image-20240602122903262" src="../../../../assets/image-20240602122903262.png" /></p>
 <p>结合网页的 token=...，我们再回到原网页刷新，发现原 getflag 重新更新为：</p>
-<p><img alt="image-20240602123017014" src="../../assets/image-20240602123017014.png" /></p>
+<p><img alt="image-20240602123017014" src="../../../../assets/image-20240602123017014.png" /></p>
 <p>可以发现 token 有所变化，重复上述操作可以得到：</p>
-<p><img alt="image-20240602123044055" src="../../assets/image-20240602123044055.png" /></p>
+<p><img alt="image-20240602123044055" src="../../../../assets/image-20240602123044055.png" /></p>
 <p>至此，我们可以猜测，该任务即需要我们反复得到刷新的 token 访问网页共 1337 次，即可得到 flag。</p>
 <p>那么，我们可以利用 python 爬虫来反复爬取页面的内容，累计访问次数得到 flag。代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -3112,18 +3112,18 @@
 <a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>在过程中，我们可以看见其中程序一遍遍访问网页：</p>
-<p><img alt="image-20240602141216334" src="../../assets/image-20240602141216334.png" /></p>
+<p><img alt="image-20240602141216334" src="../../../../assets/image-20240602141216334.png" /></p>
 <p>当访问完 1337 次之后，可以看到：</p>
-<p><img alt="image-20240602141541149" src="../../assets/image-20240602141541149.png" /></p>
+<p><img alt="image-20240602141541149" src="../../../../assets/image-20240602141541149.png" /></p>
 <p>所以最终的 flag 为：flag{56297ad00e70449a16700a77bf24b071}</p>
 <h3 id="challenge-2_1">Challenge 2<a class="headerlink" href="#challenge-2_1" title="Permanent link">&para;</a></h3>
 <p>由于不太了解布尔盲注等基础做法（简单来说就是不太理解其原理），因此解题报告与代码参考了许多网络资源。</p>
 <p>由试验：</p>
-<p><img alt="image-20240602225051953" src="../../assets/image-20240602225051953.png" /></p>
-<p><img alt="image-20240602225055800" src="../../assets/image-20240602225055800.png" /></p>
-<p><img alt="image-20240602225351057" src="../../assets/image-20240602225351057.png" /></p>
+<p><img alt="image-20240602225051953" src="../../../../assets/image-20240602225051953.png" /></p>
+<p><img alt="image-20240602225055800" src="../../../../assets/image-20240602225055800.png" /></p>
+<p><img alt="image-20240602225351057" src="../../../../assets/image-20240602225351057.png" /></p>
 <p>可以猜想有过滤，在 Burpsuite 中爆破：</p>
-<p><img alt="img" src="../../assets/1937992-20200911094122880-1747349205.png" /></p>
+<p><img alt="img" src="../../../../assets/1937992-20200911094122880-1747349205.png" /></p>
 <p>长度为 472 的是没有被过滤掉的，Python 程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
@@ -3176,9 +3176,9 @@
 <a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="k">break</span>
 </code></pre></div></td></tr></table></div>
 <p>通过一个一个获得 flag 的值，最后输出 flag 为：</p>
-<p><img alt="image-20240602232329927" src="../../assets/image-20240602232329927.png" /></p>
+<p><img alt="image-20240602232329927" src="../../../../assets/image-20240602232329927.png" /></p>
 <p>解题成功截图：</p>
-<p><img alt="image-20240602232414835" src="../../assets/image-20240602232414835.png" /></p>
+<p><img alt="image-20240602232414835" src="../../../../assets/image-20240602232414835.png" /></p>
 <h2 id="pwn">Pwn<a class="headerlink" href="#pwn" title="Permanent link">&para;</a></h2>
 <p>Program.c 源程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
@@ -3418,7 +3418,7 @@
 <a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>运行输入可得该程序一直在等待输入。</p>
-<p><img alt="image-20240703143947998" src="../../assets/image-20240703143947998.png" /></p>
+<p><img alt="image-20240703143947998" src="../../../../assets/image-20240703143947998.png" /></p>
 <p>第二个 c 程序体现程序的内存溢出情况：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
@@ -3493,7 +3493,7 @@
 <a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>运行输入可知程序有奇怪的字符溢出：</p>
-<p><img alt="image-20240703144538995" src="../../assets/image-20240703144538995.png" /></p>
+<p><img alt="image-20240703144538995" src="../../../../assets/image-20240703144538995.png" /></p>
 <h3 id="_3">修复程序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>最后修复完成的程序如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -3658,11 +3658,11 @@
 </code></pre></div></td></tr></table></div>
 <h2 id="reverse">Reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h2>
 <p>将 elf 程序直接丢到 IDA 中反汇编，可以得到主程序：</p>
-<p><img alt="image-20240703124609588" src="../../assets/image-20240703124609588.png" /></p>
+<p><img alt="image-20240703124609588" src="../../../../assets/image-20240703124609588.png" /></p>
 <p>判断函数：</p>
-<p><img alt="image-20240703124545138" src="../../assets/image-20240703124545138.png" /></p>
+<p><img alt="image-20240703124545138" src="../../../../assets/image-20240703124545138.png" /></p>
 <p>可以看出获得 access granted 的条件即为输入的每一位字母的 ASCII 码乘 16 与 table 对应的数字相同，那么将 table 中的每一个数字除以 16 得到：65 65 65 123 72 105 82 101 118 101 114 115 101 125，翻译成字符串即为：AAA{HiReverse}</p>
-<p><img alt="image-20240703150831008" src="../../assets/image-20240703150831008.png" /></p>
+<p><img alt="image-20240703150831008" src="../../../../assets/image-20240703150831008.png" /></p>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
 <h3 id="challenge-1_2">Challenge 1<a class="headerlink" href="#challenge-1_2" title="Permanent link">&para;</a></h3>
 <h4 id="1_1">法 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
@@ -3680,29 +3680,29 @@
 <p>8Q%uH7oV9C7o!2f7oD<em>B9M/&gt;U2Gu:s:JP%n6W&gt;j@8PrYk9/]^B:0'e_6SgJh7n-</em>Q5rM&gt;=:Gkm:7oN)U:I/,P;`$6b:Gk[5=]%gm7mT%14Ztqk</p>
 <p>根据上述资料，可以推测其为 Base85 加密。</p>
 <p>将字符串放入 CyberChef Base85 加密当中：</p>
-<p><img alt="image-20240702220201645" src="../../assets/image-20240702220201645.png" /></p>
+<p><img alt="image-20240702220201645" src="../../../../assets/image-20240702220201645.png" /></p>
 <p>此时得到了末尾连续 4 个等号，推测其为 Base32 加密，再次解密：</p>
-<p><img alt="image-20240702220312572" src="../../assets/image-20240702220312572.png" /></p>
+<p><img alt="image-20240702220312572" src="../../../../assets/image-20240702220312572.png" /></p>
 <p>逐步排查推测其可能为 Base64，逐个尝试可得 flag：</p>
-<p><img alt="image-20240702220628427" src="../../assets/image-20240702220628427.png" /></p>
+<p><img alt="image-20240702220628427" src="../../../../assets/image-20240702220628427.png" /></p>
 <p>所以最后的 flag 为：AAA{wELc0m3_t0_Ctf_5umMEr_c0UrsE_2024}</p>
 <h4 id="2">法 2：秒杀<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>当然在 CyberChef 中有个功能：Magic，直接导入字符串可得：</p>
-<p><img alt="image-20240702220851871" src="../../assets/image-20240702220851871.png" /></p>
+<p><img alt="image-20240702220851871" src="../../../../assets/image-20240702220851871.png" /></p>
 <h3 id="challenge-2_2">Challenge 2<a class="headerlink" href="#challenge-2_2" title="Permanent link">&para;</a></h3>
 <p>LSB 隐写通过改变图片的二进制文件中每个数字的最后一位，达到将自己信息塞入图片中并且进行传递的目的。</p>
 <p>将图片导入 CyberChef 当中，在最后我们可以发现 flag 的后半段：</p>
-<p><img alt="image-20240702222325332" src="../../assets/image-20240702222325332.png" /></p>
+<p><img alt="image-20240702222325332" src="../../../../assets/image-20240702222325332.png" /></p>
 <p>再用 CyberChef 中的View Bit Plane 功能，设定 Red 为 0 就可以得到前半段 flag：</p>
-<p><img alt="image-20240702222633267" src="../../assets/image-20240702222633267.png" /></p>
+<p><img alt="image-20240702222633267" src="../../../../assets/image-20240702222633267.png" /></p>
 <p>这样我们就可以得到完整 flag：AAA{gr3@t_J08!_1et'5_P1@y_m1SC_TOG3Th3R}</p>
 <h2 id="crypto">Crypto<a class="headerlink" href="#crypto" title="Permanent link">&para;</a></h2>
 <h3 id="challenge-1_3">Challenge 1<a class="headerlink" href="#challenge-1_3" title="Permanent link">&para;</a></h3>
-<p><img alt="crypto_challenge1" src="../../assets/crypto_challenge1.png" /></p>
+<p><img alt="crypto_challenge1" src="../../../../assets/crypto_challenge1.png" /></p>
 <p>将这张图片进行同样的符号为一个字符进行字符转换，其中右上角为圈的地方视为后加空格，可以得到如下密文：</p>
 <p>ABCDEFA GAFHC IDJJ HKKDLG FGKG MJGHNG JOKG FDP AB AFG HQHCRBCGR IHKGFBONG CGHK AFG MBJDSG NAHADBC IFGKG AFG MKBTGNNDBCHJ HNNHNNDC KGGNG FDKGR IDJJ GJDPDCHAG FDP ABPBKKBI NFG IDJJ EB AB AFG IHKGFBONG HCR QGSBPG AFG TDKNA MGKNBC AB RDNSBLGK FDN SBKMNG IDAF H NAKBCE HJDQD AFGNG MBJDSG BTTDSGKN HQNBJOAGJV SHC CBA HKKGNA FGK</p>
 <p>导入到 quipquip 中可得最终结果：</p>
-<p><img alt="image-20240707153027043" src="../../assets/image-20240707153027043.png" /></p>
+<p><img alt="image-20240707153027043" src="../../../../assets/image-20240707153027043.png" /></p>
 <h3 id="challenge-2_3">Challenge 2<a class="headerlink" href="#challenge-2_3" title="Permanent link">&para;</a></h3>
 <p>由 RSA 原理，公钥加密私钥解密：</p>
 <p><span class="arithmatex">\(d=e^{-1}\space mod\space\phi(n),m=c^d\space mod\space n\)</span></p>
@@ -3728,7 +3728,7 @@
 <a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <p>最后运行得到 flag：AAA{Ace_Attorney_is_very_fun_Phoenix_Wright&amp;Miles_Edgeworth}</p>
-<p><img alt="image-20240703124407855" src="../../assets/image-20240703124407855.png" /></p>
+<p><img alt="image-20240703124407855" src="../../../../assets/image-20240703124407855.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3798,7 +3798,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 11:16:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:06:27</span>
   </span>
 
     

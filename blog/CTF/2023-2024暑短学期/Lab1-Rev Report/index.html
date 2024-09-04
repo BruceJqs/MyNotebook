@@ -2267,39 +2267,39 @@
 <h1 id="lab1-rev-report">Lab1-Rev Report<a class="headerlink" href="#lab1-rev-report" title="Permanent link">&para;</a></h1>
 <h2 id="task-1">Task 1<a class="headerlink" href="#task-1" title="Permanent link">&para;</a></h2>
 <h3 id="case-1gccas">Case 1:gcc+as<a class="headerlink" href="#case-1gccas" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240705180254163" src="../../assets/image-20240705180254163.png" /></p>
-<p><img alt="image-20240705180304611" src="../../assets/image-20240705180304611.png" /></p>
+<p><img alt="image-20240705180254163" src="../../../../assets/image-20240705180254163.png" /></p>
+<p><img alt="image-20240705180304611" src="../../../../assets/image-20240705180304611.png" /></p>
 <p>编译与汇编均成功。</p>
 <h3 id="case-2gccllvm-mc">Case 2:gcc+llvm-mc<a class="headerlink" href="#case-2gccllvm-mc" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240705180757887" src="../../assets/image-20240705180757887.png" /></p>
+<p><img alt="image-20240705180757887" src="../../../../assets/image-20240705180757887.png" /></p>
 <p>编译同上，汇编成功。</p>
 <h3 id="case-3clangas">Case 3:clang+as<a class="headerlink" href="#case-3clangas" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240705180945162" src="../../assets/image-20240705180945162.png" /></p>
-<p><img alt="image-20240705181017518" src="../../assets/image-20240705181017518.png" /></p>
+<p><img alt="image-20240705180945162" src="../../../../assets/image-20240705180945162.png" /></p>
+<p><img alt="image-20240705181017518" src="../../../../assets/image-20240705181017518.png" /></p>
 <p>编译成功，汇编失败。这其中的原因在于 Clang 默认使用的是 AT&amp;T 汇编语言语法，而 as 期望的是 Intel 语法，这样就产生了上图的 errors：unknown...</p>
 <h3 id="case-4clangllvm-mc">Case 4:clang+llvm-mc<a class="headerlink" href="#case-4clangllvm-mc" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240705181825436" src="../../assets/image-20240705181825436.png" /></p>
+<p><img alt="image-20240705181825436" src="../../../../assets/image-20240705181825436.png" /></p>
 <p>编译同上，汇编成功。</p>
 <h2 id="task-2">Task 2<a class="headerlink" href="#task-2" title="Permanent link">&para;</a></h2>
 <p>拿到 elf，毫不犹豫直接丢进 IDA 反汇编，可以看到入口函数 _start 的结构：</p>
-<p><img alt="image-20240705183631798" src="../../assets/image-20240705183631798.png" /></p>
+<p><img alt="image-20240705183631798" src="../../../../assets/image-20240705183631798.png" /></p>
 <p>其伪代码如下：</p>
-<p><img alt="image-20240705183754760" src="../../assets/image-20240705183754760.png" /></p>
+<p><img alt="image-20240705183754760" src="../../../../assets/image-20240705183754760.png" /></p>
 <p>这里没有什么关键信息，但是我们发现 IDA 有显示一堆奇奇怪怪的字符串：</p>
-<p><img alt="image-20240705184055017" src="../../assets/image-20240705184055017.png" /></p>
+<p><img alt="image-20240705184055017" src="../../../../assets/image-20240705184055017.png" /></p>
 <p>一个个点开，拼起来我们就直接得到 flag 了？！（也太快了吧）</p>
-<p><img alt="image-20240705184143922" src="../../assets/image-20240705184143922.png" /></p>
+<p><img alt="image-20240705184143922" src="../../../../assets/image-20240705184143922.png" /></p>
 <p>最后拼接成的 flag 为：AAA{hope_u_have_fun~}</p>
 <h2 id="task-3">Task 3<a class="headerlink" href="#task-3" title="Permanent link">&para;</a></h2>
 <p>将 challenge2.bc 文件使用命令行 <code>clang challenge2.bc -o challenge2</code> 进行编译，将生成的 elf 放进 IDA 中反汇编。</p>
 <p>其主程序如下：</p>
-<p><img alt="image-20240705230826082" src="../../assets/image-20240705230826082.png" /></p>
+<p><img alt="image-20240705230826082" src="../../../../assets/image-20240705230826082.png" /></p>
 <p>根据这里，我们发现需要一个重要的数组：target，用于检测，我们翻找发现 target 数组：</p>
-<p><img alt="image-20240706193704786" src="../../assets/image-20240706193704786.png" /></p>
+<p><img alt="image-20240706193704786" src="../../../../assets/image-20240706193704786.png" /></p>
 <p>此外，还有一个函数 xcrc32 也需要我们寻找，其程序如下：</p>
-<p><img alt="image-20240705233354221" src="../../assets/image-20240705233354221.png" /></p>
+<p><img alt="image-20240705233354221" src="../../../../assets/image-20240705233354221.png" /></p>
 <p>这其中还有一个 crc32_table，查找可得：</p>
-<p><img alt="image-20240706193748106" src="../../assets/image-20240706193748106.png" /></p>
+<p><img alt="image-20240706193748106" src="../../../../assets/image-20240706193748106.png" /></p>
 <p>注意到 xcrc 这个函数，我们关注 a3 的末 8 位，当 <code>a3 &lt;&lt; 8</code> 时整体的末 8 位均为 0，那么执行一次赋值操作就将 crc32_table 中某个元素的末八位给 a3。</p>
 <p>而且根据<sub>~观察</sub>~大胆猜测 crc32_table 每个元素的末 8 位不同，可以知道执行操作的 crc_table 元素的完整数据，那么根据异或操作 <code>a ^ b = c</code> 可推出 <code>b = a ^ c</code> ，即可获得前一次操作 <code>a3 &lt;&lt; 8</code> 的值。</p>
 <p>将 a3 右移八位，同之前的道理，还是可以得到最初的 crc_table 元素的完整数据，此时我们也知道初始的 a3 为 <code>0x414243</code> ，那么异或一下我们就可以得到中间算出的 a3 完整数据，这样对应的字符也就迎刃而解了！（撒花！）</p>
@@ -2359,7 +2359,7 @@
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">ans0</span> <span class="o">+</span> <span class="n">ans1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>最后得到 flag：</p>
-<p><img alt="image-20240706210417643" src="../../assets/image-20240706210417643.png" /></p>
+<p><img alt="image-20240706210417643" src="../../../../assets/image-20240706210417643.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2429,7 +2429,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 11:16:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:06:27</span>
   </span>
 
     
