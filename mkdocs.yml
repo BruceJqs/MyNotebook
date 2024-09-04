@@ -95,6 +95,7 @@ nav:
       - "Chapter 10: Graphs": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md
       - "Chapter 11: Trees": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md
   - CTF:
+    - blog/CTF/index.md
     - 2023-2024 暑短学期: 
       - blog/CTF/2023-2024暑短学期/index.md
       - Lab0: blog/CTF/2023-2024暑短学期/Lab0 Report.md
