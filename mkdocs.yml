@@ -162,6 +162,7 @@ extra:
 
 plugins:
   - search #搜索配置
+  - statistics
   - git-committers:
       enabled: !ENV [CI, false]
       repository: BruceJqs/MyNotebook
