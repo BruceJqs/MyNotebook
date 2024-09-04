@@ -11,19 +11,19 @@ comments: true
 
 !!!Abstract 
     Bruce 真正入门 CTF 的一大好课！（吹爆所有 TA！）
-    Lab0 为所有方向的入门 Lab
-    Lab1 为所有方向的基础 Lab
-    Lab2&Lab3 为专题方向（Bruce 选择了 Misc 和 Crypto）的专题 Lab
+    - Lab0 为所有方向的入门 Lab
+    - Lab1 为所有方向的基础 Lab
+    - Lab2&Lab3 为专题方向（Bruce 选择了 Misc 和 Crypto）的专题 Lab
 
 ## Table of Contents
 
-- [Lab0](2023-2024暑短学期/Lab0%20Report/)
-- [Lab1-Crypto](2023-2024暑短学期/Lab1-Crypto%20Report/)
-- [Lab1-Misc](2023-2024暑短学期/Lab1-Misc%20Report/)
-- [Lab1-Pwn](2023-2024暑短学期/Lab1-Pwn%20Report/)
-- [Lab1-Rev](2023-2024暑短学期/Lab1-Rev%20Report/)
-- [Lab1-Web](2023-2024暑短学期/Lab1-Web%20Report/)
-- [Lab2-Crypto](2023-2024暑短学期/Lab2-Crypto%20Report/)
-- [Lab2-Misc](2023-2024暑短学期/Lab2-Misc%20Report/)
-- [Lab3-Crypto](2023-2024暑短学期/Lab3-Crypto%20Report/)
-- [Lab3-Misc](2023-2024暑短学期/Lab3-Misc%20Report/)
+- [Lab0](Lab0%20Report/)
+- [Lab1-Crypto](Lab1-Crypto%20Report/)
+- [Lab1-Misc](Lab1-Misc%20Report/)
+- [Lab1-Pwn](Lab1-Pwn%20Report/)
+- [Lab1-Rev](Lab1-Rev%20Report/)
+- [Lab1-Web](Lab1-Web%20Report/)
+- [Lab2-Crypto](Lab2-Crypto%20Report/)
+- [Lab2-Misc](Lab2-Misc%20Report/)
+- [Lab3-Crypto](Lab3-Crypto%20Report/)
+- [Lab3-Misc](Lab3-Misc%20Report/)
