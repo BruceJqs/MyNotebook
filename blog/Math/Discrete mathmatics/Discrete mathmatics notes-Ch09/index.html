@@ -2758,7 +2758,7 @@
 <p>集合 <span class="arithmatex">\(A\)</span> 上的关系是从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(A\)</span> 的关系。</p>
 <p>可以用一个 <span class="arithmatex">\(m\times n\)</span> 的连接矩阵 <span class="arithmatex">\(M_R=[m_{ij}]\)</span> 来表示集合 <span class="arithmatex">\(A=\{a_1,a_2,...,a_m\}\)</span> 和 <span class="arithmatex">\(B=\{b_1,b_2,...,b_n\}\)</span> 之间的关系，其中<font color="red"> <span class="arithmatex">\(m_{ij}=\begin{cases}1,(a_i,b_j)\in R\\0,(a_i,b_j)\not\in R\end{cases}\)</span> </font></p>
 <p><strong>e.g.</strong></p>
-<p><img alt="image-20240430090425357" src="../../assets/image-20240430090425357.png" /></p>
+<p><img alt="image-20240430090425357" src="../../../../assets/image-20240430090425357.png" /></p>
 <h3 id="properties-of-binary-relations">Properties of Binary Relations<a class="headerlink" href="#properties-of-binary-relations" title="Permanent link">&para;</a></h3>
 <ul>
 <li>自反性（Reflexive Relations）：若 <span class="arithmatex">\(\forall x(x\in A \rightarrow (x,x)\in R)\)</span>，那么定义在集合 <span class="arithmatex">\(A\)</span> 上的关系 <span class="arithmatex">\(R\)</span> 称为自反的。</li>
@@ -2802,16 +2802,16 @@
 <p>定义：设 <span class="arithmatex">\(R\)</span> 是集合 <span class="arithmatex">\(A\)</span> 上的关系，那么 <span class="arithmatex">\(R\)</span> 的<font color="red">自反闭包（Reflexive Closure）</font>，记为<font color="red"> <span class="arithmatex">\(r(R)\)</span> </font>，是<font color="red"> <span class="arithmatex">\(R\bigcup I_A\)</span> </font>（其中 <span class="arithmatex">\(I_A\)</span> 即为 <span class="arithmatex">\(A\)</span> 的对角关系，<font color="red"><span class="arithmatex">\(I_A=\{(x,x)|x\in A\}\)</span></font>）</p>
 <p><font color="red"><span class="arithmatex">\(R=R\bigcup I_A\Leftrightarrow R\)</span> 是一个自反闭包 </font></p>
 <p><strong>e.g. <span class="arithmatex">\(R=\{(a,b)|a&lt;b,a,b\in Z\}\)</span>，求 <span class="arithmatex">\(R\)</span> 的自反闭包。</strong></p>
-<p><img alt="image-20240507085422097" src="../../assets/image-20240507085422097.png" /></p>
+<p><img alt="image-20240507085422097" src="../../../../assets/image-20240507085422097.png" /></p>
 <h3 id="symmetric-closure">Symmetric Closure<a class="headerlink" href="#symmetric-closure" title="Permanent link">&para;</a></h3>
 <p>定义：设 <span class="arithmatex">\(R\)</span> 是集合 <span class="arithmatex">\(A\)</span> 上的关系，那么 <span class="arithmatex">\(R\)</span> 的<font color="red">对称闭包（Symmetric Closure）</font>，记为<font color="red"> <span class="arithmatex">\(s(R)\)</span> </font>，是<font color="red"> <span class="arithmatex">\(R\bigcup R^{-1}\)</span> </font>。</p>
 <p><font color="red"><span class="arithmatex">\(R=R\bigcup R^{-1}\Leftrightarrow R\)</span> 是一个对称闭包</font></p>
-<p><img alt="image-20240507085710666" src="../../assets/image-20240507085710666.png" /></p>
+<p><img alt="image-20240507085710666" src="../../../../assets/image-20240507085710666.png" /></p>
 <h3 id="transitive-closure">Transitive Closure<a class="headerlink" href="#transitive-closure" title="Permanent link">&para;</a></h3>
 <p>定义：设 <span class="arithmatex">\(R\)</span> 是集合 <span class="arithmatex">\(A\)</span> 上的关系，那么 <span class="arithmatex">\(R\)</span> 的<font color="red">传递闭包（Transitive Closure）</font>，记为<font color="red"> <span class="arithmatex">\(t(R)\)</span> </font>，满足 <span class="arithmatex">\(\forall a\in A\space\forall b\in A\space a\)</span> 可达 <span class="arithmatex">\(b\rightarrow (a,b)\in R\)</span></p>
-<p><img alt="image-20240507090346762" src="../../assets/image-20240507090346762.png" /></p>
+<p><img alt="image-20240507090346762" src="../../../../assets/image-20240507090346762.png" /></p>
 <p>定理：设 <span class="arithmatex">\(R\)</span> 是集合 <span class="arithmatex">\(A\)</span> 上的关系，那么存在一条 <span class="arithmatex">\(a\)</span> 到 <span class="arithmatex">\(b\)</span> 长度为 <span class="arithmatex">\(n\)</span> 的路径 <span class="arithmatex">\(\Leftrightarrow (a,b)\in R^n\)</span>。 </p>
-<p><img alt="image-20240507090547878" src="../../assets/image-20240507090547878.png" /></p>
+<p><img alt="image-20240507090547878" src="../../../../assets/image-20240507090547878.png" /></p>
 <h3 id="connectivity-relation">Connectivity Relation<a class="headerlink" href="#connectivity-relation" title="Permanent link">&para;</a></h3>
 <p>定义：<font color="red">连通关系（Connectivity Relation）</font>即为一个有序对 <span class="arithmatex">\((a,b)\)</span> 的集合，满足在 <span class="arithmatex">\(R\)</span> 中存在一个 <span class="arithmatex">\(a\)</span> 到 <span class="arithmatex">\(b\)</span> 的道路，记为<font color="red"> <span class="arithmatex">\(R^*\)</span> </font>。</p>
 <p>定理：</p>
@@ -2831,8 +2831,8 @@
 <h3 id="equivalence-class">Equivalence Class<a class="headerlink" href="#equivalence-class" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(R\)</span> 是定义在集合 <span class="arithmatex">\(A\)</span> 上的等价关系，与 <span class="arithmatex">\(A\)</span> 中其中一个元素 <span class="arithmatex">\(a\)</span> 有关系的所有元素的集合叫作 <span class="arithmatex">\(a\)</span> 的<font color="red">等价类（Equivalence Class）</font>，记作<font color="red"> <span class="arithmatex">\([a]_R/[a]\)</span></font>，由定义 <span class="arithmatex">\([a]_R=\{s|(a,s)\in R\}\)</span>，如果 <span class="arithmatex">\(b\in [a]_R\)</span>，那么称 <span class="arithmatex">\(b\)</span> 为等价类的代表。</p>
 <p><strong>e.g. 模 3 同余的关系 <span class="arithmatex">\(R=\{(a,b)|a\equiv b(mod\space3),a,b\in Z\}\)</span>，证明其是一个等价关系并指出其等价类。</strong></p>
-<p><img alt="image-20240510082204922" src="../../assets/image-20240510082204922.png" /></p>
-<p><img alt="image-20240510082225334" src="../../assets/image-20240510082225334.png" /></p>
+<p><img alt="image-20240510082204922" src="../../../../assets/image-20240510082204922.png" /></p>
+<p><img alt="image-20240510082225334" src="../../../../assets/image-20240510082225334.png" /></p>
 <h3 id="partition-of-a-set">Partition of a Set<a class="headerlink" href="#partition-of-a-set" title="Permanent link">&para;</a></h3>
 <p>令 <span class="arithmatex">\(\{A_1,A_2,...\}\)</span> 是 <span class="arithmatex">\(A\)</span> 的子集的组合。那么这个组合被称为 <span class="arithmatex">\(A\)</span> 的<font color="red">划分（Partition，记作 <span class="arithmatex">\(pr(A)\)</span>）</font>当且仅当：</p>
 <ul>
@@ -2862,9 +2862,9 @@
 <p>良序归纳原理：设 <span class="arithmatex">\(S\)</span> 是一个良序集。归纳步骤：对所有 <span class="arithmatex">\(y\in S\)</span> ，如果 <span class="arithmatex">\(P(x)\)</span> 对所有 <span class="arithmatex">\(x\in S\)</span> 且 <span class="arithmatex">\(x\prec y\)</span> 为真，<span class="arithmatex">\(P(y)\)</span> 为真，结论为 <span class="arithmatex">\(P(x)\)</span> 对所有 <span class="arithmatex">\(x\in S\)</span> 为真</p>
 <h3 id="lexicographic-order">Lexicographic Order<a class="headerlink" href="#lexicographic-order" title="Permanent link">&para;</a></h3>
 <p>对于两个偏序集 <span class="arithmatex">\((A_1,\preccurlyeq_1)\)</span> 和 <span class="arithmatex">\((A_2,\preccurlyeq_2)\)</span> ，那么在 <span class="arithmatex">\(A_1\times A_2\)</span> 上的<font color="red">字典顺序（Lexicographic Order）</font><span class="arithmatex">\(\prec\)</span> 定义为：<span class="arithmatex">\((a_1,a_2)\prec(b_1,b_2)\Leftrightarrow (a_1\prec_1b_1) \lor((a_1=b_1)\land(a_2\prec_2b_2))\)</span></p>
-<p><img alt="image-20240510110314098" src="../../assets/image-20240510110314098.png" /></p>
+<p><img alt="image-20240510110314098" src="../../../../assets/image-20240510110314098.png" /></p>
 <h3 id="hasse-diagrams">Hasse diagrams<a class="headerlink" href="#hasse-diagrams" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240510110811753" src="../../assets/image-20240510110811753.png" /></p>
+<p><img alt="image-20240510110811753" src="../../../../assets/image-20240510110811753.png" /></p>
 <h3 id="chain-and-antichain">Chain and Antichain<a class="headerlink" href="#chain-and-antichain" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\((A,\preccurlyeq)\)</span> 是一个偏序集，<span class="arithmatex">\(B\subseteq A\)</span>，如果 <span class="arithmatex">\((B,\preccurlyeq)\)</span> 是一个全序集，那么 <span class="arithmatex">\(B\)</span> 被称为 <span class="arithmatex">\((A,\preccurlyeq)\)</span> 的<font color="red">链（Chain）</font>，链的长度为 <span class="arithmatex">\(|B|\)</span>；如果 <span class="arithmatex">\(B\subseteq A\)</span>，<span class="arithmatex">\(\forall a,b\in B(a\neq b),(a,b)\not\in R,(b,a)\not\in R\)</span>，那么 <span class="arithmatex">\(B\)</span> 被称为 <span class="arithmatex">\((A,\preccurlyeq)\)</span> 的<font color="red">反链（Antichain）</font>。</p>
 <h3 id="maximal-and-minimal-elements">Maximal and Minimal Elements<a class="headerlink" href="#maximal-and-minimal-elements" title="Permanent link">&para;</a></h3>
@@ -2949,7 +2949,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 10:34:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:09:09</span>
   </span>
 
     

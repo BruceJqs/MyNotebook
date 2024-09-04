@@ -3036,7 +3036,7 @@
 <p><strong>e.g. 小于 10 的奇数所组成的集合 <span class="arithmatex">\(S=\{x|x=2k+1(k=0,1,2,3,4)\}\)</span></strong></p>
 <h3 id="venn-diagrams">Venn Diagrams<a class="headerlink" href="#venn-diagrams" title="Permanent link">&para;</a></h3>
 <p>在韦恩图当中，用矩形框表达全集（Universal Set，包含所考虑的全部对象），用圆或者其他几何图形来表达集合，<font color="blue">用点来表达集合中的特定元素</font>。</p>
-<p><img alt="image-20240319124343503" src="../../assets/image-20240319124343503.png" /></p>
+<p><img alt="image-20240319124343503" src="../../../../assets/image-20240319124343503.png" /></p>
 <h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
 <p>当集合 <span class="arithmatex">\(A\)</span> 中的每一个元素都是集合 <span class="arithmatex">\(B\)</span> 中的元素，称 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(B\)</span> 的一个<font color="red">子集（Subsets）</font>，用<font color="red"> <span class="arithmatex">\(A \subseteq B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \subseteq B \Leftrightarrow \forall x (x \in A \rightarrow x \in B)\)</span></font>）</p>
 <p><font color="red">对于任意集合 <span class="arithmatex">\(A\)</span> ，空集 <span class="arithmatex">\(\phi \subseteq A\)</span>，其自身 <span class="arithmatex">\(A \subseteq A\)</span></font></p>
@@ -3059,9 +3059,9 @@
 <li><font color="red"><span class="arithmatex">\(S \in P(S)\)</span></font></li>
 </ul>
 <p><strong>e.g.1. 求 <span class="arithmatex">\(\{\phi\}\)</span> 和 <span class="arithmatex">\(\{\phi,\{\phi\}\}\)</span> 的幂集。</strong></p>
-<p><img alt="image-20240319153804235" src="../../assets/image-20240319153804235.png" /></p>
+<p><img alt="image-20240319153804235" src="../../../../assets/image-20240319153804235.png" /></p>
 <p><strong>e.g.2. 证明 <span class="arithmatex">\(P(A) \in P(B) \Rightarrow A \in B\)</span></strong></p>
-<p><img alt="image-20240319153859219" src="../../assets/image-20240319153859219.png" /></p>
+<p><img alt="image-20240319153859219" src="../../../../assets/image-20240319153859219.png" /></p>
 <h3 id="cartesian-products">Cartesian Products<a class="headerlink" href="#cartesian-products" title="Permanent link">&para;</a></h3>
 <p>以 <span class="arithmatex">\(a_1\)</span> 为第一个元素，<span class="arithmatex">\(a_2\)</span> 为第二个元素，...，<span class="arithmatex">\(a_n\)</span> 为第 <span class="arithmatex">\(n\)</span> 个元素的有序聚集被称为<font color="red">有序 <span class="arithmatex">\(n\)</span> 元组（Ordered n-tuple）</font>，用<font color="red"> <span class="arithmatex">\((a_1,a_2,...,a_n)\)</span> </font>表示。特别地，若 <span class="arithmatex">\(n=2\)</span>，二元组被称为<font color="red">序偶（Ordered Pair）</font>。</p>
 <p><font color="blue"><span class="arithmatex">\((a_1,a_2,...,a_n)=(b_1,b_2,...,b_n) \Leftrightarrow a_i=b_i(i=1,2,...,n)\)</span></font></p>
@@ -3076,7 +3076,7 @@
 <li><font color="red"><span class="arithmatex">\((x,y)\not \in A \times B \Rightarrow x \not \in A \lor y \not \in B\)</span></font></li>
 </ul>
 <p><strong>e.g. <span class="arithmatex">\(A=\{a,b\},B=\{0,1,2\}\)</span>，求 <span class="arithmatex">\(A\times B,B\times A\)</span></strong></p>
-<p><img alt="image-20240319155324775" src="../../assets/image-20240319155324775.png" /></p>
+<p><img alt="image-20240319155324775" src="../../../../assets/image-20240319155324775.png" /></p>
 <h3 id="using-set-notation-with-quantifiers">Using Set Notation with Quantifiers<a class="headerlink" href="#using-set-notation-with-quantifiers" title="Permanent link">&para;</a></h3>
 <p><font color="red"><span class="arithmatex">\(\forall x \in S(P(x)) \Leftrightarrow \forall x(x \in S \rightarrow P(x))\)</span></font></p>
 <p><font color="red"><span class="arithmatex">\(\exists x \in S(P(x))\Leftrightarrow \exists x(x\in S \land P(x))\)</span></font></p>
@@ -3086,7 +3086,7 @@
 <h2 id="set-operations">Set Operations<a class="headerlink" href="#set-operations" title="Permanent link">&para;</a></h2>
 <h3 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h3>
 <p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，其<font color="red">并集（Union）</font>是一个包含 <span class="arithmatex">\(A\)</span> 或 <span class="arithmatex">\(B\)</span> 中或同时在 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 中的元素的集合，用<font color="red"> <span class="arithmatex">\(A \bigcup B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \bigcup B=\{x|x\in A \lor x \in B\}\)</span></font>）</p>
-<p><img alt="image-20240319162317171" src="../../assets/image-20240319162317171.png" /></p>
+<p><img alt="image-20240319162317171" src="../../../../assets/image-20240319162317171.png" /></p>
 <p>其性质如下：</p>
 <ul>
 <li><font color="red"><span class="arithmatex">\(A\subseteq A \bigcup B,B\subseteq B \bigcup A\)</span></font></li>
@@ -3096,7 +3096,7 @@
 </ul>
 <h3 id="intersection">Intersection<a class="headerlink" href="#intersection" title="Permanent link">&para;</a></h3>
 <p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，其<font color="red">交集（Intersection）</font>是一个包含同时在 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 中的元素的集合，用<font color="red"> <span class="arithmatex">\(A \bigcap B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A \bigcap B=\{x|x\in A \land x \in B\}\)</span></font>）</p>
-<p><img alt="image-20240319162852934" src="../../assets/image-20240319162852934.png" /></p>
+<p><img alt="image-20240319162852934" src="../../../../assets/image-20240319162852934.png" /></p>
 <p>当两个集合的交集是一个空集时，称这两个集合是<font color="red">不相交的（Disjoint）</font>（即 <font color="blue"><span class="arithmatex">\(A\bigcap B=\phi\)</span></font>）</p>
 <p>其性质如下：</p>
 <ul>
@@ -3107,13 +3107,13 @@
 </ul>
 <h3 id="complement">Complement<a class="headerlink" href="#complement" title="Permanent link">&para;</a></h3>
 <p>令 <span class="arithmatex">\(U\)</span> 为全集，<span class="arithmatex">\(A\)</span> 的<font color="red">补集（Complement）</font>为在全集中不属于 <span class="arithmatex">\(A\)</span> 的元素的集合，用<font color="red"> <span class="arithmatex">\(\overline A\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(\overline A=\{x|x\not \in A,x \in U\}=\{x|\neg x  \in A\}\)</span></font>）</p>
-<p><img alt="image-20240319172311905" src="../../assets/image-20240319172311905.png" /></p>
+<p><img alt="image-20240319172311905" src="../../../../assets/image-20240319172311905.png" /></p>
 <h3 id="difference">Difference<a class="headerlink" href="#difference" title="Permanent link">&para;</a></h3>
 <p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，<span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 的<font color="red">差集（Difference）</font>是一个包含属于 <span class="arithmatex">\(A\)</span> 但不属于 <span class="arithmatex">\(B\)</span> 的元素的集合，用<font color="red"> <span class="arithmatex">\(A-B\)</span> </font>来表示，也被称为 <span class="arithmatex">\(B\)</span> 相对于 <span class="arithmatex">\(A\)</span> 的补集。（<font color="blue"><span class="arithmatex">\(A-B=\{x|x\in A \land x \not \in B\}=A \bigcap \overline B\)</span></font>）</p>
-<p><img alt="image-20240319172420848" src="../../assets/image-20240319172420848.png" /></p>
+<p><img alt="image-20240319172420848" src="../../../../assets/image-20240319172420848.png" /></p>
 <h3 id="symmetric-difference">Symmetric Difference<a class="headerlink" href="#symmetric-difference" title="Permanent link">&para;</a></h3>
 <p>对于集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span>，<span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 的<font color="red">对称差（Symmetric Difference）</font>是一个包含属于 <span class="arithmatex">\(A\)</span> 但不属于 <span class="arithmatex">\(B\)</span> 和属于 <span class="arithmatex">\(B\)</span> 但不属于 <span class="arithmatex">\(A\)</span> 的元素的集合，用<font color="red"> <span class="arithmatex">\(A\oplus B\)</span> </font>来表示。（<font color="blue"><span class="arithmatex">\(A\oplus B=\{x|(x\in A \land x \not \in B) \lor (x\in B \land x \not \in A)\}=(A \bigcup B)-(A \bigcap B)\)</span></font>）</p>
-<p><img alt="image-20240319173214695" src="../../assets/image-20240319173214695.png" /></p>
+<p><img alt="image-20240319173214695" src="../../../../assets/image-20240319173214695.png" /></p>
 <h3 id="the-principle-of-inclusion-exclusion">The Principle of Inclusion-Exclusion<a class="headerlink" href="#the-principle-of-inclusion-exclusion" title="Permanent link">&para;</a></h3>
 <p>容斥原理（The Principle of Inclusion-Exclusion）：<font color="red"><span class="arithmatex">\(|A \bigcup B|=|A|+|B|-|A \bigcap B|\)</span></font></p>
 <p>更一般地：</p>
@@ -3235,7 +3235,7 @@ $$
 <h3 id="cardinality">Cardinality<a class="headerlink" href="#cardinality" title="Permanent link">&para;</a></h3>
 <p>集合 <span class="arithmatex">\(A\)</span> 和集合 <span class="arithmatex">\(B\)</span> 有相同的基数（Cardinality）<span class="arithmatex">\(\Leftrightarrow\)</span> 存在从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的一个一一对应，记为 <font color="red"><span class="arithmatex">\(|A|=|B|\)</span></font></p>
 <p><strong>e.g. 令集合 <span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\((a,b)\)</span> 之间所有的实数 <span class="arithmatex">\((a&lt;b)\)</span> ，集合 <span class="arithmatex">\(B\)</span> 为 <span class="arithmatex">\((0,1)\)</span> 之间所有的实数，证明 <span class="arithmatex">\(|A|=|B|\)</span> 。</strong></p>
-<p><img alt="image-20240326082453694" src="../../assets/image-20240326082453694.png" /></p>
+<p><img alt="image-20240326082453694" src="../../../../assets/image-20240326082453694.png" /></p>
 <p>如果存在一个从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的一对一函数，则 <span class="arithmatex">\(A\)</span> 的基数小于等于 <span class="arithmatex">\(B\)</span> 的基数，记为<font color="red"> <span class="arithmatex">\(|A|\leq |B|\)</span> </font>，如果 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 有不同的基数时，<span class="arithmatex">\(A\)</span> 的基数小于 <span class="arithmatex">\(B\)</span> 的基数，记为<font color="red"> <span class="arithmatex">\(|A|&lt;|B|\)</span> </font></p>
 <h3 id="countable-sets">Countable Sets<a class="headerlink" href="#countable-sets" title="Permanent link">&para;</a></h3>
 <p>如果一个集合是有限集或者与自然数集具有相同的基数，那么这个集合就被称为<font color="red">可数的（Countable）</font>，否则这个集合就被称为<font color="red">不可数的（Uncountable）</font>。</p>
@@ -3255,7 +3255,7 @@ $$
 <li><font color="red">两个可数集的并集也是可数的。</font></li>
 </ul>
 <p><strong>e.g. 证明 <span class="arithmatex">\(|(0,1)|=|[0,1]|\)</span></strong></p>
-<p><img alt="image-20240326210247239" src="../../assets/image-20240326210247239.png" /></p>
+<p><img alt="image-20240326210247239" src="../../../../assets/image-20240326210247239.png" /></p>
 <h3 id="uncomputable-function-an-important-application-in-cs">Uncomputable Function-An Important Application in CS<a class="headerlink" href="#uncomputable-function-an-important-application-in-cs" title="Permanent link">&para;</a></h3>
 <p>定义：如果存在某种编程语言写的计算机程序能计算一个函数的值，那么这个函数被称为是<font color="red">可计算的（Computable）</font>，否则被称为是<font color="red">不可计算的（Uncomputable）</font></p>
 <h3 id="continuum-hypothesis">Continuum Hypothesis<a class="headerlink" href="#continuum-hypothesis" title="Permanent link">&para;</a></h3>
@@ -3337,7 +3337,7 @@ $$
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 10:34:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:09:09</span>
   </span>
 
     

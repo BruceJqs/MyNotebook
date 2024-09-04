@@ -2947,23 +2947,23 @@
 <h3 id="some-special-simple-graphs">Some Special Simple Graphs<a class="headerlink" href="#some-special-simple-graphs" title="Permanent link">&para;</a></h3>
 <h4 id="complete-graphs">Complete Graphs<a class="headerlink" href="#complete-graphs" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(n\)</span> 个顶点的<font color="red">完全图（Complete Graphs）</font>记作<font color="red"> <span class="arithmatex">\(K_n\)</span></font>，是在每对不同顶点之间都恰有一条边的简单图；至少有一对不同的顶点不存在边相连的简单图称为非完全图。</p>
-<p><img alt="image-20240521083543442" src="../../assets/image-20240521083543442.png" /></p>
+<p><img alt="image-20240521083543442" src="../../../../assets/image-20240521083543442.png" /></p>
 <h4 id="cycles">Cycles<a class="headerlink" href="#cycles" title="Permanent link">&para;</a></h4>
 <p><font color="red">圈图（Cycles）<span class="arithmatex">\(C_n(n\geq 3)\)</span> </font>是由 <span class="arithmatex">\(n\)</span> 个顶点 <span class="arithmatex">\(v_1,v_2,...,v_n\)</span> 以及边 <span class="arithmatex">\(\{v_1,v_2\},\{v_2,v_3\}\)</span><span class="arithmatex">\(,...,\{v_{n-1},v_n\},\{v_n,v_1\}\)</span> 组成的图。</p>
-<p><img alt="image-20240521083602606" src="../../assets/image-20240521083602606.png" /></p>
+<p><img alt="image-20240521083602606" src="../../../../assets/image-20240521083602606.png" /></p>
 <h4 id="wheels">Wheels<a class="headerlink" href="#wheels" title="Permanent link">&para;</a></h4>
 <p>当给圈图 <span class="arithmatex">\(C_n(n\geq 3)\)</span> 添加另一个顶点，并把这个新顶点与 <span class="arithmatex">\(C_n\)</span> 中的 <span class="arithmatex">\(n\)</span> 个顶点逐个连接时，就得到<font color="red">轮图（Wheels） <span class="arithmatex">\(W_n\)</span></font>。</p>
-<p><img alt="image-20240521083618992" src="../../assets/image-20240521083618992.png" /></p>
+<p><img alt="image-20240521083618992" src="../../../../assets/image-20240521083618992.png" /></p>
 <h4 id="n-cubes">n-Cubes<a class="headerlink" href="#n-cubes" title="Permanent link">&para;</a></h4>
 <p><font color="red"><span class="arithmatex">\(n\)</span> 立方体图（n-Cubes）</font>记作<font color="red"> <span class="arithmatex">\(Q_n\)</span></font>，是用顶点表示 <span class="arithmatex">\(2^n\)</span> 个长度为 <span class="arithmatex">\(n\)</span> 的比特串的图。两个顶点相邻，当且仅当它们所表示的比特串恰恰有一位不同。</p>
-<p><img alt="image-20240521083904405" src="../../assets/image-20240521083904405.png" /></p>
+<p><img alt="image-20240521083904405" src="../../../../assets/image-20240521083904405.png" /></p>
 <p>可以从 <span class="arithmatex">\(n\)</span> 立方体图 <span class="arithmatex">\(Q_n\)</span> 来构造 <span class="arithmatex">\((n+1)\)</span> 立方体图 <span class="arithmatex">\(Q_{n+1}\)</span>，方法是建立 <span class="arithmatex">\(Q_n\)</span> 的两个副本，在 <span class="arithmatex">\(Q_n\)</span> 的一个副本的顶点标记前加 0，在 <span class="arithmatex">\(Q_n\)</span> 的另一个副本的顶点标记前加 1，并且加入连接那些标记只在第一位不同的两个顶点的边。</p>
-<p><img alt="image-20240521084133465" src="../../assets/image-20240521084133465.png" /></p>
+<p><img alt="image-20240521084133465" src="../../../../assets/image-20240521084133465.png" /></p>
 <h3 id="bipartite-graphs">Bipartite Graphs<a class="headerlink" href="#bipartite-graphs" title="Permanent link">&para;</a></h3>
 <p>若把简单图 <span class="arithmatex">\(G\)</span> 的顶点集分成两个不相交的非空集合 <span class="arithmatex">\(V_1\)</span> 和 <span class="arithmatex">\(V_2\)</span>，使得图中的每一条边都连接 <span class="arithmatex">\(V_1\)</span> 中的一个顶点与 <span class="arithmatex">\(V_2\)</span> 中的一个顶点（因此 <span class="arithmatex">\(G\)</span> 中没有边连接 <span class="arithmatex">\(V_1\)</span> 中的两个顶点或 <span class="arithmatex">\(V_2\)</span> 中的两个顶点），则 <span class="arithmatex">\(G\)</span> 称为<font color="red">二分图（Bipartite Graphs）</font>。当此条件成立时，称 <span class="arithmatex">\((V_1,V_2)\)</span> 为 <span class="arithmatex">\(G\)</span> 的顶点集的一个<font color="red">二部划分（Bipartition）</font>。</p>
-<p><img alt="image-20240521084639742" src="../../assets/image-20240521084639742.png" /></p>
+<p><img alt="image-20240521084639742" src="../../../../assets/image-20240521084639742.png" /></p>
 <p><font color="red">完全二分图（Complete Bipartite Graphs）<span class="arithmatex">\(K_{m,n}\)</span> </font>是顶点集划分成分别含有 <span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 个顶点的两个子集的图，并且两个顶点之间有边当且仅当一个顶点属于第一个子集而另一个顶点属于第二个子集。</p>
-<p><img alt="image-20240521085035432" src="../../assets/image-20240521085035432.png" /></p>
+<p><img alt="image-20240521085035432" src="../../../../assets/image-20240521085035432.png" /></p>
 <p>定理：一个简单图是二分图，当且仅当能够对图中的每个顶点赋予两种不同的颜色，并使得没有两个相邻的顶点被赋予相同的颜色。</p>
 <h3 id="regular-graph">Regular Graph<a class="headerlink" href="#regular-graph" title="Permanent link">&para;</a></h3>
 <p>如果一个简单图中每个顶点都有相同的度，那么称这个简单图是<font color="red">规则的（Regular）</font>，特别地，如果每个顶点度都为 <span class="arithmatex">\(n\)</span> ，那么称这个简单图是<font color="red"> <span class="arithmatex">\(n-\)</span>规则的（n-Regular）</font>。</p>
@@ -2981,7 +2981,7 @@
 <h3 id="representing-graphs">Representing Graphs<a class="headerlink" href="#representing-graphs" title="Permanent link">&para;</a></h3>
 <p>用邻接表或邻接矩阵来表示，一般稀疏图用邻接表，稠密图用邻接矩阵。</p>
 <p>关联矩阵：设 <span class="arithmatex">\(G=(V,E)\)</span> 是无向图。设 <span class="arithmatex">\(v_1,v_2,...,v_n\)</span> 是图 <span class="arithmatex">\(G\)</span> 的顶点，而 <span class="arithmatex">\(e_1,e_2,...,e_m\)</span> 是该图的边。相对于 <span class="arithmatex">\(V\)</span> 和 <span class="arithmatex">\(E\)</span> 的这个顺序的关联矩阵是 <span class="arithmatex">\(n\times m\)</span> 的矩阵 <span class="arithmatex">\(M=[m_{ij}]\)</span>，其中 <span class="arithmatex">\(m_{ij}=\begin{cases}1，当边 e_j 关联v_i 时\\0，其他情况\end{cases}\)</span></p>
-<p><img alt="image-20240521092523345" src="../../assets/image-20240521092523345.png" /></p>
+<p><img alt="image-20240521092523345" src="../../../../assets/image-20240521092523345.png" /></p>
 <h3 id="isomophism-of-graphs">Isomophism Of Graphs<a class="headerlink" href="#isomophism-of-graphs" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(G_1=(V_1,E_1)\)</span> 和 <span class="arithmatex">\(G_2=(V_2,E_2)\)</span> 是简单图，若存在一对一的和映上的从 <span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_2\)</span>的函数 <span class="arithmatex">\(f\)</span> ，且 <span class="arithmatex">\(f\)</span> 具有这样的性质：对 <span class="arithmatex">\(V_1\)</span> 中所有的 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 来说，<span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 在 <span class="arithmatex">\(G_1\)</span> 中相邻当且仅当 <span class="arithmatex">\(f(a)\)</span> 和 <span class="arithmatex">\(f(b)\)</span> 在 <span class="arithmatex">\(G_2\)</span> 中相邻，则称 <span class="arithmatex">\(G_1\)</span> 与 <span class="arithmatex">\(G_2\)</span> 是<font color="red">同构的（Isomophic）</font>。这样的函数 <span class="arithmatex">\(f\)</span> 称为同构。两个不同构的简单图称为非同构的。</p>
 <p>判断两个简单图同构与否的方法：</p>
@@ -3060,7 +3060,7 @@
 <h3 id="eulers-formula">Euler's Formula<a class="headerlink" href="#eulers-formula" title="Permanent link">&para;</a></h3>
 <p>面（Region）：一个图的平面表示把平面分割成一些面。面分为<font color="red">有界面（Bounded Region）</font>和<font color="red">无界面（Unbounded Region）</font>。</p>
 <p><strong>e.g.一个图的平面表示将整个平面分为 6 个面。其中 <span class="arithmatex">\(R_6\)</span> 为无界面，<span class="arithmatex">\(R_1,R_2,R_3,R_4,R_5\)</span> 为有界面。</strong></p>
-<p><img alt="image-20240531144358274" src="../../assets/image-20240531144358274.png" /></p>
+<p><img alt="image-20240531144358274" src="../../../../assets/image-20240531144358274.png" /></p>
 <p>若一个面 <span class="arithmatex">\(R\)</span> 是一个连通平面简单图，则 <span class="arithmatex">\(R\)</span> 的度，记作 <span class="arithmatex">\(deg(R)\)</span>，为围成面 <span class="arithmatex">\(R\)</span> 的边数。对一个平面图 <span class="arithmatex">\(G=(V,E)\)</span>，有 <span class="arithmatex">\(2E=\sum\limits_{所有面 R}deg(R)\)</span>。</p>
 <p>如果两个面有一条共同边界，那么称这两个面是<font color="red">邻接的（Adjacent）</font>。</p>
 <p>如果边 <span class="arithmatex">\(e\)</span> 不是一条割边，那么它一定是两个面的共同边界。</p>
@@ -3152,7 +3152,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 10:34:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:09:09</span>
   </span>
 
     
