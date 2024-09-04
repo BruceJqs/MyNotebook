@@ -30,16 +30,19 @@ t.parentNode.insertBefore(e,t)}})();
   <div class="links-content"> 
    <div class="link-navigation"> 
     <div class="card"> 
+     <img class="ava" src="https://s2.loli.net/2024/02/01/gaE47y5fKM6kosV.png" /> 
      <div class="card-header"> 
       <div> 
        <a href="https://wcowin.work/ " target="_blank">Wcowin's Web</a> 
       </div> 
       <div class="info">
+       “循此苦旅，以达星辰”
        本站模板&mkdocs教程来源～
       </div> 
      </div> 
     </div>
     <div class="card"> 
+     <img class="ava" src="https://note.isshikih.top/_assets/iro/IroPatch_Brown.png" /> 
      <div class="card-header"> 
       <div> 
        <a href="https://note.isshikih.top/" target="_blank">IsshikiHugh's Notebook</a> 
