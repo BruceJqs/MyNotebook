@@ -161,6 +161,7 @@ extra:
   #     如果你同意,你可以帮助我们让我们的网站更好
 
 plugins:
+  - rss
   - search #搜索配置
   - git-committers:
       enabled: !ENV [CI, false]
@@ -173,9 +174,10 @@ plugins:
         - blog/posts/wkw.md
         - about/link.md
   - git-revision-date-localized:
-      enabled: !ENV [CI, false]
-      type: iso_date
-      enable_creation_date: false
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
       exclude:
         - index.md
         - tag.md
