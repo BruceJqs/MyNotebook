@@ -21,8 +21,8 @@ comments: true
 
 - 在[官网](https://www.oracle.com/java/technologies/downloads/#java11)进行下载
   
-![](/docs/assets/Screenshot%202024-09-04%20at%2016.07.49.png)
+![](../../../../../assets/Screenshot%202024-09-04%20at%2016.07.49.png)
 
 - 一直默认安装，最后打开终端输入 `java --version` ，如有相关版本信息则安装成功。
   
-![](/docs/assets/Screenshot1.png)
+![](../../../../../assets/Screenshot1.png)
