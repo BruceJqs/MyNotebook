@@ -23,6 +23,55 @@ comments: true
   
 ![](../../../../../assets/Screenshot%202024-09-04%20at%2016.07.49.png)
 
-- 一直默认安装，最后打开终端输入 `java --version` ，如有相关版本信息则安装成功。
+- 按照默认操作进行安装，最后打开终端输入 `java --version` ，如有相关版本信息则安装成功。
   
 ![](../../../../../assets/Screenshot1.png)
+
+## 下载 BurpSuite Professional
+
+- 在[官网](https://portswigger.net/burp/releases/professional-community-2022-3-9)进行下载
+  
+![](../../../../../assets/Screenshot2.png)
+
+- 按照默认操作进行安装，打开会提示输入 License Key，关闭即可。
+  
+![](https://i-blog.csdnimg.cn/blog_migrate/0888abdb10fd709243a0a92705189ccc.gif)
+
+## 下载使用注册机
+
+- 前往[网址](https://github.com/BruceJqs/ZJU-Courses/tree/main/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2%E5%AE%9E%E8%B7%B5%EF%BD%9CCapture%20The%20Flag/BurpSuite%20Professional)下载注册机
+
+![](../../../../../assets/Screenshot3.png)
+
+- 将下载好的两个 jar 文件放入包中
+
+![](../../../../../assets/Screenshot4.png)
+
+- 修改 Contents 下的 vmoptions.txt，添加：
+```
+-javaagent:burpsuitloader-3.7.17-all.jar
+-javaagent:BurpLoaderKeygen_v1.17.jar
+-noverify
+```
+  
+![](../../../../../assets/Screenshot5.png)
+
+- 在 app 目录中打开终端，输入 `java -jar burp-keygen-scz.jar` 命令启用注册机
+
+![](https://i-blog.csdnimg.cn/blog_migrate/60704e20d0d3276572284d352e2f0aba.gif)
+
+- 再重新打开一个 app 目录下的终端，输入 `java -noverify -javaagent:burp-loader-x-Ai.jar -jar burpsuite_pro.jar` 命令启动 BurpSuite
+
+![](https://i-blog.csdnimg.cn/blog_migrate/956d3ef1dd7cba923718e62caa543a04.gif)
+
+- 启动后还会弹出需要注册码的界面，这时候跟着下图的步骤操作即可
+  
+![](https://i-blog.csdnimg.cn/blog_migrate/3011d53201ab8eca0509f1f4f11dbb6c.gif)
+![](https://i-blog.csdnimg.cn/blog_migrate/bb9a451cbef8272938fa6023fb1cd37c.gif)
+![](https://i-blog.csdnimg.cn/blog_migrate/daf6ac506ebc3a25c291b8e218faa3f6.gif)
+![](https://i-blog.csdnimg.cn/blog_migrate/bc02600ba6e907ae564c5fe2b39f439d.gif)
+![](https://i-blog.csdnimg.cn/blog_migrate/c4d1d88f6b13400f8676f157189654c6.gif)
+
+- 最后重新打开即可食用
+  
+![](https://i-blog.csdnimg.cn/blog_migrate/d0a6a4adb0e83bd1f762d7d0170f9962.gif)
