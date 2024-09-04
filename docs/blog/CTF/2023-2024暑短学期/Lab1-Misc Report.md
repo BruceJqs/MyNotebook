@@ -15,7 +15,7 @@ comments: true
 
 ### 乱码情况 1：用 GBK 解码 UTF-8 编码的文本
 
-<img src="../../../assets/image-20240704164145984.png" alt="image-20240704164145984"  />
+![](../../../assets/image-20240704164145984.png)
 
 首先我们知道 utf-8 与 GBK 两种编码方式都是兼容 ASCII 码的，都是使用一个字节来表示 ASCII 码能表示的字符。
 
