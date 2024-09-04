@@ -105,7 +105,7 @@ comments: false
     </div>
 </div> 
 
-[^Knowing-that-loving-you-has-no-ending]:错过黄昏晚霞，还有漫天星辰 
+[]:错过黄昏晚霞，还有漫天星辰 
 <!-- [^see-how-much-I-love-you]:All problems in computer science can be solved by another level of indirection -->
 
    <body>
