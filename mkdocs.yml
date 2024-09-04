@@ -78,7 +78,9 @@ nav:
       - blog/Computer Science/Digital Design/index.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
-      - CTF 相关: blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md
+      - CTF 相关:
+        - CyberChef: blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md
+        - BurpSuite Professional: blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md
   - Mathematics: 
     - 微积分（甲）｜Calculus : 
       - blog/Math/Calculus/index.md
