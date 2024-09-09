@@ -47,7 +47,13 @@ comments: true
 - 计算机的活跃部分，包含数据通路（执行数学运算）和控制通路（根据程序要求给予通路、内存、I/O 设备指令），执行数字加法，检测 I/O 设备激活需要的数字、信号等。
 #### Memory
 
+- 程序的存储区域，其中包含运行程序所需的数据
+- Main Memory（主存）：易失性，用于在程序运行时保存它们。（例如 DRAM，SRAM）
+- Second Memory：非易失性，用于在运行前后存储程序和数据。（例如闪存、磁盘）
+
+![](../../../assets/Screenshot9.png)
 ### Software
 
 ![](../../../assets/Screenshot7.png)
+
 ## How build processors?

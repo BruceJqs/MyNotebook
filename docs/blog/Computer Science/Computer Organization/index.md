@@ -11,6 +11,7 @@ comments: true
 
 !!! 课程信息
 	授课老师：赵莎
+	
 	教材：Computer Organization and Design - The Hardware / Software Interface (RISC-V Edition)
 
 !!! Abstract

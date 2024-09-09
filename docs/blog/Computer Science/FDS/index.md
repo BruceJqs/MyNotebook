@@ -11,6 +11,7 @@ comments: true
 
 !!! 课程信息
 	授课老师：李松
+	
 	教材：Data Structures and Algorithm Analysis in C
 
 !!! warning 

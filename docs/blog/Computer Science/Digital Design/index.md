@@ -11,6 +11,7 @@ comments: true
 
 !!! 课程信息
 	授课老师：张明敏（避大雷！讲课极其抽象）
+	
 	教材：Logic and Computer Design Fundamentals, Fifth Edition
 
 !!! Abstract
