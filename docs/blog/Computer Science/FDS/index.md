@@ -9,6 +9,10 @@ comments: true
 
 # 数据结构基础｜Fundamental Data Structure
 
+!!! 课程信息
+	授课老师：李松
+	教材：Data Structures and Algorithm Analysis in C
+
 !!! warning 
     <font color="red">请千万不要做一些违反 academic honesty 的事情！</font>
 
