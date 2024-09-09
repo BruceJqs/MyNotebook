@@ -76,6 +76,9 @@ nav:
       - Project 1: blog/Computer Science/FDS/FDS-Project1 report.md
       - Project 2: blog/Computer Science/FDS/FDS-Project2 report.md
       - Project 3: blog/Computer Science/FDS/FDS-Project3 report.md
+    - 计算机组成｜Computer Organization:
+      - blog/Computer Science/Computer Organization/index.md
+      - "Chapter 01: Computer abstractions and Technology": blog/Computer Science/Computer Organization/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:

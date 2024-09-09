@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "6f5b6a56591ae40c",
+    "type": "split",
+    "children": [
+      {
+        "id": "67267da1e93b2c84",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "422109e7a93b4619",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "30177ffc684ff5db",
+    "type": "split",
+    "children": [
+      {
+        "id": "8bb457eeb4b3de0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66d528dac0297541",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9bc5153c42659b23",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "34d6ee08f4234ed0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 237.5
+  },
+  "right": {
+    "id": "db8c2c75e178d5b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "445ec33cff9f02bb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c65e75c007fcc9e9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5031e7bc613d29c3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c1feaf2dad43e244",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3d142c13a9deda6e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "422109e7a93b4619",
+  "lastOpenFiles": [
+    "docs/blog/Computer Science/Computer Organization/index.md",
+    "docs/assets/2023-06-23_12-05-34.png",
+    "docs/assets/2023-06-23_12-05-34.png.crdownload",
+    "docs/blog/Computer Science/Computer Organization",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
+  ]
+}
