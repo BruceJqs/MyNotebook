@@ -90,7 +90,7 @@
 
 !!! note "如何理解（从两个视角来看）"
 
-	- 旋转视角
+	=== “旋转视角”
 	 
 		以 LL Rotation 为例（RR Rotation 类似）
 	 
@@ -106,36 +106,36 @@
 	
 		=== "Initial"
 	
-		![](../../../assets/Pasted image 20240910204504.png)
+			![](../../../assets/Pasted image 20240910204504.png)
 	
 		=== "Connect"
 	
-		![](../../../assets/Pasted image 20240910204608.png)
+			![](../../../assets/Pasted image 20240910204608.png)
 	
 		=== "Rotate"
 	
-		![](../../../assets/Pasted image 20240910204657.png)
+			![](../../../assets/Pasted image 20240910204657.png)
 	
 		=== "Final"
 	
-		![](../../../assets/Pasted image 20240910204745.png)
+			![](../../../assets/Pasted image 20240910204745.png)
 	
-	- 换根视角
+	=== “换根视角”
 	
 		以 LL Rotation 为例：（RR Rotation 类似）
 		
 		=== "Initial"
 		
-		![](../../../assets/Pasted image 20240910205532.png)
+			![](../../../assets/Pasted image 20240910205532.png)
 		
 		=== "Cut"
 		
-		![](../../../assets/Pasted image 20240910205605.png)
+			![](../../../assets/Pasted image 20240910205605.png)
 		
 		=== "Move"
 		
-		![](../../../assets/Pasted image 20240910205655.png)
+			![](../../../assets/Pasted image 20240910205655.png)
 		
 		=== "Connect"
 		
-		![](../../../assets/Pasted image 20240910205733.png)
+			![](../../../assets/Pasted image 20240910205733.png)
