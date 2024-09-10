@@ -2685,13 +2685,14 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
 </div>
 <div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Screenshot13.png" /></p>
-<p>在插入一个 5 之后，可以看到，这使得 8 的平衡因子变成了 2，不再符合 AVL 树的要求，这样因为某个点的插入导致平衡因子不再符合 AVL 树要求的点被称为 <strong>Trouble Finder</strong>（即这里的 8），而引起这个“Trouble” 的点被称为 <strong>Trouble Maker</strong>（即这里的 5）。</p>
+<p>在插入一个 5 之后，可以看到，这使得 8 的平衡因子变成了 2，不再符合 AVL 树的要求，这样因为某个点的插入导致平衡因子不再符合 AVL 树要求的点被称为 <strong>Trouble Finder</strong>（即这里的 8），而引起这个 “Trouble” 的点被称为 <strong>Trouble Maker</strong>（即这里的 5）。</p>
 </div>
 </div>
 </div>
 </div>
-<div class="admonition rotation operations">
-<p class="admonition-title">Rotation</p>
+<div class="admonition note">
+<p class="admonition-title">Rotation Operations</p>
+<p>值得注意的是，在实际情况中可能会出现多个 "Trouble Finder",但我们只关注 <strong>"距离案发现场最近的 Trouble Finder"</strong> 为根的子树。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">LL</label><label for="__tabbed_2_2">RR</label><label for="__tabbed_2_3">LR</label><label for="__tabbed_2_4">RL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2704,11 +2705,104 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
 <p><img alt="" src="../../../../assets/Screenshot16.png" /></p>
 </div>
 <div class="tabbed-block">
-<p>![[Pasted image 20240910153653.png]]</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240910153653.png" /></p>
 </div>
 </div>
 </div>
 <p>稍作解释：例如 "LL"，指 "Trouble Maker" 位于 "Trouble Finder" 左孩子的左子树中的情况.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">如何理解（从两个视角来看）</p>
+<p>=== 旋转视角</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code> 以 LL Rotation 为例（RR Rotation 类似）
+
+ ![](../../../assets/Pasted image 20240910195353.png）
+
+ 我们可以得到当下有如下性质：
+
+ - $BF(Trouble Finder)=h(New Left Subtree)−h(Right Subtree)=2$
+ - $h(New L Left Subtree)−h(L Right Subtree)=1$
+     - 如果此差为 0，则不应当成为 Trouble Maker，若此差为 2，则 Left Child 应当为 Trouble Finder；
+
+现在我们希望在保留二叉搜索树的性质下，要让 $∣BF(Trouble Finder)∣$ 变小，一个很自然的想法就是让 $h(New Left Subtree)$ 减 1，让 $h(Right Subtree)$ 加 1。那么我们可以有如下操作：
+
+=== &quot;Initial&quot;
+
+![](../../../assets/Pasted image 20240910204504.png)
+
+=== &quot;Connect&quot;
+
+![](../../../assets/Pasted image 20240910204608.png)
+
+=== &quot;Rotate&quot;
+
+![](../../../assets/Pasted image 20240910204657.png)
+
+=== &quot;Final&quot;
+
+![](../../../assets/Pasted image 20240910204745.png)
+</code></pre></div></td></tr></table></div>
+<p>=== 换根视角</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>以 LL Rotation 为例：（RR Rotation 类似）
+
+=== &quot;Initial&quot;
+
+![](../../../assets/Pasted image 20240910205532.png)
+
+=== &quot;Cut&quot;
+
+![](../../../assets/Pasted image 20240910205605.png)
+
+=== &quot;Move&quot;
+
+![](../../../assets/Pasted image 20240910205655.png)
+
+=== &quot;Connect&quot;
+
+![](../../../assets/Pasted image 20240910205733.png)
+</code></pre></div></td></tr></table></div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -2779,7 +2873,7 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 15:37:48</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 20:57:53</span>
   </span>
 
     
