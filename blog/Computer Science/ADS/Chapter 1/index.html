@@ -1012,6 +1012,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Splay Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2603,6 +2627,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Splay Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2808,7 +2856,38 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
 <p class="admonition-title">如果出现多个 Trouble Finder 该怎么办？</p>
 <p>之前我们提到过，我们关注的是 <strong>"距离案发现场最近的 Trouble Finder"</strong> 为根的子树，并以此作出 Rotation 操作，这也会导致其所有父节点的平衡因子都会相应发生变化。</p>
 </div>
+<hr />
 <h2 id="splay-tree">Splay Tree<a class="headerlink" href="#splay-tree" title="Permanent link">&para;</a></h2>
+<h3 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Splay 树，即伸展树，想要解决的问题和 AVL 树类似，只不过 Splay 树希望达到的目标是在摊还(Amortized) 复杂度 <span class="arithmatex">\(O(\log⁡N)\)</span> 的情况下完成大部分对点操作。</p>
+</li>
+<li>
+<p>为使 AVL 保持平衡，我们需要维护从根节点到 Trouble Maker 这条路径上所有点的平衡因子。而 Splay 则不再维护这些信息，这意味着我们无法保证 Splay 树的状态都是平衡的，但是我们希望它尽可能平衡。具体来说就是对于 <span class="arithmatex">\(M\)</span> 次任意操作，其时间复杂度都为 <span class="arithmatex">\(O(M\log⁡N)\)</span>，均摊下来这 <span class="arithmatex">\(M\)</span> 个操作每一个都需要 <span class="arithmatex">\(O(\log⁡N)\)</span>。</p>
+</li>
+<li>
+<p>Splay 的核心思想就是，每当我们访问一个节点（比如查询某个点、插入某个点，删除某个点）时，我们就通过一系列操作将目标点转移到根部，形象上理解就是不断旋转整个树的构造，直到把点转到根部。</p>
+</li>
+</ul>
+<hr />
+<h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>对于某个节点 X，我们记其父节点为 P(Parent)，其父节点的父节点为 G(Grandparent)。</p>
+</blockquote>
+<ul>
+<li>当我们访问到 X 时：<ul>
+<li>如果 P 是根节点，则直接进行一次 Single Rotation（即类似 AVL Tree 中的 LL / RR Rotation）</li>
+<li>如果 P 不是根节点：<ul>
+<li>当情况为 LR / RL 时，进行一次 LR Rotation 或 RL Rotation，称该操作为 Zig-Zag</li>
+<li>当情况为 LL / RR 时，进行两次 Single Rotation，使得 X、P、G 的顺序逆转，像跷跷板一样，称该操作为 Zig-Zig</li>
+</ul>
+</li>
+<li>不断对 X 进行 Splay 操作，直到 X 成为根节点</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240910222750.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2878,7 +2957,7 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 22:00:52</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 22:29:15</span>
   </span>
 
     
