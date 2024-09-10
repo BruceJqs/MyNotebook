@@ -974,9 +974,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#definition" class="md-nav__link">
     <span class="md-ellipsis">
       Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rotation-operations-on-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rotation Operations on BST
     </span>
   </a>
   
@@ -2538,9 +2556,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#definition" class="md-nav__link">
     <span class="md-ellipsis">
       Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rotation-operations-on-bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rotation Operations on BST
     </span>
   </a>
   
@@ -2584,23 +2620,46 @@
 
 <h1 id="chapter-01-avl-trees-splay-trees-and-amortized-analysis">Chapter 01 : AVL trees, Splay Trees, and Amortized Analysis<a class="headerlink" href="#chapter-01-avl-trees-splay-trees-and-amortized-analysis" title="Permanent link">&para;</a></h1>
 <h2 id="avl-trees">AVL Trees<a class="headerlink" href="#avl-trees" title="Permanent link">&para;</a></h2>
+<h3 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>对于一棵二叉搜索树，其对点的操作代价为 <span class="arithmatex">\(O(\log⁡\space n)\)</span>。然而在最坏情况下，它会退化成 <span class="arithmatex">\(O(n)\)</span></p>
+</li>
+<li>
+<p>如果我们想让一棵二叉树好维护，那么就希望它的高度尽可能低，而在点数固定的情况下，一种朴素的思想是让节点尽可能“均匀”地分布在树上。</p>
+</li>
+</ul>
+<hr />
 <h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>!!! AVL%20Trees</p>
+<p>!!! "AVL Trees"</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>- 一个空二叉树是平衡的
-- 如果一个树 $T$ 是一个非空二叉树，其左子树为 $T_L$ ，右子树为 $T_R$ ，那么树 $T$ 是平衡的当且仅当：
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>- 一个空二叉搜索树是平衡的
+- 如果一个树 $T$ 是一个非空二叉搜索树，其左子树为 $T_L$ ，右子树为 $T_R$ ，那么树 $T$ 是平衡的当且仅当：
     - $T_L$ 和 $T_R$ 是平衡的
     - $|h_L-h_R|\leq 1$ ，其中 $h_L$ 为 $T_L$ 的高度，$h_R$ 为 $T_R$ 的高度
 </code></pre></div></td></tr></table></div>
-<p>!!! Balance%20Factor</p>
+<hr />
+<p>!!! "Balance Factor"</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>一个节点的平衡因子被用来描述一个节点的平衡状态，对于节点 $T_P$，它的左子树为 $T_L$​，右子树为 $T_R$​，则 $BF(T_P)=h(T_L)-h(T_R)$
 
 在一个 AVL 树中，其每一个节点的平衡因子均为 -1 或 0 或 1
 </code></pre></div></td></tr></table></div>
+<hr />
+<p>在如此定义之下，可以证明 AVL Trees 的高度为 <span class="arithmatex">\(O(\log\space N)\)</span>：</p>
+<p>!!! "Height of AVL Trees"
+    我们记 <span class="arithmatex">\(n_h\)</span> 是高度为 <span class="arithmatex">\(h\)</span> 的 AVL 树所包含的最少节点数，则有如下递推关系：
+    $$
+    n_h = \begin{cases}
+    1 (n=0)\
+    2 (n=1)\
+    n_{h-1}+n_{h-2}+1(n&gt;1)
+    \end{cases}
+    $$</p>
+<h3 id="the-rotation-operations-on-bst">The Rotation Operations on BST<a class="headerlink" href="#the-rotation-operations-on-bst" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2670,7 +2729,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 10:42:30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 13:35:48</span>
   </span>
 
     
