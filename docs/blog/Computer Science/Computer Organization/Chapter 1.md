@@ -55,5 +55,22 @@ comments: true
 ### Software
 
 ![](../../../assets/Screenshot7.png)
+#### Software Categorization
+
+- 按照用途分类：
+	- 系统软件（针对开发者）
+	- 应用软件（针对用户）
+- 操作系统：
+	- 处理基本输入和输出操作
+	- 分配存储和内存
+	- 在同时使用计算机的多个应用程序之间共享计算机
+- 编译器：翻译高级编程语言编写的程序
+- Firmware（驱动）：专为硬件设计的软件
+
+![](../../../assets/Screenshot10.png)
+#### From a High-Level Language to the Language of Hardware
+
+![](../../../assets/Screenshot11.png)
+
 
 ## How build processors?

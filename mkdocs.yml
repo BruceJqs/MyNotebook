@@ -79,6 +79,9 @@ nav:
     - 计算机组成｜Computer Organization:
       - blog/Computer Science/Computer Organization/index.md
       - "Chapter 01: Computer abstractions and Technology": blog/Computer Science/Computer Organization/Chapter 1.md
+    - 高级数据结构与算法分析｜Advanced Data Structure and Algorithm Analysis:
+      - blog/Computer Science/ADS/index.md
+      - "Chapter 01: AVL trees, Splay Trees, and Amortized Analysis": blog/Computer Science/ADS/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:

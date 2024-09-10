@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 1.md"
               }
             }
           }
@@ -149,11 +149,19 @@
   },
   "active": "422109e7a93b4619",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "Chapter 1.md",
+    "docs/blog/Computer Science/Computer Organization/index.md",
+    "index.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+    "docs/blog/Computer Science/ADS",
+    "未命名",
+    "docs/assets/Screenshot11.png",
+    "docs/assets/Screenshot10.png",
     "docs/assets/Screenshot9.png",
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Computer Science/Digital Design/index.md",
-    "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/assets/Screenshot8.png",
     "Pasted image 20240909214903.png",
     "docs/assets/Thumbs.db",
