@@ -90,7 +90,7 @@
 
 !!! note "如何理解（从两个视角来看）"
 
-	 === 旋转视角
+	 === “旋转视角”
 	 
 		 以 LL Rotation 为例（RR Rotation 类似）
 	 
@@ -120,7 +120,7 @@
 	
 		![](../../../assets/Pasted image 20240910204745.png)
 	
-	=== 换根视角
+	=== “换根视角”
 	
 		以 LL Rotation 为例：（RR Rotation 类似）
 		
