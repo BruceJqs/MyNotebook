@@ -27,14 +27,27 @@
 
 !!! note "Height of AVL Trees"
 	我们记 $n_h$ 是高度为 $h$ 的 AVL 树所包含的最少节点数，则有如下递推关系：
+	
 	$$
-	n_h = \begin{cases}
-	1 (n=0)\\
-	2 (n=1)\\
-	n_{h-1}+n_{h-2}+1(n>1)
-	\end{cases}
+	n_h = \left\{
+	\begin{array}{}
+	1 & & (n=0)\\
+	2 & & (n=1)\\
+	n_{h-1}+n_{h-2}+1 & & (n>1)
+	\end{array}
+	\right.
 	$$
-
+	
+	可以发现 $n_h$ 非常像 Fibonacci 的递推公式，因此我们用 Fibonacci 进行一个估计，对于 Fibonacci 数列：
+	
+	$$
+	\begin{aligned}
+	F_n & = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n) \\
+	& \approx\frac{1}{\sqrt{5}}(\frac{1+\sqrt{5}}{2})^n \\
+	\end{aligned}
+	$$
+	
+	由此我们可以得到 $\log(F_n)\approx n$ ，而 $n_h+1\approx F_{h+2}$，所以 $h\approx\log(n_h)$，即 $h\approx\log N$
 ### The Rotation Operations on BST
 
 
