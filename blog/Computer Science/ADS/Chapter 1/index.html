@@ -2631,34 +2631,36 @@
 </ul>
 <hr />
 <h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>!!! "AVL Trees"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>- 一个空二叉搜索树是平衡的
-- 如果一个树 $T$ 是一个非空二叉搜索树，其左子树为 $T_L$ ，右子树为 $T_R$ ，那么树 $T$ 是平衡的当且仅当：
-    - $T_L$ 和 $T_R$ 是平衡的
-    - $|h_L-h_R|\leq 1$ ，其中 $h_L$ 为 $T_L$ 的高度，$h_R$ 为 $T_R$ 的高度
-</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">AVL Trees</p>
+<ul>
+<li>一个空二叉搜索树是平衡的</li>
+<li>如果一个树 <span class="arithmatex">\(T\)</span> 是一个非空二叉搜索树，其左子树为 <span class="arithmatex">\(T_L\)</span> ，右子树为 <span class="arithmatex">\(T_R\)</span> ，那么树 <span class="arithmatex">\(T\)</span> 是平衡的当且仅当：<ul>
+<li><span class="arithmatex">\(T_L\)</span> 和 <span class="arithmatex">\(T_R\)</span> 是平衡的</li>
+<li><span class="arithmatex">\(|h_L-h_R|\leq 1\)</span> ，其中 <span class="arithmatex">\(h_L\)</span> 为 <span class="arithmatex">\(T_L\)</span> 的高度，<span class="arithmatex">\(h_R\)</span> 为 <span class="arithmatex">\(T_R\)</span> 的高度 </li>
+</ul>
+</li>
+</ul>
+</div>
 <hr />
-<p>!!! "Balance Factor"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>一个节点的平衡因子被用来描述一个节点的平衡状态，对于节点 $T_P$，它的左子树为 $T_L$​，右子树为 $T_R$​，则 $BF(T_P)=h(T_L)-h(T_R)$
-
-在一个 AVL 树中，其每一个节点的平衡因子均为 -1 或 0 或 1
-</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Balance Factor</p>
+<p>一个节点的平衡因子被用来描述一个节点的平衡状态，对于节点 <span class="arithmatex">\(T_P\)</span>，它的左子树为 <span class="arithmatex">\(T_L\)</span>​，右子树为 <span class="arithmatex">\(T_R\)</span>​，则 <span class="arithmatex">\(BF(T_P)=h(T_L)-h(T_R)\)</span></p>
+<p>在一个 AVL 树中，其每一个节点的平衡因子均为 -1 或 0 或 1</p>
+</div>
 <hr />
 <p>在如此定义之下，可以证明 AVL Trees 的高度为 <span class="arithmatex">\(O(\log\space N)\)</span>：</p>
-<p>!!! "Height of AVL Trees"
-    我们记 <span class="arithmatex">\(n_h\)</span> 是高度为 <span class="arithmatex">\(h\)</span> 的 AVL 树所包含的最少节点数，则有如下递推关系：
-    $$
-    n_h = \begin{cases}
-    1 (n=0)\
-    2 (n=1)\
-    n_{h-1}+n_{h-2}+1(n&gt;1)
-    \end{cases}
-    $$</p>
+<div class="admonition note">
+<p class="admonition-title">Height of AVL Trees</p>
+<p>我们记 <span class="arithmatex">\(n_h\)</span> 是高度为 <span class="arithmatex">\(h\)</span> 的 AVL 树所包含的最少节点数，则有如下递推关系：
+$$
+n_h = \begin{cases}
+1 (n=0)\
+2 (n=1)\
+n_{h-1}+n_{h-2}+1(n&gt;1)
+\end{cases}
+$$</p>
+</div>
 <h3 id="the-rotation-operations-on-bst">The Rotation Operations on BST<a class="headerlink" href="#the-rotation-operations-on-bst" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -2729,7 +2731,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 13:35:48</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月10日 13:39:51</span>
   </span>
 
     
