@@ -167,4 +167,25 @@
 !!! question "如果出现多个 Trouble Finder 该怎么办？"
 
 	之前我们提到过，我们关注的是 **"距离案发现场最近的 Trouble Finder"** 为根的子树，并以此作出 Rotation 操作，这也会导致其所有父节点的平衡因子都会相应发生变化。
+***
 ## Splay Tree
+### Definition
+
+- Splay 树，即伸展树，想要解决的问题和 AVL 树类似，只不过 Splay 树希望达到的目标是在摊还(Amortized) 复杂度 $O(\log⁡N)$ 的情况下完成大部分对点操作。
+
+- 为使 AVL 保持平衡，我们需要维护从根节点到 Trouble Maker 这条路径上所有点的平衡因子。而 Splay 则不再维护这些信息，这意味着我们无法保证 Splay 树的状态都是平衡的，但是我们希望它尽可能平衡。具体来说就是对于 $M$ 次任意操作，其时间复杂度都为 $O(M\log⁡N)$，均摊下来这 $M$ 个操作每一个都需要 $O(\log⁡N)$。
+
+- Splay 的核心思想就是，每当我们访问一个节点（比如查询某个点、插入某个点，删除某个点）时，我们就通过一系列操作将目标点转移到根部，形象上理解就是不断旋转整个树的构造，直到把点转到根部。
+***
+### Operations
+
+> 对于某个节点 X，我们记其父节点为 P(Parent)，其父节点的父节点为 G(Grandparent)。
+
+- 当我们访问到 X 时：
+	- 如果 P 是根节点，则直接进行一次 Single Rotation（即类似 AVL Tree 中的 LL / RR Rotation）
+	- 如果 P 不是根节点：
+		- 当情况为 LR / RL 时，进行一次 LR Rotation 或 RL Rotation，称该操作为 Zig-Zag
+		- 当情况为 LL / RR 时，进行两次 Single Rotation，使得 X、P、G 的顺序逆转，像跷跷板一样，称该操作为 Zig-Zig
+	- 不断对 X 进行 Splay 操作，直到 X 成为根节点
+
+![](../../../assets/Pasted%20image%2020240910222750.png)
