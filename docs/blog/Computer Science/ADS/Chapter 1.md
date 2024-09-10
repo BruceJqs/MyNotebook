@@ -55,5 +55,8 @@
 > 为了时刻能维护 AVL 树的平衡，我们需要引入“旋转”这一操作，首先我们需要定义两个概念：
 
 !!! note "Trouble Maker & Trouble Finder"
+	=== "Initial"
 	![](../../../assets/Screenshot12.png)
+	=== "After Insertion"
 	![](../../../assets/Screenshot13.png)
+	在插入一个 5 之后，可以看到，这使得 8 的平衡因子变成了 2，不再符合 AVL 树的要求，这样因为某个点的插入导致平衡因子不再符合 AVL 树要求的点被称为 **Trouble Finder**（即这里的 8），而引起这个“Trouble” 的点被称为 **Trouble Maker**（即这里的 5）。
