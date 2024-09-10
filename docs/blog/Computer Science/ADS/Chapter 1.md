@@ -88,54 +88,54 @@
 		
 	稍作解释：例如 "LL"，指 "Trouble Maker" 位于 "Trouble Finder" 左孩子的左子树中的情况.
 
-!!! note "如何理解（从两个视角来看）"
+>接下来我们从两个视角来理解 Rotate Operation：
 
-	=== “旋转视角”
+!!! note "从旋转视角来理解"
+
+	以 LL Rotation 为例（RR Rotation 类似）
 	 
-		以 LL Rotation 为例（RR Rotation 类似）
+	![](../../../assets/Pasted image 20240910195353.png）
 	 
-		 ![](../../../assets/Pasted image 20240910195353.png）
+	我们可以得到当下有如下性质：
 	 
-		 我们可以得到当下有如下性质：
-	 
-		 - $BF(Trouble Finder)=h(New Left Subtree)−h(Right Subtree)=2$
-		 - $h(New L Left Subtree)−h(L Right Subtree)=1$
-			 - 如果此差为 0，则不应当成为 Trouble Maker，若此差为 2，则 Left Child 应当为 Trouble Finder；
+	- $BF(Trouble Finder)=h(New Left Subtree)−h(Right Subtree)=2$
+	- $h(New L Left Subtree)−h(L Right Subtree)=1$
+		- 如果此差为 0，则不应当成为 Trouble Maker，若此差为 2，则 Left Child 应当为 Trouble Finder；
 	
-		现在我们希望在保留二叉搜索树的性质下，要让 $∣BF(Trouble Finder)∣$ 变小，一个很自然的想法就是让 $h(New Left Subtree)$ 减 1，让 $h(Right Subtree)$ 加 1。那么我们可以有如下操作：
+	现在我们希望在保留二叉搜索树的性质下，要让 $∣BF(Trouble Finder)∣$ 变小，一个很自然的想法就是让 $h(New Left Subtree)$ 减 1，让 $h(Right Subtree)$ 加 1。那么我们可以有如下操作：
 	
-		=== "Initial"
+	=== "Initial"
 	
-			![](../../../assets/Pasted image 20240910204504.png)
+		![](../../../assets/Pasted image 20240910204504.png)
 	
-		=== "Connect"
+	=== "Connect"
 	
-			![](../../../assets/Pasted image 20240910204608.png)
+		![](../../../assets/Pasted image 20240910204608.png)
 	
-		=== "Rotate"
+	=== "Rotate"
 	
-			![](../../../assets/Pasted image 20240910204657.png)
+		![](../../../assets/Pasted image 20240910204657.png)
 	
-		=== "Final"
+	=== "Final"
 	
-			![](../../../assets/Pasted image 20240910204745.png)
+		![](../../../assets/Pasted image 20240910204745.png)
+
+!!! note "从换根视角来理解（推荐）"
 	
-	=== “换根视角”
-	
-		以 LL Rotation 为例：（RR Rotation 类似）
+	以 LL Rotation 为例：（RR Rotation 类似）
 		
-		=== "Initial"
+	=== "Initial"
 		
-			![](../../../assets/Pasted image 20240910205532.png)
+		![](../../../assets/Pasted image 20240910205532.png)
 		
-		=== "Cut"
+	=== "Cut"
 		
-			![](../../../assets/Pasted image 20240910205605.png)
+		![](../../../assets/Pasted image 20240910205605.png)
 		
-		=== "Move"
+	=== "Move"
 		
-			![](../../../assets/Pasted image 20240910205655.png)
+		![](../../../assets/Pasted image 20240910205655.png)
 		
-		=== "Connect"
+	=== "Connect"
 		
-			![](../../../assets/Pasted image 20240910205733.png)
+		![](../../../assets/Pasted image 20240910205733.png)
