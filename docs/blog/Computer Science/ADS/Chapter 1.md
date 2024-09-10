@@ -64,10 +64,12 @@
 	
 		![](../../../assets/Screenshot13.png)
 	
-		在插入一个 5 之后，可以看到，这使得 8 的平衡因子变成了 2，不再符合 AVL 树的要求，这样因为某个点的插入导致平衡因子不再符合 AVL 树要求的点被称为 **Trouble Finder**（即这里的 8），而引起这个“Trouble” 的点被称为 **Trouble Maker**（即这里的 5）。
+		在插入一个 5 之后，可以看到，这使得 8 的平衡因子变成了 2，不再符合 AVL 树的要求，这样因为某个点的插入导致平衡因子不再符合 AVL 树要求的点被称为 **Trouble Finder**（即这里的 8），而引起这个 “Trouble” 的点被称为 **Trouble Maker**（即这里的 5）。
 	
-!!! Rotation Operations
+!!! note "Rotation Operations"
 
+	值得注意的是，在实际情况中可能会出现多个 "Trouble Finder",但我们只关注 **"距离案发现场最近的 Trouble Finder"** 为根的子树。
+	
 	=== "LL"
 	
 		![](../../../assets/Screenshot14.png)
@@ -82,6 +84,58 @@
 	
 	=== "RL"
 		
-		![[Pasted image 20240910153653.png]]
+		![](../../../assets/Pasted image 20240910153653.png)
 		
 	稍作解释：例如 "LL"，指 "Trouble Maker" 位于 "Trouble Finder" 左孩子的左子树中的情况.
+
+!!! note "如何理解（从两个视角来看）"
+
+	 === 旋转视角
+	 
+		 以 LL Rotation 为例（RR Rotation 类似）
+	 
+		 ![](../../../assets/Pasted image 20240910195353.png）
+	 
+		 我们可以得到当下有如下性质：
+	 
+		 - $BF(Trouble Finder)=h(New Left Subtree)−h(Right Subtree)=2$
+		 - $h(New L Left Subtree)−h(L Right Subtree)=1$
+			 - 如果此差为 0，则不应当成为 Trouble Maker，若此差为 2，则 Left Child 应当为 Trouble Finder；
+	
+		现在我们希望在保留二叉搜索树的性质下，要让 $∣BF(Trouble Finder)∣$ 变小，一个很自然的想法就是让 $h(New Left Subtree)$ 减 1，让 $h(Right Subtree)$ 加 1。那么我们可以有如下操作：
+	
+		=== "Initial"
+	
+		![](../../../assets/Pasted image 20240910204504.png)
+	
+		=== "Connect"
+	
+		![](../../../assets/Pasted image 20240910204608.png)
+	
+		=== "Rotate"
+	
+		![](../../../assets/Pasted image 20240910204657.png)
+	
+		=== "Final"
+	
+		![](../../../assets/Pasted image 20240910204745.png)
+	
+	=== 换根视角
+	
+		以 LL Rotation 为例：（RR Rotation 类似）
+		
+		=== "Initial"
+		
+		![](../../../assets/Pasted image 20240910205532.png)
+		
+		=== "Cut"
+		
+		![](../../../assets/Pasted image 20240910205605.png)
+		
+		=== "Move"
+		
+		![](../../../assets/Pasted image 20240910205655.png)
+		
+		=== "Connect"
+		
+		![](../../../assets/Pasted image 20240910205733.png)
