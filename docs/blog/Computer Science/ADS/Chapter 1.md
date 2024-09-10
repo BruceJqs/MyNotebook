@@ -87,14 +87,14 @@
 		![](../../../assets/Pasted image 20240910153653.png)
 		
 	稍作解释：例如 "LL"，指 "Trouble Maker" 位于 "Trouble Finder" 左孩子的左子树中的情况.
-
+***
 >接下来我们从两个视角来理解 Rotate Operation：
 
 !!! note "从旋转视角来理解"
 
 	以 LL Rotation 为例（RR Rotation 类似）
 	 
-	![](../../../assets/Pasted image 20240910195353.png）
+	![](../../../assets/Pasted image 20240910195353.png)
 	 
 	我们可以得到当下有如下性质：
 	 
@@ -139,3 +139,32 @@
 	=== "Connect"
 		
 		![](../../../assets/Pasted image 20240910205733.png)
+		
+	当插入 "Trouble Maker" 时，"Trouble Finder" 发现左子树太高了，因此我们不希望让左子树成为某个节点的子树，如 "Cut" 操作割裂其与 "Trouble Finder" 的关系。
+	
+	我们仍然需要让这个森林重新变回一个树，所以就需要重新从里面找到根节点，显然，只能选择 Trouble Finder 旁边的 Left Child。但是为了继续维护二叉搜索树的性质，所以我们需要将 L Right Subtree 移植到 Trouble Finder 必定空缺（因为这里原先是 Left Child）的左指针上。
+	
+	再以 LR Rotation 为例：(RL Rotation 类似)：
+	
+	=== "Initial"
+	
+		![](../../../assets/Pasted image 20240910213533.png)
+	
+	=== "Connect"
+	
+		![](../../../assets/Pasted image 20240910213627.png)
+		
+	=== "Cut"
+	
+		![](../../../assets/Pasted image 20240910213812.png)
+		
+	=== "Final"
+	
+		![](../../../assets/Pasted image 20240910213910.png)
+		
+	找到关键的三个点（Left Child, Trouble Finder, L Right Child），然后把最下面的顶到上面去，剩下两个作为左右子树，原先的那个点的左右子树则对应地，左子树接到左边空缺的右子树上，右子树接到右边空缺的左子树上。
+***
+!!! question "如果出现多个 Trouble Finder 该怎么办？"
+
+	之前我们提到过，我们关注的是 **"距离案发现场最近的 Trouble Finder"** 为根的子树，并以此作出 Rotation 操作，这也会导致其所有父节点的平衡因子都会相应发生变化。
+## Splay Tree
