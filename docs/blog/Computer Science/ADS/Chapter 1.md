@@ -330,16 +330,16 @@ $$
 	一个可用的势能函数是树中所有节点的 rank 之和：
 	
 	$$
-	\Phi(T) = \sum_{i\in T}\log S(i)
+	\Phi(T) = \sum_{i\in T}\log_2 S(i)
 	$$
 	
-	其中 S(i) 指的是子树 i 中的节点数（包括节点 i)。我们用 R(i) 表示节点 i 的 rank，$R(i) = \log S(i)$。选取 rank 之和作为势能函数的好处是除了 X, P, G 三个节点外，其他节点在 splay 操作中 rank 保持不变，因而可以简化计算。
+	其中 S(i) 指的是子树 i 中的节点数（包括节点 i)。我们用 R(i) 表示节点 i 的 rank，$R(i) = \log_2 S(i)$。选取 rank 之和作为势能函数的好处是除了 X, P, G 三个节点外，其他节点在 splay 操作中 rank 保持不变，因而可以简化计算。
 	
 	我们使用 $R_2$ 表示操作后的势能，$R_1$ 表示操作前的势能。
 	
 	=== "Zig"
 	
-		![](../../../assets/Pasted image 20240911162031.png)
+		![](../../../assets/Pasted image 20240911163332.png)
 		
 		Zig 操作做了个单旋，实际成本为 1
 		
@@ -349,11 +349,11 @@ $$
 		\hat{c_i} = 1 + R_2(X) - R_1(X) + R_2(P) - R_1(P)
 		$$
 		
-		由于节点 P 由根节点变为非根节点，我们有 $R_2(P)-R_1(P)\leq 0$ ，因此 $\hat{c_i}\leq 1 + R_2(X) - R_1(X)$。既然 $R_2(X) - R_1(X)\leq 0$，我们有$\hat{c_i}\leq 1 + 3(R_2(X) - R_1(X))$
+		由于节点 P 由根节点变为非根节点，我们有 $R_2(P)-R_1(P)\leq 0$ ，因此 $\hat{c_i}\leq 1 + R_2(X) - R_1(X)$。
 		
 	=== "Zig-Zag"
 	
-		![](../../../assets/Pasted image 20240911162231.png)
+		![](../../../assets/Pasted image 20240911163409.png)
 		
 		Zig-Zag 操作做了两次旋转，实际成本为 2
 		
@@ -370,3 +370,98 @@ $$
 		!!! Lemma
 		
 			由 $y = \log_2 x$ 是一个凸函数，我们有 $\frac{\log_2 a+\log_2 b}{2}\leq\log_2 \frac{a + b}{2}$
+			
+			因此我们有：
+			
+			$$
+			\begin{aligned}
+			\log_2 a+\log_2 b &= 2(\frac{\log_2 a + \log_2 b}{2})\\
+			&\leq 2(\log_2\frac{a+b}{2})\\
+			&= 2(\log_2(a+b)-\log_2 2)\\
+			&= 2\log_2(a+b)-2
+			\end{aligned}
+			$$
+			
+		由引理我们就可以得到：
+		
+		$$
+		\begin{aligned}
+		R_2(P)+R_2(G) &= \log_2 S_2(P)+\log_2 S_2(G)\\
+		&\leq 2\log_2(S_2(P)+S_2(G)) - 2\\
+		&\leq 2\log_2(S_2(P)+S_2(G)+1) - 2\\
+		&= 2\log_2 S_2(X) - 2\\
+		&= 2R_2(X) - 2
+		\end{aligned}
+		$$
+		
+		再加上初始 P 为 X 的父亲，那么我们有 $R_1(P)\geq R_1(X)$，代入两式我们可以得到：
+		
+		$$
+		\begin{aligned}
+		\hat{c_i} &= 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)\\
+		&\leq 2R_2(X)-R_1(X)-R_1(P)\\
+		&\leq 2(R_2(X)-R_1(X))
+		\end{aligned}
+		$$
+		
+	=== "Zig-Zig"
+	
+		![](../../../assets/Pasted image 20240911165214.png)
+		
+		Zig-Zag 操作做了两次旋转，实际成本为 2
+		
+		我们有：
+		
+		$$
+		\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
+		$$
+		
+		我们继续用 Lemma(这一次比较难想，但很重要)：
+		
+		$$
+		\begin{aligned}
+		R_2(G)+R_1(X) &= \log_2 S_2(G)+\log_2 S_1(X)\\
+		&\leq 2\log_2(S_2(G)+S_1(X)) - 2\\
+		&\leq 2\log_2(S_2(G)+S_1(X)+1) - 2\\
+		&= 2\log_2 S_2(X) - 2\\
+		&= 2R_2(X) - 2
+		\end{aligned}
+		$$
+		
+		$$
+		\therefore R_2(G)\leq 2R_2(X)-R_1(X)-2
+		$$
+		
+		再加上初始 P 为 X 的父亲，那么我们有 $R_1(P)\geq R_1(X)$，旋转后 X 为 P 的父亲，那么我们有 $R_2(P)\leq R_2(X)$，代入我们可以得到：
+		
+		$$
+		\begin{aligned}
+		\hat{c_i} &= 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)\\
+		&\leq 3R_2(X) - 2R_1(X) + R_2(P) - R_1(P) - R_1(G)\\
+		&\leq 3R_2(X) - 3R_1(X) + R_2(P) - R_1(G)\\
+		&\leq 3R_2(X) - 3R_1(X)
+		\end{aligned}
+		$$
+		
+	至此，我们已经获得了三个操作的所有上界：
+	
+	$$
+	\begin{aligned}
+	\hat{c_{zig_i}} \leq 1 + R_2(X) - R_1(X)\\
+	\hat{c_{zig-zag_i}} \leq 2(R_2(X) - R_1(X))\\
+	\hat{c_{zig-zig_i}} \leq 3(R_2(X) - R_1(X))
+	\end{aligned}
+	$$
+	
+	根据 Splay 操作的特性，单次 Zig 操作最多只有一次（总次数要么是偶数要么是奇数，偶数可通过连续 Zig-Zig 操作进行，奇数即补上一次单次 Zig 操作）
+	
+	最终整合在一起我们可以得到均摊上界：
+	
+	$$
+	\begin{aligned}
+	\sum\hat c_i &= \hat {c_{zig_i}} + \sum\hat {c_{zig-zag_i}} + \sum\hat {c_{zig-zig_i}}\\
+	&\leq 1 + 3(R_N(X)-R_1(X))\\
+	&= 1 + 3(R_1(T)-R_1(X))\\
+	&= O(\log N)
+	\end{aligned}
+	$$
