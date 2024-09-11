@@ -3092,23 +3092,23 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
 <p>注意到在 Splay 操作中，几乎每个节点的高度都会改变，哪怕该节点为根节点的子树没有任何变化。如果我们直接使用节点高度作为势能函数，后续的数学计算与推导会变得非常复杂。我们希望有一个可以简化后续数学推导的势能函数。</p>
 <p>一个可用的势能函数是树中所有节点的 rank 之和：</p>
 <div class="arithmatex">\[
-\Phi(T) = \sum_{i\in T}\log S(i)
+\Phi(T) = \sum_{i\in T}\log_2 S(i)
 \]</div>
-<p>其中 S(i) 指的是子树 i 中的节点数（包括节点 i)。我们用 R(i) 表示节点 i 的 rank，<span class="arithmatex">\(R(i) = \log S(i)\)</span>。选取 rank 之和作为势能函数的好处是除了 X, P, G 三个节点外，其他节点在 splay 操作中 rank 保持不变，因而可以简化计算。</p>
+<p>其中 S(i) 指的是子树 i 中的节点数（包括节点 i)。我们用 R(i) 表示节点 i 的 rank，<span class="arithmatex">\(R(i) = \log_2 S(i)\)</span>。选取 rank 之和作为势能函数的好处是除了 X, P, G 三个节点外，其他节点在 splay 操作中 rank 保持不变，因而可以简化计算。</p>
 <p>我们使用 <span class="arithmatex">\(R_2\)</span> 表示操作后的势能，<span class="arithmatex">\(R_1\)</span> 表示操作前的势能。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Zig</label><label for="__tabbed_6_2">Zig-Zag</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Zig</label><label for="__tabbed_6_2">Zig-Zag</label><label for="__tabbed_6_3">Zig-Zig</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240911162031.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240911163332.png" /></p>
 <p>Zig 操作做了个单旋，实际成本为 1</p>
 <p>从 Zig 操作示意图中可以看出，在整个操作中只有 X 和 P 的 rank 值有变化。所以我们有：</p>
 <div class="arithmatex">\[
 \hat{c_i} = 1 + R_2(X) - R_1(X) + R_2(P) - R_1(P)
 \]</div>
-<p>由于节点 P 由根节点变为非根节点，我们有 <span class="arithmatex">\(R_2(P)-R_1(P)\leq 0\)</span> ，因此 <span class="arithmatex">\(\hat{c_i}\leq 1 + R_2(X) - R_1(X)\)</span>。既然 <span class="arithmatex">\(R_2(X) - R_1(X)\leq 0\)</span>，我们有<span class="arithmatex">\(\hat{c_i}\leq 1 + 3(R_2(X) - R_1(X))\)</span></p>
+<p>由于节点 P 由根节点变为非根节点，我们有 <span class="arithmatex">\(R_2(P)-R_1(P)\leq 0\)</span> ，因此 <span class="arithmatex">\(\hat{c_i}\leq 1 + R_2(X) - R_1(X)\)</span>。</p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240911162231.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240911163409.png" /></p>
 <p>Zig-Zag 操作做了两次旋转，实际成本为 2</p>
 <p>我们有：</p>
 <div class="arithmatex">\[
@@ -3119,10 +3119,85 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
 <div class="admonition lemma">
 <p class="admonition-title">Lemma</p>
 <p>由 <span class="arithmatex">\(y = \log_2 x\)</span> 是一个凸函数，我们有 <span class="arithmatex">\(\frac{\log_2 a+\log_2 b}{2}\leq\log_2 \frac{a + b}{2}\)</span></p>
+<p>因此我们有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\log_2 a+\log_2 b &amp;= 2(\frac{\log_2 a + \log_2 b}{2})\\
+&amp;\leq 2(\log_2\frac{a+b}{2})\\
+&amp;= 2(\log_2(a+b)-\log_2 2)\\
+&amp;= 2\log_2(a+b)-2
+\end{aligned}
+\]</div>
+</div>
+<p>由引理我们就可以得到：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+R_2(P)+R_2(G) &amp;= \log_2 S_2(P)+\log_2 S_2(G)\\
+&amp;\leq 2\log_2(S_2(P)+S_2(G)) - 2\\
+&amp;\leq 2\log_2(S_2(P)+S_2(G)+1) - 2\\
+&amp;= 2\log_2 S_2(X) - 2\\
+&amp;= 2R_2(X) - 2
+\end{aligned}
+\]</div>
+<p>再加上初始 P 为 X 的父亲，那么我们有 <span class="arithmatex">\(R_1(P)\geq R_1(X)\)</span>，代入两式我们可以得到：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\hat{c_i} &amp;= 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)\\
+&amp;\leq 2R_2(X)-R_1(X)-R_1(P)\\
+&amp;\leq 2(R_2(X)-R_1(X))
+\end{aligned}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240911165214.png" /></p>
+<p>Zig-Zag 操作做了两次旋转，实际成本为 2</p>
+<p>我们有：</p>
+<div class="arithmatex">\[
+\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
+\]</div>
+<p>我们继续用 Lemma(这一次比较难想，但很重要)：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
+&amp;\leq 2\log_2(S_2(G)+S_1(X)) - 2\\
+&amp;\leq 2\log_2(S_2(G)+S_1(X)+1) - 2\\
+&amp;= 2\log_2 S_2(X) - 2\\
+&amp;= 2R_2(X) - 2
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\therefore R_2(G)\leq 2R_2(X)-R_1(X)-2
+\]</div>
+<p>再加上初始 P 为 X 的父亲，那么我们有 <span class="arithmatex">\(R_1(P)\geq R_1(X)\)</span>，旋转后 X 为 P 的父亲，那么我们有 <span class="arithmatex">\(R_2(P)\leq R_2(X)\)</span>，代入我们可以得到：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\hat{c_i} &amp;= 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)\\
+&amp;\leq 3R_2(X) - 2R_1(X) + R_2(P) - R_1(P) - R_1(G)\\
+&amp;\leq 3R_2(X) - 3R_1(X) + R_2(P) - R_1(G)\\
+&amp;\leq 3R_2(X) - 3R_1(X)
+\end{aligned}
+\]</div>
 </div>
 </div>
 </div>
-</div>
+<p>至此，我们已经获得了三个操作的所有上界：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\hat{c_{zig_i}} \leq 1 + R_2(X) - R_1(X)\\
+\hat{c_{zig-zag_i}} \leq 2(R_2(X) - R_1(X))\\
+\hat{c_{zig-zig_i}} \leq 3(R_2(X) - R_1(X))
+\end{aligned}
+\]</div>
+<p>根据 Splay 操作的特性，单次 Zig 操作最多只有一次（总次数要么是偶数要么是奇数，偶数可通过连续 Zig-Zig 操作进行，奇数即补上一次单次 Zig 操作）</p>
+<p>最终整合在一起我们可以得到均摊上界：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum\hat c_i &amp;= \hat {c_{zig_i}} + \sum\hat {c_{zig-zag_i}} + \sum\hat {c_{zig-zig_i}}\\
+&amp;\leq 1 + 3(R_N(X)-R_1(X))\\
+&amp;= 1 + 3(R_1(T)-R_1(X))\\
+&amp;= O(\log N)
+\end{aligned}
+\]</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -3193,7 +3268,7 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 16:27:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 17:16:35</span>
   </span>
 
     
