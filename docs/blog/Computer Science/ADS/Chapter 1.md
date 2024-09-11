@@ -203,5 +203,66 @@
 !!! note "Find Max"
 
 	根据 BST 的性质，可以在 $O(\log⁡N)$ 的时间里找到最大值，将它旋转到根部以后，可以发现它没有右孩子树，直接删掉就行。
-
+***
 ## Amortized Analysis
+
+!!! Application
+
+	- 一般情况下我们分析时间复杂度时，针对的往往是某个具体的操作。而均摊分析的对象则是一个数据结构的一系列操作，而这一系列操作中有成本较低的，也有成本较高的，而且操作之间也可能有互相影响。
+	- 均摊分析是以一个更全局的角度来计算“平均”的操作代价，它计算的是从初始状态开始，连续的 M 次任意操作的平均成本。需要注意的是，它不同于平均时间分析（所有可能的操作出现概率平均，也就是直接求平均）和概率算法的概率分析（所有可能的操作出现概率不同，也就是加权求平均）不同，摊还分析和概率完全无关。
+
+可以得到如下不等式：
+
+$$
+worst\_case\space bound\geq amortized\space bound\geq average\_case\space bound
+$$
+
+具体解释如下：
+
+!!! Explanation
+
+	由于 amortized bound 限制了所有的 M 次操作，所以其上界就等于最差的情况发生 M 次（当然，很多情况下不一定能取到全都是最差情况）；同样的，由于需要对任意组合都成立，所以一定不会小于统计学意义上的平均情况。
+
+### Aggregate Analysis
+
+聚合法相对简单，即求 N 次操作的平均代价：
+
+$$
+T_{amortized} = \frac{\sum\limits_{i=1}^n\hat{c_i}}{n}
+$$
+
+其中 $\hat{c_i}$ 表示一次操作的均摊成本（可人为自行定义），需要满足条件：
+
+$$
+\sum\limits_{i=1}^n\hat{c_i}\geq\sum\limits_{i=1}^n c_i
+$$
+
+其中 $c_i$ 表示一次操作的实际成本
+
+!!! Example
+
+	对于一个能实现一次性弹出多个元素的栈 S，其实际消耗成本为：
+	
+	- 入栈：1
+	- 出栈：1
+	- k 个元素出栈：min(sizeof(S),k)
+	
+	我们定义这三个操作的均摊成本如下：
+	
+	- 入栈：2
+	- 出栈：0
+	- k 个元素出栈：0
+	
+	此时我们能注意到对于一个栈来说，出栈的次数一定小于等于入栈的次数，因此我们有：
+	
+	$$
+	\begin{aligned}
+	T(n)&=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
+	&\leq 2\times push\_times=\sum\limits_{i=1}^n\hat{c_i}\\
+	&\leq 2n
+	\end{aligned}
+	$$
+	$$
+	\therefore T_{amortized}=\frac{\sum\limits_{i=1}^n\hat{c_i}}{n}=\frac{O(n)}{n}=O(1)
+	$$
+	
