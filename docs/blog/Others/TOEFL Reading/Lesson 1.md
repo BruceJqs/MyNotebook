@@ -82,6 +82,7 @@
 | quiescent       | adj.               | 静态的         |                                                                                                |
 | iridescent      | adj.               | 色彩斑斓的       |                                                                                                |
 | descent         | n.                 | 下降          |                                                                                                |
+
 ***
 ## About Synonym
 
@@ -164,7 +165,7 @@ e.g. supercalifragilisticexpialidocious
 
 ### Contrast / Antonym Clues
 
--  A word or phrase is clarified by the presentation of the **opposite** meaning somewhere close to its use. Look for signal words when applying context clues.
+-  A word or phrase is clarified by the presentation of the **<font color="red">opposite </font>** meaning somewhere close to its use. Look for signal words when applying context clues.
 
 !!! note "Signal Words"
 
