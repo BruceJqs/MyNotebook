@@ -68,7 +68,7 @@
 | Cambridge         | /ˈk<font color="red">eɪ</font>mbrɪdʒ/ | 剑桥      |       |
 | suite             | /s<font color="red">wiː</font>t/      | 一套      |       |
 | desert/dessert    | /ˈdezət/ /dɪˈzɜːt/                    | 沙漠/甜点   |       |
-| colonel/colonial  |                                       |         |       |
+| colonel/colonial  | /ˈkɜːnl/ /kəˈləʊniəl/                 | 上校/殖民地  |       |
 | clean/cleanliness |                                       |         |       |
 | rebel/rebellion   |                                       |         |       |
 | indictment        |                                       | 诉讼      |       |
@@ -80,6 +80,7 @@
 ## About Prefix, Root and Suffix
 
 e.g. supercalifragilisticexpialidocious
+
 - super-
 - cali-: beauty 
 	- calisthenics 健美操
@@ -99,4 +100,5 @@ e.g. supercalifragilisticexpialidocious
 	- docent 讲解员
 
 原意：用精致的美丽补偿可教育性的缺失
+
 引申：人见人爱花见花开车见车爆胎
