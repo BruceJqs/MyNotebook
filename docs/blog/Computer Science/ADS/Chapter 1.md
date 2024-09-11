@@ -1,3 +1,11 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
 # Chapter 01 : AVL trees, Splay Trees, and Amortized Analysis
 
 ## AVL Trees
@@ -337,112 +345,114 @@ $$
 	
 	我们使用 $R_2$ 表示操作后的势能，$R_1$ 表示操作前的势能。
 	
-	=== "Zig"
-	
-		![](../../../assets/Pasted image 20240911163332.png)
+	!!! Derivation
 		
-		Zig 操作做了个单旋，实际成本为 1
+		=== "Zig"
 		
-		从 Zig 操作示意图中可以看出，在整个操作中只有 X 和 P 的 rank 值有变化。所以我们有：
-		
-		$$
-		\hat{c_i} = 1 + R_2(X) - R_1(X) + R_2(P) - R_1(P)
-		$$
-		
-		由于节点 P 由根节点变为非根节点，我们有 $R_2(P)-R_1(P)\leq 0$ ，因此 $\hat{c_i}\leq 1 + R_2(X) - R_1(X)$。
-		
-	=== "Zig-Zag"
-	
-		![](../../../assets/Pasted image 20240911163409.png)
-		
-		Zig-Zag 操作做了两次旋转，实际成本为 2
-		
-		我们有：
-		
-		$$
-		\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
-		$$
-		
-		由 Zig-Zag 操作示意图可以看出，操作前 G 是根节点，操作后 X 是根节点，他们的 rank 相同，即 $R_2(X) = R_1(G)$。因此我们有 $\hat{c_i} = 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)$。
-		
-		我们首先引入一个引理：
-		
-		!!! Lemma
-		
-			由 $y = \log_2 x$ 是一个凸函数，我们有 $\frac{\log_2 a+\log_2 b}{2}\leq\log_2 \frac{a + b}{2}$
+			![](../../../assets/Pasted image 20240911163332.png)
 			
-			因此我们有：
+			Zig 操作做了个单旋，实际成本为 1
+			
+			从 Zig 操作示意图中可以看出，在整个操作中只有 X 和 P 的 rank 值有变化。所以我们有：
+			
+			$$
+			\hat{c_i} = 1 + R_2(X) - R_1(X) + R_2(P) - R_1(P)
+			$$
+			
+			由于节点 P 由根节点变为非根节点，我们有 $R_2(P)-R_1(P)\leq 0$ ，因此 $\hat{c_i}\leq 1 + R_2(X) - R_1(X)$。
+			
+		=== "Zig-Zag"
+		
+			![](../../../assets/Pasted image 20240911163409.png)
+			
+			Zig-Zag 操作做了两次旋转，实际成本为 2
+			
+			我们有：
+			
+			$$
+			\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
+			$$
+			
+			由 Zig-Zag 操作示意图可以看出，操作前 G 是根节点，操作后 X 是根节点，他们的 rank 相同，即 $R_2(X) = R_1(G)$。因此我们有 $\hat{c_i} = 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)$。
+			
+			我们首先引入一个引理：
+			
+			!!! Lemma
+			
+				由 $y = \log_2 x$ 是一个凸函数，我们有 $\frac{\log_2 a+\log_2 b}{2}\leq\log_2 \frac{a + b}{2}$
+				
+				因此我们有：
+				
+				$$
+				\begin{aligned}
+				\log_2 a+\log_2 b &= 2(\frac{\log_2 a + \log_2 b}{2})\\
+				&\leq 2(\log_2\frac{a+b}{2})\\
+				&= 2(\log_2(a+b)-\log_2 2)\\
+				&= 2\log_2(a+b)-2
+				\end{aligned}
+				$$
+				
+			由引理我们就可以得到：
 			
 			$$
 			\begin{aligned}
-			\log_2 a+\log_2 b &= 2(\frac{\log_2 a + \log_2 b}{2})\\
-			&\leq 2(\log_2\frac{a+b}{2})\\
-			&= 2(\log_2(a+b)-\log_2 2)\\
-			&= 2\log_2(a+b)-2
+			R_2(P)+R_2(G) &= \log_2 S_2(P)+\log_2 S_2(G)\\
+			&\leq 2\log_2(S_2(P)+S_2(G)) - 2\\
+			&\leq 2\log_2(S_2(P)+S_2(G)+1) - 2\\
+			&= 2\log_2 S_2(X) - 2\\
+			&= 2R_2(X) - 2
 			\end{aligned}
 			$$
 			
-		由引理我们就可以得到：
+			再加上初始 P 为 X 的父亲，那么我们有 $R_1(P)\geq R_1(X)$，代入两式我们可以得到：
+			
+			$$
+			\begin{aligned}
+			\hat{c_i} &= 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)\\
+			&\leq 2R_2(X)-R_1(X)-R_1(P)\\
+			&\leq 2(R_2(X)-R_1(X))
+			\end{aligned}
+			$$
+			
+		=== "Zig-Zig"
 		
-		$$
-		\begin{aligned}
-		R_2(P)+R_2(G) &= \log_2 S_2(P)+\log_2 S_2(G)\\
-		&\leq 2\log_2(S_2(P)+S_2(G)) - 2\\
-		&\leq 2\log_2(S_2(P)+S_2(G)+1) - 2\\
-		&= 2\log_2 S_2(X) - 2\\
-		&= 2R_2(X) - 2
-		\end{aligned}
-		$$
-		
-		再加上初始 P 为 X 的父亲，那么我们有 $R_1(P)\geq R_1(X)$，代入两式我们可以得到：
-		
-		$$
-		\begin{aligned}
-		\hat{c_i} &= 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)\\
-		&\leq 2R_2(X)-R_1(X)-R_1(P)\\
-		&\leq 2(R_2(X)-R_1(X))
-		\end{aligned}
-		$$
-		
-	=== "Zig-Zig"
+			![](../../../assets/Pasted image 20240911165214.png)
+			
+			Zig-Zag 操作做了两次旋转，实际成本为 2
+			
+			我们有：
+			
+			$$
+			\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
+			$$
+			
+			我们继续用 Lemma(这一次比较难想，但很重要)：
+			
+			$$
+			\begin{aligned}
+			R_2(G)+R_1(X) &= \log_2 S_2(G)+\log_2 S_1(X)\\
+			&\leq 2\log_2(S_2(G)+S_1(X)) - 2\\
+			&\leq 2\log_2(S_2(G)+S_1(X)+1) - 2\\
+			&= 2\log_2 S_2(X) - 2\\
+			&= 2R_2(X) - 2
+			\end{aligned}
+			$$
+			
+			$$
+			\therefore R_2(G)\leq 2R_2(X)-R_1(X)-2
+			$$
+			
+			再加上初始 P 为 X 的父亲，那么我们有 $R_1(P)\geq R_1(X)$，旋转后 X 为 P 的父亲，那么我们有 $R_2(P)\leq R_2(X)$，代入我们可以得到：
+			
+			$$
+			\begin{aligned}
+			\hat{c_i} &= 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)\\
+			&\leq 3R_2(X) - 2R_1(X) + R_2(P) - R_1(P) - R_1(G)\\
+			&\leq 3R_2(X) - 3R_1(X) + R_2(P) - R_1(G)\\
+			&\leq 3R_2(X) - 3R_1(X)
+			\end{aligned}
+			$$
 	
-		![](../../../assets/Pasted image 20240911165214.png)
-		
-		Zig-Zag 操作做了两次旋转，实际成本为 2
-		
-		我们有：
-		
-		$$
-		\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
-		$$
-		
-		我们继续用 Lemma(这一次比较难想，但很重要)：
-		
-		$$
-		\begin{aligned}
-		R_2(G)+R_1(X) &= \log_2 S_2(G)+\log_2 S_1(X)\\
-		&\leq 2\log_2(S_2(G)+S_1(X)) - 2\\
-		&\leq 2\log_2(S_2(G)+S_1(X)+1) - 2\\
-		&= 2\log_2 S_2(X) - 2\\
-		&= 2R_2(X) - 2
-		\end{aligned}
-		$$
-		
-		$$
-		\therefore R_2(G)\leq 2R_2(X)-R_1(X)-2
-		$$
-		
-		再加上初始 P 为 X 的父亲，那么我们有 $R_1(P)\geq R_1(X)$，旋转后 X 为 P 的父亲，那么我们有 $R_2(P)\leq R_2(X)$，代入我们可以得到：
-		
-		$$
-		\begin{aligned}
-		\hat{c_i} &= 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)\\
-		&\leq 3R_2(X) - 2R_1(X) + R_2(P) - R_1(P) - R_1(G)\\
-		&\leq 3R_2(X) - 3R_1(X) + R_2(P) - R_1(G)\\
-		&\leq 3R_2(X) - 3R_1(X)
-		\end{aligned}
-		$$
-		
 	至此，我们已经获得了三个操作的所有上界：
 	
 	$$
