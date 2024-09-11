@@ -9,6 +9,9 @@ comments: true
 
 # 大学英语 IV｜College English Band IV
 
+!!! 课程信息
+	授课老师：张璐
+
 !!!Abstract
     请移步：https://github.com/BruceJqs/ZJU-Courses/tree/main/%E5%A4%A7%E5%AD%A6%E8%8B%B1%E8%AF%AD%20IV%EF%BD%9CCollege%20English%20Band%20IV
 

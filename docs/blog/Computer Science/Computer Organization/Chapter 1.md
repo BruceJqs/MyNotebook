@@ -80,5 +80,22 @@ comments: true
 
 ![](../../../assets/Screenshot11.png)
 
-
+***
 ## How build processors?
+
+### Integrated Circuits
+
+- 主板核心由集成电路/芯片构成，集成电路驱动我们技术的进步
+- 处理器和内存都是由集成电路组成的
+
+### Manufacturing ICs
+
+![](../../../assets/Pasted%20image%2020240911183452.png)
+
+![](../../../assets/Pasted%20image%2020240911183537.png)
+
+- 工艺的产量由如下公式定义：
+
+$$
+
+$$
