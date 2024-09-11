@@ -1057,6 +1057,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential Method
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2696,6 +2714,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential Method
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2967,43 +3003,57 @@ worst\_case\space bound\geq amortized\space bound\geq average\_case\space bound
 <p class="admonition-title">Explanation</p>
 <p>由于 amortized bound 限制了所有的 M 次操作，所以其上界就等于最差的情况发生 M 次（当然，很多情况下不一定能取到全都是最差情况）；同样的，由于需要对任意组合都成立，所以一定不会小于统计学意义上的平均情况。</p>
 </div>
+<p>均摊分析一共有三种方法：聚合分析（Aggregate Analysis）、记账分析（Accounting Method）和势能分析（Potential Method）</p>
 <hr />
 <h3 id="aggregate-analysis">Aggregate Analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
 <p>聚合法相对简单，即求 N 次操作的平均代价：</p>
 <div class="arithmatex">\[
-T_{amortized} = \frac{\sum\limits_{i=1}^n\hat{c_i}}{n}
-\]</div>
-<p>其中 <span class="arithmatex">\(\hat{c_i}\)</span> 表示一次操作的均摊成本（可人为自行定义），需要满足条件：</p>
-<div class="arithmatex">\[
-\sum\limits_{i=1}^n\hat{c_i}\geq\sum\limits_{i=1}^n c_i
+T_{amortized} = \frac{\sum\limits_{i=1}^nc_i}{n}
 \]</div>
 <p>其中 <span class="arithmatex">\(c_i\)</span> 表示一次操作的实际成本</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>对于一个能实现一次性弹出多个元素的栈 S，其实际消耗成本为：</p>
-<ul>
-<li>入栈：1</li>
-<li>出栈：1</li>
-<li>k 个元素出栈：min(sizeof(S),k)</li>
-</ul>
-<p>我们定义这三个操作的均摊成本如下：</p>
-<ul>
-<li>入栈：2</li>
-<li>出栈：0</li>
-<li>k 个元素出栈：0</li>
-</ul>
-<p>此时我们能注意到对于一个栈来说，出栈的次数一定小于等于入栈的次数，因此我们有：</p>
+<p>通常，栈能够进行 <strong>push(S, x)</strong> 与 <strong>pop(S)</strong> 操作，其时间复杂度均为 <span class="arithmatex">\(O(1)\)</span>。现在定义一个新的操作 <strong>multipop(S, k)</strong>，它删除栈S栈顶的k个元素（若不足k个，则全部弹出为止）。</p>
+<p>一个 multipop 操作的最坏时间复杂度是 <span class="arithmatex">\(O(n)\)</span>，因此 <span class="arithmatex">\(n\)</span> 个操作的序列的最坏时间代价是 <span class="arithmatex">\(O(n^2)\)</span>，这个结论虽然正确，但不是一个确界。</p>
+<p>从另一个角度看，对于一个栈来说，出栈的次数一定小于等于入栈的次数，因此我们有：</p>
 <div class="arithmatex">\[
 \begin{aligned}
 T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
-&amp;\leq 2\times push\_times=\sum\limits_{i=1}^n\hat{c_i}\\
+&amp;\leq 2\times push\_times\\
 &amp;\leq 2n
 \end{aligned}
 \]</div>
 <div class="arithmatex">\[
-\therefore T_{amortized}=\frac{\sum\limits_{i=1}^n\hat{c_i}}{n}=\frac{O(n)}{n}=O(1)
+\therefore T_{amortized}=\frac{\sum\limits_{i=1}^nc_i}{n}=\frac{O(n)}{n}=O(1)
 \]</div>
 </div>
+<hr />
+<h3 id="accounting-method">Accounting Method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h3>
+<p>核法进行均摊分析时，我们对不同操作赋予不同费用，称为<strong>均摊代价</strong>。均摊代价可能多于或少于其实际代价。当一个操作的均摊代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为<strong>信用</strong>。对于后续操作中均摊代价小于实际代价的情况，信用可以用来支付差额。</p>
+<p>值得注意的是，信用必须保持非负，因为均摊代价须为实际代价的上界。</p>
+<p>即定义 <span class="arithmatex">\(\hat{c_i}\)</span> 表示一次操作的均摊成本，可人为自行定义，但需要满足条件：</p>
+<div class="arithmatex">\[
+\sum\limits_{i=1}^n\hat{c_i}\geq\sum\limits_{i=1}^n c_i
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>我们依然看上面栈的例子，对于一个有 multipop 操作的栈 S，其实际消耗成本为：</p>
+<ul>
+<li>Push：1</li>
+<li>Pop：1</li>
+<li>Multipop：min(sizeof(S),k)</li>
+</ul>
+<p>我们定义这三个操作的均摊成本如下：</p>
+<ul>
+<li>Push：2</li>
+<li>Pop：0</li>
+<li>Multipop：0</li>
+</ul>
+<p>在每次进行 push 操作时，我们花费 2 个单位的代价，1 个单位用来支付其本身的实际代价，另 1 个单位可作为信用保存；当对栈中的任何一个元素进行 pop（ multipop 也属于 pop ）操作时，可用该元素在 push 时储存的信用来支付差额。这样就保证了在<strong>任何时刻的信用值是非负的</strong>。</p>
+<p>最坏的情况就是所有的 n 步操作都是 push，这样总代价就是 2n，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>，均摊时间复杂度为 <span class="arithmatex">\(O(1)\)</span></p>
+</div>
+<hr />
+<h3 id="potential-method">Potential Method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3073,7 +3123,7 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 13:27:35</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 14:47:12</span>
   </span>
 
     
