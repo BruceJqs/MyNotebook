@@ -2972,6 +2972,7 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
 </li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240910222750.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240911154134.png" /></p>
 <p>接下来访问到 X 之后就可以进行相应的操作了，例如查找、删除等。</p>
 <div class="admonition note">
 <p class="admonition-title">Find X</p>
@@ -3085,6 +3086,43 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
 <div class="admonition example">
 <p class="admonition-title">Example 02-Splay Tree</p>
 <p>对于 Splay Tree 我们需要选取合适的函数 <span class="arithmatex">\(\Phi\)</span>：</p>
+<p>我们已知对于 Splay Tree，其操作的复杂度均为 <span class="arithmatex">\(O(\log n)\)</span>，那我们也需要找到合理的势能函数，使得 <span class="arithmatex">\(\Phi(D_i)-\Phi(D_{i-1})\)</span> 也为 <span class="arithmatex">\(O(\log n)\)</span>，否则会影响估算的精确度。</p>
+<p>其次，势能函数中，要包含相应的部分，以抵消操作中的常数。比如 Zig-Zag 操作包含了两个旋转，实际成本为 2，worst-case 的 Zig-Zag 操作数目是 <span class="arithmatex">\(O(N)\)</span>，如果势能函数的构造不能使 Zig-Zag 中的实际成本 2 被抵消掉，<span class="arithmatex">\(\Phi(D_i)-\Phi(D_{i-1})\)</span> 就会产生 <span class="arithmatex">\(O(N)\)</span> 的代价，影响精确估算。</p>
+<p>我们注意到 Splay 操作中，会将所访问的节点翻转到根节点；同时，翻转代价高的操作往往更大程度上的降低了树高（比如前面例子中，将节点 1 从叶节点位置翻转到根节点，大致将树高缩减为原来的一半）。所以我们考虑一个跟节点高度相关的（或类似的）势能函数。</p>
+<p>注意到在 Splay 操作中，几乎每个节点的高度都会改变，哪怕该节点为根节点的子树没有任何变化。如果我们直接使用节点高度作为势能函数，后续的数学计算与推导会变得非常复杂。我们希望有一个可以简化后续数学推导的势能函数。</p>
+<p>一个可用的势能函数是树中所有节点的 rank 之和：</p>
+<div class="arithmatex">\[
+\Phi(T) = \sum_{i\in T}\log S(i)
+\]</div>
+<p>其中 S(i) 指的是子树 i 中的节点数（包括节点 i)。我们用 R(i) 表示节点 i 的 rank，<span class="arithmatex">\(R(i) = \log S(i)\)</span>。选取 rank 之和作为势能函数的好处是除了 X, P, G 三个节点外，其他节点在 splay 操作中 rank 保持不变，因而可以简化计算。</p>
+<p>我们使用 <span class="arithmatex">\(R_2\)</span> 表示操作后的势能，<span class="arithmatex">\(R_1\)</span> 表示操作前的势能。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Zig</label><label for="__tabbed_6_2">Zig-Zag</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240911162031.png" /></p>
+<p>Zig 操作做了个单旋，实际成本为 1</p>
+<p>从 Zig 操作示意图中可以看出，在整个操作中只有 X 和 P 的 rank 值有变化。所以我们有：</p>
+<div class="arithmatex">\[
+\hat{c_i} = 1 + R_2(X) - R_1(X) + R_2(P) - R_1(P)
+\]</div>
+<p>由于节点 P 由根节点变为非根节点，我们有 <span class="arithmatex">\(R_2(P)-R_1(P)\leq 0\)</span> ，因此 <span class="arithmatex">\(\hat{c_i}\leq 1 + R_2(X) - R_1(X)\)</span>。既然 <span class="arithmatex">\(R_2(X) - R_1(X)\leq 0\)</span>，我们有<span class="arithmatex">\(\hat{c_i}\leq 1 + 3(R_2(X) - R_1(X))\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240911162231.png" /></p>
+<p>Zig-Zag 操作做了两次旋转，实际成本为 2</p>
+<p>我们有：</p>
+<div class="arithmatex">\[
+\hat{c_i} = 2 + R_2(X) - R_1(X) + R_2(P) - R_1(P) + R_2(G) - R_1(G)
+\]</div>
+<p>由 Zig-Zag 操作示意图可以看出，操作前 G 是根节点，操作后 X 是根节点，他们的 rank 相同，即 <span class="arithmatex">\(R_2(X) = R_1(G)\)</span>。因此我们有 <span class="arithmatex">\(\hat{c_i} = 2 - R_1(X) + R_2(P) - R_1(P) + R_2(G)\)</span>。</p>
+<p>我们首先引入一个引理：</p>
+<div class="admonition lemma">
+<p class="admonition-title">Lemma</p>
+<p>由 <span class="arithmatex">\(y = \log_2 x\)</span> 是一个凸函数，我们有 <span class="arithmatex">\(\frac{\log_2 a+\log_2 b}{2}\leq\log_2 \frac{a + b}{2}\)</span></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -3155,7 +3193,7 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 15:21:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 16:27:55</span>
   </span>
 
     
