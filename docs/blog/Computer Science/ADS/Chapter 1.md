@@ -222,7 +222,7 @@ $$
 !!! Explanation
 
 	由于 amortized bound 限制了所有的 M 次操作，所以其上界就等于最差的情况发生 M 次（当然，很多情况下不一定能取到全都是最差情况）；同样的，由于需要对任意组合都成立，所以一定不会小于统计学意义上的平均情况。
-
+***
 ### Aggregate Analysis
 
 聚合法相对简单，即求 N 次操作的平均代价：
@@ -262,6 +262,7 @@ $$
 	&\leq 2n
 	\end{aligned}
 	$$
+	
 	$$
 	\therefore T_{amortized}=\frac{\sum\limits_{i=1}^n\hat{c_i}}{n}=\frac{O(n)}{n}=O(1)
 	$$
