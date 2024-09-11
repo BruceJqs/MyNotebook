@@ -82,7 +82,7 @@
 | quiescent       | adj.               | 静态的         |                                                                                                |
 | iridescent      | adj.               | 色彩斑斓的       |                                                                                                |
 | descent         | n.                 | 下降          |                                                                                                |
-
+***
 ## About Synonym
 
 !!! note "How many words can we use to describe the meaning 'bad'?"
@@ -115,7 +115,7 @@
 		- pernicious
 		- pestilential
 		- malignant
-
+***
 ## About Pronunciation
 
 | **Words**         | **Pronunciation**                      | **Meaning** | **Notes** |
@@ -133,7 +133,7 @@
 | aisle             | /<font color="red">aɪl</font>/         | 过道          |           |
 | paradigm          | /ˈpærə<font color="red">daɪ</font>m/   | 范式          |           |
 | poignant          | /ˈpɔɪ<font color="red">njə</font>nt/   | 令人感伤的       |           |
-
+***
 ## About Prefix, Root and Suffix
 
 e.g. supercalifragilisticexpialidocious
@@ -156,13 +156,25 @@ e.g. supercalifragilisticexpialidocious
 	- doctrine 学说，教义
 	- docent 讲解员
 
-原意：用精致的美丽补偿可教育性的缺失
+原意：用精致的美丽补偿可教育性的缺失（atone for educability through delicate beauty）
 
 引申：人见人爱花见花开车见车爆胎
-
+***
 ## Vocabulary Questions
 
 ### Contrast / Antonym Clues
+
+-  A word or phrase is clarified by the presentation of the **opposite** meaning somewhere close to its use. Look for signal words when applying context clues.
+
+!!! note "Signal Words"
+
+	|----------|----------|----------|----------|----------|----------|
+	|instead|rather|but|however|nevertheless|nonetheless|
+	|<font color="red">albeit</font>|unlike|<font color="red">conversely</font>|<font color="red">reversely</font>|on the contrary|on the reverse|
+	|in/by contrast|whereas|while|despite|in spite of|<font color="red">notwithstanding</font>|
+	|even though|
+	
+
 ### Parallel Structure / Synonyms
 
 ### Definition / Explanation / Example Clues
