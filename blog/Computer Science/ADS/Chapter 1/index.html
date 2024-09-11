@@ -1045,6 +1045,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2669,6 +2684,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2919,7 +2949,60 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
 <p class="admonition-title">Find Max</p>
 <p>根据 BST 的性质，可以在 <span class="arithmatex">\(O(\log⁡N)\)</span> 的时间里找到最大值，将它旋转到根部以后，可以发现它没有右孩子树，直接删掉就行。</p>
 </div>
+<hr />
 <h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
+<div class="admonition application">
+<p class="admonition-title">Application</p>
+<ul>
+<li>一般情况下我们分析时间复杂度时，针对的往往是某个具体的操作。而均摊分析的对象则是一个数据结构的一系列操作，而这一系列操作中有成本较低的，也有成本较高的，而且操作之间也可能有互相影响。</li>
+<li>均摊分析是以一个更全局的角度来计算“平均”的操作代价，它计算的是从初始状态开始，连续的 M 次任意操作的平均成本。需要注意的是，它不同于平均时间分析（所有可能的操作出现概率平均，也就是直接求平均）和概率算法的概率分析（所有可能的操作出现概率不同，也就是加权求平均）不同，摊还分析和概率完全无关。</li>
+</ul>
+</div>
+<p>可以得到如下不等式：</p>
+<div class="arithmatex">\[
+worst\_case\space bound\geq amortized\space bound\geq average\_case\space bound
+\]</div>
+<p>具体解释如下：</p>
+<div class="admonition explanation">
+<p class="admonition-title">Explanation</p>
+<p>由于 amortized bound 限制了所有的 M 次操作，所以其上界就等于最差的情况发生 M 次（当然，很多情况下不一定能取到全都是最差情况）；同样的，由于需要对任意组合都成立，所以一定不会小于统计学意义上的平均情况。</p>
+</div>
+<h3 id="aggregate-analysis">Aggregate Analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
+<p>聚合法相对简单，即求 N 次操作的平均代价：</p>
+<div class="arithmatex">\[
+T_{amortized} = \frac{\sum\limits_{i=1}^n\hat{c_i}}{n}
+\]</div>
+<p>其中 <span class="arithmatex">\(\hat{c_i}\)</span> 表示一次操作的均摊成本（可人为自行定义），需要满足条件：</p>
+<div class="arithmatex">\[
+\sum\limits_{i=1}^n\hat{c_i}\geq\sum\limits_{i=1}^n c_i
+\]</div>
+<p>其中 <span class="arithmatex">\(c_i\)</span> 表示一次操作的实际成本</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>对于一个能实现一次性弹出多个元素的栈 S，其实际消耗成本为：</p>
+<ul>
+<li>入栈：1</li>
+<li>出栈：1</li>
+<li>k 个元素出栈：min(sizeof(S),k)</li>
+</ul>
+<p>我们定义这三个操作的均摊成本如下：</p>
+<ul>
+<li>入栈：2</li>
+<li>出栈：0</li>
+<li>k 个元素出栈：0</li>
+</ul>
+<p>此时我们能注意到对于一个栈来说，出栈的次数一定小于等于入栈的次数，因此我们有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
+&amp;\leq 2\times push\_times=\sum\limits_{i=1}^n\hat{c_i}\\
+&amp;\leq 2n
+\end{aligned}
+$$
+$$
+\therefore T_{amortized}=\frac{\sum\limits_{i=1}^n\hat{c_i}}{n}=\frac{O(n)}{n}=O(1)
+\]</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2989,7 +3072,7 @@ F_n &amp; = \frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 11:16:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 13:18:01</span>
   </span>
 
     
