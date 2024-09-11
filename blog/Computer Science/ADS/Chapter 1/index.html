@@ -3029,7 +3029,7 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
 </div>
 <hr />
 <h3 id="accounting-method">Accounting Method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h3>
-<p>核法进行均摊分析时，我们对不同操作赋予不同费用，称为<strong>均摊代价</strong>。均摊代价可能多于或少于其实际代价。当一个操作的均摊代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为<strong>信用</strong>。对于后续操作中均摊代价小于实际代价的情况，信用可以用来支付差额。</p>
+<p>核算法进行均摊分析时，我们对不同操作赋予不同费用，称为<strong>均摊代价</strong>。均摊代价可能多于或少于其实际代价。当一个操作的均摊代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为<strong>信用</strong>。对于后续操作中均摊代价小于实际代价的情况，信用可以用来支付差额。</p>
 <p>值得注意的是，信用必须保持非负，因为均摊代价须为实际代价的上界。</p>
 <p>即定义 <span class="arithmatex">\(\hat{c_i}\)</span> 表示一次操作的均摊成本，可人为自行定义，但需要满足条件：</p>
 <div class="arithmatex">\[
@@ -3043,7 +3043,7 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
 <li>Pop：1</li>
 <li>Multipop：min(sizeof(S),k)</li>
 </ul>
-<p>我们定义这三个操作的均摊成本如下：</p>
+<p>我们定义这三个操作的均摊成本如下（为什么如此定义在后面势能算法有所体现）：</p>
 <ul>
 <li>Push：2</li>
 <li>Pop：0</li>
@@ -3054,6 +3054,38 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
 </div>
 <hr />
 <h3 id="potential-method">Potential Method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
+<p>势能法与核算法相似。每次操作后得到的数据结构都对应一个势能 <span class="arithmatex">\(\Phi(i)\)</span>，每次的信用 <span class="arithmatex">\(\hat c_i - c_i = Credit\_i = \Phi(D_i) - \Phi(D_{i-1})\)</span> </p>
+<p>于是累加所有式子，得到 <span class="arithmatex">\(n\)</span> 个操作的总均摊代价为：</p>
+<div class="arithmatex">\[
+\sum\limits_{i=1}^n\hat{c_i}=\sum\limits_{i=1}^n c_i+\Phi(D_n)-\Phi(D_0)
+\]</div>
+<p>因此，只要我们能定义一个势能函数 <span class="arithmatex">\(\Phi\)</span>，使得 <span class="arithmatex">\(\Phi(D_n)\geq\Phi(D_0)\)</span>，就能满足总均摊代价作为总实际代价的一个上界。</p>
+<div class="admonition example">
+<p class="admonition-title">Example 01-Stack</p>
+<p>还是上面带有 Multipop 操作的栈 S，我们定义函数 <span class="arithmatex">\(\Phi\)</span> 为当前栈中元素的个数，显然满足任意时期 <span class="arithmatex">\(\Phi(D_n)\geq 0 = \Phi(D_0)\)</span> ，我们可以以此计算三个操作的均摊代价（这能解释之前 Accounting Method 的设定）：</p>
+<ul>
+<li>Push:<ul>
+<li><span class="arithmatex">\(\Phi(D_i) - \Phi(D_{i-1}) = (s+1) - s = 1\)</span></li>
+<li><span class="arithmatex">\(\hat{c_i} = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 + 1 = 2\)</span></li>
+</ul>
+</li>
+<li>Pop:<ul>
+<li><span class="arithmatex">\(\Phi(D_i) - \Phi(D_{i-1}) = (s-1) - s = -1\)</span></li>
+<li><span class="arithmatex">\(\hat{c_i} = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 + (-1) = 0\)</span></li>
+</ul>
+</li>
+<li>Multipop:<ul>
+<li><span class="arithmatex">\(\Phi(D_i) - \Phi(D_{i-1}) = (s-k) - s = -k\)</span></li>
+<li><span class="arithmatex">\(\hat{c_i} = c_i + \Phi(D_i) - \Phi(D_{i-1}) = k + (-k) = 0\)</span></li>
+</ul>
+</li>
+</ul>
+<p>后面就跟 Accounting Method 相同了</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 02-Splay Tree</p>
+<p>对于 Splay Tree 我们需要选取合适的函数 <span class="arithmatex">\(\Phi\)</span>：</p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3123,7 +3155,7 @@ T(n)&amp;=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 14:47:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 15:21:47</span>
   </span>
 
     
