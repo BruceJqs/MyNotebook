@@ -134,6 +134,7 @@
 | aisle             | /<font color="red">aɪl</font>/         | 过道          |           |
 | paradigm          | /ˈpærə<font color="red">daɪ</font>m/   | 范式          |           |
 | poignant          | /ˈpɔɪ<font color="red">njə</font>nt/   | 令人感伤的       |           |
+
 ***
 ## About Prefix, Root and Suffix
 
