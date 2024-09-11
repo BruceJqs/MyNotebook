@@ -173,9 +173,24 @@ e.g. supercalifragilisticexpialidocious
 	|instead|rather|but|however|nevertheless|nonetheless|
 	|<font color="red">albeit</font>|unlike|<font color="red">conversely</font>|<font color="red">reversely</font>|on the contrary|on the reverse|
 	|in/by contrast|whereas|while|despite|in spite of|<font color="red">notwithstanding</font>|
-	|even thou
-	
+	|even though|
 
+!!! example "Example 01"
+
+	=== "Question"
+	
+		- The major conflict in the novel is between a mother who places a high value on diligence and a son who <font color="red">repudiates</font> his mother's value instead preferring an easier path to fortune and celebrity.
+		- The word _repudiates_ is closest in meaning to _______.
+			- A) renounces
+			- B) sanctions
+			- C) appreciates
+			- D) reinforces
+	
+	=== "Answer"
+	
+		A) renounces
+		
+		可以看到这里的 Signal Word 是开头的 conflict，说明 and 前后两者是截然相反的，因此这个词的大概意思应该是反对。
 ### Parallel Structure / Synonyms
 
 ### Definition / Explanation / Example Clues
