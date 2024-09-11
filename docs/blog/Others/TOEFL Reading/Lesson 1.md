@@ -168,11 +168,12 @@ e.g. supercalifragilisticexpialidocious
 
 !!! note "Signal Words"
 
+	|          |          |          |          |          |          |
 	|----------|----------|----------|----------|----------|----------|
 	|instead|rather|but|however|nevertheless|nonetheless|
 	|<font color="red">albeit</font>|unlike|<font color="red">conversely</font>|<font color="red">reversely</font>|on the contrary|on the reverse|
 	|in/by contrast|whereas|while|despite|in spite of|<font color="red">notwithstanding</font>|
-	|even though|
+	|even thou
 	
 
 ### Parallel Structure / Synonyms
