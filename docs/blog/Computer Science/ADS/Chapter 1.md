@@ -222,48 +222,67 @@ $$
 !!! Explanation
 
 	由于 amortized bound 限制了所有的 M 次操作，所以其上界就等于最差的情况发生 M 次（当然，很多情况下不一定能取到全都是最差情况）；同样的，由于需要对任意组合都成立，所以一定不会小于统计学意义上的平均情况。
+
+均摊分析一共有三种方法：聚合分析（Aggregate Analysis）、记账分析（Accounting Method）和势能分析（Potential Method）
 ***
 ### Aggregate Analysis
 
 聚合法相对简单，即求 N 次操作的平均代价：
 
 $$
-T_{amortized} = \frac{\sum\limits_{i=1}^n\hat{c_i}}{n}
-$$
-
-其中 $\hat{c_i}$ 表示一次操作的均摊成本（可人为自行定义），需要满足条件：
-
-$$
-\sum\limits_{i=1}^n\hat{c_i}\geq\sum\limits_{i=1}^n c_i
+T_{amortized} = \frac{\sum\limits_{i=1}^nc_i}{n}
 $$
 
 其中 $c_i$ 表示一次操作的实际成本
 
 !!! Example
 
-	对于一个能实现一次性弹出多个元素的栈 S，其实际消耗成本为：
+	通常，栈能够进行 **push(S, x)** 与 **pop(S)** 操作，其时间复杂度均为 $O(1)$。现在定义一个新的操作 **multipop(S, k)**，它删除栈S栈顶的k个元素（若不足k个，则全部弹出为止）。
 	
-	- 入栈：1
-	- 出栈：1
-	- k 个元素出栈：min(sizeof(S),k)
+	一个 multipop 操作的最坏时间复杂度是 $O(n)$，因此 $n$ 个操作的序列的最坏时间代价是 $O(n^2)$，这个结论虽然正确，但不是一个确界。
 	
-	我们定义这三个操作的均摊成本如下：
-	
-	- 入栈：2
-	- 出栈：0
-	- k 个元素出栈：0
-	
-	此时我们能注意到对于一个栈来说，出栈的次数一定小于等于入栈的次数，因此我们有：
+	从另一个角度看，对于一个栈来说，出栈的次数一定小于等于入栈的次数，因此我们有：
 	
 	$$
 	\begin{aligned}
 	T(n)&=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
-	&\leq 2\times push\_times=\sum\limits_{i=1}^n\hat{c_i}\\
+	&\leq 2\times push\_times\\
 	&\leq 2n
 	\end{aligned}
 	$$
 	
 	$$
-	\therefore T_{amortized}=\frac{\sum\limits_{i=1}^n\hat{c_i}}{n}=\frac{O(n)}{n}=O(1)
+	\therefore T_{amortized}=\frac{\sum\limits_{i=1}^nc_i}{n}=\frac{O(n)}{n}=O(1)
 	$$
+***
+### Accounting Method
+
+核法进行均摊分析时，我们对不同操作赋予不同费用，称为**均摊代价**。均摊代价可能多于或少于其实际代价。当一个操作的均摊代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为**信用**。对于后续操作中均摊代价小于实际代价的情况，信用可以用来支付差额。
+
+值得注意的是，信用必须保持非负，因为均摊代价须为实际代价的上界。
+
+即定义 $\hat{c_i}$ 表示一次操作的均摊成本，可人为自行定义，但需要满足条件：
+
+$$
+\sum\limits_{i=1}^n\hat{c_i}\geq\sum\limits_{i=1}^n c_i
+$$
+
+!!! Example
+
+	我们依然看上面栈的例子，对于一个有 multipop 操作的栈 S，其实际消耗成本为：
 	
+	- Push：1
+	- Pop：1
+	- Multipop：min(sizeof(S),k)
+	
+	我们定义这三个操作的均摊成本如下：
+	
+	- Push：2
+	- Pop：0
+	- Multipop：0
+	
+	在每次进行 push 操作时，我们花费 2 个单位的代价，1 个单位用来支付其本身的实际代价，另 1 个单位可作为信用保存；当对栈中的任何一个元素进行 pop（ multipop 也属于 pop ）操作时，可用该元素在 push 时储存的信用来支付差额。这样就保证了在**任何时刻的信用值是非负的**。
+	
+	最坏的情况就是所有的 n 步操作都是 push，这样总代价就是 2n，时间复杂度为 $O(n)$，均摊时间复杂度为 $O(1)$
+***
+### Potential Method
