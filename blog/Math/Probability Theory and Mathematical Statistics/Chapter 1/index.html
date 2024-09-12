@@ -1857,6 +1857,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2870,6 +2879,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2907,8 +2925,8 @@
 
 
 <h1 id="chapter-01">Chapter 01 : 概率论的基本概念<a class="headerlink" href="#chapter-01" title="Permanent link">&para;</a></h1>
-<div class="admonition abstracts">
-<p class="admonition-title">Abstracts</p>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
 <p>本章和离散数学集合知识非常相似，具体也可请移步：<a href="https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch02/">Discrete mathmatics notes-Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices</a></p>
 </div>
 <h2 id="_1">随机试验<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -2934,7 +2952,7 @@
 <h3 id="_3">样本空间<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>随机试验 E 的所有结果构成的集合称为 E 的<font color="red">样本空间</font>，记为 <span class="arithmatex">\(S={e}\)</span>，称 S 中的元素 e 为<font color="red">样本点</font>。</p>
+<p>随机试验 E 的所有结果构成的集合称为 E 的<font color="red">样本空间</font>，记为 <span class="arithmatex">\(S=\{e\}\)</span>，称 S 中的元素 e 为<font color="red">样本点</font>。</p>
 <div class="admonition examples">
 <p class="admonition-title">Examples</p>
 <ul>
@@ -3022,7 +3040,7 @@
 <p><span class="arithmatex">\(\overline{\bigcap\limits_{i=1}^n A_i} = \bigcup\limits_{i=1}^n \overline{A_i} = \overline{A_1}\bigcup\overline{A_2}\bigcup\overline{A_3}\bigcup...\bigcup\overline{A_n}\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(\overline{\bigcup\limits_{i=1}^n A_i} = \bigcap\limits_{i=1}^n \overline{A_i} = \overline{A_1}\overline{A_2}\overline{A_3}...\overline{A_n}\)</span></p>
+<p><span class="arithmatex">\(\overline{\bigcup\limits_{i=1}^n A_i} = \bigcap\limits_{i=1}^n \overline{A_i} = \overline{A_1}·\overline{A_2}·\overline{A_3}·...·\overline{A_n}\)</span></p>
 </li>
 </ul>
 </div>
@@ -3033,7 +3051,39 @@
 <h3 id="_9">频率<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="admonition definition">
 <p class="admonition-title">Definition</p>
-<p>记 <span class="arithmatex">\(f_n(A)=\frac{n_A}{n}\)</span>，其中 <span class="arithmatex">\(n_A\)</span> 表示 A 发生的次数（频数），n 为总试验次数，则称 <span class="arithmatex">\(f_n(A)\)</span> 为 A 在这 n 次试验中发生的<font color="red">频率</font></p>
+<ul>
+<li>记 <span class="arithmatex">\(f_n(A)=\frac{n_A}{n}\)</span>，其中 <span class="arithmatex">\(n_A\)</span> 表示 A 发生的次数（频数），n 为总试验次数，则称 <span class="arithmatex">\(f_n(A)\)</span> 为 A 在这 n 次试验中发生的<font color="red">频率</font></li>
+<li>频率 <span class="arithmatex">\(f_n(A)\)</span> 反映了事件 A 发生的频繁程度</li>
+</ul>
+</div>
+<div class="admonition 频率的性质">
+<p class="admonition-title">频率的性质</p>
+<ul>
+<li><span class="arithmatex">\(0\leq f_n(A)\leq 1\)</span></li>
+<li><span class="arithmatex">\(f_n(S) = 1\)</span></li>
+<li>若 <span class="arithmatex">\(A_1, A_2,..., A_k\)</span> 两两互不相容，则 <span class="arithmatex">\(f_n(\bigcup\limits_{i=1}^k A_i) = \sum\limits_{i=1}^k f_n(A_i)\)</span></li>
+<li><font color="red"><span class="arithmatex">\(f_n(A)\)</span> 随 n 的增大渐趋稳定，记稳定值为 p</font></li>
+</ul>
+</div>
+<h3 id="_10">概率<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Definition 1</label><label for="__tabbed_2_2">Definition 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(f_n(A)\)</span> 的稳定值 p 定义为 A 的概率，记为 <span class="arithmatex">\(P(A)=p\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>将概率视为测度，且满足：</p>
+<ul>
+<li><span class="arithmatex">\(P(A)\geq 0\)</span></li>
+<li><span class="arithmatex">\(P(S)=1\)</span></li>
+<li><span class="arithmatex">\(A_1,A_2,...,A_k,...,A_iA_j = \emptyset(i\not = j)\)</span></li>
+</ul>
+<p><span class="arithmatex">\(\Rightarrow P(\bigcup\limits_{i=1}^{\infty}A_i = \sum\limits_{i=1}^{\infty}P(A_i)\)</span></p>
+</div>
+</div>
+</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -3104,7 +3154,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月12日 11:38:16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月12日 11:50:46</span>
   </span>
 
     
