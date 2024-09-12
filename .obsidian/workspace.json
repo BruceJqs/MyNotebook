@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md"
               }
             }
           }
@@ -149,8 +149,8 @@
   },
   "active": "7f7e0cee65e17e89",
   "lastOpenFiles": [
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/assets/Pasted image 20240912112118.png",
     "docs/assets/Pasted image 20240912111911.png",
     "docs/assets/Pasted image 20240912111046.png",

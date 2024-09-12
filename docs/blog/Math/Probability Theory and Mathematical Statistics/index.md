@@ -16,4 +16,4 @@ comments: true
 
 ## Table of Contents
 
-- [Chapter 01](Chapter%201/)
+- [Chapter 01：概率论的基本概念](Chapter%201/)
