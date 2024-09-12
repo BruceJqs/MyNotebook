@@ -91,7 +91,7 @@
 	=== "逆事件"
 	
 		- A 的逆事件记为 $\overline{A}$，有 $\begin{cases}A\bigcup\overline{A}=S\\ A\overline{A} = \emptyset \end{cases}$
-		- 若 $\begin{cases}A\bigcup B=S\\ AB = \emptyset \end{cases}$，则称 A, B 互逆（互为对立事件）。
+		- 若 $\begin{cases}A\bigcup B=S\\ AB = \emptyset \end{cases}$，则称 A, B <font color="red">互逆（互为对立事件）</font>。
 		
 		![](../../../assets/Pasted image 20240912111911.png)
 	
@@ -116,7 +116,7 @@
 	- 记 $f_n(A)=\frac{n_A}{n}$，其中 $n_A$ 表示 A 发生的次数（频数），n 为总试验次数，则称 $f_n(A)$ 为 A 在这 n 次试验中发生的<font color="red">频率</font>
 	- 频率 $f_n(A)$ 反映了事件 A 发生的频繁程度
 
-!!! 频率的性质
+!!! Properties
 
 	- $0\leq f_n(A)\leq 1$
 	- $f_n(S) = 1$
@@ -139,4 +139,11 @@
 		- $P(S)=1$
 		- $A_1,A_2,...,A_k,...,A_iA_j = \emptyset(i\not = j)$
 		
-		$\Rightarrow P(\bigcup\limits_{i=1}^{\infty}A_i = \sum\limits_{i=1}^{\infty}P(A_i)$
+		$\Rightarrow P(\bigcup\limits_{i=1}^{\infty}A_i) = \sum\limits_{i=1}^{\infty}P(A_i)$
+
+!!! Properties
+
+	- $P(A) = 1 - P(\overline{A})$，特别地，$P(\emptyset) = 0$
+	- $P(A-B) = P(A) - P(AB)$，特别地，当 $B\subset A$ 时，$P(A-B) = P(A) - P(B)$ 且 $P(A)\geq P(B)$
+	- $P(A\bigcup B) = P(A) + P(B) - P(AB)$，推广即容斥原理：$P(\bigcup\limits_{i=1}^n A_i)=\sum\limits_{i=1} ^n P(A_i)-\sum\limits_{1\leq i<j \leq n}P(A_iA_j)+\sum\limits_{1\leq i<j<k \leq n}P(A_iA_jA_k)+...+(-1)^{n-1}P(A_1A_2...A_n)$
+		- 推论：$P(A\bigcup B) \leq P(A) + P(B)$
