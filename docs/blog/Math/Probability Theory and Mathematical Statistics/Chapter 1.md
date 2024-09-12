@@ -27,7 +27,7 @@
 
 !!! Definition
 
-	随机试验 E 的所有结果构成的集合称为 E 的<font color="red">样本空间</font>，记为 $S={e}$，称 S 中的元素 e 为<font color="red">样本点</font>。
+	随机试验 E 的所有结果构成的集合称为 E 的<font color="red">样本空间</font>，记为 $S=\{e\}$，称 S 中的元素 e 为<font color="red">样本点</font>。
 	
 	!!! Examples
 	
@@ -105,7 +105,7 @@
 	
 		- $\overline{\bigcap\limits_{i=1}^n A_i} = \bigcup\limits_{i=1}^n \overline{A_i} = \overline{A_1}\bigcup\overline{A_2}\bigcup\overline{A_3}\bigcup...\bigcup\overline{A_n}$
 		
-		- $\overline{\bigcup\limits_{i=1}^n A_i} = \bigcap\limits_{i=1}^n \overline{A_i} = \overline{A_1}\overline{A_2}\overline{A_3}...\overline{A_n}$
+		- $\overline{\bigcup\limits_{i=1}^n A_i} = \bigcap\limits_{i=1}^n \overline{A_i} = \overline{A_1}·\overline{A_2}·\overline{A_3}·...·\overline{A_n}$
 
 ## 频率与概率
 
@@ -113,4 +113,12 @@
 
 !!! Definition
 
-	记 $f_n(A)=\frac{n_A}{n}$，其中 $n_A$ 表示 A 发生的次数（频数），n 为总试验次数，则称 $f_n(A)$ 为 A 在这 n 次试验中发生的<font color="red">频率</font>
+	- 记 $f_n(A)=\frac{n_A}{n}$，其中 $n_A$ 表示 A 发生的次数（频数），n 为总试验次数，则称 $f_n(A)$ 为 A 在这 n 次试验中发生的<font color="red">频率</font>
+	- 频率 $f_n(A)$ 反映了事件 A 发生的频繁程度
+
+!!! 频率的性质
+
+	- $0\leq f_n(A)\leq 1$
+	- $f_n(S) = 1$
+	- 若 $A_1, A_2,..., A_k$ 两两互不相容，则 $f_n(\bigcup\limits_{i=1}^k A_i) = \sum\limits_{i=1}^k f_n(A_i)$
+	- <font color="red">$f_n(A)$ 随 n 的增大渐趋稳定，记稳定值为 p</font>
