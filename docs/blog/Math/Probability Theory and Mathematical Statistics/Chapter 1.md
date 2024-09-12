@@ -155,3 +155,17 @@ comments: true
 	- $P(A-B) = P(A) - P(AB)$，特别地，当 $B\subset A$ 时，$P(A-B) = P(A) - P(B)$ 且 $P(A)\geq P(B)$
 	- $P(A\bigcup B) = P(A) + P(B) - P(AB)$，推广即容斥原理：$P(\bigcup\limits_{i=1}^n A_i)=\sum\limits_{i=1} ^n P(A_i)-\sum\limits_{1\leq i<j \leq n}P(A_iA_j)+\sum\limits_{1\leq i<j<k \leq n}P(A_iA_jA_k)+...+(-1)^{n-1}P(A_1A_2...A_n)$
 		- 推论：$P(A\bigcup B) \leq P(A) + P(B)$
+
+## 等可能概型（古典概型）
+
+!!! Definition
+
+	若试验满足：
+	
+	- 有限性：S 中样本点有限
+	- 等可能性：出现每一样本点的概率相等($\forall i,j\in\{1,2,...,n\},P(e_i)=P(e_j)$)
+	
+	称这种试验为<font color="red">等可能概型（或古典概型）</font>
+	
+	$\Rightarrow P(A) = \frac{A所包含的样本点数}{S中的样本点数}$
+
