@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md"
               }
             }
           }
@@ -149,6 +149,7 @@
   },
   "active": "7f7e0cee65e17e89",
   "lastOpenFiles": [
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/assets/Pasted image 20240912112118.png",
@@ -156,7 +157,6 @@
     "docs/assets/Pasted image 20240912111046.png",
     "docs/assets/Pasted image 20240912110819.png",
     "docs/assets/Pasted image 20240912110309.png",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Math/Discrete mathmatics/index.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
