@@ -169,3 +169,16 @@ comments: true
 	
 	$\Rightarrow P(A) = \frac{A所包含的样本点数}{S中的样本点数}$
 
+### 超几何分布
+
+!!! Example
+
+	=== "Question"
+	
+		有 N 件产品，其中 D 件是次品，从中不放回地取 n 件，记 $A_k = \{恰有 k 件次品\}(k\leq D)$，求 $P(A_k)$
+	
+	=== "Answer"
+	
+		$P(A_k) = \frac{C_D^k C_{N-D}^{n-k}}{C_N^n},k = 0,1,2,...,n$
+	
+		注：当 $L>m$ 或 $L<0$ 时，记 $C_m^L = 0$
