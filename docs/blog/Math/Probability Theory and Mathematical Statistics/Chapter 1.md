@@ -32,9 +32,9 @@
 	!!! Examples
 	
 		- 一枚硬币抛一次
-			- $S={正面，反面}$
+			- $S=\{正面，反面\}$
 		- 记录一城市一日中发生交通事故次数
-			- $S={0,1,2,...}$
+			- $S=\{0,1,2,...\}$
 
 ### 随机事件
 
@@ -69,7 +69,7 @@
 	=== "和事件"
 	
 		- A 与 B 的和事件，记为 $A\bigcup B$
-		- $A\bigcup B = {x|x\in A 或 x\in B}$
+		- $A\bigcup B = \{x|x\in A 或 x\in B\}$
 		- A 与 B 至少有一个发生
 	
 		![](../../../assets/Pasted image 20240912110819.png)
@@ -79,7 +79,7 @@
 	=== "积事件"
 	
 		- A 与 B 的积事件，记为 $A\bigcap B, A·B, AB$
-		- $A\bigcap B = {x|x\in A 且 x\in B}$
+		- $A\bigcap B = \{x|x\in A 且 x\in B\}$
 		- A 与 B 同时发生
 		
 		![](../../../assets/Pasted image 20240912111046.png)
@@ -97,11 +97,20 @@
 	
 	=== "差事件"
 	
-		- 事件 A 对事件 B 的差事件：$A - B = A\overline{B} = {x|x\in A 且 x\not\in B$
+		- 事件 A 对事件 B 的差事件：$A - B = A\overline{B} = \{x|x\in A 且 x\not\in B\}$
 	
 		![](../../../assets/Pasted image 20240912112118.png)
 	
 	=== "德摩根定律"
 	
 		- $\overline{\bigcap\limits_{i=1}^n A_i} = \bigcup\limits_{i=1}^n \overline{A_i} = \overline{A_1}\bigcup\overline{A_2}\bigcup\overline{A_3}\bigcup...\bigcup\overline{A_n}$
+		
 		- $\overline{\bigcup\limits_{i=1}^n A_i} = \bigcap\limits_{i=1}^n \overline{A_i} = \overline{A_1}\overline{A_2}\overline{A_3}...\overline{A_n}$
+
+## 频率与概率
+
+### 频率
+
+!!! Definition
+
+	记 $f_n(A)=\frac{n_A}{n}$，其中 $n_A$ 表示 A 发生的次数（频数），n 为总试验次数，则称 $f_n(A)$ 为 A 在这 n 次试验中发生的<font color="red">频率</font>
