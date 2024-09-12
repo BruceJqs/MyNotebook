@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267.5
+    "width": 518.5
   },
   "right": {
     "id": "db8c2c75e178d5b7",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md"
               }
             }
           }
@@ -149,9 +149,13 @@
   },
   "active": "7f7e0cee65e17e89",
   "lastOpenFiles": [
-    "docs/blog/Others/TOEFL Reading/index.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Computer Science/FDS/index.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+    "docs/blog/Math/Discrete mathmatics/index.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics",
+    "docs/blog/Others/TOEFL Reading/index.md",
     "FDS-Project1 report.md",
     "docs/blog/Others/College English Band IV/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",

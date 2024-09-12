@@ -107,6 +107,9 @@ nav:
       - "Chapter 09: Relations": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md
       - "Chapter 10: Graphs": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md
       - "Chapter 11: Trees": blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md
+    - 概率论与数理统计｜Probability Theory and Mathematical Statistics:
+      - blog/Math/Probability Theory and Mathematical Statistics/index.md
+      - "Chapter 01: 概率论的基本概念": blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
