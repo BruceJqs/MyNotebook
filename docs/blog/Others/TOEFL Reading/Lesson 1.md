@@ -82,6 +82,9 @@
 | quiescent       | adj.               | 静态的         |                                                                                                |
 | iridescent      | adj.               | 色彩斑斓的       |                                                                                                |
 | descent         | n.                 | 下降          |                                                                                                |
+| odor            | n.                 | 气味          |                                                                                                |
+| inasmuch        | adv.               | 因为          | +as                                                                                            |
+| hue             | n.                 | 颜色          |                                                                                                |
 
 ***
 ## About Synonym
@@ -193,8 +196,182 @@ e.g. supercalifragilisticexpialidocious
 		A) renounces
 		
 		可以看到这里的 Signal Word 是开头的 conflict，说明 and 前后两者是截然相反的，因此这个词的大概意思应该是反对。
+
+!!! example "Example 02"
+
+	=== "Question"
+	
+		- Lou thought that her mother's recovery was <font color="red">unavailing</font>, but Oz remained faithful to the course of his mother's restored health.
+		- The word _unavailing_ is closest in meaning to _______.
+			- A) trivial
+			- B) imminent
+			- C) furtile
+			- D) promising
+	
+	=== "Answer"
+	
+		C) furtile
+		
+		可以看到这里的 Signal Word 是 but，说明前半句大意为 Lou 认为她妈妈的治疗没希望了（和 faithful 相对应）
+
+!!! example "Example 03"
+
+	=== "Question"
+	
+		- Johnny was <font color="red">besotted</font> in not checking the depth of the water before he plunged in, but it was fortunate that his father was judicious and checked it first.
+		- The word _besotted_ is closest in meaning to _______.
+			- A) insensitive
+			- B) unaware
+			- C) irrational
+			- D) incompetent
+	
+	=== "Answer"
+	
+		C) irrational
+		
+		可以看到这里的 Signal Word 是 but，其实从后面大意也能看出这个词大致意思就是糊涂的，与后文 judicious 正好相反。
+
+!!! example "Example 04"
+
+	=== "Question"
+	
+		- Brad made a <font color="red">cursory</font> effort to finish his homework. This was unlike him; usually he worked hard to finish before dinner.
+		- The word _cursory_ is closest in meaning to _______.
+			- A) casual
+			- B) genuine
+			- C) fruitless
+			- D) strenuous
+	
+	=== "Answer"
+	
+		A) casual
+		
+		可以看到这里的 Signal Word 是 unlike，前后对比就可以发现这个词的大意是马虎的，敷衍的。
+
+!!! example "Example 05"
+
+	=== "Question"
+	
+		- We were all pretty <font color="red">apathetic</font> in the movie about animals, but we became interested when it started showing all the tricks dogs could do.
+		- The word _apathetic_ is closest in meaning to _______.
+			- A) gracious
+			- B) sentimental
+			- C) unresponsive
+			- D) sluggish
+	
+	=== "Answer"
+	
+		C) unresponsive
+		
+		可以看到这里的 Signal Word 是 but，能看出大致意思就是不感兴趣的（与后面 interested 对应）。
+***
 ### Parallel Structure / Synonyms
 
+- A challenging word or phrase is clarified in <font color="red">simpler</font> language. Look for signal words when applying context clues.
+
+!!! note "Signal Words"
+
+	|          |          |          |          |          |
+	|----------|----------|----------|----------|----------|
+	|and|not only...but also|as...as|both...and...|either...or...|
+	|neither...nor...|as if|as though|as well|
+
+!!! example "Example 01"
+
+	=== "Question"
+	
+		- The sorcerer's <font color="red">minions</font>, or devoted followers, were willing to perform any sorcery he could conjure.
+		- The word _minions_ is closest in meaning to _______.
+			- A) superiors
+			- B) adherents
+			- C) companions
+			- D) adversaries
+	
+	=== "Answer"
+	
+		B) adherents
+		
+		可以看到这里的 Signal Word 是 or，已经对这个词进行了详尽的解释，devoted followers。
+
+!!! example "Example 02"
+
+	=== "Question"
+	
+		- The business downturn of the Great Depression was <font color="red">pervasive</font>-it affected all sectors of the economy.
+		- The word _pervasive_ is closest in meaning to _______.
+			- A) persistent
+			- B) pessimistic
+			- C) prevailing
+			- D) catastrophic
+	
+	=== "Answer"
+	
+		C) prevailing
+		
+		可以看到这里的 Signal 是破折号后面的内容，对这个词作出了解释，可以看出这个词的大意就是影响广泛的。
+
+!!! example "Example 03"
+
+	=== "Question"
+	
+		- The common welfare was my business; charity, mercy, <font color="red">forbearance</font> and benevolence were all my business.
+		- The word _forbearance_ is closest in meaning to _______.
+			- A) stubbornness
+			- B) tolerance
+			- C) rigorousness
+			- D) malevolence
+	
+	=== "Answer"
+	
+		B）tolerance
+		
+		根据列出的这些词，可以知道我们应该选一个积极的词，看这个词的构造有个 -bear-，可以猜测跟忍耐有关（bushi。
+***
 ### Definition / Explanation / Example Clues
 
+- A word's or phrase's meaning is <font color="red">explained</font> immediately following its use.
+
+!!! note "Signal Words"
+
+	|          |          |          |          |          |          |
+	|----------|----------|----------|----------|----------|----------|
+	|contribute to|be responsible for|account for|since|therefore|inasmuch as|
+	|for|because|in that|as a consequence|as a result|
+
+!!! Example
+
+	=== "Question"
+	
+		- An <font color="red">evanscent</font> ring surrounded the moon as it rose. It was there for a moment, and then it disappeared.
+		- The word _evanscent_ is closest in meaning to _______.
+			- A) crescent
+			- B) eternal
+			- C) transient
+			- D) fabulous
+	
+	=== "Answer"
+	
+		C）transient
+		
+		 最后一句话解释了这个词的意思，转瞬即逝。
+***
 ### Word Relationships
+
+- Sometimes a word's or phrase's meaning might be inferred from <font color="red">the relationship between words</font>, say, between V. and its object, N. and its adjective modifier, V. and adverb, and the like.
+
+!!! Example
+
+	=== "Question"
+	
+		- When the gas reaches the air, it comes into contact with available oxygen from atmosphere and combines with the oxygen to produce nitrogen dioxide, which is a gas with a brownish <font color="red">hue</font>.
+		- The word _hue_ is closest in meaning to _______.
+			- A) color
+			- B) odor
+			- C) thickness
+			- D) smoke
+	
+	=== "Answer"
+	
+		A）color
+		
+		 很明显，brownish 一词就说明了这是一个颜色。
