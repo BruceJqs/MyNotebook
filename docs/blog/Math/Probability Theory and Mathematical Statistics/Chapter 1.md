@@ -1,6 +1,6 @@
 # Chapter 01 : 概率论的基本概念
 
-!!! Abstracts
+!!! Abstract
 
 	本章和离散数学集合知识非常相似，具体也可请移步：[Discrete mathmatics notes-Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices](https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch02/)
 
@@ -122,3 +122,21 @@
 	- $f_n(S) = 1$
 	- 若 $A_1, A_2,..., A_k$ 两两互不相容，则 $f_n(\bigcup\limits_{i=1}^k A_i) = \sum\limits_{i=1}^k f_n(A_i)$
 	- <font color="red">$f_n(A)$ 随 n 的增大渐趋稳定，记稳定值为 p</font>
+
+### 概率
+
+!!! Definition
+
+	=== "Definition 1"
+	
+		$f_n(A)$ 的稳定值 p 定义为 A 的概率，记为 $P(A)=p$
+	
+	=== "Definition 2"
+	
+		将概率视为测度，且满足：
+		
+		- $P(A)\geq 0$
+		- $P(S)=1$
+		- $A_1,A_2,...,A_k,...,A_iA_j = \emptyset(i\not = j)$
+		
+		$\Rightarrow P(\bigcup\limits_{i=1}^{\infty}A_i = \sum\limits_{i=1}^{\infty}P(A_i)$
