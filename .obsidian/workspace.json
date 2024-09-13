@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 1.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
               }
             }
           }
@@ -149,6 +149,10 @@
   },
   "active": "7f7e0cee65e17e89",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20240913231111.png",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Others/TOEFL Reading/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
@@ -160,16 +164,13 @@
     "docs/assets/Pasted image 20240912110309.png",
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Math/Discrete mathmatics/index.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics",
     "FDS-Project1 report.md",
     "docs/blog/Others/College English Band IV/index.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/assets/Pasted image 20240911183537.png",
     "docs/assets/Pasted image 20240911183452.png",
     "docs/blog/Others/TOEFL Reading",
     "未命名",
-    "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/assets/Pasted image 20240911165214.png",
