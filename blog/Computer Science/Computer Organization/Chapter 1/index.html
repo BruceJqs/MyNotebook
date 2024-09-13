@@ -3118,8 +3118,38 @@
 <ul>
 <li>工艺的产量由如下公式定义：</li>
 </ul>
-<p>$$</p>
-<p>$$</p>
+<div class="arithmatex">\[
+每晶片的价格 = \frac{每晶圆的价格}{每晶圆的晶片数\times 良率}
+$$
+$$
+每晶圆的晶片数 \approx \frac{晶圆面积}{晶片面积}
+$$
+$$
+工艺良率 = \frac{1}{(1+\frac{单位面积缺陷数\times 芯片面积}{2})^2}
+\]</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>- 晶圆的价格和面积是固定的
+- 缺陷的概率是由生产过程决定的
+- 芯片面积是由结构和电路设计决定的
+</code></pre></div></td></tr></table></div>
+<div class="admonition notes">
+<p class="admonition-title">Challenges of integrated circuits manufacturing</p>
+<ul>
+<li>集成度越来越高，复杂度快速增加</li>
+<li>工艺尺寸达到物理极限，加工精度越来越高， 制造难度越来越大</li>
+<li>多个技术的集成：电子，光学，机械，计算机，每一个技术都难突破</li>
+</ul>
+</div>
+<div class="admonition notes">
+<p class="admonition-title">Challenges of the processor</p>
+<ul>
+<li>处理器和存储器性能的提高不成比例，“内存墙”问题日趋严重，“冯·诺依曼”架构面临挑战。</li>
+<li>单位面积功耗增大，散热问题日趋严峻，“功耗墙”问题凸显。</li>
+<li>受物理规律限制，摩尔定律面临失效，靠工艺进步获得的性能红利逐渐减弱。</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240913231111.png" /></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3189,7 +3219,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月11日 18:40:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月13日 23:11:28</span>
   </span>
 
     
