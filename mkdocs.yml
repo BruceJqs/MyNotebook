@@ -110,6 +110,9 @@ nav:
     - 概率论与数理统计｜Probability Theory and Mathematical Statistics:
       - blog/Math/Probability Theory and Mathematical Statistics/index.md
       - "Chapter 01: 概率论的基本概念": blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md
+  - ACEE:
+    - 工程导论｜Introduction to Engineering:
+      - blog/ACEE/Introduction to Engineering/index.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
