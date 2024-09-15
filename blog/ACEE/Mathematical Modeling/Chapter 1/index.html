@@ -25,7 +25,7 @@
     
     
       
-        <title>“Chapter 01" - BruceJin's Notebook</title>
+        <title>Chapter 01 : 搜索引擎中的 PageRank 模型 - BruceJin's Notebook</title>
       
     
     
@@ -165,7 +165,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              “Chapter 01"
+              Chapter 01 : 搜索引擎中的 PageRank 模型
             
           </span>
         </div>
@@ -1894,7 +1894,7 @@
           
   
   <span class="md-ellipsis">
-    “Chapter 01"
+    Chapter 01 : 搜索引擎中的 PageRank 模型
   </span>
   
 
@@ -1905,7 +1905,7 @@
         
   
   <span class="md-ellipsis">
-    “Chapter 01"
+    Chapter 01 : 搜索引擎中的 PageRank 模型
   </span>
   
 
@@ -3188,16 +3188,18 @@
 <li>若链接到网页 <span class="arithmatex">\(v_j\)</span> 的网页有 <span class="arithmatex">\(v_{j_1},v_{j_2},...,v_{j_k}\)</span>，则 <span class="arithmatex">\(x_j=\frac{x_{j_1}}{q_{j_1}}+\frac{x_{j_2}}{q_{j_2}}+...+\frac{x_{j_k}}{q_{j_k}}\)</span>（叠加性、无关性）</li>
 </ul>
 </li>
-<li>线性方程组
-    $$
-    \begin{aligned}
-    x_j &amp;= \frac{x_{j_1}}{q_{j_1}}+\frac{x_{j_2}}{q_{j_2}}+...+\frac{x_{j_k}}{q_{j_k}},j = 1,...,n\
-    &amp;= p_{i1}x_1 + p_{i2}x_2 + ... + p_{in}x_n = \sum\limits_{j=1}^np_{ij}x_j
-    \end{aligned}
-    $$</li>
-</ul>
+<li>
+<p>线性方程组</p>
+<div class="arithmatex">\[
+\begin{aligned}
+x_j &amp;= \frac{x_{j_1}}{q_{j_1}}+\frac{x_{j_2}}{q_{j_2}}+...+\frac{x_{j_k}}{q_{j_k}},j = 1,...,n\\
+&amp;= p_{i1}x_1 + p_{i2}x_2 + ... + p_{in}x_n = \sum\limits_{j=1}^np_{ij}x_j
+\end{aligned}
+\]</div>
 <hr />
 <h2 id="_7">随机矩阵<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
 <h3 id="_8">随机矩阵<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>各行（列）元素之和均为 1 的<font color="red">非负方阵</font>称为<font color="blue">行（列）随机矩阵</font>（row(column) strochastic matrix）</li>
@@ -3242,17 +3244,12 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Question</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Question</label><label for="__tabbed_1_2">Answer</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240915161607.png" /></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Answer</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p>有线性方程组：</p>
 <div class="arithmatex">\[
 \left\{
@@ -3283,31 +3280,32 @@ I - P = \begin{pmatrix}
 \]</div>
 <p>解得 <span class="arithmatex">\(x_1 = \frac{12}{31},x_2 = \frac{4}{31},x_3 = \frac{9}{31},x_4 = \frac{6}{31}\)</span></p>
 </div>
+</div>
+</div>
+</div>
 <ul>
 <li>但是，线性方程组 <span class="arithmatex">\(X=PX\)</span> 还会有特殊情况：</li>
 </ul>
 <details class="question1">
 <summary>Question1</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Question</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Question</label><label for="__tabbed_2_2">Solution</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <ul>
 <li>节点没有出度</li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240915172214.png" /></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Solution</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <ul>
 <li>悬挂网页（dangling link）<ul>
 <li>若某网页不链接任意其它网页，我们称之为<strong>悬挂网页</strong>。显然，悬挂网页的出度为 0，但它的重要度不为 0。将链接矩阵 <span class="arithmatex">\(P\)</span> 中对应列的所有元素由 0 修改为 <span class="arithmatex">\(\frac{1}{n}\)</span> ，得到（修正）链接矩阵 <span class="arithmatex">\(\overline{P}\)</span>  </li>
 </ul>
 </li>
 </ul>
+</div>
+</div>
+</div>
 </details>
 <details class="question2">
 <summary>Question2</summary>
@@ -3384,7 +3382,7 @@ I - P = \begin{pmatrix}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月15日 17:26:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月15日 17:30:19</span>
   </span>
 
     
