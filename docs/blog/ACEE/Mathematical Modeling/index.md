@@ -7,10 +7,10 @@ hide:
 comments: true
 ---   
 
-# 工程导论｜Introduction to Engineering
+# 数学建模｜Mathematical Modeling
 
 !!! 课程信息
-	授课老师：
+	授课老师：谈之奕
 
 ## Table of Contents
 

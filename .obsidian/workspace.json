@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 321.5
+    "width": 200
   },
   "right": {
     "id": "db8c2c75e178d5b7",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md"
               }
             }
           }
@@ -149,18 +149,22 @@
   },
   "active": "7f7e0cee65e17e89",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Introduction to Engineering/index.md",
+    "docs/assets/Pasted image 20240915172214.png",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/ACEE/Introduction to Engineering/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+    "docs/assets/Pasted image 20240915161607.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
-    "docs/blog/ACEE/Introduction to Engineering",
+    "docs/assets/Pasted image 20240915160217.png",
+    "docs/blog/ACEE/Introduction to Engineering/未命名",
+    "docs/blog/ACEE/Mathematical Modeling",
     "未命名",
     "docs/blog/ACEE",
     "docs/assets/Pasted image 20240914144237.png",
     "docs/assets/Pasted image 20240914143900.png",
     "docs/assets/Pasted image 20240914135920.png",
     "docs/assets/Pasted image 20240913231111.png",
-    "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Others/TOEFL Reading/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
@@ -170,13 +174,11 @@
     "docs/assets/Pasted image 20240912111911.png",
     "docs/assets/Pasted image 20240912111046.png",
     "docs/assets/Pasted image 20240912110819.png",
-    "docs/assets/Pasted image 20240912110309.png",
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Math/Discrete mathmatics/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics",
     "FDS-Project1 report.md",
     "docs/blog/Others/College English Band IV/index.md",
-    "docs/assets/Pasted image 20240911183537.png",
     "docs/blog/Others/TOEFL Reading",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "Chapter 1.md",
