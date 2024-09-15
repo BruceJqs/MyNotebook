@@ -49,6 +49,7 @@
 	- 网页 $v_i$ 与它链接的 $q_i$ 个网页中的任一个的重要度贡献为 $\frac{x_i}{q_i}$（等效性）
 	- 若链接到网页 $v_j$ 的网页有 $v_{j_1},v_{j_2},...,v_{j_k}$，则 $x_j=\frac{x_{j_1}}{q_{j_1}}+\frac{x_{j_2}}{q_{j_2}}+...+\frac{x_{j_k}}{q_{j_k}}$（叠加性、无关性）
 - 线性方程组
+
 	$$
 	\begin{aligned}
 	x_j &= \frac{x_{j_1}}{q_{j_1}}+\frac{x_{j_2}}{q_{j_2}}+...+\frac{x_{j_k}}{q_{j_k}},j = 1,...,n\\
@@ -95,44 +96,44 @@
 
 	=== "Question"
 	
-	![](../../../assets/Pasted image 20240915161607.png)
+		![](../../../assets/Pasted image 20240915161607.png)
 	
 	=== "Answer"
 	
-	有线性方程组：
-	
-	$$
-	\left\{
-	\begin{array}{}
-	x_1= \space\space\space\space\space\space\space& & x_3 & +\frac{1}{2}x_4\\
-	x_2= \frac{1}{3}x_1& & &\\
-	x_3= \frac{1}{3}x_1& +\frac{1}{2}x_2& & +\frac{1}{2}x_4\\
-	x_4 = \frac{1}{3}x_1& +\frac{1}{2}x_2
-	\end{array}
-	\right.
-	$$
-	
-	其中：
-	
-	$$
-	P = \begin{pmatrix}
-	0 & 0 & 1 & \frac{1}{2}\\
-	\frac{1}{3} & 0 & 0 & 0\\
-	\frac{1}{3} & \frac{1}{2} & 0 & \frac{1}{2}\\
-	\frac{1}{3} & \frac{1}{2} & 0 & 0
-	\end{pmatrix}
-	$$
-	
-	$$
-	I - P = \begin{pmatrix}
-	1 & 0 & -1 & -\frac{1}{2}\\
-	-\frac{1}{3} & 1 & 0 & 0\\
-	-\frac{1}{3} & -\frac{1}{2} & 1 & -\frac{1}{2}\\
-	-\frac{1}{3} & -\frac{1}{2} & 0 & 1
-	\end{pmatrix}
-	$$
-	
-	解得 $x_1 = \frac{12}{31},x_2 = \frac{4}{31},x_3 = \frac{9}{31},x_4 = \frac{6}{31}$
+		有线性方程组：
+		
+		$$
+		\left\{
+		\begin{array}{}
+		x_1= \space\space\space\space\space\space\space& & x_3 & +\frac{1}{2}x_4\\
+		x_2= \frac{1}{3}x_1& & &\\
+		x_3= \frac{1}{3}x_1& +\frac{1}{2}x_2& & +\frac{1}{2}x_4\\
+		x_4 = \frac{1}{3}x_1& +\frac{1}{2}x_2
+		\end{array}
+		\right.
+		$$
+		
+		其中：
+		
+		$$
+		P = \begin{pmatrix}
+		0 & 0 & 1 & \frac{1}{2}\\
+		\frac{1}{3} & 0 & 0 & 0\\
+		\frac{1}{3} & \frac{1}{2} & 0 & \frac{1}{2}\\
+		\frac{1}{3} & \frac{1}{2} & 0 & 0
+		\end{pmatrix}
+		$$
+		
+		$$
+		I - P = \begin{pmatrix}
+		1 & 0 & -1 & -\frac{1}{2}\\
+		-\frac{1}{3} & 1 & 0 & 0\\
+		-\frac{1}{3} & -\frac{1}{2} & 1 & -\frac{1}{2}\\
+		-\frac{1}{3} & -\frac{1}{2} & 0 & 1
+		\end{pmatrix}
+		$$
+		
+		解得 $x_1 = \frac{12}{31},x_2 = \frac{4}{31},x_3 = \frac{9}{31},x_4 = \frac{6}{31}$
 
 - 但是，线性方程组 $X=PX$ 还会有特殊情况：
 
@@ -140,14 +141,14 @@
 
 	=== "Question"
 	
-	- 节点没有出度
-	
-	![](../../../assets/Pasted image 20240915172214.png)
+		- 节点没有出度
+		
+		![](../../../assets/Pasted image 20240915172214.png)
 	
 	=== "Solution"
 	
-	- 悬挂网页（dangling link）
-		- 若某网页不链接任意其它网页，我们称之为**悬挂网页**。显然，悬挂网页的出度为 0，但它的重要度不为 0。将链接矩阵 $P$ 中对应列的所有元素由 0 修改为 $\frac{1}{n}$ ，得到（修正）链接矩阵 $\overline{P}$  
+		- 悬挂网页（dangling link）
+			- 若某网页不链接任意其它网页，我们称之为**悬挂网页**。显然，悬挂网页的出度为 0，但它的重要度不为 0。将链接矩阵 $P$ 中对应列的所有元素由 0 修改为 $\frac{1}{n}$ ，得到（修正）链接矩阵 $\overline{P}$  
 
 ??? Question2
 
