@@ -214,7 +214,7 @@ $$
 $$
 CPI = \frac{Clock\space Cycles}{Instruction\space Count} = \sum\limits_{i=1}^n(CPI_i\times\frac{Instruction\space Count_i}{Instruction\space Count}) = \sum\limits_{i=1}^n(CPI_i\times Relative\space Frequency_i)
 $$
-\
+
 ***
 ### Performance Summary
 

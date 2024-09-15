@@ -113,6 +113,7 @@ nav:
   - ACEE:
     - 工程导论｜Introduction to Engineering:
       - blog/ACEE/Introduction to Engineering/index.md
+      - “Chapter 01": blog/ACEE/Introduction to Engineering/Chapter 1.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
