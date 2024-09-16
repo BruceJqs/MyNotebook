@@ -85,6 +85,8 @@
 ***
 ## 链接矩阵
 
+### 链接矩阵
+
 - 令 $p_{ij} = \begin{cases}\frac{1}{q_j}\space,若有链接自  v_j 链向 v_i\\\space 0\space\space,其他\end{cases}$
 	- 记矩阵 $\pmb{P} = (p_{ij})_{n\times n}$ 为（初始）<font color="blue">链接矩阵</font>，$\pmb{x} = (x_1,...,x_n)^T$ 为网页<font color="blue">重要度向量</font>
 	- $\pmb{x}$ 为线性方程组 $\pmb{x}=\pmb{Px}$ 的解
@@ -135,6 +137,9 @@
 		
 		解得 $x_1 = \frac{12}{31},x_2 = \frac{4}{31},x_3 = \frac{9}{31},x_4 = \frac{6}{31}$
 
+***
+### 特殊情况
+
 - 但是，线性方程组 $\pmb{x}=\pmb{P}\pmb{x}$ 还会有特殊情况：
 
 ??? Question1
@@ -181,13 +186,13 @@
 
 ??? Question2
 
-	== "Question"
+	=== "Question"
 	
 		- 线性方程组有多个解
 		
 		![](../../../assets/Pasted image 20240916132951.png)
 	
-	== "Solution"
+	=== "Solution"
 	
 		- 多解修正
 			- 若 $\pmb{\overline{P}}$ 有两个属于特征值 1 的线性无关的特征向量，我们就无法得到唯一的网页重要度向量 $\pmb{x}$。于是，我们对 $\pmb{\overline{P}}$ 进行修正，使得 $\pmb{\overline{P}}$ 成为**完全正矩阵**，即 $\pmb{\overline{P}}$ 的所有方阵子式的行列式都大于 0。修正方法如下：
@@ -198,4 +203,33 @@
 			
 			其中，$\alpha$ 为修正系数，$\alpha = 0.85$。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
 			
+			!!! note "证明 $\pmb{\overline{\overline{P}}}$ 是列随机矩阵"
+			
+				$\pmb{1}^T\pmb{\overline{\overline{P}}} = \alpha\pmb{1}^T\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}^T\pmb{1}\pmb{1}^T = \alpha\pmb{1}^T + (1- \alpha)\pmb{1}^T = \pmb{1}^T$
+				
+				所以 $\pmb{\overline{\overline{P}}}$ 是列随机矩阵
+				
+				注意，我们说的是 $\pmb{\overline{\overline{P}}}$ 是列随机矩阵，而我们要求的是 $\pmb{\overline{\overline{P}}}$，所以这里的 $\pmb{1}^T$ 并不是 $\pmb{\overline{\overline{P}}}$ 的特征向量。
+
+!!! note "证明 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的特征向量有且只有一个"
+
+	- 存在性：$\pmb{\overline{\overline{P}}}$ 是列随机矩阵，所以 1 是 $\pmb{\overline{\overline{P}}}$ 的特征值，且 $\pmb{1}$ 是属于特征值 1 的特征向量。
+	- 唯一性，用反证法：
+	
+		设 $\pmb{v} = (v_1,v_2,...,v_n)^T$ 和 $\pmb{w} = (w_1,w_2,...,w_n)$ 是 $\pmb{\overline{\overline{P}}}$ 的两个关于特征值 1 的线性无关的特征向量，令 $x_i = -\frac{W}{V} v_i + w_i,i = 1,2,...,n$，其中 $V = \sum\limits_{k=1}^n v_k\not = 0,W = \sum\limits_{k=1}^n w_k$
+		由于 $\pmb{v}$ 与 $\pmb{k}$ 线性无关，且 $\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}x_j = \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}(-\frac{W}{V} v_j + w_j) = -\frac{W}{V}\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}v_j + \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}w_j = -\frac{W}{V}v_i + w_i = x_i$，那我们就能得到 $\pmb{x}$ 也是 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的线性无关的特征向量。
+		
+		我们注意到 $\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i = -W + W = 0$
+		所以我们尝试证明：如果 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值1 的特征向量，那么 $\pmb{x}$ 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。
+		
+		设 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值 1 的特征向量，则 $x_i = \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j$
+		如果 $\sum\limits_{i=1}^n x_i = 0$，则 $\pmb{x}$ 的分量有正有负，则 $|x_i| = |\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j| < \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j|,i=1,2,...,n$
+		则有 $\sum\limits_{i=1}^n |x_i| < \sum\limits_{i=1}^n\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j| = \sum\limits_{j=1}^n|x_j|(\sum\limits_{i=1}^n \overline{\overline{p_{ij}}} ) = \sum\limits_{j=1}^n|x_j|$，矛盾！
+		
+		所以 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的特征向量有且只有一个
+***
+### Perron-Frobenius 定理
+
+
+
 
