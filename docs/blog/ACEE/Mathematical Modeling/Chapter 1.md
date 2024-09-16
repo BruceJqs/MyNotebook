@@ -201,7 +201,7 @@
 			\pmb{\overline{\overline{P}}} = \alpha\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T
 			$$
 			
-			其中，$\alpha$ 为修正系数，$\alpha = 0.85$。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
+			- 其中，$\alpha$ 为修正系数，$\alpha = 0.85$。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
 			
 			!!! note "证明 $\pmb{\overline{\overline{P}}}$ 是列随机矩阵"
 			
