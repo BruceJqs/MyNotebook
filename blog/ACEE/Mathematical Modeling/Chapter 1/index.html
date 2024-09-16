@@ -2071,8 +2071,32 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#perron-frobenius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perron-Frobenius 定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perron-Frobenius 定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perron 定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perron-frobenius_1" class="md-nav__link">
     <span class="md-ellipsis">
       Perron-Frobenius 定理
     </span>
@@ -3144,8 +3168,32 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#perron-frobenius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perron-Frobenius 定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perron-Frobenius 定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perron 定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perron-frobenius_1" class="md-nav__link">
     <span class="md-ellipsis">
       Perron-Frobenius 定理
     </span>
@@ -3415,10 +3463,10 @@ I - P = \begin{pmatrix}
 <div class="tabbed-block">
 <ul>
 <li>
+<p>多解修正</p>
 <ul>
 <li>若 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 有两个属于特征值 1 的线性无关的特征向量，我们就无法得到唯一的网页重要度向量 <span class="arithmatex">\(\pmb{x}\)</span>。于是，我们对 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 进行修正，使得 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 成为<strong>完全正矩阵</strong>，即 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 的所有方阵子式的行列式都大于 0。修正方法如下：</li>
 </ul>
-<p>多解修正</p>
 <div class="arithmatex">\[
 \pmb{\overline{\overline{P}}} = \alpha\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T
 \]</div>
@@ -3455,7 +3503,45 @@ I - P = \begin{pmatrix}
 </ul>
 </div>
 <hr />
-<h3 id="perron-frobenius">Perron-Frobenius 定理<a class="headerlink" href="#perron-frobenius" title="Permanent link">&para;</a></h3>
+<h2 id="perron-frobenius">Perron-Frobenius 定理<a class="headerlink" href="#perron-frobenius" title="Permanent link">&para;</a></h2>
+<h3 id="perron">Perron 定理<a class="headerlink" href="#perron" title="Permanent link">&para;</a></h3>
+<ul>
+<li>设矩阵 <span class="arithmatex">\(\pmb{A}\)</span> 为完全正矩阵，则<ul>
+<li><span class="arithmatex">\(\pmb{A}\)</span> 的模最大特征值唯一，且为正实数</li>
+<li>该特征值代数重数为 1</li>
+<li>存在该特征值的一个特征向量，其分量全为正</li>
+</ul>
+</li>
+</ul>
+<h3 id="perron-frobenius_1">Perron-Frobenius 定理<a class="headerlink" href="#perron-frobenius_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>若矩阵 <span class="arithmatex">\(\pmb{A}\)</span> 为非负不可约矩阵，则<ul>
+<li><span class="arithmatex">\(\pmb{A}\)</span> 的模最大特征值为正实数</li>
+<li>该特征值代数重数为 1</li>
+<li>存在该特征值的一个特征向量，其分量全为正</li>
+</ul>
+</li>
+</ul>
+<div class="admonition 不可约矩阵">
+<p class="admonition-title">不可约矩阵</p>
+<ul>
+<li>不可约矩阵<ul>
+<li>若干个初等对换矩阵的乘积称为<font color="blue">置换矩阵</font>（permutation matrix）<ul>
+<li>置换矩阵每行和每列都恰有一个元素为 1，其余元素都为 0</li>
+</ul>
+</li>
+<li>若存在置换矩阵 <span class="arithmatex">\(\pmb{Q}\)</span>，使得 <span class="arithmatex">\(\pmb{Q}^T\pmb{AQ}= \begin{pmatrix}\pmb{X}&amp;0\\\pmb{Y}&amp;\pmb{Z}\end{pmatrix}\)</span>，其中 <span class="arithmatex">\(\pmb{X}\)</span> 和 <span class="arithmatex">\(\pmb{Z}\)</span> 均为方阵，则称 <span class="arithmatex">\(\pmb{A}\)</span> 为 <font color="blue">可约矩阵</font>，否则 <span class="arithmatex">\(\pmb{A}\)</span> 为不可约矩阵</li>
+</ul>
+</li>
+<li>不可约矩阵与有向图<ul>
+<li>若对有向图中任意顶点对 <span class="arithmatex">\(v_i,v_j\)</span>，既存在一条从 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span> 的有向路，也存在一条从 <span class="arithmatex">\(v_j\)</span> 到 <span class="arithmatex">\(v_i\)</span> 的有向路，则称有向图是<font color="blue">强联通</font>（Strongly Connected）的</li>
+<li>给定非负矩阵 <span class="arithmatex">\(\pmb{A}=(a_{ij})_{n\times n}\)</span>，构造有向图 <span class="arithmatex">\(G(\pmb{A})=(V,A)\)</span>，其中 <span class="arithmatex">\(V=\{v_1,v_2,...,v_n\}\)</span>，弧 <span class="arithmatex">\((v_i,v_j)\in \pmb{A}\)</span> 当且仅当 <span class="arithmatex">\(a_{ij}&gt;0\)</span></li>
+<li><span class="arithmatex">\(\pmb{A}\)</span> 是不可约矩阵当且仅当 <span class="arithmatex">\(G(\pmb{A}\)</span> 是强联通的</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240916161441.png" /></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3525,7 +3611,7 @@ I - P = \begin{pmatrix}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月16日 15:07:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月16日 16:15:42</span>
   </span>
 
     
