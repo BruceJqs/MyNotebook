@@ -195,6 +195,7 @@
 	=== "Solution"
 	
 		- 多解修正
+		
 			- 若 $\pmb{\overline{P}}$ 有两个属于特征值 1 的线性无关的特征向量，我们就无法得到唯一的网页重要度向量 $\pmb{x}$。于是，我们对 $\pmb{\overline{P}}$ 进行修正，使得 $\pmb{\overline{P}}$ 成为**完全正矩阵**，即 $\pmb{\overline{P}}$ 的所有方阵子式的行列式都大于 0。修正方法如下：
 			
 			$$
@@ -228,8 +229,32 @@
 		
 		所以 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的特征向量有且只有一个
 ***
+## Perron-Frobenius 定理
+
+### Perron 定理
+
+- 设矩阵 $\pmb{A}$ 为完全正矩阵，则
+	- $\pmb{A}$ 的模最大特征值唯一，且为正实数
+	- 该特征值代数重数为 1
+	- 存在该特征值的一个特征向量，其分量全为正
+
 ### Perron-Frobenius 定理
 
+- 若矩阵 $\pmb{A}$ 为非负不可约矩阵，则
+	- $\pmb{A}$ 的模最大特征值为正实数
+	- 该特征值代数重数为 1
+	- 存在该特征值的一个特征向量，其分量全为正
 
+!!! 不可约矩阵
 
+	- 不可约矩阵
+		- 若干个初等对换矩阵的乘积称为<font color="blue">置换矩阵</font>（permutation matrix）
+			- 置换矩阵每行和每列都恰有一个元素为 1，其余元素都为 0
+		- 若存在置换矩阵 $\pmb{Q}$，使得 $\pmb{Q}^T\pmb{AQ}= \begin{pmatrix}\pmb{X}&0\\\pmb{Y}&\pmb{Z}\end{pmatrix}$，其中 $\pmb{X}$ 和 $\pmb{Z}$ 均为方阵，则称 $\pmb{A}$ 为 <font color="blue">可约矩阵</font>，否则 $\pmb{A}$ 为不可约矩阵
+	- 不可约矩阵与有向图
+		- 若对有向图中任意顶点对 $v_i,v_j$，既存在一条从 $v_i$ 到 $v_j$ 的有向路，也存在一条从 $v_j$ 到 $v_i$ 的有向路，则称有向图是<font color="blue">强联通</font>（Strongly Connected）的
+		- 给定非负矩阵 $\pmb{A}=(a_{ij})_{n\times n}$，构造有向图 $G(\pmb{A})=(V,A)$，其中 $V=\{v_1,v_2,...,v_n\}$，弧 $(v_i,v_j)\in \pmb{A}$ 当且仅当 $a_{ij}>0$
+		- $\pmb{A}$ 是不可约矩阵当且仅当 $G(\pmb{A}$ 是强联通的
+	
+	![](../../../assets/Pasted image 20240916161441.png)
 
