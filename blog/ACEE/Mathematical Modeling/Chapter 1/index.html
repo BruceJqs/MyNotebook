@@ -2050,6 +2050,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="链接矩阵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      链接矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      特殊情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perron-frobenius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perron-Frobenius 定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3090,6 +3123,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="链接矩阵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      链接矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      特殊情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perron-frobenius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perron-Frobenius 定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3230,6 +3296,7 @@ x_j &amp;= \frac{x_{j_1}}{q_{j_1}}+\frac{x_{j_2}}{q_{j_2}}+...+\frac{x_{j_k}}{q_
 </div>
 <hr />
 <h2 id="_10">链接矩阵<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">链接矩阵<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>令 <span class="arithmatex">\(p_{ij} = \begin{cases}\frac{1}{q_j}\space,若有链接自  v_j 链向 v_i\\\space 0\space\space,其他\end{cases}\)</span><ul>
 <li>记矩阵 <span class="arithmatex">\(\pmb{P} = (p_{ij})_{n\times n}\)</span> 为（初始）<font color="blue">链接矩阵</font>，<span class="arithmatex">\(\pmb{x} = (x_1,...,x_n)^T\)</span> 为网页<font color="blue">重要度向量</font></li>
@@ -3283,6 +3350,8 @@ I - P = \begin{pmatrix}
 </div>
 </div>
 </div>
+<hr />
+<h3 id="_12">特殊情况<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>但是，线性方程组 <span class="arithmatex">\(\pmb{x}=\pmb{P}\pmb{x}\)</span> 还会有特殊情况：</li>
 </ul>
@@ -3335,31 +3404,56 @@ I - P = \begin{pmatrix}
 </details>
 <details class="question2">
 <summary>Question2</summary>
-<p>== "Question"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>- 线性方程组有多个解
-
-![](../../../assets/Pasted image 20240916132951.png)
-</code></pre></div></td></tr></table></div>
-<p>== "Solution"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>- 多解修正
-    - 若 $\pmb{\overline{P}}$ 有两个属于特征值 1 的线性无关的特征向量，我们就无法得到唯一的网页重要度向量 $\pmb{x}$。于是，我们对 $\pmb{\overline{P}}$ 进行修正，使得 $\pmb{\overline{P}}$ 成为**完全正矩阵**，即 $\pmb{\overline{P}}$ 的所有方阵子式的行列式都大于 0。修正方法如下：
-
-    $$
-    \pmb{\overline{\overline{P}}} = \alpha\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T
-    $$
-
-    其中，$\alpha$ 为修正系数，$\alpha = 0.85$。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
-</code></pre></div></td></tr></table></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Question</label><label for="__tabbed_3_2">Solution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>线性方程组有多个解</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240916132951.png" /></p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<ul>
+<li>若 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 有两个属于特征值 1 的线性无关的特征向量，我们就无法得到唯一的网页重要度向量 <span class="arithmatex">\(\pmb{x}\)</span>。于是，我们对 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 进行修正，使得 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 成为<strong>完全正矩阵</strong>，即 <span class="arithmatex">\(\pmb{\overline{P}}\)</span> 的所有方阵子式的行列式都大于 0。修正方法如下：</li>
+</ul>
+<p>多解修正</p>
+<div class="arithmatex">\[
+\pmb{\overline{\overline{P}}} = \alpha\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T
+\]</div>
+<p>其中，<span class="arithmatex">\(\alpha\)</span> 为修正系数，<span class="arithmatex">\(\alpha = 0.85\)</span>。<span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 是完全正矩阵与列随机矩阵的结合。</p>
+<div class="admonition note">
+<p class="admonition-title">证明 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 是列随机矩阵</p>
+<p><span class="arithmatex">\(\pmb{1}^T\pmb{\overline{\overline{P}}} = \alpha\pmb{1}^T\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}^T\pmb{1}\pmb{1}^T = \alpha\pmb{1}^T + (1- \alpha)\pmb{1}^T = \pmb{1}^T\)</span></p>
+<p>所以 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 是列随机矩阵</p>
+<p>注意，我们说的是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 是列随机矩阵，而我们要求的是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span>，所以这里的 <span class="arithmatex">\(\pmb{1}^T\)</span> 并不是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的特征向量。</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </details>
+<div class="admonition note">
+<p class="admonition-title">证明 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 关于特征值 1 的特征向量有且只有一个</p>
+<ul>
+<li>存在性：<span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 是列随机矩阵，所以 1 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的特征值，且 <span class="arithmatex">\(\pmb{1}\)</span> 是属于特征值 1 的特征向量。</li>
+<li>
+<p>唯一性，用反证法：</p>
+<p>设 <span class="arithmatex">\(\pmb{v} = (v_1,v_2,...,v_n)^T\)</span> 和 <span class="arithmatex">\(\pmb{w} = (w_1,w_2,...,w_n)\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的两个关于特征值 1 的线性无关的特征向量，令 <span class="arithmatex">\(x_i = -\frac{W}{V} v_i + w_i,i = 1,2,...,n\)</span>，其中 <span class="arithmatex">\(V = \sum\limits_{k=1}^n v_k\not = 0,W = \sum\limits_{k=1}^n w_k\)</span>
+由于 <span class="arithmatex">\(\pmb{v}\)</span> 与 <span class="arithmatex">\(\pmb{k}\)</span> 线性无关，且 <span class="arithmatex">\(\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}x_j = \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}(-\frac{W}{V} v_j + w_j) = -\frac{W}{V}\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}v_j + \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}w_j = -\frac{W}{V}v_i + w_i = x_i\)</span>，那我们就能得到 <span class="arithmatex">\(\pmb{x}\)</span> 也是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 关于特征值 1 的线性无关的特征向量。</p>
+<p>我们注意到 <span class="arithmatex">\(\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i = -W + W = 0\)</span>
+所以我们尝试证明：如果 <span class="arithmatex">\(\pmb{x}\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的属于特征值1 的特征向量，那么 <span class="arithmatex">\(\pmb{x}\)</span> 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。</p>
+<p>设 <span class="arithmatex">\(\pmb{x}\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的属于特征值 1 的特征向量，则 <span class="arithmatex">\(x_i = \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j\)</span>
+如果 <span class="arithmatex">\(\sum\limits_{i=1}^n x_i = 0\)</span>，则 <span class="arithmatex">\(\pmb{x}\)</span> 的分量有正有负，则 <span class="arithmatex">\(|x_i| = |\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j| &lt; \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j|,i=1,2,...,n\)</span>
+则有 <span class="arithmatex">\(\sum\limits_{i=1}^n |x_i| &lt; \sum\limits_{i=1}^n\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j| = \sum\limits_{j=1}^n|x_j|(\sum\limits_{i=1}^n \overline{\overline{p_{ij}}} ) = \sum\limits_{j=1}^n|x_j|\)</span>，矛盾！</p>
+<p>所以 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 关于特征值 1 的特征向量有且只有一个</p>
+</li>
+</ul>
+</div>
+<hr />
+<h3 id="perron-frobenius">Perron-Frobenius 定理<a class="headerlink" href="#perron-frobenius" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3429,7 +3523,7 @@ I - P = \begin{pmatrix}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月16日 14:12:30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月16日 14:59:41</span>
   </span>
 
     
