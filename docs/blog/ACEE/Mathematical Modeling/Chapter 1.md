@@ -77,8 +77,8 @@
 
 !!! 证明
 
-	- 设 $\lambda$ 是行随机矩阵 $P = (p_{ij})_{n\times n}$ 的特征值，非零向量 $X = (x_1,...,x_n)^T$ 为属于特征值 $\lambda$ 的特征向量。设 $|x_i|=max(|x_j|)>0(1\leq j \leq n)$
-	- 由 $PX=\lambda X$，可得 $\lambda x_i = \sum\limits_{j=1}^n p_{ij}x_j$
+	- 设 $\lambda$ 是行随机矩阵 $\pmb{P} = (p_{ij})_{n\times n}$ 的特征值，非零向量 $\pmb{x} = (x_1,...,x_n)^T$ 为属于特征值 $\lambda$ 的特征向量。设 $|x_i|=max(|x_j|)>0(1\leq j \leq n)$
+	- 由 $\pmb{Px}=\lambda \pmb{x}$，可得 $\lambda x_i = \sum\limits_{j=1}^n p_{ij}x_j$
 	- 两边取<font color="red">模</font>，$|\lambda||x_i|=|\lambda x_i|= |\sum\limits_{j=1}^{n} p_{ij}x_j|\leq\sum\limits_{j=1}^{n}|p_{ij}||x_j|\leq|x_i|\sum\limits_{j=1}^n|p_{ij}|=|x_i|$，即 $|\lambda|\leq 1$
 
 
@@ -86,9 +86,9 @@
 ## 链接矩阵
 
 - 令 $p_{ij} = \begin{cases}\frac{1}{q_j}\space,若有链接自  v_j 链向 v_i\\\space 0\space\space,其他\end{cases}$
-	- 记矩阵 $P = (p_{ij})_{n\times n}$ 为（初始）<font color="blue">链接矩阵</font>，$X = (x_1,...,x_n)^T$ 为网页<font color="blue">重要度向量</font>
-	- $X$ 为线性方程组 $X=PX$ 的解
-		- $rank(I-P)<n$
+	- 记矩阵 $\pmb{P} = (p_{ij})_{n\times n}$ 为（初始）<font color="blue">链接矩阵</font>，$\pmb{x} = (x_1,...,x_n)^T$ 为网页<font color="blue">重要度向量</font>
+	- $\pmb{x}$ 为线性方程组 $\pmb{x}=\pmb{Px}$ 的解
+		- $rank(\pmb{I}-\pmb{P})<n$
 		- 矩阵 $P$ 有特征值 1
 		- 矩阵 $P$ 的每列元素之和为 1，为列随机矩阵
 
@@ -135,7 +135,7 @@
 		
 		解得 $x_1 = \frac{12}{31},x_2 = \frac{4}{31},x_3 = \frac{9}{31},x_4 = \frac{6}{31}$
 
-- 但是，线性方程组 $X=PX$ 还会有特殊情况：
+- 但是，线性方程组 $\pmb{x}=\pmb{P}\pmb{x}$ 还会有特殊情况：
 
 ??? Question1
 
@@ -148,10 +148,54 @@
 	=== "Solution"
 	
 		- 悬挂网页（dangling link）
-			- 若某网页不链接任意其它网页，我们称之为**悬挂网页**。显然，悬挂网页的出度为 0，但它的重要度不为 0。将链接矩阵 $P$ 中对应列的所有元素由 0 修改为 $\frac{1}{n}$ ，得到（修正）链接矩阵 $\overline{P}$  
-			- 我们记悬挂网页为第i个网页，记 $\pmb{d}^T=(0,0,⋯,0,1,0,⋯,0)$，其中索引至悬挂网页的值为 1，其余为 0。则有 $\overline{P} = P + \frac{1}{n}\pmb{1}\pmb{d}^T$
+			- 若某网页不链接任意其它网页，我们称之为**悬挂网页**。显然，悬挂网页的出度为 0，但它的重要度不为 0。将链接矩阵 $\pmb{P}$ 中对应列的所有元素由 0 修改为 $\frac{1}{n}$ ，得到（修正）链接矩阵 $\pmb{\overline{P}}$  
+			- 我们记悬挂网页为第i个网页，记 $\pmb{d}^T=(0,0,⋯,0,1,0,⋯,0)$，其中索引至悬挂网页的值为 1，其余为 0。则有 $\pmb{\overline{P}} = \pmb{P} + \frac{1}{n}\pmb{1}\pmb{d}^T$，其中 $\pmb{1}=(1,1,...,1,...,1)$
+		
+		对这个例子我们有：
+		
+		$$
+		\pmb{\overline{P}} = \pmb{P} + \frac{1}{5}\begin{pmatrix}
+		1\\
+		1\\
+		1\\
+		1\\
+		1
+		\end{pmatrix}\begin{pmatrix}
+		0 & 0 & 0 & 0 & 1
+		\end{pmatrix}=\pmb{P} + \begin{pmatrix}
+		0 & 0 & 0 & 0 & \frac{1}{5}\\
+		0 & 0 & 0 & 0 & \frac{1}{5}\\
+		0 & 0 & 0 & 0 & \frac{1}{5}\\
+		0 & 0 & 0 & 0 & \frac{1}{5}\\
+		0 & 0 & 0 & 0 & \frac{1}{5}\\
+		\end{pmatrix}=
+		\begin{pmatrix}
+		0 & 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{5}\\
+		\frac{1}{3} & 0 & 0 & 0 & \frac{1}{5}\\
+		\frac{1}{3} & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{5}\\
+		\frac{1}{3} & \frac{1}{2} & 0 & 0 & \frac{1}{5}\\
+		0 & 0 & \frac{1}{2} & 0 & \frac{1}{5}\\
+		\end{pmatrix}
+		$$
+		
 
 ??? Question2
 
-	- 线性方程组有多个解
+	== "Question"
+	
+		- 线性方程组有多个解
+		
+		![](../../../assets/Pasted image 20240916132951.png)
+	
+	== "Solution"
+	
+		- 多解修正
+			- 若 $\pmb{\overline{P}}$ 有两个属于特征值 1 的线性无关的特征向量，我们就无法得到唯一的网页重要度向量 $\pmb{x}$。于是，我们对 $\pmb{\overline{P}}$ 进行修正，使得 $\pmb{\overline{P}}$ 成为**完全正矩阵**，即 $\pmb{\overline{P}}$ 的所有方阵子式的行列式都大于 0。修正方法如下：
+			
+			$$
+			\pmb{\overline{\overline{P}}} = \alpha\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T
+			$$
+			
+			其中，$\alpha$ 为修正系数，$\alpha = 0.85$。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
+			
 
