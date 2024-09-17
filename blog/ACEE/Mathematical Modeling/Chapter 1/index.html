@@ -3707,13 +3707,13 @@ I - P = \begin{pmatrix}
 <li>存在性：<span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 是列随机矩阵，所以 1 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的特征值，所以必存在至少一个属于特征值 1 的特征向量。</li>
 <li>
 <p>唯一性，用反证法：</p>
-<p>设 <span class="arithmatex">\(\pmb{v} = (v_1,v_2,...,v_n)^T\)</span> 和 <span class="arithmatex">\(\pmb{w} = (w_1,w_2,...,w_n)\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的两个关于特征值 1 的线性无关的特征向量，令 <span class="arithmatex">\(x_i = -\frac{W}{V} v_i + w_i,i = 1,2,...,n\)</span>，其中 <span class="arithmatex">\(V = \sum\limits_{k=1}^n v_k\not = 0,W = \sum\limits_{k=1}^n w_k\)</span>
-由于 <span class="arithmatex">\(\pmb{v}\)</span> 与 <span class="arithmatex">\(\pmb{k}\)</span> 线性无关，且 <span class="arithmatex">\(\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}x_j = \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}(-\frac{W}{V} v_j + w_j) = -\frac{W}{V}\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}v_j + \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}w_j = -\frac{W}{V}v_i + w_i = x_i\)</span>，那我们就能得到 <span class="arithmatex">\(\pmb{x}\)</span> 也是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 关于特征值 1 的线性无关的特征向量。</p>
-<p>我们注意到 <span class="arithmatex">\(\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i = -W + W = 0\)</span>
-所以我们尝试证明：如果 <span class="arithmatex">\(\pmb{x}\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的属于特征值1 的特征向量，那么 <span class="arithmatex">\(\pmb{x}\)</span> 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。</p>
-<p>设 <span class="arithmatex">\(\pmb{x}\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的属于特征值 1 的特征向量，则 <span class="arithmatex">\(x_i = \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j\)</span>
-如果 <span class="arithmatex">\(\sum\limits_{i=1}^n x_i = 0\)</span>，则 <span class="arithmatex">\(\pmb{x}\)</span> 的分量有正有负，则 <span class="arithmatex">\(|x_i| = |\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j| &lt; \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j|,i=1,2,...,n\)</span>
-则有 <span class="arithmatex">\(\sum\limits_{i=1}^n |x_i| &lt; \sum\limits_{i=1}^n\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j| = \sum\limits_{j=1}^n|x_j|(\sum\limits_{i=1}^n \overline{\overline{p_{ij}}} ) = \sum\limits_{j=1}^n|x_j|\)</span>，矛盾！</p>
+<p>设 <span class="arithmatex">\(\pmb{v} = (v_1,v_2,...,v_n)^T\)</span> 和 <span class="arithmatex">\(\pmb{w} = (w_1,w_2,...,w_n)\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的两个关于特征值 1 的线性无关的特征向量，令 <span class="arithmatex">\(x_i = -\frac{W}{V} v_i + w_i,i = 1,2,...,n\)</span>，其中 <span class="arithmatex">\(V = \sum\limits_{k=1}^n v_k\not = 0,W = \sum\limits_{k=1}^n w_k\)</span></p>
+<p>由于 <span class="arithmatex">\(\pmb{v}\)</span> 与 <span class="arithmatex">\(\pmb{k}\)</span> 线性无关，且 <span class="arithmatex">\(\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}x_j = \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}(-\frac{W}{V} v_j + w_j) = -\frac{W}{V}\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}v_j + \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}w_j = -\frac{W}{V}v_i + w_i = x_i\)</span>，那我们就能得到 <span class="arithmatex">\(\pmb{x}\)</span> 也是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 关于特征值 1 的线性无关的特征向量。</p>
+<p>我们注意到 <span class="arithmatex">\(\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i） = -W + W = 0\)</span></p>
+<p>所以我们尝试证明：如果 <span class="arithmatex">\(\pmb{x}\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的属于特征值1 的特征向量，那么 <span class="arithmatex">\(\pmb{x}\)</span> 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。</p>
+<p>设 <span class="arithmatex">\(\pmb{x}\)</span> 是 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 的属于特征值 1 的特征向量，则 <span class="arithmatex">\(x_i = \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j\)</span></p>
+<p>如果 <span class="arithmatex">\(\sum\limits_{i=1}^n x_i = 0\)</span>，则 <span class="arithmatex">\(\pmb{x}\)</span> 的分量有正有负，则 <span class="arithmatex">\(|x_i| = |\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j| &lt; \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j|,i=1,2,...,n\)</span></p>
+<p>则有 <span class="arithmatex">\(\sum\limits_{i=1}^n |x_i| &lt; \sum\limits_{i=1}^n\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j| = \sum\limits_{j=1}^n|x_j|(\sum\limits_{i=1}^n \overline{\overline{p_{ij}}} ) = \sum\limits_{j=1}^n|x_j|\)</span>，矛盾！</p>
 <p>所以 <span class="arithmatex">\(\pmb{\overline{\overline{P}}}\)</span> 关于特征值 1 的特征向量有且只有一个</p>
 </li>
 </ul>
@@ -3774,13 +3774,11 @@ I - P = \begin{pmatrix}
 <div class="admonition process">
 <p class="admonition-title">Process</p>
 <p>任取初始向量 <span class="arithmatex">\(\pmb{x}^{(0)}&gt;0\)</span>，且 <span class="arithmatex">\(\sum\limits_{i=1}^nx_i^{(0)}=1\)</span>，我们通过迭代计算 <span class="arithmatex">\(\pmb{x}^{(k)}=\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}\)</span>，直到 <span class="arithmatex">\(\pmb{x}^{(k)}\)</span> 收敛</p>
-<p>!!!</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$\pmb{1}^T\pmb{x}^{(k)}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}=(\pmb{1}^T\pmb{\overline{\overline{P}}})\pmb{x}^{(k-1)}=\pmb{1}^T\pmb{x}^{(k-1)}$
-
-由此迭代可以得到 $\pmb{1}^T\pmb{x}^{(k)} = \pmb{1}^T\pmb{x}^{(k-1)} = 1$
-</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="arithmatex">\(\pmb{1}^T\pmb{x}^{(k)}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}=(\pmb{1}^T\pmb{\overline{\overline{P}}})\pmb{x}^{(k-1)}=\pmb{1}^T\pmb{x}^{(k-1)}\)</span></p>
+<p>由此迭代可以得到 <span class="arithmatex">\(\pmb{1}^T\pmb{x}^{(k)} = \pmb{1}^T\pmb{x}^{(k-1)} = 1\)</span></p>
+</div>
 <p>我们展开 <span class="arithmatex">\(\pmb{x}^{(k)} = \pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}\)</span>：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -3812,10 +3810,10 @@ I - P = \begin{pmatrix}
 \]</div>
 <p>记 <span class="arithmatex">\(c=\max\limits_{1\leq j\leq n}|\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}}|&lt;1\)</span>，则有 <span class="arithmatex">\(||\pmb{w}||_1\leq\sum\limits_{j=1}^n(|v_j||\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}}|\leq\sum\limits_{j=1}^n(|v_j|c)=c\sum\limits_{j=1}^n|v_j|=c||\pmb{v}||_1\)</span> 
 所以 <span class="arithmatex">\(||\pmb{w}||_1\leq c||\pmb{v}||_1\)</span>，其中 <span class="arithmatex">\(c&lt;1\)</span></p>
-<p>记 <span class="arithmatex">\(\pmb{v_0}=\pmb{x}^{(0)}-\pmb{X}\in\pmb{V}\)</span>，我们有 <span class="arithmatex">\(\pmb{1}^T\pmb{v_0}=\pmb{1}^T\pmb{x}^{(0)}-\pmb{1}^T\pmb{X}=1-1=0\)</span>，所以 <span class="arithmatex">\(\pmb{v}_0\in\pmb{V}\)</span>
-由于 <span class="arithmatex">\(\overline{\overline{\pmb{P}}}\pmb{X}=\pmb{X}\)</span>，<span class="arithmatex">\(\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k\pmb{x}^{(0)}=\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k(\pmb{X}+\pmb{v}_0)=\pmb{X}+\overline{\overline{\pmb{P}}}^k\pmb{v}_0\)</span>
-由于 <span class="arithmatex">\(||\overline{\overline{\pmb{P}}}^k\pmb{v}_0||_1\leq c^k||\pmb{v_0}||_1\)</span>，所以 <span class="arithmatex">\(||\pmb{x}^{(k)}-\pmb{X}||_1\leq c^k||\pmb{v_0}||_1\)</span>
-所以，<span class="arithmatex">\(\pmb{x}^{(k)}\)</span> 收敛到 <span class="arithmatex">\(\pmb{X}\)</span>，得证。</p>
+<p>记 <span class="arithmatex">\(\pmb{v_0}=\pmb{x}^{(0)}-\pmb{X}\in\pmb{V}\)</span>，我们有 <span class="arithmatex">\(\pmb{1}^T\pmb{v_0}=\pmb{1}^T\pmb{x}^{(0)}-\pmb{1}^T\pmb{X}=1-1=0\)</span>，所以 <span class="arithmatex">\(\pmb{v}_0\in\pmb{V}\)</span></p>
+<p>由于 <span class="arithmatex">\(\overline{\overline{\pmb{P}}}\pmb{X}=\pmb{X}\)</span>，<span class="arithmatex">\(\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k\pmb{x}^{(0)}=\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k(\pmb{X}+\pmb{v}_0)=\pmb{X}+\overline{\overline{\pmb{P}}}^k\pmb{v}_0\)</span></p>
+<p>由于 <span class="arithmatex">\(||\overline{\overline{\pmb{P}}}^k\pmb{v}_0||_1\leq c^k||\pmb{v_0}||_1\)</span>，所以 <span class="arithmatex">\(||\pmb{x}^{(k)}-\pmb{X}||_1\leq c^k||\pmb{v_0}||_1\)</span></p>
+<p>所以，<span class="arithmatex">\(\pmb{x}^{(k)}\)</span> 收敛到 <span class="arithmatex">\(\pmb{X}\)</span>，得证。</p>
 </div>
 <hr />
 <h2 id="_16">随机浏览<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
@@ -3923,7 +3921,7 @@ I - P = \begin{pmatrix}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月17日 11:51:16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月17日 11:53:42</span>
   </span>
 
     
