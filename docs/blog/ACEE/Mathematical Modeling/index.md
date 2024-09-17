@@ -14,4 +14,4 @@ comments: true
 
 ## Table of Contents
 
-- [Chapter 01 : 搜索引擎中的 PageRank 模型](Chapter%2001/)
+- [Chapter 01 : 搜索引擎中的 PageRank 模型](Chapter%201/)

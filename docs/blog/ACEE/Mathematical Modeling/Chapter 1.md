@@ -6,7 +6,7 @@ hide:
   - feedback
 comments: true
 ---  
-# 搜索引擎中的 PageRank 模型
+# Chapter 01 : 搜索引擎中的 PageRank 模型
 
 ## 搜索引擎
 
