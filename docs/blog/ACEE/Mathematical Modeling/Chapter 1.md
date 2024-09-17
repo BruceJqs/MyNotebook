@@ -218,13 +218,17 @@
 	- 唯一性，用反证法：
 	
 		设 $\pmb{v} = (v_1,v_2,...,v_n)^T$ 和 $\pmb{w} = (w_1,w_2,...,w_n)$ 是 $\pmb{\overline{\overline{P}}}$ 的两个关于特征值 1 的线性无关的特征向量，令 $x_i = -\frac{W}{V} v_i + w_i,i = 1,2,...,n$，其中 $V = \sum\limits_{k=1}^n v_k\not = 0,W = \sum\limits_{k=1}^n w_k$
+		
 		由于 $\pmb{v}$ 与 $\pmb{k}$ 线性无关，且 $\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}x_j = \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}(-\frac{W}{V} v_j + w_j) = -\frac{W}{V}\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}v_j + \sum\limits_{j=1}^n\overline{\overline{p_{ij}}}w_j = -\frac{W}{V}v_i + w_i = x_i$，那我们就能得到 $\pmb{x}$ 也是 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的线性无关的特征向量。
 		
-		我们注意到 $\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i = -W + W = 0$
+		我们注意到 $\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i） = -W + W = 0$
+		
 		所以我们尝试证明：如果 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值1 的特征向量，那么 $\pmb{x}$ 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。
 		
 		设 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值 1 的特征向量，则 $x_i = \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j$
+		
 		如果 $\sum\limits_{i=1}^n x_i = 0$，则 $\pmb{x}$ 的分量有正有负，则 $|x_i| = |\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j| < \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j|,i=1,2,...,n$
+		
 		则有 $\sum\limits_{i=1}^n |x_i| < \sum\limits_{i=1}^n\sum\limits_{j=1}^n \overline{\overline{p_{ij}}} |x_j| = \sum\limits_{j=1}^n|x_j|(\sum\limits_{i=1}^n \overline{\overline{p_{ij}}} ) = \sum\limits_{j=1}^n|x_j|$，矛盾！
 		
 		所以 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的特征向量有且只有一个
@@ -273,7 +277,7 @@
 
 	任取初始向量 $\pmb{x}^{(0)}>0$，且 $\sum\limits_{i=1}^nx_i^{(0)}=1$，我们通过迭代计算 $\pmb{x}^{(k)}=\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}$，直到 $\pmb{x}^{(k)}$ 收敛
 	
-	!!!
+	!!! note
 	
 		$\pmb{1}^T\pmb{x}^{(k)}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}=(\pmb{1}^T\pmb{\overline{\overline{P}}})\pmb{x}^{(k-1)}=\pmb{1}^T\pmb{x}^{(k-1)}$
 		
@@ -317,8 +321,11 @@
 	所以 $||\pmb{w}||_1\leq c||\pmb{v}||_1$，其中 $c<1$
 	
 	记 $\pmb{v_0}=\pmb{x}^{(0)}-\pmb{X}\in\pmb{V}$，我们有 $\pmb{1}^T\pmb{v_0}=\pmb{1}^T\pmb{x}^{(0)}-\pmb{1}^T\pmb{X}=1-1=0$，所以 $\pmb{v}_0\in\pmb{V}$
+	
 	由于 $\overline{\overline{\pmb{P}}}\pmb{X}=\pmb{X}$，$\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k\pmb{x}^{(0)}=\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k(\pmb{X}+\pmb{v}_0)=\pmb{X}+\overline{\overline{\pmb{P}}}^k\pmb{v}_0$
+	
 	由于 $||\overline{\overline{\pmb{P}}}^k\pmb{v}_0||_1\leq c^k||\pmb{v_0}||_1$，所以 $||\pmb{x}^{(k)}-\pmb{X}||_1\leq c^k||\pmb{v_0}||_1$
+	
 	所以，$\pmb{x}^{(k)}$ 收敛到 $\pmb{X}$，得证。
 ***
 ## 随机浏览
