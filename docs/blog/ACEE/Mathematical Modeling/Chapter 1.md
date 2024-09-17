@@ -1,3 +1,11 @@
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+---  
 # 搜索引擎中的 PageRank 模型
 
 ## 搜索引擎
