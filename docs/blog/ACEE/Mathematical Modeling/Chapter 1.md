@@ -202,7 +202,7 @@
 			\pmb{\overline{\overline{P}}} = \alpha\pmb{\overline{P}} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T
 			$$
 			
-			- 其中，$\alpha$ 为修正系数，$\alpha = 0.85$。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
+			- 其中，$\alpha$ 为修正系数，$\alpha = 0.85$（为什么取 0.85 后面会有解释）。$\pmb{\overline{\overline{P}}}$ 是完全正矩阵与列随机矩阵的结合。
 			
 			!!! note "证明 $\pmb{\overline{\overline{P}}}$ 是列随机矩阵"
 			
@@ -237,7 +237,7 @@
 	- $\pmb{A}$ 的模最大特征值唯一，且为正实数
 	- 该特征值代数重数为 1
 	- 存在该特征值的一个特征向量，其分量全为正
-
+***
 ### Perron-Frobenius 定理
 
 - 若矩阵 $\pmb{A}$ 为非负不可约矩阵，则
@@ -254,7 +254,103 @@
 	- 不可约矩阵与有向图
 		- 若对有向图中任意顶点对 $v_i,v_j$，既存在一条从 $v_i$ 到 $v_j$ 的有向路，也存在一条从 $v_j$ 到 $v_i$ 的有向路，则称有向图是<font color="blue">强联通</font>（Strongly Connected）的
 		- 给定非负矩阵 $\pmb{A}=(a_{ij})_{n\times n}$，构造有向图 $G(\pmb{A})=(V,A)$，其中 $V=\{v_1,v_2,...,v_n\}$，弧 $(v_i,v_j)\in \pmb{A}$ 当且仅当 $a_{ij}>0$
-		- $\pmb{A}$ 是不可约矩阵当且仅当 $G(\pmb{A}$ 是强联通的
+		- $\pmb{A}$ 是不可约矩阵当且仅当 $G(\pmb{A})$ 是强联通的
 	
 	![](../../../assets/Pasted image 20240916161441.png)
+***
+### 链接矩阵与重要度向量
 
+- 链接矩阵为完全正、列随机矩阵，模最大特征值为 1，重要度向量唯一且其分量全为正
+***
+## PageRank 中的矩阵求解
+
+整个互联网有相当多且稀疏的网页，所以我们需要一个好的算法来求解网页重要度向量 $\pmb{x}$。
+### 幂法
+
+- 幂法是计算矩阵模最大特征值和对应的特征向量的一种迭代算法
+
+!!! Process
+
+	任取初始向量 $\pmb{x}^{(0)}>0$，且 $\sum\limits_{i=1}^nx_i^{(0)}=1$，我们通过迭代计算 $\pmb{x}^{(k)}=\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}$，直到 $\pmb{x}^{(k)}$ 收敛
+	
+	!!!
+	
+		$\pmb{1}^T\pmb{x}^{(k)}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}=(\pmb{1}^T\pmb{\overline{\overline{P}}})\pmb{x}^{(k-1)}=\pmb{1}^T\pmb{x}^{(k-1)}$
+		
+		由此迭代可以得到 $\pmb{1}^T\pmb{x}^{(k)} = \pmb{1}^T\pmb{x}^{(k-1)} = 1$
+	
+	我们展开 $\pmb{x}^{(k)} = \pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}$：
+	
+	$$
+	\begin{aligned}
+	\pmb{x}^{(k)} &= \pmb{\overline{\overline{P}}}\pmb{x}^{(k-1)}\\
+	&= \alpha\pmb{\overline{P}}\pmb{x}^{(k-1)} + (1-\alpha)\frac{1}{n}\pmb{1}\pmb{1}^T\pmb{x}^{(k-1)}\\
+	&= \alpha\pmb{\overline{P}}\pmb{x}^{(k-1)} + (1-\alpha)\frac{1}{n}\pmb{1}\\
+	&= \alpha(\pmb{P}+\frac{1}{n}\pmb{1}\pmb{d}^T)\pmb{x}^{(k-1)} + (1-\alpha)\frac{1}{n}\pmb{1}\\
+	&= \alpha\pmb{P}\pmb{x}^{(k-1)} +\alpha\frac{1}{n}\pmb{1}\pmb{d}^T\pmb{x}^{(k-1)} + (1-\alpha)\frac{1}{n}\pmb{1}\\
+	\end{aligned}
+	$$
+	
+
+### 完全正、列随机矩阵幂法的收敛性
+
+记 $V$ 为满足 $\pmb{1}^T\pmb{v}=1$ 的 n 维列向量 $\pmb{v}=\{v_1,v_2,...,v_n\}$ 全体组成的集合。记 $||\pmb{v}||_1=\sum\limits_{i=1}^n|v_i|$
+对任意的 $\pmb{v}\in V$，我们取 $\pmb{w} = \pmb{\overline{\overline{P}}}\pmb{v}$，因为 $\pmb{1}^T\pmb{w}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{v}=\pmb{1}^T\pmb{v}=1$，所以 $\pmb{w}\in V$
+
+我们接下来尝试证明 $||\pmb{w}||_1=||\pmb{\overline{\overline{P}}}\pmb{v}||_1\leq c||\pmb{v}||_1$，其中 $c<1$
+
+!!! Proof
+
+	- $\pmb{w}=\pmb{0}$，显然成立
+	- $\pmb{w}\not=\pmb{0}$，记 $\pmb{w}=(w_1,w_2,...,w_n)^T,e_i=sgn(w_i)$，则有：
+	
+	$$
+	\begin{aligned}
+	||\pmb{w}||_1 &= \sum\limits_{i=1}^n|w_i| = \sum\limits_{i=1}^n e_iw_i = \sum\limits_{i=1}^n(e_i\sum\limits_{j=1}^n\overline{\overline{p_{ij}}}v_j)\\
+	&= \sum\limits_{i=1}^n(\sum\limits_{j=1}^ne_i\overline{\overline{p_{ij}}}v_j) = \sum\limits_{j=1}^n(\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}}v_j)\\
+	&= \sum\limits_{j=1}^n(v_j\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}})\\
+	&\leq \sum\limits_{j=1}^n(|v_j||\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}}|)
+	\end{aligned}
+	$$
+	
+	记 $c=\max\limits_{1\leq j\leq n}|\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}}|<1$，则有 $||\pmb{w}||_1\leq\sum\limits_{j=1}^n(|v_j||\sum\limits_{i=1}^ne_i\overline{\overline{p_{ij}}}|\leq\sum\limits_{j=1}^n(|v_j|c)=c\sum\limits_{j=1}^n|v_j|=c||\pmb{v}||_1$ 
+	所以 $||\pmb{w}||_1\leq c||\pmb{v}||_1$，其中 $c<1$
+	
+	记 $\pmb{v_0}=\pmb{x}^{(0)}-\pmb{X}\in\pmb{V}$，我们有 $\pmb{1}^T\pmb{v_0}=\pmb{1}^T\pmb{x}^{(0)}-\pmb{1}^T\pmb{X}=1-1=0$，所以 $\pmb{v}_0\in\pmb{V}$
+	由于 $\overline{\overline{\pmb{P}}}\pmb{X}=\pmb{X}$，$\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k\pmb{x}^{(0)}=\pmb{x}^{(k)}=\overline{\overline{\pmb{P}}}^k(\pmb{X}+\pmb{v}_0)=\pmb{X}+\overline{\overline{\pmb{P}}}^k\pmb{v}_0$
+	由于 $||\overline{\overline{\pmb{P}}}^k\pmb{v}_0||_1\leq c^k||\pmb{v_0}||_1$，所以 $||\pmb{x}^{(k)}-\pmb{X}||_1\leq c^k||\pmb{v_0}||_1$
+	所以，$\pmb{x}^{(k)}$ 收敛到 $\pmb{X}$，得证。
+***
+## 随机浏览
+
+### 随机浏览（Random Surfer）
+
+- 按以下模式浏览互联网的网页
+	- 有时从当前网页的链接中随机打开一个网页
+	- 有时键入网址新建一个网页
+- 从任一网页开始，充分长时间后，访问各网页的概率即为网页重要度
+
+经过统计，随机打开网页的次数与键入网址新建网页的次数之比约为 5:1，这就是 $\alpha=0.85$ 的来源。
+***
+### 极限概率
+
+记事件 $\{X_m=j\}$ 为时刻 $m$ 访问网页 $v_j$，则 $P\{X_m=i|X_{m−1}=j\}=p_{ij}$
+
+若 $P\{X_m=j\}=x_j$，则 $P\{X_m=i\}=\sum\limits_{j=1}^nP\{X_m=i|X_{m−1}=j\}P\{X_{m−1}=j\}=\sum\limits_{j=1}^np_{ij}x_j$
+
+记 $\pmb{x}^{(m)}=(P\{X_m=1\},P\{X_m=2\},⋯,P\{X_m=n\})^T$，则有 $\pmb{x}^{(m)}=\overline{\overline{\pmb{P}}}\pmb{x}^{(m-1)}$
+***
+## 随机过程
+
+### 随机过程（Stochastic Process）
+
+- 描述随机现象随时间推移而演化的一类数学模型
+- **一族随机变量** $\{X(t),t\in T\}$，其中 $T$ 为参数集，$t$ 是参数。$\{X(t),t\in T\}$ 称为参数为 $t$ 的随机变量
+	- $T$ 为整数集的随机过程称为随机序列
+***
+### Markov 过程
+
+- 在已知目前的状态（现在）的条件下，它未来的演变（将来）不依赖于它以往的演变（过去）
+- 在随机序列 $\{X_n,n=0,1,2,⋯\}$ 中（$X_n$ 只能取有限个或可数个数值）
+	- $P\{X_{n+1}=i_{n+1}\}$ 只与 $X_n$ 有关，而与 $X_{n-1},X_{n-2},...,X_0$ 无关
+	- 对于任意的 $n\leq 0$ 和一列状态 $i_0,i_1,...,i_{n-1},i_n,i_{n+1}$，有$P\{X_{n+1}=i_{n+1}|X_n=i_n,X_{n−1}=i_{n−1},⋯,X_0=i_0\}=P\{X_{n+1}=i_{n+1}|X_n=i_n\}$
