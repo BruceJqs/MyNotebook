@@ -231,7 +231,7 @@ comments: true
 		
 		我们注意到 $\sum\limits_{i=1}^n x_i = \sum\limits_{i=1}^n(-\frac{W}{V} v_i + w_i） = -W + W = 0$
 		
-		所以我们尝试证明：如果 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值1 的特征向量，那么 $\pmb{x}$ 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。
+		所以我们尝试证明：如果 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值 1 的特征向量，那么 $\pmb{x}$ 的分量之和不为零，从而与上面的结论矛盾。这也就证明了属于特征值1的特征向量有且只有一个。
 		
 		设 $\pmb{x}$ 是 $\pmb{\overline{\overline{P}}}$ 的属于特征值 1 的特征向量，则 $x_i = \sum\limits_{j=1}^n \overline{\overline{p_{ij}}} x_j$
 		
@@ -306,8 +306,8 @@ comments: true
 
 ### 完全正、列随机矩阵幂法的收敛性
 
-记 $V$ 为满足 $\pmb{1}^T\pmb{v}=1$ 的 n 维列向量 $\pmb{v}=\{v_1,v_2,...,v_n\}$ 全体组成的集合。记 $||\pmb{v}||_1=\sum\limits_{i=1}^n|v_i|$
-对任意的 $\pmb{v}\in V$，我们取 $\pmb{w} = \pmb{\overline{\overline{P}}}\pmb{v}$，因为 $\pmb{1}^T\pmb{w}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{v}=\pmb{1}^T\pmb{v}=1$，所以 $\pmb{w}\in V$
+记 $V$ 为满足 $\pmb{1}^T\pmb{v}=0$ 的 n 维列向量 $\pmb{v}=\{v_1,v_2,...,v_n\}$ 全体组成的集合。记 $||\pmb{v}||_1=\sum\limits_{i=1}^n|v_i|$
+对任意的 $\pmb{v}\in V$，我们取 $\pmb{w} = \pmb{\overline{\overline{P}}}\pmb{v}$，因为 $\pmb{1}^T\pmb{w}=\pmb{1}^T\pmb{\overline{\overline{P}}}\pmb{v}=\pmb{1}^T\pmb{v}=0$，所以 $\pmb{w}\in V$
 
 我们接下来尝试证明 $||\pmb{w}||_1=||\pmb{\overline{\overline{P}}}\pmb{v}||_1\leq c||\pmb{v}||_1$，其中 $c<1$
 
