@@ -214,7 +214,7 @@
 
 !!! note "证明 $\pmb{\overline{\overline{P}}}$ 关于特征值 1 的特征向量有且只有一个"
 
-	- 存在性：$\pmb{\overline{\overline{P}}}$ 是列随机矩阵，所以 1 是 $\pmb{\overline{\overline{P}}}$ 的特征值，且 $\pmb{1}$ 是属于特征值 1 的特征向量。
+	- 存在性：$\pmb{\overline{\overline{P}}}$ 是列随机矩阵，所以 1 是 $\pmb{\overline{\overline{P}}}$ 的特征值，所以必存在至少一个属于特征值 1 的特征向量。
 	- 唯一性，用反证法：
 	
 		设 $\pmb{v} = (v_1,v_2,...,v_n)^T$ 和 $\pmb{w} = (w_1,w_2,...,w_n)$ 是 $\pmb{\overline{\overline{P}}}$ 的两个关于特征值 1 的线性无关的特征向量，令 $x_i = -\frac{W}{V} v_i + w_i,i = 1,2,...,n$，其中 $V = \sum\limits_{k=1}^n v_k\not = 0,W = \sum\limits_{k=1}^n w_k$
