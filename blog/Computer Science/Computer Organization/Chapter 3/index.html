@@ -21,7 +21,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
     
     
       
@@ -938,6 +938,63 @@
       Introduction
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signed-and-unsigned-numbers-possible-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed and Unsigned Numbers Possible Representations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addition &amp; Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-an-alu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructing an ALU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2671,6 +2728,8 @@
       
         
       
+        
+      
     
     
       
@@ -2724,6 +2783,27 @@
   
   <span class="md-ellipsis">
     Lesson 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 2
   </span>
   
 
@@ -2883,6 +2963,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signed-and-unsigned-numbers-possible-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed and Unsigned Numbers Possible Representations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmetic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addition &amp; Subtraction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-an-alu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructing an ALU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2918,6 +3055,107 @@
 
 <h1 id="chapter-3-arithmetic-for-computer">Chapter 3 : Arithmetic for Computer<a class="headerlink" href="#chapter-3-arithmetic-for-computer" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="signed-and-unsigned-numbers-possible-representations">Signed and Unsigned Numbers Possible Representations<a class="headerlink" href="#signed-and-unsigned-numbers-possible-representations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sign-magnitude（原码）<ul>
+<li>二进制（开头第一个表示符号，0 正 1 负）</li>
+</ul>
+</li>
+<li>1's Complement Code（反码）<ul>
+<li>在原码的基础上，符号位不动，其它位取反</li>
+</ul>
+</li>
+<li>2's Complement Code（补码）<ul>
+<li>在反码的基础上，运算+1</li>
+<li>任何正数的原码=反码=补码，而负数都是通过补码表示的</li>
+</ul>
+</li>
+<li>Biased Notation（移码）<ul>
+<li>在补码的基础上，符号位取反</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="arithmetic">Arithmetic<a class="headerlink" href="#arithmetic" title="Permanent link">&para;</a></h2>
+<h3 id="addition-subtraction">Addition &amp; Subtraction<a class="headerlink" href="#addition-subtraction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>加法即二进制竖式加法</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110327.png" /></p>
+<ul>
+<li>减法有两种方式，一种是直接竖式减法，但在计算机中<strong>不存在减法</strong>，可以通过加补码的形式实现减法</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110524.png" /></p>
+<hr />
+<h3 id="overflow">Overflow<a class="headerlink" href="#overflow" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在进行加减法时，由于硬件规模是有限的，我们可能遇到数据溢出的情况：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110719.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110742.png" /></p>
+<ul>
+<li>对于有符号加法，当正数和正数相加得到负数，或者负数和负数相加得到正数时，就可以判定溢出：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110851.png" /></p>
+<ul>
+<li>对于无符号加法，如果结果小于二者中任意一个，也可以判定溢出</li>
+<li>当出现溢出情况时，硬件层面检测出溢出情况，并生成一个异常/中断指令，将这个指令的地址存储到一个特别的寄存器 EPC 里，然后跳转到 OS 中专门的程序中来处理这个溢出（异常处理）</li>
+</ul>
+<hr />
+<h3 id="constructing-an-alu">Constructing an ALU<a class="headerlink" href="#constructing-an-alu" title="Permanent link">&para;</a></h3>
+<ul>
+<li>两个建立 ALU（Arithmetic Logic Unit）的方法：<ul>
+<li>逐渐扩展加法器的功能</li>
+<li>并行冗余选择</li>
+</ul>
+</li>
+</ul>
+<div class="admonition notes">
+<p class="admonition-title">逐渐扩展加法器功能</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">半加器</label><label for="__tabbed_1_2">多个数相加</label><label for="__tabbed_1_3">进位情况</label><label for="__tabbed_1_4">全加器</label><label for="__tabbed_1_5">添加与、或运算</label><label for="__tabbed_1_6">添加减法运算</label><label for="__tabbed_1_7">添加比较功能</label><label for="__tabbed_1_8">添加检测溢出功能</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918111944.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112139.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112252.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112431.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112507.png" /></p>
+<ul>
+<li>n 位加法，需要 n 个全加器</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112832.png" /></p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>结合一个选择器，我们就可以构造一个支持与、或以及加法运算的 1 bit ALU：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918113017.png" /></p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>结合之前所讲，减法即为加补码，对于一位的情况，反转 b 并将 CarryIn 设置为 1（即实现 b 的补码转换，如果有多位就将第一位加法器的 CarryIn 设置为 1）</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918133122.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>为了实现 <code>slt rd, rs1, rs2</code> 这个操作（即实现比较操作）（SLT 即 Set Less Than），如果 <code>rs1 &lt; rs2</code> ，那么将 <code>rd</code> 置为 <code>1</code> ，否则置为 <code>0</code> 。如何进行这一判断呢？很简单，<code>rs1 &lt; rs2</code> 即 <code>rs1 - rs2 &lt; 0</code>，也就是说如果 <code>rs1 - rs2</code> 结果的最高位是 <code>1</code> ，那么就说明 <code>rs1 &lt; rs2</code> 。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918134045.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918134234.png" /></p>
+<p>注：图中的 Overflow Detection 被复杂化了，实际上可以通过 <code>CarryIn</code> 和 <code>CarryOut</code> 的异或完成</p>
+</div>
+</div>
+</div>
+</div>
+<p>最终封装模块，可以得到完整的 32 位的 ALU 模块：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240918134416.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2987,7 +3225,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月18日 10:13:35</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月18日 13:44:45</span>
   </span>
 
     
@@ -3308,7 +3546,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
     
