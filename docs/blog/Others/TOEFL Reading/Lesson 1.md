@@ -6,6 +6,8 @@ hide:
   - feedback
 comments: true
 ---  
+
+# Lesson 01 : Vocabulary Questions
 ## About Synonym
 
 !!! note "How many words can we use to describe the meaning 'bad'?"
