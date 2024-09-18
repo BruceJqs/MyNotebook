@@ -6,96 +6,6 @@ hide:
   - feedback
 comments: true
 ---  
-
-## New words
-
-| **Words**       | **Part of Speech** | **Meaning** | **Notes**                                                                                      |
-| --------------- | ------------------ | ----------- | ---------------------------------------------------------------------------------------------- |
-| buoyancy        | n.                 | 浮力          |                                                                                                |
-| photosynthesize | v.                 | 光合作用        | photo- 前缀表示与光有关的<br>n. photosynthesis                                                          |
-| biomass         | n.                 | 生物质         |                                                                                                |
-| euphotic        | adj.               | 透光的         | eu- 前缀表示好的                                                                                     |
-| euphoria        | n.                 | 欣快感         |                                                                                                |
-| euphonious      | adj.               | 悦耳的         | syn. melodious<br>-phon- 与声音有关的                                                                |
-| euphemism       | n.                 | 委婉语         | -phem- 与说话有关的                                                                                  |
-| eulogy          | n.                 | 颂           | -log- 与说话有关的                                                                                   |
-| euthanasia      | n.                 | 安乐死         | -than- 与死亡有关的                                                                                  |
-| eugenics        | n.                 | 优生学         | -gen- 与基因有关的                                                                                   |
-| furnish         | v.                 | 提供          |                                                                                                |
-| nourishment     | n.                 | 营养          |                                                                                                |
-| prerequisite    | n.                 | 先决条件        |                                                                                                |
-| phytoplankton   | n.                 | 浮游植物        | phyt- 与植物有关的                                                                                   |
-| plank           | n.                 | 平板支撑        |                                                                                                |
-| plankton        | n.                 | 浮游生物        |                                                                                                |
-| zooplankton     | n.                 | 浮游动物        | zoo- 与动物有关的                                                                                    |
-| hydrophyte      | n.                 | 水生植物        | hydro- 与水有关的                                                                                   |
-| xerophyte       | n.                 | 旱生植物        | xero- 干的                                                                                       |
-| cryophyte       | n.                 | 冰雪植物        | cryo- 冷的                                                                                       |
-| lithopyte       | n.                 | 岩生植物        | litho- 与岩石有关的                                                                                  |
-| epiphyte        | n.                 | 附生植物        |                                                                                                |
-| appreciable     | adj.               | 可观的         | syn. considerable                                                                              |
-| renounce        | v.                 | 宣布放弃        | -nounce 后缀表示说<br>-re 前缀表示 (1) again (2) back<br>syn. deny, abandon                             |
-| denounce        | v.                 | 谴责          | syn. condemn, reprimand                                                                        |
-| enunciate       | v.                 | 阐明          | -nunc- 也表示说                                                                                    |
-| sanction        | v.                 | 同意，制裁       | sanct- 前缀表示神圣的                                                                                 |
-| sanctuary       | n.                 | 庇护所         | -ary 后缀表示一个地点                                                                                  |
-| sanctum         | n.                 | 圣所          |                                                                                                |
-| sanctimonious   | adj.               | 伪善的         | syn. hypocritial                                                                               |
-| imminent        | adj.               | 迫在眉睫的       |                                                                                                |
-| eminent         | adj.               | 杰出的         |                                                                                                |
-| preeminent      | adj.               | 卓越的         |                                                                                                |
-| prominent       | adj.               | 著名的         |                                                                                                |
-| pertinent       | adj.               | 有关的         | 后面加 to                                                                                         |
-| geyser          | n.                 | 间歇泉         |                                                                                                |
-| intermittent    | adj.               | 间歇的         |                                                                                                |
-| trivial         | adj.               | 不重要的        |                                                                                                |
-| futile          | adj.               | 徒劳的         |                                                                                                |
-| besotted        | adj.               | 不明智的        |                                                                                                |
-| perfunctory     | adj.               | 敷衍的         | syn. casual                                                                                    |
-| strenuous       | adj.               | 奋力的         |                                                                                                |
-| cursory         | adj.               | 仓促的         | curs- 前缀表示 run                                                                                 |
-| cursor          | n.                 | 光标          |                                                                                                |
-| cursive         | adj.               | 连笔的         |                                                                                                |
-| discursive      | adj.               | 东拉西扯的       |                                                                                                |
-| excursion       | n.                 | 远足          | ex- 前缀表示出去                                                                                     |
-| incursion       | n.                 | 入侵          | in- 前缀表示进来<br>syn. invasion<br>adj. incursive                                                  |
-| precursor       | n.                 | 先驱，先锋       | syn. forerunner, predecessor, ancestor                                                         |
-| recursive       | adj.               | 递归的         |                                                                                                |
-| apathetic       | adj.               | 不感兴趣的       | syn. unresponsive, indifferent<br>a-/an- 前缀表示否定<br>-path- 表示情感<br>n. apathy                    |
-| anarchy         | n.                 | 无政府状态       |                                                                                                |
-| antipathy       | n.                 | 厌恶，反感       |                                                                                                |
-| telepathy       | n.                 | 心灵感应        | tele- 前缀表示远的                                                                                   |
-| pathology       | n.                 | 病理学         | path- 前缀表示疾病，痛苦                                                                                |
-| pathogen        | n.                 | 病菌          |                                                                                                |
-| pathogenesis    | n.                 | 发病机制        |                                                                                                |
-| cardiopathy     | n.                 | 心脏病         |                                                                                                |
-| adherent        | n.                 | 拥护者         | v. adhere (+to)<br>her- 前缀表示黏住<br>syn. proponent, advocate, supporter                          |
-| adhesive        | n./adj.            | 黏合剂/黏合的     |                                                                                                |
-| coherent        | adj.               | 连贯的         |                                                                                                |
-| cohesive        | adj.               | 结合的         | n. cohesion                                                                                    |
-| inherent        | adj.               | 内在的         |                                                                                                |
-| sector          | n.                 | 部门          |                                                                                                |
-| pervade         | v.                 | 弥漫          | adj. pervasive (syn. prevalent, prevailing)<br>n. pervasion<br>-vade 后缀表示走<br>per- 前缀表示每一个，彻底的 |
-| invade          | v.                 | 入侵          |                                                                                                |
-| evade           | v.                 | 逃避          | adj. evasive                                                                                   |
-| benevolence     | n.                 | 仁爱          | bene- 前缀表示好的                                                                                   |
-| malevolence     | n.                 | 恶意          | male- 前缀表示不好的                                                                                  |
-| malicious       | adj.               | 恶意的         |                                                                                                |
-| maltreatment    | n.                 | 虐待          |                                                                                                |
-| malnutrition    | n.                 | 营养不良        |                                                                                                |
-| malignant       | adj.               | 恶性的         |                                                                                                |
-| transient       | adj.               | 短暂的         | syn. fleeting, temporary, ephemeral                                                            |
-| evanescent      | adj.               | 转瞬即逝的       | -escent 表示逐渐变成                                                                                 |
-| crescent        | n.                 | 新月          |                                                                                                |
-| candescent      | adj.               | 白热的         |                                                                                                |
-| quiescent       | adj.               | 静态的         |                                                                                                |
-| iridescent      | adj.               | 色彩斑斓的       |                                                                                                |
-| descent         | n.                 | 下降          |                                                                                                |
-| odor            | n.                 | 气味          |                                                                                                |
-| inasmuch        | adv.               | 因为          | +as                                                                                            |
-| hue             | n.                 | 颜色          |                                                                                                |
-
-***
 ## About Synonym
 
 !!! note "How many words can we use to describe the meaning 'bad'?"
@@ -384,3 +294,92 @@ e.g. supercalifragilisticexpialidocious
 		A）color
 		
 		 很明显，brownish 一词就说明了这是一个颜色。
+
+***
+## New words
+
+| **Words**       | **Part of Speech** | **Meaning** | **Notes**                                                                                      |
+| --------------- | ------------------ | ----------- | ---------------------------------------------------------------------------------------------- |
+| buoyancy        | n.                 | 浮力          |                                                                                                |
+| photosynthesize | v.                 | 光合作用        | photo- 前缀表示与光有关的<br>n. photosynthesis                                                          |
+| biomass         | n.                 | 生物质         |                                                                                                |
+| euphotic        | adj.               | 透光的         | eu- 前缀表示好的                                                                                     |
+| euphoria        | n.                 | 欣快感         |                                                                                                |
+| euphonious      | adj.               | 悦耳的         | syn. melodious<br>-phon- 与声音有关的                                                                |
+| euphemism       | n.                 | 委婉语         | -phem- 与说话有关的                                                                                  |
+| eulogy          | n.                 | 颂           | -log- 与说话有关的                                                                                   |
+| euthanasia      | n.                 | 安乐死         | -than- 与死亡有关的                                                                                  |
+| eugenics        | n.                 | 优生学         | -gen- 与基因有关的                                                                                   |
+| furnish         | v.                 | 提供          |                                                                                                |
+| nourishment     | n.                 | 营养          |                                                                                                |
+| prerequisite    | n.                 | 先决条件        |                                                                                                |
+| phytoplankton   | n.                 | 浮游植物        | phyt- 与植物有关的                                                                                   |
+| plank           | n.                 | 平板支撑        |                                                                                                |
+| plankton        | n.                 | 浮游生物        |                                                                                                |
+| zooplankton     | n.                 | 浮游动物        | zoo- 与动物有关的                                                                                    |
+| hydrophyte      | n.                 | 水生植物        | hydro- 与水有关的                                                                                   |
+| xerophyte       | n.                 | 旱生植物        | xero- 干的                                                                                       |
+| cryophyte       | n.                 | 冰雪植物        | cryo- 冷的                                                                                       |
+| lithopyte       | n.                 | 岩生植物        | litho- 与岩石有关的                                                                                  |
+| epiphyte        | n.                 | 附生植物        |                                                                                                |
+| appreciable     | adj.               | 可观的         | syn. considerable                                                                              |
+| renounce        | v.                 | 宣布放弃        | -nounce 后缀表示说<br>-re 前缀表示 (1) again (2) back<br>syn. deny, abandon                             |
+| denounce        | v.                 | 谴责          | syn. condemn, reprimand                                                                        |
+| enunciate       | v.                 | 阐明          | -nunc- 也表示说                                                                                    |
+| sanction        | v.                 | 同意，制裁       | sanct- 前缀表示神圣的                                                                                 |
+| sanctuary       | n.                 | 庇护所         | -ary 后缀表示一个地点                                                                                  |
+| sanctum         | n.                 | 圣所          |                                                                                                |
+| sanctimonious   | adj.               | 伪善的         | syn. hypocritial                                                                               |
+| imminent        | adj.               | 迫在眉睫的       |                                                                                                |
+| eminent         | adj.               | 杰出的         |                                                                                                |
+| preeminent      | adj.               | 卓越的         |                                                                                                |
+| prominent       | adj.               | 著名的         |                                                                                                |
+| pertinent       | adj.               | 有关的         | 后面加 to                                                                                         |
+| geyser          | n.                 | 间歇泉         |                                                                                                |
+| intermittent    | adj.               | 间歇的         |                                                                                                |
+| trivial         | adj.               | 不重要的        |                                                                                                |
+| futile          | adj.               | 徒劳的         |                                                                                                |
+| besotted        | adj.               | 不明智的        |                                                                                                |
+| perfunctory     | adj.               | 敷衍的         | syn. casual                                                                                    |
+| strenuous       | adj.               | 奋力的         |                                                                                                |
+| cursory         | adj.               | 仓促的         | curs- 前缀表示 run                                                                                 |
+| cursor          | n.                 | 光标          |                                                                                                |
+| cursive         | adj.               | 连笔的         |                                                                                                |
+| discursive      | adj.               | 东拉西扯的       |                                                                                                |
+| excursion       | n.                 | 远足          | ex- 前缀表示出去                                                                                     |
+| incursion       | n.                 | 入侵          | in- 前缀表示进来<br>syn. invasion<br>adj. incursive                                                  |
+| precursor       | n.                 | 先驱，先锋       | syn. forerunner, predecessor, ancestor                                                         |
+| recursive       | adj.               | 递归的         |                                                                                                |
+| apathetic       | adj.               | 不感兴趣的       | syn. unresponsive, indifferent<br>a-/an- 前缀表示否定<br>-path- 表示情感<br>n. apathy                    |
+| anarchy         | n.                 | 无政府状态       |                                                                                                |
+| antipathy       | n.                 | 厌恶，反感       |                                                                                                |
+| telepathy       | n.                 | 心灵感应        | tele- 前缀表示远的                                                                                   |
+| pathology       | n.                 | 病理学         | path- 前缀表示疾病，痛苦                                                                                |
+| pathogen        | n.                 | 病菌          |                                                                                                |
+| pathogenesis    | n.                 | 发病机制        |                                                                                                |
+| cardiopathy     | n.                 | 心脏病         |                                                                                                |
+| adherent        | n.                 | 拥护者         | v. adhere (+to)<br>her- 前缀表示黏住<br>syn. proponent, advocate, supporter                          |
+| adhesive        | n./adj.            | 黏合剂/黏合的     |                                                                                                |
+| coherent        | adj.               | 连贯的         |                                                                                                |
+| cohesive        | adj.               | 结合的         | n. cohesion                                                                                    |
+| inherent        | adj.               | 内在的         |                                                                                                |
+| sector          | n.                 | 部门          |                                                                                                |
+| pervade         | v.                 | 弥漫          | adj. pervasive (syn. prevalent, prevailing)<br>n. pervasion<br>-vade 后缀表示走<br>per- 前缀表示每一个，彻底的 |
+| invade          | v.                 | 入侵          |                                                                                                |
+| evade           | v.                 | 逃避          | adj. evasive                                                                                   |
+| benevolence     | n.                 | 仁爱          | bene- 前缀表示好的                                                                                   |
+| malevolence     | n.                 | 恶意          | male- 前缀表示不好的                                                                                  |
+| malicious       | adj.               | 恶意的         |                                                                                                |
+| maltreatment    | n.                 | 虐待          |                                                                                                |
+| malnutrition    | n.                 | 营养不良        |                                                                                                |
+| malignant       | adj.               | 恶性的         |                                                                                                |
+| transient       | adj.               | 短暂的         | syn. fleeting, temporary, ephemeral                                                            |
+| evanescent      | adj.               | 转瞬即逝的       | -escent 表示逐渐变成                                                                                 |
+| crescent        | n.                 | 新月          |                                                                                                |
+| candescent      | adj.               | 白热的         |                                                                                                |
+| quiescent       | adj.               | 静态的         |                                                                                                |
+| iridescent      | adj.               | 色彩斑斓的       |                                                                                                |
+| descent         | n.                 | 下降          |                                                                                                |
+| odor            | n.                 | 气味          |                                                                                                |
+| inasmuch        | adv.               | 因为          | +as                                                                                            |
+| hue             | n.                 | 颜色          |                                                                                                |
