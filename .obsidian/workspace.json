@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "db8147f68f8e2956",
+        "id": "51b2e8c528fde46a",
         "type": "tabs",
         "children": [
           {
-            "id": "1ebf19c985c510ba",
+            "id": "f8f65f6d14ac584a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md"
               }
             }
           }
@@ -147,12 +147,16 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "1ebf19c985c510ba",
+  "active": "66d528dac0297541",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
-    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "2024-09-18.md",
+    "未命名.canvas",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/Computer Science/Digital Design/index.md",
     "docs/assets/Pasted image 20240916161441.png",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
@@ -184,7 +188,6 @@
     "docs/blog/Math/Probability Theory and Mathematical Statistics",
     "docs/blog/Others/College English Band IV/index.md",
     "docs/blog/Others/TOEFL Reading",
-    "docs/blog/Computer Science/Computer Organization/index.md",
     "index.md",
     "docs/blog/Computer Science/ADS",
     "docs/assets/Thumbs.db",

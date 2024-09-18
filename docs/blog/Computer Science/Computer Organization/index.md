@@ -20,3 +20,4 @@ comments: true
 ## Table of Contents
 
 - [Chapter 01 : Computer abstractions and Technology](Chapter%201/)
+- [Chapter 03 : Arithmetic for Computer](Chapter%203/)
