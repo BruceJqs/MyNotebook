@@ -1944,8 +1944,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽签公平问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      生日问题
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件概率
+    </span>
+  </a>
   
 </li>
       
@@ -3149,8 +3176,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽签公平问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      生日问题
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件概率
+    </span>
+  </a>
   
 </li>
       
@@ -3383,6 +3437,77 @@
 </div>
 </div>
 </div>
+<h3 id="_13">抽签公平问题<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Question</label><label for="__tabbed_4_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>一袋中有 <span class="arithmatex">\(a\)</span> 个红球，<span class="arithmatex">\(b\)</span> 个白球，记 <span class="arithmatex">\(a+b=n\)</span>，设每次摸到各球的概率相等，每次从袋中摸一球，不放回地摸 <span class="arithmatex">\(n\)</span> 次，求第 <span class="arithmatex">\(k\)</span> 次摸到红球的概率。</p>
+</div>
+<div class="tabbed-block">
+<p>记 <span class="arithmatex">\(A_k=\{第 k 次摸到红球\}\)</span>，求 <span class="arithmatex">\(P(A_k)\)</span></p>
+<p>将 <span class="arithmatex">\(n\)</span> 个球依次编号为 <span class="arithmatex">\(1,2,...,n\)</span>，其中前 <span class="arithmatex">\(a\)</span> 号球是红球</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">解法 1</label><label for="__tabbed_5_2">解法 2</label><label for="__tabbed_5_3">解法 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>视 1,2,...,n 的每一个排列为一个样本点，则每一样本点等概率，则有：</p>
+<div class="arithmatex">\[
+P(A_k) = \frac{a(第 k 位有 a 种情况)\times (a+b-1)!(其它 a+b-1 位全排列)}{(a+b)!(全部排列数)}=\frac{a}{a+b}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>视哪几次摸到红球为一样本点，每点出现的概率相等，则有：</p>
+<div class="arithmatex">\[
+P(A_k) = \frac{C_{n-1}^{a-1}(其它 n-1 位放 a-1 个红球)}{C_n^a(全部可能)} = \frac{a}{a+b}
+\]</div>
+</div>
+<div class="tabbed-block">
+<p>将第 <span class="arithmatex">\(k\)</span> 次摸到的球号作为一样本点，由对称性，取到各球的概率相等，则有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S=\{1,2,...,n\}\\
+A_k=\{1,2,...,a\}\\
+\Rightarrow P(A_k) = \frac{a}{n} = \frac{a}{a+b}
+\end{aligned}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="_14">生日问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Question</label><label for="__tabbed_6_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>将 <span class="arithmatex">\(n\)</span> 个不同的球，投入 <span class="arithmatex">\(N\)</span> 个不同的盒中（<span class="arithmatex">\(n\leq N\)</span>），设每一球落入各盒的概率相同，且各盒可放的球数不限，记 <span class="arithmatex">\(A=\{恰有 n个盒子各有一球\}\)</span>，求 <span class="arithmatex">\(P(A)\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>A:"每盒至多一球"</p>
+<div class="arithmatex">\[
+P(A) = \frac{N(N-1)(N-2)...(N-n+1)}{N^n} = \frac{A_N^n}{N^n}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<p>由这个例子，我们记 <span class="arithmatex">\(B=\{至少两人生日相同\}\)</span>，则 <span class="arithmatex">\(P(B)=1-\frac{A_{365}^n}{365^n}\)</span>
+- 当 <span class="arithmatex">\(n=64\)</span> 时，<span class="arithmatex">\(p=0.997\)</span>
+- 当 <span class="arithmatex">\(n=100\)</span> 时，<span class="arithmatex">\(p=0.9999997\)</span></p>
+<hr />
+<h2 id="_15">条件概率<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>如果 <span class="arithmatex">\(P(B)&gt;0\)</span>，那么定义在 B 发生的条件下 A 发生的条件概率(contidional probability)为<span class="arithmatex">\(P(A∣B)=\frac{P(AB)}{P(B)}\)</span></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3452,7 +3577,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月12日 13:36:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月19日 10:31:34</span>
   </span>
 
     
