@@ -309,5 +309,38 @@ comments: true
 - Bayes 公式（贝叶斯公式）：$P(B_k|A)=\frac{P(B_kA)}{P(A)}=\frac{P(B_k)P(A|B_k)}{\sum\limits_{j=1}^nP(B_j)P(A|B_j)}$
 
 其中，我们称 $P(B_j)$ 这种事先知道的概率为**先验概率**；而 $P(B_j∣A)$ 这种，当事件 A 发生后需要修正 $B_j$ 的概率成为**后验概率**。
-***
+
+!!! Example
+
+	=== "Question"
+	
+		设某同学每天手机收到短信条数为 $i$ 的概率为 $\frac{\lambda^i e^{-\lambda}}{i!},i=0,1,2,...$，而同学看每条短信的概率均为 $p$，求该同学每天只看 $k$ 条短信的概率
+		
+	=== "Answer"
+	
+		设事件 $B_i$ 为收到 $i$ 条短信，时间 $A$ 为看了 $k$ 条短信，那么有：
+		
+		$$
+		\begin{aligned}
+		P(B_i)=\frac{\lambda^i e^{-\lambda}}{i!}&,i=0,1,2,...\\
+		P(A|B_i)=C_i^kp^k(1-p)^{i-k}&,i=k,k+1,...
+		\end{aligned}
+		$$
+		
+		由全概率公式我们有：
+		
+		$$
+		\begin{aligned}
+		P(A)&=\sum\limits_{i=k}^\infty P(B_i)P(A|B_i)=\sum\limits_{i=k}^\infty \frac{\lambda^i e^{-\lambda}}{i!}C_i^kp^k(1-p)^{1-k}\\
+		&=\sum\limits_{i=k}^\infty \frac{\lambda^i e^{-\lambda}}{i!}\frac{i!}{k!(i-k)!}p^k(1-p)^{i-k}\\
+		令\space t&=i-k，有:\\
+		P(A)&=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{\lambda^kp^k e^{-\lambda}}{k!}e^{(1-p)\lambda}=\frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{(\lambda p)^k}{k!}e^{-\lambda p}
+		\end{aligned}
+		$$
+		
+ ***
 ## 事件独立性与独立试验
+
+设 $A,B$ 为两个随机事件，若有 $P(AB)=P(A)\times P(B)$，则 A,B 相互**独立(independent)** ，其实际意义是，事件 $A$ 的发生与事件 $B$ 的发生互不影响。
+
+若 $P(A)\not=0,P(B)\not=0$，$P(AB)=P(A)P(B)\Leftrightarrow P(B|A)=P(B)\Leftrightarrow P(A|B)=P(A)$
