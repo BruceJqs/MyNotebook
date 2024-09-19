@@ -1986,8 +1986,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      全概率公式与 Bayes 公式
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      事件独立性与独立试验
+    </span>
+  </a>
   
 </li>
       
@@ -3233,8 +3251,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      全概率公式与 Bayes 公式
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      事件独立性与独立试验
+    </span>
+  </a>
   
 </li>
       
@@ -3568,9 +3604,47 @@ P(A) = \frac{N(N-1)(N-2)...(N-n+1)}{N^n} = \frac{A_N^n}{N^n}
 <ul>
 <li>当下面的条件概率都有意义时：<ul>
 <li><span class="arithmatex">\(P(AB)=P(A)·P(B|A)=P(B)·P(A|B)\)</span></li>
+<li><span class="arithmatex">\(P(ABC)=P(A)·P(B|A)·P(C|AB)\)</span></li>
+<li>一般地，<span class="arithmatex">\(P(A_1A_2...A_n)=P(A_1)·P(A_2|A_1)·P(A_3|A_1A_2)·...·P(A_n|A_1...A_{n-1})\)</span></li>
 </ul>
 </li>
 </ul>
+<div class="admonition examples">
+<p class="admonition-title">Examples</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Question</label><label for="__tabbed_7_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(N\)</span> 个士兵每人配一把外形相同的枪，在一次紧急集合中每人随机地取一把，求至少有一人能拿到自己枪的概率。</p>
+</div>
+<div class="tabbed-block">
+<p>用 <span class="arithmatex">\(A_i\)</span> 表示第 <span class="arithmatex">\(i\)</span> 个士兵拿到自己的枪，<span class="arithmatex">\(A\)</span> 表示至少有一名士兵拿到自己的枪</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(A)&amp;=P(A_1\bigcup A_2\bigcup ...\bigcup A_N)\\
+&amp;=\sum\limits_{i=1}^NP(A_i)-\sum\limits_{1\leq i&lt;j\leq N}P(A_iA_j)+\sum\limits_{1\leq i&lt;j&lt;k\leq N}P(A_iA_jA_k)+...+(-1)^{N-1}P(A_1A_2...A_n)\\
+&amp;=N\times\frac{1}{N}-C_N^2P(A_i)P(A_j|A_i)+C_N^3P(A_i)P(A_j|A_i)P(A_k|A_iA_j)+...+(-1)^{N-1}\times P(A_1)P(A_2|A_1)...P(A_N|A_1...A_{N-1})\\
+&amp;=1-\frac{1}{2!}+\frac{1}{3!}+...+(-1)^{N-1}\frac{1}{N!}
+\end{aligned}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="bayes">全概率公式与 Bayes 公式<a class="headerlink" href="#bayes" title="Permanent link">&para;</a></h3>
+<p>定义<strong>完备事件组</strong>为 <span class="arithmatex">\(S\)</span> 的一个<strong>划分</strong> <span class="arithmatex">\(B_1,B_2,...,B_n\)</span>​，它满足如下性质：</p>
+<ul>
+<li><span class="arithmatex">\(B_iB_j=\emptyset,1\leq i,j\leq n,i\not=j\)</span></li>
+<li><span class="arithmatex">\(\bigcup\limits_{i=1}^n B_i=S\)</span></li>
+</ul>
+<p>那么有：</p>
+<ul>
+<li>全概率公式：<span class="arithmatex">\(P(A)=\sum\limits_{j=1}^nP(B_j)P(A|B_j)\)</span></li>
+<li>Bayes 公式（贝叶斯公式）：<span class="arithmatex">\(P(B_k|A)=\frac{P(B_kA)}{P(A)}=\frac{P(B_k)P(A|B_k)}{\sum\limits_{j=1}^nP(B_j)P(A|B_j)}\)</span></li>
+</ul>
+<p>其中，我们称 <span class="arithmatex">\(P(B_j)\)</span> 这种事先知道的概率为<strong>先验概率</strong>；而 <span class="arithmatex">\(P(B_j∣A)\)</span> 这种，当事件 A 发生后需要修正 <span class="arithmatex">\(B_j\)</span> 的概率成为<strong>后验概率</strong>。</p>
+<hr />
+<h2 id="_17">事件独立性与独立试验<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3640,7 +3714,7 @@ P(A) = \frac{N(N-1)(N-2)...(N-n+1)}{N^n} = \frac{A_N^n}{N^n}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月19日 10:44:01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月19日 11:26:43</span>
   </span>
 
     
