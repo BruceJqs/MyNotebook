@@ -28,7 +28,7 @@ comments: true
 	- 可以在相同的条件下重复进行
 	- 每次试验可能出现的结果是不确定的, 但能事先知道试验的所有可能结果
 	- 每次试验完成前不能预知哪一个结果会发生
-
+***
 ## 样本空间 · 随机事件
 
 ### 样本空间
@@ -43,7 +43,7 @@ comments: true
 			- $S=\{正面，反面\}$
 		- 记录一城市一日中发生交通事故次数
 			- $S=\{0,1,2,...\}$
-
+***
 ### 随机事件
 
 !!! Definition
@@ -59,7 +59,7 @@ comments: true
 - 一个样本点组成的单点集称为<font color="red">基本事件</font>。
 - 如果每次试验事件 S 总是发生，那么称 S 为<font color="red">必然事件</font>
 - 记 $\Phi$ 为空集，不包含任何样本点，即每次试验 $\Phi$ 都不发生，则称 $\Phi$ 为<font color="red">不可能事件</font>
-
+***
 ## 事件的关系及运算
 
 ### 事件的关系（包含、相等）
@@ -69,7 +69,7 @@ comments: true
 ![](../../../assets/Pasted%20image%2020240912110309.png)
 
 - 相等（$A=B$）$\Leftrightarrow\begin{cases}A\subset B\\ B\subset A\end{cases}$ 
-
+***
 ### 事件的运算
 
 !!! 事件的运算
@@ -114,7 +114,7 @@ comments: true
 		- $\overline{\bigcap\limits_{i=1}^n A_i} = \bigcup\limits_{i=1}^n \overline{A_i} = \overline{A_1}\bigcup\overline{A_2}\bigcup\overline{A_3}\bigcup...\bigcup\overline{A_n}$
 		
 		- $\overline{\bigcup\limits_{i=1}^n A_i} = \bigcap\limits_{i=1}^n \overline{A_i} = \overline{A_1}·\overline{A_2}·\overline{A_3}·...·\overline{A_n}$
-
+***
 ## 频率与概率
 
 ### 频率
@@ -130,7 +130,7 @@ comments: true
 	- $f_n(S) = 1$
 	- 若 $A_1, A_2,..., A_k$ 两两互不相容，则 $f_n(\bigcup\limits_{i=1}^k A_i) = \sum\limits_{i=1}^k f_n(A_i)$
 	- <font color="red">$f_n(A)$ 随 n 的增大渐趋稳定，记稳定值为 p</font>
-
+***
 ### 概率
 
 !!! Definition
@@ -155,7 +155,7 @@ comments: true
 	- $P(A-B) = P(A) - P(AB)$，特别地，当 $B\subset A$ 时，$P(A-B) = P(A) - P(B)$ 且 $P(A)\geq P(B)$
 	- $P(A\bigcup B) = P(A) + P(B) - P(AB)$，推广即容斥原理：$P(\bigcup\limits_{i=1}^n A_i)=\sum\limits_{i=1} ^n P(A_i)-\sum\limits_{1\leq i<j \leq n}P(A_iA_j)+\sum\limits_{1\leq i<j<k \leq n}P(A_iA_jA_k)+...+(-1)^{n-1}P(A_1A_2...A_n)$
 		- 推论：$P(A\bigcup B) \leq P(A) + P(B)$
-
+***
 ## 等可能概型（古典概型）
 
 !!! Definition
@@ -168,7 +168,7 @@ comments: true
 	称这种试验为<font color="red">等可能概型（或古典概型）</font>
 	
 	$\Rightarrow P(A) = \frac{A所包含的样本点数}{S中的样本点数}$
-
+***
 ### 超几何分布
 
 !!! Example
@@ -182,7 +182,7 @@ comments: true
 		$P(A_k) = \frac{C_D^k C_{N-D}^{n-k}}{C_N^n},k = 0,1,2,...,n$
 	
 		注：当 $L>m$ 或 $L<0$ 时，记 $C_m^L = 0$
-
+***
 ### 抽签公平问题
 
 !!! Example
@@ -239,7 +239,7 @@ comments: true
 	
 	=== "Answer"
 	
-		A:"每盒至多一球"
+		- A:"每盒至多一球"
 		
 		$$
 		P(A) = \frac{N(N-1)(N-2)...(N-n+1)}{N^n} = \frac{A_N^n}{N^n}
@@ -247,6 +247,7 @@ comments: true
 		
 
 由这个例子，我们记 $B=\{至少两人生日相同\}$，则 $P(B)=1-\frac{A_{365}^n}{365^n}$
+
 - 当 $n=64$ 时，$p=0.997$
 - 当 $n=100$ 时，$p=0.9999997$
 ***
@@ -254,5 +255,22 @@ comments: true
 
 !!! Definition
 
-	如果 $P(B)>0$，那么定义在 B 发生的条件下 A 发生的条件概率(contidional probability)为$P(A∣B)=\frac{P(AB)}{P(B)}$
+	如果 $P(B)>0$，那么定义在 B 发生的条件下 A 发生的条件概率(contidional probability)为 $P(A∣B)=\frac{P(AB)}{P(B)}$，可理解为 A 在 B 中所占的比例。
+	
+	 条件概率是在**新的样本空间下的概率度量**，它满足概率的定义和性质。
+
+!!! Properties
+
+	![](../../../assets/Pasted image 20240919104210.png)
+	
+	- 非负性：$P(B|A)\geq 0$
+	- 规范性：$P(S|A)=1$
+	- 可列可加性：$A_1,A_2,...,A_k$ 两两互斥 $\Rightarrow P(\bigcup\limits_{i=1}^\infty A_i|A)=\sum\limits_{i=1}^\infty P(A_i|A)$
+	- $P(B|A)=1-P(\overline{B}|A)$
+	- $P(B\bigcup C|A)=P(B|A)+P(C|A)-P(BC|A)$
+***
+### 乘法公式
+
+- 当下面的条件概率都有意义时：
+	- $P(AB)=P(A)·P(B|A)=P(B)·P(A|B)$
 
