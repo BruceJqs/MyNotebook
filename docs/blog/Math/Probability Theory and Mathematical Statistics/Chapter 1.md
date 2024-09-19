@@ -273,4 +273,41 @@ comments: true
 
 - 当下面的条件概率都有意义时：
 	- $P(AB)=P(A)·P(B|A)=P(B)·P(A|B)$
+	- $P(ABC)=P(A)·P(B|A)·P(C|AB)$
+	- 一般地，$P(A_1A_2...A_n)=P(A_1)·P(A_2|A_1)·P(A_3|A_1A_2)·...·P(A_n|A_1...A_{n-1})$
 
+!!! Examples
+
+	=== "Question"
+	
+		$N$ 个士兵每人配一把外形相同的枪，在一次紧急集合中每人随机地取一把，求至少有一人能拿到自己枪的概率。
+	
+	=== "Answer"
+	
+		用 $A_i$ 表示第 $i$ 个士兵拿到自己的枪，$A$ 表示至少有一名士兵拿到自己的枪
+		
+		$$
+		\begin{aligned}
+		P(A)&=P(A_1\bigcup A_2\bigcup ...\bigcup A_N)\\
+		&=\sum\limits_{i=1}^NP(A_i)-\sum\limits_{1\leq i<j\leq N}P(A_iA_j)+\sum\limits_{1\leq i<j<k\leq N}P(A_iA_jA_k)+...+(-1)^{N-1}P(A_1A_2...A_n)\\
+		&=N\times\frac{1}{N}-C_N^2P(A_i)P(A_j|A_i)+C_N^3P(A_i)P(A_j|A_i)P(A_k|A_iA_j)+...+(-1)^{N-1}\times P(A_1)P(A_2|A_1)...P(A_N|A_1...A_{N-1})\\
+		&=1-\frac{1}{2!}+\frac{1}{3!}+...+(-1)^{N-1}\frac{1}{N!}
+		\end{aligned}
+		$$
+		
+***
+### 全概率公式与 Bayes 公式
+
+定义**完备事件组**为 $S$ 的一个**划分** $B_1,B_2,...,B_n$​，它满足如下性质：
+
+- $B_iB_j=\emptyset,1\leq i,j\leq n,i\not=j$
+- $\bigcup\limits_{i=1}^n B_i=S$
+
+那么有：
+
+- 全概率公式：$P(A)=\sum\limits_{j=1}^nP(B_j)P(A|B_j)$
+- Bayes 公式（贝叶斯公式）：$P(B_k|A)=\frac{P(B_kA)}{P(A)}=\frac{P(B_k)P(A|B_k)}{\sum\limits_{j=1}^nP(B_j)P(A|B_j)}$
+
+其中，我们称 $P(B_j)$ 这种事先知道的概率为**先验概率**；而 $P(B_j∣A)$ 这种，当事件 A 发生后需要修正 $B_j$ 的概率成为**后验概率**。
+***
+## 事件独立性与独立试验
