@@ -19,3 +19,4 @@ comments: true
 ## Table of Contents
 
 - [Chapter 01 : AVL trees, Splay Trees, and Amortized Analysis](Chapter%201/)
+- [Chapter 02 : Red-Black Trees and B+ Trees](Chapter%202/)

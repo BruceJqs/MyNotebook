@@ -23,9 +23,9 @@ comments: true
 
 得到两张图片：
 
-![extracted_image1](/Users/bruce/Desktop/CTF/extracted_image1.jpg)
+![extracted_image1](../../../assets/extracted_image1.jpg)
 
-![extracted_image1](/Users/bruce/Desktop/CTF/extracted_image2.jpg)
+![extracted_image1](../../../assets/extracted_image2.jpg)
 
 得到 flag：AAA{the_true_fans_fans_nmb_-1s!}
 
@@ -37,7 +37,7 @@ comments: true
 
 这里面藏了一张图片，我们将网址改写为 `https://cdn.zjusec.com/Nov2/img/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg` 并访问就可以拿到图片：
 
-![miao~870F6C667A6CDC0D1F533859E72C48E0](/Volumes/Files/2024.2-7 春夏学期/短学期CTF/lab2-Misc/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg)
+![miao~870F6C667A6CDC0D1F533859E72C48E0](../../../assets/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg)
 
 用 Hex Fiend 打开，我们会看见一个 key：
 
@@ -63,11 +63,11 @@ comments: true
 
 可以看到这也是一个 PNG 文件！将其导出打开，得到：
 
-![ex2](/Users/bruce/Desktop/CTF/ex2.png)
+![ex2](../../../assets/ex2.png)
 
 合理猜测这张图片被截了一半，尝试拉长高度，最终得到了 flag：
 
-![ex1](/Users/bruce/Desktop/CTF/ex1.png)
+![ex1](../../../assets/ex1.png)
 
 ## Challenge A：Palette Stego
 
