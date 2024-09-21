@@ -1106,6 +1106,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#b-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      B+ Tree
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3045,6 +3054,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#b-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      B+ Tree
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3213,11 +3231,11 @@
 <p>这其中，每一项操作都会导致一个点的消失，如果消失的是红色节点，那么将不会影响黑高；如果消失的是黑色节点，那么将会导致黑高减少一，此时我们需要做进一步操作。</p>
 <p>我们还是将情况分为 4 种（同样的，这里的叶子节点指 NIL 节点；“需要被删除的目标点”由于递归转移，也可能是<strong>由于删除了某个结点，黑高 -1 的子树</strong>【请记住这个点，Bruce 因为这个没明白倒腾了一下午也没搞清楚删除操作的 qwq】）：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240921151415.png" /></p>
-<p>??? Question “x 到底何时删去？”</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>如上面所说的，在一开始我们就可以找到 x 并根据不同情况将其删去，但是后续的操作我们仍旧保留了这个“需要被删除的目标点” 概念，是为了更便于理解，更直观地能看出操作的进程（可以把这个点当作一个虚空的点，或者就是 NIL 节点）
-其实我们可以统一这个定义为“由于删除了某个结点，黑高 -1 的子树”（因为删除了这个黑目标点就等价于以这个节点为根节点的子树黑高 -1 了，在第一轮调整时就需要以这个节点为 x 进行调整）
-</code></pre></div></td></tr></table></div>
+<details class="question">
+<summary>x 到底何时删去？</summary>
+<p>如上面所说的，在一开始我们就可以找到 x 并根据不同情况将其删去，但是后续的操作我们仍旧保留了这个“需要被删除的目标点” 概念，是为了更便于理解，更直观地能看出操作的进程（可以把这个点当作一个虚空的点，或者就是 NIL 节点）
+其实我们可以统一这个定义为“由于删除了某个结点，黑高 -1 的子树”（因为删除了这个黑目标点就等价于以这个节点为根节点的子树黑高 -1 了，在第一轮调整时就需要以这个节点为 x 进行调整）</p>
+</details>
 <p>类似于我们在「Insertion / case 1」里提到的“下放”黑节点，删除操作的思路基本上是“上放”黑节点，或者说“吸纳”黑节点。这个“吸纳”的行为，指的是一个黑点，原来只为右子树中的所有路径提供了黑高，现在由于它的 sibling 子树中少了一个黑色节点，我们将这个黑色节点转移到它们的家长节点，于是这个节点同时为左右子树的所有路径都贡献了黑高，保证为左子树再提供一个黑高的同时右子树黑高不变。</p>
 <p>接下来我们逐个分析这四种情况（<font color="red">请记住，在每一轮调整结束之后我们要寻找那个黑高 -1 的子树【值得注意的是，我们只需要在删掉的点到根路径上面的这一些树根寻找，因为在前面的交换操作中没有改变树的形态，只有在最后删除这里减少了一个黑点。所以后续的平衡维护的过程中其实都是在调整这一条链上的树】，将它作为 x 再来看这四种情况该用哪一种【这是删除的关键！】</font>）：</p>
 <div class="admonition operation">
@@ -3296,18 +3314,10 @@
 <td><span class="arithmatex">\(O(\log N)\)</span></td>
 <td><span class="arithmatex">\(\leq 3\)</span></td>
 </tr>
-<tr>
-<td>***</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>## B+ Tree</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<hr />
+<h2 id="b-tree">B+ Tree<a class="headerlink" href="#b-tree" title="Permanent link">&para;</a></h2>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3377,7 +3387,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 20:44:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 20:49:05</span>
   </span>
 
     
