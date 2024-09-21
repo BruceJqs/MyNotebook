@@ -1047,6 +1047,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Red-Black Trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2929,6 +2953,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Red-Black Trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2964,6 +3012,24 @@
 
 <h1 id="chapter-02-red-black-trees-and-b-trees">Chapter 02 : Red-Black Trees and B+ Trees<a class="headerlink" href="#chapter-02-red-black-trees-and-b-trees" title="Permanent link">&para;</a></h1>
 <h2 id="red-black-trees">Red-Black Trees<a class="headerlink" href="#red-black-trees" title="Permanent link">&para;</a></h2>
+<h3 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>跟 AVL 树和 Splay 树一样，红黑树被发明出来也是希望能维护一个相对平衡的二叉搜索树</p>
+</blockquote>
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Red-Black Tree</p>
+<p>红黑树是满足如下性质的一种二叉搜索树：</p>
+<ul>
+<li>每个节点不是红色就是黑色</li>
+<li>根节点为黑色</li>
+<li>NIL 节点（空叶子节点）为黑色</li>
+<li>如果一个节点是红色，那么它的两个子节点都是黑色</li>
+<li>从根节点到 NIL 节点的每条路径上的黑色节点数量相同</li>
+</ul>
+<p>下图为一合法的红黑树：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921110036.png" /></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3033,7 +3099,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 10:15:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 11:01:40</span>
   </span>
 
     
