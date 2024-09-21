@@ -3122,7 +3122,7 @@
 </div>
 </div>
 </div>
-<p>根据 Example 01，我们得到这样一个结论：<font color="red">合法红黑树不存在只有一个非 NIL 节点儿子的红色节点！</font>，换句话说，<font color="red">合法红黑树的红色节点的两个子节点一定都是 NIL 节点或都不是 NIL 节点！</font></p>
+<p>根据 Example 01，我们得到这样一个结论：<font color="red">合法红黑树不存在只有一个非 NIL 节点儿子的红色节点！</font>换句话说，<font color="red">合法红黑树的红色节点的两个子节点一定都是 NIL 节点或都不是 NIL 节点！</font></p>
 <div class="admonition example">
 <p class="admonition-title">Example 02</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Question</label><label for="__tabbed_3_2">Answer</label></div>
@@ -3140,6 +3140,45 @@
 <hr />
 <h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
 <h4 id="insertion">Insertion<a class="headerlink" href="#insertion" title="Permanent link">&para;</a></h4>
+<p>我们知道，对<strong>黑高</strong>有贡献的只有黑色节点，因此 NIL 节点被一个<strong>红色</strong>节点置换并不会改变一颗红黑树的黑高，因为红色节点还会有一层 NIL 子节点；然而对于红色节点，却有着红色结点互不相邻的限制。</p>
+<p>因此，“插入”操作的主要思路就是，先将整个红黑树当作一个普通的二叉搜索树，将目标数据插入到树的末端（也就是置换一个 NIL 节点），并将它染为红色，再调整使之在保证<strong>黑高不变</strong>的情况下，满足<strong>红色节点不能相邻</strong>的要求。</p>
+<p>现在，我们记这个被插入的节点为 <span class="arithmatex">\(x\)</span>，任意一个节点 <span class="arithmatex">\(node\)</span> 的家长节点为 <span class="arithmatex">\(node.p\)</span>，则：</p>
+<ol>
+<li>如果 <span class="arithmatex">\(x.p\)</span> 是黑色的，那么我们不需要做任何调整；</li>
+<li>如果 <span class="arithmatex">\(x.p\)</span> 是红色的，那么我们需要进行调整；<ul>
+<li>此时因为原来的树符合红黑性质，<span class="arithmatex">\(x.p.p\)</span> 必定存在（红 <span class="arithmatex">\(x.p\)</span> 不能是根）且必定是黑色的；</li>
+</ul>
+</li>
+</ol>
+<p>在插入节点后，有可能会破坏红黑树的红黑性质（即上面第二条的情况），我们需要进行调整，并且在调整过程中，有一部分需要进行递归转移，也有可能再次出现类似的情况，我们将所有可能出现的情况归纳成下图 3 种情况（这张图中的叶子节点指 NIL 节点，被插入的红色节点也可能是在调整过程中<strong>红黑性质被破坏的红根子树</strong>）：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921121440.png" /></p>
+<p>接下来我们来看该如何处理这三种情况（由于 case 之间可能出现互相转化，下面采取 case 3<span class="arithmatex">\(\rightarrow\)</span>case 1 的顺序进行介绍，这样更为合理）：</p>
+<div class="admonition operation">
+<p class="admonition-title">Operation</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Case 3</label><label for="__tabbed_4_2">Case 2</label><label for="__tabbed_4_3">Case 1</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对于 Case 3，我们只需要进行重新染色，并且进行一次旋转即可。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921122125.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>对于 Case 2，我们直接进行一次 Rotation 操作即可将其变为 Case 3。</p>
+<p>事实上，整个 Case 2 到最后调整完成的过程其实就是一个 LR Rotation。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921122319.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>对于 Case 1，图中两种情况是等价的。</p>
+<p>我们只需要将图中的根节点<strong>染红</strong>，将根的两个子节点<strong>染黑</strong>，类似于将黑节点“下放”。</p>
+<p>通过第一步操作，我们可以保证这整个子树必定<strong>平衡</strong>、<strong>不影响家长节点的黑高</strong>（除了家长是根的情况）且<strong>红点不邻</strong>的。</p>
+<p>然而我们并不知道这个根的家长节点是否是红色节点，因此要作如下图的分类讨论。倘若其根的家长节点是红色节点，那么我们还需要向上递归，继续调整，根据实际情况转化为其他 case；若这子树的根没有家长节点，则直接染黑红根即可；而倘若子树根节点的家长节点是黑节点，那么我们就调整完毕了。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921144446.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<p>总结起来，我们可以用一个状态机来概括：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921144801.png" /></p>
+<p>其中 <span class="arithmatex">\(C\)</span> 表示染色操作，<span class="arithmatex">\(R\)</span> 表示旋转操作；状态机中的<strong>粗线</strong>表示转换过程中，我们关注的“子树”向上攀升了一级；而<strong>细线</strong>表示我们关注的子树仍然是这一层的那一棵。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3209,7 +3248,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 11:52:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 14:50:36</span>
   </span>
 
     
