@@ -6,5 +6,8 @@ hide:
   - feedback
 comments: true
 --- 
+
 # Chapter 02 : Red-Black Trees and B+ Trees
+
+## Red-Black Trees
 
