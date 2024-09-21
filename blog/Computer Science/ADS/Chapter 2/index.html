@@ -21,7 +21,7 @@
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.06209087.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1082,6 +1082,15 @@
   <a href="#insertion" class="md-nav__link">
     <span class="md-ellipsis">
       Insertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletion
     </span>
   </a>
   
@@ -3017,6 +3026,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletion
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3150,7 +3168,7 @@
 </ul>
 </li>
 </ol>
-<p>在插入节点后，有可能会破坏红黑树的红黑性质（即上面第二条的情况），我们需要进行调整，并且在调整过程中，有一部分需要进行递归转移，也有可能再次出现类似的情况，我们将所有可能出现的情况归纳成下图 3 种情况（这张图中的叶子节点指 NIL 节点，被插入的红色节点也可能是在调整过程中<strong>红黑性质被破坏的红根子树</strong>）：</p>
+<p>在插入节点后，有可能会破坏红黑树的红黑性质（即上面第二条的情况），我们需要进行调整，并且在调整过程中，有一部分需要进行递归转移，也有可能再次出现类似的情况，我们将所有可能出现的情况归纳成下图 3 种情况（这张图中的叶子节点指 NIL 节点，“被插入的红色节点”也可能是在调整过程中<strong>红黑性质被破坏的红根子树</strong>）：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240921121440.png" /></p>
 <p>接下来我们来看该如何处理这三种情况（由于 case 之间可能出现互相转化，下面采取 case 3<span class="arithmatex">\(\rightarrow\)</span>case 1 的顺序进行介绍，这样更为合理）：</p>
 <div class="admonition operation">
@@ -3179,6 +3197,117 @@
 <p>总结起来，我们可以用一个状态机来概括：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240921144801.png" /></p>
 <p>其中 <span class="arithmatex">\(C\)</span> 表示染色操作，<span class="arithmatex">\(R\)</span> 表示旋转操作；状态机中的<strong>粗线</strong>表示转换过程中，我们关注的“子树”向上攀升了一级；而<strong>细线</strong>表示我们关注的子树仍然是这一层的那一棵。</p>
+<p>其中，任何一个情况都可以作为一个初始情况。所以可以数出，到达 finish 的路径中，最多出现 2 次 Rotation（case 2 <span class="arithmatex">\(\rightarrow\)</span> case 3 <span class="arithmatex">\(\rightarrow\)</span> finish）。</p>
+<hr />
+<h4 id="deletion">Deletion<a class="headerlink" href="#deletion" title="Permanent link">&para;</a></h4>
+<p>对于删除操作，我们先不管红黑性质，按照常规二叉搜索树的删除操作将其删除：</p>
+<ul>
+<li>首先通过二分找到我们要删除的元素，这里需要 <span class="arithmatex">\(O(\log N)\)</span> 的时间复杂度</li>
+<li>对这个节点进行分类讨论：<ul>
+<li>没有非 NIL 子节点 <span class="arithmatex">\(\rightarrow\)</span> 直接用 NIL 节点代替</li>
+<li>有一个非 NIL 子节点 <span class="arithmatex">\(\rightarrow\)</span> 直接删除，用子节点来代替它</li>
+<li>有两个非 NIL 子节点 <span class="arithmatex">\(\rightarrow\)</span> 用左子树最大值节点或右子树最小值节点来代替它，然后从子树删除代替的那个节点</li>
+</ul>
+</li>
+</ul>
+<p>这其中，每一项操作都会导致一个点的消失，如果消失的是红色节点，那么将不会影响黑高；如果消失的是黑色节点，那么将会导致黑高减少一，此时我们需要做进一步操作。</p>
+<p>我们还是将情况分为 4 种（同样的，这里的叶子节点指 NIL 节点；“需要被删除的目标点”由于递归转移，也可能是<strong>由于删除了某个结点，黑高 -1 的子树</strong>【请记住这个点，Bruce 因为这个没明白倒腾了一下午也没搞清楚删除操作的 qwq】）：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921151415.png" /></p>
+<p>??? Question “x 到底何时删去？”</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>如上面所说的，在一开始我们就可以找到 x 并根据不同情况将其删去，但是后续的操作我们仍旧保留了这个“需要被删除的目标点” 概念，是为了更便于理解，更直观地能看出操作的进程（可以把这个点当作一个虚空的点，或者就是 NIL 节点）
+其实我们可以统一这个定义为“由于删除了某个结点，黑高 -1 的子树”（因为删除了这个黑目标点就等价于以这个节点为根节点的子树黑高 -1 了，在第一轮调整时就需要以这个节点为 x 进行调整）
+</code></pre></div></td></tr></table></div>
+<p>类似于我们在「Insertion / case 1」里提到的“下放”黑节点，删除操作的思路基本上是“上放”黑节点，或者说“吸纳”黑节点。这个“吸纳”的行为，指的是一个黑点，原来只为右子树中的所有路径提供了黑高，现在由于它的 sibling 子树中少了一个黑色节点，我们将这个黑色节点转移到它们的家长节点，于是这个节点同时为左右子树的所有路径都贡献了黑高，保证为左子树再提供一个黑高的同时右子树黑高不变。</p>
+<p>接下来我们逐个分析这四种情况（<font color="red">请记住，在每一轮调整结束之后我们要寻找那个黑高 -1 的子树【值得注意的是，我们只需要在删掉的点到根路径上面的这一些树根寻找，因为在前面的交换操作中没有改变树的形态，只有在最后删除这里减少了一个黑点。所以后续的平衡维护的过程中其实都是在调整这一条链上的树】，将它作为 x 再来看这四种情况该用哪一种【这是删除的关键！】</font>）：</p>
+<div class="admonition operation">
+<p class="admonition-title">Operation</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Case 1</label><label for="__tabbed_5_2">Case 2</label><label for="__tabbed_5_3">Case 3</label><label for="__tabbed_5_4">Case 4</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Case 1 根据 <span class="arithmatex">\(a\)</span> 的红黑还可以继续分为两种情况：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921193629.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Case 1.1</label><label for="__tabbed_6_2">Case 1.2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>当 a 为红根时，由于 x 贡献了（相对于原红黑树）-1 的黑高，为了保证整个子树贡献的黑高不变，我们考虑把 w 的黑高“上放”到 a 上，也就是从下面“吸纳”上来。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921193919.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>当 a 为黑根时，我们没有空余的位置来“吸纳” w 的黑高，但是左子树和右子树的不平衡是必须解决的，而我们绝不能寄希望于“在不知道有没有红色节点的 b 和 c 的子树中去寻找红色节点”这个想法。</p>
+<p>所以我们可以将整个树标记为灰色（即将 a 作为 x），然后进一步根据其家长节点的情况递归到其他 case。其中，当我们递归到 a 是整个树的根时可以退出，因为这相当于整个树的黑高 -1，不影响红黑性质。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921195638.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Case 2 操作如下：</p>
+<ol>
+<li>将 w 染为 a 的颜色，再将 a 和 c 染成黑色；</li>
+<li>将 a 左旋，使 w 成为这个子树新的根，a 成为 w 的左儿子，b 成为 a 的右儿子；</li>
+<li>调整结束；</li>
+</ol>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921201124.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>Case 3 操作如下：</p>
+<ol>
+<li>交换 b 和 w 的颜色；</li>
+<li>将 w 右旋，使 b 成为 a 的右儿子，w 成为 b 的右儿子，b 的右儿子成为 w 的左儿子；</li>
+<li>此时情况转化为 case 2；</li>
+</ol>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921201830.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>Case 4 操作如下：</p>
+<ol>
+<li>交换 a 和 w 的颜色；</li>
+<li>将 a 左旋，使 w 成为这个子树新的根，a 成为 w 的左儿子，b 成为 a 的右儿子；</li>
+<li>此时根据子树 a 的情况，转化为 case 1.1 / case 2 / case 3；</li>
+</ol>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921202958.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<p>我们同样可以用状态机来概括这个过程：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921203718.png" /></p>
+<p>其中 <span class="arithmatex">\(C\)</span> 表示染色操作，<span class="arithmatex">\(R\)</span> 表示旋转操作；状态机中的<strong>粗线</strong>表示转换过程中，我们关注的“子树”向上或向下转移了一级（由 case 4 出发时下降，由 case 1.2 出发时上升）；而<strong>细线</strong>表示我们关注的子树仍然是这一层的那一棵。</p>
+<p>其中，任何一个情况都可以作为一个初始情况。所以可以数出，到达 finish 的路径中，最多出现 3 次 Rotation（case 4 <span class="arithmatex">\(\rightarrow\)</span> case 3 <span class="arithmatex">\(\rightarrow\)</span> case 2 <span class="arithmatex">\(\rightarrow\)</span> finish）。</p>
+<hr />
+<p>根据前面状态机的相关内容，我们不难得到这张表格，它统计的是 Rotation 在不同数据结构、不同操作中出现的数量：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>AVL Tree</strong></th>
+<th><strong>RB Tree</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insertion</td>
+<td><span class="arithmatex">\(\leq 2\)</span></td>
+<td><span class="arithmatex">\(\leq 2\)</span></td>
+</tr>
+<tr>
+<td>Deletion</td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(\leq 3\)</span></td>
+</tr>
+<tr>
+<td>***</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## B+ Tree</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3248,7 +3377,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 14:50:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 20:44:07</span>
   </span>
 
     
