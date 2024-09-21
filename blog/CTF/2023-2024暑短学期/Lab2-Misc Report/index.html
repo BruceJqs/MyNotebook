@@ -3035,14 +3035,14 @@
 <p><img alt="image-20240710105951652" src="../../../../assets/image-20240710105951652.png" /></p>
 <p><img alt="image-20240710105955094" src="../../../../assets/image-20240710105955094.png" /></p>
 <p>得到两张图片：</p>
-<p><img alt="extracted_image1" src="/Users/bruce/Desktop/CTF/extracted_image1.jpg" /></p>
-<p><img alt="extracted_image1" src="/Users/bruce/Desktop/CTF/extracted_image2.jpg" /></p>
+<p><img alt="extracted_image1" src="../../../../assets/extracted_image1.jpg" /></p>
+<p><img alt="extracted_image1" src="../../../../assets/extracted_image2.jpg" /></p>
 <p>得到 flag：AAA{the_true_fans_fans_nmb_-1s!}</p>
 <h2 id="challenge-2">Challenge 2<a class="headerlink" href="#challenge-2" title="Permanent link">&para;</a></h2>
 <p>我们将网页的 HTML 文件下载下来，发现：</p>
 <p><img alt="image-20240710110328837" src="../../../../assets/image-20240710110328837.png" /></p>
 <p>这里面藏了一张图片，我们将网址改写为 <code>https://cdn.zjusec.com/Nov2/img/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg</code> 并访问就可以拿到图片：</p>
-<p><img alt="miao~870F6C667A6CDC0D1F533859E72C48E0" src="/Volumes/Files/2024.2-7 春夏学期/短学期CTF/lab2-Misc/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg" /></p>
+<p><img alt="miao~870F6C667A6CDC0D1F533859E72C48E0" src="../../../../assets/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg" /></p>
 <p>用 Hex Fiend 打开，我们会看见一个 key：</p>
 <p><img alt="image-20240710115333134" src="../../../../assets/image-20240710115333134.png" /></p>
 <p>合理猜想这是用现有的工具进行了隐写，我们用 steghide 来查看：</p>
@@ -3055,9 +3055,9 @@
 <p>拿到图片用 stegsolve 打开，将绿色的 bit plane 设置为 0，我们可以看到：</p>
 <p><img alt="image-20240710215124925" src="../../../../assets/image-20240710215124925.png" /></p>
 <p>可以看到这也是一个 PNG 文件！将其导出打开，得到：</p>
-<p><img alt="ex2" src="/Users/bruce/Desktop/CTF/ex2.png" /></p>
+<p><img alt="ex2" src="../../../../assets/ex2.png" /></p>
 <p>合理猜测这张图片被截了一半，尝试拉长高度，最终得到了 flag：</p>
-<p><img alt="ex1" src="/Users/bruce/Desktop/CTF/ex1.png" /></p>
+<p><img alt="ex1" src="../../../../assets/ex1.png" /></p>
 <h2 id="challenge-apalette-stego">Challenge A：Palette Stego<a class="headerlink" href="#challenge-apalette-stego" title="Permanent link">&para;</a></h2>
 <p>根据相关资料查询，我们可以知道 EZStego 算法是将调色板图像像素内容（索引值）使用 LSB 隐写代替，因此对于每个像素来说提取其最低有效位就可以得到隐写内容的二进制，编写 python 代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -3347,7 +3347,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月4日 14:06:27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 10:07:34</span>
   </span>
 
     
