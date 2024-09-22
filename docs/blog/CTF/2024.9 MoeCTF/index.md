@@ -16,3 +16,4 @@ comments: true
 
 - Misc
 	- [Misc-1 入门杂项指北](Misc/Misc-1/)
+	- [Misc-2 罗小黑战记](Misc/Misc-2/)
