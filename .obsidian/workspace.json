@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
               }
             }
           }
@@ -149,11 +149,12 @@
   },
   "active": "014c8d00dfeadda5",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20240922143328.png",
+    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/assets/Pasted image 20240922083247.png",
     "docs/assets/Pasted image 20240922083200.png",
     "docs/assets/Pasted image 20240922083115.png",
@@ -187,7 +188,6 @@
     "docs/blog/Computer Science/Digital Design/index.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
-    "README.md",
     "docs/blog/ACEE/Introduction to Engineering/未命名",
     "docs/blog/ACEE/Mathematical Modeling",
     "未命名",
