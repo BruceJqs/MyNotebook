@@ -1113,6 +1113,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="B+ Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3061,6 +3118,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="B+ Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3318,6 +3432,118 @@
 </table>
 <hr />
 <h2 id="b-tree">B+ Tree<a class="headerlink" href="#b-tree" title="Permanent link">&para;</a></h2>
+<h3 id="why_1">Why?<a class="headerlink" href="#why_1" title="Permanent link">&para;</a></h3>
+<p>B+ 树是一种用树状形式维护有序数列比较信息的数据结构，其增改操作拥相对于二叉树结构更加稳定的对数时间复杂度，通常用于数据库和操作系统的文件系统中。</p>
+<hr />
+<h3 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">B+ Tree</p>
+<p>一个 <span class="arithmatex">\(M\)</span> 阶（一般 <span class="arithmatex">\(M\)</span> 取 <span class="arithmatex">\(3\)</span> 或 <span class="arithmatex">\(4\)</span>）<span class="arithmatex">\(B+\)</span> 树是满足如下结构性质的树：</p>
+<ul>
+<li>根节点要么是叶子节点，要么有 <span class="arithmatex">\(2～M\)</span> 个孩子</li>
+<li>所有非叶子节点（除了根节点）有 <span class="arithmatex">\(\lceil\frac{M}{2}\rceil～M\)</span> 个孩子</li>
+<li>所有叶子节点都在同一层</li>
+</ul>
+<blockquote>
+<p>假设每一个非根的叶子节点也都有 <span class="arithmatex">\(\lceil\frac{M}{2}\rceil～M\)</span> 个孩子</p>
+</blockquote>
+<p>如下图就是一个 <span class="arithmatex">\(M=4\)</span> 的 <span class="arithmatex">\(B+\)</span> 树（也可称为 <span class="arithmatex">\(2-3-4\)</span> 树）：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240921210830.png" /></p>
+<p>所有真实的数据都被存储在叶子结点中，形成一个有序的数列。而非叶子结点中第 <span class="arithmatex">\(i\)</span> 个键值等于其第 <span class="arithmatex">\(i+1\)</span> 棵子树的最小值（在上图中表现为颜色相同的一对上下结点），因此非叶结点最多存 <span class="arithmatex">\(M−1\)</span> 个值。</p>
+</div>
+<div class="admonition properties">
+<p class="admonition-title">Properties</p>
+<ul>
+<li>对于 <span class="arithmatex">\(B+\)</span> 树，将它的叶子结点拼接起来，实际上就是一个有序数列</li>
+<li>在存储数值不重复的情况下，非叶结点存储的键值都不相同</li>
+</ul>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>对于任意一个非叶子结点，它存储的值必定不会被它的子节点存储（如果它的子节点不是叶子），因为它存的是它的子节点的第一个子树的最小值，而它的子节点存的是第二个子树开始的最小值。</p>
+</div>
+</div>
+<p>抽象地来说就是，我们把一个数列相对均匀的分为 <span class="arithmatex">\(m\)</span> 块，然后把分界的数拿出来。当我们去查找或插入时，只需要和这些边界数进行比较，就知道它应该放在哪一块里。再不断细化粒度，用类似于“<span class="arithmatex">\(m\)</span> 分”的思想来找到目标位置。</p>
+<div class="admonition note">
+<p class="admonition-title">Depth of B+ Tree</p>
+<p>由于它在空间最浪费的情况下是一棵 <span class="arithmatex">\(\lceil\frac{M}{2}\rceil\)</span> 叉树，所以 <span class="arithmatex">\(B+\)</span> 树的深度为 <span class="arithmatex">\(O(\log_{\lceil\frac{M}{2}\rceil}N\)</span></p>
+</div>
+<h3 id="operations_1">Operations<a class="headerlink" href="#operations_1" title="Permanent link">&para;</a></h3>
+<h4 id="query">Query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(B+\)</span> 树的查找和二叉树的查找十分相似</p>
+<div class="admonition example">
+<p class="admonition-title">Find(43)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Step 1</label><label for="__tabbed_7_2">Step 2</label><label for="__tabbed_7_3">Step 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082208.png" /></p>
+<p>我们发现有 <span class="arithmatex">\(21\leq43&lt;48\)</span>，所以顺着标识的橙色指针向下。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082255.png" /></p>
+<p>我们发现有 <span class="arithmatex">\(41\leq43\)</span>，所以顺着标识的橙色指针向下。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082338.png" /></p>
+<p>已经走到叶子结点，最后发现我们要找的 43。</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="insertion_1">Insertion<a class="headerlink" href="#insertion_1" title="Permanent link">&para;</a></h4>
+<p>插入的方法也相对朴素简单，就是找到该插入的地方以后插入即可。</p>
+<p>只不过需要注意一件事，当这个插入，导致了 <span class="arithmatex">\(B+\)</span> 树的性质不再成立时，即导致其家长节点的子节点数量为 <span class="arithmatex">\(M+1\)</span> 时，我们需要将这个结点平均分裂成两个，此时显然有两个子树的节点数量都不小于 <span class="arithmatex">\(\lceil M+1\rceil\)</span>。但这还不够，分裂导致家长节点的家长节点的子节点变多，所以我们还得向上递归。</p>
+<div class="admonition example">
+<p class="admonition-title">Insert(46)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Step 1</label><label for="__tabbed_8_2">Step 2</label><label for="__tabbed_8_3">Step 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082653.png" /></p>
+<p>同查找，略。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082741.png" /></p>
+<p>同查找，略。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082823.png" /></p>
+<p>找到要塞的位置了，发现要塞的地方是 45 的后面，插入以后发现一共 4 个数，而 <span class="arithmatex">\(M=4\)</span>，不需要分裂。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Insert(44)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:6"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><input id="__tabbed_9_5" name="__tabbed_9" type="radio" /><input id="__tabbed_9_6" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Step 1</label><label for="__tabbed_9_2">Step 2</label><label for="__tabbed_9_3">Step 3</label><label for="__tabbed_9_4">Step 4</label><label for="__tabbed_9_5">Step 5</label><label for="__tabbed_9_6">Step 6</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082921.png" /></p>
+<p>同查找，略。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922082955.png" /></p>
+<p>同查找，略。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922083032.png" /></p>
+<p>找到要塞的位置了，发现要塞的地方是 45 的前面，插入以后发现一共 5 个数，而 <span class="arithmatex">\(M=4\)</span>，需要分裂！</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922083115.png" /></p>
+<p>向上递归，我们发现，这个节点在分裂后有了 5 个子节点，不得不再次分裂。</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922083200.png" /></p>
+<p>向上递归，我们发现根部出现问题，这下我们要分裂根部了！</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240922083247.png" /></p>
+<p>由于根部被裂开了，所以我们需要添加一个新的根，这也意味着树的层数增高了。</p>
+<p>现在，我们终于完成了插入。</p>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3387,7 +3613,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月21日 20:49:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月22日 08:33:23</span>
   </span>
 
     
