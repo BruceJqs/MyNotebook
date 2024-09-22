@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md"
               }
             }
           }
@@ -149,9 +149,9 @@
   },
   "active": "014c8d00dfeadda5",
   "lastOpenFiles": [
-    "docs/blog/CTF/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/index.md",
     "docs/assets/Pasted image 20240922234435.png",
     "docs/assets/Pasted image 20240922234327.png",
     "docs/assets/Pasted image 20240922234156.png",

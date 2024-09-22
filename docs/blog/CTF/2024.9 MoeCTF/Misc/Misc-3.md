@@ -14,7 +14,7 @@ comments: true
 当附件一下下来发现是一个 .raw 文件，Bruce 就开始狂喜了（短学期学的用上了！）
 
 此时此刻真的感受到了“学有所用”这四个字！
-
+***
 ## Writeup
 
 一道典型的内存取证问题，命令行 `strings flag.raw|grep flag`，发现是有 flag.txt 存在的：
