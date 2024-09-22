@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md"
               }
             }
           }
@@ -149,6 +149,14 @@
   },
   "active": "014c8d00dfeadda5",
   "lastOpenFiles": [
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/2023-2024暑短学期/index.md",
+    "docs/blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md",
+    "docs/assets/入门杂项指北.jpg",
+    "docs/assets/Pasted image 20240922204520.png",
+    "docs/assets/Pasted image 20240922204433.png",
+    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/assets/Pasted image 20240922172401.png",
@@ -158,17 +166,12 @@
     "docs/assets/Pasted image 20240922153025.png",
     "docs/assets/Pasted image 20240922145842.png",
     "docs/assets/Pasted image 20240922143328.png",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
-    "docs/assets/Pasted image 20240922083247.png",
-    "docs/assets/Pasted image 20240922083200.png",
-    "docs/assets/Pasted image 20240922083115.png",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/CTF/index.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc",
     "docs/blog/CTF/2024.9 MoeCTF",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
@@ -185,8 +188,6 @@
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/Digital Design/index.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/blog/ACEE/Introduction to Engineering/未命名",
     "docs/blog/ACEE/Mathematical Modeling",
     "未命名",
