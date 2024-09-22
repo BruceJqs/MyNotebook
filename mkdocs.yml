@@ -134,7 +134,7 @@ nav:
     - 2024.9 MoeCTF:
       - blog/CTF/2024.9 MoeCTF/index.md
       - Misc: 
-        - "Misc-1 入门杂项指北": blog/CTF/2024.9 MoeCTF/Misc-1.md
+        - "Misc-1 入门杂项指北": blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md
   - Internship:
     - 大模型: 
       - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
