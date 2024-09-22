@@ -116,6 +116,7 @@ nav:
     - 数学建模｜Mathematical Modeling:
       - blog/ACEE/Mathematical Modeling/index.md
       - "Chapter 01 : 搜索引擎中的 PageRank 模型": blog/ACEE/Mathematical Modeling/Chapter 1.md
+      - "Chapter 02 : 数学规划": blog/ACEE/Mathematical Modeling/Chapter 2.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
