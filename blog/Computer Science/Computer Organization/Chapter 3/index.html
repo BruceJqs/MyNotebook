@@ -993,6 +993,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fast-adders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Adders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast Adders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carry-look-ahead-adder-cla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carry Look-ahead Adder, CLA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3246,6 +3270,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fast-adders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Adders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fast Adders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carry-look-ahead-adder-cla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carry Look-ahead Adder, CLA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3385,6 +3433,31 @@
 </div>
 <p>最终封装模块，可以得到完整的 32 位的 ALU 模块：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240918134416.png" /></p>
+<p>我们还可以添加一个检测 0 的模块，添加进 ALU 模块当中：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923134808.png" /></p>
+<p>对于这样的一个 ALU，我们需要 4 bits 的 control lines，分别是 <code>Ainvert</code> , <code>Bnegate</code> 和 <code>Operation</code> (2 bits)。ALU 的符号和 control lines 的含义如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923135342.png" /></p>
+<hr />
+<h3 id="fast-adders">Fast Adders<a class="headerlink" href="#fast-adders" title="Permanent link">&para;</a></h3>
+<p>上面的 64 位加法的实现方式是通过 1 位加法器串联实现的，这种方式势必需要等待前一个加法器算出结果后才能算后一个的。这种多位加法器的实现称为行波加法器 <strong>Ripple Carry Adder, RCA</strong>。显然，这种实现方式比较慢。</p>
+<h4 id="carry-look-ahead-adder-cla">Carry Look-ahead Adder, CLA<a class="headerlink" href="#carry-look-ahead-adder-cla" title="Permanent link">&para;</a></h4>
+<p>课本指出，RCA 缓慢的重要原因是后一个 adder 需要等前一个 adder 的 carry 结果；但我们不妨讨论出现 carry 的可能。第一种可能是，如果 a 和 b 都是 1，那么一定会 <strong>生成</strong> 一个 carry；另一种可能是，如果 a 和 b 中有且仅有一个是 1，那么如果传入的 carry 是 1，则这里也会 carry，即 carry 被 <strong>传播</strong> 了。</p>
+<p>也就是说，<span class="arithmatex">\(c_{out}=a⋅b+(a+b)⋅c_{in}\)</span>。我们记 <strong>generate</strong> <span class="arithmatex">\(g=a⋅b\)</span>，<strong>propagate</strong> <span class="arithmatex">\(p=a+b\)</span>，则有 <span class="arithmatex">\(c_{out}=g+p⋅c_{in}\)</span>。所以，我们可以这样构造一个全加器：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923140200.png" /></p>
+<p>所以，我们可以推导出如下关系：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+c_1 &amp;= g_0+(p_0·c_0)\\
+c_2 &amp;= g_1+(p_1·g_0)+(p_1·p_0·c_0)\\
+c_3 &amp;= g_2+(p_2·g_1)+(p_2·p_1·g_0)+(p_2·p_1·p_0·c_0)\\
+c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p_0·c_0)
+\end{aligned}
+\]</div>
+<p>利用这个关系，我们可以构造这样一个四位加法器：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923140246.png" /></p>
+<p>其实 CLA 的本质即为将可能的进位提前算出来，不需要等待前一位算出结果后再进位（这也是 Look-ahead 的来源），实现每位的加法器由串行转为并行，从而提高时间效率。</p>
+<p>上面的 PFA, Partial Fully Adder，就是前面我们构造的新全加器的一部分。可以看到，通过这样的方式，我们可以加速加法的运算；但是注意到越到高位，门的 fan-in 就越大，因此不能一直增加的。所以对于更多位数的加法器，我们将上面这样构成的 4-bit CLA 再通过类似的方式串起来！</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923140526.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3454,7 +3527,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月18日 13:44:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月23日 14:09:10</span>
   </span>
 
     
