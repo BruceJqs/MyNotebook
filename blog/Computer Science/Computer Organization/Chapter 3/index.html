@@ -1012,8 +1012,68 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#carry-skip-adder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carry Skip Adder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carry-select-adder-csa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carry Select Adder, CSA
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiplier-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplier V1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplier-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplier V2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplier-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplier V3
+    </span>
+  </a>
   
 </li>
         
@@ -3289,8 +3349,68 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#carry-skip-adder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carry Skip Adder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carry-select-adder-csa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carry Select Adder, CSA
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiplier-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplier V1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplier-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplier V2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplier-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplier V3
+    </span>
+  </a>
   
 </li>
         
@@ -3440,6 +3560,7 @@
 <hr />
 <h3 id="fast-adders">Fast Adders<a class="headerlink" href="#fast-adders" title="Permanent link">&para;</a></h3>
 <p>上面的 64 位加法的实现方式是通过 1 位加法器串联实现的，这种方式势必需要等待前一个加法器算出结果后才能算后一个的。这种多位加法器的实现称为行波加法器 <strong>Ripple Carry Adder, RCA</strong>。显然，这种实现方式比较慢。</p>
+<hr />
 <h4 id="carry-look-ahead-adder-cla">Carry Look-ahead Adder, CLA<a class="headerlink" href="#carry-look-ahead-adder-cla" title="Permanent link">&para;</a></h4>
 <p>课本指出，RCA 缓慢的重要原因是后一个 adder 需要等前一个 adder 的 carry 结果；但我们不妨讨论出现 carry 的可能。第一种可能是，如果 a 和 b 都是 1，那么一定会 <strong>生成</strong> 一个 carry；另一种可能是，如果 a 和 b 中有且仅有一个是 1，那么如果传入的 carry 是 1，则这里也会 carry，即 carry 被 <strong>传播</strong> 了。</p>
 <p>也就是说，<span class="arithmatex">\(c_{out}=a⋅b+(a+b)⋅c_{in}\)</span>。我们记 <strong>generate</strong> <span class="arithmatex">\(g=a⋅b\)</span>，<strong>propagate</strong> <span class="arithmatex">\(p=a+b\)</span>，则有 <span class="arithmatex">\(c_{out}=g+p⋅c_{in}\)</span>。所以，我们可以这样构造一个全加器：</p>
@@ -3458,6 +3579,58 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <p>其实 CLA 的本质即为将可能的进位提前算出来，不需要等待前一位算出结果后再进位（这也是 Look-ahead 的来源），实现每位的加法器由串行转为并行，从而提高时间效率。</p>
 <p>上面的 PFA, Partial Fully Adder，就是前面我们构造的新全加器的一部分。可以看到，通过这样的方式，我们可以加速加法的运算；但是注意到越到高位，门的 fan-in 就越大，因此不能一直增加的。所以对于更多位数的加法器，我们将上面这样构成的 4-bit CLA 再通过类似的方式串起来！</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240923140526.png" /></p>
+<h4 id="carry-skip-adder">Carry Skip Adder<a class="headerlink" href="#carry-skip-adder" title="Permanent link">&para;</a></h4>
+<p>老师没讲（x）</p>
+<hr />
+<h4 id="carry-select-adder-csa">Carry Select Adder, CSA<a class="headerlink" href="#carry-select-adder-csa" title="Permanent link">&para;</a></h4>
+<p>老师还是没讲（x）</p>
+<hr />
+<h2 id="multiplication">Multiplication<a class="headerlink" href="#multiplication" title="Permanent link">&para;</a></h2>
+<p>二进制乘法与十进制相同，都可以用竖式解决，我们需要看的是硬件方面如何实现。</p>
+<hr />
+<h3 id="multiplier-v1">Multiplier V1<a class="headerlink" href="#multiplier-v1" title="Permanent link">&para;</a></h3>
+<p>换句话来说，所谓的乘法实际上是根据 Multiplier（乘数） 的 0/1 来选择是否要将 Multiplicand（被乘数） 的对应位移结果加到 Product（乘积） 上。</p>
+<p>64 bits 乘法器的硬件实现大致如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923143352.png" /></p>
+<p>其流程如下：</p>
+<ol>
+<li>判断 Multiplier 寄存器的最低位是否是 1：</li>
+<li>如果是，则将 Multiplicand 寄存器的值加到 Product 寄存器里；</li>
+<li>如果否，进入下一步；</li>
+<li>将 Multiplier 寄存器的值右移一位（这是为了不断拿出每一位，相当于在枚举 Multiplier 的每一位），将 Multiplicand 寄存器的值左移一位（对应于和 Multiplier 的第几位乘得到的位移，类似在做竖式乘法）；</li>
+<li>判断是否做满 64 次，决定是否终止；</li>
+</ol>
+<hr />
+<h3 id="multiplier-v2">Multiplier V2<a class="headerlink" href="#multiplier-v2" title="Permanent link">&para;</a></h3>
+<p>可以发现，V1 中做了大量的 128 位加法，但是实际上被加过去的 Multiplicand 有效内容只有 64 位。V2 正是解决了这个问题。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923145124.png" /></p>
+<ul>
+<li>和之前课件有所不同的是，这里的乘积变成了 129 位，是为了保留进位</li>
+</ul>
+<p>它将 Multiplicand 寄存器换为了 64 位，而将位移操作转移到了 Product 寄存器中进行。这里最重要的一点就是，64 位加法只影响 Product 寄存器左侧的 64 位，而之后的右移操作则是 128 位。这样，虽然最低位的结果一开始会被放在 Product 寄存器的第 65 位里，但是在经过 64 次右移之后，它就出现在第一位了。于是，所有的 128 位加法都被 64 位加法替代，实现了加速。</p>
+<p>其流程如下：</p>
+<ol>
+<li>判断 Multiplier 寄存器的最低位是否是 1：</li>
+<li>如果是，则将 Multiplicand 寄存器的值加到 Product 寄存器的左半部分里；</li>
+<li>如果否，进入下一步；</li>
+<li>将 Multiplier 寄存器的值右移一位，将 Product 寄存器的值右移一位；</li>
+<li>判断是否做满 64 次，决定是否终止；</li>
+</ol>
+<hr />
+<h3 id="multiplier-v3">Multiplier V3<a class="headerlink" href="#multiplier-v3" title="Permanent link">&para;</a></h3>
+<p>我们还发现，我们对 Multiplier 的右移是为了枚举最低位，但是为了实现这个枚举，我们每次都要做 64 位的右移；除此之外，在一开始的几次中，Product 的右半部分大部分没有意义，但是仍然在 128 位的右移中影响效率。仔细一看，我们能发现，我们每右移一次 Multiplier 寄存器，就会右移一次 Product 寄存器，而前者将导致 Multiplier 寄存器中出现一个没意义的 bit，后者将导致 Product 寄存器中消失一个没意义的 bit。</p>
+<p>V3 正是抓住了这个点，直接将 Multiplier 存在了 Product 的低 64 位中。当我们从中取出最低位并经过一次判断后，这一位就不重要了，而恰好 Product 需要右移，就将这一位消除，方便我们下一次从最低位拿出下一个比特！</p>
+<p>那么这么做的好处在哪里呢？首先，少了一个寄存器，节省了空间；其次，原本需要 Multiplier 寄存器和 Product 寄存器都做右移，现在只需要 Product 寄存器右移即可，减少了一个 64 位右移操作。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923150036.png" /></p>
+<p>其流程如下：</p>
+<ol>
+<li>判断 Product 寄存器的最低位是否是 1：</li>
+<li>如果是，则将 Multiplicand 寄存器的值加到 Product 寄存器的左半部分里；</li>
+<li>如果否，进入下一步；</li>
+<li>将 Product 寄存器的值右移一位；</li>
+<li>判断是否做满 64 次，决定是否终止；</li>
+</ol>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3527,7 +3700,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月23日 14:09:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月23日 15:01:24</span>
   </span>
 
     
