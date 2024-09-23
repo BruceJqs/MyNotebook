@@ -107,3 +107,44 @@ comments: true
 
 ![](../../../assets/Pasted%20image%2020240918134416.png)
 
+我们还可以添加一个检测 0 的模块，添加进 ALU 模块当中：
+
+![](../../../assets/Pasted%20image%2020240923134808.png)
+
+对于这样的一个 ALU，我们需要 4 bits 的 control lines，分别是 `Ainvert` , `Bnegate` 和 `Operation` (2 bits)。ALU 的符号和 control lines 的含义如下：
+
+![](../../../assets/Pasted%20image%2020240923135342.png)
+***
+### Fast Adders
+
+上面的 64 位加法的实现方式是通过 1 位加法器串联实现的，这种方式势必需要等待前一个加法器算出结果后才能算后一个的。这种多位加法器的实现称为行波加法器 **Ripple Carry Adder, RCA**。显然，这种实现方式比较慢。
+
+#### Carry Look-ahead Adder, CLA
+
+课本指出，RCA 缓慢的重要原因是后一个 adder 需要等前一个 adder 的 carry 结果；但我们不妨讨论出现 carry 的可能。第一种可能是，如果 a 和 b 都是 1，那么一定会 **生成** 一个 carry；另一种可能是，如果 a 和 b 中有且仅有一个是 1，那么如果传入的 carry 是 1，则这里也会 carry，即 carry 被 **传播** 了。
+
+也就是说，$c_{out}=a⋅b+(a+b)⋅c_{in}$。我们记 **generate** $g=a⋅b$，**propagate** $p=a+b$，则有 $c_{out}=g+p⋅c_{in}$。所以，我们可以这样构造一个全加器：
+
+![](../../../assets/Pasted%20image%2020240923140200.png)
+
+所以，我们可以推导出如下关系：
+
+$$
+\begin{aligned}
+c_1 &= g_0+(p_0·c_0)\\
+c_2 &= g_1+(p_1·g_0)+(p_1·p_0·c_0)\\
+c_3 &= g_2+(p_2·g_1)+(p_2·p_1·g_0)+(p_2·p_1·p_0·c_0)\\
+c_4 &= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p_0·c_0)
+\end{aligned}
+$$
+
+利用这个关系，我们可以构造这样一个四位加法器：
+
+![](../../../assets/Pasted%20image%2020240923140246.png)
+
+其实 CLA 的本质即为将可能的进位提前算出来，不需要等待前一位算出结果后再进位（这也是 Look-ahead 的来源），实现每位的加法器由串行转为并行，从而提高时间效率。
+
+上面的 PFA, Partial Fully Adder，就是前面我们构造的新全加器的一部分。可以看到，通过这样的方式，我们可以加速加法的运算；但是注意到越到高位，门的 fan-in 就越大，因此不能一直增加的。所以对于更多位数的加法器，我们将上面这样构成的 4-bit CLA 再通过类似的方式串起来！
+
+![](../../../assets/Pasted%20image%2020240923140526.png)
+
