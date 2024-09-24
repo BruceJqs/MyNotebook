@@ -1077,6 +1077,72 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#signed-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signed Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booths-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booth's Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faster-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faster Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISC-V Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#division-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division V1
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1110,6 +1176,8 @@
       
         
           
+        
+      
         
       
         
@@ -1190,6 +1258,27 @@
   
   <span class="md-ellipsis">
     Chapter 02: Red-Black Trees and B+ Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADS/Chapter%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 03: Inverted File Index
   </span>
   
 
@@ -3414,6 +3503,72 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#signed-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signed Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booths-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booth's Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faster-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faster Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISC-V Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#division" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Division">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#division-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division V1
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3580,10 +3735,10 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <p>上面的 PFA, Partial Fully Adder，就是前面我们构造的新全加器的一部分。可以看到，通过这样的方式，我们可以加速加法的运算；但是注意到越到高位，门的 fan-in 就越大，因此不能一直增加的。所以对于更多位数的加法器，我们将上面这样构成的 4-bit CLA 再通过类似的方式串起来！</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240923140526.png" /></p>
 <h4 id="carry-skip-adder">Carry Skip Adder<a class="headerlink" href="#carry-skip-adder" title="Permanent link">&para;</a></h4>
-<p>老师没讲（x）</p>
+<p>老师没讲，应该不考（x）</p>
 <hr />
 <h4 id="carry-select-adder-csa">Carry Select Adder, CSA<a class="headerlink" href="#carry-select-adder-csa" title="Permanent link">&para;</a></h4>
-<p>老师还是没讲（x）</p>
+<p>老师还是没讲，应该还是不考（x）</p>
 <hr />
 <h2 id="multiplication">Multiplication<a class="headerlink" href="#multiplication" title="Permanent link">&para;</a></h2>
 <p>二进制乘法与十进制相同，都可以用竖式解决，我们需要看的是硬件方面如何实现。</p>
@@ -3631,6 +3786,53 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <li>判断是否做满 64 次，决定是否终止；</li>
 </ol>
 <hr />
+<h3 id="signed-multiplication">Signed Multiplication<a class="headerlink" href="#signed-multiplication" title="Permanent link">&para;</a></h3>
+<p>有符号数乘法主要是转化为无符号数乘法来做。首先存储两个数的符号，然后将它们转化为无符号数。接下来对两个无符号数做无符号乘法，最后根据之前存储的符号决定结果的符号并转化为有符号数。</p>
+<hr />
+<h4 id="booths-algorithm">Booth's Algorithm<a class="headerlink" href="#booths-algorithm" title="Permanent link">&para;</a></h4>
+<p>Booth's Algorithm 是一个优化乘法的算法。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152059.png" /></p>
+<p>Booth's Algorithm 的主要思想在于，减少乘数中“<code>1</code>”的数量。具体来说，在我们原先的乘法策略中，每当乘数中有一位 <code>1</code> 时，都会需要一个加法（将位移后的被乘数累加到结果中）。但是，如果乘数中有较长的一串 <code>1</code> 时，我们可以将它转化为一个大数字减一个小数，如：<code>00111100 = 01000000 - 00000100</code>，此时 4 个 <code>1</code> 变为 2 个 <code>1</code>，我们就可以减少做加法的次数。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152150.png" /></p>
+<p>在实际执行过程中，Booth's Algorithm 主要遵循两位比特的模式进行操作。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152241.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152406.png" /></p>
+<blockquote>
+<p>上面这张图实际上的表示是挪用了 V3 的乘法器。product 一列代表的是 product 寄存器，左一半一开始置 0，右一半一开始存放的是乘数，而上面提到的将被乘数加减累计到结果中的操作，也是对于左半部分来说的（<strong>换句话来说就是用 V3 做 Booth's</strong>）。需要提醒的是，在 Booth's Algorithm 中，两位识别是从第一位开始的，此时第一位作为两位中的高位，低位为 0，而后在下一轮中第一位作为低位，第二位作为高位，以此类推。</p>
+</blockquote>
+<p>Booth's Algorithm 也能应用于负数。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152728.png" /></p>
+<p>仔细想想就会发现其实很合理，对于正数，其最高位一定是 <code>0</code>，因此不管怎么样它最终都会匹配到一个 <code>01</code> 的模式，来给一个 <code>1111..</code> 收尾。但是负数不然，负数的最高位是 <code>1</code>，这也意味着它最终不会执行所谓的 <code>01</code> 对应的加法操作来给 <code>111...</code> 收尾。</p>
+<hr />
+<h3 id="faster-multiplication">Faster Multiplication<a class="headerlink" href="#faster-multiplication" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923153034.png" /></p>
+<hr />
+<h3 id="risc-v-multiplication">RISC-V Multiplication<a class="headerlink" href="#risc-v-multiplication" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>mul</code>：低 64 位乘法<ul>
+<li>给出乘积的低 64 位</li>
+</ul>
+</li>
+<li><code>mulh</code>：高 64 位乘法<ul>
+<li>给出乘积的高 64 位（假设所有运算数是有符号数）</li>
+</ul>
+</li>
+<li><code>mulhu</code>：无符号高 64 位乘法<ul>
+<li>给出乘积的高 64 位（假设所有运算数是无符号数）</li>
+</ul>
+</li>
+<li><code>mulhsu</code>：有符号与无符号高 64 位乘法<ul>
+<li>给出乘积的高 64 位（假设一个运算数是无符号数一个运算数是有符号数）</li>
+</ul>
+</li>
+<li>我们可以用 <code>mulh</code> 的结果来检查有没有 64 位的溢出</li>
+</ul>
+<hr />
+<h2 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h2>
+<p>二进制除法与十进制相同，都可以用竖式解决。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240923154525.png" /></p>
+<hr />
+<h3 id="division-v1">Division V1<a class="headerlink" href="#division-v1" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3700,7 +3902,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月23日 15:01:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月24日 10:15:35</span>
   </span>
 
     
