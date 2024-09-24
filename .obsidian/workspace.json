@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 3.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 3.md"
               }
             }
           }
@@ -149,21 +149,22 @@
   },
   "active": "014c8d00dfeadda5",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 3.md",
+    "docs/blog/Computer Science/ADS/Chapter 2.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/assets/Pasted image 20240923154525.png",
+    "docs/assets/Pasted image 20240923153034.png",
+    "docs/assets/Pasted image 20240923152728.png",
+    "docs/assets/Pasted image 20240923152406.png",
+    "docs/assets/Pasted image 20240923152241.png",
+    "docs/assets/Pasted image 20240923152150.png",
+    "docs/assets/Pasted image 20240923152059.png",
     "docs/assets/Pasted image 20240923150036.png",
     "docs/assets/Pasted image 20240923145550.png",
     "docs/assets/Pasted image 20240923145124.png",
-    "docs/assets/Pasted image 20240923144814.png",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
-    "docs/assets/Pasted image 20240923143352.png",
-    "docs/assets/Pasted image 20240923140526.png",
-    "docs/assets/Pasted image 20240923140246.png",
-    "docs/assets/Pasted image 20240923140200.png",
-    "docs/assets/Pasted image 20240923135738.png",
-    "docs/assets/Pasted image 20240923135342.png",
-    "docs/assets/Pasted image 20240923134808.png",
     "docs/blog/CTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
@@ -174,7 +175,6 @@
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
-    "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc",
     "docs/blog/CTF/2024.9 MoeCTF",

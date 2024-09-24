@@ -84,6 +84,7 @@ nav:
       - blog/Computer Science/ADS/index.md
       - "Chapter 01: AVL trees, Splay Trees, and Amortized Analysis": blog/Computer Science/ADS/Chapter 1.md
       - "Chapter 02: Red-Black Trees and B+ Trees": blog/Computer Science/ADS/Chapter 2.md
+      - "Chapter 03: Inverted File Index": blog/Computer Science/ADS/Chapter 3.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
