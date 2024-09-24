@@ -1115,17 +1115,17 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       分布式
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3260,17 +3260,17 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       分布式
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3347,7 +3347,7 @@
 <p><strong>词干分析(word stemming)</strong> 是一种将单词转换为其词干的技术。例如，词干分析可以将单词 <code>trouble</code>，<code>troubled</code>，<code>troubles</code>，<code>troubling</code> 都转换为 <code>trouble</code>（甚至是 <code>troubl</code>，核心目的是让它们变成同一个单词）。相同词干的词有着类似的含义，在检索 <code>troubled</code> 的时候，当然也可能想找到包含 <code>trouble</code> 的文档。这种技术也可以让多个单词共享同一条索引记录，在存和找的过程中都能优化效果。</p>
 <p>不过在具体操作方面，这个东西就显得比较繁杂和暴力了，我们只能根据语法规范进行暴力匹配和判断。</p>
 <hr />
-<h3 id="_6">分布式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="_6">分布式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>可想而知，对于一个搜索引擎来说，它所需要索引的文料是非常庞大的，所以我们通常需要将其分布式地存储和索引。</p>
 <p>而这里有两种分布式的策略，其一是根据单词的字典序进行分布式，其二是根据文档进行分布式。</p>
 <p>显然根据单词的内容进行分布式，能够提高索引效率，但是这样的话，我们就需要将所有形式接近的单词都存储在一个地方，这样就会造成单点故障，容灾能力很差，所以这种方式并不是很好。</p>
@@ -3421,7 +3421,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月24日 10:35:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月24日 11:05:28</span>
   </span>
 
     
