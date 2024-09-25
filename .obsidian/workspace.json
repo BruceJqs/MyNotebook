@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "9032077b179df656",
   "lastOpenFiles": [
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
+    "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
@@ -186,7 +187,6 @@
     "docs/assets/Pasted image 20240923153034.png",
     "docs/assets/Pasted image 20240923152728.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
