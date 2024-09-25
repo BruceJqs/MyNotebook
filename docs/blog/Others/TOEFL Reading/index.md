@@ -17,4 +17,4 @@ comments: true
 
 - [Lesson 01 : Vocabulary Questions](Lesson%201/)
 - [Lesson 02 : Paraphrasing / Sentence Simplification](Lesson%202/)
-- [Lesson 03 : ](Lesson%203/)
+- [Lesson 03 : Factural Information Questions](Lesson%203/)
