@@ -151,3 +151,6 @@ comments: true
 | sediment                       | n.                 | 沉积物         | adj. sedimentary                                                                               |
 | sedentary                      | adj.               | 坐着的         |                                                                                                |
 | sedan                          | n.                 | 轿子          |                                                                                                |
+| scrape                         | v.                 | 刮，擦         |                                                                                                |
+| incubate                       | v.                 | 孵化          | syn. hatch                                                                                     |
+| intimidate                     | v.                 | 恐吓          |                                                                                                |
