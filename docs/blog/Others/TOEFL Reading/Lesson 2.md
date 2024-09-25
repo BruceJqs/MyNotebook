@@ -12,9 +12,9 @@ comments: true
 
 !!! question "Question 01"
 
-	=== "Question"
+	Stone carvers engraved their <font color="red">motifs</font> of skulls and crossbones and other religious icons of death into the gray slabs that we still see standing today in old burial grounds.
 	
-		Stone carvers engraved their <font color="red">motifs</font> of skulls and crossbones and other religious icons of death into the gray slabs that we still see standing today in old burial grounds.
+	=== "Question"
 		
 		- The word _motifs_ is closest in meaning to _______.
 			- A) tools
@@ -30,9 +30,9 @@ comments: true
 
 !!! question "Question 02"
 
-	=== "Question"
+	During ascent from a depth of 10 meters, the volume of air in the lungs will double because the air pressure at the surface is only half of what it was at 10 meters. This change in volume may cause the lungs to distend and even rupture.
 	
-		During ascent from a depth of 10 meters, the volume of air in the lungs will double because the air pressure at the surface is only half of what it was at 10 meters. This change in volume may cause the lungs to distend and even rupture.
+	=== "Question"
 		
 		- The word _rupture_ is closest in meaning to _______.
 			- A) get damaged
@@ -48,9 +48,9 @@ comments: true
 
 !!! question "Question 03"
 
-	=== "Question"
+	Therefore, in the 1950s and 1960s, the baby boom hit an <font color="red">antiquated</font> school system. Consequently, the "custodial rhetoric" of the 1930'sand early 1940's no longer made sense; that is, keeping youths aged sixteen and older out of the labor market by keeping them in school could no longer be a high priority for an institution unable to find space and staff to teach younger children aged five to sixteen.
 	
-		Therefore, in the 1950s and 1960s, the baby boom hit an <font color="red">antiquated</font> school system. Consequently, the "custodial rhetoric" of the 1930'sand early 1940's no longer made sense; that is, keeping youths aged sixteen and older out of the labor market by keeping them in school could no longer be a high priority for an institution unable to find space and staff to teach younger children aged five to sixteen.
+	=== "Question"
 		
 		- The word _antiquated_ is closest in meaning to _______.
 			- A) obsolete
@@ -66,9 +66,9 @@ comments: true
 
 !!! question "Question 04"
 
-	=== "Question"
+	In addition, there were performers and since considerable importance was attached to avoiding mistakes in the <font color="red">enactment</font> of rites, religious leaders usually assumed that task.
 	
-		In addition, there were performers and since considerable importance was attached to avoiding mistakes in the <font color="red">enactment</font> of rites, religious leaders usually assumed that task.
+	=== "Question"
 		
 		- The word _enactment_ is closest in meaning to _______.
 			- A) establishment
@@ -109,9 +109,9 @@ comments: true
 
 !!! example "Example 01"
 
-	=== "Question"
+	One distinctive feature of the planet Jupiter is the Great Red Spot, a massive oval of swirling reddish-brown clouds.<font color="red">Were Earth to be juxtaposed with the Great Red Spot, our planet would be dwarfed in comparison, with a diameter less than half that of the Great Red Spot.</font>The Spot's clouds, most likely tinted red as a result of the phosphorus that they contain, circulate in a counterclockwise direction.
 	
-		One distinctive feature of the planet Jupiter is the Great Red Spot, a massive oval of swirling reddish-brown clouds.<font color="red">Were Earth to be juxtaposed with the Great Red Spot, our planet would be dwarfed in comparison, with a diameter less than half that of the Great Red Spot.</font>The Spot's clouds, most likely tinted red as a result of the phosphorus that they contain, circulate in a counterclockwise direction.
+	=== "Question"
 		
 		- A) The diameter of the Great Red Spot is incomparable to that of the Earth.
 		- B) If the diameter of the Great Red Spot were doubled, it would equal that of the Earth.
@@ -126,9 +126,9 @@ comments: true
 
 !!! example "Example 02"
 
-	=== "Question"
+	<font color="red">The extreme seriousness of desertification emanates from the far-flung areas of land and the colossal numbers of people affected, as well as from the formidable challenge of reversing or even slowing the process.</font>Once the soil has been removed by erosion, only the passage of centuries or millennia will enable new soil to form. In areas where considerable soil still remains, though, a rigorously enforced program of land protection and cover-drop planting may make it possible to reverse the present deterioration of the surface.
 	
-		<font color="red">The extreme seriousness of desertification emanates from the far-flung areas of land and the colossal numbers of people affected, as well as from the formidable challenge of reversing or even slowing the process.</font>Once the soil has been removed by erosion, only the passage of centuries or millennia will enable new soil to form. In areas where considerable soil still remains, though, a rigorously enforced program of land protection and cover-drop planting may make it possible to reverse the present deterioration of the surface.
+	=== "Question"
 		
 		- A) Desertification is a significant problem because it is so hard to reverse and affects large areas of land and great numbers of people.
 		- B) Slowing down the process of desertification is difficult because of population growth that has spread over large areas of land.

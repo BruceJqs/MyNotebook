@@ -103,9 +103,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 01"
 
+	The major conflict in the novel is between a mother who places a high value on diligence and a son who <font color="red">repudiates</font> his mother's value instead preferring an easier path to fortune and celebrity.
+	
 	=== "Question"
 	
-		- The major conflict in the novel is between a mother who places a high value on diligence and a son who <font color="red">repudiates</font> his mother's value instead preferring an easier path to fortune and celebrity.
 		- The word _repudiates_ is closest in meaning to _______.
 			- A) renounces
 			- B) sanctions
@@ -120,9 +121,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 02"
 
+	Lou thought that her mother's recovery was <font color="red">unavailing</font>, but Oz remained faithful to the course of his mother's restored health.
+	
 	=== "Question"
 	
-		- Lou thought that her mother's recovery was <font color="red">unavailing</font>, but Oz remained faithful to the course of his mother's restored health.
 		- The word _unavailing_ is closest in meaning to _______.
 			- A) trivial
 			- B) imminent
@@ -137,9 +139,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 03"
 
+	Johnny was <font color="red">besotted</font> in not checking the depth of the water before he plunged in, but it was fortunate that his father was judicious and checked it first.
+	
 	=== "Question"
 	
-		- Johnny was <font color="red">besotted</font> in not checking the depth of the water before he plunged in, but it was fortunate that his father was judicious and checked it first.
 		- The word _besotted_ is closest in meaning to _______.
 			- A) insensitive
 			- B) unaware
@@ -154,9 +157,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 04"
 
+	Brad made a <font color="red">cursory</font> effort to finish his homework. This was unlike him; usually he worked hard to finish before dinner.
+	
 	=== "Question"
 	
-		- Brad made a <font color="red">cursory</font> effort to finish his homework. This was unlike him; usually he worked hard to finish before dinner.
 		- The word _cursory_ is closest in meaning to _______.
 			- A) casual
 			- B) genuine
@@ -171,9 +175,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 05"
 
+	We were all pretty <font color="red">apathetic</font> in the movie about animals, but we became interested when it started showing all the tricks dogs could do.
+	
 	=== "Question"
 	
-		- We were all pretty <font color="red">apathetic</font> in the movie about animals, but we became interested when it started showing all the tricks dogs could do.
 		- The word _apathetic_ is closest in meaning to _______.
 			- A) gracious
 			- B) sentimental
@@ -199,9 +204,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 01"
 
+	The sorcerer's <font color="red">minions</font>, or devoted followers, were willing to perform any sorcery he could conjure.
+	
 	=== "Question"
 	
-		- The sorcerer's <font color="red">minions</font>, or devoted followers, were willing to perform any sorcery he could conjure.
 		- The word _minions_ is closest in meaning to _______.
 			- A) superiors
 			- B) adherents
@@ -216,9 +222,9 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 02"
 
+	The business downturn of the Great Depression was <font color="red">pervasive</font>-it affected all sectors of the economy.
 	=== "Question"
 	
-		- The business downturn of the Great Depression was <font color="red">pervasive</font>-it affected all sectors of the economy.
 		- The word _pervasive_ is closest in meaning to _______.
 			- A) persistent
 			- B) pessimistic
@@ -233,9 +239,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! example "Example 03"
 
+	The common welfare was my business; charity, mercy, <font color="red">forbearance</font> and benevolence were all my business.
+	
 	=== "Question"
 	
-		- The common welfare was my business; charity, mercy, <font color="red">forbearance</font> and benevolence were all my business.
 		- The word _forbearance_ is closest in meaning to _______.
 			- A) stubbornness
 			- B) tolerance
@@ -261,9 +268,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! Example
 
+	An <font color="red">evanscent</font> ring surrounded the moon as it rose. It was there for a moment, and then it disappeared.
+	
 	=== "Question"
 	
-		- An <font color="red">evanscent</font> ring surrounded the moon as it rose. It was there for a moment, and then it disappeared.
 		- The word _evanscent_ is closest in meaning to _______.
 			- A) crescent
 			- B) eternal
@@ -282,9 +290,10 @@ e.g. supercalifragilisticexpialidocious
 
 !!! Example
 
+	When the gas reaches the air, it comes into contact with available oxygen from atmosphere and combines with the oxygen to produce nitrogen dioxide, which is a gas with a brownish <font color="red">hue</font>.
+	
 	=== "Question"
 	
-		- When the gas reaches the air, it comes into contact with available oxygen from atmosphere and combines with the oxygen to produce nitrogen dioxide, which is a gas with a brownish <font color="red">hue</font>.
 		- The word _hue_ is closest in meaning to _______.
 			- A) color
 			- B) odor
