@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md"
               }
             }
           }
@@ -149,14 +149,15 @@
   },
   "active": "9032077b179df656",
   "lastOpenFiles": [
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
     "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/strxor.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/py3compat.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/number.cpython-312.pyc",
@@ -169,7 +170,6 @@
     "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/Padding.cpython-312.pyc",
     "docs/assets/Pasted image 20240925144532.png",
     "Misc/Misc-1.md",
-    "docs/blog/CTF/index.md",
     "docs/assets/Pasted image 20240925132449.png",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
