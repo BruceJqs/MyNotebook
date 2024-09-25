@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a390f17271aedf2f",
+        "id": "35f2859f92d9edf2",
         "type": "tabs",
         "children": [
           {
-            "id": "014c8d00dfeadda5",
+            "id": "9032077b179df656",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md"
               }
             }
           }
@@ -147,24 +147,31 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "014c8d00dfeadda5",
+  "active": "9032077b179df656",
   "lastOpenFiles": [
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
-    "docs/assets/Pasted image 20240925132449.png",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/strxor.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/py3compat.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/number.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/asn1.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/_raw_api.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/_file_system.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/_cpu_features.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/__init__.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/RFC1751.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/crypto/Util/__pycache__/Padding.cpython-312.pyc",
+    "docs/assets/Pasted image 20240925144532.png",
+    "Misc/Misc-1.md",
+    "docs/blog/CTF/index.md",
+    "docs/assets/Pasted image 20240925132449.png",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/top_level.txt",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/REQUESTED",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/WHEEL",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/METADATA",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/RECORD",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/LICENSE",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/INSTALLER",
-    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info",
-    "venv/lib/python3.12/site-packages/OpenSSL/__pycache__/version.cpython-312.pyc",
-    "venv/lib/python3.12/site-packages/OpenSSL/__pycache__/rand.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/soupsieve-2.6.dist-info/licenses/LICENSE.md",
     "1727001712093.jpg",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
@@ -178,11 +185,7 @@
     "docs/assets/Pasted image 20240923154525.png",
     "docs/assets/Pasted image 20240923153034.png",
     "docs/assets/Pasted image 20240923152728.png",
-    "docs/assets/Pasted image 20240923152406.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/CTF/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
@@ -192,8 +195,6 @@
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Others/TOEFL Reading/Lesson 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
-    "docs/blog/Others/TOEFL Reading/index.md",
-    "2024-09-18.md",
     "未命名.canvas"
   ]
 }
