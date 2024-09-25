@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 3.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 3.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 3.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 3.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md"
               }
             }
           }
@@ -149,8 +149,26 @@
   },
   "active": "014c8d00dfeadda5",
   "lastOpenFiles": [
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
+    "docs/assets/Pasted image 20240925132449.png",
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/top_level.txt",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/REQUESTED",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/WHEEL",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/METADATA",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/RECORD",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/LICENSE",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info/INSTALLER",
+    "venv/lib/python3.12/site-packages/pyOpenSSL-24.2.1.dist-info",
+    "venv/lib/python3.12/site-packages/OpenSSL/__pycache__/version.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/OpenSSL/__pycache__/rand.cpython-312.pyc",
+    "venv/lib/python3.12/site-packages/soupsieve-2.6.dist-info/licenses/LICENSE.md",
+    "1727001712093.jpg",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
+    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/assets/Pasted image 20240924103122.png",
     "docs/assets/Pasted image 20240924102224.png",
     "docs/assets/Pasted image 20240924102201.png",
@@ -161,39 +179,21 @@
     "docs/assets/Pasted image 20240923153034.png",
     "docs/assets/Pasted image 20240923152728.png",
     "docs/assets/Pasted image 20240923152406.png",
-    "docs/assets/Pasted image 20240923152241.png",
-    "docs/assets/Pasted image 20240923152150.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/CTF/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc",
-    "docs/blog/CTF/2024.9 MoeCTF",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Others/TOEFL Reading/Lesson 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Others/TOEFL Reading/index.md",
     "2024-09-18.md",
-    "未命名.canvas",
-    "Lesson 1.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
-    "docs/blog/ACEE/Introduction to Engineering/未命名",
-    "docs/blog/ACEE/Mathematical Modeling",
-    "未命名",
-    "docs/blog/ACEE",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics",
-    "docs/blog/Others/TOEFL Reading",
-    "docs/blog/Computer Science/ADS",
-    "docs/assets/Thumbs.db"
+    "未命名.canvas"
   ]
 }
