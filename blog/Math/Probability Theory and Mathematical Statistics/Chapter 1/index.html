@@ -4068,7 +4068,28 @@ P(A)&amp;=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1
 <hr />
 <h2 id="_17">事件独立性与独立试验<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <p>设 <span class="arithmatex">\(A,B\)</span> 为两个随机事件，若有 <span class="arithmatex">\(P(AB)=P(A)\times P(B)\)</span>，则 A,B 相互<strong>独立(independent)</strong> ，其实际意义是，事件 <span class="arithmatex">\(A\)</span> 的发生与事件 <span class="arithmatex">\(B\)</span> 的发生互不影响。</p>
-<p>若 <span class="arithmatex">\(P(A)\not=0,P(B)\not=0\)</span>，<span class="arithmatex">\(P(AB)=P(A)P(B)\Leftrightarrow P(B|A)=P(B)\Leftrightarrow P(A|B)=P(A)\)</span></p>
+<ul>
+<li>若 <span class="arithmatex">\(P(A)\not=0,P(B)\not=0\)</span>，<span class="arithmatex">\(P(AB)=P(A)P(B)\Leftrightarrow P(B|A)=P(B)\Leftrightarrow P(A|B)=P(A)\)</span></li>
+<li><span class="arithmatex">\(A,B\)</span> 相互独立 <span class="arithmatex">\(\Leftrightarrow\overline{A},B\)</span> 相互独立 <span class="arithmatex">\(\Leftrightarrow A,\overline{B}\)</span> 相互独立 <span class="arithmatex">\(\Leftrightarrow\overline{A},\overline{B}\)</span> 相互独立</li>
+</ul>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<p>若 <span class="arithmatex">\(A,B\)</span> 相互独立，我们只证 <span class="arithmatex">\(A,\overline{B}\)</span> 相互独立，其余同理。</p>
+<p><span class="arithmatex">\(P(A\overline{B})=P(A-AB)=P(A)-P(AB)=P(A)-P(A)P(B)=P(A)(1-P(B))=P(A)P(\overline{B})\)</span></p>
+<p>证毕。</p>
+</div>
+<p>当出现两个以上的随机事件时，如三个随机事件 <span class="arithmatex">\(A,B,C\)</span>，当：<br />
+<span class="arithmatex">\(P(AB)=P(A)∗P(B),P(AC)=P(A)∗P(C),P(BC)=P(B)∗P(C)\)</span> 都成立，则称事件 <span class="arithmatex">\(A,B,C\)</span> <strong>两两独立</strong>；<br />
+如果<strong>同时还</strong>满足：<span class="arithmatex">\(P(ABC)=P(A)P(B)P(C)\)</span>，则称事件 <span class="arithmatex">\(A,B,C\)</span> <strong>相互独立</strong>。</p>
+<ul>
+<li>显然，相互独立 <span class="arithmatex">\(\Rightarrow\)</span> 两两独立</li>
+</ul>
+<p>更普遍地，定义 <span class="arithmatex">\(\{A_i\}\)</span> <strong>相互独立</strong>当且仅当 <span class="arithmatex">\(\forall i_j,P(\prod\limits_{j=1}^kA_{i_j})=\prod\limits_{j=1}^kP(A_{i_j})\)</span>
+独立试验与重复试验：</p>
+<ul>
+<li><strong>独立试验</strong>各个试验结果互不影响；</li>
+<li><strong>重复试验</strong>的每一次子试验都在相同情况下进行；</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4138,7 +4159,7 @@ P(A)&amp;=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月19日 18:53:01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月26日 10:14:00</span>
   </span>
 
     
