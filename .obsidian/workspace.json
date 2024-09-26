@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md"
               }
             }
           }
@@ -149,9 +149,11 @@
   },
   "active": "9032077b179df656",
   "lastOpenFiles": [
+    "docs/blog/CTF/index.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "Chapter 2.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
     "docs/assets/Pasted image 20240926104022.png",
@@ -176,9 +178,7 @@
     "venv/pwntools-doc/DOCKER.md",
     "venv/pwntools-doc/CONTRIBUTING.md",
     "venv/pwntools-doc/CHANGELOG.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
-    "docs/blog/CTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",

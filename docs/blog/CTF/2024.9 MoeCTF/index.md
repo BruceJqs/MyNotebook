@@ -24,3 +24,4 @@ comments: true
 
 - [Crypto-1｜线代密码学入门指北](Crypto/Crypto-1/)
 - [Crypto-2｜Signin](Crypto/Crypto-2/)
+- [Crypto-3｜ez_hash](Crypto/Crypto-3/)
