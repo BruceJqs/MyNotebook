@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md"
+                "file": "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md"
               }
             }
           }
@@ -149,11 +149,14 @@
   },
   "active": "9032077b179df656",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20240926104022.png",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Others/TOEFL Reading/Lesson 3.md",
     "docs/blog/Others/TOEFL Reading/Lesson 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Others/TOEFL Reading/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/request.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc",
@@ -185,13 +188,10 @@
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "venv/lib/python3.12/site-packages/soupsieve-2.6.dist-info/licenses/LICENSE.md",
     "1727001712093.jpg",
-    "docs/blog/Computer Science/ADS/Chapter 3.md",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/assets/Pasted image 20240924103122.png",
     "docs/assets/Pasted image 20240924102224.png",
     "docs/assets/Pasted image 20240924102201.png",
     "docs/assets/Pasted image 20240924102042.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20240923154525.png",
     "docs/assets/Pasted image 20240923153034.png",
     "docs/assets/Pasted image 20240923152728.png",
