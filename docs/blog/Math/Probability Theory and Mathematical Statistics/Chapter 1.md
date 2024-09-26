@@ -343,4 +343,25 @@ comments: true
 
 设 $A,B$ 为两个随机事件，若有 $P(AB)=P(A)\times P(B)$，则 A,B 相互**独立(independent)** ，其实际意义是，事件 $A$ 的发生与事件 $B$ 的发生互不影响。
 
-若 $P(A)\not=0,P(B)\not=0$，$P(AB)=P(A)P(B)\Leftrightarrow P(B|A)=P(B)\Leftrightarrow P(A|B)=P(A)$
+- 若 $P(A)\not=0,P(B)\not=0$，$P(AB)=P(A)P(B)\Leftrightarrow P(B|A)=P(B)\Leftrightarrow P(A|B)=P(A)$
+- $A,B$ 相互独立 $\Leftrightarrow\overline{A},B$ 相互独立 $\Leftrightarrow A,\overline{B}$ 相互独立 $\Leftrightarrow\overline{A},\overline{B}$ 相互独立
+
+!!! Proof 
+
+	若 $A,B$ 相互独立，我们只证 $A,\overline{B}$ 相互独立，其余同理。
+	
+	$P(A\overline{B})=P(A-AB)=P(A)-P(AB)=P(A)-P(A)P(B)=P(A)(1-P(B))=P(A)P(\overline{B})$
+	
+	证毕。
+
+当出现两个以上的随机事件时，如三个随机事件 $A,B,C$，当：  
+$P(AB)=P(A)∗P(B),P(AC)=P(A)∗P(C),P(BC)=P(B)∗P(C)$ 都成立，则称事件 $A,B,C$ **两两独立**；  
+如果**同时还**满足：$P(ABC)=P(A)P(B)P(C)$，则称事件 $A,B,C$ **相互独立**。
+
+- 显然，相互独立 $\Rightarrow$ 两两独立
+
+更普遍地，定义 $\{A_i\}$ **相互独立**当且仅当 $\forall i_j,P(\prod\limits_{j=1}^kA_{i_j})=\prod\limits_{j=1}^kP(A_{i_j})$
+独立试验与重复试验：
+
+- **独立试验**各个试验结果互不影响；
+- **重复试验**的每一次子试验都在相同情况下进行；
