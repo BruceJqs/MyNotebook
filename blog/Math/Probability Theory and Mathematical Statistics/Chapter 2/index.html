@@ -1893,6 +1893,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散型随机变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离散型随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      两点分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      二项分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      泊松分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      超几何分布与几何分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3346,6 +3403,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散型随机变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离散型随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      两点分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      二项分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      泊松分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      超几何分布与几何分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3386,8 +3500,60 @@
 <li>示数的（降雨量、候车人数、发生交通事故的次数……）</li>
 <li>示性的（明天天气、化验结果……）</li>
 </ul>
-<p><strong>随机变量</strong>是定义在样本空间 <span class="arithmatex">\(S\)</span> 上的实值单值函数。<br />
-常用大写字母 <span class="arithmatex">\(X,Y,Z\)</span> 来表示<strong>随机变量</strong>，用小写字母 <span class="arithmatex">\(x,y,z\)</span> 表示其<strong>取值</strong>。</p>
+<p>设随机试验的样本空间为 <span class="arithmatex">\(S\)</span>, 若 <span class="arithmatex">\(X = X (e)\)</span> 为定义在样本空间 <span class="arithmatex">\(S\)</span> 上的实值单值函数, <span class="arithmatex">\(e\in S\)</span> , 则称 <span class="arithmatex">\(X = X (e)\)</span> 为<font color="red">随机变量</font></p>
+<p>常用大写字母 <span class="arithmatex">\(X,Y,Z\)</span> 来表示<strong>随机变量</strong>，用小写字母 <span class="arithmatex">\(x,y,z\)</span> 表示其<strong>取值</strong>。</p>
+<p>一般地，若 <span class="arithmatex">\(I\)</span> 是一个实数集合，则 <span class="arithmatex">\(\{X\in I\}\)</span>  为事件 <span class="arithmatex">\(\{e:X(e)\in I\}\)</span></p>
+<p>常见的随机变量分为<font color="red">离散型、连续型</font></p>
+<hr />
+<h3 id="_2">离散型随机变量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>如果随机变量取有限个或可列个值，则此随机变量为<strong>离散型随机变量</strong>，而若其可能取值为 <span class="arithmatex">\(\{x_i\}\)</span>，则称 <span class="arithmatex">\(P\{X=x_k\}=p_k,k=1,2,...\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>概率分布律(probability mass function)</strong>，也可以用列表的方式表达。</p>
+<p>因为样本空间 <span class="arithmatex">\(S=\{X=x_1,X=x_2,...,X=x_n...\}\)</span> 中各样本点两两不相容，所以：<br />
+<span class="arithmatex">\(1=P(S)=\sum\limits_{i=1}^{+\infty}P(X=x_i)=\sum\limits_{i=1}^{+\infty}p_i\)</span></p>
+<hr />
+<h4 id="_3">两点分布<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率分布律为：</p>
+<table>
+<thead>
+<tr>
+<th><strong>X</strong></th>
+<th><strong>0</strong></th>
+<th><strong>1</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>1-p</td>
+<td>p</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1\)</span></p>
+<p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>参数为</strong> <span class="arithmatex">\(p\)</span> <strong>的</strong> 0−1 <strong>分布</strong>，也称为<strong>两点分布</strong>，并记为 <span class="arithmatex">\(X∼B(1,p)\)</span> 或者 <span class="arithmatex">\(X∼0−1(p)\)</span></p>
+<p><strong>定义伯努利(Bernoulli)试验</strong>为：在 <span class="arithmatex">\(n\)</span> 次独立重复试验中，每次只有 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(\overline{A}\)</span> 两种结果，且概率不变，则这一系列试验为伯努利试验。</p>
+<hr />
+<h4 id="_4">二项分布<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>若随机变量 <span class="arithmatex">\(X\)</span> 表示 <span class="arithmatex">\(n\)</span> <strong>重贝努力实验中事件 <span class="arithmatex">\(A\)</span> 发生的次数</strong>，其概率分布律为<span class="arithmatex">\(P\{X=k\}=C_n^kp^k(1−p)^{n−k},k=0,1,2,...,n\)</span></p>
+<p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>参数为</strong> <span class="arithmatex">\((n,p)\)</span> <strong>的二项分布(binomial distribution)</strong>，并记为 <span class="arithmatex">\(X∼B(n,p)\)</span></p>
+<p>根据二项式定理，二项分布有性质：<span class="arithmatex">\(\sum\limits_{k=0}^nC_n^kp^k(1−p)^{n−k}=1\)</span></p>
+<ul>
+<li>如果遇到来自于<strong>两点分布</strong>的总体的，容量为 <span class="arithmatex">\(n\)</span> 的样本的均值 <span class="arithmatex">\(\overline{X}\)</span>，则有 <span class="arithmatex">\(n⋅\overline{X}=\sum\limits_{i=1}^nX_i∼B(n,p)\)</span></li>
+</ul>
+<hr />
+<h4 id="_5">泊松分布<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率分布律为 <span class="arithmatex">\(P(X=k)=\frac{e^{−\lambda}\lambda^k}{k!},k=0,1,2,...\)</span></p>
+<p>其中 <span class="arithmatex">\(\lambda&gt;0\)</span>，则称 <span class="arithmatex">\(X\)</span> 服从<strong>参数为</strong> <span class="arithmatex">\(\lambda\)</span> <strong>的泊松分布(Poisson distribution)</strong>，记做 <span class="arithmatex">\(X∼P(\lambda)\)</span></p>
+<p>当 <span class="arithmatex">\(n\)</span> 足够大，<span class="arithmatex">\(p\)</span> 充分小(一般要求 <span class="arithmatex">\(p&lt;0.1\)</span>)，且 <span class="arithmatex">\(np\)</span> 保持适当大小时，<strong>参数为</strong> <span class="arithmatex">\((n,p)\)</span> <strong>的二项分布</strong>可以<strong>用泊松分布近似描述</strong>，其中 <span class="arithmatex">\(\lambda=np\)</span>，即 <span class="arithmatex">\(C_n^kp^k(1−p)^{n−k}∼\frac{e^{−λ}λ^k}{k!}(n\rightarrow +\infty,p&lt;\epsilon,\lambda=np)\)</span></p>
+<hr />
+<h4 id="_6">超几何分布与几何分布<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率分布律为 <span class="arithmatex">\(P\{X=k\}=\frac{C_a^kC_b^{n−k}}{C_{a+b}^n},k=l_1,l_1+1,...,l_2\)</span></p>
+<p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>超几何分布(hypergeometric distribution)</strong>，并记为 <span class="arithmatex">\(X∼H(n,a,p)\)</span></p>
+<ul>
+<li>其意义为，如：<span class="arithmatex">\(a\)</span> 白球，<span class="arithmatex">\(b\)</span> 红球，取 <span class="arithmatex">\(n\)</span> 次得到 <span class="arithmatex">\(X\)</span> 个白球</li>
+</ul>
+<p>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率分布律为 <span class="arithmatex">\(P\{X=k\}=p(1−p)^{k−1},k=1,2,...\)</span></p>
+<p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>参数为</strong> <span class="arithmatex">\(p\)</span> <strong>的几何分布(geometric distribution)</strong>。</p>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3457,7 +3623,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月26日 10:53:30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月26日 11:22:11</span>
   </span>
 
     
