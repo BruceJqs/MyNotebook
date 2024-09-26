@@ -26,3 +26,4 @@ comments: true
 - [Crypto-2｜Signin](Crypto/Crypto-2/)
 - [Crypto-3｜ez_hash](Crypto/Crypto-3/)
 - [Crypto-4｜Big and Small](Crypto/Crypto-4/)
+- [Crypto-5｜baby_equation](Crypto/Crypto-5/)

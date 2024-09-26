@@ -145,6 +145,7 @@ nav:
         - "Crypto-2｜Signin": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md
         - "Crypto-3｜ez_hash": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md
         - "Crypto-4｜Big and Small": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-4.md
+        - "Crypto-5｜baby_equation": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md
   - Internship:
     - 大模型: 
       - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
