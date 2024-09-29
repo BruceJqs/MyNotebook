@@ -204,3 +204,11 @@ $$
 		
 		**目标函数**：$\max\sum\limits_{j=1}^n\sum\limits_{t=1}^T p_{jt}x_{jt}$
 		**约束条件**：$\sum\limits_{t=1}^T x_{jt}=1$
+	
+	=== "动态规划"
+	
+		设 $dp[j][t]$ 为用 $t$ 天时间复习 $j$ 门功课提高的最大总分
+		
+		$dp[j][t]=max\{P_{js}+dp[j-1][t-s]\},1\leq s \leq t$
+		
+		最终答案为 $dp[n][t]$
