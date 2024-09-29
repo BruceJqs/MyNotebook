@@ -209,8 +209,8 @@ $$
 	
 		设 $dp[j][t]$ 为用 $t$ 天时间复习 $j$ 门功课提高的最大总分
 		
-		初始 $dp[1][i]=P_{1i}(0\leq i \leq t),P_{j0}=0(1\leq j\leq n)$
+		初始 $dp[1][i]=P[1][i](0\leq i \leq t),P[j][0]=0(1\leq j\leq n)$
 		
-		$dp[j][t]=max\{P_{js}+dp[j-1][t-s]\},0\leq s \leq t$
+		$dp[j][t]=max\{P[j][0]+dp[j-1][t-s]\},0\leq s \leq t$
 		
 		最终答案为 $dp[n][t]$
