@@ -314,8 +314,8 @@ $$
 **约束条件（部分）**：
 
 - 每轮各队恰有一场比赛：$\sum\limits_{i=1}^{10}(x_{ijk}+x_{jik})=1，j=1,2,⋯,10，k=1,2,⋯,18$
-- 任意两队在前后半程各交手一次：$\sum\limits_{k=1}^{18}x_{ijk}=1，i,j=1,2,⋯,10，i\not=j$
-- 任意两队之间的两场比赛中每队均有一个主场：$\sum\limits_{k=1}^9(x_{ijk}+x_{jik})=1,\sum\limits_{k=9}^{18}(x_{ijk}+x_{jik})=1，i,j=1,2,⋯,10，i\not=j$
+- 任意两队在前后半程各交手一次：$\sum\limits_{k=1}^9(x_{ijk}+x_{jik})=1,\sum\limits_{k=9}^{18}(x_{ijk}+x_{jik})=1，i,j=1,2,⋯,10，i\not=j$
+- 任意两队之间的两场比赛中每队均有一个主场：$\sum\limits_{k=1}^{18}x_{ijk}=1，i,j=1,2,⋯,10，i\not=j$
 - 任一队不连续与种子队（用 Is 表示）对阵：$\sum\limits_{j\in Is}(x_{ijk}+x_{jik}+x_{i,j,k+1}+x_{j,i,k+1})≤1, i\in I∖Is,k=1,⋯,18$
 ***
 #### 均衡各阶段主场次数
@@ -362,3 +362,61 @@ $$
 最后的结果为：
 
 ![](../../../assets/Pasted%20image%2020240929152225.png)
+***
+## 支持向量机
+
+### 问题描述
+
+我们拟将一数据集 S 分为 C1,C2 两类。每个数据有 n 个特征，用 n 维实向量表示，我们有训练集 $S'=\{\pmb{x}_1,⋯,\pmb{x}_m\}$，其中 $\pmb{x}_i\in R^n$，记 $y_i=\begin{cases}1,\pmb{x}_i\in C_1\\−1,\pmb{x}_i\in C_2\end{cases}$。
+
+假设训练集可线性分离，即存在超平面 $\pmb{w}⋅\pmb{x}+b=0$，使得对于所有 $i$，有 $y_i(\pmb{w}⋅\pmb{x}_i+b)>0$。
+
+!!! Definition "超平面"
+
+	  设 $w$ 为 $n$ 维实向量，$b$ 为实数，$\pmb{w}⋅\pmb{x}+b=0$ 称为 $R^n$ 中的超平面。
+	  
+	  - $R^n$ 中的点 $x$ 到超平面 $\pmb{w}⋅\pmb{x}+b=0$ 的距离为 $|\pmb{w}⋅\pmb{x}+b|‖\pmb{w}‖$。
+	  - 若 $\pmb{w}⋅\pmb{w}=1$，则距离为 $|\pmb{w}⋅\pmb{x}+b|$。
+
+我们现在要做的是找到一个超平面，使得它到两类数据的距离最大（判别效果最好）。
+
+![](../../../assets/Pasted%20image%2020240929214137.png)
+
+### 数学规划
+
+根据上面的描述，我们可以得到如下的数学规划问题：
+
+$$
+\begin{gather}
+\max\min\limits_{i=1,⋯,m}|\pmb{w}⋅\pmb{x}_i+b|\\
+s.t.y_i(\pmb{w}⋅\pmb{x}_i+b)\geq 0,i=1,⋯,m\\
+‖w‖=1
+\end{gather}
+$$
+
+
+本目标含绝对值与极小值，约束含二次函数，极难计算。我们将绝对值去掉，得到如下的数学规划问题：
+
+$$
+\begin{gather}
+\max\min\limits_{i=1,⋯,m}y_i(\pmb{w}⋅\pmb{x}_i+b)\\
+s.t.‖w‖=1
+\end{gather}
+$$
+
+!!! Proof "证明可以转换"
+
+	![](../../../assets/Pasted image 20240929220343.png)
+
+但此时目标含极小值，约束含二次函数，依旧难以计算。我们将极小值去掉，得到如下的数学规划问题：
+
+$$
+\begin{gather}
+\min||\pmb{w}||\\
+s.t. y_i(\pmb{w}·\pmb{x}_i+b)\geq 1
+\end{gather}
+$$
+
+!!! Proof "证明可以转换"
+
+	![](../../../assets/Pasted image 20240929220911.png)
