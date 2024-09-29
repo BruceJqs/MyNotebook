@@ -2163,6 +2163,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      赛程编制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="赛程编制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      图的因子分解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      breaks 数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example : 世界杯南美赛区预选赛赛程编制（双循环镜像赛程）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example : 世界杯南美赛区预选赛赛程编制（双循环镜像赛程）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      均衡各阶段主场次数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      各阶段连续客场的次数尽可能少
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3616,6 +3682,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      赛程编制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="赛程编制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      图的因子分解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      breaks 数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example : 世界杯南美赛区预选赛赛程编制（双循环镜像赛程）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example : 世界杯南美赛区预选赛赛程编制（双循环镜像赛程）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      均衡各阶段主场次数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      各阶段连续客场的次数尽可能少
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3854,6 +3986,133 @@ x_{jt}=\begin{cases}
 </div>
 </div>
 </details>
+<h2 id="_13">赛程编制<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Symmetry and separation(对称性和分离性)</li>
+<li>Breaks(出现连续的客场或主场比赛--这是我们不愿看到的)</li>
+<li>The carry-over effect</li>
+</ul>
+<hr />
+<h3 id="_14">图的因子分解<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>图 G 的因子分解，指将 G 分解为若干边不重的因子之并——因子指至少包含G的一条边的生成子图。</p>
+<p>一个图 G 的 n 因子，是指图 G 的 n 度正则因子——正则因子指所有顶点的度数都是 n 的因子。</p>
+<p>一个 K−8 完全图的 1 - 因子分解如下（不同颜色的边表示不同的因子）：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929144359.png" /></p>
+<p>根据因子分解，我们可以给出赛程编制的一种方法：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929144429.png" /></p>
+<p>同时，我们也可以根据因子分解，给出主客场的安排（尽量不安排连续的客场或主场比赛），例如第一轮和第二轮中：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929144457.png" /></p>
+<p>根据这条路的开头和结尾，我们给出了主客场的安排：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929144530.png" /></p>
+<p>但我们的第八支队伍还没有安排，但无论怎么安排，都会出现 breaks：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929144604.png" /></p>
+<p>这时排出来 6 种 break，而这已经是最少的 break 了。</p>
+<hr />
+<h3 id="breaks">breaks 数<a class="headerlink" href="#breaks" title="Permanent link">&para;</a></h3>
+<p>对 n（偶数）支队伍的赛程，用形如 HAH…HA，长度为 n−1（奇数）的字符串表示每支队伍的主客场安排，称为<strong>模式</strong>（pattern）</p>
+<ul>
+<li>任何两支队伍的模式互不相同，因为如果存在，这两支队伍相遇时不可能出现两个主场或者两个客场</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">单循环赛程</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Lemma</label><label for="__tabbed_4_2">Proof</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(n\)</span>支队伍的单循环赛程，全程所有队伍总break数至少为 <span class="arithmatex">\(n-2\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>因为任意两支队伍的模式是互不相同，而只有 HAHA…HAH 和 AHAH…AHA 两种模式没有break，其它模式的 break 数至少为 1，所以总 break 数至少为 <span class="arithmatex">\(n-2\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">镜像双循环赛程</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Lemma</label><label for="__tabbed_5_2">Proof</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(n\)</span>支队伍的镜像双循环赛程，全程所有队伍总break数至少为 <span class="arithmatex">\(3n-6\)</span></p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>若半程没有break，则全程也没有break，这样的队伍至多有两支（HAHAH-AHAHA，AHAHA-HAHAH）</li>
+<li>若半程有且仅有一个break，由于模式字符串长度为奇数，在前后半程之间有一个 break （H <strong>A A</strong> H <strong>A - A</strong> <strong>H H</strong> A H），break数为 3</li>
+<li>若半程有至少两个 break，全程 break 数至少为 4</li>
+</ul>
+<p>所以总break数至少为 <span class="arithmatex">\(3(n-2)\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title"> n（偶数）支队的镜像赛程中的 double-round break</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Lemma</label><label for="__tabbed_6_2">Proof</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(n\)</span>(偶数）支队的镜像赛程中的 double-round break，全程所有队伍总 break 数至少为 <span class="arithmatex">\(2n-4\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>此时赛程分成多个阶段，我们只考虑每个阶段中的 double-round break。</p>
+<p>因为队伍为偶数支，所以每支队伍的模式字符串长度为奇数。</p>
+<ul>
+<li>若半程没有break，则全程也没有break，这样的队伍至多有两支（HAHAH-AHAHA，AHAHA-HAHAH）</li>
+<li>若半程至少有1个break，全程至少有2个 double-round break（H A | A H |<strong>A - A</strong> | <strong>H H</strong> | A H），根据奇数长度的模式字符串，我们可以得到：<ul>
+<li>前后半程之间若有 break，必为 double-round</li>
+<li>若前半程的 break 不为 double-round，后半程的 break 必为 double-round</li>
+</ul>
+</li>
+</ul>
+<p>所以总 double-round break 数至少为 <span class="arithmatex">\(2(n-2)\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">其他方案</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929151209.png" /></p>
+</div>
+<hr />
+<h3 id="example">Example : 世界杯南美赛区预选赛赛程编制（双循环镜像赛程）<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>有 10 支队伍，每阶段两场比赛</p>
+<p><strong>决策变量</strong>：<span class="arithmatex">\(x_{ijk}=\begin{cases}1,第 k 轮第 i 支队伍在主场面对第 j 支队伍\\0,其他\end{cases}\)</span></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929150754.png" /></p>
+<p><strong>约束条件（部分）</strong>：</p>
+<ul>
+<li>每轮各队恰有一场比赛：<span class="arithmatex">\(\sum\limits_{i=1}^{10}(x_{ijk}+x_{jik})=1，j=1,2,⋯,10，k=1,2,⋯,18\)</span></li>
+<li>任意两队在前后半程各交手一次：<span class="arithmatex">\(\sum\limits_{k=1}^{18}x_{ijk}=1，i,j=1,2,⋯,10，i\not=j\)</span></li>
+<li>任意两队之间的两场比赛中每队均有一个主场：<span class="arithmatex">\(\sum\limits_{k=1}^9(x_{ijk}+x_{jik})=1,\sum\limits_{k=9}^{18}(x_{ijk}+x_{jik})=1，i,j=1,2,⋯,10，i\not=j\)</span></li>
+<li>任一队不连续与种子队（用 Is 表示）对阵：<span class="arithmatex">\(\sum\limits_{j\in Is}(x_{ijk}+x_{jik}+x_{i,j,k+1}+x_{j,i,k+1})≤1, i\in I∖Is,k=1,⋯,18\)</span></li>
+</ul>
+<hr />
+<h4 id="_15">均衡各阶段主场次数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>每支队伍各阶段先主后客（先客后主）的次数尽可能均衡：</p>
+<p>定义辅助变量 <span class="arithmatex">\(y_{il}=\begin{cases}1,第l阶段第i支队伍先主后客\\0,第l阶段第i支队伍先客后主\end{cases}\)</span></p>
+<p><span class="arithmatex">\(x_{ijk}\)</span> 与 <span class="arithmatex">\(y_{il}\)</span> 之间的关系：<span class="arithmatex">\(y_{il}=1\Leftrightarrow \sum\limits_{j=1}^{10}x_{i,j,2l−1}=1且\sum\limits_{j=1}^{10}x_{j,i,2l}=1\)</span></p>
+<p>改写一下就是：</p>
+<div class="arithmatex">\[
+\begin{cases}
+\sum\limits_{j=1}^{10}(x_{i,j,2l−1}+x_{j,i,2l})\leq 1+y_{il}\\
+y_{il}\leq\sum\limits_{j=1}^{10}x_{i,j,2l−1}\\
+y_{il}\leq\sum\limits_{j=1}^{10}x_{j,i,2l}
+\end{cases}
+\]</div>
+<p>每支队伍先主后客的总次数尽可能均衡时，<span class="arithmatex">\(4\leq\sum\limits_{l=1}^9y_{il}\leq 5，i=1,2,⋯,10\)</span></p>
+<hr />
+<h4 id="_16">各阶段连续客场的次数尽可能少<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p>在法制双循环赛制中 <span class="arithmatex">\(x_{i,j,1}=x_{j,i,18}, x_{i,j,k}=x_{j,i,k+8}, k=2,3,⋯,9，i,j=1,2,⋯,10，i\not=j\)</span></p>
+<p>定义辅助变量 <span class="arithmatex">\(w_{il}=\begin{cases}1,第l阶段第i支队伍两场比赛均为客场\\0,其他\end{cases}，i=1,2,⋯,10，l=1,2,⋯,9\)</span></p>
+<p><span class="arithmatex">\(x_{i,j,k}\)</span> 与 <span class="arithmatex">\(w_{il}\)</span> 之间的关系：<span class="arithmatex">\(w_{il}=1\Leftrightarrow\sum\limits_{j=1}^{10}x_{j,i,2l−1}=1且\sum\limits_{j=1}^{10}x_{j,i,2l}=1\)</span></p>
+<p>改写一下就是：</p>
+<div class="arithmatex">\[
+\begin{cases}
+\sum\limits_{j=1}^{10}(x_{j,i,2l−1}+x_{j,i,2l})\leq 1+w_{il}\\
+w_{il}\leq\sum\limits_{j=1}^{10}x_{j,i,2l−1}\\
+w_{il}\leq\sum\limits_{j=1}^{10}x_{j,i,2l}
+\end{cases}
+\]</div>
+<p><strong>目标函数</strong> 为：<span class="arithmatex">\(\min\sum\limits_{i=1}^{10}\sum\limits_{l=1}^9w_{il}\)</span></p>
+<p>最后的结果为：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020240929152225.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3923,7 +4182,7 @@ x_{jt}=\begin{cases}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月29日 14:19:54</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月29日 15:23:45</span>
   </span>
 
     
