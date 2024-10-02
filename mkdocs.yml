@@ -133,19 +133,19 @@ nav:
       - Lab2-Misc: blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md
       - Lab3-Crypto: blog/CTF/2023-2024暑短学期/Lab3-Crypto Report.md
       - Lab3-Misc: blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md
-    - 2024.9 MoeCTF:
-      - blog/CTF/2024.9 MoeCTF/index.md
-      - Misc: 
-        - "Misc-1｜入门杂项指北": blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md
-        - "Misc-2｜罗小黑战记": blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md
-        - "Misc-3｜ez_Forensics": blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md
-        - "Misc-4｜so many 'm'": blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md
-      - Crypto:
-        - "Crypto-1｜现代密码学入门指北": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md
-        - "Crypto-2｜Signin": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md
-        - "Crypto-3｜ez_hash": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md
-        - "Crypto-4｜Big and Small": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-4.md
-        - "Crypto-5｜baby_equation": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md
+    # - 2024.9 MoeCTF:
+    #   - blog/CTF/2024.9 MoeCTF/index.md
+    #   - Misc: 
+    #     - "Misc-1｜入门杂项指北": blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md
+    #     - "Misc-2｜罗小黑战记": blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md
+    #     - "Misc-3｜ez_Forensics": blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md
+    #     - "Misc-4｜so many 'm'": blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md
+    #   - Crypto:
+    #     - "Crypto-1｜现代密码学入门指北": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md
+    #     - "Crypto-2｜Signin": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md
+    #     - "Crypto-3｜ez_hash": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md
+    #     - "Crypto-4｜Big and Small": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-4.md
+    #     - "Crypto-5｜baby_equation": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md
   - Internship:
     - 大模型: 
       - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md

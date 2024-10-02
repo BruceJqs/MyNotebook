@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 315.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "db8c2c75e178d5b7",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md"
               }
             }
           }
@@ -149,17 +150,18 @@
   },
   "active": "9032077b179df656",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20240929220911.png",
-    "docs/assets/Pasted image 20240929220343.png",
-    "docs/assets/Pasted image 20240929214137.png",
-    "docs/assets/Pasted image 20240929152225.png",
-    "docs/assets/Pasted image 20240929151209.png",
-    "docs/assets/Pasted image 20240929150754.png",
-    "docs/assets/Pasted image 20240929144604.png",
-    "docs/assets/Pasted image 20240929144530.png",
-    "docs/assets/Pasted image 20240929144457.png",
-    "docs/assets/Pasted image 20240929144429.png",
-    "docs/assets/Pasted image 20240929144359.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/assets/Pasted image 20240930145131.png",
+    "docs/assets/Pasted image 20240930145111.png",
+    "docs/assets/Pasted image 20240930143322.png",
+    "docs/assets/Pasted image 20240930143302.png",
+    "docs/assets/Pasted image 20240930142453.png",
+    "docs/assets/Pasted image 20240930142327.png",
+    "docs/assets/Pasted image 20240930142225.png",
+    "docs/assets/Pasted image 20240930140813.png",
+    "docs/assets/Pasted image 20240930140742.png",
+    "docs/assets/Pasted image 20240930140024.png",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md",
@@ -194,7 +196,6 @@
     "venv/pwntools-doc/SECURITY.md",
     "venv/pwntools-doc/README.md",
     "venv/pwntools-doc/DOCKER.md",
-    "venv/pwntools-doc/CONTRIBUTING.md",
     "未命名.canvas"
   ]
 }
