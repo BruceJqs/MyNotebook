@@ -450,6 +450,14 @@ $$
     - $\pmb{A}\pmb{x}\leq\pmb{b}\Leftrightarrow\pmb{A}\pmb{x}+\pmb{y}=\pmb{b},\pmb{y}\geq\pmb{0}$
     - $\pmb{A}\pmb{x}\geq\pmb{b}\Leftrightarrow\pmb{A}\pmb{x}-\pmb{y}=\pmb{b},\pmb{y}\geq\pmb{0}$
 - 等式约束右端均为非负常数
+***
+### 最优解的类型
+
+线性规划有四种最优解的类型：唯一最优解、无穷多最优解、无可行解、无界解（有可行解，但最优值无下界）。
+***
+### 基与基可行解
+
+![](../../../assets/Pasted%20image%2020241006140221.png)
 
 ***
 ## 整数线性规划
