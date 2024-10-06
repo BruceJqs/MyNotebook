@@ -524,20 +524,20 @@ $$
 	
 	画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,\frac{35}{9})$，目标函数值为 $−200$，此时 $x_2$ 不是整数，我们将松弛问题的可行域分为 $x_2\geq 4,x_2\leq 3$ 两个子可行域:
 	
-		- 对于第一个子可行域，我们有：
+	- 对于第一个子可行域，我们有：
 		
-		IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+	IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
 		
-		LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0\end{cases}$
+	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0\end{cases}$
 		
-		画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{5}{9},4)$，目标函数值为 $−198$。此时不为整数解，但是继续做下去，函数值只会更大，所以停止迭代。
+	画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{5}{9},4)$，目标函数值为 $−198$。此时不为整数解，但是继续做下去，函数值只会更大，所以停止迭代。
 	
-		- 对于第二个子可行域，我们有：
+	- 对于第二个子可行域，我们有：
 		
-		IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+	IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
 	
-		LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0\end{cases}$
+	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0\end{cases}$
 		
-		画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,3)$，目标函数值为 $−168$。此时为整数解，停止迭代。
+	画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,3)$，目标函数值为 $−168$。此时为整数解，停止迭代。
 	
 	综上所述，整数规划的最优解为 $(x_1,x_2)=(3,3)$，目标函数值为 $−198$。
