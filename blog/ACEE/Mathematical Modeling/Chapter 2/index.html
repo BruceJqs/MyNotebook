@@ -2262,6 +2262,96 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性规划
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵形式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      最优解的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      基与基可行解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数线性规划
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整数线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      分枝定界法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分枝定界法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      分枝定界法的基本思想
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3443,6 +3533,96 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性规划
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵形式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      最优解的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      基与基可行解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数线性规划
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整数线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      分枝定界法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分枝定界法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      分枝定界法的基本思想
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3854,6 +4034,109 @@ s.t. y_i(\pmb{w}·\pmb{x}_i+b)\geq 1
 <p class="admonition-title">证明可以转换</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240929220911.png" /></p>
 </div>
+<hr />
+<h2 id="_20">线性规划<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h3 id="_21">矩阵形式<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\begin{aligned}
+\min\pmb{c}\pmb{x}\\
+s.t. \pmb{A}\pmb{x}=\pmb{b}\\
+x\geq 0
+\end{aligned}
+\]</div>
+<p>不妨设系数矩阵 <span class="arithmatex">\(\pmb{A}=(a_{ij})_{m×n}\)</span> 为行满秩矩阵，即 <span class="arithmatex">\(rank(\pmb{A})=m\)</span></p>
+<ul>
+<li>若 <span class="arithmatex">\(rank(\pmb{A})&lt;m\)</span> ,则存在冗余约束</li>
+</ul>
+<p>不妨设 <span class="arithmatex">\(\pmb{A}\)</span> 的前 <span class="arithmatex">\(m\)</span> 列线性无关</p>
+<ul>
+<li>重排 <span class="arithmatex">\(\pmb{A}\)</span> 的列，并相应调整决策变量的顺序</li>
+</ul>
+<hr />
+<h3 id="_22">标准型<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>目标函数极小化</li>
+<li>决策变量取非负值<ul>
+<li><span class="arithmatex">\(x_j\)</span> 无限制 <span class="arithmatex">\(\Leftrightarrow x_j=x_j^+−x_j^−,x_j^+,x_j^−\geq 0\)</span></li>
+</ul>
+</li>
+<li>所有约束均为等式约束<ul>
+<li><span class="arithmatex">\(\pmb{A}\pmb{x}\leq\pmb{b}\Leftrightarrow\pmb{A}\pmb{x}+\pmb{y}=\pmb{b},\pmb{y}\geq\pmb{0}\)</span></li>
+<li><span class="arithmatex">\(\pmb{A}\pmb{x}\geq\pmb{b}\Leftrightarrow\pmb{A}\pmb{x}-\pmb{y}=\pmb{b},\pmb{y}\geq\pmb{0}\)</span></li>
+</ul>
+</li>
+<li>等式约束右端均为非负常数</li>
+</ul>
+<hr />
+<h3 id="_23">最优解的类型<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>线性规划有四种最优解的类型：唯一最优解、无穷多最优解、无可行解、无界解（有可行解，但最优值无下界）。</p>
+<hr />
+<h3 id="_24">基与基可行解<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241006140221.png" /></p>
+<hr />
+<h2 id="_25">整数线性规划<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241006132831.png" /></p>
+<hr />
+<h3 id="_26">分枝定界法<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p><strong>分枝定界法</strong>是求解整数规划最常用的算法，算法思想可用于其它离散优化问题的求解。它是一种指数时间算法。</p>
+<hr />
+<h4 id="_27">分枝定界法的基本思想<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li>用线性规划求解松弛问题，得到松弛问题的最优解</li>
+<li>若最优解为整数解，则该整数解为整数规划的最优解</li>
+<li>若最优解不是整数解，则将松弛问题的可行域分为两个子可行域，分别求解这两个子问题</li>
+<li>重复上述过程，直到找到整数解或判断无整数解</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>IP: <span class="arithmatex">\(\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}\)</span></p>
+<p>LP: <span class="arithmatex">\(\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1,x_2\geq 0\end{cases}\)</span></p>
+<p>画图易得，松弛问题的最优解为 <span class="arithmatex">\((x_1,x_2)=(\frac{5}{4},\frac{15}{4})\)</span>，目标函数值为 <span class="arithmatex">\(−202.5\)</span></p>
+<p>由于最优解不是整数解，我们将松弛问题的可行域分为 <span class="arithmatex">\(x_1\geq 3,x_1\leq 2\)</span> 两个子可行域</p>
+<ul>
+<li>对于第一个子可行域，我们有：</li>
+</ul>
+<p>IP: <span class="arithmatex">\(\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\geq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}\)</span></p>
+<p>LP: <span class="arithmatex">\(\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\geq 3\\x_1,x_2\geq 0\end{cases}\)</span></p>
+<p>画图易得，松弛问题的最优解为 <span class="arithmatex">\((x_1,x_2)=(3,3)\)</span>，目标函数值为 <span class="arithmatex">\(−198\)</span>。此时为整数解，停止迭代。</p>
+<ul>
+<li>对于第二个子可行域，我们有：</li>
+</ul>
+<p>IP: <span class="arithmatex">\(\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}\)</span></p>
+<p>LP: <span class="arithmatex">\(\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_1,x_2\geq 0\end{cases}\)</span></p>
+<p>画图易得，松弛问题的最优解为 <span class="arithmatex">\((x_1,x_2)=(2,\frac{35}{9})\)</span>，目标函数值为 <span class="arithmatex">\(−200\)</span>，此时 <span class="arithmatex">\(x_2\)</span> 不是整数，我们将松弛问题的可行域分为 <span class="arithmatex">\(x_2\geq 4,x_2\leq 3\)</span> 两个子可行域:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>- 对于第一个子可行域，我们有：
+
+IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+
+LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0\end{cases}$
+
+画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{5}{9},4)$，目标函数值为 $−198$。此时不为整数解，但是继续做下去，函数值只会更大，所以停止迭代。
+
+- 对于第二个子可行域，我们有：
+
+IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+
+LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0\end{cases}$
+
+画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,3)$，目标函数值为 $−168$。此时为整数解，停止迭代。
+</code></pre></div></td></tr></table></div>
+<p>综上所述，整数规划的最优解为 <span class="arithmatex">\((x_1,x_2)=(3,3)\)</span>，目标函数值为 <span class="arithmatex">\(−198\)</span>。</p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3923,7 +4206,7 @@ s.t. y_i(\pmb{w}·\pmb{x}_i+b)\geq 1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月29日 22:09:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月6日 14:02:41</span>
   </span>
 
     
