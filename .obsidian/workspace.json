@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md"
               }
             }
           }
@@ -149,27 +149,27 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 1~.md",
+    "docs/assets/Pasted image 20241006230048.png",
+    "docs/assets/Pasted image 20241006225824.png",
     "docs/assets/Pasted image 20241006140308.png",
     "docs/assets/Pasted image 20241006140221.png",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/assets/Pasted image 20241006132831.png",
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "2024-10-02.md",
     "未命名.canvas",
     "Chapter 2.md",
     "docs/blog/CTF/index.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20240930145131.png",
     "docs/assets/Pasted image 20240930145111.png",
     "docs/assets/Pasted image 20240930143322.png",
     "docs/assets/Pasted image 20240930143302.png",
     "docs/assets/Pasted image 20240930142453.png",
-    "docs/assets/Pasted image 20240930142327.png",
-    "docs/assets/Pasted image 20240930142225.png",
-    "docs/assets/Pasted image 20240930140813.png",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",

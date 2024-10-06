@@ -1,6 +1,15 @@
-## 学在浙大
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+--- 
+## Homework 01
+### 学在浙大
 
-### Question 1
+#### Question 1
 
 ![](../../../assets/Pasted%20image%2020240920194252.png)
 
@@ -31,7 +40,7 @@ $$
 （3）
 
 ***
-### Question 2
+#### Question 2
 
 ![](../../../assets/Pasted%20image%2020240920214129.png)
 
@@ -48,5 +57,8 @@ $\therefore S^{(2)}=\{31,29,-37,-23\}^T$
 设 $M^2=(m^2_{ij})_{n\times n}$，其中 $m_{ij}^2$ 表示队 $i$ 与队 $j$ 之间进行了 $m_{ij}^2$ 场”二级比赛“
 （4）$S^{(r)}=M^{(r-1)}·S+l·S^{(r-1)}$
 ***
-## MOOC
+### MOOC
 
+![](../../../assets/Pasted%20image%2020241006225824.png)
+
+![](../../../assets/Pasted%20image%2020241006230048.png)
