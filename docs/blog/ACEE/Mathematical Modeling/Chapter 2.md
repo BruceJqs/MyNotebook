@@ -440,6 +440,16 @@ $$
 不妨设 $\pmb{A}$ 的前 $m$ 列线性无关
 
 - 重排 $\pmb{A}$ 的列，并相应调整决策变量的顺序
+***
+### 标准型
+
+- 目标函数极小化
+- 决策变量取非负值
+    - $x_j$ 无限制 $\Leftrightarrow x_j=x_j^+−x_j^−,x_j^+,x_j^−\geq 0$
+- 所有约束均为等式约束
+    - $\pmb{A}\pmb{x}\leq\pmb{b}\Leftrightarrow\pmb{A}\pmb{x}+\pmb{y}=\pmb{b},\pmb{y}\geq\pmb{0}$
+    - $\pmb{A}\pmb{x}\geq\pmb{b}\Leftrightarrow\pmb{A}\pmb{x}-\pmb{y}=\pmb{b},\pmb{y}\geq\pmb{0}$
+- 等式约束右端均为非负常数
 
 ***
 ## 整数线性规划
