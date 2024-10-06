@@ -5,7 +5,7 @@ hide:
   - footer
   - feedback
 comments: true
----  
+--- 
 # Chapter 02 : 数学规划
 ## 运筹学
 
@@ -541,3 +541,28 @@ $$
 	画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,3)$，目标函数值为 $−168$。此时为整数解，停止迭代。
 	
 	综上所述，整数规划的最优解为 $(x_1,x_2)=(3,3)$，目标函数值为 $−198$。
+***
+## 多目标规划
+
+!!! Definition
+
+	多目标规划研究变量在满足给定约束条件下，多个可数值化的目标函数同时极小化的问题：
+	
+	$$
+	\min f(\pmb{x})=\begin{pmatrix}f_1(\pmb{x})\\f_2(\pmb{x})\\\vdots\\f_m(\pmb{x})\end{pmatrix},s.t.\pmb{x}\in S,S=\{\pmb{x}|\begin{cases}\pmb{g}_i(\pmb{x})\geq \pmb{0},i=1,2,...,s\\\pmb{h}_j(\pmb{x})=\pmb{0},j=1,2,...,t\end{cases}\}
+	$$
+	\
+
+### 解的类型
+
+**绝对最优解 $S_a$**：在所有可行解中，同时使所有目标函数取得最小值的解
+
+- 对任意 $\pmb{x}\in S$ ，有 $f_i(\pmb{x}^*)≥f_i(\pmb{x}),i=1,2,⋯,p$
+
+**Pareto最优解（有效解/非劣解）$S_p$**：
+
+- 不存在 $\pmb{x}\in S$ ，使得所有 $f_i(\pmb{x})≤f_i(\pmb{x}^∗),i=1,2,⋯,p$ ，且至少有一个 $f_i(\pmb{x})<f_i(\pmb{x}^∗)$（非严格不等号）
+
+**弱Pareto最优解 $S_{wp}$**：
+
+- 不存在 $\pmb{x}\in S$ ，使得所有 $f_i(\pmb{x})<f_i(\pmb{x}^∗),i=1,2,⋯,p$ （非严格不等号）
