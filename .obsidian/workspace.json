@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/index.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/index.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/index.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/index.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
               }
             }
           }
@@ -149,8 +149,15 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/assets/Pasted image 20241006132831.png",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "2024-10-02.md",
     "未命名.canvas",
+    "Chapter 2.md",
+    "docs/blog/CTF/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20240930145131.png",
@@ -162,8 +169,6 @@
     "docs/assets/Pasted image 20240930142225.png",
     "docs/assets/Pasted image 20240930140813.png",
     "docs/assets/Pasted image 20240930140742.png",
-    "docs/assets/Pasted image 20240930140024.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
@@ -176,9 +181,7 @@
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
-    "docs/blog/CTF/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
-    "Chapter 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 3.md",
     "docs/blog/Others/TOEFL Reading/Lesson 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
@@ -192,8 +195,6 @@
     "venv/lib/python3.12/site-packages/serial/__pycache__/hooks.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/errors.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial-0.0.97.dist-info/top_level.txt",
-    "venv/lib/python3.12/site-packages/serial-0.0.97.dist-info/WHEEL",
-    "venv/pwntools-doc/TESTING.md",
-    "venv/pwntools-doc/SECURITY.md"
+    "venv/lib/python3.12/site-packages/serial-0.0.97.dist-info/WHEEL"
   ]
 }
