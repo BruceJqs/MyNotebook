@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
               }
             }
           }
@@ -149,9 +149,9 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/assets/Pasted image 20241007134552.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/assets/Pasted image 20241007134228.png",
@@ -164,7 +164,6 @@
     "docs/assets/Pasted image 20241006230048.png",
     "docs/assets/Pasted image 20241006225824.png",
     "docs/assets/Pasted image 20241006140308.png",
-    "docs/assets/Pasted image 20241006140221.png",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
     "2024-10-02.md",
