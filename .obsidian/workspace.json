@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
               }
             }
           }
@@ -149,20 +149,21 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/assets/Pasted image 20241007141638.png",
+    "docs/assets/Pasted image 20241007143024.png",
+    "docs/assets/Pasted image 20241007142928.png",
+    "docs/assets/Pasted image 20241007142839.png",
+    "docs/assets/Pasted image 20241007142752.png",
+    "docs/assets/Pasted image 20241007142702.png",
+    "docs/assets/Pasted image 20241007142518.png",
+    "docs/assets/Pasted image 20241007142419.png",
+    "docs/assets/Pasted image 20241007142329.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/assets/Pasted image 20241007142013.png",
+    "docs/assets/Pasted image 20241007141638.png",
     "docs/assets/Pasted image 20241007141019.png",
-    "docs/assets/Pasted image 20241007140945.png",
-    "docs/assets/Pasted image 20241007140714.png",
-    "docs/assets/Pasted image 20241007135817.png",
-    "docs/assets/Pasted image 20241007135751.png",
-    "docs/assets/Pasted image 20241007135534.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
-    "docs/assets/Pasted image 20241007135033.png",
-    "docs/assets/Pasted image 20241007134552.png",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
-    "docs/assets/Pasted image 20241007134228.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1~.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
