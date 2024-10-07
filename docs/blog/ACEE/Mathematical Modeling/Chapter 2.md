@@ -586,4 +586,41 @@ $$
 
 - 不存在 $\pmb{x}\in S$ ，使得所有 $f_i(\pmb{x})<f_i(\pmb{x}^∗),i=1,2,⋯,p$ （非严格不等号）
 
-!!!
+!!! 解的关系
+
+	=== "$S_a$ 与 $S_{wp}$"
+	
+		$S_a$ 与 $S_{wp}$ 之间的关系（横坐标为 $x$，纵坐标红线为 $f_1$，蓝线为 $f_2$）：
+		
+		![](../../../assets/Pasted image 20241007135033.png)
+		
+		我们通常将其画为（纵坐标为 $f_1$，横坐标为 $f_2$）：
+		
+		![](../../../assets/Pasted image 20241007135534.png)
+		
+		其中，左下角的交点为 $S_a$ ，绿线为 $S_{wp}$
+	
+	=== "$S_{wp}$ 与 $S_p$"
+	
+		  $S_{wp}$ 与 $S_p$ 之间的关系（横坐标为 $x$，纵坐标红线为 $f_1$，蓝线为 $f_2$）：
+		  
+		  ![](../../../assets/Pasted image 20241007135751.png)
+		  
+		  我们通常将其画为（纵坐标为 $f_1$，横坐标为 $f_2$）：
+		  
+		  ![](../../../assets/Pasted image 20241007135817.png)
+		  
+		  其中，红线为 $S_p$ ，绿线为 $S_{wp}$
+
+可以证明 $S_a\subseteq S_{wp}\subseteq S_p\subseteq S$
+
+!!! Proof
+
+	- 若 $x^∗\in S_a$，但 $x^∗\not\in S_p$，则存在 $\overline{x}\in S$ 和某个 $k$，使得 $f_k(\overline{x})<f_k(x^∗),f_l(\overline{x})\leq f_l(x^∗),l\not=k$，与 $x^∗\in S_a$ 矛盾
+
+    - 若 $x^∗\in S_p$，但 $x^∗\not\in S_{wp}$，则存在 $\overline{x}\in S$，使得 $f_k(\overline{x})<f_k(x^∗),k=1,⋯,p$，与 $x^∗\in S_p$ 矛盾。
+
+若 $S_a=S_{wp}$ ，则称 $S_a$ 为**Pareto最优解**，此时 $S_a=S_{wp}=S_p$
+
+
+
