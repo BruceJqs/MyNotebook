@@ -2170,6 +2170,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法与计算复杂性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法与计算复杂性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p-vs-np" class="md-nav__link">
+    <span class="md-ellipsis">
+      P v.s. NP 问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#np-" class="md-nav__link">
+    <span class="md-ellipsis">
+      NP-完全性理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#np-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NP-完全问题举例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NP-完全问题举例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sat" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAT 问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      图同构问题（目前还没完全证明）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3255,6 +3321,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法与计算复杂性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法与计算复杂性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p-vs-np" class="md-nav__link">
+    <span class="md-ellipsis">
+      P v.s. NP 问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#np-" class="md-nav__link">
+    <span class="md-ellipsis">
+      NP-完全性理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#np-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NP-完全问题举例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NP-完全问题举例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sat" class="md-nav__link">
+    <span class="md-ellipsis">
+      SAT 问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      图同构问题（目前还没完全证明）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3333,6 +3465,48 @@
 <h3 id="_8">排序问题<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241007141019.png" /></p>
 <hr />
+<h2 id="_9">算法与计算复杂性<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="p-vs-np">P v.s. NP 问题<a class="headerlink" href="#p-vs-np" title="Permanent link">&para;</a></h3>
+<p>P 和 NP 问题的通俗解释：</p>
+<ul>
+<li>P：有（确定性）多项式时间算法的问题</li>
+<li>NP：有非确定性多项式时间算法的问题</li>
+</ul>
+<p>确定性算法是一种特殊的非确定性算法，故 <span class="arithmatex">\(P\subseteq NP\)</span>。</p>
+<details class="question">
+<summary>所谓 P v.s. NP 问题是指 <span class="arithmatex">\(P=NP\)</span> 还是 <span class="arithmatex">\(P\subset NP\)</span> ?</summary>
+<ul>
+<li>P v.s. NP 问题是数学和计算机科学中的重大未解决难题之一</li>
+<li>目前多数人相信 <span class="arithmatex">\(P\subset NP\)</span>。此时背包问题等，不存在多项式时间内求得最优解的算法</li>
+</ul>
+</details>
+<hr />
+<h3 id="np-">NP-完全性理论<a class="headerlink" href="#np-" title="Permanent link">&para;</a></h3>
+<p><strong>NP–完全</strong>与 <strong>NP–难</strong> 的通俗解释：</p>
+<ul>
+<li>NP–C：NP 类中最难的问题<ul>
+<li>若一个 NP–C 问题有多项式时间算法，所有 NP 问题都有多项式时间算法</li>
+</ul>
+</li>
+<li>NP–hard：不比 NP–C 问题容易的问题<ul>
+<li>在 <span class="arithmatex">\(P\not=NP\)</span> 假设下， NP - 难 问题不存在多项式时间最优算法</li>
+</ul>
+</li>
+</ul>
+<p>NP–hard 可以是 NP 问题，也可以不是 NP 问题</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241007152242.png" /></p>
+<p>在 <span class="arithmatex">\(P\not=NP\)</span> 假设下，多数组合优化问题分属 P 问题 和 NP–hard 问题</p>
+<hr />
+<h3 id="np-_1">NP-完全问题举例<a class="headerlink" href="#np-_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>线性规划和素性检验问题都是 P 问题</li>
+</ul>
+<hr />
+<h4 id="sat">SAT 问题<a class="headerlink" href="#sat" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241007152552.png" /></p>
+<hr />
+<h4 id="_10">图同构问题（目前还没完全证明）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241007152619.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3402,7 +3576,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月7日 14:18:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月7日 15:29:03</span>
   </span>
 
     
