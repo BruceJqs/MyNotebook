@@ -504,41 +504,60 @@ $$
 	
 	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1,x_2\geq 0\end{cases}$
 	
-	画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{5}{4},\frac{15}{4})$，目标函数值为 $−202.5$
+	画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{9}{4},\frac{15}{4})$，目标函数值为 $−202.5$
 	
-	由于最优解不是整数解，我们将松弛问题的可行域分为 $x_1\geq 3,x_1\leq 2$ 两个子可行域
+	![](../../../assets/Pasted image 20241007133743.png)
 	
-	- 对于第一个子可行域，我们有：
+	由于最优解不是整数解，我们将松弛问题的可行域分为 $x_1\geq 3,x_1\leq 2$ 两个子可行域。
 	
-	IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\geq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
-	
-	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\geq 3\\x_1,x_2\geq 0\end{cases}$
-	
-	画图易得，松弛问题的最优解为 $(x_1,x_2)=(3,3)$，目标函数值为 $−198$。此时为整数解，停止迭代。
-	
-	- 对于第二个子可行域，我们有：
-	
-	IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
-	
-	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_1,x_2\geq 0\end{cases}$
-	
-	画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,\frac{35}{9})$，目标函数值为 $−200$，此时 $x_2$ 不是整数，我们将松弛问题的可行域分为 $x_2\geq 4,x_2\leq 3$ 两个子可行域:
-	
-	- 对于第一个子可行域，我们有：
+	=== "子可行域 1"
 		
-	IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+		- 对于第一个子可行域，我们有：
 		
-	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0\end{cases}$
+		IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\geq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
 		
-	画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{5}{9},4)$，目标函数值为 $−198$。此时不为整数解，但是继续做下去，函数值只会更大，所以停止迭代。
+		LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\geq 3\\x_1,x_2\geq 0\end{cases}$
+		
+		画图易得，松弛问题的最优解为 $(x_1,x_2)=(3,3)$，目标函数值为 $−198$。此时为整数解，停止迭代。
+		
+		![](../../../assets/Pasted image 20241007133836.png)
 	
-	- 对于第二个子可行域，我们有：
-		
-	IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+	=== "子可行域 2"
 	
-	LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0\end{cases}$
+		- 对于第二个子可行域，我们有：
+	
+		IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
 		
-	画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,3)$，目标函数值为 $−168$。此时为整数解，停止迭代。
+		LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_1,x_2\geq 0\end{cases}$
+		
+		画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,\frac{35}{9})$，目标函数值为 $−200$。
+		
+		![](../../../assets/Pasted image 20241007134015.png)
+	
+		此时 $x_2$ 不是整数，我们将松弛问题的可行域分为 $x_2\geq 4,x_2\leq 3$ 两个子可行域:
+		=== "子子可行域 1"
+		
+			- 对于第一个子可行域，我们有：
+				
+			IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+				
+			LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\geq 4\\x_1,x_2\geq 0\end{cases}$
+				
+			画图易得，松弛问题的最优解为 $(x_1,x_2)=(\frac{5}{9},4)$，目标函数值为 $−198$。此时不为整数解，但是继续做下去，函数值只会更大，所以停止迭代。
+			
+			![](../../../assets/Pasted image 20241007134155.png)
+			
+		=== "子子可行域 2"
+		
+			- 对于第二个子可行域，我们有：
+				
+			IP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0,x_1,x_2\in\Z\end{cases}$
+			
+			LP: $\min -30x_1-36x_2,s.t.\begin{cases}x_1+x_2\leq 6\\5x_1+9x_2\leq 45\\x_1\leq 2\\x_2\leq 3\\x_1,x_2\geq 0\end{cases}$
+				
+			画图易得，松弛问题的最优解为 $(x_1,x_2)=(2,3)$，目标函数值为 $−168$。此时为整数解，停止迭代。
+			
+			![](../../../assets/Pasted image 20241007134228.png)
 	
 	综上所述，整数规划的最优解为 $(x_1,x_2)=(3,3)$，目标函数值为 $−198$。
 ***
@@ -551,7 +570,7 @@ $$
 	$$
 	\min f(\pmb{x})=\begin{pmatrix}f_1(\pmb{x})\\f_2(\pmb{x})\\\vdots\\f_m(\pmb{x})\end{pmatrix},s.t.\pmb{x}\in S,S=\{\pmb{x}|\begin{cases}\pmb{g}_i(\pmb{x})\geq \pmb{0},i=1,2,...,s\\\pmb{h}_j(\pmb{x})=\pmb{0},j=1,2,...,t\end{cases}\}
 	$$
-	\
+	
 
 ### 解的类型
 
@@ -566,3 +585,6 @@ $$
 **弱Pareto最优解 $S_{wp}$**：
 
 - 不存在 $\pmb{x}\in S$ ，使得所有 $f_i(\pmb{x})<f_i(\pmb{x}^∗),i=1,2,⋯,p$ （非严格不等号）
+
+### 解的关系
+

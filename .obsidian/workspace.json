@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 1.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md"
               }
             }
           }
@@ -149,9 +149,16 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+    "docs/assets/Pasted image 20241007134228.png",
+    "docs/assets/Pasted image 20241007134155.png",
+    "docs/assets/Pasted image 20241007134015.png",
+    "docs/assets/Pasted image 20241007133836.png",
+    "docs/assets/Pasted image 20241007133743.png",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+    "docs/assets/Pasted image 20241007133514.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1~.md",
     "docs/assets/Pasted image 20241006230048.png",
     "docs/assets/Pasted image 20241006225824.png",
@@ -165,11 +172,6 @@
     "Chapter 2.md",
     "docs/blog/CTF/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
-    "docs/assets/Pasted image 20240930145131.png",
-    "docs/assets/Pasted image 20240930145111.png",
-    "docs/assets/Pasted image 20240930143322.png",
-    "docs/assets/Pasted image 20240930143302.png",
-    "docs/assets/Pasted image 20240930142453.png",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
@@ -184,8 +186,6 @@
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Others/TOEFL Reading/Lesson 3.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 2.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/request.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc",
