@@ -18,6 +18,7 @@ comments: true
 
 - [Chapter 01 : 搜索引擎中的 PageRank 模型](Chapter%201/)
 - [Chapter 02 : 数学规划](Chapter%202/)
+- [Chapter 03 : 组合优化](Chapter%203/)
 
 ### Homeworks
 
