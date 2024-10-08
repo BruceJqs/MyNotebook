@@ -85,6 +85,7 @@ nav:
       - "Chapter 01: AVL trees, Splay Trees, and Amortized Analysis": blog/Computer Science/ADS/Chapter 1.md
       - "Chapter 02: Red-Black Trees and B+ Trees": blog/Computer Science/ADS/Chapter 2.md
       - "Chapter 03: Inverted File Index": blog/Computer Science/ADS/Chapter 3.md
+      - "Chapter 04: Leftist Heaps and Skew Heaps": blog/Computer Science/ADS/Chapter 4.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
@@ -142,6 +143,7 @@ nav:
     #     - "Misc-2｜罗小黑战记": blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md
     #     - "Misc-3｜ez_Forensics": blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md
     #     - "Misc-4｜so many 'm'": blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md
+    #     - "Misc-6｜Find It": blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md
     #   - Crypto:
     #     - "Crypto-1｜现代密码学入门指北": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md
     #     - "Crypto-2｜Signin": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md

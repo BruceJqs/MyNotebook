@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 4.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 4.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 4.md"
               }
             }
           }
@@ -149,6 +149,10 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/blog/Computer Science/ADS/Chapter 3.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/assets/Pasted image 20241007200225.png",
     "docs/assets/Pasted image 20241007200021.png",
     "docs/assets/Pasted image 20241007194819.png",
@@ -161,8 +165,6 @@
     "docs/assets/Pasted image 20241007152242.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/assets/Pasted image 20241007143024.png",
-    "docs/assets/Pasted image 20241007142928.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1~.md",
@@ -185,8 +187,6 @@
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 3.md",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/request.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc",

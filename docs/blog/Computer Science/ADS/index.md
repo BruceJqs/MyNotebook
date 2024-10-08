@@ -21,3 +21,4 @@ comments: true
 - [Chapter 01 : AVL trees, Splay Trees, and Amortized Analysis](Chapter%201/)
 - [Chapter 02 : Red-Black Trees and B+ Trees](Chapter%202/)
 - [Chapter 03 : Inverted File Index](Chapter%203/)
+- [Chapter 04 : Leftist Heaps and Skew Heaps](Chapter%204/)
