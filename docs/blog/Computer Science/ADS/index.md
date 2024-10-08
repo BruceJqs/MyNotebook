@@ -22,3 +22,4 @@ comments: true
 - [Chapter 02 : Red-Black Trees and B+ Trees](Chapter%202/)
 - [Chapter 03 : Inverted File Index](Chapter%203/)
 - [Chapter 04 : Leftist Heaps and Skew Heaps](Chapter%204/)
+- [Chapter 05 : Binomial Queue](Chapter%205/)

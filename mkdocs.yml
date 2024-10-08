@@ -86,6 +86,7 @@ nav:
       - "Chapter 02: Red-Black Trees and B+ Trees": blog/Computer Science/ADS/Chapter 2.md
       - "Chapter 03: Inverted File Index": blog/Computer Science/ADS/Chapter 3.md
       - "Chapter 04: Leftist Heaps and Skew Heaps": blog/Computer Science/ADS/Chapter 4.md
+      - "Chapter 05: Binomial Queue": blog/Computer Science/ADS/Chapter 5.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
