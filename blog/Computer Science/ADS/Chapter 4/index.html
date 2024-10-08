@@ -1097,11 +1097,44 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
-      概念
+      Why?
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3109,11 +3142,44 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
-      概念
+      Why?
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3155,10 +3221,116 @@
 
 <h1 id="chapter-04-leftist-heaps-and-skew-heaps">Chapter 04 : Leftist Heaps and Skew Heaps<a class="headerlink" href="#chapter-04-leftist-heaps-and-skew-heaps" title="Permanent link">&para;</a></h1>
 <h2 id="leftist-heap">Leftist Heap<a class="headerlink" href="#leftist-heap" title="Permanent link">&para;</a></h2>
-<h3 id="_1">概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><strong>左偏堆(Leftist Heap)</strong>，它相比于普通的堆，更好的一点在于它支持快速的堆合并操作。“左偏”，并不断将新的东西往右侧合并，来实现每次都是往相对小的那一侧塞进东西，进而保相对证了这个</p>
-<p>由于左偏堆不再是一个完全二叉树，所以我们不能再像维护大根堆小跟堆那样用数组来维护它了。</p>
-<p>一个左偏堆的结点维护了左右子堆的地址、自身的键值、和一个“<strong>距离(dist)</strong>”。</p>
+<h3 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>对于普通的两个堆合并操作，我们都需要将其中一个堆的每个元素一个一个地拷贝到某一个地方（无论是拷贝到另一个堆里面还是拷贝到一个新的堆里面），这样的时间复杂度为 <span class="arithmatex">\(O(N)\)</span>，那有没有方法或者一个新的堆结构能让其合并地快一些呢？</p>
+</blockquote>
+<hr />
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p><strong>左偏堆(Leftist Heap)</strong>，它相比于普通的堆，更好的一点在于它支持快速的堆合并操作。“左偏”，并不断将新的东西往右侧合并（来更好实现堆的平衡），来实现每次都是往相对小的那一侧塞进东西。</p>
+<p>由于左偏堆不再是一个完全二叉树，所以我们不能再像维护大根堆小根堆那样用数组来维护它了。</p>
+<p>一个左偏堆的结点维护了左右子堆的地址、自身的键值、和一个“空路径距离（Null Path Length）”。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Null Path Length</p>
+<ul>
+<li>
+<p>如果一个结点的左孩子或右孩子为空结点，则该结点的 NPL 为 <span class="arithmatex">\(0\)</span>，这种结点被称为外结点</p>
+</li>
+<li>
+<p>如果一个结点的左孩子和右孩子都不为空，则该结点的 NPL 为 <span class="arithmatex">\(\min⁡\{NPL(left child),NPL(right child)\}+1\)</span>；</p>
+</li>
+</ul>
+<p>或者更为直接地，定义 <span class="arithmatex">\(NPL(NULL)=-1\)</span>，那么有 <span class="arithmatex">\(NPL(X)=\min\{NPL(C)+1\},C为X的孩子\)</span></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241008102305.png" /></p>
+</div>
+<ul>
+<li>有了空路径距离这个定义，我们也可以得到左偏堆的一个性质：对于堆中的每一个节点 <span class="arithmatex">\(X\)</span>，其左孩子的空路径距离一定不小于其右孩子的空路径距离。</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241008102805.png" /></p>
+<p>我们还可以得到如下扩展性质：</p>
+<div class="admonition properties">
+<p class="admonition-title">Properties</p>
+<ul>
+<li>
+<p>结点的 NPL 等于 <span class="arithmatex">\(NPL(right child)+1\)</span>（假设 <span class="arithmatex">\(NPL(NULL)=−1\)</span>）</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex">\(NPL(i)=N\)</span>，则以 <span class="arithmatex">\(i\)</span> 为根的子树<strong>至少</strong>是一个 <span class="arithmatex">\(N+1\)</span> 层的满二叉树，则这个子树至少有 <span class="arithmatex">\(2^{N+1}−1\)</span> 个结点；</p>
+</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241008103628.png" /></p>
+</div>
+<p>为什么左偏堆会这么设计呢？实际上，合并堆需要考虑的非常重要的一个点就是要能在之后的操作中尽可能地维护堆的“平衡”，否则我们把堆维护成了一个链，那显然是非常糟糕的。</p>
+<p>而左偏堆通过维护整个堆“左偏”，并不断往右侧合并，来实现每次都是往 NPL 相对小的那一侧塞进东西，进而保证了这个堆的相对平衡性。</p>
+<hr />
+<h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
+<p>左偏堆的核心操作就是合并。而其它操作都可以看作是合并的特殊情况。因此我们首先讨论任意两个左偏堆的合并。</p>
+<hr />
+<h4 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
+<p>作为左偏堆的核心操作，合并操作自然就是要在满足性质的条件下，合并两个左偏堆。大致思路就是<strong>先维护堆的性质</strong>，在<strong>回溯时维护左偏性质</strong>，所以实际上它是一个先自上而下再自下而上的过程。</p>
+<p>按照实现方法，左偏堆的合并可以分为<strong>递归式</strong>和<strong>迭代式</strong>两种。其中前者可能更为直觉，而后者可视化后则更为直观。</p>
+<div class="admonition merge">
+<p class="admonition-title">Merge</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">递归式</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>递归式先比较当前两个待合并子树的根结点的键值，选择较小（较大）的那个作为根结点，其左子树依然为左子树，右子树更新为「右子树和另一个待合并子树的合并结果」。</p>
+<p>当然，在递归地更新完后，我们需要检查左子树和右子树是否满足 <span class="arithmatex">\(NPL(left child)\geq NPL(right child)\)</span> 的性质，如果不满足，我们则需要<strong>交换左右子树</strong>来维持性质。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">LeftistHeapNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">LeftistHeapNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">LeftistHeapNode</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Recursive exit. If any is NULL, return the other as the new root of subtree.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="c1">// If x&#39;s val is smaller than y&#39;s, swap them, which means we always operates on x.</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="c1">// Merge x&#39;s right subtree and y, and set x&#39;s right subtree to the result.</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="c1">// If x&#39;s left subtree&#39;s dist is smaller than x&#39;s right subtree&#39;s dist, swap them.</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">ls</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">ls</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="o">-&gt;</span><span class="n">dist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">ls</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="c1">// Update x&#39;s dist.</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="c1">// Return x as the new root of subtree.</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3228,7 +3400,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月8日 10:06:02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月8日 10:46:47</span>
   </span>
 
     
