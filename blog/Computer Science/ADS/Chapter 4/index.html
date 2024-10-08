@@ -3267,7 +3267,7 @@
 <p>而左偏堆通过维护整个堆“左偏”，并不断往右侧合并，来实现每次都是往 NPL 相对小的那一侧塞进东西，进而保证了这个堆的相对平衡性。</p>
 <hr />
 <h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
-<p>左偏堆的核心操作就是合并。而其它操作都可以看作是合并的特殊情况。因此我们首先讨论任意两个左偏堆的合并。</p>
+<p>左偏堆的核心操作就是合并。而其它操作（如插入、删除）都可以看作是合并的特殊情况。因此我们首先讨论任意两个左偏堆的合并。</p>
 <hr />
 <h4 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
 <p>作为左偏堆的核心操作，合并操作自然就是要在满足性质的条件下，合并两个左偏堆。大致思路就是<strong>先维护堆的性质</strong>，在<strong>回溯时维护左偏性质</strong>，所以实际上它是一个先自上而下再自下而上的过程。</p>
@@ -3313,20 +3313,33 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="c1">// Merge x&#39;s right subtree and y, and set x&#39;s right subtree to the result.</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="c1">// If x&#39;s left subtree&#39;s dist is smaller than x&#39;s right subtree&#39;s dist, swap them.</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">ls</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">ls</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="o">-&gt;</span><span class="n">dist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">ls</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="p">);</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="c1">// If x&#39;s left subtree&#39;s NPL is smaller than x&#39;s right subtree&#39;s NPL, swap them.</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="o">-&gt;</span><span class="n">NPL</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="o">-&gt;</span><span class="n">NPL</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="o">-&gt;</span><span class="n">NPL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="c1">// Update x&#39;s dist.</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rs</span><span class="o">-&gt;</span><span class="n">dist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="c1">// Update x&#39;s NPL.</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">NPL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="o">-&gt;</span><span class="n">NPL</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a>
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="c1">// Return x as the new root of subtree.</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>现在我们模拟一下这个过程，现在我们有下面两个左偏堆，尝试合并它们。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241008105110.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241008105130.png" /></p>
+<p>我们发现，经过比较，<strong>❶</strong> 更小，所以我们将 <strong>❶</strong> 作为合并后的根结点，左子树不变，右子树更新为「绿树右子树和蓝树的合并结果」。</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3400,7 +3413,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月8日 10:46:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月8日 10:52:16</span>
   </span>
 
     
