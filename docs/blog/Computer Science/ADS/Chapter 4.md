@@ -55,7 +55,7 @@ comments: true
 ***
 ### Operations
 
-左偏堆的核心操作就是合并。而其它操作都可以看作是合并的特殊情况。因此我们首先讨论任意两个左偏堆的合并。
+左偏堆的核心操作就是合并。而其它操作（如插入、删除）都可以看作是合并的特殊情况。因此我们首先讨论任意两个左偏堆的合并。
 ***
 #### Merge
 
@@ -83,20 +83,32 @@ comments: true
 		    }
 		
 		    // Merge x's right subtree and y, and set x's right subtree to the result.
-		    x->rs = merge(x->rs, y);
+		    x->rchild = merge(x->rchild, y);
 		
-		    // If x's left subtree's dist is smaller than x's right subtree's dist, swap them.
-		    if (x->ls->dist == NULL || x->ls->dist < x->rs->dist) {
-		        swap(x->ls, x->rs);
+		    // If x's left subtree's NPL is smaller than x's right subtree's NPL, swap them.
+		    if (x->lchild->NPL == NULL || x->lchild->NPL < x->rchild->NPL) {
+		        swap(x->lchild, x->rchild);
 		    }
 		
-		    // Update x's dist.
-		    x->dist = x->rs->dist + 1;
+		    // Update x's NPL.
+		    x->NPL = x->rchild->NPL + 1;
 		
 		    // Return x as the new root of subtree.
 		    return x;
 	    }
 		```
+		
+		!!! Example
+		
+			现在我们模拟一下这个过程，现在我们有下面两个左偏堆，尝试合并它们。
+			
+			![](../../../assets/Pasted image 20241008105110.png)
+			
+			=== "Step 1"
+			
+				![](../../../assets/Pasted image 20241008105130.png)
+				
+				我们发现，经过比较，**❶** 更小，所以我们将 **❶** 作为合并后的根结点，左子树不变，右子树更新为「绿树右子树和蓝树的合并结果」。
 
 
 
