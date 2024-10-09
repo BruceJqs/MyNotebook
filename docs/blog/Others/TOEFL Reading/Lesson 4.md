@@ -53,25 +53,71 @@ comments: true
 
 !!! example "Example 01"
 
-	Agriculture rendered possible a more stable and secure life. With it Neolithic peoples fourished, fashioning an energetic, creative era. They were responsible for many ingenious tools that the modern world takes for granted. First, apparently, is systematic agriculture-that is, the reliance of Neolithic peoples on agriculture as their primary, not merely subsidiary, source of food. Thus they developed the primary economic activity of the entire ancient world and the basis of all modern life. With the sedentary routine of Neolithic farmers came the evolution of towns and eventually cities. Neolithic farmers usually raised more food than they could consume, and their surpluses permitted larger, healthier populations. Population growth in turn created an even greater reliance on settled farming, as only systematic agriculture could sustain the increased numbers of people. Since surpluses of food could also be bartered for other commodities, the Neolithic era witnessed the beginnings of large-scale exchange of goods.
+	Agriculture rendered possible a more stable and secure life. With it Neolithic peoples fourished, fashioning an energetic, creative era. They were responsible for many ingenious tools that the modern world takes for granted. First, apparently, is systematic agriculture-that is, the reliance of Neolithic peoples on agriculture as their primary, not merely subsidiary, source of food. Thus they developed the primary economic activity of the entire ancient world and the basis of all modern life. With the sedentary routine of Neolithic farmers came the evolution of towns and eventually cities. Neolithic farmers usually raised more food than they could consume, and their surpluses permitted larger, healthier populations. Population growth in turn created an even greater reliance on settled farming, as only systematic agriculture could sustain the increased numbers of people. Since surpluses of food could also be bartered for other commodities, the Neolithic era witnessed the beginnings of large-scale exchange of goods. In time the increasing sophistication of Neolithic societies contributed to the evolution of writing, prompted by the necessity for documentation and later by the craving to chronicle experiences, learning, and beliefs.
 
 	=== "Question"
 	
-		- The author mentions all of the following as outcomes of the shift to agricultural societies EXCEPT
+		- (1) The author mentions all of the following as outcomes of the shift to agricultural societies EXCEPT
 			- A) a surge in inventions
 			- B) emergence of urban areas
 			- C) development of trade
 			- D) a decline in warfare
+		
+		- (2) According to the passage, all of the following led to the development of writing EXCEPT the 
+			- A) need to keep records
+			- B) urge to preserve wisdom
+			- C) promotion of aesthetic values
+			- D) growth of social complexity
 	
 	=== "Answer"
 	
-		D) a decline in warfare
+		- (1) D) a decline in warfare
 	
-		A）在原文 "They were responsible for many ingenious tools that the modern world takes for granted." 可以对应。
+			A）在原文 "They were responsible for many ingenious tools that the modern world takes for granted." 可以对应。
+			
+			B）在原文 "With the sedentary routine of Neolithic farmers came the evolution of towns and eventually cities." 可以对应。
+			
+			C）在原文 "Since surpluses of food could also be bartered for other commodities, the Neolithic era witnessed the beginnings of large-scale exchange of goods." 可以对应。
 		
-		B）在原文 "With the sedentary routine of Neolithic farmers came the evolution of towns and eventually cities." 可以对应。
+		- (2) C) promotion of aesthetic values
 		
-		C）在原文 "Since surpluses of food could also be bartered for other commodities, the Neolithic era witnessed the beginnings of large-scale exchange of goods." 可以对应。
+			根据原文 "necessity for documentation" 对应 A)，"craving to chronicle experiences, learning, and beliefs" 对应 B)，"the increasing sophistication of Neolithic societies" 对应 D)
+
+!!! example "Example 02"
+
+	Archaeological discoveries have led some scholars to believe that the first Mesopotamian inventors of writing may have been a people the later Babylonians called Subarians. According to tradition, they came from the north and moved into Uruk in the south. By about 3100 B.C, they were apparently subjugated in southern Mesopotamia by the Sumerians, whose name became synonymous with the region immediately north of the Persian Gulf, in the fecund lower valleys of the Tigris and Euphrates, Here the Sumerians were already well established by the year 3000 B.C. They had invented bronze, an alloy that could be cast in molds, out of which they made tools and weapons. They lived in cities, and they had begun to acquire and use capital. Perhaps most important, the Sumerians adapted writing(probably from the Subarians) into a flexible tool of communication.
+	
+	=== "Question"
+	
+		- By about 3000 B.C. the Sumerians had already done all of the following EXCEPT:
+			- A) they had abandoned the area north of the Persian Gulf
+			- B) they had settled in cities
+			- C) they had started to communicate through writing
+			- D) they had created bronze tools and weapons
+	
+	=== "Answer"
+	
+		A) they had abandoned the area north of the Persian Gulf.
+		
+		该选项很明显和原文 "By about 3100 B.C, they were apparently subjugated in southern Mesopotamia by the Sumerians, whose name became synonymous with the region immediately north of the Persian Gulf" 不符。
+
+!!! example "Example 03"
+
+	The United States in the 1800's was teeming with practical,industrious people who reckoned the arts from theater to painting as trivial occupations. In addition, the public's attitude that European art surpassed American art both disheartened and infuriated American artists. In the early 1900's there was an intense feeling among artists that the United States was long overdue in developing art that did not reproduce European traditions. Everybody agreed that the heart and soul of the new country should be reflected in its art. But opinions differed about what this art would be like and how it would develop.
+	
+	=== "Question"
+	
+		- All of the following are true of American art in the late 1800s and early 1900s EXCEPT:
+			- A) most Americans deemed art as minor
+			- B) American art generally replicated European styles and traditions
+			- C) most Americans perceived American art inferior to European art
+			- D) American art was the essence of the United states
+	
+	=== "Answer"
+	
+		D) American art was the essence of the United states
+		
+		原文为 "Everybody agreed that the heart and soul of the new country should be reflected in its art." 这里的 `should` 和 D 选项的 `was` 不对应。
 
 ***
 ## New Words
@@ -114,3 +160,24 @@ comments: true
 | monolith          | n.                 | 独块巨石         |                                                                                                     |
 | lithophyte        | n.                 | 岩生植物         |                                                                                                     |
 | lithosphere       | n.                 | 岩石圈          |                                                                                                     |
+| chronicle         | n./v.              | 编年史/记录，记载    | chron- 表示与时间有关的<br>syn. document                                                                    |
+| chronological     | adj.               | 按时间顺序的       |                                                                                                     |
+| chronic           | adj.               | 慢性的          |                                                                                                     |
+| acute             | adj.               | 急性的，敏锐的      |                                                                                                     |
+| synchronization   | n.                 | 同步           | v. synchronize<br>synchronized swimming 花样游泳<br>synchronized diving 双人跳水                            |
+| lip-sync          | v.                 | 对口型          |                                                                                                     |
+| chronobiology     | n.                 | 时间生物学        |                                                                                                     |
+| monochronic       | adj.               | 单一时间的        | polychronic 多元时间的                                                                                   |
+| synonymous        | adj.               |              | -nym 表示名字                                                                                           |
+| pseudonym         | n.                 | 假名           |                                                                                                     |
+| nominate          | n.                 | 提名           | nom- 表示名字<br>n. nomination, nominee<br>adj. nominal                                                 |
+| subjugate         | v.                 | 征服           | sub- 表示在下面<br>-jug- 表示 judge                                                                        |
+| mould             | n.                 | 模具           |                                                                                                     |
+| archaeology       | n.                 | 考古学          | arch- 表示老的                                                                                          |
+| archetype         | n.                 | 原型           | syn. prototype                                                                                      |
+| archaic           | adj.               | 古老的          |                                                                                                     |
+| archaism          | n.                 | 古风           |                                                                                                     |
+| archive           | n.                 | 档案           |                                                                                                     |
+| protozoon         | n.                 | 原生动物         | pl. protozoa                                                                                        |
+| paleontology      | n.                 | 古生物学         | paleo- 表示老的                                                                                         |
+| paleozoic         | n.                 | 古生代          |                                                                                                     |
