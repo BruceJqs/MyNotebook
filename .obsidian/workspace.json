@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 4.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 4.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 4.md"
               }
             }
           }
@@ -149,10 +149,15 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241008190307.png",
-    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 3.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 4.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 2.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
+    "docs/blog/Others/TOEFL Reading/index.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/assets/Pasted image 20241008190307.png",
+    "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
@@ -165,7 +170,6 @@
     "docs/assets/Pasted image 20241008111208.png",
     "docs/assets/Pasted image 20241008111119.png",
     "docs/assets/Pasted image 20241008110841.png",
-    "docs/assets/Pasted image 20241008110751.png",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "未命名",
@@ -183,10 +187,6 @@
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-4.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/request.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc",

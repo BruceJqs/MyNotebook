@@ -363,7 +363,7 @@ $$
 
 !!! Definition "Heavy Node & Light Node"
 
-	对于一个子堆 $H$，如果 $size(H.right_descendant)\geq\frac{1}{2}size(H)$，则 $H$ 是 heavy node，否则是 light node。
+	对于一个子堆 $H$，如果 $size(H.right_{descendant})\geq\frac{1}{2}size(H)$，则 $H$ 是 heavy node，否则是 light node。
 
 !!! Properties
 
