@@ -1116,6 +1116,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Binomial Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3113,6 +3128,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Binomial Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3148,6 +3178,20 @@
 
 <h1 id="chapter-05-binomial-queue">Chapter 05 : Binomial Queue<a class="headerlink" href="#chapter-05-binomial-queue" title="Permanent link">&para;</a></h1>
 <h2 id="binomial-queue">Binomial Queue<a class="headerlink" href="#binomial-queue" title="Permanent link">&para;</a></h2>
+<p>堆的其中一个应用就是优先队列。二项队列(Binomial Queue)也是优先队列的一种实现，只不过不同于之前我们用一个堆维护优先队列，二项队列同时维护了具有不同特征的若干队列。</p>
+<hr />
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<p>二项队列(Binomial Queue)本质上是一系列二项树(Binomial Tree)的集合。</p>
+<div class="admonition definition">
+<p class="admonition-title">Definition</p>
+<p>二项树满足堆的性质，即 parent 节点的值小于（大于） child 节点的值。</p>
+<p>一个非常关键的性质是，<span class="arithmatex">\(k\)</span> 阶二项树都是同构的，且 <span class="arithmatex">\(k\)</span> 阶二项树是两个 <span class="arithmatex">\(k−1\)</span> 阶二项树合并得到的。而其合并方式是直接令其中一棵成为另外一棵的根的新 child，这也决定了二项树的根每一个 child 本身也都是一个二项树。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241008190307.png" /></p>
+<p>显然能够得到，<strong>二项树并非二叉树</strong>；更进一步的，<span class="arithmatex">\(k\)</span> 阶二项树 <span class="arithmatex">\(B_k\)</span>​ 的根有 <span class="arithmatex">\(k\)</span> 个 child，<span class="arithmatex">\(2k\)</span> 个节点；再进一步的，<span class="arithmatex">\(B_k\)</span>​ 的第 <span class="arithmatex">\(d\)</span> 层一共有 <span class="arithmatex">\(C_k^d\)</span> 个节点，有趣的是，所有层的节点加起来刚好符合二项式定理，此条定理可以由数学归纳法很容易地证明，不再赘述。</p>
+</div>
+<p>可以发现，二项树是一个 <span class="arithmatex">\(N\)</span> 叉树，所以通常我们使用链表 sibling 的形式来表示一个节点的 children。</p>
+<p>再对二项树做一个简单的总结，<span class="arithmatex">\(k\)</span> 阶二项树结构唯一确定，两个 <span class="arithmatex">\(k\)</span> 阶二项树合并后得到一个 <span class="arithmatex">\(k+1\)</span> 阶二项树，而二项树本身也具有堆的性质。</p>
+<p>但是，虽然二项树具有堆的性质，看似能独立完成优先队列的功能，但是二项树对点的数量具有比较严格的要求，只有点的数量符合 <span class="arithmatex">\(2k\)</span> 时，才能使用二项树表示。因此，观察一个二项树能承载的点的数量特征，我们联想到二进制对数的表示——我们可以用一系列二项树来维护 <span class="arithmatex">\(N\)</span> 个节点的优先队列，而具体用几阶二项树，则取决于 <span class="arithmatex">\(N\)</span> 的二进制表达中，为 <code>1</code> 的是哪几位。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3217,7 +3261,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月8日 12:16:48</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月9日 16:56:08</span>
   </span>
 
     
