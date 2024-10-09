@@ -44,8 +44,73 @@ comments: true
 			根据原文 "some pheromones may convey different meanings and consequently result in different behavioral or physiological responses, depending on their concentration or when presented in combination." 可以得知取决于它们的浓度或者当不同信息素结合在一起时，对应 B）选项
 
 ***
+## Skills
+
+- 一般的错误选项来自事实性错误（与原文不符）或者完全没提及过
+- 可以使用排除法来进行
+***
+## Examples
+
+!!! example "Example 01"
+
+	Agriculture rendered possible a more stable and secure life. With it Neolithic peoples fourished, fashioning an energetic, creative era. They were responsible for many ingenious tools that the modern world takes for granted. First, apparently, is systematic agriculture-that is, the reliance of Neolithic peoples on agriculture as their primary, not merely subsidiary, source of food. Thus they developed the primary economic activity of the entire ancient world and the basis of all modern life. With the sedentary routine of Neolithic farmers came the evolution of towns and eventually cities. Neolithic farmers usually raised more food than they could consume, and their surpluses permitted larger, healthier populations. Population growth in turn created an even greater reliance on settled farming, as only systematic agriculture could sustain the increased numbers of people. Since surpluses of food could also be bartered for other commodities, the Neolithic era witnessed the beginnings of large-scale exchange of goods.
+
+	=== "Question"
+	
+		- The author mentions all of the following as outcomes of the shift to agricultural societies EXCEPT
+			- A) a surge in inventions
+			- B) emergence of urban areas
+			- C) development of trade
+			- D) a decline in warfare
+	
+	=== "Answer"
+	
+		D) a decline in warfare
+	
+		A）在原文 "They were responsible for many ingenious tools that the modern world takes for granted." 可以对应。
+		
+		B）在原文 "With the sedentary routine of Neolithic farmers came the evolution of towns and eventually cities." 可以对应。
+		
+		C）在原文 "Since surpluses of food could also be bartered for other commodities, the Neolithic era witnessed the beginnings of large-scale exchange of goods." 可以对应。
+
+***
 ## New Words
 
-| **Words** | **Part of Speech** | **Meaning** | **Notes** |
-| --------- | ------------------ | ----------- | --------- |
-|           |                    |             |           |
+| **Words**         | **Part of Speech** | **Meaning**  | **Notes**                                                                                           |
+| ----------------- | ------------------ | ------------ | --------------------------------------------------------------------------------------------------- |
+| ingenious         | adj.               | 灵巧的          | n. ingenuity<br>syn. novel, innovative                                                              |
+| indigenous        | adj.               | 本地的          |                                                                                                     |
+| igneous           | adj.               | 火成的          |                                                                                                     |
+| indigent          | adj.               | 贫困的          |                                                                                                     |
+| surplus           | n.                 | 剩余           | sur- 表示超过                                                                                           |
+| surrealism        | n.                 | 超现实主义        |                                                                                                     |
+| surcharge         | n.                 | 附加费          |                                                                                                     |
+| survive           | v.                 | 幸存           |                                                                                                     |
+| surmount          | v.                 | 克服           | syn. overcome                                                                                       |
+| insurmountable    | adj.               | 无法逾越的        |                                                                                                     |
+| extraordinary     | adj.               | 超凡脱俗的        | extra- 表示超过                                                                                         |
+| hypertext         | n.                 | 超文本          | hyper- 表示超过                                                                                         |
+| hyperlink         | n.                 | 超链接          |                                                                                                     |
+| hyperbole         | n.                 | 夸张           | syn. exaggeration                                                                                   |
+| hypergravity      | n.                 | 超重力          |                                                                                                     |
+| hypertension      | n.                 | 高血压          |                                                                                                     |
+| hypotension       | n.                 | 低血压          |                                                                                                     |
+| hyperglycemia     | n.                 | 高血糖          |                                                                                                     |
+| hyperemia         | n.                 | 充血           |                                                                                                     |
+| ADHD              | n.                 | 多动症/注意缺陷多动障碍 | Attention Deficiency Hyperactivity Disorder                                                         |
+| hypermnesia       | n.                 | 超强记忆         |                                                                                                     |
+| superconductor    | n.                 | 超导体          | super- 表示超过                                                                                         |
+| superconductivity | n.                 | 超导现象         |                                                                                                     |
+| superfluous       | adj.               | 多余的          |                                                                                                     |
+| supernova         | n.                 | 超新星          |                                                                                                     |
+| supercilious      | adj.               | 目中无人的        | syn. arrogent                                                                                       |
+| supersonic        | adj.               | 超音速的         | syn. ultrasonic                                                                                     |
+| ultraman          | n.                 | 奥特曼          | ultra- 表示超过                                                                                         |
+| ultraviolet       | n.                 | 紫外线          |                                                                                                     |
+| ultralight        | adj.               | 超轻型的         |                                                                                                     |
+| Neolithic         | adj.               | 新石器时代的       | the Neolithic Age 新石器时代<br>the Paleolithic Age 旧石器时代<br>the Mesolithic Age 中石器时代<br>-lith- 表示和石头有关的 |
+| lithography       | n.                 | 平版印刷术        |                                                                                                     |
+| megalith          | n.                 | 巨石           |                                                                                                     |
+| monolith          | n.                 | 独块巨石         |                                                                                                     |
+| lithophyte        | n.                 | 岩生植物         |                                                                                                     |
+| lithosphere       | n.                 | 岩石圈          |                                                                                                     |
