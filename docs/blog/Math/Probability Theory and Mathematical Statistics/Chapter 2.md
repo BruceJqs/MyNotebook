@@ -143,6 +143,7 @@ f(x)=\begin{cases}
 \end{aligned}
 \end{cases}
 $$
+
 也有地方写成这样：
 
 $$
@@ -166,7 +167,7 @@ F(x)=\int_{−\infty}^xf(t)dt=\begin{cases}
 \end{aligned}
 \end{cases}
 $$
-​
+
 指数分布具有无记忆性，即 $P(X>s|X>t_0)=P(X>s−t_0)$。
 ***
 #### 正态分布
