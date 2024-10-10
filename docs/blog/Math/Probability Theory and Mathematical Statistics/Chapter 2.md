@@ -142,8 +142,7 @@ f(x)=\begin{cases}
 0,x\leq 0
 \end{aligned}
 \end{cases}
-$$​
-
+$$
 也有地方写成这样：
 
 $$
@@ -153,7 +152,7 @@ f(x)=\begin{cases}
 0,x\leq 0
 \end{aligned}
 \end{cases}
-$$​
+$$
 
 其中 $\lambda>0$，则称 $X$ 服从**参数为** $\lambda$ **的指数分布(exponential distribution)**，记为 $X∼E(\lambda)$
 
@@ -166,8 +165,8 @@ F(x)=\int_{−\infty}^xf(t)dt=\begin{cases}
 0,x\leq 0
 \end{aligned}
 \end{cases}
-$$​
-
+$$
+​
 指数分布具有无记忆性，即 $P(X>s|X>t_0)=P(X>s−t_0)$。
 ***
 #### 正态分布
