@@ -114,7 +114,7 @@ f(x)=\begin{cases}
 0&,\text{else}
 \end{aligned}
 \end{cases}
-$$​
+$$
 
 则称 $X$ 服从区间 $(a,b)$ 上的均匀分布，并记为 $X∼U(a,b)$
 
@@ -129,6 +129,7 @@ F(x)=\begin{cases}
 \end{aligned}
 \end{cases}
 $$​
+
 ![](../../../assets/Pasted%20image%2020241010110340.png)
 ***
 #### 指数分布
