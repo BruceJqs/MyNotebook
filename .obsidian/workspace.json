@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
               }
             }
           }
@@ -147,31 +147,32 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "3d142c13a9deda6e",
+  "active": "24f264835ca300f9",
   "lastOpenFiles": [
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+    "docs/assets/Pasted image 20241012133837.png",
+    "docs/assets/Pasted image 20241012133711.png",
+    "docs/assets/Pasted image 20241012133331.png",
+    "docs/assets/Pasted image 20241012133251.png",
+    "docs/assets/Pasted image 20241012132843.png",
+    "docs/assets/Pasted image 20241011142435.png",
+    "docs/assets/Pasted image 20241011142131.png",
+    "docs/assets/Pasted image 20241011140455.png",
+    "docs/assets/Pasted image 20241011140032.png",
+    "docs/assets/Pasted image 20241011134057.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/assets/Pasted image 20241010110340.png",
     "docs/blog/Others/TOEFL Reading/Lesson 4.md",
-    "docs/assets/Pasted image 20241009202300.png",
     "docs/blog/Others/TOEFL Reading/Lesson 3.md",
     "docs/blog/Others/TOEFL Reading/Lesson 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Others/TOEFL Reading/index.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
-    "docs/assets/Pasted image 20241008190307.png",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/assets/Pasted image 20241008115034.png",
-    "docs/assets/Pasted image 20241008112922.png",
-    "docs/assets/Pasted image 20241008112855.png",
-    "docs/assets/Pasted image 20241008112431.png",
-    "docs/assets/Pasted image 20241008112340.png",
-    "docs/assets/Pasted image 20241008111317.png",
-    "docs/assets/Pasted image 20241008111208.png",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "未命名",
@@ -186,7 +187,6 @@
     "docs/blog/CTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/request.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc",
