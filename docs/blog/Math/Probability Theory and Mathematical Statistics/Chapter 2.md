@@ -129,7 +129,6 @@ F(x)=\begin{cases}
 \end{aligned}
 \end{cases}
 $$​
-
 ![](../../../assets/Pasted%20image%2020241010110340.png)
 ***
 #### 指数分布

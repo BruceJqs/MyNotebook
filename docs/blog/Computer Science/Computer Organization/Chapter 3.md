@@ -366,3 +366,33 @@ $$
 ![](../../../assets/Pasted%20image%2020240930145111.png)
 
 ![](../../../assets/Pasted%20image%2020240930145131.png)
+***
+### 浮点乘法
+
+分别处理符号位、exponent 和 fraction：
+
+- 将两个 Exponent 相加并 **减去一个 bias**，因为 bias 加了 2 次
+- 将两个 (1 + Fraction) 相乘，并将其规格化；此时同样要考虑 overflow 和 underflow；然后舍入，如果还需要规格化则重复执行
+- 根据两个操作数的符号决定结果的符号
+
+![](../../../assets/Pasted%20image%2020241012134900.png)
+***
+### 精确算术
+
+IEEE 754 规定了一些额外的舍入控制，用来保证舍入的精确性。
+
+**Round modes**
+
+- `guard` / `round` / `sticky`
+
+![](../../../assets/Pasted%20image%2020241012134951.png)
+
+Round to nearest even 只对 0.5 有效，别的都和四舍五入一样
+
+一般的浮点数后面还会有 2 bits，分别称为 guard 和 round，其主要目的是让计算结果的舍入更加的精确：
+
+![](../../../assets/Pasted%20image%2020241012135027.png)
+
+事实上加法只需要用到 guard，但是对于乘法，如果存在前导 0，需要将结果左移，这时候 round bit 就成了有效位，能避免精度的损失。
+
+另外还有一个位叫 sticky bit，其定义是：只要 round 右边出现过非零位，就将 sticky 置 1，这一点可以用在加法的右移中，可以记住是否有 1 被移出，从而能够实现 "round to nearest even"。
