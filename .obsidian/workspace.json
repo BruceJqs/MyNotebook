@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md"
               }
             }
           }
@@ -149,17 +149,20 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241014143914.png",
+    "docs/assets/Pasted image 20241014142612.png",
+    "docs/assets/Pasted image 20241014142531.png",
+    "docs/assets/Pasted image 20241014142453.png",
+    "docs/assets/Pasted image 20241014142401.png",
+    "docs/assets/Pasted image 20241014140635.png",
+    "docs/assets/Pasted image 20241014140558.png",
+    "docs/assets/Pasted image 20241014140427.png",
+    "docs/assets/Pasted image 20241014140354.png",
+    "docs/assets/Pasted image 20241014140206.png",
+    "docs/assets/Pasted image 20241014140113.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
-    "docs/assets/Pasted image 20241012154844.png",
-    "docs/assets/Pasted image 20241012154748.png",
-    "docs/assets/Pasted image 20241012154651.png",
-    "docs/assets/Pasted image 20241012154504.png",
-    "docs/assets/Pasted image 20241012154427.png",
-    "docs/assets/Pasted image 20241012154329.png",
-    "docs/assets/Pasted image 20241012153516.png",
-    "docs/assets/Pasted image 20241012152951.png",
-    "docs/assets/Pasted image 20241012152418.png",
-    "docs/assets/Pasted image 20241012152104.png",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
@@ -174,9 +177,7 @@
     "docs/blog/CTF/2024.9 MoeCTF/Misc",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto",
     "docs/blog/CTF/2024.9 MoeCTF",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",

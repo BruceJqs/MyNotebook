@@ -75,15 +75,27 @@ RISC-V 支持 PC relative 寻址、立即数寻址 ( `lui` )、间接寻址 (�
 ***
 ## Signed and unsigned numbers
 
-### 补码 2's complement
+### 2's complement
 
 $x+\overline{x}=111…111_2=−1$，因此 $−x=\overline{x}+1$。前导 0 表示正数，前导 1 表示负数。
 
 因此在将不足 64 位的数据载入寄存器时，如果数据是无符号数，只需要使用 0 将寄存器的其他部分填充 (**zero extension**)；而如果是符号数，则需要用最高位即符号位填充剩余部分，称为符号扩展 (**sign extension**)。
 
 即，在指令中的 `lw` , `lh` , `lb` 使用 sign extension，而 `lwu` , `lhu` , `lbu` 使用 zero extension。
+
+!!! Operations
+
+	=== "Signed Negation"
+	
+		![](../../../assets/Pasted image 20241014134353.png)
+	
+	=== "Sign Extension"
+	
+		![](../../../assets/Pasted image 20241014134426.png)
 ***
-### 指令，指令格式
+## Representing Instructions in the computer
+
+![[Pasted image 20241014134049.png]]
 
 ![](../../../assets/Pasted%20image%2020241012150310.png)
 
@@ -97,8 +109,89 @@ RISC-V 指令格式如下：
 
 ![](../../../assets/Pasted%20image%2020241012152951.png)
 
+![](../../../assets/Pasted%20image%2020241014135137.png)
+
 其中 `I` 型指令有两个条目；这是因为立即数移位操作 `slli` , `srli` , `srai` 并不可能对一个 64 位寄存器进行大于 63 位的移位操作，因此 12 位 imm 中只有后 6 位能实际被用到，因此前面 6 位被用来作为一个额外的操作码字段，如上图中第二个 `I` 条目那样。其他 `I` 型指令适用第一个 `I` 条目。
+
+另外，为什么 `SB` 和 `UJ` 不存立即数（也就是偏移）的最低位呢？（关注表格，可以发现只包括 `i[12:1]` 或者 `i[20:1]`，缺失 `i[0]`）因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。
 
 !!! Example
 
 	![](../../../assets/Pasted image 20241012153516.png)
+***
+## Logical Operations
+
+![](../../../assets/Pasted%20image%2020241014135503.png)
+
+![[Pasted image 20241014135947.png]]
+***
+### Shift Operations
+
+![](../../../assets/Pasted%20image%2020241014135623.png)
+***
+### Bit Operations
+
+!!! Operations
+
+	=== "AND"
+	
+		![](../../../assets/Pasted image 20241014135738.png)
+	
+	=== "OR"
+	
+		![](../../../assets/Pasted image 20241014135804.png)
+	
+	=== "XOR"
+	
+		![](../../../assets/Pasted image 20241014135910.png)
+
+## Instructions for making decisions
+
+### If & If-Else
+
+!!! note "Branch Instructions"
+
+	=== "If"
+	
+		![](../../../assets/Pasted image 20241014140113.png)
+	
+	=== "If-Else"
+	
+		![](../../../assets/Pasted image 20241014140206.png)
+
+### Loops
+
+!!! note "Loops"
+
+	=== "循环访问数组"
+	
+		![](../../../assets/Pasted image 20241014140354.png)
+	
+	=== "While"
+	
+		![](../../../assets/Pasted image 20241014140427.png)
+
+### Set on less than
+
+![](../../../assets/Pasted%20image%2020241014140558.png)
+
+### Others
+
+![](../../../assets/Pasted%20image%2020241014140635.png)
+
+![](../../../assets/Pasted%20image%2020241014142401.png)
+
+![](../../../assets/Pasted%20image%2020241014142453.png)
+
+![](../../../assets/Pasted%20image%2020241014142531.png)
+
+![](../../../assets/Pasted%20image%2020241014142612.png)
+
+### Basic Blocks
+
+- 无跳转、分支等指令
+
+![](../../../assets/Pasted%20image%2020241014143914.png)
+
+## Supporting Procedures in Computer Hardware
+
