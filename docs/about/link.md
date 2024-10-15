@@ -73,7 +73,17 @@ t.parentNode.insertBefore(e,t)}})();
       BruceJin 在 ZJU 学习各课程留下的笔记资源库～
       </div> 
      </div> 
-    </div>    
+    </div> 
+    <div class="card"> 
+     <div class="card-header"> 
+      <div> 
+       <a href="http://47.96.29.144/" target="_blank">晚栀wingee~</a> 
+      </div> 
+      <div class="info">
+      Bruce 亲爱的组爸 pygg 滴个人主页！
+      </div> 
+     </div> 
+    </div>     
 
    </div> 
   </div>
