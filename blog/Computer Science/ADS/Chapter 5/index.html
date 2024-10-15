@@ -17,9 +17,6 @@
         <link rel="next" href="../../Tech/">
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../feed_rss_updated.xml">
-      
       <link rel="icon" href="../../../../assets/头像.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
@@ -1162,36 +1159,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#merge" class="md-nav__link">
     <span class="md-ellipsis">
-      队列合并
+      Merge
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#insert" class="md-nav__link">
     <span class="md-ellipsis">
-      单点插入
+      Insert
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#find-min" class="md-nav__link">
     <span class="md-ellipsis">
-      查询队首
+      Find-Min
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#delete-min" class="md-nav__link">
     <span class="md-ellipsis">
-      队首出队
+      Delete-Min
     </span>
   </a>
   
@@ -1202,8 +1199,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-time-of-heap-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running time of Heap Operations
+    </span>
+  </a>
   
 </li>
       
@@ -3642,36 +3657,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#merge" class="md-nav__link">
     <span class="md-ellipsis">
-      队列合并
+      Merge
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#insert" class="md-nav__link">
     <span class="md-ellipsis">
-      单点插入
+      Insert
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#find-min" class="md-nav__link">
     <span class="md-ellipsis">
-      查询队首
+      Find-Min
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#delete-min" class="md-nav__link">
     <span class="md-ellipsis">
-      队首出队
+      Delete-Min
     </span>
   </a>
   
@@ -3682,8 +3697,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-time-of-heap-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running time of Heap Operations
+    </span>
+  </a>
   
 </li>
       
@@ -3755,7 +3788,7 @@
 <p>也就是说，特征比特向量象征了二项队列的集合中有哪几阶的二项树。</p>
 </div>
 <hr />
-<h4 id="_1">队列合并<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h4 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
 <p>合并两个二项队列，实际上就是合并两个集合，合并过程中，我们分别合并每一个 <span class="arithmatex">\(k\)</span> 阶二项树，当两个二项队列都存在 <span class="arithmatex">\(k\)</span> 阶二项树时，它们合并为一棵 <span class="arithmatex">\(k+1\)</span> 阶二项树。可以联想，这项操作“对应”着特征比特向量的相加，而合并操作则类似于进位。</p>
 <p>因此，它就类似于一个 1 bit 的全加器。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241011140455.png" /></p>
@@ -3804,14 +3837,14 @@
 </div>
 </div>
 <hr />
-<h4 id="_2">单点插入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>插入结点可以看作合并一个只有一个结点的左偏堆，所以我们可以直接复用合并过程。</p>
+<h4 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h4>
+<p>插入结点可以看作合并一个只有一个结点的二项树，所以我们可以直接复用合并过程。</p>
 <hr />
-<h4 id="_3">查询队首<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h4 id="find-min">Find-Min<a class="headerlink" href="#find-min" title="Permanent link">&para;</a></h4>
 <p>二项队列的队首，也就是整个队列的最小值（最大值），就是这若干个（<span class="arithmatex">\(O(\log ⁡N)\)</span> 个）二项树的根中最小（最大）的那个。所以其时间复杂度为 <span class="arithmatex">\(O(\log ⁡N)\)</span>。</p>
 <p>不过有时候我们也会额外维护一个指针，指向当前最小的那个根，此时其复杂度为 <span class="arithmatex">\(O(1)\)</span>。</p>
 <hr />
-<h4 id="_4">队首出队<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h4 id="delete-min">Delete-Min<a class="headerlink" href="#delete-min" title="Permanent link">&para;</a></h4>
 <p>队首出队首先要找到队首，这件事我们在查询队首已经讨论过了。</p>
 <p>找到队首后，我们将其从二项队列中移除，我们知道，队首必然是某个二项树的根，所以删掉这个队首以后，就会产生 <span class="arithmatex">\(k\)</span> 个新的子树。</p>
 <p>而让我们<strong>回顾二项树的合并过程</strong>，可以发现，根的所有儿子都是一个完整的 <span class="arithmatex">\(k\)</span> 阶二项树合并过来的，所以当我们删掉这个根，产生的所有子树都是二项树。</p>
@@ -3853,6 +3886,106 @@
 </div>
 </div>
 </div>
+<h3 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h3>
+<p>先说结论，对于一个含有 <span class="arithmatex">\(N\)</span> 个元素的二项队列，建立这样的一个队列需要 <span class="arithmatex">\(N\)</span> 次插入，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<div class="admonition proof">
+<p class="admonition-title">Proof</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Aggregate</label><label for="__tabbed_5_2">Potential</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241015110555.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241015112403.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>我们设 <span class="arithmatex">\(c_i\)</span> 为第 <span class="arithmatex">\(i\)</span> 次插入需要的代价，定义 <span class="arithmatex">\(\Phi_i\)</span> 为第 <span class="arithmatex">\(i\)</span> 次插入后二项队列中树的棵数（显然 <span class="arithmatex">\(\Phi_0=0\)</span>）</p>
+<p>我们从特征比特向量的角度来看这个，假设当前二项队列的特征比特向量为 <span class="arithmatex">\(...B_{k+1}B_k...B_2B_1B_0(k\geq 0)\)</span>，其中 <span class="arithmatex">\(B_k=B_{k-1}=...=B_2=B_1=B_0=1,B_{k+1}=0(k\geq 0)\)</span>，再设 <span class="arithmatex">\(x\)</span> 为大于 k+1 位的所有位 1 的个数（即二项队列所有树 size 大于 <span class="arithmatex">\(2^{k+1}\)</span> 的树的棵数）</p>
+<p>这时我们有 <span class="arithmatex">\(c_i+(\Phi_i-\Phi_{i-1})=k+2+(x+1)-(x+k+1)=2(i=1,2,...,N)\)</span></p>
+<p>累加所有式子，我们有 <span class="arithmatex">\(\sum\limits_{i=1}^n c_i+\Phi_n-\Phi_0=2N\)</span></p>
+<p>因此 <span class="arithmatex">\(\sum\limits_{i=1}^n c_i=2N-\Phi_n\leq 2N=O(N)\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="running-time-of-heap-operations">Running time of Heap Operations<a class="headerlink" href="#running-time-of-heap-operations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Heaps</strong></th>
+<th><strong>Leftist</strong></th>
+<th><strong>Skew</strong></th>
+<th><strong>Binomial</strong></th>
+<th><strong>Fibonacci</strong></th>
+<th><strong>Binary</strong></th>
+<th><strong>Link list</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make heap</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+</tr>
+<tr>
+<td>Find-Min</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Merge(Union)</td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td></td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Insert</td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Delete-Min</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td><span class="arithmatex">\(O(\log N)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Decrease-Key</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3922,7 +4055,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月12日 14:00:04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月15日 11:30:13</span>
   </span>
 
     
