@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
               }
             }
           }
@@ -149,6 +149,17 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241015112403.png",
+    "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "docs/blog/Computer Science/ADS/Chapter 5.md",
+    "docs/assets/Pasted image 20241015110555.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/blog/index.md",
+    "docs/assets/Pasted image 20241014144435.png",
+    "docs/assets/Pasted image 20241014144232.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20241014143914.png",
     "docs/assets/Pasted image 20241014142612.png",
     "docs/assets/Pasted image 20241014142531.png",
@@ -156,13 +167,6 @@
     "docs/assets/Pasted image 20241014142401.png",
     "docs/assets/Pasted image 20241014140635.png",
     "docs/assets/Pasted image 20241014140558.png",
-    "docs/assets/Pasted image 20241014140427.png",
-    "docs/assets/Pasted image 20241014140354.png",
-    "docs/assets/Pasted image 20241014140206.png",
-    "docs/assets/Pasted image 20241014140113.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
-    "docs/blog/Computer Science/ADS/Chapter 5.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md",
@@ -184,10 +188,6 @@
     "docs/blog/Others/TOEFL Reading/Lesson 4.md",
     "docs/blog/Others/TOEFL Reading/Lesson 3.md",
     "docs/blog/Others/TOEFL Reading/Lesson 2.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
-    "docs/blog/Others/TOEFL Reading/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 4.md",
-    "docs/blog/Computer Science/ADS/index.md",
     "未命名",
     "未命名.canvas",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",

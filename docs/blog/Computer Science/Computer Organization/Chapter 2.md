@@ -195,3 +195,11 @@ RISC-V 指令格式如下：
 
 ## Supporting Procedures in Computer Hardware
 
+- 简单来说，子函数执行完了，把应当有的结果返回给调用它的母函数继续执行
+
+![](../../../assets/Pasted%20image%2020241014144232.png)
+
+### Procedure Call Instructions
+
+![](../../../assets/Pasted%20image%2020241014144435.png)
+

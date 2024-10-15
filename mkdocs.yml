@@ -213,7 +213,7 @@ extra:
   #     如果你同意,你可以帮助我们让我们的网站更好
 
 plugins:
-  - rss
+  # - rss
   - search #搜索配置
   - git-committers:
       enabled: !ENV [CI, false]
