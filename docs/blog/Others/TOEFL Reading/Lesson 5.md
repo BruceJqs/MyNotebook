@@ -22,6 +22,7 @@ comments: true
 - Identify the reason why the author includes something in a particular way, or why a passage is organized the way it is.
 - Stay focused on the context！
 - Find answer in proceeding or succeeding sentences
+- Find out the topic sentence of the paragraph
 ***
 ## Examples
 
