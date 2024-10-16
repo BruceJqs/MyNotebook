@@ -19,6 +19,12 @@ comments: true
 
 ## Table of Contents
 
+### Notes
+
 - [Chapter 01 : Computer abstractions and Technology](Chapter%201/)
 - [Chapter 03 : Arithmetic for Computer](Chapter%203/)
 - [Chapter 02 : Instructions : Language of the Machine](Chapter%202/)
+
+### Homeworks
+
+- [Homework 2](Homework%202/)
