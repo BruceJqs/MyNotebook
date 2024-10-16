@@ -27,4 +27,4 @@ comments: true
 
 ### Homeworks
 
-- [Homework 2](Homework%202/)
+- [Homework 02](Homework%202/)

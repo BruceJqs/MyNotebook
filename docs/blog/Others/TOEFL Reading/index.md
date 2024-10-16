@@ -19,4 +19,4 @@ comments: true
 - [Lesson 02 : Paraphrasing / Sentence Simplification](Lesson%202/)
 - [Lesson 03 : Factural Information Questions](Lesson%203/)
 - [Lesson 04 : Negative Factual Information Questions](Lesson%204/)
-- [Lesson 05 : ](Lesson%205/)
+- [Lesson 05 : Inference Questions](Lesson%205/)
