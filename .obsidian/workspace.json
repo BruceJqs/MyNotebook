@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 5.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 5.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 5.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 5.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md"
               }
             }
           }
@@ -149,15 +149,18 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
-    "docs/blog/Others/TOEFL Reading/index.md",
+    "docs/assets/Pasted image 20241017112253.png",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 5.md",
+    "docs/blog/Others/TOEFL Reading/index.md",
     "docs/assets/Pasted image 20241016200858.png",
     "docs/assets/Pasted image 20241016200458.png",
     "docs/blog/Others/TOEFL Reading/Lesson 4.md",
     "docs/blog/Others/College English Band IV/index.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "Homework 2.md",
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md",
@@ -183,8 +186,6 @@
     "docs/blog/CTF/未命名.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/about/link.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/assets/Pasted image 20241015112403.png",
     "docs/blog/CTF/2024.9 MoeCTF/Misc",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto",
