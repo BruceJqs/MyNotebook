@@ -209,9 +209,9 @@ comments: true
 | **Heaps**    | **Leftist** | **Skew**    | **Binomial** | **Fibonacci** | **Binary** | **Link list** |
 | ------------ | ----------- | ----------- | ------------ | ------------- | ---------- | ------------- |
 | Make heap    | $O(1)$      | $O(1)$      | $O(1)$       | $O(1)$        | $O(1)$     | $O(1)$        |
-| Find-Min     | $O(1)$      | $O(1)$      | $O(\log N)$  |               |            |               |
-| Merge(Union) | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  |               | $O(n)$     |               |
+| Find-Min     | $O(1)$      | $O(1)$      | $O(\log N)$  | $O(1)$        |            |               |
+| Merge(Union) | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  | $O(\log N)$   | $O(n)$     |               |
 | Insert       | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  |               |            |               |
 | Delete       | $O(\log N)$ | $O(\log N)$ |              |               |            |               |
 | Delete-Min   | $O(1)$      | $O(\log N)$ | $O(\log N)$  |               |            |               |
-| Decrease-Key |             |             |              |               |            |               |
+| Decrease-Key |             |             |              | $O(1)$        |            |               |

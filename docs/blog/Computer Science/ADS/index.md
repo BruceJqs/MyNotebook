@@ -23,3 +23,4 @@ comments: true
 - [Chapter 03 : Inverted File Index](Chapter%203/)
 - [Chapter 04 : Leftist Heaps and Skew Heaps](Chapter%204/)
 - [Chapter 05 : Binomial Queue](Chapter%205/)
+- [Chapter 06 : Backtracking](Chapter%206/)
