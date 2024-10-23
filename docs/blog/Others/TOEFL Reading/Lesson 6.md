@@ -101,6 +101,19 @@ comments: true
 	
 		(B)。"According to Freud" 与 "Freudian" 对应。
 
+!!! example "Example 06"
+
+	Lichens, probably the hardiest of all plants, live where virtually nothing else can-not just on rugged mountain peaks but also on sunbaked desert rocks. (A) They are usually the first life to appear on a mountainside that has been scraped bare by an avalanche. (B) The framework of a lichen is usually a network of minute hairlike fungus that anchors the plant. (C) The other component is an alga (similar to the green film of plant life that grows on stagnant pools) that is distributed throughout the fungus. (D) Being green plants, algae are capable of photo synthesis--that is, using energy from the Sun to manufacture their own food. The fungi are believed to supply water, minerals, and physical support to the partnership.
+	
+	=== "Text"
+	
+		Unlike other members of the plant kingdom, lichens are actually a 
+	partnership between two plants.
+	
+	=== "Answer"
+	
+		(B)。"fungus" 和 "alga" 正好对应 "two plants"。
+
 ## New Words
 
 | **Words**     | **Part of Speech** | **Meaning** | **Notes**                                                                       |
