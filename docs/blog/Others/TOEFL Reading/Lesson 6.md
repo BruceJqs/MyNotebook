@@ -107,8 +107,7 @@ comments: true
 	
 	=== "Text"
 	
-		Unlike other members of the plant kingdom, lichens are actually a 
-	partnership between two plants.
+		Unlike other members of the plant kingdom, lichens are actually a partnership between two plants.
 	
 	=== "Answer"
 	
