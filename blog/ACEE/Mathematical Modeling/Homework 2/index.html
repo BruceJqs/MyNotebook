@@ -3282,6 +3282,8 @@
       
         
       
+        
+      
     
     
       
@@ -3419,6 +3421,27 @@
   
   <span class="md-ellipsis">
     Lesson 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesson 6
   </span>
   
 
@@ -3660,26 +3683,14 @@
 - 第二种情况：若该同学背后是"宸宸"，那么他看到的是 <span class="arithmatex">\(n_1,n_2-1,n_3\)</span>，此时 <span class="arithmatex">\(t=|n_2-n_1-1|\text{ mod } 3=|M-1|\text{ mod } 3\)</span>
 - 第三种情况：若该同学背后是"莲莲"，那么他看到的是 <span class="arithmatex">\(n_1,n_2,n_3-1\)</span>，此时 <span class="arithmatex">\(t=|n_2-n_1|\text{ mod } 3=|M|\text{ mod } 3\)</span>
 因为 <span class="arithmatex">\(|M+1|\text{ mod } 3,|M-1|\text{ mod } 3,|M|\text{ mod } 3\)</span> 三者必然互不相同且必为 0,1,2，因此实现了一一对应。
-（2）</p>
+（2）不妨设 <span class="arithmatex">\(n=3k+m(0\leq m&lt;3)\)</span> 设第 <span class="arithmatex">\(i\)</span> 位同学的图案为 <span class="arithmatex">\(h_i(h_i=0,1,2)\)</span>，则 <span class="arithmatex">\(\sum\limits_{i=1}^n h_i\text{ mod } 3\)</span> 的值为一确定值。策略如下：
+将 <span class="arithmatex">\(n\)</span> 名同学平均分为三组，安排第一组猜测自己的图案为 <span class="arithmatex">\(x_1\)</span> ，使得 <span class="arithmatex">\((x_1+\sum\limits_{j\not=i}h_i)\text{ mod } 3=0\)</span>；安排第二组猜测自己的图案为 <span class="arithmatex">\(x_2\)</span> ，使得 <span class="arithmatex">\((x_2+\sum\limits_{j\not=i}h_i)\text{ mod } 3=1\)</span>；安排第三组猜测自己的图案为 <span class="arithmatex">\(x_3\)</span> ，使得 <span class="arithmatex">\((x_3+\sum\limits_{j\not=i}h_i)\text{ mod } 3=2\)</span>。
+由于<span class="arithmatex">\(\sum\limits_{i=1}^n h_i\text{ mod } 3\)</span> 的值为一确定值，那么可以保证有 <span class="arithmatex">\(\lfloor\frac{n}{3}\rfloor\)</span> 名同学猜对。 </p>
 <hr />
 <h4 id="question-02">Question 02<a class="headerlink" href="#question-02" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241022000045.png" /></p>
 <p>（1）设 <span class="arithmatex">\(W^*\)</span> 为伪币的质量，由题意我们有 <span class="arithmatex">\(\begin{cases}NW+|I|(W^*-W)=M_1\\(\sum\limits_{i=1}^n p^i) W+(\sum\limits_{i\in I}p^i)(W^*-W)=M_2\end{cases}\)</span>，因此消去 <span class="arithmatex">\(W^*\)</span> 我们有 <span class="arithmatex">\(\frac{M_1-NW}{|I|}=\frac{M_2-(\sum\limits_{i=1}^np^i)W}{\sum\limits_{i\in I}p^i}\)</span>，定义函数 <span class="arithmatex">\(f(M_1,M_2,W)=\frac{M_2-(\sum\limits_{i=1}^np^i)W}{M_1-NW}=\frac{\sum\limits_{i\in I}p^i}{|I|}\)</span>，此函数值仅与 <span class="arithmatex">\(I,p\)</span> 有关。
-（2）假设伪币质量比真币轻，考虑函数： </p>
-<div class="arithmatex">\[
-\begin{aligned}
-F(M_1,M_2,W)&amp;=(p-1)(M_1-NW)f(M_1,M_2,W)\\
-&amp;=(p-1)(M_2-\sum\limits_{i=1}^np^iW)\\
-&amp;=(p-1)(M_2-\frac{p^{N+1}-p}{p-1}W)\\
-&amp;=(p-1)M_2-p^{N+1}W+pW\\
-&amp;=\frac{(p-1)(M_1-NW)\sum\limits_{i\in I}p^i}{|I|}
-\end{aligned}
-\]</div>
-<p>对于最后一个等号，只要函数值唯一，由于 <span class="arithmatex">\(p,M_1,N,W\)</span> 已知，可以唯一确定指标集 <span class="arithmatex">\(I\)</span>，对其求导：</p>
-<div class="arithmatex">\[
-F'_p(M_1,M_2,W)=M_2-(N+1)p^NW+W
-\]</div>
-<p>注意到当 <span class="arithmatex">\(p=1\)</span> 时 <span class="arithmatex">\(F(M_1,M_2,W)=0,F'_p(M_1,M_2,W)=M_2-NW=M_1-NW&lt;0\)</span>，</p>
+（2）设 <span class="arithmatex">\(I=\{i_1,i_2,...,i_m\}\)</span> ，为能求出指标集 <span class="arithmatex">\(I\)</span> ，即满足唯一性，即不存在 <span class="arithmatex">\(m\not=n,\{i_1,i_2,...,i_m\}\not=\{j_1,j_2,...,j_n\}\)</span> ，使得 <span class="arithmatex">\(\frac{p^{i_1}+p^{i_2}+...+p^{i_m}}{m}=\frac{p^{j_1}+p^{j_2}+...+p^{j_n}}{n}\)</span>，由于整数的 <span class="arithmatex">\(p\)</span> 进制的表示是唯一的，当 <span class="arithmatex">\(p &gt; N\)</span> 时，上式左右两边均可视作同一个整数在 p 进制下的一种表示。故任一 <span class="arithmatex">\(p &gt; N\)</span> 的数均满足要求。但当 <span class="arithmatex">\(p=2\)</span> 时，会有 <span class="arithmatex">\(\frac{2^1}{2}=\frac{2^0}{1}\)</span>，这样就无法求出 <span class="arithmatex">\(I\)</span> 。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3749,7 +3760,7 @@ F'_p(M_1,M_2,W)=M_2-(N+1)p^NW+W
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月22日 10:10:32</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月23日 20:02:35</span>
   </span>
 
     
