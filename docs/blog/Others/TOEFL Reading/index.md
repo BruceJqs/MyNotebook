@@ -20,3 +20,4 @@ comments: true
 - [Lesson 03 : Factural Information Questions](Lesson%203/)
 - [Lesson 04 : Negative Factual Information Questions](Lesson%204/)
 - [Lesson 05 : Inference Questions & Purpose Questions](Lesson%205/)
+- [Lesson 06 : Text Insertion Questions](Lesson%206/)
