@@ -88,20 +88,59 @@ comments: true
 	=== "Answer"
 	
 		(B)。由 (B) 前面讲的全是与 US 相关的内容，而 (B) 之后 "Caribbean Sea" 讲的是美国之外的内容。
+
+!!! example "Example 05"
+
+	Theorists adopting the psychodynamic approach assert that inner conflicts are crucial for understanding human behavior including aggression. Sigmund Freud, for example, maintains that aggressive impulses are inevitable reactions to the bitter frustrations of daily life. Children normally desire to vent belligerent impulses on other people, including their parents, because even the most attentive parents cannot gratify all of their demands instantly. (A) Yet children, also fearing their parents' punishment and the loss of parental love, come to repress most aggressive impulses. (B) The Freudian perspective in a sense, sees us as "steam engines." (C) By holding in ratherthan venting "steam," we set the stage for future explosions. (D) Pent-up aggressive impulses demand outlets. They may be expressed toward parents in indirect ways such as destroying furniture, or they may be expressed toward strangers later in life.
+	
+	=== "Text"
+	
+		According to Freud, however, impulses that have been repressed continue to exist and demand expression.
+	
+	=== "Answer"
+	
+		(B)。"According to Freud" 与 "Freudian" 对应。
+
 ## New Words
 
-| **Words**  | **Part of Speech** | **Meaning** | **Notes**                                                                       |
-| ---------- | ------------------ | ----------- | ------------------------------------------------------------------------------- |
-| tribute    | n.                 | 贡品          | pay tribute to 致敬                                                               |
-| distribute | n.                 | 分发          |                                                                                 |
-| tributary  | n.                 | 支流          |                                                                                 |
-| baffle     | v.                 | 使困惑         | syn. perplex, bewilder, confuse, puzzle                                         |
-| enigmatic  | adj.               | 令人困惑的       |                                                                                 |
-| mediate    | v.                 | 调停          | med-/mes- 表示中间                                                                  |
-| meddle     | v.                 | 干预          | meddle in 干预<br>syn. intervene, interfere                                       |
-| mediocrity | n.                 | 平凡          | settle for mediocrity/second best 甘于平庸<br>adj. mediocre                         |
-| median     | n.                 | 中位数         |                                                                                 |
-| estuary    | n.                 | 入海口         | adj. estuarine                                                                  |
-| periphery  | n.                 | 边缘          | syn. rim, fringe, verge, edge, brink, margin<br>adj. peripheral (syn. marginal) |
-| vulnerable | adj.               | 脆弱的         | syn. susceptible, brittle, delicate                                             |
-|            |                    |             |                                                                                 |
+| **Words**     | **Part of Speech** | **Meaning** | **Notes**                                                                       |
+| ------------- | ------------------ | ----------- | ------------------------------------------------------------------------------- |
+| tribute       | n.                 | 贡品          | pay tribute to 致敬                                                               |
+| distribute    | n.                 | 分发          |                                                                                 |
+| tributary     | n.                 | 支流          |                                                                                 |
+| baffle        | v.                 | 使困惑         | syn. perplex, bewilder, confuse, puzzle                                         |
+| enigmatic     | adj.               | 令人困惑的       |                                                                                 |
+| mediate       | v.                 | 调停          | med-/mes- 表示中间                                                                  |
+| meddle        | v.                 | 干预          | meddle in 干预<br>syn. intervene, interfere                                       |
+| mediocrity    | n.                 | 平凡          | settle for mediocrity/second best 甘于平庸<br>adj. mediocre                         |
+| median        | n.                 | 中位数         |                                                                                 |
+| estuary       | n.                 | 入海口         | adj. estuarine                                                                  |
+| periphery     | n.                 | 边缘          | syn. rim, fringe, verge, edge, brink, margin<br>adj. peripheral (syn. marginal) |
+| vulnerable    | adj.               | 脆弱的         | syn. susceptible, brittle, delicate                                             |
+| preservative  | n.                 | 防腐剂         |                                                                                 |
+| perserve      | n.                 | 果酱          |                                                                                 |
+| impulse       | n.                 | 冲动          | on impulse 一时冲动<br>im- 表示内部的 -puls- 表示推                                         |
+| propulsion    | n.                 | 推动力         | adj. propulsive                                                                 |
+| repulsive     | adj.               | 令人反感的       |                                                                                 |
+| compulsory    | adj.               | 强制的         |                                                                                 |
+| compulsive    | adj.               | 难以控制的       |                                                                                 |
+| propel        | v.                 | 驱动          | -pel 表示推<br>adj. propellent/propellant<br>propeller 螺旋桨                         |
+| impel         | v.                 | 迫使          |                                                                                 |
+| expel         | v.                 | 驱逐          |                                                                                 |
+| dispel        | v.                 | 消除，驱散       |                                                                                 |
+| compel        | v.                 | 迫使          | adj. compelling 令人信服的                                                           |
+| repel         | v.                 | 排斥          | adj. repellent 令人厌恶的                                                            |
+| repress       | v.                 | 压抑          | -press 表示压                                                                      |
+| express       | v.                 | 表达          |                                                                                 |
+| oppress       | v.                 | 压抑          | op- 表示一而再再而三的<br>n. oppression<br>adj. oppressive                               |
+| belligerent   | adj.               | 好战的         | -bel 表示战争                                                                       |
+| rebel         | v.                 | 反抗          |                                                                                 |
+| bellicose     | adj.               | 好斗的         | syn. antagnostic, contentious, pugnacious, militant                             |
+| antebellum    | adj.               | 战争前的        | ante- 表示之前                                                                      |
+| aggressive    | adj.               | 侵略的         | -gress 表示动                                                                      |
+| regression    | n.                 | 回归          |                                                                                 |
+| retrogress    | v.                 | 退步          |                                                                                 |
+| congress      | n.                 | 大会          | syn. convention, convocation, assembly, conference                              |
+| ingress       | n.                 | 入口          |                                                                                 |
+| egress        | n.                 | 出口          |                                                                                 |
+| introgression | n.                 | （基因）渗入      |                                                                                 |
