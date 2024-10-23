@@ -156,3 +156,8 @@ comments: true
 | ingress       | n.                 | 入口          |                                                                                 |
 | egress        | n.                 | 出口          |                                                                                 |
 | introgression | n.                 | （基因）渗入      |                                                                                 |
+| incubate      | v.                 | 孵化          | n. incubation, incubator(孵化器)                                                   |
+| insulate      | v.                 | 使隔离         | insul- 表示岛<br>n. insulation, insulator                                          |
+| insulin       | n.                 | 胰岛素         |                                                                                 |
+| peninsular    | adj.               | 半岛上的        |                                                                                 |
+| insular       | adj.               | 岛屿的         |                                                                                 |
