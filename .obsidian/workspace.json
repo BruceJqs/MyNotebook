@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 6.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 6.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 6.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 6.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
               }
             }
           }
@@ -149,8 +149,13 @@
   },
   "active": "24f264835ca300f9",
   "lastOpenFiles": [
-    "docs/blog/Others/TOEFL Reading/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 6.md",
+    "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 6.md",
+    "docs/blog/Others/TOEFL Reading/index.md",
     "docs/blog/Others/TOEFL Reading/Lesson 5.md",
     "docs/assets/Pasted image 20241023193031.png",
     "docs/assets/Pasted image 20241023192840.png",
@@ -160,19 +165,15 @@
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/assets/Pasted image 20241022115927.png",
     "docs/assets/Pasted image 20241022115740.png",
-    "docs/blog/Computer Science/ADS/Chapter 6.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/assets/Pasted image 20241022000045.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
     "docs/assets/Pasted image 20241021230242.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/assets/Pasted image 20241017112253.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",

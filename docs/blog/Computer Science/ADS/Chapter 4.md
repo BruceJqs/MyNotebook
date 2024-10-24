@@ -377,9 +377,9 @@ $$
 \hat{c}=c+\Phi(H_{merged})−\Phi(H_x)−\Phi(H_y)
 $$
 
-其中，$c$ 为合并操作的（最坏）复杂度，$H_{merged}$ 为合并后的堆的势能，$H_x$ 和 $H_y$​ 分别为合并前的两个堆的势能。
+其中，$c$ 为合并操作的（最坏）复杂度，$H_{merged}$ 为合并后的堆，$H_x$ 和 $H_y$​ 分别为合并前的两个堆。
 
-根据 property 3，在合并过程中并非所有节点都收到影响。我们可以单独记录 $l_x$ 为 $H_x$​ 最右侧路径上的 light node 数量，$h_x$ 为 $H_x$​ 最右侧路径上的 heavy node 数量，$h_x^0$​ 为 $H_x$ 所有不在最右侧路径上的 heavy node 数量（即 $\text{count of heavy nodes of }H_x=H_x+H_x^0$​）。
+根据 property 3，在合并过程中并非所有节点都受到影响。我们可以单独记录 $l_x$ 为 $H_x$​ 最右侧路径上的 light node 数量，$h_x$ 为 $H_x$​ 最右侧路径上的 heavy node 数量，$h_x^0$​ 为 $H_x$ 所有不在最右侧路径上的 heavy node 数量（即 $\text{count of heavy nodes of }H_x=h_x+h_x^0$​）。
 
 于是，我们可以将上式写开：
 
