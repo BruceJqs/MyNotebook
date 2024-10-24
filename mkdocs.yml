@@ -155,6 +155,14 @@ nav:
         - "Crypto-3｜ez_hash": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-3.md
         - "Crypto-4｜Big and Small": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-4.md
         - "Crypto-5｜baby_equation": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md
+    - 2024.10 ZJUCTF:
+      - blog/CTF/2024.10 ZJUCTF/index.md
+      - Misc:
+        - "Misc｜小A口算": blog/CTF/2024.10 ZJUCTF/Misc/Misc-3.md
+        - "Misc｜Master of C++": blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md
+      - Crypto:
+        - "Crypto｜ezxor": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md
+        - "Crypto｜Shad0wTime": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-2.md
   - Internship:
     - 大模型: 
       - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md

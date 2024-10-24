@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "24f264835ca300f9",
+            "id": "51c73c00f3b383a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/CTF/2024.10 ZJUCTF/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/CTF/2024.10 ZJUCTF/index.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/CTF/2024.10 ZJUCTF/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
+                "file": "docs/blog/CTF/2024.10 ZJUCTF/index.md"
               }
             }
           }
@@ -147,8 +147,26 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "24f264835ca300f9",
+  "active": "51c73c00f3b383a0",
   "lastOpenFiles": [
+    "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-2.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/index.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/Pasted image 20241017105121.png",
+    "docs/assets/Pasted image 20241017105121.png",
+    "docs/assets/Pasted image 20241017002916.png",
+    "docs/assets/Pasted image 20241017002532.png",
+    "docs/blog/CTF/2024.10 ZJUCTF/Pasted image 20241017002916.png",
+    "docs/blog/CTF/2024.10 ZJUCTF/Pasted image 20241017002532.png",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 5.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-3.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/Misc",
+    "docs/blog/CTF/2024.10 ZJUCTF/Crypto",
+    "docs/blog/CTF/2024.10 ZJUCTF",
     "docs/blog/Computer Science/ADS/Chapter 6.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
@@ -166,27 +184,10 @@
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
     "docs/assets/Pasted image 20241022115927.png",
-    "docs/assets/Pasted image 20241022115740.png",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 5.md",
-    "docs/assets/Pasted image 20241022000045.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
-    "docs/assets/Pasted image 20241021230242.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
-    "docs/assets/Pasted image 20241017112253.png",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
-    "docs/assets/Pasted image 20241016200858.png",
-    "docs/assets/Pasted image 20241016200458.png",
-    "docs/blog/Others/College English Band IV/index.md",
-    "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 2.md",
-    "Homework 2.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
-    "docs/blog/CTF/2024.10 ZJUCTF/Misc",
-    "docs/blog/CTF/2024.10 ZJUCTF",
     "docs/blog/CTF/2024.9 MoeCTF/Misc",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto",
     "docs/blog/CTF/2024.9 MoeCTF",
@@ -194,7 +195,6 @@
     "未命名.canvas",
     "venv/lib/python3.12/site-packages/serial/__pycache__/test.cpython-312.pyc",
     "venv/lib/python3.12/site-packages/serial/__pycache__/request.cpython-312.pyc",
-    "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc",
-    "venv/lib/python3.12/site-packages/serial/__pycache__/model.cpython-312.pyc"
+    "venv/lib/python3.12/site-packages/serial/__pycache__/properties.cpython-312.pyc"
   ]
 }
