@@ -150,7 +150,10 @@ nav:
         - "Misc-2｜罗小黑战记": blog/CTF/2024.9 MoeCTF/Misc/Misc-2.md
         - "Misc-3｜ez_Forensics": blog/CTF/2024.9 MoeCTF/Misc/Misc-3.md
         - "Misc-4｜so many 'm'": blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md
+        - "Misc-5｜Abnormal lag": blog/CTF/2024.9 MoeCTF/Misc/Misc-5.md
         - "Misc-6｜Find It": blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md
+        - "Misc-7｜Signin": blog/CTF/2024.9 MoeCTF/Misc/Misc-7.md
+        - "Misc-8｜ez_F5": blog/CTF/2024.9 MoeCTF/Misc/Misc-8.md
       - Crypto:
         - "Crypto-1｜现代密码学入门指北": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-1.md
         - "Crypto-2｜Signin": blog/CTF/2024.9 MoeCTF/Crypto/Crypto-2.md

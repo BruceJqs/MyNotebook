@@ -20,7 +20,10 @@ comments: true
 - [Misc-2｜罗小黑战记](Misc/Misc-2/)
 - [Misc-3｜ez_Forensics](Misc/Misc-3/)
 - [Misc-4｜so many 'm'](Misc/Misc-4)
+- [Misc-5｜Abnormal lag](Misc/Misc-5/)
 - [Misc-6｜Find It](Misc/Misc-6/)
+- [Misc-7｜Signin](Misc/Misc-7/)
+- [Misc-8｜ez_F5](Misc/Misc-8/)
 ### Crypto
 
 - [Crypto-1｜线代密码学入门指北](Crypto/Crypto-1/)
