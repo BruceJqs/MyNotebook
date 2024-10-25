@@ -24,6 +24,7 @@ comments: true
 - [Misc-6｜Find It](Misc/Misc-6/)
 - [Misc-7｜Signin](Misc/Misc-7/)
 - [Misc-8｜ez_F5](Misc/Misc-8/)
+- [Misc-9｜moejail_lv1](Misc/Misc-9/)
 ### Crypto
 
 - [Crypto-1｜线代密码学入门指北](Crypto/Crypto-1/)
