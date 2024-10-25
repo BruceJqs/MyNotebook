@@ -27,4 +27,5 @@ comments: true
 
 ### Homeworks
 
+- [Homework 03](Homework%203/)
 - [Homework 02](Homework%202/)

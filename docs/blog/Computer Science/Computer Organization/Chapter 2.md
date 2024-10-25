@@ -95,7 +95,7 @@ $x+\overline{x}=111…111_2=−1$，因此 $−x=\overline{x}+1$。前导 0 表
 ***
 ## Representing Instructions in the computer
 
-![[Pasted image 20241014134049.png]]
+![](../../../assets/Pasted%20image%2020241014134049.png)
 
 ![](../../../assets/Pasted%20image%2020241012150310.png)
 

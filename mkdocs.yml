@@ -81,6 +81,7 @@ nav:
       - "Chapter 01: Computer abstractions and Technology": blog/Computer Science/Computer Organization/Chapter 1.md
       - "Chapter 03: Arithmetic for Computers": blog/Computer Science/Computer Organization/Chapter 3.md
       - "Chapter 02: Instructions : Language of the Machine": blog/Computer Science/Computer Organization/Chapter 2.md
+      - "Homework 03": blog/Computer Science/Computer Organization/Homework 3.md
       - "Homework 02": blog/Computer Science/Computer Organization/Homework 2.md
     - 高级数据结构与算法分析｜Advanced Data Structure and Algorithm Analysis:
       - blog/Computer Science/ADS/index.md
@@ -127,6 +128,7 @@ nav:
       - "Chapter 02 : 数学规划": blog/ACEE/Mathematical Modeling/Chapter 2.md
       - "Chapter 03 : 组合优化": blog/ACEE/Mathematical Modeling/Chapter 3.md
       - "Homework 01": blog/ACEE/Mathematical Modeling/Homework 1.md
+      - "Homework 02": blog/ACEE/Mathematical Modeling/Homework 2.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
