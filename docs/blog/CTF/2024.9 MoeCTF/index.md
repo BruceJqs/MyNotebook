@@ -32,3 +32,4 @@ comments: true
 - [Crypto-3｜ez_hash](Crypto/Crypto-3/)
 - [Crypto-4｜Big and Small](Crypto/Crypto-4/)
 - [Crypto-5｜baby_equation](Crypto/Crypto-5/)
+- [Crypto-6｜大白兔](Crypto/Crypto-6/)
