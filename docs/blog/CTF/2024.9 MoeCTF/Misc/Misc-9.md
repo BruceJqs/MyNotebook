@@ -46,4 +46,4 @@ connection.close()
 
 不知道为什么直接 cat 打不开文件，但是命令行通配符就可以打开（通配符即用 * 省略后面长长一串），即可得到 flag : `moectf{Ah-H@_NOW_y0U-Kn0w-h0W_to-ESCapE_5IMPI3-5TR1NG-Fi1ter0}`
 
-![[Pasted image 20241025234325.png]]
+![](../../../../assets/Pasted%20image%2020241025234325.png)
