@@ -78,9 +78,9 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 
 如果随机变量 $X$ 的概率分布律为 $P\{X=k\}=\frac{C_a^kC_b^{n−k}}{C_{a+b}^n},k=l_1,l_1+1,...,l_2$
 
-则称 $X$ 为服从**超几何分布(hypergeometric distribution)**，并记为 $X∼H(n,a,p)$
+则称 $X$ 为服从**超几何分布(hypergeometric distribution)**，并记为 $X∼H(n,N,a)$
 
-- 其意义为，如：$a$ 白球，$b$ 红球，取 $n$ 次得到 $X$ 个白球
+- 其意义为，如：$a$ 白球，$N-a$ 红球，取 $n$ 次得到 $X$ 个白球
 
 如果随机变量 $X$ 的概率分布律为 $P\{X=k\}=p(1−p)^{k−1},k=1,2,...$
 
@@ -109,7 +109,7 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 
 关于 $f(x)$ 有以下结论：
 
-- $f(x)\leq 0$；
+- $f(x)\geq 0$；
 - $\int_{−\infty}^{\infty}f(x)dx=1$；
 - $\forall x_1,x_2\in\R(x_1<x_2),P\{x_1<X\leq x_2\}=F(x_2)−F(x_1)=\int_{x_1}^{x_2}f(t)dt$；
 - 在 $f(x)$ 的连续点 $x$ 处，$F'(x)=f(x)$
@@ -141,6 +141,7 @@ F(x)=\begin{cases}
 \end{aligned}
 \end{cases}
 $$​
+
 ![](../../../assets/Pasted%20image%2020241010110340.png)
 ***
 #### 指数分布
