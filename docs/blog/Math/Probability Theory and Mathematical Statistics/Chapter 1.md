@@ -318,7 +318,7 @@ comments: true
 		
 	=== "Answer"
 	
-		设事件 $B_i$ 为收到 $i$ 条短信，时间 $A$ 为看了 $k$ 条短信，那么有：
+		设事件 $B_i$ 为收到 $i$ 条短信，事件 $A$ 为看了 $k$ 条短信，那么有：
 		
 		$$
 		\begin{aligned}
@@ -334,7 +334,7 @@ comments: true
 		P(A)&=\sum\limits_{i=k}^\infty P(B_i)P(A|B_i)=\sum\limits_{i=k}^\infty \frac{\lambda^i e^{-\lambda}}{i!}C_i^kp^k(1-p)^{1-k}\\
 		&=\sum\limits_{i=k}^\infty \frac{\lambda^i e^{-\lambda}}{i!}\frac{i!}{k!(i-k)!}p^k(1-p)^{i-k}\\
 		令\space t&=i-k，有:\\
-		P(A)&=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{\lambda^kp^k e^{-\lambda}}{k!}e^{(1-p)\lambda}=\frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{(\lambda p)^k}{k!}e^{-\lambda p}
+		P(A)&=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{\lambda^kp^k e^{-\lambda}}{k!}e^{(1-p)\lambda}=\frac{(\lambda p)^k}{k!}e^{-\lambda p}
 		\end{aligned}
 		$$
 		

@@ -46,7 +46,7 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 ***
 #### 二项分布
 
-若随机变量 $X$ 表示 $n$ **重贝努力实验中事件 $A$ 发生的次数**，其概率分布律为$P\{X=k\}=C_n^kp^k(1−p)^{n−k},k=0,1,2,...,n$
+若随机变量 $X$ 表示 $n$ **重伯努利实验中事件 $A$ 发生的次数**，其概率分布律为$P\{X=k\}=C_n^kp^k(1−p)^{n−k},k=0,1,2,...,n$
 
 则称 $X$ 为服从**参数为** $(n,p)$ **的二项分布(binomial distribution)**，并记为 $X∼B(n,p)$
 
@@ -61,6 +61,18 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 其中 $\lambda>0$，则称 $X$ 服从**参数为** $\lambda$ **的泊松分布(Poisson distribution)**，记做 $X∼P(\lambda)$
 
 当 $n$ 足够大，$p$ 充分小(一般要求 $p<0.1$)，且 $np$ 保持适当大小时，**参数为** $(n,p)$ **的二项分布**可以**用泊松分布近似描述**，其中 $\lambda=np$，即 $C_n^kp^k(1−p)^{n−k}∼\frac{e^{−λ}λ^k}{k!}(n\rightarrow +\infty,p<\epsilon,\lambda=np)$
+
+!!! Proof
+
+	$$
+	\begin{aligned}
+	C_n^kp^k(1-p)^{n-k}&=\frac{n!}{k!(n-k)!}(\frac{\lambda}{n})^k(1-\frac{\lambda}{n})^{n-k}\\
+	&=\frac{\lambda^k}{k!}\frac{n(n-1)...(n-k+1)}{n^k}\frac{[(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}}{(1-\frac{\lambda}{n})^k}
+	\end{aligned}
+	$$
+	
+	当 $n$ 充分大，$\lambda$ 适当时，$\frac{n(n-1)...(n-k+1)}{n^k}\approx 1,(1-\frac{\lambda}{n})^k\approx 1,[(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}\approx e^{-\lambda}$
+
 ***
 #### 超几何分布与几何分布
 

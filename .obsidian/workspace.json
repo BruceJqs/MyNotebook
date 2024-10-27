@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md"
               }
             }
           }
@@ -149,10 +149,21 @@
   },
   "active": "51c73c00f3b383a0",
   "lastOpenFiles": [
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+    "docs/blog/ACEE/Mathematical Modeling/Project.md",
+    "docs/assets/Pasted image 20241027135834.png",
+    "docs/assets/Pasted image 20241027135805.png",
+    "docs/assets/Pasted image 20241027135741.png",
+    "docs/assets/Screenshot 2024-10-27 at 13.48.06.png",
+    "docs/assets/Pasted image 20241027134811.png",
+    "docs/assets/Pasted image 20241027133727.png",
+    "docs/assets/Pasted image 20241027013943.png",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-7.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-6.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-9.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-5.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-3.md",
@@ -161,33 +172,22 @@
     "docs/assets/Pasted image 20241025234616.png",
     "docs/assets/Pasted image 20241025234325.png",
     "docs/assets/Pasted image 20241025234302.png",
-    "docs/assets/Pasted image 20241025234240.png",
-    "docs/assets/Pasted image 20241025234220.png",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-8.md",
-    "docs/assets/Pasted image 20241025204452.png",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-7.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-5.md",
-    "docs/assets/Pasted image 20241025194349.png",
-    "docs/assets/Pasted image 20241025194308.png",
-    "docs/assets/Pasted image 20241025192446.png",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
-    "docs/assets/Pasted image 20241025103005.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/CTF/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
-    "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto",
     "docs/blog/CTF/2024.10 ZJUCTF",
-    "docs/blog/Computer Science/ADS/Chapter 6.md",
-    "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto",
     "docs/blog/CTF/2024.9 MoeCTF",
