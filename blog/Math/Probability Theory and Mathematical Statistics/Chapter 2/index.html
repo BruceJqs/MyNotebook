@@ -4454,9 +4454,9 @@ C_n^kp^k(1-p)^{n-k}&amp;=\frac{n!}{k!(n-k)!}(\frac{\lambda}{n})^k(1-\frac{\lambd
 <hr />
 <h4 id="_6">超几何分布与几何分布<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率分布律为 <span class="arithmatex">\(P\{X=k\}=\frac{C_a^kC_b^{n−k}}{C_{a+b}^n},k=l_1,l_1+1,...,l_2\)</span></p>
-<p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>超几何分布(hypergeometric distribution)</strong>，并记为 <span class="arithmatex">\(X∼H(n,a,p)\)</span></p>
+<p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>超几何分布(hypergeometric distribution)</strong>，并记为 <span class="arithmatex">\(X∼H(n,N,a)\)</span></p>
 <ul>
-<li>其意义为，如：<span class="arithmatex">\(a\)</span> 白球，<span class="arithmatex">\(b\)</span> 红球，取 <span class="arithmatex">\(n\)</span> 次得到 <span class="arithmatex">\(X\)</span> 个白球</li>
+<li>其意义为，如：<span class="arithmatex">\(a\)</span> 白球，<span class="arithmatex">\(N-a\)</span> 红球，取 <span class="arithmatex">\(n\)</span> 次得到 <span class="arithmatex">\(X\)</span> 个白球</li>
 </ul>
 <p>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率分布律为 <span class="arithmatex">\(P\{X=k\}=p(1−p)^{k−1},k=1,2,...\)</span></p>
 <p>则称 <span class="arithmatex">\(X\)</span> 为服从<strong>参数为</strong> <span class="arithmatex">\(p\)</span> <strong>的几何分布(geometric distribution)</strong>。</p>
@@ -4478,7 +4478,7 @@ C_n^kp^k(1-p)^{n-k}&amp;=\frac{n!}{k!(n-k)!}(\frac{\lambda}{n})^k(1-\frac{\lambd
 <p>如果对于随机变量 <span class="arithmatex">\(X\)</span>，其<strong>分布函数</strong>为 <span class="arithmatex">\(F(x)\)</span>，若存在一个非负的实函数 <span class="arithmatex">\(f(x)\)</span>，使对于<strong>任意实数</strong> <span class="arithmatex">\(x\)</span>，有 <span class="arithmatex">\(F(x)=\int_{−\infty}^xf(t)dt\)</span>，则称 <span class="arithmatex">\(X\)</span> 为<strong>连续型随机变量</strong>，并且称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>概率密度函数(probability density function)</strong>，简称为<strong>密度函数</strong>。</p>
 <p>关于 <span class="arithmatex">\(f(x)\)</span> 有以下结论：</p>
 <ul>
-<li><span class="arithmatex">\(f(x)\leq 0\)</span>；</li>
+<li><span class="arithmatex">\(f(x)\geq 0\)</span>；</li>
 <li><span class="arithmatex">\(\int_{−\infty}^{\infty}f(x)dx=1\)</span>；</li>
 <li><span class="arithmatex">\(\forall x_1,x_2\in\R(x_1&lt;x_2),P\{x_1&lt;X\leq x_2\}=F(x_2)−F(x_1)=\int_{x_1}^{x_2}f(t)dt\)</span>；</li>
 <li>在 <span class="arithmatex">\(f(x)\)</span> 的连续点 <span class="arithmatex">\(x\)</span> 处，<span class="arithmatex">\(F'(x)=f(x)\)</span></li>
@@ -4505,8 +4505,8 @@ F(x)=\begin{cases}
 1&amp;,x\geq b
 \end{aligned}
 \end{cases}
-$$​
-<img alt="" src="../../../../assets/Pasted%20image%2020241010110340.png" /></p>
+$$​</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241010110340.png" /></p>
 <hr />
 <h4 id="_11">指数分布<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p>若随机变量 <span class="arithmatex">\(X\)</span> 具有密度函数：</p>
@@ -4649,7 +4649,7 @@ F(x)=\int_{−\infty}^x\frac{1}{\sqrt{2π}\sigma}e^{−\frac{(t−μ)^2}{2\sigma
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月27日 16:16:59</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月27日 16:25:58</span>
   </span>
 
     
