@@ -4850,7 +4850,7 @@ P(A)&amp;=P(A_1\bigcup A_2\bigcup ...\bigcup A_N)\\
 <p>设某同学每天手机收到短信条数为 <span class="arithmatex">\(i\)</span> 的概率为 <span class="arithmatex">\(\frac{\lambda^i e^{-\lambda}}{i!},i=0,1,2,...\)</span>，而同学看每条短信的概率均为 <span class="arithmatex">\(p\)</span>，求该同学每天只看 <span class="arithmatex">\(k\)</span> 条短信的概率</p>
 </div>
 <div class="tabbed-block">
-<p>设事件 <span class="arithmatex">\(B_i\)</span> 为收到 <span class="arithmatex">\(i\)</span> 条短信，时间 <span class="arithmatex">\(A\)</span> 为看了 <span class="arithmatex">\(k\)</span> 条短信，那么有：</p>
+<p>设事件 <span class="arithmatex">\(B_i\)</span> 为收到 <span class="arithmatex">\(i\)</span> 条短信，事件 <span class="arithmatex">\(A\)</span> 为看了 <span class="arithmatex">\(k\)</span> 条短信，那么有：</p>
 <div class="arithmatex">\[
 \begin{aligned}
 P(B_i)=\frac{\lambda^i e^{-\lambda}}{i!}&amp;,i=0,1,2,...\\
@@ -4863,7 +4863,7 @@ P(A|B_i)=C_i^kp^k(1-p)^{i-k}&amp;,i=k,k+1,...
 P(A)&amp;=\sum\limits_{i=k}^\infty P(B_i)P(A|B_i)=\sum\limits_{i=k}^\infty \frac{\lambda^i e^{-\lambda}}{i!}C_i^kp^k(1-p)^{1-k}\\
 &amp;=\sum\limits_{i=k}^\infty \frac{\lambda^i e^{-\lambda}}{i!}\frac{i!}{k!(i-k)!}p^k(1-p)^{i-k}\\
 令\space t&amp;=i-k，有:\\
-P(A)&amp;=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{\lambda^kp^k e^{-\lambda}}{k!}e^{(1-p)\lambda}=\frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{(\lambda p)^k}{k!}e^{-\lambda p}
+P(A)&amp;=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1-p)\lambda]^{t}}{(t)!}=\frac{\lambda^kp^k e^{-\lambda}}{k!}e^{(1-p)\lambda}=\frac{(\lambda p)^k}{k!}e^{-\lambda p}
 \end{aligned}
 \]</div>
 </div>
@@ -4964,7 +4964,7 @@ P(A)&amp;=\frac{\lambda^kp^k e^{-\lambda}}{k!}\sum\limits_{t=0}^\infty \frac{[(1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月26日 10:14:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月27日 16:16:59</span>
   </span>
 
     
