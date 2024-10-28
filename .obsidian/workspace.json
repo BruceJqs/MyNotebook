@@ -13,10 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 2"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Chapter 2"
             }
           },
           {
@@ -102,10 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Chapter 2"
             }
           },
           {
@@ -116,7 +128,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md"
-              }
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Chapter 2"
             }
           }
         ],
@@ -138,27 +154,35 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
     }
   },
   "active": "51c73c00f3b383a0",
   "lastOpenFiles": [
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/blog/Computer Science/ADS/Chapter 2.md",
+    "docs/blog/Computer Science/ADS/Chapter 1.md",
+    "docs/assets/Pasted image 20241028120041.png",
+    "docs/assets/Pasted image 20241028102328.png",
+    "docs/assets/Pasted image 20241028102104.png",
+    "docs/assets/Pasted image 20241028101910.png",
+    "docs/assets/Pasted image 20241028101825.png",
+    "docs/assets/Pasted image 20241028101752.png",
+    "docs/assets/Pasted image 20241028101710.png",
+    "docs/assets/Pasted image 20241028101642.png",
+    "docs/assets/Pasted image 20241028101538.png",
+    "docs/assets/Pasted image 20241028101438.png",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
-    "docs/assets/Pasted image 20241027135834.png",
-    "docs/assets/Pasted image 20241027135805.png",
-    "docs/assets/Pasted image 20241027135741.png",
-    "docs/assets/Screenshot 2024-10-27 at 13.48.06.png",
-    "docs/assets/Pasted image 20241027134811.png",
-    "docs/assets/Pasted image 20241027133727.png",
-    "docs/assets/Pasted image 20241027013943.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-7.md",
@@ -169,9 +193,6 @@
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-3.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-2.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
-    "docs/assets/Pasted image 20241025234616.png",
-    "docs/assets/Pasted image 20241025234325.png",
-    "docs/assets/Pasted image 20241025234302.png",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-8.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-7.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
@@ -180,11 +201,6 @@
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
-    "docs/blog/CTF/index.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
-    "docs/blog/CTF/2024.10 ZJUCTF/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-1.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto",
     "docs/blog/CTF/2024.10 ZJUCTF",

@@ -222,7 +222,51 @@ RISC-V 指令格式如下：
 
 ![](../../../assets/Pasted%20image%2020241016110427.png)
 
-## Conclusion
+## Synchronization in RISC-V
+
+![[Pasted image 20241028100913.png]]
+
+![](../../../assets/Pasted%20image%2020241028101312.png)
+
+!!! Example
+
+	![](../../../asset/Pasted image 20241028101438.png)
+
+## Translating and starting a program
+
+![](../../../assets/Pasted%20image%2020241028101538.png)
+
+### Producing an Object Module
+
+![](../../../assets/Pasted%20image%2020241028101642.png)
+
+![](../../../assets/Pasted%20image%2020241028101710.png)
+
+### Link
+
+![](../../../assets/Pasted%20image%2020241028101752.png)
+
+### Loading a Program
+
+![](../../../assets/Pasted%20image%2020241028101825.png)
+
+### Dynamic Linking
+
+![](../../../assets/Pasted%20image%2020241028101910.png)
+
+### Lazy Linkage
+
+![[Pasted image 20241028102104.png]]
+
+### Starting Java Applications
+
+![](../../../assets/Pasted%20image%2020241028102328.png)
+
+## Arrays versus Pointers
+
+![](../../../assets/Pasted%20image%2020241028120041.png)
+
+## Summary
 
 ![](../../../assets/Pasted%20image%2020241022115740.png)
 
@@ -231,3 +275,16 @@ RISC-V 指令格式如下：
 ![](../../../assets/Pasted%20image%2020241016110627.png)
 
 ![](../../../assets/Pasted%20image%2020241022115927.png)
+
+![](../../../assets/Pasted%20image%2020241028100030.png)
+
+![](../../../assets/Pasted%20image%2020241028100108.png)
+
+![](../../../assets/Pasted%20image%2020241028100133.png)
+
+
+```ad-tip
+title: This is a tip
+
+This is the content of the admonition tip.
+```
