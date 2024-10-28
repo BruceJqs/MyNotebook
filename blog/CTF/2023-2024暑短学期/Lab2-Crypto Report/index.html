@@ -812,6 +812,8 @@
       
         
       
+        
+      
     
     
       
@@ -907,6 +909,27 @@
   
   <span class="md-ellipsis">
     Chapter 02: Instructions : Language of the Machine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Organization/Chapter%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 04: The Processors
   </span>
   
 
@@ -4263,7 +4286,7 @@
 <p>41 41 41 f0 9f a4 a3 f0 9f a4 a3 f0 9f a4 a3 01 | AAA🤣🤣🤣\x01</p>
 <p>如果有两个密文组 C1+C2，经过 Block Cipher Decryption 后为 D1+D2，解密结果为 P1+P2，对应的 HackString 部分为 H1+H2，我们可以得到 <span class="arithmatex">\(P2=C1\oplus D2\)</span>，从而 <span class="arithmatex">\(D2=P2\oplus C1\)</span></p>
 <p>因此我们想让 P2 变为 H2，我们可以将 C1 改为 <span class="arithmatex">\(D2 \oplus H2\)</span>，再次交互获得新的 P1，通过前一个块改变 P1 使其为 H1，以此类推，直到最后我们需要通过 IV 来改变最前面这个块，这样就将输入的 Ciphertext 解密成我们想要的 HackString 了，编写 python 程序如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4382,7 +4405,7 @@
 <p>对于两个密文组 C1+C2，经过 Block Cipher Decryption 后为 D1+D2，解密结果为 P1+P2，我们要想得到 P2，就得获得 D2，我们尝试在 C2 前加一个需要爆破的块 C，每次将 C+C2 送给程序，先对这个块的最后一个字节进行爆破，如果该字节与 D2 的最后一个字节异或结果为 0x01 时，其结果一定为 unpad 成功，即程序会输出 403，那么我们就可以得到 D2 的最后一个字节了，以此类推一个一个字节进行爆破，最后我们能获得完整的 D2，那么 P2 即为 <span class="arithmatex">\(C1\oplus D2\)</span>。</p>
 <p>这里需要补充的是“以此类推”的一个小细节，在进行下一个字节的爆破之前，我们需要重新改动爆破块 C 当中的值，因为我们已经确认了 D2 已爆破字节的值，我们需要将爆破块 C 已爆破字节的值全部更改掉使得这些值跟 D2 的已爆破的值异或结果为下一次爆破所需要的正确 padding 的值，这样才能使得爆破正常进行。</p>
 <p>编写 python 程序如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -4495,7 +4518,7 @@
 <p>这便是这道题的限制，为了获得这个字符串加密后的结果，我们将这个字符串转为十进制，分解质因数：</p>
 <p><img alt="image-20240714155420828" src="../../../../assets/image-20240714155420828.png" /></p>
 <p>根据 5 个质因数获得 5 个加密结果，根据模乘运算也可以获得整体加密后的结果。编写 python 程序如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4696,7 +4719,7 @@ e_1&amp;e_2&amp;\cdots&amp;e_n
 $$
 求 CVP 问题，求得向量 e，通过 <span class="arithmatex">\(S=A_n^{-1}\vdot(b-e)\)</span> 可求得私钥 S，有了私钥我们就可以通过加密内容反推得到明文。</p>
 <p>由于 sage 和 pwntools 的环境结合一直没配好 qwq 所以没法通过交互执行这个思路，就手动 copy 了一份 A 和 b 获得 S（求给点思路分 qwq），代码如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>

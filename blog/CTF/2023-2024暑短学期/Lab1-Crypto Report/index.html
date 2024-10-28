@@ -812,6 +812,8 @@
       
         
       
+        
+      
     
     
       
@@ -907,6 +909,27 @@
   
   <span class="md-ellipsis">
     Chapter 02: Instructions : Language of the Machine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Organization/Chapter%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 04: The Processors
   </span>
   
 
@@ -4235,7 +4258,7 @@
 <h1 id="lab1-crypto-report">Lab1-Crypto Report<a class="headerlink" href="#lab1-crypto-report" title="Permanent link">&para;</a></h1>
 <h2 id="task-1">Task 1<a class="headerlink" href="#task-1" title="Permanent link">&para;</a></h2>
 <p>阅读 python 程序：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4276,7 +4299,7 @@
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cipher.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cipher</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>我们可以得到，密钥是一个长度在 15-29 的字符范围为 text_list 的字符串，同时通过加密算法的代码，我们可以发现，空格符经过加密算法后依旧为空格符，因此我们还是能将原文按照空格分割，编写 python 程序统计一下词频与出现位置（二元组第一位为词频）：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -4323,7 +4346,7 @@
 <p><img alt="image-20240708125637110" src="../../../../assets/image-20240708125637110.png" /></p>
 <p>以第一次出现位置为 0 ，那么这个列表就转换为：<code>[0,58,1102,1276,1653,2088]</code> ，这六个数的最大公因数为 29，那么密钥的长度正是 29。</p>
 <p>同时，介于这个词长度为 3，我们可以猜测这个词对应的就是 the，通过加密算法编写 python 程序：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4358,7 +4381,7 @@
 <p><img alt="image-20240708150749697" src="../../../../assets/image-20240708150749697.png" /></p>
 <p>猜 possible，还原得到密钥的第 11,12,13 位为 41 33 89</p>
 <p>重复以上操作即可找到完整 key，还原整篇文章：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -4379,7 +4402,7 @@
 <h3 id="sage">Sage 初探<a class="headerlink" href="#sage" title="Permanent link">&para;</a></h3>
 <h4 id="_1">随机生成矩阵+计算逆矩阵<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>编写 sage 程序如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -4404,7 +4427,7 @@
 <p>得到输出：</p>
 <p><img alt="image-20240708205937260" src="../../../../assets/image-20240708205937260.png" /></p>
 <p>将上面的输出记下，重新编写 sage 程序：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -4455,7 +4478,7 @@
 <p>最后的 FT_cal 与 FT 完全相同。</p>
 <h3 id="hsc">HSC<a class="headerlink" href="#hsc" title="Permanent link">&para;</a></h3>
 <p>用 python 将最后输出的转换回来：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -4495,7 +4518,7 @@
 \]</div>
 <p>同时题目给出了条件 flag 均为可打印字符，即 FT 的值范围为 32-126。</p>
 <p>编写 sage 代码爆破 MTI：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>

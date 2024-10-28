@@ -1227,6 +1227,8 @@
       
         
       
+        
+      
     
     
       
@@ -1322,6 +1324,27 @@
   
   <span class="md-ellipsis">
     Chapter 02: Instructions : Language of the Machine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Chapter%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 04: The Processors
   </span>
   
 
@@ -4863,10 +4886,10 @@
 <p>For each variable in the expression,output an arithmetic expression that represents the derivative of the input expression with respect to the variable.</p>
 <p>Arrange the output in the lexicographical order of the variables.</p>
 <h4 id="sample-input">Sample Input<a class="headerlink" href="#sample-input" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>a+b^c*d
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>a+b^c*d
 </code></pre></div></td></tr></table></div>
 <h4 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>a: 1
@@ -4885,7 +4908,7 @@
 <h4 id="step-1-create-the-expression-tree">Step 1 : Create the expression tree<a class="headerlink" href="#step-1-create-the-expression-tree" title="Permanent link">&para;</a></h4>
 <p>We create a <strong>Struct</strong> to store the information of the nodes in the expression tree.Every nodes in the expression tree has three components.One is a string indicating the value of the node (may be an operator,a variable name or a constant number) and the other two are two pointers respectively indicating leftchild and rightchild of the node.</p>
 <p>We need the data structure <strong>Stack</strong> to assist building the expression tree.Nodestack stores the subtrees created from the expression while opstack stores all the operators.Pseudo-code is shown below:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4943,7 +4966,7 @@
 </code></pre></div></td></tr></table></div>
 <h4 id="step-2-store-all-variable-names-and-sort">Step 2 : Store all variable names and sort<a class="headerlink" href="#step-2-store-all-variable-names-and-sort" title="Permanent link">&para;</a></h4>
 <p>We use a <strong>String Array</strong> to store all variable names.Pseudo-code is shown below:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -4959,7 +4982,7 @@
 </code></pre></div></td></tr></table></div>
 <h4 id="step-3-output">Step 3 : Output<a class="headerlink" href="#step-3-output" title="Permanent link">&para;</a></h4>
 <p>We define a function differentiate(root,var) to build an expression tree of the answer. Pseudo-code is shown below:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -5031,10 +5054,10 @@
 <h3 id="test-case-1">Test case 1<a class="headerlink" href="#test-case-1" title="Permanent link">&para;</a></h3>
 <p>Test case 1 wants to test expression including "+,-,*,/"</p>
 <h4 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>a+b*c-d/e
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>a+b*c-d/e
 </code></pre></div></td></tr></table></div>
 <h4 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
@@ -5047,10 +5070,10 @@
 <h3 id="test-case-2">Test case 2<a class="headerlink" href="#test-case-2" title="Permanent link">&para;</a></h3>
 <p>Test case 2 wants to test expression including "+,-,*,/,(,)".</p>
 <h4 id="input_2">Input<a class="headerlink" href="#input_2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>(a+b)*c-(d-e)/f
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>(a+b)*c-(d-e)/f
 </code></pre></div></td></tr></table></div>
 <h4 id="output_2">Output<a class="headerlink" href="#output_2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
@@ -5065,10 +5088,10 @@
 <h3 id="test-case-3">Test case 3<a class="headerlink" href="#test-case-3" title="Permanent link">&para;</a></h3>
 <p>Test case 3 wants to test expression including variables whose length is longer.</p>
 <h4 id="input_3">Input<a class="headerlink" href="#input_3" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>(aabbcc+ddffea)*ddfa-bb/ss*cc*(ddffs+ee)
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>(aabbcc+ddffea)*ddfa-bb/ss*cc*(ddffs+ee)
 </code></pre></div></td></tr></table></div>
 <h4 id="output_3">Output<a class="headerlink" href="#output_3" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
 <span class="normal"><a href="#__codelineno-10-4">4</a></span>
@@ -5087,18 +5110,18 @@
 <h3 id="test-case-4">Test case 4<a class="headerlink" href="#test-case-4" title="Permanent link">&para;</a></h3>
 <p>Test case 4 wants to test expression including forms of "^".</p>
 <h4 id="input_4">Input<a class="headerlink" href="#input_4" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>aa^2+2^aa+2^2+aa^aa
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>aa^2+2^aa+2^2+aa^aa
 </code></pre></div></td></tr></table></div>
 <h4 id="output_4">Output<a class="headerlink" href="#output_4" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>aa: 2*1/aa*aa^2+1*ln(2)*2^aa+(1*ln(aa)+aa*1/aa)*aa^aa
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>aa: 2*1/aa*aa^2+1*ln(2)*2^aa+(1*ln(aa)+aa*1/aa)*aa^aa
 </code></pre></div></td></tr></table></div>
 <h3 id="test-case-5">Test case 5<a class="headerlink" href="#test-case-5" title="Permanent link">&para;</a></h3>
 <p>Test case 5 mix all the situations in Test case 1,2,3,4.</p>
 <h4 id="input_5">Input<a class="headerlink" href="#input_5" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>aa*10*bb+2^ab/ab+abb^abb/aab-(ba+bba)*baa^20
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>aa*10*bb+2^ab/ab+abb^abb/aab-(ba+bba)*baa^20
 </code></pre></div></td></tr></table></div>
 <h4 id="output_5">Output<a class="headerlink" href="#output_5" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span>
@@ -5125,7 +5148,7 @@
 <h3 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h3>
 <p>The function of this program is still limited, for it can't support mathmatic functions such as <span class="arithmatex">\(\sin x,\cos x,\tan x,\ln x,\log(x,y),\exp(x)...\)</span> . Also it can't simplify both the input expression or the output expression. It still needs to be improved. </p>
 <h2 id="appendix-source-code">Appendix : Source Code<a class="headerlink" href="#appendix-source-code" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">  1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">  3</a></span>
 <span class="normal"><a href="#__codelineno-15-4">  4</a></span>
