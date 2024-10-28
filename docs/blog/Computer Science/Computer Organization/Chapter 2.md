@@ -266,6 +266,47 @@ RISC-V 指令格式如下：
 
 ![](../../../assets/Pasted%20image%2020241028120041.png)
 
+![](../../../assets/Pasted%20image%2020241028122838.png)
+
+## Real Stuff : MIPS Instructions
+
+![](../../../assets/Pasted%20image%2020241028123053.png)
+
+### Instruction Encoding
+
+![](../../../assets/Pasted%20image%2020241028123505.png)
+
+## Real Stuff : The Intel x86 ISA
+
+### Basic x86 Registers
+
+![](../../../assets/Pasted%20image%2020241028123737.png)
+
+### Basic x86 Addressing Modes
+
+![](../../../assets/Pasted%20image%2020241028123853.png)
+
+### x86 Instruction Encoding
+
+![](../../../assets/Pasted%20image%2020241028123935.png)
+
+### Implementing IA-32
+
+![](../../../assets/Pasted%20image%2020241028124150.png)
+
+## Other RISC-V Instructions
+
+![](../../../assets/Pasted%20image%2020241028124236.png)
+
+![](../../../assets/Pasted%20image%2020241028124315.png)
+
+## Fallicies and Pitfalls
+
+![](../../../assets/Pasted%20image%2020241028124510.png)
+
+![](../../../assets/Pasted%20image%2020241028124532.png)
+
+![](../../../assets/Pasted%20image%2020241028124554.png)
 ## Summary
 
 ![](../../../assets/Pasted%20image%2020241022115740.png)
@@ -283,8 +324,3 @@ RISC-V 指令格式如下：
 ![](../../../assets/Pasted%20image%2020241028100133.png)
 
 
-```ad-tip
-title: This is a tip
-
-This is the content of the admonition tip.
-```
