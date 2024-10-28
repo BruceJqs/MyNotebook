@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+                "file": "docs/about/link.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2"
+              "title": "link"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+                "file": "docs/about/link.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 2"
+              "title": "Backlinks for link"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+                "file": "docs/about/link.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 2"
+              "title": "Outgoing links from link"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md"
+                "file": "docs/about/link.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 2"
+              "title": "Outline of link"
             }
           }
         ],
@@ -166,21 +166,23 @@
   },
   "active": "51c73c00f3b383a0",
   "lastOpenFiles": [
+    "docs/index.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
+    "docs/assets/Pasted image 20241028143521.png",
+    "docs/assets/Pasted image 20241028143242.png",
+    "docs/assets/Pasted image 20241028142934.png",
+    "docs/assets/Pasted image 20241028142701.png",
+    "docs/assets/Pasted image 20241028133331.png",
+    "docs/assets/Pasted image 20241028133315.png",
+    "docs/assets/Pasted image 20241028132827.png",
+    "docs/assets/Pasted image 20241028132457.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/assets/Pasted image 20241028124554.png",
     "docs/assets/Pasted image 20241028124532.png",
-    "docs/assets/Pasted image 20241028124510.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
-    "docs/assets/Pasted image 20241028124315.png",
-    "docs/assets/Pasted image 20241028124236.png",
-    "docs/assets/Pasted image 20241028124150.png",
-    "docs/assets/Pasted image 20241028123935.png",
-    "docs/assets/Pasted image 20241028123853.png",
-    "docs/assets/Pasted image 20241028123737.png",
-    "docs/assets/Pasted image 20241028123505.png",
-    "docs/assets/Pasted image 20241028123053.png",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
@@ -200,8 +202,6 @@
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-8.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-7.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-4.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-6.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-5.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto",
     "docs/blog/CTF/2024.10 ZJUCTF",

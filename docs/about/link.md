@@ -75,6 +75,7 @@ t.parentNode.insertBefore(e,t)}})();
      </div> 
     </div> 
     <div class="card"> 
+    <img class="ava" src="http://47.96.29.144/img/avatar.jpg" /> 
      <div class="card-header"> 
       <div> 
        <a href="http://47.96.29.144/" target="_blank">晚栀wingee~</a> 
@@ -83,7 +84,41 @@ t.parentNode.insertBefore(e,t)}})();
       Bruce 亲爱的组爸 pygg 滴个人主页！
       </div> 
      </div> 
-    </div>     
+    </div> 
+    <div class="card"> 
+    <img class="ava" src="https://zzw4257.cn/_astro/demo-avatar.Dw-aIvea_Z1xvGVL.webp" /> 
+     <div class="card-header"> 
+      <div> 
+       <a href="https://zzw4257.cn/" target="_blank">zzw4257</a> 
+      </div> 
+      <div class="info">
+	  zwgg の个人主页！
+      </div> 
+     </div> 
+    </div>  
+    <div class="card"> 
+    <img class="ava" src="https://wbx0710.github.io/mymkdocs/images/logo.jpg" /> 
+     <div class="card-header"> 
+      <div> 
+       <a href="https://wbx0710.github.io/mymkdocs/" target="_blank">Bixing's Notebook</a> 
+      </div> 
+      <div class="info">
+      bxgg の个人主页！
+      </div> 
+     </div> 
+    </div>  
+    <div class="card"> 
+    <img class="ava" src="https://xw-soleil.github.io/img/myavatar.jpg" /> 
+     <div class="card-header"> 
+      <div> 
+       <a href="https://xw-soleil.github.io/" target="_blank">Soleil's Blog</a> 
+      </div> 
+      <div class="info">
+      xwgg の个人主页！
+      </div> 
+     </div> 
+    </div>  
+      
 
    </div> 
   </div>

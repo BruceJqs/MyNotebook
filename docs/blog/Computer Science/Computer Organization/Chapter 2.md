@@ -224,7 +224,7 @@ RISC-V 指令格式如下：
 
 ## Synchronization in RISC-V
 
-![[Pasted image 20241028100913.png]]
+![](../../../assets/Pasted%20image%2020241028100913.png)
 
 ![](../../../assets/Pasted%20image%2020241028101312.png)
 
