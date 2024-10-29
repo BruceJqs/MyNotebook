@@ -149,7 +149,7 @@ $$
 
 	![](../../../assets/Pasted image 20241029114339.png)
 	
-	!!! note "对于 $3^{\log_4 N}=N^{\log_4 3$ 的证明"
+	!!! note "对于 $3^{\log_4 N}=N^{\log_4 3}$ 的证明"
 	
 		一般化这个问题，我们有 $a^{\log_b N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{log_b a}$
 	
@@ -164,3 +164,51 @@ $$
 ### Master Method
 
 > 主方法(Master Method)之所以叫“主”，是因为它分析的是 combine 和 conquer 部分孰为主导。
+
+#### Form 1
+
+!!! note "Form 1"
+
+	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
+	
+	1. 若 $f(N)=O(N^{\log_⁡b a−\epsilon}),\text{ for }\epsilon>0$，那么 $T(N)=\Theta(N^{\log_⁡b a})$；
+	2. 若 $f(N)=\Theta(N^{\log_⁡b a})$，那么 $T(N)=\Theta(N^{\log_⁡b a}\log ⁡N)$；
+	3. 若 $f(N)=\Omega(N^{log⁡_b a+\epsilon}),\text{ for }\epsilon>0$ 且 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$，那么 $T(N)=\Theta(f(N))$；
+	
+	其中 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$ 又叫 Regularity Condition.
+
+观察三种情况的区分条件都是比较 $f(N)$（每一次的 combine 开销） 和 $N^{\log⁡_b a}$（即求和式中的 conquer 的开销），当 $f(N)$ 足够小时，以 conquer 开销为主（即 Case 1）；当足够大时，以 combine 为主（即 Case 3）；而其中还有一个中间状态（即 Case 2）。
+
+!!! Example "Examples of Form 1"
+
+	=== "Example 01"
+	
+		- $a=b=2,f(N)=N$；
+			- $f(N)=N=\Theta(N^{\log_⁡2 2})$，适用于情况 2；
+			- 因此得到结果 $T(N)=\Theta(N\log ⁡N)$；
+	
+	=== "Example 02"
+	
+		- $a=b=2,f(N)=N\log ⁡N$；
+			- $f(N)=N\log ⁡N$，虽然 $N\log ⁡N=\Theta(N^{log_⁡2 2})$，但是 $N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})$，所以不适用于情况 3；
+			- 具体来说，$\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon>0$；
+			- 这个例子体现出了 $\epsilon$ 的一定作用；
+
+!!! note "Proof of Form 1"
+
+	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式，我们需要依次证明，此处我们使用递归树法进行证明。
+
+	=== "Case 1"
+	
+		树高 $\log_⁡b N$，共 $\log_⁡b N+1$ 层，则有：
+		
+		- 第 0 层（根）一共 1 项，combine 的开销为 $f(N)$；
+		- 第 1 层一共 a 项，combine 的开销为 $a×f(\frac{N}{b})$；
+		- 第 2 层一共 $a^2$ 项，combine 的开销为 $a^2×f(\frac{N}{b^2})$；
+		- ......
+		- 第 j 层一共 $a^j$ 项，combine 的开销为 $a^j×f(\frac{N}{b^j})$；
+		- ......
+		- 第 $\log_⁡b N−1$ 层一共 $a^{\log_⁡b N−1}$ 项，combine 的开销为 $a^{\log_⁡b N)−1}×f(\frac{N}{b^{\log_⁡b N−1}})$；
+		- 第 $\log_⁡b N$ 层，即为叶子层，一共 $a^{\log_⁡b N}=N^{\log_⁡b a}$ 项，conquer 的开销为 $N^{\log_⁡b a}×\Theta(1)=\Theta(N^{\log_⁡b a})$；
+		
+		得到求和式：
