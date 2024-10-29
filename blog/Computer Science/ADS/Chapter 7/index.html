@@ -1288,6 +1288,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Master Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4230,6 +4245,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Master Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4379,7 +4409,7 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <p class="admonition-title">Example</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029114339.png" /></p>
 <div class="admonition note">
-<p class="admonition-title">对于 <span class="arithmatex">\(3^{\log_4 N}=N^{\log_4 3\)</span> 的证明</p>
+<p class="admonition-title">对于 <span class="arithmatex">\(3^{\log_4 N}=N^{\log_4 3}\)</span> 的证明</p>
 <p>一般化这个问题，我们有 <span class="arithmatex">\(a^{\log_b N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{log_b a}\)</span></p>
 </div>
 <p>可以发现，此情况下 <span class="arithmatex">\(a=3,b=4,f(N)=\Theta(N^2)\)</span>，也就是说每次分为 3 个子问题，子问题的规模是 <span class="arithmatex">\(\frac{N}{4}\)</span>​，而合并开销为 <span class="arithmatex">\(\Theta(N^2)\)</span>。</p>
@@ -4392,6 +4422,66 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <blockquote>
 <p>主方法(Master Method)之所以叫“主”，是因为它分析的是 combine 和 conquer 部分孰为主导。</p>
 </blockquote>
+<h4 id="form-1">Form 1<a class="headerlink" href="#form-1" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Form 1</p>
+<p>对于形如 <span class="arithmatex">\(T(N)=aT(\frac{N}{b})+f(N)\)</span> 的递推式：</p>
+<ol>
+<li>若 <span class="arithmatex">\(f(N)=O(N^{\log_⁡b a−\epsilon}),\text{ for }\epsilon&gt;0\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(N^{\log_⁡b a})\)</span>；</li>
+<li>若 <span class="arithmatex">\(f(N)=\Theta(N^{\log_⁡b a})\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(N^{\log_⁡b a}\log ⁡N)\)</span>；</li>
+<li>若 <span class="arithmatex">\(f(N)=\Omega(N^{log⁡_b a+\epsilon}),\text{ for }\epsilon&gt;0\)</span> 且 <span class="arithmatex">\(af(\frac{N}{b})&lt;cf(N),\text{ for }c&lt;1\text{ and }\forall N&gt;N_0\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(f(N))\)</span>；</li>
+</ol>
+<p>其中 <span class="arithmatex">\(af(\frac{N}{b})&lt;cf(N),\text{ for }c&lt;1\text{ and }\forall N&gt;N_0\)</span> 又叫 Regularity Condition.</p>
+</div>
+<p>观察三种情况的区分条件都是比较 <span class="arithmatex">\(f(N)\)</span>（每一次的 combine 开销） 和 <span class="arithmatex">\(N^{\log⁡_b a}\)</span>（即求和式中的 conquer 的开销），当 <span class="arithmatex">\(f(N)\)</span> 足够小时，以 conquer 开销为主（即 Case 1）；当足够大时，以 combine 为主（即 Case 3）；而其中还有一个中间状态（即 Case 2）。</p>
+<div class="admonition example">
+<p class="admonition-title">Examples of Form 1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Example 01</label><label for="__tabbed_3_2">Example 02</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><span class="arithmatex">\(a=b=2,f(N)=N\)</span>；<ul>
+<li><span class="arithmatex">\(f(N)=N=\Theta(N^{\log_⁡2 2})\)</span>，适用于情况 2；</li>
+<li>因此得到结果 <span class="arithmatex">\(T(N)=\Theta(N\log ⁡N)\)</span>；</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><span class="arithmatex">\(a=b=2,f(N)=N\log ⁡N\)</span>；<ul>
+<li><span class="arithmatex">\(f(N)=N\log ⁡N\)</span>，虽然 <span class="arithmatex">\(N\log ⁡N=\Theta(N^{log_⁡2 2})\)</span>，但是 <span class="arithmatex">\(N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})\)</span>，所以不适用于情况 3；</li>
+<li>具体来说，<span class="arithmatex">\(\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon&gt;0\)</span>；</li>
+<li>这个例子体现出了 <span class="arithmatex">\(\epsilon\)</span> 的一定作用；</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Proof of Form 1</p>
+<p>对于形如 <span class="arithmatex">\(T(N)=aT(\frac{N}{b})+f(N)\)</span> 的递推式，我们需要依次证明，此处我们使用递归树法进行证明。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Case 1</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>树高 <span class="arithmatex">\(\log_⁡b N\)</span>，共 <span class="arithmatex">\(\log_⁡b N+1\)</span> 层，则有：</p>
+<ul>
+<li>第 0 层（根）一共 1 项，combine 的开销为 <span class="arithmatex">\(f(N)\)</span>；</li>
+<li>第 1 层一共 a 项，combine 的开销为 <span class="arithmatex">\(a×f(\frac{N}{b})\)</span>；</li>
+<li>第 2 层一共 <span class="arithmatex">\(a^2\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^2×f(\frac{N}{b^2})\)</span>；</li>
+<li>......</li>
+<li>第 j 层一共 <span class="arithmatex">\(a^j\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^j×f(\frac{N}{b^j})\)</span>；</li>
+<li>......</li>
+<li>第 <span class="arithmatex">\(\log_⁡b N−1\)</span> 层一共 <span class="arithmatex">\(a^{\log_⁡b N−1}\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^{\log_⁡b N)−1}×f(\frac{N}{b^{\log_⁡b N−1}})\)</span>；</li>
+<li>第 <span class="arithmatex">\(\log_⁡b N\)</span> 层，即为叶子层，一共 <span class="arithmatex">\(a^{\log_⁡b N}=N^{\log_⁡b a}\)</span> 项，conquer 的开销为 <span class="arithmatex">\(N^{\log_⁡b a}×\Theta(1)=\Theta(N^{\log_⁡b a})\)</span>；</li>
+</ul>
+<p>得到求和式：</p>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4461,7 +4551,7 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 11:56:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 14:15:07</span>
   </span>
 
     
