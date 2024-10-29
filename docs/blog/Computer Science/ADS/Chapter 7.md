@@ -335,4 +335,44 @@ $$
 	\end{aligned}
 	$$
 	
+	我们现在并不像 Form 1 有显式的 $f(N)=\Omega(N^{\log_{⁡b}a+\epsilon})$ 的条件，而这个条件最终决定 conquer 部分和 combine 部分谁占主导地位。但是，我们实际上只需要得到 $f(N) = \Omega(N^{\log_{⁡b}a})$ 就够了。其实 $af(\frac{N}{b})∼cf(N)$ 这件事本身就暗含了它与 $N^{\log_{⁡b}a}$ 的关系：
 	
+	$$
+	cf(N)∼af(\frac{N}{b}​)∼...∼a^Lf(\frac{N}{b^L}​)
+	$$
+	
+	可以发现，这一步还是和 Form 1 的第三种情况的证明过程高度相似。只不过现在我们要更进一步地看这个式子。
+	
+	当 $c<1$ 时，实际上有 $f(N)>af(\frac{N}{b})$；当 $c=1$ 时，实际上有 $f(N)=af(\frac{N}{b})$；当 $c>1$ 时，实际上有 $f(N)<af(\frac{N}{b})$；
+	
+	我们假设 $\frac{N}{b^L}$ 足够小（即递归到最末端，只需要进行 conquer 的时候），即 $\frac{N}{b^L}=\Theta(1)$，那么就有 $L=\Theta(\log_{⁡b}N)$。于是，我们有：
+	
+	$$
+	f(N)∼Θ(a^{\log_{⁡b}N})=Θ(N^{\log_{⁡b}a})
+	$$
+	
+	剩下的证明就跟 Form 1 的第三种情况一样了。
+
+#### Form 3
+
+!!! note "Form 3"
+
+	当递推关系满足：
+	
+	$$
+	T(N)=aT(\frac{N}{b})+\Theta(N^k\log^{p}N)\text{ Where }a\geq 1,b>1,p\geq 0
+	$$
+	
+	其复杂度有结论：
+	
+	$$
+	T(N)=
+	\begin{cases}
+	O(N^{\log_{⁡b}a}),a>b^k\\
+	O(N^k\log⁡^{p+1}N),a=b^k\\
+	O(N^k\log^{p}N),a<b^k
+	\end{cases}
+	$$
+	
+
+
