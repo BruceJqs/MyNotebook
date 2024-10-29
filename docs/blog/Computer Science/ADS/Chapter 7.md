@@ -309,7 +309,7 @@ $$
 	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
 	
 	1. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa <1$，那么 $T(N)=\Theta(f(N))$；
-	2. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa >1$，那么 T(N)=\Theta(N^{\log_{⁡b}a})=\Theta(a^{\log_{⁡b}N})；
+	2. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa >1$，那么 $T(N)=\Theta(N^{\log_{⁡b}a})=\Theta(a^{\log_{⁡b}N})$；
 	3. 若 $af(\frac{N}{b})=f(N)$，那么 $T(N)=\Theta(f(N)log_{⁡b}N)$；
 
 !!! note "Proof of Form 2"
