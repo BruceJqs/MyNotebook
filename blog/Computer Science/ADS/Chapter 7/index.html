@@ -1309,6 +1309,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#form-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form 3
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4275,6 +4284,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#form-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form 3
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4594,6 +4612,34 @@ T(N)&amp;&lt;\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
 &amp;=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}
 \end{aligned}
 \]</div>
+<p>我们现在并不像 Form 1 有显式的 <span class="arithmatex">\(f(N)=\Omega(N^{\log_{⁡b}a+\epsilon})\)</span> 的条件，而这个条件最终决定 conquer 部分和 combine 部分谁占主导地位。但是，我们实际上只需要得到 <span class="arithmatex">\(f(N) = \Omega(N^{\log_{⁡b}a})\)</span> 就够了。其实 <span class="arithmatex">\(af(\frac{N}{b})∼cf(N)\)</span> 这件事本身就暗含了它与 <span class="arithmatex">\(N^{\log_{⁡b}a}\)</span> 的关系：</p>
+<div class="arithmatex">\[
+cf(N)∼af(\frac{N}{b}​)∼...∼a^Lf(\frac{N}{b^L}​)
+\]</div>
+<p>可以发现，这一步还是和 Form 1 的第三种情况的证明过程高度相似。只不过现在我们要更进一步地看这个式子。</p>
+<p>当 <span class="arithmatex">\(c&lt;1\)</span> 时，实际上有 <span class="arithmatex">\(f(N)&gt;af(\frac{N}{b})\)</span>；当 <span class="arithmatex">\(c=1\)</span> 时，实际上有 <span class="arithmatex">\(f(N)=af(\frac{N}{b})\)</span>；当 <span class="arithmatex">\(c&gt;1\)</span> 时，实际上有 <span class="arithmatex">\(f(N)&lt;af(\frac{N}{b})\)</span>；</p>
+<p>我们假设 <span class="arithmatex">\(\frac{N}{b^L}\)</span> 足够小（即递归到最末端，只需要进行 conquer 的时候），即 <span class="arithmatex">\(\frac{N}{b^L}=\Theta(1)\)</span>，那么就有 <span class="arithmatex">\(L=\Theta(\log_{⁡b}N)\)</span>。于是，我们有：</p>
+<div class="arithmatex">\[
+f(N)∼Θ(a^{\log_{⁡b}N})=Θ(N^{\log_{⁡b}a})
+\]</div>
+<p>剩下的证明就跟 Form 1 的第三种情况一样了。</p>
+</div>
+<h4 id="form-3">Form 3<a class="headerlink" href="#form-3" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Form 3</p>
+<p>当递推关系满足：</p>
+<div class="arithmatex">\[
+T(N)=aT(\frac{N}{b})+\Theta(N^k\log^{p}N)\text{ Where }a\geq 1,b&gt;1,p\geq 0
+\]</div>
+<p>其复杂度有结论：</p>
+<div class="arithmatex">\[
+T(N)=
+\begin{cases}
+O(N^{\log_{⁡b}a}),a&gt;b^k\\
+O(N^k\log⁡^{p+1}N),a=b^k\\
+O(N^k\log^{p}N),a&lt;b^k
+\end{cases}
+\]</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -4664,7 +4710,7 @@ T(N)&amp;&lt;\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 15:29:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 15:49:23</span>
   </span>
 
     
