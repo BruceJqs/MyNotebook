@@ -134,11 +134,9 @@ $$
 
 $$
 F(x)=\begin{cases}
-\begin{aligned}
-0&,x<a\\
-\frac{x−a}{b−a}&,a\leq x<b\\
-1&,x\geq b
-\end{aligned}
+0,x<a\\
+\frac{x−a}{b−a},a\leq x<b\\
+1,x\geq b
 \end{cases}
 $$​
 

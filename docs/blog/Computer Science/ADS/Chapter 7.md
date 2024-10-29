@@ -149,15 +149,15 @@ $$
 
 	![](../../../assets/Pasted image 20241029114339.png)
 	
-	!!! note "对于 $3^{\log_4 N}=N^{\log_4 3}$ 的证明"
+	!!! note "对于 $3^{\log_{4}N}=N^{\log_{4}3}$ 的证明"
 	
-		一般化这个问题，我们有 $a^{\log_b N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{log_b a}$
+		一般化这个问题，我们有 $a^{\log_{b}N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{log_{b}a}$
 	
 	可以发现，此情况下 $a=3,b=4,f(N)=\Theta(N^2)$，也就是说每次分为 3 个子问题，子问题的规模是 $\frac{N}{4}$​，而合并开销为 $\Theta(N^2)$。
 	
 	此时由于分治的策略是相对均匀的，所以我们可以认为得到的是一个完美三叉树。
 	
-	显然，树高为 $\log_⁡4 N$，根记为 0，每个分治节点的 combine 开销已经标注在图的节点位置，横向箭头标记的是对该层所有节点的开销的求和。特别的，对于最底层，即叶子层，它表示的是 conquer 部分的开销。
+	显然，树高为 $\log_{⁡4}N$，根记为 0，每个分治节点的 combine 开销已经标注在图的节点位置，横向箭头标记的是对该层所有节点的开销的求和。特别的，对于最底层，即叶子层，它表示的是 conquer 部分的开销。
 	
 	于是我们可以根据 $T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{non-leaf-nodes}f(N_{node_i})}_{combine}$ 的形式，对其进行求和，得到图片中下方的式子。
 ***
@@ -171,9 +171,9 @@ $$
 
 	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
 	
-	1. 若 $f(N)=O(N^{\log_⁡b a−\epsilon}),\text{ for }\epsilon>0$，那么 $T(N)=\Theta(N^{\log_⁡b a})$；
-	2. 若 $f(N)=\Theta(N^{\log_⁡b a})$，那么 $T(N)=\Theta(N^{\log_⁡b a}\log ⁡N)$；
-	3. 若 $f(N)=\Omega(N^{log⁡_b a+\epsilon}),\text{ for }\epsilon>0$ 且 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$，那么 $T(N)=\Theta(f(N))$；
+	1. 若 $f(N)=O(N^{\log_{⁡b}a−\epsilon}),\text{ for }\epsilon>0$，那么 $T(N)=\Theta(N^{\log_⁡b a})$；
+	2. 若 $f(N)=\Theta(N^{\log_{⁡b}a})$，那么 $T(N)=\Theta(N^{\log_⁡{b}a}\log ⁡N)$；
+	3. 若 $f(N)=\Omega(N^{log⁡_{b}a+\epsilon}),\text{ for }\epsilon>0$ 且 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$，那么 $T(N)=\Theta(f(N))$；
 	
 	其中 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$ 又叫 Regularity Condition.
 
@@ -184,13 +184,13 @@ $$
 	=== "Example 01"
 	
 		- $a=b=2,f(N)=N$；
-			- $f(N)=N=\Theta(N^{\log_⁡2 2})$，适用于情况 2；
+			- $f(N)=N=\Theta(N^{\log_{⁡2}2})$，适用于情况 2；
 			- 因此得到结果 $T(N)=\Theta(N\log ⁡N)$；
 	
 	=== "Example 02"
 	
 		- $a=b=2,f(N)=N\log ⁡N$；
-			- $f(N)=N\log ⁡N$，虽然 $N\log ⁡N=\Theta(N^{log_⁡2 2})$，但是 $N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})$，所以不适用于情况 3；
+			- $f(N)=N\log ⁡N$，虽然 $N\log ⁡N=\Theta(N^{log_⁡{2}2})$，但是 $N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})$，所以不适用于情况 3；
 			- 具体来说，$\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon>0$；
 			- 这个例子体现出了 $\epsilon$ 的一定作用；
 
@@ -200,7 +200,7 @@ $$
 
 	=== "Case 1"
 	
-		树高 $\log_⁡b N$，共 $\log_⁡b N+1$ 层，则有：
+		树高 $\log_⁡{b}N$，共 $\log_⁡{b}N+1$ 层，则有：
 		
 		- 第 0 层（根）一共 1 项，combine 的开销为 $f(N)$；
 		- 第 1 层一共 a 项，combine 的开销为 $a×f(\frac{N}{b})$；
@@ -208,7 +208,110 @@ $$
 		- ......
 		- 第 j 层一共 $a^j$ 项，combine 的开销为 $a^j×f(\frac{N}{b^j})$；
 		- ......
-		- 第 $\log_⁡b N−1$ 层一共 $a^{\log_⁡b N−1}$ 项，combine 的开销为 $a^{\log_⁡b N)−1}×f(\frac{N}{b^{\log_⁡b N−1}})$；
-		- 第 $\log_⁡b N$ 层，即为叶子层，一共 $a^{\log_⁡b N}=N^{\log_⁡b a}$ 项，conquer 的开销为 $N^{\log_⁡b a}×\Theta(1)=\Theta(N^{\log_⁡b a})$；
+		- 第 $\log_{⁡b}N−1$ 层一共 $a^{\log_{⁡b}N−1}$ 项，combine 的开销为 $a^{\log_⁡{b}N)−1}×f(\frac{N}{b^{\log_⁡{b}N−1}})$；
+		- 第 $\log_{⁡b}N$ 层，即为叶子层，一共 $a^{\log_⁡{b}N}=N^{\log_⁡{b}a}$ 项，conquer 的开销为 $N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})$；
 		
 		得到求和式：
+		
+		$$
+		T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
+		$$
+		
+		而我们有条件 $f(N)=O(N^{\log_⁡{b}a−\epsilon}),\text{ for }\epsilon>0$，将它代入到上式中得到：
+		
+		$$
+		\begin{aligned}
+		T(N)&=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jO((\frac{N}{b^j})^{\log_{b}a-\epsilon})\\
+		&=\Theta(N^{\log_{b}​a})+O(​N^{\log_{b}​a−\epsilon}×\sum\limits_{j=0}^{\log_{b}​N−1}​(\frac{a}{b^{\log_{b}​a−\epsilon}}​)^j​)\\
+		&=\Theta(N^{\log_{b}​a})+O(N^{\log_{b}​a−\epsilon}×\sum\limits_{j=0}^{\log_{b}​N−1}​(b^\epsilon)^j)\\
+		&​=\Theta(N^{\log_{b}​a})+O(N^{\log_{b}​a−\epsilon}×\frac{1×(1−(b^\epsilon)^{\log_{b}​N})​}{1−b^\epsilon})\\
+		&=\Theta(N^{\log_{b}​a})+O(N^{\log_{b}​a−\epsilon}×\frac{N^\epsilon-1}{b^\epsilon−1}​)\\
+		&=\Theta(N^{\log_{b}​a})+O(N^{\log_{b}​a−\epsilon}×N^\epsilon)\\
+		&=\Theta(N^{\log_{b}​a})+O(N^{\log_{b}​a})\\
+		&=\Theta(N^{\log_{b}​a})​
+		\end{aligned}
+		$$
+		
+		证毕
+	
+	=== "Case 2"
+	
+		前面的部分和情况一的类似，我们通过相同的步骤得到相同的求和式：
+		
+		$$
+		T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
+		$$
+		
+		而我们有条件 $f(N)=\Theta(N^{\log_{⁡b}a}$，将它代入到上式中得到：
+		
+		$$
+		\begin{aligned}
+		T(N)&=\Theta(N^{\log_{⁡b}a})+\sum\limits_{j=0}^{\log⁡_{b}N−1}a^j\Theta((\frac{N}{b^j})^{\log⁡_{b}a})\\
+		&=\Theta(N^{\log_{⁡b}a})+\Theta(N^{\log_{b}a}×\sum\limits_{j=0}^{\log_{⁡b}N−1}(\frac{a}{b^{\log_{b}a}})^j)\\
+		&=\Theta(N^{\log_{⁡b}a})+\Theta(N^{\log_{b}a}×\log_{⁡b}N)\\
+		&=Θ(N^{\log_{⁡b}a}\log⁡N)
+		\end{aligned}
+		$$
+		
+		​证毕
+	
+	=== "Case 3"
+	
+		情况三的证明，从条件的变化就可以看出来和前面稍许有些不同了。不过求和式的得到还是一样，通过和之前一样的方法，我们首先得到求和式：
+		
+		$$
+		T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
+		$$
+		
+		接下来的步骤和之前不同。在继续之前，我们首先观察不等式 $af(\frac{N}{b})<cf(N)$，在我们的求和式中，我们观察到我们有大量的形如 $a^jf(\frac{N}{b^j})$ 的项，而这些项都可以通过迭代上面那个不等式来实现，即：
+		
+		$$
+		a^jf(\frac{N}{b^j}​)<c×a^{j−1}f(\frac{N}{b^{j−1}}​)<...<c^jf(N)
+		$$
+		
+		将这个不等式应用于求和式中，我们能够得到：
+		
+		$$
+		\begin{aligned}
+		T(N)&<\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
+		&=\Theta(N^{\log_{b}a})+f(N)\sum\limits_{j=0}^{\log_{b}N-1}c^j\\
+		&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-c^{\log_{b}N}}{1-c}\\
+		&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}
+		\end{aligned}
+		$$
+		
+		而由于 $c<1$，所以 $\log_{⁡b}c<0$；而 $N>0$，而且一般非常大，所以 $N\log_{⁡b}c\in(0,1)$。因此，对于确定的常数 $c$，我们有 $\frac{1−N^{\log_{⁡b}c}}{1−c}\in(0,\frac{1}{1−c})$；
+		
+		因此，上式便能改变为：
+		
+		$$
+		\begin{aligned}
+		T(N)&<\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}\\
+		&<\Theta(N^{\log_{b}a})+f(N)\times\frac{1}{1-c}
+		\end{aligned}
+		$$
+		
+		并且，由于 $f(N)=\Omega(N^{\log_{⁡b}a+\epsilon}),\text{ for }\epsilon>0$，所以可以得到 $c_2N^{\log_{⁡b}a+\epsilon}<f(N)\Rightarrow N^{\log_{b}a}<\frac{1}{c_2N^\epsilon}f(N)$，因此 $T(N)<\Theta(N^{\log_{b}a})+f(N)\times\frac{1}{1-c}<c_1N^{\log_{b}a}+f(N)\times\frac{1}{1-c}<(\frac{c_1}{c_2N^\epsilon}+\frac{1}{1-c})f(N)=O(f(N))$
+		
+		而我们知道，要证明 $T(N)=\Theta(f(N))$ 还需要证明 $T(N)=\Omega(f(N))$：
+		
+		$$
+		T(N)​=Θ(N^{\log_{b​}a})+\sum\limits_{j=0}^{\log_{b​}N−1}​a^jf(\frac{N}{b^j}​)​
+		\geq\sum\limits_{j=0}^{\log_{b}​N−1}​a^jf(\frac{N}{b^j}​)\geq f(N)
+		$$
+		
+		由此得到 $T(N)=\Omega(f(N))$，最终证得 $T(N)=\Theta(f(N))$，至此证毕。
+
+#### Form 2
+
+!!! note "Form 2"
+
+	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
+	
+	1. 若 $af(\frac{N}{b})=\kappaf(N)\text{ for fixed }\kappa<1$，那么 $T(N)=\Theta(f(N))$；
+	2. 若 $af(\frac{N}{b})=\kappaf(N)\text{ for fixed }\kappa>1$，那么 T(N)=\Theta(N^{\log_{⁡b}a})=\Theta(a^{\log_{⁡b}N})；
+	3. 若 $af(\frac{N}{b})=f(N)$，那么 $T(N)=\Theta(f(N)log_{⁡b}N)$；
+
+!!! note "Proof of Form 2"
+
+
