@@ -4428,7 +4428,7 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029114339.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">对于 <span class="arithmatex">\(3^{\log_{4}N}=N^{\log_{4}3}\)</span> 的证明</p>
-<p>一般化这个问题，我们有 <span class="arithmatex">\(a^{\log_{b}N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{log_{b}a}\)</span></p>
+<p>一般化这个问题，我们有 <span class="arithmatex">\(a^{\log_{b}N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{\log_{b}a}\)</span></p>
 </div>
 <p>可以发现，此情况下 <span class="arithmatex">\(a=3,b=4,f(N)=\Theta(N^2)\)</span>，也就是说每次分为 3 个子问题，子问题的规模是 <span class="arithmatex">\(\frac{N}{4}\)</span>​，而合并开销为 <span class="arithmatex">\(\Theta(N^2)\)</span>。</p>
 <p>此时由于分治的策略是相对均匀的，所以我们可以认为得到的是一个完美三叉树。</p>
@@ -4445,8 +4445,8 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <p class="admonition-title">Form 1</p>
 <p>对于形如 <span class="arithmatex">\(T(N)=aT(\frac{N}{b})+f(N)\)</span> 的递推式：</p>
 <ol>
-<li>若 <span class="arithmatex">\(f(N)=O(N^{\log_{⁡b}a−\epsilon}),\text{ for }\epsilon&gt;0\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(N^{\log_⁡b a})\)</span>；</li>
-<li>若 <span class="arithmatex">\(f(N)=\Theta(N^{\log_{⁡b}a})\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(N^{\log_⁡{b}a}\log ⁡N)\)</span>；</li>
+<li>若 <span class="arithmatex">\(f(N)=O(N^{\log_{⁡b}a−\epsilon}),\text{ for }\epsilon&gt;0\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(N^{\log_{⁡b}a})\)</span>；</li>
+<li>若 <span class="arithmatex">\(f(N)=\Theta(N^{\log_{⁡b}a})\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(N^{\log_{b}a}\log ⁡N)\)</span>；</li>
 <li>若 <span class="arithmatex">\(f(N)=\Omega(N^{log⁡_{b}a+\epsilon}),\text{ for }\epsilon&gt;0\)</span> 且 <span class="arithmatex">\(af(\frac{N}{b})&lt;cf(N),\text{ for }c&lt;1\text{ and }\forall N&gt;N_0\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(f(N))\)</span>；</li>
 </ol>
 <p>其中 <span class="arithmatex">\(af(\frac{N}{b})&lt;cf(N),\text{ for }c&lt;1\text{ and }\forall N&gt;N_0\)</span> 又叫 Regularity Condition.</p>
@@ -4492,14 +4492,14 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <li>......</li>
 <li>第 j 层一共 <span class="arithmatex">\(a^j\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^j×f(\frac{N}{b^j})\)</span>；</li>
 <li>......</li>
-<li>第 <span class="arithmatex">\(\log_{⁡b}N−1\)</span> 层一共 <span class="arithmatex">\(a^{\log_{⁡b}N−1}\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^{\log_⁡{b}N)−1}×f(\frac{N}{b^{\log_⁡{b}N−1}})\)</span>；</li>
-<li>第 <span class="arithmatex">\(\log_{⁡b}N\)</span> 层，即为叶子层，一共 <span class="arithmatex">\(a^{\log_⁡{b}N}=N^{\log_⁡{b}a}\)</span> 项，conquer 的开销为 <span class="arithmatex">\(N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})\)</span>；</li>
+<li>第 <span class="arithmatex">\(\log_{⁡b}N−1\)</span> 层一共 <span class="arithmatex">\(a^{\log_{⁡b}N−1}\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^{\log_{b}N−1}×f(\frac{N}{b^{\log_{b}N−1}})\)</span>；</li>
+<li>第 <span class="arithmatex">\(\log_{⁡b}N\)</span> 层，即为叶子层，一共 <span class="arithmatex">\(a^{\log_{b}N}=N^{\log_{b}a}\)</span> 项，conquer 的开销为 <span class="arithmatex">\(N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})\)</span>；</li>
 </ul>
 <p>得到求和式：</p>
 <div class="arithmatex">\[
 T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
 \]</div>
-<p>而我们有条件 <span class="arithmatex">\(f(N)=O(N^{\log_⁡{b}a−\epsilon}),\text{ for }\epsilon&gt;0\)</span>，将它代入到上式中得到：</p>
+<p>而我们有条件 <span class="arithmatex">\(f(N)=O(N^{\log_{b}a−\epsilon}),\text{ for }\epsilon&gt;0\)</span>，将它代入到上式中得到：</p>
 <div class="arithmatex">\[
 \begin{aligned}
 T(N)&amp;=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jO((\frac{N}{b^j})^{\log_{b}a-\epsilon})\\
@@ -4572,8 +4572,8 @@ T(N)​=Θ(N^{\log_{b​}a})+\sum\limits_{j=0}^{\log_{b​}N−1}​a^jf(\frac{N
 <p class="admonition-title">Form 2</p>
 <p>对于形如 <span class="arithmatex">\(T(N)=aT(\frac{N}{b})+f(N)\)</span> 的递推式：</p>
 <ol>
-<li>若 <span class="arithmatex">\(af(\frac{N}{b})=\kappaf(N)\text{ for fixed }\kappa&lt;1\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(f(N))\)</span>；</li>
-<li>若 <span class="arithmatex">\(af(\frac{N}{b})=\kappaf(N)\text{ for fixed }\kappa&gt;1\)</span>，那么 T(N)=\Theta(N<sup _log__b="\log_{⁡b">{\log_{⁡b}a})=\Theta(a</sup>)；}N</li>
+<li>若 <span class="arithmatex">\(af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa &lt;1\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(f(N))\)</span>；</li>
+<li>若 <span class="arithmatex">\(af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa &gt;1\)</span>，那么 T(N)=\Theta(N<sup _log__b="\log_{⁡b">{\log_{⁡b}a})=\Theta(a</sup>)；}N</li>
 <li>若 <span class="arithmatex">\(af(\frac{N}{b})=f(N)\)</span>，那么 <span class="arithmatex">\(T(N)=\Theta(f(N)log_{⁡b}N)\)</span>；</li>
 </ol>
 </div>
@@ -4586,6 +4586,14 @@ T(N)​=Θ(N^{\log_{b​}a})+\sum\limits_{j=0}^{\log_{b​}N−1}​a^jf(\frac{N
 a^jf(\frac{N}{b^j})=c^jf(N)
 \]</div>
 <p>于是，我们有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T(N)&amp;&lt;\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
+&amp;=\Theta(N^{\log_{b}a})+f(N)\sum\limits_{j=0}^{\log_{b}N-1}c^j\\
+&amp;=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-c^{\log_{b}N}}{1-c}\\
+&amp;=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}
+\end{aligned}
+\]</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -4656,7 +4664,7 @@ a^jf(\frac{N}{b^j})=c^jf(N)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 15:23:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 15:29:24</span>
   </span>
 
     
