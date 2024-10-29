@@ -151,7 +151,7 @@ $$
 	
 	!!! note "对于 $3^{\log_{4}N}=N^{\log_{4}3}$ 的证明"
 	
-		一般化这个问题，我们有 $a^{\log_{b}N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{log_{b}a}$
+		一般化这个问题，我们有 $a^{\log_{b}N}=e^{\frac{\ln N}{\ln b}\ln a}=e^{\frac{\ln a}{\ln b}\ln N}=N^{\log_{b}a}$
 	
 	可以发现，此情况下 $a=3,b=4,f(N)=\Theta(N^2)$，也就是说每次分为 3 个子问题，子问题的规模是 $\frac{N}{4}$​，而合并开销为 $\Theta(N^2)$。
 	
@@ -171,8 +171,8 @@ $$
 
 	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
 	
-	1. 若 $f(N)=O(N^{\log_{⁡b}a−\epsilon}),\text{ for }\epsilon>0$，那么 $T(N)=\Theta(N^{\log_⁡b a})$；
-	2. 若 $f(N)=\Theta(N^{\log_{⁡b}a})$，那么 $T(N)=\Theta(N^{\log_⁡{b}a}\log ⁡N)$；
+	1. 若 $f(N)=O(N^{\log_{⁡b}a−\epsilon}),\text{ for }\epsilon>0$，那么 $T(N)=\Theta(N^{\log_{⁡b}a})$；
+	2. 若 $f(N)=\Theta(N^{\log_{⁡b}a})$，那么 $T(N)=\Theta(N^{\log_{b}a}\log ⁡N)$；
 	3. 若 $f(N)=\Omega(N^{log⁡_{b}a+\epsilon}),\text{ for }\epsilon>0$ 且 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$，那么 $T(N)=\Theta(f(N))$；
 	
 	其中 $af(\frac{N}{b})<cf(N),\text{ for }c<1\text{ and }\forall N>N_0$ 又叫 Regularity Condition.
@@ -208,8 +208,8 @@ $$
 		- ......
 		- 第 j 层一共 $a^j$ 项，combine 的开销为 $a^j×f(\frac{N}{b^j})$；
 		- ......
-		- 第 $\log_{⁡b}N−1$ 层一共 $a^{\log_{⁡b}N−1}$ 项，combine 的开销为 $a^{\log_⁡{b}N)−1}×f(\frac{N}{b^{\log_⁡{b}N−1}})$；
-		- 第 $\log_{⁡b}N$ 层，即为叶子层，一共 $a^{\log_⁡{b}N}=N^{\log_⁡{b}a}$ 项，conquer 的开销为 $N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})$；
+		- 第 $\log_{⁡b}N−1$ 层一共 $a^{\log_{⁡b}N−1}$ 项，combine 的开销为 $a^{\log_{b}N−1}×f(\frac{N}{b^{\log_{b}N−1}})$；
+		- 第 $\log_{⁡b}N$ 层，即为叶子层，一共 $a^{\log_{b}N}=N^{\log_{b}a}$ 项，conquer 的开销为 $N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})$；
 		
 		得到求和式：
 		
@@ -217,7 +217,7 @@ $$
 		T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
 		$$
 		
-		而我们有条件 $f(N)=O(N^{\log_⁡{b}a−\epsilon}),\text{ for }\epsilon>0$，将它代入到上式中得到：
+		而我们有条件 $f(N)=O(N^{\log_{b}a−\epsilon}),\text{ for }\epsilon>0$，将它代入到上式中得到：
 		
 		$$
 		\begin{aligned}
@@ -308,8 +308,8 @@ $$
 
 	对于形如 $T(N)=aT(\frac{N}{b})+f(N)$ 的递推式：
 	
-	1. 若 $af(\frac{N}{b})=\kappaf(N)\text{ for fixed }\kappa<1$，那么 $T(N)=\Theta(f(N))$；
-	2. 若 $af(\frac{N}{b})=\kappaf(N)\text{ for fixed }\kappa>1$，那么 T(N)=\Theta(N^{\log_{⁡b}a})=\Theta(a^{\log_{⁡b}N})；
+	1. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa <1$，那么 $T(N)=\Theta(f(N))$；
+	2. 若 $af(\frac{N}{b})=\kappa f(N)\text{ for fixed }\kappa >1$，那么 T(N)=\Theta(N^{\log_{⁡b}a})=\Theta(a^{\log_{⁡b}N})；
 	3. 若 $af(\frac{N}{b})=f(N)$，那么 $T(N)=\Theta(f(N)log_{⁡b}N)$；
 
 !!! note "Proof of Form 2"
@@ -325,3 +325,14 @@ $$
 	$$
 	
 	于是，我们有：
+	
+	$$
+	\begin{aligned}
+	T(N)&<\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}c^jf(N)\\
+	&=\Theta(N^{\log_{b}a})+f(N)\sum\limits_{j=0}^{\log_{b}N-1}c^j\\
+	&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-c^{\log_{b}N}}{1-c}\\
+	&=\Theta(N^{\log_{b}a})+f(N)\times\frac{1-N^{\log_{b}c}}{1-c}
+	\end{aligned}
+	$$
+	
+	
