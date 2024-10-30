@@ -173,12 +173,12 @@ nav:
       - Crypto:
         - "Crypto｜ezxor": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md
         - "Crypto｜Shad0wTime": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-2.md
-  - Internship:
-    - 大模型: 
-      - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
-    - API 接口测试: 
-      - 接口测试: blog/Internship/MeterSphere 使用手册.md
-      - 压力测试: blog/Internship/Locust 压力测试工具使用手册.md
+  # - Internship:
+  #   - 大模型: 
+  #     - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
+  #   - API 接口测试: 
+  #     - 接口测试: blog/Internship/MeterSphere 使用手册.md
+  #     - 压力测试: blog/Internship/Locust 压力测试工具使用手册.md
   - Others:
     - 大学英语IV｜College English Band IV: 
       - blog/Others/College English Band IV/index.md
