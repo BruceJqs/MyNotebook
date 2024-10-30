@@ -308,7 +308,7 @@ Booth's Algorithm 也能应用于负数。
 - 余数的符号位和被除数的符号位相同
 - 余数的绝对值不超过除数的绝对值
 
-![[Pasted image 20241030100345.png]]
+![](../../../assets/Pasted%20image%2020241030100345.png)
 ***
 ### Faster Division
 

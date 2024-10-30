@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3"
+              "title": "Lesson 7"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 3"
+              "title": "Backlinks for Lesson 7"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 3"
+              "title": "Outgoing links from Lesson 7"
             }
           },
           {
@@ -139,14 +139,24 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 3.md"
+                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 3"
+              "title": "Outline of Lesson 7"
+            }
+          },
+          {
+            "id": "2bf18e13c8bc061b",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -164,18 +174,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "51c73c00f3b383a0",
+  "active": "2bf18e13c8bc061b",
   "lastOpenFiles": [
+    "docs/blog/Others/TOEFL Reading/index.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 7.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 6.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/assets/Pasted image 20241030110947.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20241030105729.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20241030105305.png",
     "docs/assets/Pasted image 20241030104706.png",
     "docs/assets/Pasted image 20241030103741.png",
     "docs/assets/Pasted image 20241030100345.png",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
@@ -194,14 +208,10 @@
     "docs/blog/CTF/2023-2024暑短学期/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md",
-    "docs/blog/Math/Discrete mathmatics/index.md",
     "docs/assets/Pasted image 20241029114339.png",
     "docs/assets/Pasted image 20241029111708.png",
     "docs/assets/Pasted image 20241029110835.png",
     "docs/assets/Pasted image 20241029105421.png",
-    "docs/assets/Pasted image 20241029105248.png",
-    "docs/assets/Pasted image 20241029100854.png",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto",
     "docs/blog/CTF/2024.10 ZJUCTF",

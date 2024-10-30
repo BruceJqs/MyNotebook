@@ -10,17 +10,26 @@ comments: true
 
 ## Introduction
 
-![](../../../assets/Pasted%20image%2020241012150957.png)
+**指令集**(Instruction Set)：一组能被特定架构理解的指令，常见的指令集有 RISC-V，Intel x86，MIPS。
 
-![](../../../assets/Pasted%20image%2020241012151047.png)
+当下计算机建立在两个关键原则（即存储程序概念，Stored-Program Concept）：
+- 指令用数字来表示
+- 程序就像数字一样存储在内存中，可用来被读取或写入
 
-![](../../../assets/Pasted%20image%2020241012151133.png)
+![](../../../assets/Pasted%20image%2020241030110947.png)
+
+在 RISC-V 汇编语言中，用`//`表示注释，用法与 C,C++ 的相同。
+
+设计原则：
+- `Simplicity favors regularity`
+	- 规律性（Regularity）使实现更简单
+	- 简单性（Simplicity）以更低的成本实现更高的性能
+- `Smaller is faster`
+- `Good design demands good compromises`
+- `Make Common Case Fast`
 ***
 ## Operations of the Computer Hardware
 
-- 设计原则 1：`Simplicity favors regularity`
-	- 规律性使实现更简单
-	- 简单性以更低的成本实现更高的性能
 ### Arithmetic
 
 ![](../../../assets/Pasted%20image%2020241012151827.png)
@@ -29,21 +38,23 @@ comments: true
 
 ### RISC-V Registers
 
-RISC-V architecture 提供 32 个数据寄存器，分别命名为 `x0` ~ `x31` ，每个寄存器的大小是 `64` 位。在 RISC-V architecture 中，一个 **word** 为 32 位，一个 **doubleword** 为 64 位。这些寄存器中的一部分有专门的用途。
+RISC-V architecture 提供 32 个数据寄存器，分别命名为 `x0` ~ `x31` ，每个寄存器的大小是 `64` 位。在 RISC-V architecture 中，一个 **word（字）** 为 32 位，一个 **doubleword（双字）** 为 64 位。这些寄存器中的一部分有专门的用途。
 
-RISC-V architecture 也提供一系列浮点数寄存器 `f0` ~ `f31` ，这不是我们讨论的重点。
+RISC-V architecture 也提供一系列浮点数寄存器 `f0` ~ `f31`。
 
-- 设计原则 2：`Smaller is faster`
+之所以寄存器的个数不多，是因为过多的寄存器会增加电子信号的传播距离，从而导致时钟周期的延长。
 
 ![](../../../assets/Pasted%20image%2020241012152104.png)
 
-- 其中 "preserved on call" 的意思是，是否保证调用前后这些寄存器的值不变。
+- `x0` 的值恒为 0
+- Preserved on call 意为是否保证调用前后这些寄存器的值不变。
+- 将不常用的（或之后用到的）变量放入内存的过程被称为溢出寄存器 (Spilling Register)
 
-![](../../../assets/Pasted%20image%2020241012154329.png)
+由于寄存器的大小和数量有限，因此对于更复杂的数据结构（比如数组和结构体等），寄存器无法直接保存它们的内容。因此小规模的数据会放在寄存器内，而更大规模的数据则会存储在计算机的**内存**(memory) 中（这就需要有寄存器和内存之间的数据传输）。
 ***
 ### Memory Operands
 
-RISC-V architecture 的地址是 64 位的，地址为字节地址，因此总共可以寻址 264 个字节，即 261 个 dword (doubleword, 下同)，因为一个 dword 占 log2⁡648=3 位。
+RISC-V architecture 的地址是 64 位的，地址为字节地址，因此总共可以寻址 $2^{64}$ 个字节，即 $2^{61}$ 个 dword (doubleword, 下同)，因为一个 dword 占 $\log_{2}\frac{⁡64}{8}=3$ 位。
 
 在一些 architecture 中，word 的起始地址必须是 word 大小的整倍数，dword 也一样，这种要求称为 **alignment restriction**。RISC-V 允许不对齐的寻址，但是效率会低。
 
@@ -61,15 +72,14 @@ RISC-V 支持 PC relative 寻址、立即数寻址 ( `lui` )、间接寻址 (�
 
 ![](../../../assets/Pasted%20image%2020241012154504.png)
 
-- 寄存器和内存：
+寄存器和内存的区别：
+- 寄存器存储空间小，内存存储空间大
+- 各种操作与运算都只能在寄存器内完成
+- 寄存器有着更快的运行速度和更高的吞吐量，使得访问寄存器内的数据更加迅速和方便，且访问寄存器的能耗更低；而访问内存需要 `load` 和 `store` 指令，那么就需要执行更多的指令
 
-![](../../../assets/Pasted%20image%2020241012154651.png)
-
-- 常数处理：
+常数处理：
 
 ![](../../../assets/Pasted%20image%2020241012154748.png)
-
-- 设计原则 3：`Make Common Case Fast`
 
 ![](../../../assets/Pasted%20image%2020241012154844.png)
 ***
