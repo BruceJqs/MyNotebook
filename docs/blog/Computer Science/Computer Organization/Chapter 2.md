@@ -36,20 +36,20 @@ comments: true
 - 加法
     - `add`：寄存器 1 + 寄存器 2
     
-	```RISC-V
+	```
 	add reg1, reg2, reg3    // (in C) reg1 = reg2 + reg3
 	```
     
     - `addi`(Add Immediate)：寄存器 + 常量
     
-    ```RISC-V
+    ```
     addi reg1, reg2, const  // (in C) reg1 = reg2 + const
     ```
 
 - 减法
     - `sub`：寄存器 1 - 寄存器 2
     
-	```RISC-V
+	```
     sub reg1, reg2, reg3    // (in C) reg1 = reg2 - reg3
     ```
     
