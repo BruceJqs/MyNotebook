@@ -1209,27 +1209,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#floating-point-addition" class="md-nav__link">
     <span class="md-ellipsis">
-      浮点加法
+      Floating-Point Addition
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#floating-point-multiplication" class="md-nav__link">
     <span class="md-ellipsis">
-      浮点乘法
+      Floating-Point Multiplication
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#accurate-arithmetic" class="md-nav__link">
     <span class="md-ellipsis">
-      精确算术
+      Accurate Arithmetic
     </span>
   </a>
   
@@ -1237,6 +1237,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fallacies-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fallacies and Pitfalls
+    </span>
+  </a>
   
 </li>
       
@@ -4710,27 +4719,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#floating-point-addition" class="md-nav__link">
     <span class="md-ellipsis">
-      浮点加法
+      Floating-Point Addition
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#floating-point-multiplication" class="md-nav__link">
     <span class="md-ellipsis">
-      浮点乘法
+      Floating-Point Multiplication
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#accurate-arithmetic" class="md-nav__link">
     <span class="md-ellipsis">
-      精确算术
+      Accurate Arithmetic
     </span>
   </a>
   
@@ -4738,6 +4747,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fallacies-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fallacies and Pitfalls
+    </span>
+  </a>
   
 </li>
       
@@ -4974,6 +4992,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <p>仔细想想就会发现其实很合理，对于正数，其最高位一定是 <code>0</code>，因此不管怎么样它最终都会匹配到一个 <code>01</code> 的模式，来给一个 <code>1111..</code> 收尾。但是负数不然，负数的最高位是 <code>1</code>，这也意味着它最终不会执行所谓的 <code>01</code> 对应的加法操作来给 <code>111...</code> 收尾。</p>
 <hr />
 <h3 id="faster-multiplication">Faster Multiplication<a class="headerlink" href="#faster-multiplication" title="Permanent link">&para;</a></h3>
+<p>另一种提升乘法速度的方法是提升加法的速度。用多个 ALU 分层地进行加法运算。对于 64 位的乘法而言，第 1 层用到 32 个 ALU，每个 ALU 计算相邻 2 位的乘数分别与被乘数的乘积之和。这样得到的 32 个和在第二层的 16 个 ALU 中会被再一次汇总，如此下去，最终得到一个总的和。这样原本需要 64 次的加法时间，就缩短到 <span class="arithmatex">\(\log⁡_{2}64=6\)</span> 次，速度得到明显的提升。这种方法体现了<strong>并行</strong>运算的思想。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240923153034.png" /></p>
 <hr />
 <h3 id="risc-v-multiplication">RISC-V Multiplication<a class="headerlink" href="#risc-v-multiplication" title="Permanent link">&para;</a></h3>
@@ -4999,7 +5018,6 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <hr />
 <h2 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h2>
 <p>二进制除法与十进制相同，都可以用竖式解决。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923154525.png" /></p>
 <hr />
 <h3 id="division-v1">Division V1<a class="headerlink" href="#division-v1" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240930134723.png" /></p>
@@ -5034,13 +5052,24 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240930140813.png" /></p>
 <hr />
 <h3 id="signed-division">Signed Division<a class="headerlink" href="#signed-division" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930142225.png" /></p>
+<p>和带符号乘法一样，带符号除法也是先将符号位提取出来，然后做无符号数除法，最后根据两个符号位决定商的符号位。</p>
+<p>但有所不同的是，余数的值有所不同，它遵循以下规则：</p>
+<ul>
+<li>余数的符号位和被除数的符号位相同</li>
+<li>余数的绝对值不超过除数的绝对值</li>
+</ul>
+<p>![[Pasted image 20241030100345.png]]</p>
 <hr />
 <h3 id="faster-division">Faster Division<a class="headerlink" href="#faster-division" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930142327.png" /></p>
+<p>我们不能像乘法运算那样，通过 ALU 的并行计算来提升除法速度，因为中间过程会用到很多减法运算，余数寄存器上的符号位是随时变化的，依赖于运算的顺序，所以只能在最后确定符号位，不能提前计算出来。</p>
+<p>改进措施：<a href="https://en.wikipedia.org/wiki/Division_algorithm#SRT_division">SRT Division</a>，在每一趟循环中尝试预测多个可能的商</p>
 <hr />
 <h3 id="risc-v-division">RISC-V Division<a class="headerlink" href="#risc-v-division" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930142453.png" /></p>
+<ul>
+<li><code>div,rem</code>：有符号求商，求余数</li>
+<li><code>divu,remu</code>：无符号求商，求余数</li>
+</ul>
+<p>值得注意的是，RISC-V 除法不会检测溢出和除 0 情况，只会按照定义给出结果，会比没有错误的除法更快。</p>
 <hr />
 <h2 id="floating-point-numbers">Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -5048,13 +5077,13 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 </blockquote>
 <h3 id="ieee-754-standard">IEEE 754 Standard<a class="headerlink" href="#ieee-754-standard" title="Permanent link">&para;</a></h3>
 <p>我们将小数点左边只有 1 位数字的表示数的方法称为<strong>科学记数法, scientific notation</strong>，而如果小数点左边的数字不是 0，我们称这个数的表示是一个<strong>规格化数, normalized number</strong>。科学记数法能用来表示十进制数，当然也能用来表示二进制数。</p>
-<p>IEEE 754 规定了一种浮点数标准：我们将浮点数表示为 <span class="arithmatex">\((−1)^S×F×2^E\)</span>  的形式，这里的 <span class="arithmatex">\(F×2^E\)</span> 是一个规格化数，而 <span class="arithmatex">\((−1)^S\)</span> 用来表示符号位：<span class="arithmatex">\(S\)</span> 为 <span class="arithmatex">\(0\)</span> 说明该浮点数为正数，为 <span class="arithmatex">\(1\)</span> 则为负数；<span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(E\)</span> 也用若干 bits 表示，分别表示尾数和指数，我们稍后讨论。也就是说，我们将其表示为 <span class="arithmatex">\(1.\text{xxxxx}_2×2^{\text{yyyy}}\)</span> 的形式这意味着我们没法直接通过这种表达形式表示 <span class="arithmatex">\(0\)</span>（为什么小数点左边是 <span class="arithmatex">\(1\)</span> 呢？因为二进制只有 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(1\)</span>，而规格化要求小数点左边不能为 <span class="arithmatex">\(0\)</span>）。我们通过科学记数法调整了小数点的位置使其满足规格化的要求，因此我们称这种数的表示方法为<strong>浮点, floating point</strong>。</p>
+<p>IEEE 754 规定了一种浮点数标准：我们将浮点数表示为 <span class="arithmatex">\((−1)^S×F×2^E\)</span>  的形式，这里的 <span class="arithmatex">\(F×2^E\)</span> 是一个规格化数，而 <span class="arithmatex">\((−1)^S\)</span> 用来表示符号位：<span class="arithmatex">\(S\)</span> 为 <span class="arithmatex">\(0\)</span> 说明该浮点数为正数，为 <span class="arithmatex">\(1\)</span> 则为负数；<span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(E\)</span> 也用若干 bits 表示，分别表示尾数和指数，我们稍后讨论。也就是说，我们将其表示为 <span class="arithmatex">\(1.\text{xxxxx}_2×2^{\text{yyyy}}\)</span> 的形式。这意味着我们没法直接通过这种表达形式表示 <span class="arithmatex">\(0\)</span>（为什么小数点左边是 <span class="arithmatex">\(1\)</span> 呢？因为二进制只有 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(1\)</span>，而规格化要求小数点左边不能为 <span class="arithmatex">\(0\)</span>）。我们通过科学记数法调整了小数点的位置使其满足规格化的要求，因此我们称这种数的表示方法为<strong>浮点, floating point</strong>。</p>
 <p>小数点的英文是 decimal point，但是我们这种表示方法不再是 decimal 的了，因此我们起个新名字：<strong>二进制小数点, binary point</strong>。</p>
 <p>IEEE 754 规定了两种精度的浮点数格式，分别是 single precision 和 double precision（分别对应 C 语言中的 <code>float</code> 和 <code>double</code>），RISC-V 这两种都支持：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240930143302.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240930143322.png" /></p>
 <p>可以看到，fraction 的位数越多，浮点数的精度就越高；而 exponent 的位数越多，浮点数能保存的范围就越大。</p>
-<p>那么对于 <span class="arithmatex">\((−1)^S×F×2^E\)</span>，<span class="arithmatex">\(S\)</span> 的二进制表示方法是显然的，仅需要一个 bit 就好了。那么 <span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(E\)</span> 怎么表示呢？如我们之前所说，<span class="arithmatex">\(F\)</span> 就是 <span class="arithmatex">\(1.\text{xxxxx}_2\)</span> 的形式，这个 <span class="arithmatex">\(1\)</span> 是固定的，因此 <span class="arithmatex">\(F\)</span> 只需要保存 <span class="arithmatex">\(.\text{xxxxx}\)</span> 的部分就可以了（但是请注意，它的权重从左到右分别是 <span class="arithmatex">\(2^{−1},2^{−2},...\)</span>）！那么 <span class="arithmatex">\(E\)</span> 怎么办呢？注意到这个指数在实际使用中可能是正整数、负整数或 0，因此我们使用一个偏移，对单精度浮点数偏移 <span class="arithmatex">\(127\)</span>，双精度浮点数偏移 <span class="arithmatex">\(1023\)</span>（刚好是表示范围的一半！），也就是说我们保存的 <code>exponent</code> 其实是 <span class="arithmatex">\(E+bias\)</span> 的二进制。也就是说，对于这样的一个表示，其值是：</p>
+<p>那么对于 <span class="arithmatex">\((−1)^S×F×2^E\)</span>，<span class="arithmatex">\(S\)</span> 的二进制表示方法是显然的，仅需要一个 bit 就好了。那么 <span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(E\)</span> 怎么表示呢？如我们之前所说，<span class="arithmatex">\(F\)</span> 就是 <span class="arithmatex">\(1.\text{xxxxx}_2\)</span> 的形式，这个 <span class="arithmatex">\(1\)</span> 是固定的，因此 <span class="arithmatex">\(F\)</span> 只需要保存 <span class="arithmatex">\(.\text{xxxxx}\)</span> 的部分就可以了（但是请注意，它的权重从左到右分别是 <span class="arithmatex">\(2^{−1},2^{−2},...\)</span>）那么 <span class="arithmatex">\(E\)</span> 怎么办呢？注意到这个指数在实际使用中可能是正整数、负整数或 0，因此我们使用一个偏移，使得保存的是一个无符号整数，对单精度浮点数偏移 <span class="arithmatex">\(127\)</span>，双精度浮点数偏移 <span class="arithmatex">\(1023\)</span>（刚好是表示范围的一半！），也就是说我们保存的 <code>exponent</code> 其实是 <span class="arithmatex">\(E+bias\)</span> 的二进制。也就是说，对于这样的一个表示，其值是：</p>
 <div class="arithmatex">\[
 (−1)^S⋅(1+\text{fraction})⋅2^{\text{exponent−bias}}
 \]</div>
@@ -5075,16 +5104,16 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <p>范围</p>
 <ul>
 <li>能表示值的 <strong>绝对值</strong> 的范围是 <span class="arithmatex">\(1.0_2×2^{1−\text{bias}}∼1.11…11_2×2^{11…11_2−1−\text{bias}}\)</span>，即 <span class="arithmatex">\(1×2^{1−\text{bias}}∼(2−2^{-\text{Fra}})\times 2^{(2^{\text{Exp}}−1)−1−\text{bias}}\)</span>，其中 <code>Fra</code> 和 <code>Exp</code> 分别表示 fraction 和 exponent 的位数；</li>
-<li>单精度浮点数：<span class="arithmatex">\(±1×2^{−126}∼±(2−2^{−23})×2^{127}\)</span></li>
-<li>双精度浮点数：<span class="arithmatex">\(±1×2^{−1022}∼±(2−2^{−52})×2^{1023}\)</span></li>
+<li>单精度浮点数：<span class="arithmatex">\(±1×2^{−126}∼±(2−2^{−23})×2^{127}\approx ±1.2×10^{−38}∼±3.4×10^{+38}\)</span></li>
+<li>双精度浮点数：<span class="arithmatex">\(±1×2^{−1022}∼±(2−2^{−52})×2^{1023}\approx ±2.2×10^{−308}∼±1.8×10^{+308}\)</span></li>
+</ul>
+</li>
 <li>
 <p>精度</p>
-</li>
-<li>
-<p><span class="arithmatex">\(2^{-Fra}\)</span></p>
-</li>
-<li>单精度浮点数：<span class="arithmatex">\(2^{−23}\)</span></li>
-<li>双精度浮点数：<span class="arithmatex">\(2^{−52}\)</span></li>
+<ul>
+<li><span class="arithmatex">\(2^{-Fra}\)</span></li>
+<li>单精度浮点数：<span class="arithmatex">\(2^{−23}\)</span>（约为 <span class="arithmatex">\(23\times\log_{10}2\approx 23\times 0.3\approx 6\)</span> 位十进制小数位精度）</li>
+<li>双精度浮点数：<span class="arithmatex">\(2^{−52}\)</span>（约为 <span class="arithmatex">\(52\times\log_{10}2\approx 52\times 0.3\approx 16\)</span> 位十进制小数位精度）</li>
 </ul>
 </li>
 </ul>
@@ -5092,7 +5121,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <p>有时候题目里会出不同的浮点数表示法，让你比较精度，此时一般指的是，fraction + exponent 总位数相同的情况下，fraction 更多的一般更精确，也就是说这个精度更倾向于“能表示更多的小数位”。</p>
 </blockquote>
 <hr />
-<h3 id="_1">浮点加法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="floating-point-addition">Floating-Point Addition<a class="headerlink" href="#floating-point-addition" title="Permanent link">&para;</a></h3>
 <p>以 <span class="arithmatex">\(1.000_2×2^{−1}−1.110_2×2^{−2}\)</span> 为例， 浮点数的加减法分为以下几步：</p>
 <ol>
 <li>
@@ -5107,30 +5136,59 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
 <li>Normalization: 将结果规格化：<span class="arithmatex">\(0.001×2^{−1}=1.000×2^{−4}\)</span>；同时需要检查是否出现 overflow 或者 underflow，如果出现则触发 Exception</li>
 <li>Rounding: 将 Fraction 部分舍入到正确位数；舍入结果可能还需要规格化，此时回到步骤 3 继续运行</li>
 </ol>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930145111.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020240930145131.png" /></p>
 <hr />
-<h3 id="_2">浮点乘法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="floating-point-multiplication">Floating-Point Multiplication<a class="headerlink" href="#floating-point-multiplication" title="Permanent link">&para;</a></h3>
 <p>分别处理符号位、exponent 和 fraction：</p>
 <ul>
 <li>将两个 Exponent 相加并 <strong>减去一个 bias</strong>，因为 bias 加了 2 次</li>
 <li>将两个 (1 + Fraction) 相乘，并将其规格化；此时同样要考虑 overflow 和 underflow；然后舍入，如果还需要规格化则重复执行</li>
 <li>根据两个操作数的符号决定结果的符号</li>
 </ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012134900.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241030103741.png" /></p>
 <hr />
-<h3 id="_3">精确算术<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>IEEE 754 规定了一些额外的舍入控制，用来保证舍入的精确性。</p>
-<p><strong>Round modes</strong></p>
+<h3 id="accurate-arithmetic">Accurate Arithmetic<a class="headerlink" href="#accurate-arithmetic" title="Permanent link">&para;</a></h3>
+<p>IEEE 754 标准提供了四种舍入模式 (rounding mode)：</p>
 <ul>
-<li><code>guard</code> / <code>round</code> / <code>sticky</code></li>
+<li>向上取整</li>
+<li>向下取整</li>
+<li>截断取整</li>
+<li>round to nearest even</li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241012134951.png" /></p>
-<p>Round to nearest even 只对 0.5 有效，别的都和四舍五入一样</p>
-<p>一般的浮点数后面还会有 2 bits，分别称为 guard 和 round，其主要目的是让计算结果的舍入更加的精确：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012135027.png" /></p>
+<p>Round to nearest even 只对 0.5 有效，别的都和四舍五入一样。</p>
+<p>其规定了浮点数额外添加 2 位，分别称为 <strong>guard</strong> 和 <strong>round</strong>，这两位数字保留了浮点数计算的中间过程，其主要目的是让计算结果的舍入更加的精确。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>下面左图使用了 guard 和 round，右图没有使用。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241012135027.png" /><img alt="" src="../../../../assets/Pasted%20image%2020241030104706.png" /></p>
+<p>由于规定有效位数为 3 位，因此前者的最终计算结果为 2.37，从而可以看出 guard 和 round 确实能够提升浮点数计算的精度。</p>
+</div>
 <p>事实上加法只需要用到 guard，但是对于乘法，如果存在前导 0，需要将结果左移，这时候 round bit 就成了有效位，能避免精度的损失。</p>
 <p>另外还有一个位叫 sticky bit，其定义是：只要 round 右边出现过非零位，就将 sticky 置 1，这一点可以用在加法的右移中，可以记住是否有 1 被移出，从而能够实现 "round to nearest even"。</p>
+<p>RISC-V 浮点数相关汇编操作数和指令如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241030105305.png" /></p>
+<h2 id="fallacies-and-pitfalls">Fallacies and Pitfalls<a class="headerlink" href="#fallacies-and-pitfalls" title="Permanent link">&para;</a></h2>
+<ul>
+<li>将一个数右移就相当于对这个数整除以 2<ul>
+<li>这个结论对于无符号数是成立的，但是对于带符号数，如果整体向右移一位，符号位也会跟着右移，那么最高位就会变成 0，导致负数变成了正数</li>
+<li>解决方法：右移符号位 1 的时候，符号位左边的数均为 1，这样保证结果仍然是一个负数，但是这样实现的整除精度不是很高</li>
+</ul>
+</li>
+<li>浮点数没有结合律 (associative)，即对于浮点数 <span class="arithmatex">\(a,b,c,c+(a+b)\not=(c+a)+b\)</span></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241030105729.png" /></p>
+<p>上图第二行等号左边括号打错了（）</p>
+<p>可以看到，使用结合律后，计算结果就完全不一样了</p>
+</div>
+<ul>
+<li>适用于整数的并行计算也同样适用于浮点数<ul>
+<li>并行计算的实现依赖于结合律，因此浮点数无法进行并行计算</li>
+</ul>
+</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5200,7 +5258,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 11:42:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月30日 10:58:56</span>
   </span>
 
     
@@ -5221,6 +5279,38 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
     
 
     <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
