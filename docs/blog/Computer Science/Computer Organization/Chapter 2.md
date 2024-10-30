@@ -21,6 +21,7 @@ comments: true
 在 RISC-V 汇编语言中，用`//`表示注释，用法与 C,C++ 的相同。
 
 设计原则：
+
 - `Simplicity favors regularity`
 	- 规律性（Regularity）使实现更简单
 	- 简单性（Simplicity）以更低的成本实现更高的性能
@@ -32,7 +33,28 @@ comments: true
 
 ### Arithmetic
 
-![](../../../assets/Pasted%20image%2020241012151827.png)
+- 加法
+    - `add`：寄存器 1 + 寄存器 2
+    
+	```RISC-V
+	add reg1, reg2, reg3    // (in C) reg1 = reg2 + reg3
+	```
+    
+    - `addi`(Add Immediate)：寄存器 + 常量
+    
+    ```RISC-V
+    addi reg1, reg2, const  // (in C) reg1 = reg2 + const
+    ```
+
+- 减法
+    - `sub`：寄存器 1 - 寄存器 2
+    
+	```RISC-V
+    sub reg1, reg2, reg3    // (in C) reg1 = reg2 - reg3
+    ```
+    
+	- 注意：没有`subi`，但是可以通过`addi`一个负常数来实现
+
 ***
 ## Operands of the Computer Hardware
 
@@ -54,9 +76,17 @@ RISC-V architecture 也提供一系列浮点数寄存器 `f0` ~ `f31`。
 ***
 ### Memory Operands
 
-RISC-V architecture 的地址是 64 位的，地址为字节地址，因此总共可以寻址 $2^{64}$ 个字节，即 $2^{61}$ 个 dword (doubleword, 下同)，因为一个 dword 占 $\log_{2}\frac{⁡64}{8}=3$ 位。
+由于对数据的各种操作只能在寄存器内完成，而无法在内存中实现，因此数据需要再寄存器和内存之间来回传递，来完成这一传递操作的指令被称为**数据传输指令**(Data Transfer Instructions)。要想访问内存中的某个字或双字，我们需要它们的**地址**(Address)，而这样的地址在内存（可以看作一个很大的一维数组）中作为索引使用，从 0 开始。
+
+RISC-V architecture 的地址是 64 位的，地址为字节地址，每个地址对应一个字节，且内存存储的数据是双字宽度的，因此内存地址是 8 的倍数。总共可以寻址 $2^{64}$ 个字节，即 $2^{61}$ 个 dword (doubleword, 下同)，因为一个 dword 占 $\log_{2}\frac{⁡64}{8}=3$ 位。
+
+![](../../../assets/Pasted%20image%2020241030205741.png)
 
 在一些 architecture 中，word 的起始地址必须是 word 大小的整倍数，dword 也一样，这种要求称为 **alignment restriction**。RISC-V 允许不对齐的寻址，但是效率会低。
+
+!!! note "Alignment Restriction"
+
+	![](../../../assets/Pasted image 20241012154427.png)
 
 RISC-V 使用 **little endian** 小端编址。也就是说，当我们从 0x1000 这个地址读出一个 dword 时，我们读到的实际上是 0x1000~0x1007 这 8 个字节，并将 0x1000 存入寄存器低位，0x1007 存入高位。
 
@@ -68,11 +98,10 @@ RISC-V 支持 PC relative 寻址、立即数寻址 ( `lui` )、间接寻址 (�
 
 ![](../../../assets/Pasted%20image%2020241012152418.png)
 
-![](../../../assets/Pasted%20image%2020241012154427.png)
-
 ![](../../../assets/Pasted%20image%2020241012154504.png)
 
 寄存器和内存的区别：
+
 - 寄存器存储空间小，内存存储空间大
 - 各种操作与运算都只能在寄存器内完成
 - 寄存器有着更快的运行速度和更高的吞吐量，使得访问寄存器内的数据更加迅速和方便，且访问寄存器的能耗更低；而访问内存需要 `load` 和 `store` 指令，那么就需要执行更多的指令

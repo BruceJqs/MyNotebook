@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lesson 7"
+              "title": "Chapter 2"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Lesson 7"
+              "title": "Backlinks for Chapter 2"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Lesson 7"
+              "title": "Outgoing links from Chapter 2"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/TOEFL Reading/Lesson 7.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 2.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Lesson 7"
+              "title": "Outline of Chapter 2"
             }
           },
           {
@@ -156,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -176,14 +176,15 @@
   },
   "active": "51c73c00f3b383a0",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241030205741.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/Lesson 5.md",
     "docs/blog/Others/TOEFL Reading/Lesson 6.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/assets/Pasted image 20241030110947.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/assets/Pasted image 20241030105729.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/assets/Pasted image 20241030105305.png",
@@ -207,7 +208,6 @@
     "docs/blog/CTF/2023-2024暑短学期/Lab3-Crypto Report.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md",
     "docs/blog/CTF/2023-2024暑短学期/index.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/assets/Pasted image 20241029114339.png",
     "docs/assets/Pasted image 20241029111708.png",
     "docs/assets/Pasted image 20241029110835.png",
