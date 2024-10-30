@@ -34,3 +34,4 @@ comments: true
 - [Crypto-5｜baby_equation](Crypto/Crypto-5/)
 - [Crypto-6｜大白兔](Crypto/Crypto-6/)
 - [Crypto-7｜More_secure_RSA](Crypto/Crypto-7/)
+- [Crypto-8｜ezlegendre](Crypto/Crypto-8/)
