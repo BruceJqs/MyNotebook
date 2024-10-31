@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 3"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for Chapter 3"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from Chapter 3"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.9 MoeCTF/index.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 3"
             }
           },
           {
@@ -176,6 +176,9 @@
   },
   "active": "51c73c00f3b383a0",
   "lastOpenFiles": [
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-8.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-7.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
@@ -194,7 +197,6 @@
     "docs/assets/Pasted image 20241030103741.png",
     "docs/assets/Pasted image 20241030100345.png",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
@@ -207,8 +209,6 @@
     "docs/blog/CTF/2023-2024暑短学期/Lab1-Web Report.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab2-Crypto Report.md",
     "docs/blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md",
-    "docs/blog/CTF/2023-2024暑短学期/Lab3-Crypto Report.md",
-    "docs/blog/CTF/2023-2024暑短学期/Lab3-Misc Report.md",
     "docs/assets/Pasted image 20241029114339.png",
     "docs/assets/Pasted image 20241029111708.png",
     "docs/assets/Pasted image 20241029110835.png",
