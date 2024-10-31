@@ -195,10 +195,10 @@ $$
 设 $X,Y$ 是两个<font color="red">相互独立</font>的随机变量，他们的分布函数分别为 $F_X(x)$ 和 $F_Y(y)$ ，现在来求 $M,N$ 的分布函数 $F_{\text{max}}(z)$ 和 $F_{\text{min}}(z)$ 的值。
 
 $$
-\begin{flalign}
-&F_{\max}(z)=P(M\leq z)=P(X\leq z,Y\leq z)=P(X\leq z)P(Y\leq z)\\
-&F_{\min}(z)=P(N\leq z)=1-P(N>z)=1-P(X>z,Y>z)=1-P(X>z)P(Y>z)
-\end{flalign}
+\begin{aligned}
+F_{\max}(z)&=P(M\leq z)=P(X\leq z,Y\leq z)=P(X\leq z)P(Y\leq z)\\
+F_{\min}(z)&=P(N\leq z)=1-P(N>z)=1-P(X>z,Y>z)=1-P(X>z)P(Y>z)
+\end{aligned}
 $$
 
 即 $F_{\max}(z)=F_X(z)F_Y(z),F_{\min}(z)=1-(1-F_X(z))(1-F_Y(z))$
@@ -206,10 +206,10 @@ $$
 一般地，推广到 $n$ 个相互独立的随机变量的情况，设 $X_1,X_2,...,X_n$ 是 $n$ 个<font color="red">相互独立</font>的随机变量，他们的分布函数分别为 $F_{X_i}(x_i),i=1,2,...,n$ ，则 $M=\max\limits_{1\leq i\leq n}X_i$ 和 $N=\min\limits_{1\leq i\leq n}X_i$ 的分布函数 $F_{\max}(z)$ 和 $F_{\min}(z)$ 为：
 
 $$
-\begin{flalign}
-&F_{\max}(z)=F_{X_1}(z)F_{X_2}(z)...F_{X_n}(z)\\
-&F_{\min}(z)=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]...[1-F_{X_n}(z)]
-\end{flalign}
+\begin{aligned}
+F_{\max}(z)&=F_{X_1}(z)F_{X_2}(z)...F_{X_n}(z)\\
+F_{\min}(z)&=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]...[1-F_{X_n}(z)]
+\end{aligned}
 $$
 
 
