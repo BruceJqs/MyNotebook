@@ -2260,7 +2260,7 @@
           <li class="md-nav__item">
   <a href="#mmaxx-y-nminx-y" class="md-nav__link">
     <span class="md-ellipsis">
-      \(M=\max(X, Y), N=\min(X, Y)\) 的分布
+      M=max(X, Y), N=min(X, Y) 的分布
     </span>
   </a>
   
@@ -4345,7 +4345,7 @@
           <li class="md-nav__item">
   <a href="#mmaxx-y-nminx-y" class="md-nav__link">
     <span class="md-ellipsis">
-      \(M=\max(X, Y), N=\min(X, Y)\) 的分布
+      M=max(X, Y), N=min(X, Y) 的分布
     </span>
   </a>
   
@@ -4536,21 +4536,21 @@ F_Z(z)&amp;=\iint\limits_{x+y\leq z}f(x,y)dxdy=\int_{-\infty}^{+\infty}[\int_{-\
 </div>
 </div>
 </div>
-<h3 id="mmaxx-y-nminx-y"><span class="arithmatex">\(M=\max(X, Y), N=\min(X, Y)\)</span> 的分布<a class="headerlink" href="#mmaxx-y-nminx-y" title="Permanent link">&para;</a></h3>
+<h3 id="mmaxx-y-nminx-y">M=max(X, Y), N=min(X, Y) 的分布<a class="headerlink" href="#mmaxx-y-nminx-y" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(X,Y\)</span> 是两个<font color="red">相互独立</font>的随机变量，他们的分布函数分别为 <span class="arithmatex">\(F_X(x)\)</span> 和 <span class="arithmatex">\(F_Y(y)\)</span> ，现在来求 <span class="arithmatex">\(M,N\)</span> 的分布函数 <span class="arithmatex">\(F_{\text{max}}(z)\)</span> 和 <span class="arithmatex">\(F_{\text{min}}(z)\)</span> 的值。</p>
 <div class="arithmatex">\[
-\begin{gather}
-F_{\max}(z)=P(M\leq z)=P(X\leq z,Y\leq z)=P(X\leq z)P(Y\leq z)\\
-F_{\min}(z)=P(N\leq z)=1-P(N&gt;z)=1-P(X&gt;z,Y&gt;z)=1-P(X&gt;z)P(Y&gt;z)
-\end{gather}
+\begin{flalign}
+&amp;F_{\max}(z)=P(M\leq z)=P(X\leq z,Y\leq z)=P(X\leq z)P(Y\leq z)\\
+&amp;F_{\min}(z)=P(N\leq z)=1-P(N&gt;z)=1-P(X&gt;z,Y&gt;z)=1-P(X&gt;z)P(Y&gt;z)
+\end{flalign}
 \]</div>
 <p>即 <span class="arithmatex">\(F_{\max}(z)=F_X(z)F_Y(z),F_{\min}(z)=1-(1-F_X(z))(1-F_Y(z))\)</span></p>
 <p>一般地，推广到 <span class="arithmatex">\(n\)</span> 个相互独立的随机变量的情况，设 <span class="arithmatex">\(X_1,X_2,...,X_n\)</span> 是 <span class="arithmatex">\(n\)</span> 个<font color="red">相互独立</font>的随机变量，他们的分布函数分别为 <span class="arithmatex">\(F_{X_i}(x_i),i=1,2,...,n\)</span> ，则 <span class="arithmatex">\(M=\max\limits_{1\leq i\leq n}X_i\)</span> 和 <span class="arithmatex">\(N=\min\limits_{1\leq i\leq n}X_i\)</span> 的分布函数 <span class="arithmatex">\(F_{\max}(z)\)</span> 和 <span class="arithmatex">\(F_{\min}(z)\)</span> 为：</p>
 <div class="arithmatex">\[
-\begin{gather}
-F_{\max}(z)=F_{X_1}(z)F_{X_2}(z)...F_{X_n}(z)\\
-F_{\min}(z)=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]...[1-F_{X_n}(z)]
-\end{gather}
+\begin{flalign}
+&amp;F_{\max}(z)=F_{X_1}(z)F_{X_2}(z)...F_{X_n}(z)\\
+&amp;F_{\min}(z)=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]...[1-F_{X_n}(z)]
+\end{flalign}
 \]</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -4621,7 +4621,7 @@ F_{\min}(z)=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]...[1-F_{X_n}(z)]
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月31日 14:35:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月31日 14:39:54</span>
   </span>
 
     
