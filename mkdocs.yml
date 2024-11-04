@@ -240,8 +240,6 @@ extra:
 plugins:
   # - rss
   - search #搜索配置
-  - heti:
-    disable_serve: true
   - git-committers:
       enabled: !ENV [CI, false]
       repository: BruceJqs/MyNotebook

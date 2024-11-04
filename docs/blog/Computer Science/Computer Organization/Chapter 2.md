@@ -229,7 +229,7 @@ inst rs1, rs2, L1
 - `bge`(Branch If Greater Than or Equal)：如果寄存器`rs1`的值**大于等于**`rs2`的值，那么跳转至带标签`L1`的语句
     - `bgeu`：无符号版本
 ***
-### If & If-Else
+### If & If-Else & Case-Switch
 
 !!! note "Branch Instructions"
 
@@ -240,7 +240,22 @@ inst rs1, rs2, L1
 	=== "If-Else"
 	
 		![](../../../assets/Pasted image 20241014140206.png)
-
+	
+	=== "Case-Switch"
+	
+		对于`case/switch`语句，我们可以使用一张放有可选指令序列地址的表格（称为**分支地址表**，Branch Address Table），这样的话程序就可以根据条件判断的结果，通过表格的索引找到合适的指令序列。
+		
+		![](../../../assets/Pasted image 20241104144258.png)
+		
+		!!! Example
+		
+			=== "Question"
+			
+				![](../../../assets/Pasted image 20241104144608.png)
+				
+			=== "Answer"
+			
+				![](../../../assets/Pasted image 20241014142612.png)
 ### Loops
 
 !!! note "Loops"
@@ -256,18 +271,6 @@ inst rs1, rs2, L1
 ### Set on less than
 
 ![](../../../assets/Pasted%20image%2020241014140558.png)
-
-### Others
-
-![](../../../assets/Pasted%20image%2020241014140635.png)
-
-![](../../../assets/Pasted%20image%2020241014142401.png)
-
-![](../../../assets/Pasted%20image%2020241014142453.png)
-
-![](../../../assets/Pasted%20image%2020241014142531.png)
-
-![](../../../assets/Pasted%20image%2020241014142612.png)
 
 ### Basic Blocks
 
