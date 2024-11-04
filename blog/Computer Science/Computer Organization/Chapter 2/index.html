@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
@@ -990,25 +990,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signed-and-unsigned-numbers" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#constant-or-immediate-operands" class="md-nav__link">
     <span class="md-ellipsis">
-      Signed and unsigned numbers
+      Constant or Immediate Operands
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Signed and unsigned numbers">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#2s-complement" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      2's complement
+      Summary
     </span>
   </a>
   
@@ -1016,15 +1010,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#representing-instructions-in-the-computer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Representing Instructions in the computer
-    </span>
-  </a>
   
 </li>
       
@@ -1118,6 +1103,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representing-instructions-in-the-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representing Instructions in the computer
+    </span>
+  </a>
   
 </li>
       
@@ -1359,7 +1353,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#summary_1" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
     </span>
@@ -4435,25 +4429,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signed-and-unsigned-numbers" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#constant-or-immediate-operands" class="md-nav__link">
     <span class="md-ellipsis">
-      Signed and unsigned numbers
+      Constant or Immediate Operands
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Signed and unsigned numbers">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#2s-complement" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      2's complement
+      Summary
     </span>
   </a>
   
@@ -4461,15 +4449,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#representing-instructions-in-the-computer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Representing Instructions in the computer
-    </span>
-  </a>
   
 </li>
       
@@ -4563,6 +4542,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representing-instructions-in-the-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representing Instructions in the computer
+    </span>
+  </a>
   
 </li>
       
@@ -4804,7 +4792,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#summary_1" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
     </span>
@@ -4846,9 +4834,11 @@
 <h1 id="chapter-2-instructions-language-of-the-machine">Chapter 2 : Instructions : Language of the Machine<a class="headerlink" href="#chapter-2-instructions-language-of-the-machine" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p><strong>指令集</strong>(Instruction Set)：一组能被特定架构理解的指令，常见的指令集有 RISC-V，Intel x86，MIPS。</p>
-<p>当下计算机建立在两个关键原则（即存储程序概念，Stored-Program Concept）：
-- 指令用数字来表示
-- 程序就像数字一样存储在内存中，可用来被读取或写入</p>
+<p>当下计算机建立在两个关键原则（即存储程序概念，Stored-Program Concept）：</p>
+<ul>
+<li>指令用数字来表示</li>
+<li>程序就像数字一样存储在内存中，可用来被读取或写入</li>
+</ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241030110947.png" /></p>
 <p>在 RISC-V 汇编语言中，用<code>//</code>表示注释，用法与 C,C++ 的相同。</p>
 <p>设计原则：</p>
@@ -4921,22 +4911,43 @@
 </blockquote>
 <p>RISC-V 支持 PC relative 寻址、立即数寻址 ( <code>lui</code> )、间接寻址 ( <code>jalr</code> )、基址寻址 ( <code>8(sp)</code> )：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241012152418.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012154504.png" /></p>
-<p>寄存器和内存的区别：</p>
+<p>RISC-V 有以下数据传输指令：</p>
 <ul>
-<li>寄存器存储空间小，内存存储空间大</li>
-<li>各种操作与运算都只能在寄存器内完成</li>
-<li>寄存器有着更快的运行速度和更高的吞吐量，使得访问寄存器内的数据更加迅速和方便，且访问寄存器的能耗更低；而访问内存需要 <code>load</code> 和 <code>store</code> 指令，那么就需要执行更多的指令</li>
+<li>
+<p><code>ld</code>（Load Doubleword）：加载指令，将数据从内存拷贝到寄存器当中</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>ld reg, offset(mem_base_addr)
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>// reg: 寄存器
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>// mem_base_addr: 一个保存内存基础地址的寄存器（可以理解为能访问到整个内存的头指针）
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>// offset: 偏移量，是一个常数
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>内存数据的实际地址 = <code>mem_base_addr + offset</code></li>
 </ul>
-<p>常数处理：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012154748.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012154844.png" /></p>
-<hr />
-<h2 id="signed-and-unsigned-numbers">Signed and unsigned numbers<a class="headerlink" href="#signed-and-unsigned-numbers" title="Permanent link">&para;</a></h2>
-<h3 id="2s-complement">2's complement<a class="headerlink" href="#2s-complement" title="Permanent link">&para;</a></h3>
+</li>
+<li>
+<p><code>sd</code>（Store Doubleword）：存储指令，将寄存器的数据拷贝到内存中</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sd reg, offset(mem_base_addr)
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>// reg: 寄存器
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>// mem_base_addr: 内存基础地址寄存器
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>// offset: 偏移量
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><code>lbu</code>(Load Byte Unsigned)：加载 1 字节的数据，并看作无符号数</p>
+</li>
+<li><code>lb</code>(Load Byte)：<code>lbu</code>的符号数版本</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">2's complement</p>
 <p><span class="arithmatex">\(x+\overline{x}=111…111_2=−1\)</span>，因此 <span class="arithmatex">\(−x=\overline{x}+1\)</span>。前导 0 表示正数，前导 1 表示负数。</p>
-<p>因此在将不足 64 位的数据载入寄存器时，如果数据是无符号数，只需要使用 0 将寄存器的其他部分填充 (<strong>zero extension</strong>)；而如果是符号数，则需要用最高位即符号位填充剩余部分，称为符号扩展 (<strong>sign extension</strong>)。</p>
-<p>即，在指令中的 <code>lw</code> , <code>lh</code> , <code>lb</code> 使用 sign extension，而 <code>lwu</code> , <code>lhu</code> , <code>lbu</code> 使用 zero extension。</p>
+<p>因此在将不足 64 位的数据载入寄存器时，如果数据是无符号数，只需要使用 0 将寄存器的其他部分填充 (<strong>Zero Extension</strong>)；而如果是符号数，则需要用最高位即符号位填充剩余部分，称为符号扩展 (<strong>Sign Extension</strong>)。</p>
+<p>在指令中的 <code>lw</code> , <code>lh</code> , <code>lb</code> 使用 sign extension，而 <code>lwu</code> , <code>lhu</code> , <code>lbu</code> 使用 zero extension。</p>
 <div class="admonition operations">
 <p class="admonition-title">Operations</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Signed Negation</label><label for="__tabbed_1_2">Sign Extension</label></div>
@@ -4950,30 +4961,57 @@
 </div>
 </div>
 </div>
-<hr />
-<h2 id="representing-instructions-in-the-computer">Representing Instructions in the computer<a class="headerlink" href="#representing-instructions-in-the-computer" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014134049.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012150310.png" /></p>
-<blockquote>
-<p>在 RISC 指令集中，只有 load 系列和 store 系列指令能够访问内存。</p>
-</blockquote>
-<p>RISC-V 的跳转指令的 offset 是基于当前指令的地址的偏移；这不同于其他一些汇编是基于下一条指令的偏移的。即如果是跳转语句 <code>PC</code> 就不 +4 了，而是直接 +offset。</p>
-<p><code>lw</code> , <code>lwu</code> 等操作都会清零高位。</p>
-<p>RISC-V 指令格式如下：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012152951.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014135137.png" /></p>
-<p>其中 <code>I</code> 型指令有两个条目；这是因为立即数移位操作 <code>slli</code> , <code>srli</code> , <code>srai</code> 并不可能对一个 64 位寄存器进行大于 63 位的移位操作，因此 12 位 imm 中只有后 6 位能实际被用到，因此前面 6 位被用来作为一个额外的操作码字段，如上图中第二个 <code>I</code> 条目那样。其他 <code>I</code> 型指令适用第一个 <code>I</code> 条目。</p>
-<p>另外，为什么 <code>SB</code> 和 <code>UJ</code> 不存立即数（也就是偏移）的最低位呢？（关注表格，可以发现只包括 <code>i[12:1]</code> 或者 <code>i[20:1]</code>，缺失 <code>i[0]</code>）因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012153516.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241012154504.png" /></p>
 </div>
+<p>寄存器和内存的区别：</p>
+<ul>
+<li>寄存器存储空间小，内存存储空间大</li>
+<li>各种操作与运算都只能在寄存器内完成</li>
+<li>寄存器有着更快的运行速度和更高的吞吐量，使得访问寄存器内的数据更加迅速和方便，且访问寄存器的能耗更低；而访问内存需要 <code>load</code> 和 <code>store</code> 指令，那么就需要执行更多的指令</li>
+</ul>
+<hr />
+<h3 id="constant-or-immediate-operands">Constant or Immediate Operands<a class="headerlink" href="#constant-or-immediate-operands" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>一般的做法是将常数保存在一个寄存器当中，通过一个地址指针指向这个寄存器，然后通过 <code>add</code> 指令实现加法操作</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>ld x9, AddrConstant4(x3) //x9=constant 4
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>add x22, x22, x9
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>实际上我们可以引入一个新的概念：立即数（Immediate），这样就避免了加载指令（即通过操作 <code>addi x22, x22, 4</code> 即可实现）</p>
+</li>
+<li>不仅如此，对于常数 0，RISC-V 还特意定义了寄存器 x0</li>
+</ul>
+<hr />
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241012154844.png" /></p>
 <hr />
 <h2 id="logical-operations">Logical Operations<a class="headerlink" href="#logical-operations" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014135503.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104134111.png" /></p>
 <hr />
 <h3 id="shift-operations">Shift Operations<a class="headerlink" href="#shift-operations" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014135623.png" /></p>
+<ul>
+<li>
+<p><code>sll</code>/<code>slli</code>，<code>srl</code>/<code>srli</code> 分别为逻辑左移/右移</p>
+<ul>
+<li>左移 <span class="arithmatex">\(i\)</span> 位相当于乘以 <span class="arithmatex">\(2^i\)</span>，右移 <span class="arithmatex">\(i\)</span> 位相当于整除 <span class="arithmatex">\(2^i\)</span></li>
+<li>逻辑右移时最左边补 0</li>
+<li>
+<p>不带<code>i</code>的指令表示根据寄存器的值确定移动位数，带<code>i</code>的指令表示用立即数确定移动位数</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>slli x11, x19, 4    // reg x11 = reg x19 &lt;&lt; 4 bits
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+<li>
+<p><code>sra</code>/<code>srai</code> 为算术右移，最左边补符号位 </p>
+</li>
+</ul>
 <hr />
 <h3 id="bit-operations">Bit Operations<a class="headerlink" href="#bit-operations" title="Permanent link">&para;</a></h3>
 <div class="admonition operations">
@@ -5034,6 +5072,25 @@
 <li>无跳转、分支等指令</li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241014143914.png" /></p>
+<hr />
+<h2 id="representing-instructions-in-the-computer">Representing Instructions in the computer<a class="headerlink" href="#representing-instructions-in-the-computer" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241014134049.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241012150310.png" /></p>
+<blockquote>
+<p>在 RISC 指令集中，只有 load 系列和 store 系列指令能够访问内存。</p>
+</blockquote>
+<p>RISC-V 的跳转指令的 offset 是基于当前指令的地址的偏移；这不同于其他一些汇编是基于下一条指令的偏移的。即如果是跳转语句 <code>PC</code> 就不 +4 了，而是直接 +offset。</p>
+<p><code>lw</code> , <code>lwu</code> 等操作都会清零高位。</p>
+<p>RISC-V 指令格式如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241012152951.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241014135137.png" /></p>
+<p>其中 <code>I</code> 型指令有两个条目；这是因为立即数移位操作 <code>slli</code> , <code>srli</code> , <code>srai</code> 并不可能对一个 64 位寄存器进行大于 63 位的移位操作，因此 12 位 imm 中只有后 6 位能实际被用到，因此前面 6 位被用来作为一个额外的操作码字段，如上图中第二个 <code>I</code> 条目那样。其他 <code>I</code> 型指令适用第一个 <code>I</code> 条目。</p>
+<p>另外，为什么 <code>SB</code> 和 <code>UJ</code> 不存立即数（也就是偏移）的最低位呢？（关注表格，可以发现只包括 <code>i[12:1]</code> 或者 <code>i[20:1]</code>，缺失 <code>i[0]</code>）因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241012153516.png" /></p>
+</div>
+<hr />
 <h2 id="supporting-procedures-in-computer-hardware">Supporting Procedures in Computer Hardware<a class="headerlink" href="#supporting-procedures-in-computer-hardware" title="Permanent link">&para;</a></h2>
 <ul>
 <li>简单来说，子函数执行完了，把应当有的结果返回给调用它的母函数继续执行</li>
@@ -5107,7 +5164,7 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241028124510.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241028124532.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241028124554.png" /></p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241022115740.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241016110545.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241016110627.png" /></p>
@@ -5184,7 +5241,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月30日 22:52:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月4日 13:44:41</span>
   </span>
 
     
