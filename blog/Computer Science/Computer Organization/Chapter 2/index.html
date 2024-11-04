@@ -4960,7 +4960,7 @@
 <li>
 <p>一般的做法是将常数保存在一个寄存器当中，通过一个地址指针指向这个寄存器，然后通过 <code>add</code> 指令实现加法操作</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>ld x9, AddrConstant4(x3) //x9=constant 4
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>ld x9, AddrConstant4(x3) //x9 = constant 4
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>add x22, x22, x9
 </span></code></pre></div></td></tr></table></div>
 </li>
@@ -5088,26 +5088,102 @@
 </div>
 </div>
 <h3 id="set-on-less-than">Set on less than<a class="headerlink" href="#set-on-less-than" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014140558.png" /></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>slt x5, x19, x20
+</span></code></pre></div></td></tr></table></div>
+<p>这句指令意为如果 x19&lt;x20，那么将 x5 赋值为 1</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104152013.png" /></p>
+</div>
+<hr />
 <h3 id="basic-blocks">Basic Blocks<a class="headerlink" href="#basic-blocks" title="Permanent link">&para;</a></h3>
-<ul>
-<li>无跳转、分支等指令</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014143914.png" /></p>
+<p><strong>基本块</strong>（Basic Blocks）是一个没有内嵌分支（除了在末尾）且没有跳转目标（除非在开头）的指令序列。编译器通过识别出基本块可以进行编译的优化，高级处理器能够加速基本块的执行。</p>
 <hr />
 <h2 id="representing-instructions-in-the-computer">Representing Instructions in the computer<a class="headerlink" href="#representing-instructions-in-the-computer" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014134049.png" /></p>
+<p>因为计算机当中所有的信息均由二进制位来表示，那么我们也应该将指令编码为二进制，记其为机器码（Machine Code）。</p>
+<p>RISC-V 的指令将每条指令都编码为 32 位的 Word，体现了设计原则 "Simplicity favors regularity"</p>
+<p>我们可以把每条指令当作一块块二进制数字构成的组合，而这单块的数字被称为<strong>字段</strong>（Field）。我们为字段赋予了一些名称，每个字段有不同的功能：</p>
+<ul>
+<li><code>opcode</code>：指令要做的运算，可用这个字段区分各种类型的<strong>指令格式</strong>(instruction format)</li>
+<li><code>funct3</code>：额外的<code>opcode</code>字段</li>
+<li><code>funct7</code>：额外的<code>opcode</code>字段</li>
+<li><code>rd</code>：寄存器目标操作数，保存运算的结果</li>
+<li><code>rs1</code>：第一个寄存器源操作数</li>
+<li><code>rs2</code>：第二个寄存器源操作数</li>
+<li><code>immediate</code>：立即数，即常数（在 S-type 中会被拆成两半）</li>
+</ul>
+<p>根据不同的 opcode 我们可以将指令分为 6 种类型，它们的字段构成如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104153010.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Types of Instructions</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:6"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><input id="__tabbed_6_4" name="__tabbed_6" type="radio" /><input id="__tabbed_6_5" name="__tabbed_6" type="radio" /><input id="__tabbed_6_6" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">R-Type</label><label for="__tabbed_6_2">I-Type</label><label for="__tabbed_6_3">S-Type</label><label for="__tabbed_6_4">U-Type</label><label for="__tabbed_6_5">SB-Type</label><label for="__tabbed_6_6">UJ-Type</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>R 型指令一般用于算术、逻辑运算</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104153207.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>I 型指令一般用于加载操作、涉及立即数的算术逻辑运算、<font color="red"><code>jalr</code>指令</font>
+ <img alt="" src="../../../../assets/Pasted%20image%2020241104154627.png" /></p>
+<ul>
+<li>I 型指令有两种分支，这是因为寄存器的大小为 64 位，也就是说对于移位操作 <code>slli</code>，<code>srli</code>和<code>srai</code>，它们最多只能移位 64 位，因此移位操作中<code>immediate</code>字段只有后 6 位能实际被用来存储移位的步数，前 6 位用来存储额外的<code>opcode</code>字段（<code>funct6</code>）</li>
+<li>关于 <code>jalr</code> 指令，如果跳转地址（立即数）过大，超过了 20 位，那么可以先用 <code>lui</code> 指令将高 20 位数字放入临时寄存器中，然后再用 <code>jalr</code> 指令跳转到地址剩余的低位数字(临时寄存器)上</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>S 型指令一般用于存储操作</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104220250.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>U 型指令一般用于与高位立即数相关的操作</p>
+<p>在大多数情况下，立即数不会很大（<span class="arithmatex">\(\leq 2^{12}\)</span>），能够直接存在指令中；但如果超过 12 位，RISC-V 会用 <code>lui</code> (load upper immediate) 指令来处理这类较大的立即数。</p>
+<p>它可以加载立即数的<strong>高 20 位</strong>，将其放入寄存器中间的第 12 位到第 31 位，寄存器的低 12 位用 0 填充，高 32 位用第 31 位上的数字填充。</p>
+<p>例如，要将 32 位立即数赋给寄存器，可以先用<code>lui</code>指令将高 20 位赋给寄存器，之后用<code>addi</code> 指令将剩余的 12 位加到寄存器中。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Question</label><label for="__tabbed_7_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>如何将下列的 64 位立即数放入寄存器<code>x19</code>内？</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104222242.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>先取这个立即数上第 12 位到第 31 位的数字，用指令<code>lui</code>将这些数字放入寄存器<code>x19</code>上的第 12 位到第 31 位</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a>lui x19, 976  // 976 = 0000 0000 0011 1101 0000
+</span></code></pre></div></td></tr></table></div>
+<p>然后将立即数的低 12 位加到寄存器上即可</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>addi x19, x19, 1280  // 1280 = 00000101 00000000
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>SB 型指令一般用于条件分支语句</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104222516.png" /></p>
+<ul>
+<li>可表示的地址范围为 -4096-4094，且都是 2 的倍数（因为立即数第一位恒为 0）</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>UJ 型指令一般用于无条件分支语句（<code>jal</code>）</p>
+<ul>
+<li><code>rd</code>用于存放链接地址（即返回地址）</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241012150310.png" /></p>
 <blockquote>
 <p>在 RISC 指令集中，只有 load 系列和 store 系列指令能够访问内存。</p>
 </blockquote>
-<p>RISC-V 的跳转指令的 offset 是基于当前指令的地址的偏移；这不同于其他一些汇编是基于下一条指令的偏移的。即如果是跳转语句 <code>PC</code> 就不 +4 了，而是直接 +offset。</p>
-<p><code>lw</code> , <code>lwu</code> 等操作都会清零高位。</p>
-<p>RISC-V 指令格式如下：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012152951.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014135137.png" /></p>
-<p>其中 <code>I</code> 型指令有两个条目；这是因为立即数移位操作 <code>slli</code> , <code>srli</code> , <code>srai</code> 并不可能对一个 64 位寄存器进行大于 63 位的移位操作，因此 12 位 imm 中只有后 6 位能实际被用到，因此前面 6 位被用来作为一个额外的操作码字段，如上图中第二个 <code>I</code> 条目那样。其他 <code>I</code> 型指令适用第一个 <code>I</code> 条目。</p>
-<p>另外，为什么 <code>SB</code> 和 <code>UJ</code> 不存立即数（也就是偏移）的最低位呢？（关注表格，可以发现只包括 <code>i[12:1]</code> 或者 <code>i[20:1]</code>，缺失 <code>i[0]</code>）因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。</p>
+<details class="question">
+<summary>为什么 <code>SB</code> 和 <code>UJ</code> 不存立即数（也就是偏移）的最低位呢？</summary>
+<p>关注表格，可以发现只包括 <code>i[12:1]</code> 或者 <code>i[20:1]</code>，缺失 <code>i[0]</code></p>
+<p>这是因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。</p>
+</details>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241012153516.png" /></p>
@@ -5263,7 +5339,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月4日 14:49:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月4日 23:18:54</span>
   </span>
 
     
