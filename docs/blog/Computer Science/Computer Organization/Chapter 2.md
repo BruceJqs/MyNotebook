@@ -200,9 +200,35 @@ RISC-V 有以下数据传输指令：
 	=== "XOR"
 	
 		![](../../../assets/Pasted image 20241014135910.png)
+		
+		- RISC-V 中没有 NOT 指令，因为它可以通过异或表示出来：任何数与 111...111 异或的结果即为该数取反后的结果
+	
+	- AND、OR、XOR 也有立即数版本的指令，分别为：`andi`、`ori`和`xori`
 
 ## Instructions for making decisions
 
+计算机与计算器的一大不同之处在于计算机具备决策的能力：它能够执行分支（条件）语句、循环语句等。在 RISC-V 汇编语言中，关于决策的指令格式均为：
+
+```
+inst rs1, rs2, L1
+```
+
+其中`rs1`、`rs2`是寄存器，`L1`是标签（跳转位置，也可以是立即数 imm，表示跳转到 PC+imm 的指令），`inst`是指令，比较的是补码值。
+
+其分类如下：
+
+- **条件分支**(conditional branch)：先检测值，根据检测结果决定是否将控制权转交给新地址上的语句的一类指令
+- **无条件分支**(unconditional branch)：条件恒为真的条件分支，因此该语句一定会执行
+
+有以下几种可用指令：
+
+- `beq`(Branch If Equal)：如果寄存器`rs1`和`rs2`的值**相等**，那么跳转至带标签`L1`的语句
+- `bne`(Branch If Not Equal)：如果寄存器`rs1`和`rs2`的值**不相等**，那么跳转至带标签`L1`的语句
+- `blt`(Branch If Less Than)：如果寄存器`rs1`的值**小于**`rs2`的值，那么跳转至带标签`L1`的语句
+    - `bltu`：无符号版本
+- `bge`(Branch If Greater Than or Equal)：如果寄存器`rs1`的值**大于等于**`rs2`的值，那么跳转至带标签`L1`的语句
+    - `bgeu`：无符号版本
+***
 ### If & If-Else
 
 !!! note "Branch Instructions"

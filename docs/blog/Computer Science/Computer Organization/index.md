@@ -16,6 +16,8 @@ comments: true
 
 !!! Abstract
     参考笔记：https://xuan-insr.github.io/computer_organization/1_prelude/#__tabbed_1_1
+    
+    https://note.noughtq.top/hardware/co/
 
 ## Table of Contents
 
