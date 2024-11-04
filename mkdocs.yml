@@ -240,7 +240,6 @@ extra:
 plugins:
   # - rss
   - search #搜索配置
-  - toc
   - heti:
     disable_serve: true
   - git-committers:
