@@ -13,6 +13,7 @@ comments: true
 **指令集**(Instruction Set)：一组能被特定架构理解的指令，常见的指令集有 RISC-V，Intel x86，MIPS。
 
 当下计算机建立在两个关键原则（即存储程序概念，Stored-Program Concept）：
+
 - 指令用数字来表示
 - 程序就像数字一样存储在内存中，可用来被读取或写入
 
@@ -98,73 +99,91 @@ RISC-V 支持 PC relative 寻址、立即数寻址 ( `lui` )、间接寻址 (�
 
 ![](../../../assets/Pasted%20image%2020241012152418.png)
 
-![](../../../assets/Pasted%20image%2020241012154504.png)
+RISC-V 有以下数据传输指令：
+
+- `ld`（Load Doubleword）：加载指令，将数据从内存拷贝到寄存器当中
+
+	```
+	ld reg, offset(mem_base_addr)
+	// reg: 寄存器
+	// mem_base_addr: 一个保存内存基础地址的寄存器（可以理解为能访问到整个内存的头指针）
+	// offset: 偏移量，是一个常数
+	```
+
+	- 内存数据的实际地址 = `mem_base_addr + offset`
+
+- `sd`（Store Doubleword）：存储指令，将寄存器的数据拷贝到内存中
+
+	```
+	sd reg, offset(mem_base_addr)
+	// reg: 寄存器
+	// mem_base_addr: 内存基础地址寄存器
+	// offset: 偏移量
+	```
+
+- `lbu`(Load Byte Unsigned)：加载 1 字节的数据，并看作无符号数
+- `lb`(Load Byte)：`lbu`的符号数版本
+
+!!! note "2's complement"
+
+	$x+\overline{x}=111…111_2=−1$，因此 $−x=\overline{x}+1$。前导 0 表示正数，前导 1 表示负数。
+	
+	因此在将不足 64 位的数据载入寄存器时，如果数据是无符号数，只需要使用 0 将寄存器的其他部分填充 (**Zero Extension**)；而如果是符号数，则需要用最高位即符号位填充剩余部分，称为符号扩展 (**Sign Extension**)。
+	
+	在指令中的 `lw` , `lh` , `lb` 使用 sign extension，而 `lwu` , `lhu` , `lbu` 使用 zero extension。
+	
+	!!! Operations
+	
+		=== "Signed Negation"
+		
+			![](../../../assets/Pasted image 20241014134353.png)
+		
+		=== "Sign Extension"
+		
+			![](../../../assets/Pasted image 20241014134426.png)
+
+!!! Example
+
+	![](../../../assets/Pasted image 20241012154504.png)
 
 寄存器和内存的区别：
 
 - 寄存器存储空间小，内存存储空间大
 - 各种操作与运算都只能在寄存器内完成
 - 寄存器有着更快的运行速度和更高的吞吐量，使得访问寄存器内的数据更加迅速和方便，且访问寄存器的能耗更低；而访问内存需要 `load` 和 `store` 指令，那么就需要执行更多的指令
+***
+### Constant or Immediate Operands
 
-常数处理：
+- 一般的做法是将常数保存在一个寄存器当中，通过一个地址指针指向这个寄存器，然后通过 `add` 指令实现加法操作
 
-![](../../../assets/Pasted%20image%2020241012154748.png)
+	```
+	ld x9, AddrConstant4(x3) //x9=constant 4
+	add x22, x22, x9
+	```
+
+- 实际上我们可以引入一个新的概念：立即数（Immediate），这样就避免了加载指令（即通过操作 `addi x22, x22, 4` 即可实现）
+- 不仅如此，对于常数 0，RISC-V 还特意定义了寄存器 x0
+***
+### Summary
 
 ![](../../../assets/Pasted%20image%2020241012154844.png)
 ***
-## Signed and unsigned numbers
-
-### 2's complement
-
-$x+\overline{x}=111…111_2=−1$，因此 $−x=\overline{x}+1$。前导 0 表示正数，前导 1 表示负数。
-
-因此在将不足 64 位的数据载入寄存器时，如果数据是无符号数，只需要使用 0 将寄存器的其他部分填充 (**zero extension**)；而如果是符号数，则需要用最高位即符号位填充剩余部分，称为符号扩展 (**sign extension**)。
-
-即，在指令中的 `lw` , `lh` , `lb` 使用 sign extension，而 `lwu` , `lhu` , `lbu` 使用 zero extension。
-
-!!! Operations
-
-	=== "Signed Negation"
-	
-		![](../../../assets/Pasted image 20241014134353.png)
-	
-	=== "Sign Extension"
-	
-		![](../../../assets/Pasted image 20241014134426.png)
-***
-## Representing Instructions in the computer
-
-![](../../../assets/Pasted%20image%2020241014134049.png)
-
-![](../../../assets/Pasted%20image%2020241012150310.png)
-
-> 在 RISC 指令集中，只有 load 系列和 store 系列指令能够访问内存。
-
-RISC-V 的跳转指令的 offset 是基于当前指令的地址的偏移；这不同于其他一些汇编是基于下一条指令的偏移的。即如果是跳转语句 `PC` 就不 +4 了，而是直接 +offset。
-
-`lw` , `lwu` 等操作都会清零高位。
-
-RISC-V 指令格式如下：
-
-![](../../../assets/Pasted%20image%2020241012152951.png)
-
-![](../../../assets/Pasted%20image%2020241014135137.png)
-
-其中 `I` 型指令有两个条目；这是因为立即数移位操作 `slli` , `srli` , `srai` 并不可能对一个 64 位寄存器进行大于 63 位的移位操作，因此 12 位 imm 中只有后 6 位能实际被用到，因此前面 6 位被用来作为一个额外的操作码字段，如上图中第二个 `I` 条目那样。其他 `I` 型指令适用第一个 `I` 条目。
-
-另外，为什么 `SB` 和 `UJ` 不存立即数（也就是偏移）的最低位呢？（关注表格，可以发现只包括 `i[12:1]` 或者 `i[20:1]`，缺失 `i[0]`）因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。
-
-!!! Example
-
-	![](../../../assets/Pasted image 20241012153516.png)
-***
 ## Logical Operations
 
-![](../../../assets/Pasted%20image%2020241014135503.png)
+![](../../../assets/Pasted%20image%2020241104134111.png)
 ***
 ### Shift Operations
 
-![](../../../assets/Pasted%20image%2020241014135623.png)
+- `sll`/`slli`，`srl`/`srli` 分别为逻辑左移/右移
+	- 左移 $i$ 位相当于乘以 $2^i$，右移 $i$ 位相当于整除 $2^i$
+	- 逻辑右移时最左边补 0
+	- 不带`i`的指令表示根据寄存器的值确定移动位数，带`i`的指令表示用立即数确定移动位数
+	
+		```
+		slli x11, x19, 4    // reg x11 = reg x19 << 4 bits
+		```
+
+- `sra`/`srai` 为算术右移，最左边补符号位 
 ***
 ### Bit Operations
 
@@ -229,7 +248,33 @@ RISC-V 指令格式如下：
 - 无跳转、分支等指令
 
 ![](../../../assets/Pasted%20image%2020241014143914.png)
+***
+## Representing Instructions in the computer
 
+![](../../../assets/Pasted%20image%2020241014134049.png)
+
+![](../../../assets/Pasted%20image%2020241012150310.png)
+
+> 在 RISC 指令集中，只有 load 系列和 store 系列指令能够访问内存。
+
+RISC-V 的跳转指令的 offset 是基于当前指令的地址的偏移；这不同于其他一些汇编是基于下一条指令的偏移的。即如果是跳转语句 `PC` 就不 +4 了，而是直接 +offset。
+
+`lw` , `lwu` 等操作都会清零高位。
+
+RISC-V 指令格式如下：
+
+![](../../../assets/Pasted%20image%2020241012152951.png)
+
+![](../../../assets/Pasted%20image%2020241014135137.png)
+
+其中 `I` 型指令有两个条目；这是因为立即数移位操作 `slli` , `srli` , `srai` 并不可能对一个 64 位寄存器进行大于 63 位的移位操作，因此 12 位 imm 中只有后 6 位能实际被用到，因此前面 6 位被用来作为一个额外的操作码字段，如上图中第二个 `I` 条目那样。其他 `I` 型指令适用第一个 `I` 条目。
+
+另外，为什么 `SB` 和 `UJ` 不存立即数（也就是偏移）的最低位呢？（关注表格，可以发现只包括 `i[12:1]` 或者 `i[20:1]`，缺失 `i[0]`）因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。
+
+!!! Example
+
+	![](../../../assets/Pasted image 20241012153516.png)
+***
 ## Supporting Procedures in Computer Hardware
 
 - 简单来说，子函数执行完了，把应当有的结果返回给调用它的母函数继续执行
@@ -361,5 +406,3 @@ RISC-V 指令格式如下：
 ![](../../../assets/Pasted%20image%2020241028100108.png)
 
 ![](../../../assets/Pasted%20image%2020241028100133.png)
-
-

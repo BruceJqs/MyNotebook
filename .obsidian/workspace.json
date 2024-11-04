@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "89c91cd5c056037e",
+        "id": "82d9aa457009643c",
         "type": "tabs",
         "children": [
           {
-            "id": "51c73c00f3b383a0",
+            "id": "221e46202eec506f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Chapter 3"
+              "title": "New tab"
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +98,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 3"
+              "title": "Backlinks"
             }
           },
           {
@@ -112,12 +107,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 3"
+              "title": "Outgoing links"
             }
           },
           {
@@ -138,11 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Chapter 3"
+              "title": "Outline"
             }
           },
           {
@@ -174,21 +166,27 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "51c73c00f3b383a0",
+  "active": "221e46202eec506f",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/assets/Pasted image 20241104134111.png",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-8.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/assets/Pasted image 20241030110947.png",
+    "docs/blog/Computer Science/ADS/Chapter 7.md",
+    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-6.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-7.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-9.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-8.md",
-    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-7.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/assets/Pasted image 20241030205741.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/Lesson 5.md",
     "docs/blog/Others/TOEFL Reading/Lesson 6.md",
     "docs/blog/Others/TOEFL Reading/index.md",
-    "docs/assets/Pasted image 20241030110947.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/assets/Pasted image 20241030105729.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
@@ -196,7 +194,6 @@
     "docs/assets/Pasted image 20241030104706.png",
     "docs/assets/Pasted image 20241030103741.png",
     "docs/assets/Pasted image 20241030100345.png",
-    "docs/blog/Computer Science/ADS/Chapter 7.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
@@ -204,14 +201,8 @@
     "docs/blog/Computer Science/Tech/index.md",
     "docs/blog/Computer Science/Tech/Iterm2/Iterm2.md",
     "docs/blog/Computer Science/Tech/CTF/Docker/Docker.md",
-    "docs/blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md",
-    "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
-    "docs/blog/CTF/2023-2024暑短学期/Lab1-Web Report.md",
-    "docs/blog/CTF/2023-2024暑短学期/Lab2-Crypto Report.md",
-    "docs/blog/CTF/2023-2024暑短学期/Lab2-Misc Report.md",
     "docs/assets/Pasted image 20241029114339.png",
     "docs/assets/Pasted image 20241029111708.png",
-    "docs/assets/Pasted image 20241029110835.png",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto",
     "docs/blog/CTF/2024.10 ZJUCTF",
