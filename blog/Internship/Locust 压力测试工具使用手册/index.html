@@ -3977,7 +3977,7 @@
 <h2 id="_3">工具使用方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">例一：获取手机验证码（单一任务）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>编写 python 脚本 test1.py 如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -3991,22 +3991,22 @@
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
 <span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpUser</span><span class="p">,</span> <span class="n">between</span><span class="p">,</span> <span class="n">task</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">class</span> <span class="nc">WebsiteUser</span><span class="p">(</span><span class="n">HttpUser</span><span class="p">):</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">wait_time</span> <span class="o">=</span> <span class="n">between</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="nd">@task</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/mbvercode/get&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>            <span class="s2">&quot;MBPhone&quot;</span><span class="p">:</span> <span class="s2">&quot;18657100000&quot;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="p">}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpUser</span><span class="p">,</span> <span class="n">between</span><span class="p">,</span> <span class="n">task</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">class</span> <span class="nc">WebsiteUser</span><span class="p">(</span><span class="n">HttpUser</span><span class="p">):</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">wait_time</span> <span class="o">=</span> <span class="n">between</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="nd">@task</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/mbvercode/get&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>            <span class="s2">&quot;MBPhone&quot;</span><span class="p">:</span> <span class="s2">&quot;18657100000&quot;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <p>然后在 test1.py 目录下运行命令行：<code>locust -f test1.py --host=https://posdemo3.hzgolong.com:13443</code></p>
 <p>可以看到如下提示：</p>
 <p><img alt="image-20240828160133224" src="../../../assets/image-20240828160133224.png" /></p>
@@ -4016,7 +4016,7 @@
 <p><img alt="image-20240828160554053" src="../../../assets/image-20240828160554053.png" /></p>
 <h3 id="_5">例二：多线程任务与比例分配<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>编写 python 脚本如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -4057,49 +4057,49 @@
 <span class="normal"><a href="#__codelineno-1-39">39</a></span>
 <span class="normal"><a href="#__codelineno-1-40">40</a></span>
 <span class="normal"><a href="#__codelineno-1-41">41</a></span>
-<span class="normal"><a href="#__codelineno-1-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpUser</span><span class="p">,</span> <span class="n">between</span><span class="p">,</span> <span class="n">task</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">Phone_Success</span> <span class="o">=</span> <span class="s2">&quot;13500000036&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">Password_Right</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="k">class</span> <span class="nc">WebsiteUser</span><span class="p">(</span><span class="n">HttpUser</span><span class="p">):</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="n">wait_time</span> <span class="o">=</span> <span class="n">between</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="nd">@task</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/mbvercode/get&quot;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="p">}</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>            <span class="s2">&quot;MBPhone&quot;</span><span class="p">:</span> <span class="s2">&quot;18657100000&quot;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>        <span class="p">}</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>    <span class="nd">@task</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/userlogin/put&quot;</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="p">}</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a>            <span class="s2">&quot;UserId&quot;</span><span class="p">:</span> <span class="n">Phone_Success</span><span class="p">,</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a>            <span class="s2">&quot;Password&quot;</span><span class="p">:</span> <span class="n">Password_Right</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a>        <span class="p">}</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a>    <span class="nd">@task</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33"></a>    <span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/mbphonelogin/put&quot;</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37"></a>        <span class="p">}</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39"></a>            <span class="s2">&quot;MBPhone&quot;</span><span class="p">:</span> <span class="n">Phone_Success</span><span class="p">,</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40"></a>            <span class="s2">&quot;VerifyCode&quot;</span><span class="p">:</span> <span class="s2">&quot;1234&quot;</span>
-<a id="__codelineno-1-41" name="__codelineno-1-41"></a>        <span class="p">}</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpUser</span><span class="p">,</span> <span class="n">between</span><span class="p">,</span> <span class="n">task</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">Phone_Success</span> <span class="o">=</span> <span class="s2">&quot;13500000036&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">Password_Right</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="k">class</span> <span class="nc">WebsiteUser</span><span class="p">(</span><span class="n">HttpUser</span><span class="p">):</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="n">wait_time</span> <span class="o">=</span> <span class="n">between</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="nd">@task</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/mbvercode/get&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>            <span class="s2">&quot;MBPhone&quot;</span><span class="p">:</span> <span class="s2">&quot;18657100000&quot;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>        <span class="p">}</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>    <span class="nd">@task</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/userlogin/put&quot;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="p">}</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>            <span class="s2">&quot;UserId&quot;</span><span class="p">:</span> <span class="n">Phone_Success</span><span class="p">,</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>            <span class="s2">&quot;Password&quot;</span><span class="p">:</span> <span class="n">Password_Right</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a>        <span class="p">}</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31"></a>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32"></a>    <span class="nd">@task</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33"></a>    <span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34"></a>        <span class="n">post_url</span> <span class="o">=</span> <span class="s2">&quot;/platform/mbphonelogin/put&quot;</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36"></a>            <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37"></a>        <span class="p">}</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39"></a>            <span class="s2">&quot;MBPhone&quot;</span><span class="p">:</span> <span class="n">Phone_Success</span><span class="p">,</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40"></a>            <span class="s2">&quot;VerifyCode&quot;</span><span class="p">:</span> <span class="s2">&quot;1234&quot;</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41"></a>        <span class="p">}</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">post_url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">verify</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <p>其中 <code>@task</code> 后的数字表示执行请求的权重，权重越大请求数量越多。</p>
 <p><img alt="image-20240828163439109" src="../../../assets/image-20240828163439109.png" /></p>
 <!--

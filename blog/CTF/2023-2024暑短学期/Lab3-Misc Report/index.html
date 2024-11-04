@@ -4130,7 +4130,7 @@
 <p>往下翻会发现跟 flag 字符 ASCII 值有关的语句：</p>
 <p><img alt="image-20240714191731700" src="../../../../assets/image-20240714191731700.png" /></p>
 <p>由上图我们从第 1 行到第 10 行可以看出攻击者最后把 flag 的 ASCII 码定位在了 102，即 flag 第一位为 f，我们执行命令行 <code>tshark -r sqltest.pcapng -Y "http.request" -T fields -e http.request.full_uri &gt; data.txt</code> 导出这些数据为 data.txt，并编写 python 程序如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4142,27 +4142,27 @@
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">627</span><span class="p">,</span> <span class="mi">972</span><span class="p">):</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">index</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)):</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])),</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">627</span><span class="p">,</span> <span class="mi">972</span><span class="p">):</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">index</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)):</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="k">if</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])),</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
+</span></code></pre></div></td></tr></table></div>
 <p>运行即可得到 flag：</p>
 <p><img alt="image-20240714210228759" src="../../../../assets/image-20240714210228759.png" /></p>
 <h2 id="challenge-2dnscap">Challenge 2：dnscap<a class="headerlink" href="#challenge-2dnscap" title="Permanent link">&para;</a></h2>
 <p>通过 wireshark 打开 dnscap.pcap，发现全是 DNS 协议，打开看其发起的查询：</p>
 <p><img alt="image-20240715124237630" src="../../../../assets/image-20240715124237630.png" /></p>
 <p>均为 xxx.skullsecloabs.org 格式，我们使用命令行 <code>tshark -r dnscap.pcap -T fields -e dns.qry.name &gt; data.txt</code>  并编写 python 程序如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -4170,16 +4170,16 @@
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
 <span class="normal"><a href="#__codelineno-1-7">7</a></span>
 <span class="normal"><a href="#__codelineno-1-8">8</a></span>
-<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">binascii</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">re</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([\w\.]+)\.skullseclabs\.org&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">binascii</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">re</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([\w\.]+)\.skullseclabs\.org&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <p>得到一些信息：</p>
 <p><img alt="image-20240715205247614" src="../../../../assets/image-20240715205247614.png" /></p>
 <p><img alt="image-20240715210554440" src="../../../../assets/image-20240715210554440.png" /></p>
@@ -4188,7 +4188,7 @@
 <p><img alt="image-20240715215331086" src="../../../../assets/image-20240715215331086.png" /></p>
 <p>这其中前九个 Byte 的数据均为 dns 发送端接收端等相关数据，是我们所不需要的，我们需要的是这里的 Data。</p>
 <p>完善 python 代码：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4210,30 +4210,30 @@
 <span class="normal"><a href="#__codelineno-2-20">20</a></span>
 <span class="normal"><a href="#__codelineno-2-21">21</a></span>
 <span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">binascii</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">re</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">prev</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">output</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([\w\.]+)\.skullseclabs\.org&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="mi">9</span><span class="p">:]</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="k">if</span> <span class="n">ans</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        <span class="k">if</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;PNG&#39;</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">):</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>            <span class="n">output</span> <span class="o">+=</span> <span class="n">ans</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>            <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        <span class="k">elif</span> <span class="n">flag</span><span class="p">:</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>            <span class="n">output</span> <span class="o">+=</span> <span class="n">ans</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>            <span class="k">if</span> <span class="p">(</span><span class="sa">b</span><span class="s1">&#39;IEND&#39;</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">):</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>                <span class="k">break</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.png&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">binascii</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">re</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">prev</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">output</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([\w\.]+)\.skullseclabs\.org&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="mi">9</span><span class="p">:]</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="k">if</span> <span class="n">ans</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>        <span class="k">if</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;PNG&#39;</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">):</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>            <span class="n">output</span> <span class="o">+=</span> <span class="n">ans</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>            <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>        <span class="k">elif</span> <span class="n">flag</span><span class="p">:</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>            <span class="n">output</span> <span class="o">+=</span> <span class="n">ans</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a>            <span class="k">if</span> <span class="p">(</span><span class="sa">b</span><span class="s1">&#39;IEND&#39;</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">):</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a>                <span class="k">break</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.png&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 <p>奇怪的是这个代码运行过后打不开 png，用 Hex Fiend 打开发现有两个 PNG，去掉前面这个就能打开了，不太清楚原因，还望指正。</p>
 <p><img alt="image-20240716082224048" src="../../../../assets/image-20240716082224048.png" /></p>
 <p>去掉之后得到 png，flag 就在里面：</p>
@@ -4278,7 +4278,7 @@
 <p>点击 Get new instance，可以看到合约地址：</p>
 <p><img alt="image-20240721131040204" src="../../../../assets/image-20240721131040204.png" /></p>
 <p>根据题目描述，我们需要连续 10 次猜对硬币的正反面。所给代码如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -4308,40 +4308,40 @@
 <span class="normal"><a href="#__codelineno-3-28">28</a></span>
 <span class="normal"><a href="#__codelineno-3-29">29</a></span>
 <span class="normal"><a href="#__codelineno-3-30">30</a></span>
-<span class="normal"><a href="#__codelineno-3-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">contract</span><span class="w"> </span><span class="ni">CoinFlip</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="k">public </span><span class="nv">consecutiveWins</span><span class="p">;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">lastHash</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">FACTOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">57896044618658097711785492504343953926634992332820282019728792003956564819968</span><span class="p">;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span>consecutiveWins<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">flip</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">_guess</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">blockValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">uint256</span><span class="p">(</span>blockhash<span class="p">(</span><span class="k">block.number</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">));</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>lastHash<span class="w"> </span><span class="o">==</span><span class="w"> </span>blockValue<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">            </span>revert<span class="p">();</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">        </span>lastHash<span class="w"> </span><span class="o">=</span><span class="w"> </span>blockValue<span class="p">;</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">coinFlip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>blockValue<span class="w"> </span><span class="o">/</span><span class="w"> </span>FACTOR<span class="p">;</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>coinFlip<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>side<span class="w"> </span><span class="o">==</span><span class="w"> </span>_guess<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">            </span>consecutiveWins<span class="o">++</span><span class="p">;</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">            </span><span class="kt">return</span><span class="w"> </span><span class="kt">true</span><span class="p">;</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">            </span>consecutiveWins<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">            </span><span class="kt">return</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">contract</span><span class="w"> </span><span class="ni">CoinFlip</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="k">public </span><span class="nv">consecutiveWins</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">lastHash</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">FACTOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">57896044618658097711785492504343953926634992332820282019728792003956564819968</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span>consecutiveWins<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">flip</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">_guess</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">blockValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">uint256</span><span class="p">(</span>blockhash<span class="p">(</span><span class="k">block.number</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">));</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>lastHash<span class="w"> </span><span class="o">==</span><span class="w"> </span>blockValue<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">            </span>revert<span class="p">();</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">        </span>lastHash<span class="w"> </span><span class="o">=</span><span class="w"> </span>blockValue<span class="p">;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">coinFlip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>blockValue<span class="w"> </span><span class="o">/</span><span class="w"> </span>FACTOR<span class="p">;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>coinFlip<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>side<span class="w"> </span><span class="o">==</span><span class="w"> </span>_guess<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">            </span>consecutiveWins<span class="o">++</span><span class="p">;</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">            </span><span class="kt">return</span><span class="w"> </span><span class="kt">true</span><span class="p">;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">            </span>consecutiveWins<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">            </span><span class="kt">return</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <p>根据代码，我们可以看到 blockValue 是由前一个区块而决定的，但是我们无法知道前一个区块，所以我们可以在自己的内部创造一个合约，将结果送给合约即可，编写 solidity 代码如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -4375,42 +4375,42 @@
 <span class="normal"><a href="#__codelineno-4-32">32</a></span>
 <span class="normal"><a href="#__codelineno-4-33">33</a></span>
 <span class="normal"><a href="#__codelineno-4-34">34</a></span>
-<span class="normal"><a href="#__codelineno-4-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// SPDX-License-Identifier: MIT</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kt">import</span><span class="w"> </span><span class="s2">&quot;@openzeppelin/contracts/utils/math/SafeMath.sol&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>interface<span class="w">  </span>CoinFlipInterface<span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">flip</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">}</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">contract</span><span class="w"> </span><span class="ni">CoinFlipAttacker</span><span class="p">{</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span>using<span class="w"> </span>SafeMath<span class="w"> </span><span class="kt">for</span><span class="w"> </span><span class="kt">uint256</span><span class="p">;</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">private </span><span class="nv">addr</span><span class="p">;</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span>CoinFlipInterface<span class="w"> </span>interface<span class="p">;</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">FACTOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">57896044618658097711785492504343953926634992332820282019728792003956564819968</span><span class="p">;</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_addr</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span>addr<span class="w"> </span><span class="o">=</span><span class="w"> </span>_addr<span class="p">;</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span>interface<span class="w"> </span><span class="o">=</span><span class="w"> </span>CoinFlipInterface<span class="p">(</span>_addr<span class="p">);</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">getFlip</span><span class="p">()</span><span class="w"> </span><span class="kt">private</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">blockValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">uint256</span><span class="p">(</span>blockhash<span class="p">(</span><span class="k">block.number</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">));</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">coinFlip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>blockValue<span class="w"> </span><span class="o">/</span><span class="w"> </span>FACTOR<span class="p">;</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>coinFlip<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>side<span class="p">;</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">attack</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>getFlip<span class="p">();</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">        </span>interface<span class="p">.</span>flip<span class="p">(</span>side<span class="p">);</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// SPDX-License-Identifier: MIT</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kt">import</span><span class="w"> </span><span class="s2">&quot;@openzeppelin/contracts/utils/math/SafeMath.sol&quot;</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>interface<span class="w">  </span>CoinFlipInterface<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">flip</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">contract</span><span class="w"> </span><span class="ni">CoinFlipAttacker</span><span class="p">{</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span>using<span class="w"> </span>SafeMath<span class="w"> </span><span class="kt">for</span><span class="w"> </span><span class="kt">uint256</span><span class="p">;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">private </span><span class="nv">addr</span><span class="p">;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span>CoinFlipInterface<span class="w"> </span>interface<span class="p">;</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">FACTOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">57896044618658097711785492504343953926634992332820282019728792003956564819968</span><span class="p">;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_addr</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span>addr<span class="w"> </span><span class="o">=</span><span class="w"> </span>_addr<span class="p">;</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span>interface<span class="w"> </span><span class="o">=</span><span class="w"> </span>CoinFlipInterface<span class="p">(</span>_addr<span class="p">);</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">getFlip</span><span class="p">()</span><span class="w"> </span><span class="kt">private</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">blockValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">uint256</span><span class="p">(</span>blockhash<span class="p">(</span><span class="k">block.number</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">));</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">coinFlip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>blockValue<span class="w"> </span><span class="o">/</span><span class="w"> </span>FACTOR<span class="p">;</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>coinFlip<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>side<span class="p">;</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">attack</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>getFlip<span class="p">();</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">        </span>interface<span class="p">.</span>flip<span class="p">(</span>side<span class="p">);</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <p>设置相关参数（合约地址等）：</p>
 <p><img alt="" src="../../../../assets/image-20240721143545839.png" /></p>
 <p>执行一次 attack 函数，我们可以看到在合约中 consecutiveWins 有增加：</p>
@@ -4422,7 +4422,7 @@
 <p>根据题意，这个关卡要求获得合约 Delegation 的所有权，我们先查看 Delegation 的 owner：</p>
 <p><img alt="image-20240721145916285" src="../../../../assets/image-20240721145916285.png" /></p>
 <p>因此我们需要将 contract.owner()更改成 player，所给代码如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -4451,37 +4451,37 @@
 <span class="normal"><a href="#__codelineno-5-27">27</a></span>
 <span class="normal"><a href="#__codelineno-5-28">28</a></span>
 <span class="normal"><a href="#__codelineno-5-29">29</a></span>
-<span class="normal"><a href="#__codelineno-5-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Delegate</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">owner</span><span class="p">;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_owner</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span>_owner<span class="p">;</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">pwn</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">;</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="p">}</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Delegation</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">owner</span><span class="p">;</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span>Delegate<span class="w"> </span>delegate<span class="p">;</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_delegateAddress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">        </span>delegate<span class="w"> </span><span class="o">=</span><span class="w"> </span>Delegate<span class="p">(</span>_delegateAddress<span class="p">);</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">;</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">    </span>fallback<span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">        </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">result</span><span class="p">,)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>delegate<span class="p">).</span>delegatecall<span class="p">(</span><span class="k">msg.data</span><span class="p">);</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>result<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">            </span><span class="kt">this</span><span class="p">;</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-5-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Delegate</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">owner</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_owner</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span>_owner<span class="p">;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">pwn</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="p">}</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Delegation</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">owner</span><span class="p">;</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span>Delegate<span class="w"> </span>delegate<span class="p">;</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_delegateAddress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">        </span>delegate<span class="w"> </span><span class="o">=</span><span class="w"> </span>Delegate<span class="p">(</span>_delegateAddress<span class="p">);</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">;</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">    </span>fallback<span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">        </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">result</span><span class="p">,)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>delegate<span class="p">).</span>delegatecall<span class="p">(</span><span class="k">msg.data</span><span class="p">);</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>result<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">            </span><span class="kt">this</span><span class="p">;</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <p>这里我们可以看到，Delegation 合约的 owner 在建立初期就已经被确立了，我们很难直接在 Delegation 中直接更改 owner 的值，但是有第二个合约 Delegate，它其中的 owner 可以通过函数 pwn() 进行更改，同时两个合约通过Delegation 的 fallback 函数，基于 delegatecall 的方法展开调用。</p>
 <p>通过查询相关资料，我们可以得知 delegatecall 调用后内置变量 msg 的值 A 不会修改为调用者，但执行环境为调用者的运行环境 B，也就意味着我们虽然执行的是 Delegate 合约中的函数，但是我们是在 Delegation 的环境下执行，这样也就可以更改 Delegation 的 owner 。交互如下：</p>
 <p><img alt="image-20240721150040107" src="../../../../assets/image-20240721150040107.png" /></p>
@@ -4489,7 +4489,7 @@
 <p><img alt="" src="../../../../assets/image-20240721150142117.png" /></p>
 <h3 id="vault">Vault<a class="headerlink" href="#vault" title="Permanent link">&para;</a></h3>
 <p>根据题意，这个关卡需要我们将合约中的 locked 变量改为 false，代码如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -4505,24 +4505,24 @@
 <span class="normal"><a href="#__codelineno-6-14">14</a></span>
 <span class="normal"><a href="#__codelineno-6-15">15</a></span>
 <span class="normal"><a href="#__codelineno-6-16">16</a></span>
-<span class="normal"><a href="#__codelineno-6-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Vault</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">public </span><span class="nv">locked</span><span class="p">;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="k">private </span><span class="nv">password</span><span class="p">;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span>locked<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">true</span><span class="p">;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">        </span>password<span class="w"> </span><span class="o">=</span><span class="w"> </span>_password<span class="p">;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">unlock</span><span class="p">(</span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_password</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>password<span class="w"> </span><span class="o">==</span><span class="w"> </span>_password<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">            </span>locked<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">pragma solidity</span><span class="w"> </span><span class="o">^</span><span class="k">0.8.0</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Vault</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">public </span><span class="nv">locked</span><span class="p">;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="k">private </span><span class="nv">password</span><span class="p">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span>locked<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">true</span><span class="p">;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">        </span>password<span class="w"> </span><span class="o">=</span><span class="w"> </span>_password<span class="p">;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">unlock</span><span class="p">(</span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_password</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>password<span class="w"> </span><span class="o">==</span><span class="w"> </span>_password<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">            </span>locked<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">false</span><span class="p">;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <p>可以看到，只要我们输入 password 正确，即可将 locked 改为 false，但是在这里 password 被设置成了私有：</p>
 <p><img alt="image-20240721151002813" src="../../../../assets/image-20240721151002813.png" /></p>
 <p>我们可以通过 <code>web3.eth.getStorageAt</code> 来查看变量存储的地址，这样就便于我们找到 password 变量，传进 unlock 函数即可，交互界面如下：</p>

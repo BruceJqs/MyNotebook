@@ -1057,9 +1057,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#if-if-else" class="md-nav__link">
+  <a href="#if-if-else-case-switch" class="md-nav__link">
     <span class="md-ellipsis">
-      If &amp; If-Else
+      If &amp; If-Else &amp; Case-Switch
     </span>
   </a>
   
@@ -1078,15 +1078,6 @@
   <a href="#set-on-less-than" class="md-nav__link">
     <span class="md-ellipsis">
       Set on less than
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
-    <span class="md-ellipsis">
-      Others
     </span>
   </a>
   
@@ -4496,9 +4487,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#if-if-else" class="md-nav__link">
+  <a href="#if-if-else-case-switch" class="md-nav__link">
     <span class="md-ellipsis">
-      If &amp; If-Else
+      If &amp; If-Else &amp; Case-Switch
     </span>
   </a>
   
@@ -4517,15 +4508,6 @@
   <a href="#set-on-less-than" class="md-nav__link">
     <span class="md-ellipsis">
       Set on less than
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
-    <span class="md-ellipsis">
-      Others
     </span>
   </a>
   
@@ -4861,21 +4843,21 @@
 <ul>
 <li><code>add</code>：寄存器 1 + 寄存器 2</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>add reg1, reg2, reg3    // (in C) reg1 = reg2 + reg3
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>add reg1, reg2, reg3    // (in C) reg1 = reg2 + reg3
+</span></code></pre></div></td></tr></table></div>
 <ul>
 <li><code>addi</code>(Add Immediate)：寄存器 + 常量</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>addi reg1, reg2, const  // (in C) reg1 = reg2 + const
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>addi reg1, reg2, const  // (in C) reg1 = reg2 + const
+</span></code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>减法</p>
 <ul>
 <li><code>sub</code>：寄存器 1 - 寄存器 2</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sub reg1, reg2, reg3    // (in C) reg1 = reg2 - reg3
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sub reg1, reg2, reg3    // (in C) reg1 = reg2 - reg3
+</span></code></pre></div></td></tr></table></div>
 <ul>
 <li>注意：没有<code>subi</code>，但是可以通过<code>addi</code>一个负常数来实现</li>
 </ul>
@@ -4915,28 +4897,28 @@
 <ul>
 <li>
 <p><code>ld</code>（Load Doubleword）：加载指令，将数据从内存拷贝到寄存器当中</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>ld reg, offset(mem_base_addr)
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>// reg: 寄存器
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>// mem_base_addr: 一个保存内存基础地址的寄存器（可以理解为能访问到整个内存的头指针）
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>// offset: 偏移量，是一个常数
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>ld reg, offset(mem_base_addr)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>// reg: 寄存器
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>// mem_base_addr: 一个保存内存基础地址的寄存器（可以理解为能访问到整个内存的头指针）
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>// offset: 偏移量，是一个常数
+</span></code></pre></div></td></tr></table></div>
 <ul>
 <li>内存数据的实际地址 = <code>mem_base_addr + offset</code></li>
 </ul>
 </li>
 <li>
 <p><code>sd</code>（Store Doubleword）：存储指令，将寄存器的数据拷贝到内存中</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sd reg, offset(mem_base_addr)
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>// reg: 寄存器
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>// mem_base_addr: 内存基础地址寄存器
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>// offset: 偏移量
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sd reg, offset(mem_base_addr)
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>// reg: 寄存器
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>// mem_base_addr: 内存基础地址寄存器
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>// offset: 偏移量
+</span></code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p><code>lbu</code>(Load Byte Unsigned)：加载 1 字节的数据，并看作无符号数</p>
@@ -4977,10 +4959,10 @@
 <ul>
 <li>
 <p>一般的做法是将常数保存在一个寄存器当中，通过一个地址指针指向这个寄存器，然后通过 <code>add</code> 指令实现加法操作</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>ld x9, AddrConstant4(x3) //x9=constant 4
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>add x22, x22, x9
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>ld x9, AddrConstant4(x3) //x9=constant 4
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>add x22, x22, x9
+</span></code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>实际上我们可以引入一个新的概念：立即数（Immediate），这样就避免了加载指令（即通过操作 <code>addi x22, x22, 4</code> 即可实现）</p>
@@ -5003,8 +4985,8 @@
 <li>逻辑右移时最左边补 0</li>
 <li>
 <p>不带<code>i</code>的指令表示根据寄存器的值确定移动位数，带<code>i</code>的指令表示用立即数确定移动位数</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>slli x11, x19, 4    // reg x11 = reg x19 &lt;&lt; 4 bits
-</code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>slli x11, x19, 4    // reg x11 = reg x19 &lt;&lt; 4 bits
+</span></code></pre></div></td></tr></table></div>
 </li>
 </ul>
 </li>
@@ -5026,15 +5008,44 @@
 </div>
 <div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241014135910.png" /></p>
+<ul>
+<li>RISC-V 中没有 NOT 指令，因为它可以通过异或表示出来：任何数与 111...111 异或的结果即为该数取反后的结果</li>
+</ul>
 </div>
 </div>
 </div>
+<ul>
+<li>AND、OR、XOR 也有立即数版本的指令，分别为：<code>andi</code>、<code>ori</code>和<code>xori</code></li>
+</ul>
 </div>
 <h2 id="instructions-for-making-decisions">Instructions for making decisions<a class="headerlink" href="#instructions-for-making-decisions" title="Permanent link">&para;</a></h2>
-<h3 id="if-if-else">If &amp; If-Else<a class="headerlink" href="#if-if-else" title="Permanent link">&para;</a></h3>
+<p>计算机与计算器的一大不同之处在于计算机具备决策的能力：它能够执行分支（条件）语句、循环语句等。在 RISC-V 汇编语言中，关于决策的指令格式均为：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>inst rs1, rs2, L1
+</span></code></pre></div></td></tr></table></div>
+<p>其中<code>rs1</code>、<code>rs2</code>是寄存器，<code>L1</code>是标签（跳转位置，也可以是立即数 imm，表示跳转到 PC+imm 的指令），<code>inst</code>是指令，比较的是补码值。</p>
+<p>其分类如下：</p>
+<ul>
+<li><strong>条件分支</strong>(conditional branch)：先检测值，根据检测结果决定是否将控制权转交给新地址上的语句的一类指令</li>
+<li><strong>无条件分支</strong>(unconditional branch)：条件恒为真的条件分支，因此该语句一定会执行</li>
+</ul>
+<p>有以下几种可用指令：</p>
+<ul>
+<li><code>beq</code>(Branch If Equal)：如果寄存器<code>rs1</code>和<code>rs2</code>的值<strong>相等</strong>，那么跳转至带标签<code>L1</code>的语句</li>
+<li><code>bne</code>(Branch If Not Equal)：如果寄存器<code>rs1</code>和<code>rs2</code>的值<strong>不相等</strong>，那么跳转至带标签<code>L1</code>的语句</li>
+<li><code>blt</code>(Branch If Less Than)：如果寄存器<code>rs1</code>的值<strong>小于</strong><code>rs2</code>的值，那么跳转至带标签<code>L1</code>的语句<ul>
+<li><code>bltu</code>：无符号版本</li>
+</ul>
+</li>
+<li><code>bge</code>(Branch If Greater Than or Equal)：如果寄存器<code>rs1</code>的值<strong>大于等于</strong><code>rs2</code>的值，那么跳转至带标签<code>L1</code>的语句<ul>
+<li><code>bgeu</code>：无符号版本</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="if-if-else-case-switch">If &amp; If-Else &amp; Case-Switch<a class="headerlink" href="#if-if-else-case-switch" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Branch Instructions</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">If</label><label for="__tabbed_3_2">If-Else</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">If</label><label for="__tabbed_3_2">If-Else</label><label for="__tabbed_3_3">Case-Switch</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241014140113.png" /></p>
@@ -5042,13 +5053,30 @@
 <div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241014140206.png" /></p>
 </div>
+<div class="tabbed-block">
+<p>对于<code>case/switch</code>语句，我们可以使用一张放有可选指令序列地址的表格（称为<strong>分支地址表</strong>，Branch Address Table），这样的话程序就可以根据条件判断的结果，通过表格的索引找到合适的指令序列。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104144258.png" /></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Question</label><label for="__tabbed_4_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241104144608.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241014142612.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <h3 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Loops</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">循环访问数组</label><label for="__tabbed_4_2">While</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">循环访问数组</label><label for="__tabbed_5_2">While</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241014140354.png" /></p>
@@ -5061,12 +5089,6 @@
 </div>
 <h3 id="set-on-less-than">Set on less than<a class="headerlink" href="#set-on-less-than" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241014140558.png" /></p>
-<h3 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014140635.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014142401.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014142453.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014142531.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241014142612.png" /></p>
 <h3 id="basic-blocks">Basic Blocks<a class="headerlink" href="#basic-blocks" title="Permanent link">&para;</a></h3>
 <ul>
 <li>无跳转、分支等指令</li>
@@ -5241,7 +5263,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月4日 13:44:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月4日 14:49:25</span>
   </span>
 
     

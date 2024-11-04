@@ -5850,12 +5850,12 @@ e.g.2. 记 “ <span class="arithmatex">\(x+y=z\)</span> ” 为 R( x , y , z ),
 - 前置条件（Preconditions）：<font color=blue>描述合法输入的语句</font>
 - 后置条件（Postconditions）：<font color=blue>程序运行的输出应该满足的条件</font>
 <strong>e.g. 考虑下面交换两个变量 x 和 y 的值的程序：</strong>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Delphi</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="language-Pascal highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">temp</span><span class="o">:=</span><span class="n">x</span><span class="o">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">x</span><span class="o">:=</span><span class="n">y</span><span class="o">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">y</span><span class="o">:=</span><span class="n">temp</span><span class="o">;</span>
-</code></pre></div></td></tr></table></div>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">temp</span><span class="o">:=</span><span class="n">x</span><span class="o">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">x</span><span class="o">:=</span><span class="n">y</span><span class="o">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">y</span><span class="o">:=</span><span class="n">temp</span><span class="o">;</span>
+</span></code></pre></div></td></tr></table></div>
 用谓词 <span class="arithmatex">\(P(x,y)\)</span> 来表示前置条件，可以指语句“ <span class="arithmatex">\(x=a,y=b\)</span> ”，这里 <span class="arithmatex">\(a,b\)</span> 是在运行程序之前 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的值。
 用谓词 <span class="arithmatex">\(Q(x,y)\)</span> 来表示前置条件，指语句“ <span class="arithmatex">\(x=b,y=a\)</span> ”。</p>
 <h3 id="quantifiers">Quantifiers<a class="headerlink" href="#quantifiers" title="Permanent link">&para;</a></h3>
