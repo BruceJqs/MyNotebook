@@ -496,37 +496,116 @@ RISC-V 的指令将每条指令都编码为 32 位的 Word，体现了设计原�
 !!! Example
 
 	![](../../../assets/Pasted image 20241028101438.png)
-
+	
+	![](../../../assets/Pasted image 20241105200018.png)
+***
 ## Translating and starting a program
+
+下图展示了将一个 C 语言的程序（源代码）转化为存储在内存中的一个文件的过程：
 
 ![](../../../assets/Pasted%20image%2020241028101538.png)
 
-### Producing an Object Module
+这个过程一共涉及到以下装置：
 
-![](../../../assets/Pasted%20image%2020241028101642.png)
+- 编译器 (Compiler)：高级编程语言 -> 汇编语言
+    - 有的编译器兼具汇编器的功能
+- 汇编器 (Assembler)：
+    - 伪指令 -> 指令
+        - **伪指令**(Pseudo Instruction)：可以理解为汇编指令的扩展（或者缩写），形式上看似指令，而实际上并不存在这种指令，但汇编器会将其自动转化为实际存在的指令
+        
+        !!! Example
+        
+	        - `li reg, imm` 指令为加载立即数（Load Immediate），等价于 `addi reg, x0, imm`
+			- `mv rd, rs` 指令为赋值（Move），等价于 `addi rd, rs, 0`
+			- `j` 为指令 `jal` 的缩写
+	
+	-  可接受各种进制的数
+    - 用**符号表**(symbol table) 存储标签名称和内存地址的对应关系，便于将标签转化为实际的地址
+    - 基本的功能：汇编语言 -> 机器码，即汇编程序 -> **目标文件**(Object File)。在 UNIX 系统中，目标文件包含以下内容：
+        - 目标文件头 (Object File Header)：描述目标文件中其他区域的大小和位置
+        - 文本段 (Text Segment)：包含机器码
+        - 静态数据段 (Static Data Segment)：包含程序生命周期中分配的数据（在 UNIX 中这个区域同时存放静态和动态数据）
+        - 重定位信息 (Relocation Information)：根据程序被加载至内存的绝对地址来区分指令和数据
+        - 符号表 (Symbol Table)
+        - 调试信息 (Debugging Information)：简要描述模块的编译情况，使调试器能够将机器指令和 C 源文件关联起来，且能够读取其中的数据结构
+    
+		!!! Example
+		
+			![](../../../assets/Pasted%20image%2020241028101710.png)
+    
+- 链接器 (Linker)
+    - 对于多文件的编译，采取的做法是先编译、汇编单个的文件，然后将这些机器语言程序链接起来，这样可以尽可能减少重编译和重汇编的情况
+    - 工作流程：
+        - 将代码和数据模块以符号化的形式存在内存中
+        - 弄清数据和指令标志对应的地址
+        - 补充好内部和外部的引用
+    - 经链接器加工后，最终生成一个可执行文件 (Executable File)，它与目标文件的区别在于后者存在不确定 (Unresolved) 的引用
+- 加载器 (Loader)：将可执行文件放入内存或磁盘中，工作流程为：
+    - 读取可执行文件头，得到文本段和数据段的大小
+    - 创建一个指向足够容纳文本和数据的空间的地址
+    - 将可执行文件的指令和数据拷贝到内存中
+    - 将主程序的参数（如果有的话）放入栈中
+    - 对寄存器进行初始化操作，并将栈指针指向第一个空闲的位置上
+    - 跳转到启动例程，将参数拷贝到参数寄存器中，并调用程序的主例程。让主例程返回时，启动例程中止整个程序，附带`exit`系统调用
 
-![](../../../assets/Pasted%20image%2020241028101710.png)
-
-### Link
-
-![](../../../assets/Pasted%20image%2020241028101752.png)
-
-### Loading a Program
-
-![](../../../assets/Pasted%20image%2020241028101825.png)
-
+***
 ### Dynamic Linking
 
-![](../../../assets/Pasted%20image%2020241028101910.png)
+前面介绍的链接方法属于静态链接，虽然它能快速调用库函数，但它具有以下缺陷：不能及时更新库函数，会一次性加载所有库函数（即使很多库函数没被用到）。因此我们更多地会用到**动态链接库**(Dynamically Linked Libraries, DLL) 来克服这些缺陷——这种库可以在程序**运行时**被链接到程序里。
 
+动态链接库有如下特征：
+
+- 需要可重定位的过程代码
+- 能够避免由静态链接获取所有库函数带来的占用存储空间过大的问题
+- 能够自动获取最新版本的库
+***
 ### Lazy Linkage
 
-![[Pasted image 20241028102104.png]]
+在原始版本的 DLL 中，程序和库都需要保留额外的信息，用于定位非局部的过程；加载器会运行一个动态的链接器，使用这些额外的信息找到合适的库并更新所有的外部引用。这种 DLL 的缺点是它仍然会一次性加载所有库函数。一种改进方法是使用**懒过程链接**(lazy procedure linkage) 版本的 DLL，它能保证只有当程序调用库函数时，对应的库才会被链接到程序里。下图展示了这种版本的 DLL：
 
+![[Pasted image 20241028102104.png]]
+***
 ### Starting Java Applications
 
 ![](../../../assets/Pasted%20image%2020241028102328.png)
+***
+## Example : RISC-V in C
 
+我们用 RISC-V 汇编语言来翻译一个用 C 语言写的冒泡排序函数。
+
+!!! Tips "C 语言翻译成汇编语言步骤"
+
+	1. 为程序的每个变量分配相应的寄存器
+	2. 为过程的主体部分书写代码
+	3. 在过程调用期间保留要用的寄存器
+
+先翻译子过程 `swap`（交换两个元素）：
+
+=== "C"
+
+	```
+	void swap(long long int v[], size_t k) {
+	    long long int temp;
+	    temp = v[k];
+	    v[k] = v[k+1];
+	    v[k+1] = temp;
+	}
+	```
+
+=== "RISC-V"
+
+	```
+	swap:
+	    slli x6, x11, 3      // reg x6 = k * 8
+	    add  x6, x10, x6     // reg x6 = v + (k * 8)
+	    ld   x5, 0(x6)       // reg x5 (temp) = v[k]
+	    ld   x7, 8(x6)       // reg x7 = v[k + 1]
+	    sd   x7, 0(x6)       // v[k] = reg x7
+	    sd   x5, 8(x6)       // v[k+1] = reg x5 (tmp)
+	    jalr x0, 0(x1)       // return to calling routine
+	```
+
+***
 ## Arrays versus Pointers
 
 ![](../../../assets/Pasted%20image%2020241028120041.png)
