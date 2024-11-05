@@ -55,6 +55,122 @@ comments: true
     ```
     
 	- 注意：没有`subi`，但是可以通过`addi`一个负常数来实现
+***
+### Logical Operations
+
+![](../../../assets/Pasted%20image%2020241104134111.png)
+***
+#### Shift Operations
+
+- `sll`/`slli`，`srl`/`srli` 分别为逻辑左移/右移
+	- 左移 $i$ 位相当于乘以 $2^i$，右移 $i$ 位相当于整除 $2^i$
+	- 逻辑右移时最左边补 0
+	- 不带`i`的指令表示根据寄存器的值确定移动位数，带`i`的指令表示用立即数确定移动位数
+	
+		```
+		slli x11, x19, 4    // reg x11 = reg x19 << 4 bits
+		```
+
+- `sra`/`srai` 为算术右移，最左边补符号位 
+***
+#### Bit Operations
+
+!!! Operations
+
+	=== "AND"
+	
+		![](../../../assets/Pasted image 20241014135738.png)
+	
+	=== "OR"
+	
+		![](../../../assets/Pasted image 20241014135804.png)
+	
+	=== "XOR"
+	
+		![](../../../assets/Pasted image 20241014135910.png)
+		
+		- RISC-V 中没有 NOT 指令，因为它可以通过异或表示出来：任何数与 111...111 异或的结果即为该数取反后的结果
+	
+	- AND、OR、XOR 也有立即数版本的指令，分别为：`andi`、`ori`和`xori`
+***
+### Making Decisions
+
+计算机与计算器的一大不同之处在于计算机具备决策的能力：它能够执行分支（条件）语句、循环语句等。在 RISC-V 汇编语言中，关于决策的指令格式均为：
+
+```
+inst rs1, rs2, L1
+```
+
+其中`rs1`、`rs2`是寄存器，`L1`是标签（跳转位置，也可以是立即数 imm，表示跳转到 PC+imm 的指令），`inst`是指令，比较的是补码值。
+
+其分类如下：
+
+- **条件分支**(conditional branch)：先检测值，根据检测结果决定是否将控制权转交给新地址上的语句的一类指令
+- **无条件分支**(unconditional branch)：条件恒为真的条件分支，因此该语句一定会执行
+
+有以下几种可用指令：
+
+- `beq`(Branch If Equal)：如果寄存器`rs1`和`rs2`的值**相等**，那么跳转至带标签`L1`的语句
+- `bne`(Branch If Not Equal)：如果寄存器`rs1`和`rs2`的值**不相等**，那么跳转至带标签`L1`的语句
+- `blt`(Branch If Less Than)：如果寄存器`rs1`的值**小于**`rs2`的值，那么跳转至带标签`L1`的语句
+    - `bltu`：无符号版本
+- `bge`(Branch If Greater Than or Equal)：如果寄存器`rs1`的值**大于等于**`rs2`的值，那么跳转至带标签`L1`的语句
+    - `bgeu`：无符号版本
+***
+#### If & If-Else & Case-Switch
+
+!!! note "Branch Instructions"
+
+	=== "If"
+	
+		![](../../../assets/Pasted image 20241014140113.png)
+	
+	=== "If-Else"
+	
+		![](../../../assets/Pasted image 20241014140206.png)
+	
+	=== "Case-Switch"
+	
+		对于`case/switch`语句，我们可以使用一张放有可选指令序列地址的表格（称为**分支地址表**，Branch Address Table），这样的话程序就可以根据条件判断的结果，通过表格的索引找到合适的指令序列。
+		
+		![](../../../assets/Pasted image 20241104144258.png)
+		
+		!!! Example
+		
+			=== "Question"
+			
+				![](../../../assets/Pasted image 20241104144608.png)
+				
+			=== "Answer"
+			
+				![](../../../assets/Pasted image 20241014142612.png)
+#### Loops
+
+!!! note "Loops"
+
+	=== "循环访问数组"
+	
+		![](../../../assets/Pasted image 20241014140354.png)
+	
+	=== "While"
+	
+		![](../../../assets/Pasted image 20241014140427.png)
+
+#### Set on less than
+
+```
+slt x5, x19, x20
+```
+
+这句指令意为如果 x19<x20，那么将 x5 赋值为 1
+
+!!! Example
+
+	![](../../../assets/Pasted image 20241104152013.png)
+***
+#### Basic Blocks
+
+**基本块**（Basic Blocks）是一个没有内嵌分支（除了在末尾）且没有跳转目标（除非在开头）的指令序列。编译器通过识别出基本块可以进行编译的优化，高级处理器能够加速基本块的执行。
 
 ***
 ## Operands of the Computer Hardware
@@ -95,9 +211,23 @@ RISC-V 使用 **little endian** 小端编址。也就是说，当我们从 0x1
 
 > 一个记忆方法是，如果你将地址横着写，即从左到右递增，那么对于大端来说是比较自然的，但是对于小端来说会比较不自然。以上面的 `0A0B0C0D` 为例子，大端为从低地址到高地址是 `0A` `0B` `0C` `0D`，而小端从低到高地址则是 `0D` `0C` `0B` `0A`。
 
-RISC-V 支持 PC relative 寻址、立即数寻址 ( `lui` )、间接寻址 ( `jalr` )、基址寻址 ( `8(sp)` )：
+RISC-V 支持：
+
+- 立即数寻址 (Immediate Addressing)：操作数为指令内的立即数
+- 寄存器寻址（Register Addressing）：操作数为寄存器
+- 基址寻址(Base Addressing)：操作数位于指定的内存位置上，该位置是寄存器和立即数之和
+- **PC 相对寻址**(PC-Relative Addressing)：分支地址为 PC 和分支偏移量（立即数的 2 倍）之和
+
+$$
+\begin{aligned}
+\text{Target address​}&=\text{PC}+\text{Branch offset}\\
+&=\text{PC}+\text{immediate}\times2​
+\end{aligned}
+$$
+
 
 ![](../../../assets/Pasted%20image%2020241012152418.png)
+
 
 RISC-V 有以下数据传输指令：
 
@@ -168,123 +298,70 @@ RISC-V 有以下数据传输指令：
 
 ![](../../../assets/Pasted%20image%2020241012154844.png)
 ***
-## Logical Operations
+## Supporting Procedures in Computer Hardware
 
-![](../../../assets/Pasted%20image%2020241104134111.png)
+**过程**（Procedure）或函数（Function）：一种被存起来的子程序（Subroutine），基于提供的参数来执行一些特定的任务，它们更加容易理解，更加方便地重用。
+
+在执行一个过程的时候，程序将会遵循以下步骤：
+
+1. 将参数放在过程可以访问得到的地方
+2. 将控制权转交给过程
+3. 获取过程所需的存储资源
+4. 执行目标任务
+5. 将结果值放在调用程序访问得到的地方
+6. 将控制权还给原主，因为一个过程可以被调用多次
 ***
-### Shift Operations
+### Procedure Call Instructions
 
-- `sll`/`slli`，`srl`/`srli` 分别为逻辑左移/右移
-	- 左移 $i$ 位相当于乘以 $2^i$，右移 $i$ 位相当于整除 $2^i$
-	- 逻辑右移时最左边补 0
-	- 不带`i`的指令表示根据寄存器的值确定移动位数，带`i`的指令表示用立即数确定移动位数
-	
-		```
-		slli x11, x19, 4    // reg x11 = reg x19 << 4 bits
-		```
+![](../../../assets/Pasted%20image%2020241014144435.png)
 
-- `sra`/`srai` 为算术右移，最左边补符号位 
-***
-### Bit Operations
+#### Registers for procedure calling
 
-!!! Operations
+在调用过程的时候，程序会用到以下寄存器：
 
-	=== "AND"
-	
-		![](../../../assets/Pasted image 20241014135738.png)
-	
-	=== "OR"
-	
-		![](../../../assets/Pasted image 20241014135804.png)
-	
-	=== "XOR"
-	
-		![](../../../assets/Pasted image 20241014135910.png)
-		
-		- RISC-V 中没有 NOT 指令，因为它可以通过异或表示出来：任何数与 111...111 异或的结果即为该数取反后的结果
-	
-	- AND、OR、XOR 也有立即数版本的指令，分别为：`andi`、`ori`和`xori`
+- `x10` - `x17` 是 8 个参数寄存器，函数调用的前 8 个参数会放在这些寄存器中；如果参数超过 8 个的话就需要放到栈上（放在 `fp` 上方， `fp + 8` 是第 9 个参数， `fp + 16` 的第 10 个，以此类推）。同时，过程的结果也会放到这些寄存器中（当然，对于 C 语言这种只能有一个返回值的语言，可能只会用到 `x10` ）。
+- `x1` 用来保存返回地址，所以也叫 `ra` 。因此，伪指令 `ret` 其实就是 `jalr x0, 0(x1)` 。
 
-## Instructions for making decisions
+#### Local Data on the Stack
 
-计算机与计算器的一大不同之处在于计算机具备决策的能力：它能够执行分支（条件）语句、循环语句等。在 RISC-V 汇编语言中，关于决策的指令格式均为：
+对于过程/函数，会出现一些局部变量，即任何被 Callee 用到的寄存器，在过程被唤起之前必须复原（Restore）它们的值（类似 C 语言中的内存释放），因此也类似 C 语言，我们也需要通过栈来保存这些数据：
 
-```
-inst rs1, rs2, L1
-```
+- 在栈中，需要用一个**栈指针**(stack pointer) 来指向栈中最近被分配的地址，它起到了指示下一个溢出寄存器的位置，以及获取旧的寄存器的值的作用。
+- 栈的两个常用操作是**压入**(push) 和**弹出**(pop)，分别表示存储数据和移除数据。
+- 由于历史原因，栈的高位地址在先，低位地址在后，因此要把这个栈看作是一个倒放的容器：栈底在上方，从下方的开口将数据压入。
 
-其中`rs1`、`rs2`是寄存器，`L1`是标签（跳转位置，也可以是立即数 imm，表示跳转到 PC+imm 的指令），`inst`是指令，比较的是补码值。
+![](../../../assets/Pasted%20image%2020241105094644.png)
 
-其分类如下：
+栈上所需要的寄存器如下：
 
-- **条件分支**(conditional branch)：先检测值，根据检测结果决定是否将控制权转交给新地址上的语句的一类指令
-- **无条件分支**(unconditional branch)：条件恒为真的条件分支，因此该语句一定会执行
+- 栈指针为 `x2` ，也叫 `sp` ；始终指向 **栈顶元素**。栈从高地址向低地址增长。
+    - `addi sp, sp, -24`（空出存储数据的栈空间） , `sd x5, 16(sp)` , `sd x6, 8(sp)` , `sd x20, 0(sp)` 可以实现将 x5, x6, x20 压栈。
+- `x5` - `x7` 以及 `x28` - `x31` 是 Temporary Registers，父函数 Caller 需保证：子函数能随意使用，返回给父函数时，它们的值可以被改变。
+- `x8` - `x9` 和 `x18` - `x27` 是 Saved Registers，子函数 Callee 需要保持这些寄存器在父函数调用子函数前的值；也就是说，如果 Callee 要用到这些寄存器，必须保存一份，返回前恢复。
 
-有以下几种可用指令：
+- 一些 RISC-V 编译器保留寄存器 `x3` 用来指向静态变量区，称为 global pointer `gp` 。
+- 一些 RISC-V 编译器使用 `x8` 指向 activation record 的第一个 dword，方便访问局部变量；因此 `x8` 也称为 frame pointer `fp` 。在进入函数时，用 `sp` 将 `fp` 初始化。
+    - `fp` 的方便性在于在整个过程中对局部变量的所有引用相对于 `fp` 的偏移都是固定的，但是对 `sp` 不一定。当然，如果过程中没有什么栈的变化或者根本没有局部变量，那就没有必要用 `fp` 了。
 
-- `beq`(Branch If Equal)：如果寄存器`rs1`和`rs2`的值**相等**，那么跳转至带标签`L1`的语句
-- `bne`(Branch If Not Equal)：如果寄存器`rs1`和`rs2`的值**不相等**，那么跳转至带标签`L1`的语句
-- `blt`(Branch If Less Than)：如果寄存器`rs1`的值**小于**`rs2`的值，那么跳转至带标签`L1`的语句
-    - `bltu`：无符号版本
-- `bge`(Branch If Greater Than or Equal)：如果寄存器`rs1`的值**大于等于**`rs2`的值，那么跳转至带标签`L1`的语句
-    - `bgeu`：无符号版本
-***
-### If & If-Else & Case-Switch
+下图为过程调用前、中、后的时候栈的情况：
 
-!!! note "Branch Instructions"
+![](../../../assets/Pasted%20image%2020241016105147.png)
 
-	=== "If"
-	
-		![](../../../assets/Pasted image 20241014140113.png)
-	
-	=== "If-Else"
-	
-		![](../../../assets/Pasted image 20241014140206.png)
-	
-	=== "Case-Switch"
-	
-		对于`case/switch`语句，我们可以使用一张放有可选指令序列地址的表格（称为**分支地址表**，Branch Address Table），这样的话程序就可以根据条件判断的结果，通过表格的索引找到合适的指令序列。
-		
-		![](../../../assets/Pasted image 20241104144258.png)
-		
-		!!! Example
-		
-			=== "Question"
-			
-				![](../../../assets/Pasted image 20241104144608.png)
-				
-			=== "Answer"
-			
-				![](../../../assets/Pasted image 20241014142612.png)
-### Loops
+#### Memory Layout
 
-!!! note "Loops"
+Linux 系统上 RISC-V 的内存分配示意图：
 
-	=== "循环访问数组"
-	
-		![](../../../assets/Pasted image 20241014140354.png)
-	
-	=== "While"
-	
-		![](../../../assets/Pasted image 20241014140427.png)
+![](../../../assets/Pasted%20image%2020241105101613.png)
 
-### Set on less than
-
-```
-slt x5, x19, x20
-```
-
-这句指令意为如果 x19<x20，那么将 x5 赋值为 1
-
-!!! Example
-
-	![](../../../assets/Pasted image 20241104152013.png)
-***
-### Basic Blocks
-
-**基本块**（Basic Blocks）是一个没有内嵌分支（除了在末尾）且没有跳转目标（除非在开头）的指令序列。编译器通过识别出基本块可以进行编译的优化，高级处理器能够加速基本块的执行。
+- 最底下的内存是保留的空间（不可访问）
+- 第二层的内存用于存放 RISC-V 的机器码，称为**文本段**（Text Segment）
+- 第三层的内存称为**静态数据段**（Static Data Segment），用于放置立即数和其他静态变量
+- 最上层同时存放栈和动态数据（比如链表等），其中存放动态数据的数据结构称为**堆**(heap)。注意到栈和堆位于这块内存的两端，分别自顶向下和自底向上增长
+    - C 语言中使用`malloc()`在堆中分配空间，使用`free()`释放堆内的空间。如果过晚释放空间，就会造成内存泄露问题；如果过早释放空间，就会造成悬空指针 (dangling pointers)（类似野指针）问题。
 ***
 ## Representing Instructions in the computer
+
+### Types of Instructions
 
 因为计算机当中所有的信息均由二进制位来表示，那么我们也应该将指令编码为二进制，记其为机器码（Machine Code）。
 
@@ -372,6 +449,8 @@ RISC-V 的指令将每条指令都编码为 32 位的 Word，体现了设计原�
 		
 		- `rd`用于存放链接地址（即返回地址）
 
+### Summary
+
 ![](../../../assets/Pasted%20image%2020241012150310.png)
 
 > 在 RISC 指令集中，只有 load 系列和 store 系列指令能够访问内存。
@@ -381,42 +460,9 @@ RISC-V 的指令将每条指令都编码为 32 位的 Word，体现了设计原�
 	关注表格，可以发现只包括 `i[12:1]` 或者 `i[20:1]`，缺失 `i[0]`
 	
 	这是因为，偏移的最后一位一定是 0，即地址一定是 2 字节对齐的，因此没有必要保存。
-
-!!! Example
-
-	![](../../../assets/Pasted image 20241012153516.png)
 ***
-## Supporting Procedures in Computer Hardware
 
-- 简单来说，子函数执行完了，把应当有的结果返回给调用它的母函数继续执行
-
-![](../../../assets/Pasted%20image%2020241014144232.png)
-
-### Procedure Call Instructions
-
-![](../../../assets/Pasted%20image%2020241014144435.png)
-
-#### Registers for procedure calling
-
-- `x5` - `x7` 以及 `x28` - `x31` 是 temp reg，如果需要的话 caller 保存；也就是说，不保证在经过过程调用之后这些寄存器的值不变。
-- `x8` - `x9` 和 `x18` - `x27` 是 saved reg，callee 需要保证调用前后这些寄存器的值不变；也就是说，如果 callee 要用到这些寄存器，必须保存一份，返回前恢复。
-- `x10` - `x17` 是 8 个参数寄存器，函数调用的前 8 个参数会放在这些寄存器中；如果参数超过 8 个的话就需要放到栈上（放在 `fp` 上方， `fp + 8` 是第 9 个参数， `fp + 16` 的第 10 个，以此类推）。同时，过程的结果也会放到这些寄存器中（当然，对于 C 语言这种只能有一个返回值的语言，可能只会用到 `x10` ）。
-- `x1` 用来保存返回地址，所以也叫 `ra` 。因此，伪指令 `ret` 其实就是 `jalr x0, 0(x1)` 。
-- 栈指针是 `x2` ，也叫 `sp` ；始终指向 **栈顶元素**。栈从高地址向低地址增长。
-    - `addi sp, sp, -24` , `sd x5, 16(sp)` , `sd x6, 8(sp)` , `sd x20, 0(sp)` 可以实现将 x5, x6, x20 压栈。
-- 一些 RISC-V 编译器保留寄存器 `x3` 用来指向静态变量区，称为 global pointer `gp` 。
-- 一些 RISC-V 编译器使用 `x8` 指向 activation record 的第一个 dword，方便访问局部变量；因此 `x8` 也称为 frame pointer `fp` 。在进入函数时，用 `sp` 将 `fp` 初始化。
-    - `fp` 的方便性在于在整个过程中对局部变量的所有引用相对于 `fp` 的偏移都是固定的，但是对 `sp` 不一定。当然，如果过程中没有什么栈的变化或者根本没有局部变量，那就没有必要用 `fp` 了。
-
-![](../../../assets/Pasted%20image%2020241016104150.png)
-#### Local Data on the Stack
-
-![](../../../assets/Pasted%20image%2020241016105147.png)
-
-#### Memory Layout
-
-![](../../../assets/Pasted%20image%2020241016110427.png)
-
+***
 ## Synchronization in RISC-V
 
 ![](../../../assets/Pasted%20image%2020241028100913.png)

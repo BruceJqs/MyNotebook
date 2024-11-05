@@ -25,3 +25,4 @@ comments: true
 - [Chapter 05 : Binomial Queue](Chapter%205/)
 - [Chapter 06 : Backtracking](Chapter%206/)
 - [Chapter 07 : Divide and Conquer](Chapter%207/)
+- [Chapter 08 : Dynamic Programming](Chapter%208/)
