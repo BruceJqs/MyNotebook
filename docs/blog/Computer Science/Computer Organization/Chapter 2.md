@@ -745,7 +745,7 @@ x86 指令与 RISC-V 的不同之处在于：
 
 80386 的寻址模式如下图所示：
 
-![[Pasted image 20241105225559.png]]
+![](../../../assets/Pasted%20image%2020241105225559.png)
 ***
 ### x86 Instruction Encoding
 
