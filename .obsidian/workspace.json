@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 4"
+              "title": "Homework 3"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 4"
+              "title": "Backlinks for Homework 3"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 4"
+              "title": "Outgoing links from Homework 3"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 4.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 4"
+              "title": "Outline of Homework 3"
             }
           },
           {
@@ -176,6 +176,12 @@
   },
   "active": "221e46202eec506f",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241106210734.png",
+    "docs/assets/Pasted image 20241106203613.png",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+    "docs/assets/Pasted image 20241106203405.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/assets/Pasted image 20241106130049.png",
     "docs/assets/Pasted image 20241106010020.png",
     "docs/assets/Pasted image 20241106004138.png",
@@ -184,12 +190,8 @@
     "docs/assets/Pasted image 20241106000609.png",
     "docs/assets/Pasted image 20241106000546.png",
     "docs/assets/Pasted image 20241106000521.png",
-    "docs/assets/Pasted image 20241106000459.png",
-    "docs/assets/Pasted image 20241106000347.png",
-    "docs/assets/Pasted image 20241105235921.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/Computer Science/ADS/Chapter 8.md",
     "JioNLP/test/test_time_parser.py",
@@ -220,8 +222,6 @@
     "docs/blog/CTF/2024.9 MoeCTF/index.md",
     "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/Lesson 5.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 6.md",
-    "docs/blog/Others/TOEFL Reading/index.md",
     "未命名.canvas"
   ]
 }

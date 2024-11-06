@@ -8,9 +8,7 @@ comments: true
 --- 
 ## Homework 02
 
-### Mooc
-
-#### Question 01
+### Question 01
 
 ![](../../../assets/Pasted%20image%2020241021230242.png)
 
@@ -30,10 +28,14 @@ comments: true
 
 由于$\sum\limits_{i=1}^n h_i\text{ mod } 3$ 的值为一确定值，那么可以保证有 $\lfloor\frac{n}{3}\rfloor$ 名同学猜对。 
 ***
-#### Question 02
+### Question 02
 
 ![](../../../assets/Pasted%20image%2020241022000045.png)
 
 （1）设 $W^*$ 为伪币的质量，由题意我们有 $\begin{cases}NW+|I|(W^*-W)=M_1\\(\sum\limits_{i=1}^n p^i) W+(\sum\limits_{i\in I}p^i)(W^*-W)=M_2\end{cases}$，因此消去 $W^*$ 我们有 $\frac{M_1-NW}{|I|}=\frac{M_2-(\sum\limits_{i=1}^np^i)W}{\sum\limits_{i\in I}p^i}$，定义函数 $f(M_1,M_2,W)=\frac{M_2-(\sum\limits_{i=1}^np^i)W}{M_1-NW}=\frac{\sum\limits_{i\in I}p^i}{|I|}$，此函数值仅与 $I,p$ 有关。
 
-（2）设 $I=\{i_1,i_2,...,i_m\}$ ，为能求出指标集 $I$ ，即满足唯一性，即不存在 $m\not=n,\{i_1,i_2,...,i_m\}\not=\{j_1,j_2,...,j_n\}$ ，使得 $\frac{p^{i_1}+p^{i_2}+...+p^{i_m}}{m}=\frac{p^{j_1}+p^{j_2}+...+p^{j_n}}{n}$，由于整数的 $p$ 进制的表示是唯一的，当 $p > N$ 时，上式左右两边均可视作同一个整数在 p 进制下的一种表示。故任一 $p > N$ 的数均满足要求。但当 $p=2$ 时，会有 $\frac{2^1}{2}=\frac{2^0}{1}$，这样就无法求出 $I$ 。
+（2）设 $I=\{i_1,i_2,...,i_m\}$ ，为能求出指标集 $I$ ，即满足唯一性，即不存在 $m\not=n,\{i_1,i_2,...,i_m\}\not=\{j_1,j_2,...,j_n\}$ ，使得 $\frac{p^{i_1}+p^{i_2}+...+p^{i_m}}{m}=\frac{p^{j_1}+p^{j_2}+...+p^{j_n}}{n}$，由于整数的 $p$ 进制的表示是唯一的，当 $p > N$ 时，上式左右两边均可视作同一个整数在 p 进制下的一种表示。故任一 $p > N$ 的数均满足要求。但当 $p=2$ 时，会有特殊情况如下：
+
+![](../../../assets/Pasted%20image%2020241106203405.png)
+
+这样就无法求出 $I$ 。
