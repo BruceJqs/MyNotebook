@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homework 3"
+              "title": "index"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Homework 3"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Homework 3"
+              "title": "Outgoing links from index"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 3.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Homework 3"
+              "title": "Outline of index"
             }
           },
           {
@@ -176,10 +176,11 @@
   },
   "active": "221e46202eec506f",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Project.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
     "docs/assets/Pasted image 20241106210734.png",
     "docs/assets/Pasted image 20241106203613.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
     "docs/assets/Pasted image 20241106203405.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/assets/Pasted image 20241106130049.png",
@@ -189,7 +190,6 @@
     "docs/assets/Pasted image 20241106001131.png",
     "docs/assets/Pasted image 20241106000609.png",
     "docs/assets/Pasted image 20241106000546.png",
-    "docs/assets/Pasted image 20241106000521.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
