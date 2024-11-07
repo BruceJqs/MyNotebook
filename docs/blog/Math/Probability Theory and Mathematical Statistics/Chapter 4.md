@@ -57,3 +57,55 @@ $$
 
 如果 $\int_{−\infty}^{+\infty}|x|f(x)dx=+\infty$ 则称随机变量 $X$ 的数学期望不存在。
 ***
+#### 均匀分布的数学期望
+
+设随机变量 $X$ 服从均匀分布 $U(a,b)(a<b)$，则：
+
+$$
+E(X)=\int_{−\infty}^{+\infty}xf(x)dx=\int_{−\infty}^{+\infty}x\frac{1}{b−a}dx=\frac{1}{b−a}\int\limits_{−\infty}^{+\infty}xdx=\frac{1}{b−a}⋅\frac{x^2}{2}|_a^b=\frac{a+b}{2}
+$$
+
+***
+#### 指数分布的数学期望
+
+设随机变量 $X$ 服从指数分布 $E(\lambda)(\lambda>0)$，则：
+
+$$
+E(X)=\int_{−\infty}^{+\infty}xf(x)dx=\int_0^{+\infty}x\lambda e^{−λx}dx=−\int_0^{+\infty}xd(e^{−\lambda x})=−(xe^{−\lambda x})|_0^{+\infty}+\int_0^{+\infty}e^{−\lambda x}dx=\frac{1}{\lambda}
+$$
+
+由此式可知，已知指数分布的数学期望可以确定指数分布。
+***
+#### 标准正态分布的数学期望
+
+设随机变量 $X$ 服从标准正态分布 $N(0,1)$，注意到其密度函数 $\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{−\frac{x^2}{2}},x\in\mathbb{R}$ 为偶函数，那么$x\varphi(x)$ 是奇函数，所以 $E(X)=0$
+***
+#### 正态分布的数学期望
+
+设随机变量X服从正态分布 $N(\mu,\sigma^2)(\sigma>0)$，则：
+
+$$
+\begin{gather}
+Z=\frac{X−\mu}{\sigma}∼N(0,1)\\
+E(X)=E(\sigma Z+\mu)=\sigma E(Z)+\mu=\mu
+\end{gather}
+$$
+
+***
+### 随机变量函数的数学期望
+
+对于随机变量函数，在保证期望存在的情况下，只需要将定义中 $x_i$ 换为 $g(x_i)$ 即可，但我们不需要计算 $g(x_i)$ 的概率分布率：
+
+离散型：$Z=g(X)$，则 $E(Z)=E[g(X)]=\sum\limits_{i=1}^{+\infty}g(x_i)p_i$
+
+连续型：$Z=g(X)$，则 $E(Z)=E[g(X)]=\int g(x)f(x)dx$
+
+二元离散型：$Z=h(X,Y)$，则 $E(Z)=E[h(X,Y)]=\sum\limits_{i=1}^{+\infty}\sum\limits_{j=1}^{+\infty}h(x_i,y_j)p_{ij}$
+
+二元连续型：$Z=h(X,Y)$，则 $E(Z)=E[h(X,Y)]=\int_{−\infty}^{+\infty}\int_{−\infty}^{+\infty}h(x,y)f(x,y)dxdy$
+
+!!! tip
+
+	以上所有的 $p_i,p_{ij},f(x),f(x,y)$ 均为 $X,Y$ 本来的联合分布率，而不是 $Z$ 的联合分布率
+***
+
