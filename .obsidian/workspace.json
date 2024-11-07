@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 4"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for Chapter 4"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from Chapter 4"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 4"
             }
           },
           {
@@ -176,13 +176,17 @@
   },
   "active": "221e46202eec506f",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Mathematical Modeling/Project.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
+    "docs/blog/ACEE/Mathematical Modeling/Project.md",
     "docs/assets/Pasted image 20241106210734.png",
     "docs/assets/Pasted image 20241106203613.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
     "docs/assets/Pasted image 20241106203405.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/assets/Pasted image 20241106130049.png",
     "docs/assets/Pasted image 20241106010020.png",
     "docs/assets/Pasted image 20241106004138.png",
@@ -218,10 +222,6 @@
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-7.md",
     "docs/blog/CTF/2024.9 MoeCTF/Misc/Misc-9.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
-    "docs/blog/CTF/2024.9 MoeCTF/index.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 7.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 5.md",
     "未命名.canvas"
   ]
 }

@@ -19,3 +19,4 @@ comments: true
 - [Chapter 01：概率论的基本概念](Chapter%201/)
 - [Chapter 02：随机变量及其分布](Chapter%202/)
 - [Chapter 03 : 多元随机变量及其分布](Chapter%203/)
+- [Chapter 04 : 随机变量的数字特征](Chapter%204/)
