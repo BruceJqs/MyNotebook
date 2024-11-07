@@ -2143,6 +2143,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="连续型随机变量的数学期望">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      均匀分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      指数分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准正态分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      正态分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量函数的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      数学期望的性质
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -4107,6 +4167,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="连续型随机变量的数学期望">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      均匀分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      指数分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准正态分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      正态分布的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量函数的数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      数学期望的性质
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -4178,6 +4298,62 @@ E(X)=\sum\limits_{k=0}^{+\infty}k⋅P{X=k}=\sum\limits_{k=0}^{+\infty}k⋅\frac{
 <p>设连续型随机变量 <span class="arithmatex">\(X\)</span> 的密度函数为 <span class="arithmatex">\(f(x)\)</span>，若 <span class="arithmatex">\(\int_{−\infty}^{+\infty}|x|f(x)dx&lt;+\infty\)</span>，则称积分<span class="arithmatex">\(\int_{−\infty}^{+\infty}xf(x)dx\)</span> 为 <span class="arithmatex">\(X\)</span> 的数学期望或均值，简称为期望，记 <span class="arithmatex">\(E(X)=\int_{−\infty}^{+\infty}xf(x)dx\)</span>。</p>
 <p>如果 <span class="arithmatex">\(\int_{−\infty}^{+\infty}|x|f(x)dx=+\infty\)</span> 则称随机变量 <span class="arithmatex">\(X\)</span> 的数学期望不存在。</p>
 <hr />
+<h4 id="_6">均匀分布的数学期望<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 服从均匀分布 <span class="arithmatex">\(U(a,b)(a&lt;b)\)</span>，则：</p>
+<div class="arithmatex">\[
+E(X)=\int_{−\infty}^{+\infty}xf(x)dx=\int_{−\infty}^{+\infty}x\frac{1}{b−a}dx=\frac{1}{b−a}\int\limits_{−\infty}^{+\infty}xdx=\frac{1}{b−a}⋅\frac{x^2}{2}|_a^b=\frac{a+b}{2}
+\]</div>
+<hr />
+<h4 id="_7">指数分布的数学期望<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 服从指数分布 <span class="arithmatex">\(E(\lambda)(\lambda&gt;0)\)</span>，则：</p>
+<div class="arithmatex">\[
+E(X)=\int_{−\infty}^{+\infty}xf(x)dx=\int_0^{+\infty}x\lambda e^{−λx}dx=−\int_0^{+\infty}xd(e^{−\lambda x})=−(xe^{−\lambda x})|_0^{+\infty}+\int_0^{+\infty}e^{−\lambda x}dx=\frac{1}{\lambda}
+\]</div>
+<p>由此式可知，已知指数分布的数学期望可以确定指数分布。</p>
+<hr />
+<h4 id="_8">标准正态分布的数学期望<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 服从标准正态分布 <span class="arithmatex">\(N(0,1)\)</span>，注意到其密度函数 <span class="arithmatex">\(\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{−\frac{x^2}{2}},x\in\mathbb{R}\)</span> 为偶函数，那么<span class="arithmatex">\(x\varphi(x)\)</span> 是奇函数，所以 <span class="arithmatex">\(E(X)=0\)</span></p>
+<hr />
+<h4 id="_9">正态分布的数学期望<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>设随机变量X服从正态分布 <span class="arithmatex">\(N(\mu,\sigma^2)(\sigma&gt;0)\)</span>，则：</p>
+<div class="arithmatex">\[
+\begin{gather}
+Z=\frac{X−\mu}{\sigma}∼N(0,1)\\
+E(X)=E(\sigma Z+\mu)=\sigma E(Z)+\mu=\mu
+\end{gather}
+\]</div>
+<hr />
+<h3 id="_10">随机变量函数的数学期望<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>对于随机变量函数，在保证期望存在的情况下，只需要将定义中 <span class="arithmatex">\(x_i\)</span> 换为 <span class="arithmatex">\(g(x_i)\)</span> 即可，但我们不需要计算 <span class="arithmatex">\(g(x_i)\)</span> 的概率分布率：</p>
+<p>离散型：<span class="arithmatex">\(Z=g(X)\)</span>，则 <span class="arithmatex">\(E(Z)=E[g(X)]=\sum\limits_{i=1}^{+\infty}g(x_i)p_i\)</span></p>
+<p>连续型：<span class="arithmatex">\(Z=g(X)\)</span>，则 <span class="arithmatex">\(E(Z)=E[g(X)]=\int g(x)f(x)dx\)</span></p>
+<p>二元离散型：<span class="arithmatex">\(Z=h(X,Y)\)</span>，则 <span class="arithmatex">\(E(Z)=E[h(X,Y)]=\sum\limits_{i=1}^{+\infty}\sum\limits_{j=1}^{+\infty}h(x_i,y_j)p_{ij}\)</span></p>
+<p>二元连续型：<span class="arithmatex">\(Z=h(X,Y)\)</span>，则 <span class="arithmatex">\(E(Z)=E[h(X,Y)]=\int_{−\infty}^{+\infty}\int_{−\infty}^{+\infty}h(x,y)f(x,y)dxdy\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>以上所有的 <span class="arithmatex">\(p_i,p_{ij},f(x),f(x,y)\)</span> 均为 <span class="arithmatex">\(X,Y\)</span> 本来的联合分布率，而不是 <span class="arithmatex">\(Z\)</span> 的联合分布率</p>
+</div>
+<hr />
+<h3 id="_11">数学期望的性质<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>除了使用定义计算，还有一些性质可以简化计算：</p>
+<ul>
+<li>若 <span class="arithmatex">\(C\)</span> 是常数，则 <span class="arithmatex">\(E(C)=C\)</span>；</li>
+<li>设 <span class="arithmatex">\(X\)</span> 是随机变量，<span class="arithmatex">\(C\)</span> 是常数，则 <span class="arithmatex">\(E(C⋅X)=C⋅E(X)\)</span>；</li>
+<li>设 <span class="arithmatex">\(X,Y\)</span> 是两个随机变量，则 <span class="arithmatex">\(E(X+Y)=E(X)+E(Y)\)</span>； <ul>
+<li>这一性质可以推广到任意有限个随机变量线性组合的情况：<span class="arithmatex">\(E(\sum\limits_i^nc_i⋅X_i)=\sum\limits_i^nc_i⋅E(X_i)\)</span>；</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>上述三条合并起来就是 <span class="arithmatex">\(E(aX+bY+c)=aE(X)+bE(Y)+c\)</span></p>
+</div>
+<ul>
+<li>设 <span class="arithmatex">\(X,Y\)</span> 是相互独立的随机变量，则 <span class="arithmatex">\(E(X⋅Y)=E(X)⋅E(Y)\)</span>，但<strong>逆命题不成立</strong>；<ul>
+<li>更一般地，对于任意有限个独立的随机变量，<span class="arithmatex">\(E(\prod\limits_i^nX_i)=\prod\limits_i^nE(X_i)\)</span></li>
+</ul>
+</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4247,7 +4423,7 @@ E(X)=\sum\limits_{k=0}^{+\infty}k⋅P{X=k}=\sum\limits_{k=0}^{+\infty}k⋅\frac{
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月7日 10:55:15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月7日 11:25:52</span>
   </span>
 
     
