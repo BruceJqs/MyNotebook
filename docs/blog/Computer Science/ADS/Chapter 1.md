@@ -39,9 +39,9 @@ comments: true
 	$$
 	n_h = \left\{
 	\begin{array}{}
-	1 & & (n=0)\\
-	2 & & (n=1)\\
-	n_{h-1}+n_{h-2}+1 & & (n>1)
+	1 & & (h=0)\\
+	2 & & (h=1)\\
+	n_{h-1}+n_{h-2}+1 & & (h>1)
 	\end{array}
 	\right.
 	$$
