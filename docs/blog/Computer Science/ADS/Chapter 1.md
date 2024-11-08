@@ -187,7 +187,7 @@ comments: true
 ***
 ### Operations
 
-> 对于某个节点 X，我们记其父节点为 P(Parent)，其父节点的父节点为 G(Grandparent)。(<font color="red">请谨记，我们需要找到两层两层地来看这个子结构，再判断当前子结构到底是下面的哪种情况，作出相应的操作！</font>)
+> 对于某个节点 X，我们记其父节点为 P(Parent)，其父节点的父节点为 G(Grandparent)。(<font color="red">请谨记，我们需要两层两层地来看这个子结构，再判断当前子结构到底是下面的哪种情况，作出相应的操作！</font>)
 
 - 当我们访问到 X 时：
 	- 如果 P 是根节点，则直接进行一次 Single Rotation（即类似 AVL Tree 中的 LL / RR Rotation）
