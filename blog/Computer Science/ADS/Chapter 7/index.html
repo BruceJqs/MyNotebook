@@ -4240,7 +4240,7 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029105421.png" /></p>
 <p>如图，现在我们知道，只有落在两条深绿色之间的点才可能会更新答案。</p>
 <p>现在我们需要做的是，从分界线左侧的区域里拿一个点，和分界线右边的一个点做匹配，然后取所有结果中的最小点。不过这件事仍然可以优化——在二维的数据中，仅对一个纬度做约束往往会导致事情变得不那么稳定，所以我们同样考虑在另外一个方向做约束。</p>
-<p>也是基于范围约束的考虑。假设我们以左侧的点为基准，从上往下做遍历这些点，那么对于点 <span class="arithmatex">\(p_{l_i}\)</span>​​，具有能够更新答案的，<span class="arithmatex">\(dis(p_{l_i​}​,p_{r_j}​​)\leq\delta\)</span> 的 <span class="arithmatex">\(p_{r_j}​​\)</span>，一定有 <span class="arithmatex">\(dis_{||bound}(p_{l_i},p_{r_j})\leq\delta\)</span>（直角三角形斜边最长）。</p>
+<p>也是基于范围约束的考虑。假设我们以左侧的点为基准，从上往下遍历这些点，那么对于点 <span class="arithmatex">\(p_{l_i}\)</span>​​，具有能够更新答案的，<span class="arithmatex">\(dis(p_{l_i​}​,p_{r_j}​​)\leq\delta\)</span> 的 <span class="arithmatex">\(p_{r_j}​​\)</span>，一定有 <span class="arithmatex">\(dis_{||bound}(p_{l_i},p_{r_j})\leq\delta\)</span>（直角三角形斜边最长）。</p>
 <p>因此，对于选定点 <span class="arithmatex">\(p_{l_i}\)</span>，其所有可能导致答案更新的点都被框定在一个 <span class="arithmatex">\(2\delta×\delta\)</span> 的矩形中。</p>
 <p>而更奇妙的是，这个由参数 <span class="arithmatex">\(\delta\)</span> 指定的矩形，巧妙地约束了落在矩形中的点的最大数量。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029110835.png" /></p>
@@ -4260,7 +4260,7 @@ T(N)=2T(\frac{N}{2})+O(N)=O(N\log N)
 <h2 id="solving-recurrences">Solving Recurrences<a class="headerlink" href="#solving-recurrences" title="Permanent link">&para;</a></h2>
 <p>在开始接下来的内容之前，我们需要给出更一般的，我们想要解决的问题，即求解时间复杂度递推公式形如下式的算法的时间复杂度：</p>
 <div class="arithmatex">\[
-T(N)=aT(\frac{N}{b})+f(N),a,b\in\Z^+
+T(N)=aT(\frac{N}{b})+f(N),a,b\in\mathbb{Z}^+
 \]</div>
 <p>例如，上面的最近点对问题，就是 <span class="arithmatex">\(a=2,b=2,f(N)=O(N)\)</span> 的情况。</p>
 <hr />
@@ -4290,11 +4290,37 @@ T(\frac{m}{2})=O(\frac{m}{2}\log\frac{m}{2})\leq c\frac{m}{2}\log\frac{m}{2}
 T(m)=2T(\frac{m}{2})+m\leq c\frac{m}{2}\log\frac{m}{2}+m\leq cm\log m\text{ for }c\geq 1
 \]</div>
 <p>对于足够小的 <span class="arithmatex">\(m=2\)</span> 式子就可以成立，由归纳法得结论成立</p>
+<div class="admonition fail">
+<p class="admonition-title">错误的猜测</p>
+<p>如果我们猜测 <span class="arithmatex">\(T(N)=O(N)\)</span>，那么会有以下证明：</p>
+<ul>
+<li>假设对于 <span class="arithmatex">\(m&lt;N\)</span>，该结论成立</li>
+<li>
+<p>取 <span class="arithmatex">\(m=\lfloor\frac{N}{2}\rfloor\)</span>，那么存在一个常数 <span class="arithmatex">\(c&gt;0\)</span>，使得<span class="arithmatex">\(T(\lfloor\frac{N}{2}\rfloor)≤c\lfloor\frac{N}{2}\rfloor\)</span></p>
+</li>
+<li>
+<p>将这个式子带入递推公式，得：</p>
+</li>
+</ul>
+<p>$$ 
+T(N)=2T(\lfloor\frac{N}{2}\rfloor)+N\leq 2c\lfloor\frac{N}{2}\rfloor+N\leq cN+N=O(N)
+$$​</p>
+<p>这样的证明看起来没什么问题，但错误发生在最后一个不等式上：我们得到了 <span class="arithmatex">\(cN+N=(c+1)N\)</span>，虽然它的时间复杂度确实是 <span class="arithmatex">\(O(N)\)</span>，但在形式上它是错误的，因为我们预先假设正确的结论是 <span class="arithmatex">\(T(m)≤cm\)</span>，要根据这个条件证明出 <span class="arithmatex">\(T(N)≤cN\)</span>，而不是 <span class="arithmatex">\((c+1)N\)</span>。换句话说，我们必须证明出<strong>精确的形式</strong>，连常数也必须保持一致。</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p>不过很显然，在某些情况下我们求证了一个复杂度的假设成立，但它并不一定足够紧，这是猜解法的通病。</p>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<ul>
+<li>如果时间复杂度的递推关系式中出现类似 <span class="arithmatex">\(T(\sqrt{N})\)</span> 等形式，可以考虑<strong>换元法</strong>：</li>
+<li>令 <span class="arithmatex">\(m=\log⁡ n\)</span>，那么 <span class="arithmatex">\(T(\sqrt{n})=T(2^{\frac{m}{2}}),T(n)=T(2^m)\)</span></li>
+<li>再令 <span class="arithmatex">\(S(m)=T(2^m)\)</span>，那么 <span class="arithmatex">\(S(\frac{m}{2})=T(2^{\frac{m}{2}})\)</span>，这样整个递推关系式就被转化为一般的形式了</li>
+<li>如果出现形如 <span class="arithmatex">\(T(f(N)+c)\)</span> 的形式（<span class="arithmatex">\(c\)</span> 为常数），由于 <span class="arithmatex">\(N\)</span> 足够大，因此可以忽略常数 <span class="arithmatex">\(c\)</span></li>
+</ul>
+</div>
 <hr />
 <h3 id="recursion-tree-method">Recursion-tree Method<a class="headerlink" href="#recursion-tree-method" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -4580,7 +4606,7 @@ O(N^k\log^{p}N),a&lt;b^k
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月29日 15:52:38</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月9日 16:12:16</span>
   </span>
 
     
