@@ -4568,39 +4568,24 @@ O(N^k\log^{p}N),a&lt;b^k
 \end{cases}
 \]</div>
 </div>
-<p>!!!  Example "Examples of Form 3"</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>=== &quot;Example 01&quot;
-
-    对于归并排序，$a=b=2,p=0,k=1$，满足第 2 种情况（$a=b^1$），因此 $T(N)=O(N^k\log^{⁡p+1} N)=O(N\log ⁡N)$。
-
-
-=== &quot;Example 02&quot;
-
-    假设某种分治算法中，对于每次递归，$a=3,b=2$，且合并操作的时间复杂度为 $O(N)$，即 $k=1,p=0$。
-
-    不难发现，它符合第 1 种情况，因此 T(N)=O(N^{\log_{⁡2}3})=O(N^{1.59})。
-
-    &gt; 如果合并时间复杂度为 $O(N^2)$，那么 $T(N)=O(N^2)$。
-
-=== &quot;Example 03&quot;
-
-    再来解决前两种形式都没法计算的问题：$a=b=2,f(N)=N\log ⁡N$（即 $k=p=1$）。此时满足第 2 种情况，因此时间复杂度 $T(N)=O(N^k\log^{⁡p+1}N)=O(N\log^2N)$。
-</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Examples of Form 3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Example 01</label><label for="__tabbed_5_2">Example 02</label><label for="__tabbed_5_3">Example 03</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对于归并排序，<span class="arithmatex">\(a=b=2,p=0,k=1\)</span>，满足第 2 种情况（<span class="arithmatex">\(a=b^1\)</span>），因此 <span class="arithmatex">\(T(N)=O(N^k\log^{⁡p+1} N)=O(N\log ⁡N)\)</span>。</p>
+</div>
+<div class="tabbed-block">
+<p>假设某种分治算法中，对于每次递归，<span class="arithmatex">\(a=3,b=2\)</span>，且合并操作的时间复杂度为 <span class="arithmatex">\(O(N)\)</span>，即 <span class="arithmatex">\(k=1,p=0\)</span>。</p>
+<p>不难发现，它符合第 1 种情况，因此 T(N)=O(N<sup 1.59="1.59">{\log_{⁡2}3})=O(N</sup>)。</p>
+<p>如果合并时间复杂度为 <span class="arithmatex">\(O(N^2)\)</span>，那么 <span class="arithmatex">\(T(N)=O(N^2)\)</span>。</p>
+</div>
+<div class="tabbed-block">
+<p>再来解决前两种形式都没法计算的问题：<span class="arithmatex">\(a=b=2,f(N)=N\log ⁡N\)</span>（即 <span class="arithmatex">\(k=p=1\)</span>）。此时满足第 2 种情况，因此时间复杂度 <span class="arithmatex">\(T(N)=O(N^k\log^{⁡p+1}N)=O(N\log^2N)\)</span>。</p>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4670,7 +4655,7 @@ O(N^k\log^{p}N),a&lt;b^k
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月9日 16:42:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月9日 16:46:45</span>
   </span>
 
     
