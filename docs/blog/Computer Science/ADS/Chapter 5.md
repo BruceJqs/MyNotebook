@@ -206,12 +206,8 @@ comments: true
 ***
 ## Running time of Heap Operations
 
-| **Heaps**    | **Leftist** | **Skew**    | **Binomial** | **Fibonacci** | **Binary**  | **Link list** |
-| ------------ | ----------- | ----------- | ------------ | ------------- | ----------- | ------------- |
-| Make heap    | $O(1)$      | $O(1)$      | $O(1)$       | $O(1)$        | $O(1)$      | $O(1)$        |
-| Find-Min     | $O(1)$      | $O(1)$      | $O(\log N)$  | $O(1)$        | $O(1)$      | $O(N)$        |
-| Merge(Union) | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  | $O(1)$        | $O(N)$      | $O(1)$        |
-| Insert       | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  | $O(1)$        | $O(\log N)$ | $O(1)$        |
-| Delete       | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  | $O(\log N)$   | $O(\log N)$ | $O(N)$        |
-| Delete-Min   | $O(1)$      | $O(\log N)$ | $O(\log N)$  | $O(\log N)$   | $O(\log N)$ | $O(N)$        |
-| Decrease-Key | $O(\log N)$ | $O(\log N)$ | $O(\log N)$  | $O(1)$        | $O(\log N)$ | $O(1)$        |
+From [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_heap#cite_note-14)：
+
+![](../../../assets/Pasted%20image%2020241109145514.png)
+
+- a.m. 表示 Amortized Analysis
