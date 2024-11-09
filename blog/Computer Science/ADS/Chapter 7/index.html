@@ -4290,7 +4290,7 @@ T(\frac{m}{2})=O(\frac{m}{2}\log\frac{m}{2})\leq c\frac{m}{2}\log\frac{m}{2}
 T(m)=2T(\frac{m}{2})+m\leq c\frac{m}{2}\log\frac{m}{2}+m\leq cm\log m\text{ for }c\geq 1
 \]</div>
 <p>对于足够小的 <span class="arithmatex">\(m=2\)</span> 式子就可以成立，由归纳法得结论成立</p>
-<div class="admonition fail">
+<div class="admonition failure">
 <p class="admonition-title">错误的猜测</p>
 <p>如果我们猜测 <span class="arithmatex">\(T(N)=O(N)\)</span>，那么会有以下证明：</p>
 <ul>
@@ -4299,13 +4299,14 @@ T(m)=2T(\frac{m}{2})+m\leq c\frac{m}{2}\log\frac{m}{2}+m\leq cm\log m\text{ for 
 <p>取 <span class="arithmatex">\(m=\lfloor\frac{N}{2}\rfloor\)</span>，那么存在一个常数 <span class="arithmatex">\(c&gt;0\)</span>，使得<span class="arithmatex">\(T(\lfloor\frac{N}{2}\rfloor)≤c\lfloor\frac{N}{2}\rfloor\)</span></p>
 </li>
 <li>
-<p>将这个式子带入递推公式，得：</p>
+<p>将这个式子代入递推公式，得：</p>
 </li>
 </ul>
 <p>$$ 
 T(N)=2T(\lfloor\frac{N}{2}\rfloor)+N\leq 2c\lfloor\frac{N}{2}\rfloor+N\leq cN+N=O(N)
-$$​</p>
-<p>这样的证明看起来没什么问题，但错误发生在最后一个不等式上：我们得到了 <span class="arithmatex">\(cN+N=(c+1)N\)</span>，虽然它的时间复杂度确实是 <span class="arithmatex">\(O(N)\)</span>，但在形式上它是错误的，因为我们预先假设正确的结论是 <span class="arithmatex">\(T(m)≤cm\)</span>，要根据这个条件证明出 <span class="arithmatex">\(T(N)≤cN\)</span>，而不是 <span class="arithmatex">\((c+1)N\)</span>。换句话说，我们必须证明出<strong>精确的形式</strong>，连常数也必须保持一致。</p>
+$$
+​
+这样的证明看起来没什么问题，但错误发生在最后一个不等式上：我们得到了 <span class="arithmatex">\(cN+N=(c+1)N\)</span>，虽然它的时间复杂度确实是 <span class="arithmatex">\(O(N)\)</span>，但在形式上它是错误的，因为我们预先假设正确的结论是 <span class="arithmatex">\(T(m)≤cm\)</span>，要根据这个条件证明出 <span class="arithmatex">\(T(N)≤cN\)</span>，而不是 <span class="arithmatex">\((c+1)N\)</span>。换句话说，我们必须证明出<strong>精确的形式</strong>，连常数也必须保持一致。</p>
 </div>
 </div>
 </div>
@@ -4348,12 +4349,28 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <p>此时由于分治的策略是相对均匀的，所以我们可以认为得到的是一个完美三叉树。</p>
 <p>显然，树高为 <span class="arithmatex">\(\log_{⁡4}N\)</span>，根记为 0，每个分治节点的 combine 开销已经标注在图的节点位置，横向箭头标记的是对该层所有节点的开销的求和。特别的，对于最底层，即叶子层，它表示的是 conquer 部分的开销。</p>
 <p>于是我们可以根据 <span class="arithmatex">\(T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{non-leaf-nodes}f(N_{node_i})}_{combine}\)</span> 的形式，对其进行求和，得到图片中下方的式子。</p>
+<p>最后我们有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T(N)​&amp;=\sum\limits_{i=0}^{\log_{4}^​N−1}​(\frac{3}{16}​)^icN^2+\Theta(N^{\log_{4}​3})\\
+&amp;&lt;\sum\limits_{i=0}^{+\infty}​(\frac{3}{16}​)^icN^2+\Theta(N^{\log_{4​}3})\\
+&amp;=\frac{cN^2}{​1−\frac{3}{16}​}+\Theta(N^{\log_{4}​3})=O(N^2)
+\end{aligned}​
+\]</div>
+<ul>
+<li>第 2 行到第 3 行的等式中，用到了一个常用的幂级数展开公式：</li>
+</ul>
+<div class="arithmatex">\[
+\frac{1}{1−x}=\sum\limits_{n=0}^{+\infty}x^n,∣x∣&lt;1
+\]</div>
 </div>
 <hr />
 <h3 id="master-method">Master Method<a class="headerlink" href="#master-method" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>主方法(Master Method)之所以叫“主”，是因为它分析的是 combine 和 conquer 部分孰为主导。</p>
 </blockquote>
+<p>需要注意的是，主定理并不是万金油，它没有覆盖所有的情况。</p>
+<hr />
 <h4 id="form-1">Form 1<a class="headerlink" href="#form-1" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Form 1</p>
@@ -4382,7 +4399,7 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <div class="tabbed-block">
 <ul>
 <li><span class="arithmatex">\(a=b=2,f(N)=N\log ⁡N\)</span>；<ul>
-<li><span class="arithmatex">\(f(N)=N\log ⁡N\)</span>，虽然 <span class="arithmatex">\(N\log ⁡N=\Theta(N^{log_⁡{2}2})\)</span>，但是 <span class="arithmatex">\(N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})\)</span>，所以不适用于情况 3；</li>
+<li><span class="arithmatex">\(f(N)=N\log ⁡N\)</span>，虽然 <span class="arithmatex">\(N\log ⁡N=\Theta(N^{log_⁡{2} 2})\)</span>，但是 <span class="arithmatex">\(N\log⁡ N\not=\Theta(N^{\log⁡_{2} 2+\epsilon})\)</span>，所以不适用于情况 3；</li>
 <li>具体来说，<span class="arithmatex">\(\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon&gt;0\)</span>；</li>
 <li>这个例子体现出了 <span class="arithmatex">\(\epsilon\)</span> 的一定作用；</li>
 </ul>
@@ -4407,7 +4424,7 @@ T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{no
 <li>第 j 层一共 <span class="arithmatex">\(a^j\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^j×f(\frac{N}{b^j})\)</span>；</li>
 <li>......</li>
 <li>第 <span class="arithmatex">\(\log_{⁡b}N−1\)</span> 层一共 <span class="arithmatex">\(a^{\log_{⁡b}N−1}\)</span> 项，combine 的开销为 <span class="arithmatex">\(a^{\log_{b}N−1}×f(\frac{N}{b^{\log_{b}N−1}})\)</span>；</li>
-<li>第 <span class="arithmatex">\(\log_{⁡b}N\)</span> 层，即为叶子层，一共 <span class="arithmatex">\(a^{\log_{b}N}=N^{\log_{b}a}\)</span> 项，conquer 的开销为 <span class="arithmatex">\(N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})\)</span>；</li>
+<li>第 <span class="arithmatex">\(\log_{⁡b}N\)</span> 层，即为叶子层，一共 <span class="arithmatex">\(a^{\log_{b}N}=N^{\log_{b}a}\)</span> 项，conquer 的开销为 <span class="arithmatex">\(N^{\log_⁡{b} a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})\)</span>；</li>
 </ul>
 <p>得到求和式：</p>
 <div class="arithmatex">\[
@@ -4433,7 +4450,7 @@ T(N)&amp;=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jO((\frac{N}{b^
 <div class="arithmatex">\[
 T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
 \]</div>
-<p>而我们有条件 <span class="arithmatex">\(f(N)=\Theta(N^{\log_{⁡b}a}\)</span>，将它代入到上式中得到：</p>
+<p>而我们有条件 <span class="arithmatex">\(f(N)=\Theta(N^{\log_{⁡b}a})\)</span>，将它代入到上式中得到：</p>
 <div class="arithmatex">\[
 \begin{aligned}
 T(N)&amp;=\Theta(N^{\log_{⁡b}a})+\sum\limits_{j=0}^{\log⁡_{b}N−1}a^j\Theta((\frac{N}{b^j})^{\log⁡_{b}a})\\
@@ -4520,7 +4537,21 @@ f(N)∼Θ(a^{\log_{⁡b}N})=Θ(N^{\log_{⁡b}a})
 \]</div>
 <p>剩下的证明就跟 Form 1 的第三种情况一样了。</p>
 </div>
+<p>这个形式虽然简单，但是能够计算的时间复杂度相当有限，一些能由前一种形式的主定理解决的问题，用这种形式的主定理无法解决；前一种形式的主定理无法解决的问题，这种形式的主定理更无法解决。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><span class="arithmatex">\(a=4,b=2,f(N)=N\log N\)</span></p>
+<ul>
+<li>先计算 <span class="arithmatex">\(af(\frac{N}{b})=4(\frac{N}{2})\log⁡(\frac{N}{2})=2N\log ⁡N−2N\)</span></li>
+<li>显然找不到任何常数 <span class="arithmatex">\(c\)</span> 满足 <span class="arithmatex">\(cf(N)=2N\log⁡ N−2N\)</span>，因此无法用这种主定理计算</li>
+<li>然而，用前一种主定理是可以算出来的：发现 <span class="arithmatex">\(O(N\log⁡_{b}a−\epsilon)=O(N^{2−\epsilon})=f(N)\)</span>，符合第 1 类情况，那么时间复杂度为 <span class="arithmatex">\(T=O(N^2)\)</span></li>
+</ul>
+</div>
+<hr />
 <h4 id="form-3">Form 3<a class="headerlink" href="#form-3" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>个人认为 Form 3 更为强大更为常用。</p>
+</blockquote>
 <div class="admonition note">
 <p class="admonition-title">Form 3</p>
 <p>当递推关系满足：</p>
@@ -4537,6 +4568,39 @@ O(N^k\log^{p}N),a&lt;b^k
 \end{cases}
 \]</div>
 </div>
+<p>!!!  Example "Examples of Form 3"</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>=== &quot;Example 01&quot;
+
+    对于归并排序，$a=b=2,p=0,k=1$，满足第 2 种情况（$a=b^1$），因此 $T(N)=O(N^k\log^{⁡p+1}N)=O(Nlog⁡N)$。
+
+
+=== &quot;Example 02&quot;
+
+    假设某种分治算法中，对于每次递归，$a=3,b=2$，且合并操作的时间复杂度为 $O(N)$，即 $k=1,p=0$。
+
+    不难发现，它符合第 1 种情况，因此 T(N)=O(N^{\log_{⁡2}3})=O(N^{1.59})。
+
+    &gt; 如果合并时间复杂度为 $O(N^2)$，那么 $T(N)=O(N^2)$。
+
+=== &quot;Example 03&quot;
+
+    再来解决前两种形式都没法计算的问题：$a=b=2,f(N)=N\log ⁡N$（即 $k=p=1$）。此时满足第 2 种情况，因此时间复杂度 $T(N)=O(N^k\log^{⁡p+1}N)=O(N\log^2N)$。
+</code></pre></div></td></tr></table></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4606,7 +4670,7 @@ O(N^k\log^{p}N),a&lt;b^k
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月9日 16:12:16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月9日 16:36:31</span>
   </span>
 
     
