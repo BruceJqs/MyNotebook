@@ -121,19 +121,19 @@ $$
 		
 		对于足够小的 $m=2$ 式子就可以成立，由归纳法得结论成立
 		
-		!!! fail "错误的猜测"
+		!!! failure "错误的猜测"
 		
 			如果我们猜测 $T(N)=O(N)$，那么会有以下证明：
 
 			- 假设对于 $m<N$，该结论成立
 			- 取 $m=\lfloor\frac{N}{2}\rfloor$，那么存在一个常数 $c>0$，使得$T(\lfloor\frac{N}{2}\rfloor)≤c\lfloor\frac{N}{2}\rfloor$
 			    
-			- 将这个式子带入递推公式，得：
+			- 将这个式子代入递推公式，得：
 			
 			$$ 
 			T(N)=2T(\lfloor\frac{N}{2}\rfloor)+N\leq 2c\lfloor\frac{N}{2}\rfloor+N\leq cN+N=O(N)
-			$$​
-			
+			$$
+			​
 			这样的证明看起来没什么问题，但错误发生在最后一个不等式上：我们得到了 $cN+N=(c+1)N$，虽然它的时间复杂度确实是 $O(N)$，但在形式上它是错误的，因为我们预先假设正确的结论是 $T(m)≤cm$，要根据这个条件证明出 $T(N)≤cN$，而不是 $(c+1)N$。换句话说，我们必须证明出**精确的形式**，连常数也必须保持一致。
 
 不过很显然，在某些情况下我们求证了一个复杂度的假设成立，但它并不一定足够紧，这是猜解法的通病。
@@ -182,11 +182,30 @@ $$
 	显然，树高为 $\log_{⁡4}N$，根记为 0，每个分治节点的 combine 开销已经标注在图的节点位置，横向箭头标记的是对该层所有节点的开销的求和。特别的，对于最底层，即叶子层，它表示的是 conquer 部分的开销。
 	
 	于是我们可以根据 $T(N)=...=\underbrace{cN_{leaves}}_{conquer}+\underbrace{\sum\limits_{node_i}^{non-leaf-nodes}f(N_{node_i})}_{combine}$ 的形式，对其进行求和，得到图片中下方的式子。
+	
+	最后我们有：
+	
+	$$
+	\begin{aligned}
+	T(N)​&=\sum\limits_{i=0}^{\log_{4}^​N−1}​(\frac{3}{16}​)^icN^2+\Theta(N^{\log_{4}​3})\\
+	&<\sum\limits_{i=0}^{+\infty}​(\frac{3}{16}​)^icN^2+\Theta(N^{\log_{4​}3})\\
+	&=\frac{cN^2}{​1−\frac{3}{16}​}+\Theta(N^{\log_{4}​3})=O(N^2)
+	\end{aligned}​
+	$$
+	
+	- 第 2 行到第 3 行的等式中，用到了一个常用的幂级数展开公式：
+	
+	$$
+	\frac{1}{1−x}=\sum\limits_{n=0}^{+\infty}x^n,∣x∣<1
+	$$
+    
 ***
 ### Master Method
 
 > 主方法(Master Method)之所以叫“主”，是因为它分析的是 combine 和 conquer 部分孰为主导。
 
+需要注意的是，主定理并不是万金油，它没有覆盖所有的情况。
+***
 #### Form 1
 
 !!! note "Form 1"
