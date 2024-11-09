@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Chapter 6"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 6.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Chapter 6"
             }
           },
           {
@@ -176,10 +176,10 @@
   },
   "active": "c4fbc51185f1ae7a",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/assets/Pasted image 20241109145514.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 6.md",
-    "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
@@ -208,7 +208,6 @@
     "docs/assets/Pasted image 20241106004138.png",
     "docs/assets/Pasted image 20241106001755.png",
     "docs/assets/Pasted image 20241106001131.png",
-    "docs/assets/Pasted image 20241106000609.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "JioNLP/test/test_time_parser.py",
     "JioNLP/test/test_time_extractor.py",
