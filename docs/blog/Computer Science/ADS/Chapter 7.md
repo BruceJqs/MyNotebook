@@ -231,7 +231,7 @@ $$
 	=== "Example 02"
 	
 		- $a=b=2,f(N)=N\log ⁡N$；
-			- $f(N)=N\log ⁡N$，虽然 $N\log ⁡N=\Theta(N^{log_⁡{2}2})$，但是 $N\log⁡ N\not=\Theta(N^{\log⁡_2 2−\epsilon})$，所以不适用于情况 3；
+			- $f(N)=N\log ⁡N$，虽然 $N\log ⁡N=\Theta(N^{log_⁡{2} 2})$，但是 $N\log⁡ N\not=\Theta(N^{\log⁡_{2} 2+\epsilon})$，所以不适用于情况 3；
 			- 具体来说，$\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon>0$；
 			- 这个例子体现出了 $\epsilon$ 的一定作用；
 
@@ -250,7 +250,7 @@ $$
 		- 第 j 层一共 $a^j$ 项，combine 的开销为 $a^j×f(\frac{N}{b^j})$；
 		- ......
 		- 第 $\log_{⁡b}N−1$ 层一共 $a^{\log_{⁡b}N−1}$ 项，combine 的开销为 $a^{\log_{b}N−1}×f(\frac{N}{b^{\log_{b}N−1}})$；
-		- 第 $\log_{⁡b}N$ 层，即为叶子层，一共 $a^{\log_{b}N}=N^{\log_{b}a}$ 项，conquer 的开销为 $N^{\log_⁡{b}a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})$；
+		- 第 $\log_{⁡b}N$ 层，即为叶子层，一共 $a^{\log_{b}N}=N^{\log_{b}a}$ 项，conquer 的开销为 $N^{\log_⁡{b} a}×\Theta(1)=\Theta(N^{\log_{⁡b}a})$；
 		
 		得到求和式：
 		
@@ -283,7 +283,7 @@ $$
 		T(N)=\Theta(N^{\log_{b}a})+\sum\limits_{j=0}^{\log_{b}N-1}a^jf(\frac{N}{b^j})
 		$$
 		
-		而我们有条件 $f(N)=\Theta(N^{\log_{⁡b}a}$，将它代入到上式中得到：
+		而我们有条件 $f(N)=\Theta(N^{\log_{⁡b}a})$，将它代入到上式中得到：
 		
 		$$
 		\begin{aligned}
@@ -394,7 +394,20 @@ $$
 	
 	剩下的证明就跟 Form 1 的第三种情况一样了。
 
+这个形式虽然简单，但是能够计算的时间复杂度相当有限，一些能由前一种形式的主定理解决的问题，用这种形式的主定理无法解决；前一种形式的主定理无法解决的问题，这种形式的主定理更无法解决。
+
+!!! Example
+
+	$a=4,b=2,f(N)=N\log N$
+	
+	- 先计算 $af(\frac{N}{b})=4(\frac{N}{2})\log⁡(\frac{N}{2})=2N\log ⁡N−2N$
+	- 显然找不到任何常数 $c$ 满足 $cf(N)=2N\log⁡ N−2N$，因此无法用这种主定理计算
+	- 然而，用前一种主定理是可以算出来的：发现 $O(N\log⁡_{b}a−\epsilon)=O(N^{2−\epsilon})=f(N)$，符合第 1 类情况，那么时间复杂度为 $T=O(N^2)$
+
+***
 #### Form 3
+
+> 个人认为 Form 3 更为强大更为常用。
 
 !!! note "Form 3"
 
@@ -415,5 +428,25 @@ $$
 	\end{cases}
 	$$
 	
+
+!!!  Example "Examples of Form 3"
+
+	=== "Example 01"
+	
+		对于归并排序，$a=b=2,p=0,k=1$，满足第 2 种情况（$a=b^1$），因此 $T(N)=O(N^k\log^{⁡p+1}N)=O(Nlog⁡N)$。
+		
+	
+	=== "Example 02"
+	
+		假设某种分治算法中，对于每次递归，$a=3,b=2$，且合并操作的时间复杂度为 $O(N)$，即 $k=1,p=0$。
+		
+		不难发现，它符合第 1 种情况，因此 T(N)=O(N^{\log_{⁡2}3})=O(N^{1.59})。
+		
+		> 如果合并时间复杂度为 $O(N^2)$，那么 $T(N)=O(N^2)$。
+	
+	=== "Example 03"
+	
+		再来解决前两种形式都没法计算的问题：$a=b=2,f(N)=N\log ⁡N$（即 $k=p=1$）。此时满足第 2 种情况，因此时间复杂度 $T(N)=O(N^k\log^{⁡p+1}N)=O(N\log^2N)$。
+
 
 
