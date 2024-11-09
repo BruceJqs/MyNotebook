@@ -429,7 +429,7 @@ $$
 	$$
 	
 
-!!!  Example "Examples of Form 3"
+!!! Example "Examples of Form 3"
 
 	=== "Example 01"
 	
