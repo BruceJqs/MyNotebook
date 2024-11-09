@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 6.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 6"
+              "title": "Chapter 7"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 6.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 7.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 6"
+              "title": "Outline of Chapter 7"
             }
           },
           {
@@ -176,6 +176,8 @@
   },
   "active": "c4fbc51185f1ae7a",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/Chapter 8.md",
+    "docs/blog/Computer Science/ADS/Chapter 6.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/assets/Pasted image 20241109145514.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
@@ -193,7 +195,6 @@
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
-    "docs/blog/Computer Science/ADS/Chapter 8.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
