@@ -4873,11 +4873,91 @@
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">Operation of the Datapath</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">R-Type</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">R-Type</label><label for="__tabbed_3_2">Load</label><label for="__tabbed_3_3">Store</label><label for="__tabbed_3_4">Branch</label><label for="__tabbed_3_5">Jump</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
 <li>以 <code>add x1, x2, x3</code> 为例：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241110231941.png" /></p>
+<ul>
+<li>
+<p>执行指令的步骤：</p>
+<ul>
+<li>从指令内存中获取指令，并递增 PC</li>
+<li>从寄存器堆读取寄存器 <code>x2</code> 和 <code>x3</code>，同时主控制单元设置好对应的控制信号</li>
+<li>ALU 根据操作码确定运算类型，然后对上步中读取的数据进行计算</li>
+<li>将 ALU 的计算结果写入目标寄存器 <code>x1</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>以 <code>ld x1, offset(x2)</code> 为例：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241110232133.png" /></p>
+<ul>
+<li>
+<p>执行指令的步骤：</p>
+<ul>
+<li>从指令内存中获取指令，并递增 PC</li>
+<li>从寄存器堆读取寄存器 <code>x2</code> </li>
+<li>ALU 计算寄存器 <code>x2</code> 的数据和符号扩展后的12位立即数之和，该结果作为数据的内存地址</li>
+<li>将对应的内存数据写入寄存器堆内（<code>x1</code>）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>以 <code>sd x1, offset(x2)</code> 为例：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241110232908.png" /></p>
+<ul>
+<li>
+<p>执行指令的步骤：</p>
+<ul>
+<li>从指令内存中获取指令，并递增 PC</li>
+<li>从寄存器堆读取寄存器 <code>x2</code> </li>
+<li>ALU 计算寄存器 <code>x2</code> 的数据和符号扩展后的12位立即数之和，该结果作为数据的内存地址</li>
+<li>将 <code>x1</code> 中的值存入对应的内存数据中</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>以 <code>beq x1, x2, offset</code> 为例：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241110232430.png" /></p>
+<ul>
+<li>
+<p>执行指令的步骤：</p>
+<ul>
+<li>从指令内存中获取指令，并递增 PC</li>
+<li>从寄存器堆读取寄存器<code>x1</code>和<code>x2</code></li>
+<li>ALU 将读取的两个数据相减；同时将 PC 的值与左移 1 位之后的立即数相加，得到分支目标地址</li>
+<li>通过 ALU 的<code>Zero</code>信号来决定如何更新 PC</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>以 <code>jal x1, procedure</code> 为例：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241110233227.png" /></p>
+<ul>
+<li>
+<p>执行指令的步骤：</p>
+<ul>
+<li>从指令内存中获取指令，并递增 PC</li>
+<li>将目标地址符号扩展</li>
+<li>将地址左移一位</li>
+<li>将结果加到 PC 当中，更新 PC</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -4952,7 +5032,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月10日 18:01:18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月10日 23:34:47</span>
   </span>
 
     
