@@ -221,4 +221,100 @@ comments: true
 			- 从指令数据通路中得到 PC 的值，与跳转地址偏移量相加得到跳转地址
 			- 将跳转地址传回给 PC
 			- 将 PC+4 存储到寄存器堆中
+***
+## A Simple Implementation Scheme
+
+>因为所有的信息（操作类型、数据去向等）都来自 32 位的指令，所以我们需要一个控制器（相当于是中枢）来将 32 位的指令处理成相对应的信号。
+
+### Building Controller
+
+#### ALU Symbol & Control
+
+在所有的 7 个控制信号中，最重要的是 ALU 的控制信号（即上图的 `ALU operation` ），因为不管何种指令都需要用到这个元件，而且不同的指令会利用它达到不同的目的。
+
+ALU 控制信号一共有 4 位：
+
+- 其中 2 位分别来自指令中的 `funct3` 和 `funct7` 字段
+- 另外 2 位则来自一个称为 `ALUOp` 的字段，它来自主控制单元 (Main Control Unit)，用于指定具体执行何种指令，不同的值对应不同的类型：
+	- `00`：加载 / 存储
+	- `01`：`beq` 指令
+	- `10`：R 型指令
+
+下表展示了 ALU 控制信号及对应的操作：
+
+| **Opcode** | **ALUOp** |  **Operation**  | **Func7** | **Func3** | **ALU Function** | **ALU Control** |
+|:----------:|:---------:|:---------------:|:---------:|:---------:|:----------------:|:---------------:|
+|     ld     |    00     |  Load Register  |  XXXXXXX  |    XXX    |     Addition     |      0010       |
+|     sd     |    00     | Store Register  |  XXXXXXX  |    XXX    |     Addition     |      0010       |
+|    beq     |    01     | Branch On Equal |  XXXXXXX  |    XXX    |   Subtraction    |      0110       |
+|   R-Type   |    10     |       And       |  0000000  |    111    |       And        |      0000       |
+|   R-Type   |    10     |       Or        |  0000000  |    110    |        Or        |      0001       |
+|   R-Type   |    10     |       Add       |  0000000  |    000    |     Addition     |      0010       |
+|   R-Type   |    10     |       Sub       |  0100000  |    000    |   Subtraction    |      0110       |
+|   R-Type   |    10     |       Slt       |  0000000  |    010    |       Slt        |      0111       |
+|   R-Type   |    10     |       Srl       |  0000000  |    101    |       Srl        |      0101       |
+|   R-Type   |    10     |       Xor       |  0000000  |    011    |       Xor        |      0011       |
+
+其对应的真值表如下（x 表示 Don't Care 项）：
+
+![](../../../assets/Pasted%20image%2020241110171206.png)
+
+可以看到，我们并没有用主控制单元来直接控制所有需要控制的元件，比如用 ALU 控制（`ALUOp`）来控制 ALU，再由主控制单元改变 `ALUOp` 的值——这样的设计风格称为**多级控制**（Multiple Levels of Control），它的优势在于：
+
+- 减小主控制单元的规模
+- 减小对控制单元的潜在危害（负责某个功能的控制单元坏掉了并不会影响其他的控制单元），这对时钟周期有很大的影响
+***
+#### Signals For Datapath
+
+接下来，我们还要处理剩余的 6 个控制信号，它们的作用如下：
+
+![](../../../assets/Pasted%20image%2020241110175311.png)
+
+- `RegWrite`、`MemRead`、`MemWrite`：它们在低电平的时候均无作用，高电平时会允许寄存器 / 内存的读写
+- `ALUSrc`：低电平时 ALU 获取第 2 个寄存器的值，高电平时 ALU 获取立即数
+- `PCSrc`：低电平时 PC 将会保存下一条连续指令的地址（PC + 4），高电平时 PC 将会保存分支目标地址
+- `Jump`：低电平时 PC 将会保存 PC+4 或其他分支目标，高电平时 PC 将会保存跳转目标地址
+- `MemtoReg`：低电平时将 ALU 的结果返回给目标寄存器，高电平时将内存中的数据传给目标寄存器
+
+最后，我们将所有的控制信号交给主控制单元管理，一个完整的简易版单周期 CPU 的硬件框图如下所示：
+
+![](../../../assets/Pasted%20image%2020241110172113.png)
+
+对应的控制信号表（输入为 `Opcode` 的前 7 位）：
+
+| **Input or Output** | **Signal Name** | **R-Format** | **ld** | **sd** | **beq** | **jal** |
+|:-------------------:|:---------------:|:------------:|:------:|:------:|:-------:|:-------:|
+|        Input        |      I[6]       |      0       |   0    |   0    |    1    |    1    |
+|        Input        |      I[5]       |      1       |   0    |   1    |    1    |    1    |
+|        Input        |      I[4]       |      1       |   0    |   0    |    0    |    0    |
+|        Input        |      I[3]       |      0       |   0    |   0    |    0    |    1    |
+|        Input        |      I[2]       |      0       |   0    |   0    |    0    |    1    |
+|        Input        |      I[1]       |      1       |   1    |   1    |    1    |    1    |
+|        Input        |      I[0]       |      1       |   1    |   1    |    1    |    1    |
+|       Output        |     ALUSrc      |      0       |   1    |   1    |    0    |    X    |
+|       Output        |    MemtoReg     |      00      |   01   |   X    |    X    |   10    |
+|       Output        |    RegWrite     |      1       |   1    |   0    |    0    |    1    |
+|       Output        |     MemRead     |      0       |   1    |   0    |    0    |    0    |
+|       Output        |    MemWrite     |      0       |   0    |   1    |    0    |    0    |
+|       Output        |     Branch      |      0       |   0    |   0    |    1    |    0    |
+|       Output        |     ALUOp1      |      1       |   0    |   0    |    0    |    X    |
+|       Output        |     ALUOp0      |      0       |   0    |   0    |    1    |    X    |
+|       Output        |      Jump       |      0       |   0    |   0    |    0    |    1    |
+
+得到逻辑电路图：
+
+![](../../../assets/Pasted%20image%2020241110175731.png)
+***
+### Operation of the Datapath
+
+> 图中的灰色部分表示没有用到的部分
+
+!!! note "Operation of the Datapath"
+
+	=== "R-Type"
+	
+		- 以 `add x1, x2, x3` 为例：
+	
+
+
 
