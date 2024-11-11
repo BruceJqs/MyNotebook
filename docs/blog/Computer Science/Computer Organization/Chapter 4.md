@@ -473,13 +473,16 @@ RISC-V 指令集的设计很好地适配了流水线执行：
     - 电子元件表示法
     
 	![](../../../assets/Pasted%20image%2020241111104306.png)
+	
 	- 传统的文字表示法
 	
 	![](../../../assets/Pasted%20image%2020241111104402.png)
+	
 - 单时钟周期流水线图 (Single-Clock-Cycle Pipeline Diagrams)
 	- 优势：展现更多的实现细节，便于理解指令的执行原理
 	
 	![](../../../assets/Pasted%20image%2020241111104457.png)
+	
 ***
 ### Pipeline Datapath
 
@@ -629,63 +632,98 @@ RISC-V 指令集的设计很好地适配了流水线执行：
 
 !!! note "Detection"
 
-	给定以下指令段：
+	=== "Forwarding"
 	
-	```asm
-	sub x2, x1, x3
-	and x12, x2, x5
-	or  x13, x6, x2
-	add x14, x2, x2
-	sd  x15, 100(x2)
-	```
+		给定以下指令段：
+		
+		```asm
+		sub x2, x1, x3
+		and x12, x2, x5
+		or  x13, x6, x2
+		add x14, x2, x2
+		sd  x15, 100(x2)
+		```
+		
+		可以看到，后面四条指令的输入均依赖于第一条指令的输出结果`x2`，所以很明显产生了数据冒险的问题，下面的多周期流水线图可以更清楚地显示这个问题：
+		
+		![](../../../assets/Pasted image 20241111140850.png)
+		
+		可以看到，左边几根蓝线的方向是不对的，我们不可能将未来得到的数据传给过去要用到该数据的指令，所以 `and` 和 `or` 指令得到的是错误的 `x2`（其值为 10），而 `add` 和 `sd` 指令得到的 `x2` 是正确的（其值为 -20）。
+		
+		下面用符号化的语言归纳了两大类数据冒险的情况：
+		
+		- EX/MEM.RegisterRd = ID/EX.RegisterRs1(or ID/EX.RegisterRs2)
+		- MEM/WB.RegisterRd = ID/EX.RegisterRs1(or ID/EX.RegisterRs2)
 	
-	可以看到，后面四条指令的输入均依赖于第一条指令的输出结果`x2`，所以很明显产生了数据冒险的问题，下面的多周期流水线图可以更清楚地显示这个问题：
+		其中等号的左右两边对应的是不同的指令，且等号右边对应的指令依赖于左边对应指令的结果。如果满足上述情况，等号左半边的寄存器的数据应当**前递**给等号右半边的寄存器。
+		
+		对于上例，`sub` 和 `add` 指令间的数据冒险属于第一类（EX/MEM.RegisterRd = ID/EX.RegisterRs1），而 `sub` 和 `or` 指令间的数据冒险属于第二类（MEM/WB.RegisterRd = ID/EX.RegisterRs2）。下图展示了正确实现前递的流水线图：
 	
-	![](../../../assets/Pasted image 20241111140850.png)
+		![](../../../assets/Pasted image 20241111141857.png)
+		
+		上面的判断方法还存在一些小瑕疵：
 	
-	可以看到，左边几根蓝线的方向是不对的，我们不可能将未来得到的数据传给过去要用到该数据的指令，所以 `and` 和 `or` 指令得到的是错误的 `x2`（其值为 10），而 `add` 和 `sd` 指令得到的 `x2` 是正确的（其值为 -20）。
+		- 首先，并不是所有的指令都包含写入寄存器的操作，所以需要提前检测 `RegWrite` 信号是否为 1，若是则继续进一步的判断；否则就直接 pass 掉，不用担心数据冒险的问题
+		- 其次，如果某个指令目标寄存器是 `x0` 的话，那么我们不希望将可能的非 0 结果（比如`addi x0, x1, 2`）前递给别的指令，避免带来不必要的麻烦，所以在依赖侦测前还得进行这一步的判断
+		
+		综上，我们进一步修正依赖侦测的判断条件，并且将数据冒险细分为**执行阶段 (EX) 冒险**和**访存阶段 (MEM) 冒险**两类，得到以下语句：
+		
+		```c
+		// EX hazard
+		if (EX/MEM.RegWrite && (EX/MEM.RegisterRd != 0)
+		    && (EX/MEM.RegisterRd == ID/EX.RegisterRs1))
+		        ForwardA = 10
+		
+		if (EX/MEM.RegWrite && (EX/MEM.RegisterRd != 0)
+		    && (EX/MEM.RegisterRd == ID/EX.RegisterRs2))
+		        ForwardB = 10
+		
+		// MEM hazard
+		if (MEM/WB.RegWrite && (MEM/WB.RegisterRd != 0)
+		    && !(EX/MEM.RegWrite && (EX/MEM.RegisterRd != 0)
+		        && (EX/MEM.RegisterRd == ID/EX.RegisterRs1))
+		    && (MEM/WB.RegisterRd == ID/EX.RegisterRs1))
+		        ForwardA = 01
+		
+		if (MEM/WB.RegWrite && (MEM/WB.RegisterRd != 0)
+		    && !(EX/MEM.RegWrite && (EX/MEM.RegisterRd != 0)
+		        && (EX/MEM.RegisterRd == ID/EX.RegisterRs2))
+		    && (MEM/WB.RegisterRd == ID/EX.RegisterRs2))
+		        ForwardB = 01
+		```
 	
-	下面用符号化的语言归纳了两大类数据冒险的情况：
+		其中第 12,13 和第 18,19 行是为了避免 MEM/WB.RegisterRd, EX/MEM.RegisterRd 和 ID/EX.RegisterRs1(2) 三者一起发生冲突，造成新的数据冒险问题
+		
+		- 这里设置了两个前递信号：`ForwardA` 和 `ForwardB`，它们实质上是 MUX 的控制信号，而这两个 MUX 分别用来决定参加 ALU 运算的两个操作数（默认均为 `00`）。下表展示的是不同 MUX 控制信号对应的功能：
+		
+		![](../../../assets/Pasted image 20241111143156.png)
+		
+		最后加入前递单元后的整个流水线 CPU 如下：
+		
+		![](../../../assets/Pasted image 20241111143255.png)
 	
-	- EX/MEM.RegisterRd = ID/EX.RegisterRs1(or ID/EX.RegisterRs2)
-	- MEM/WB.RegisterRd = ID/EX.RegisterRs1(or ID/EX.RegisterRs2)
+	=== "Stalling"
+	
+		虽然前递能够解决大多数情况下的数据冒险问题，但还是无法克服与加载指令相关的数据冒险问题。这里需要在原来的 CPU 中再加入一个**冒险侦测单元**(hazard detection unit)，用于发现合适的停顿时机。与上面的分析类似，我们也给出它的判断条件：
+		
+		```
+		if (ID/EX.MemRead &&        // MemRead represents load instruction
+    ((ID/EX.RegisterRd == IF/ID.RegisterRs1) || (ID/EX.RegisterRd == IF/ID.RegisterRs2)))
+    stall the pipeline       // the load instruction is stalled in the ID stage
+		```
+		
+		具体来说要想停止流水线的运行，需要做到（这也是冒险侦测单元的三个输出）：
+		
+		- 停止 IF：不能改变 PC 寄存器的值（读取重复的指令），所以要为 PC 寄存器添加写信号 PCWrite
+		- 停止 ID：不能改变 IF/ID 流水线寄存器的值（读取重复的值）所以要为该寄存器添加写信号 IF/IDWrite
+		- 停顿的那段时间，虽然 CPU 仍然在运行，但实际上没有改变任何状态，这种情况称为**空操作**(nops)。为了保证所有元件状态不变，还需要确保所有的控制信号均为 0（事实上，只有 RegWrite 和 MemWrite 一定要设为 0，其他的控制信号是 don't care 的）
+		
+		下面展示添加了冒险侦测单元后的流水线 CPU 原理图：
+		
+		![](../../../assets/Pasted image 20241111143709.png)
+		
 
-	其中等号的左右两边对应的是不同的指令，且等号右边对应的指令依赖于左边对应指令的结果。如果满足上述情况，等号左半边的寄存器的数据应当**前递**给等号右半边的寄存器。
-	
-	对于上例，`sub` 和 `add` 指令间的数据冒险属于第一类（EX/MEM.RegisterRd = ID/EX.RegisterRs1），而 `sub` 和 `or` 指令间的数据冒险属于第二类（MEM/WB.RegisterRd = ID/EX.RegisterRs2）。下图展示了正确实现前递的流水线图：
-	
-	![](../../../assets/Pasted image 20241111141857.png)
-	
-	上面的判断方法还存在一些小瑕疵：
 
-	- 首先，并不是所有的指令都包含写入寄存器的操作，所以需要提前检测 `RegWrite` 信号是否为 1，若是则继续进一步的判断；否则就直接 pass 掉，不用担心数据冒险的问题
-	- 其次，如果某个指令目标寄存器是 `x0` 的话，那么我们不希望将可能的非 0 结果（比如`addi x0, x1, 2`）前递给别的指令，避免带来不必要的麻烦，所以在依赖侦测前还得进行这一步的判断
-	
-	综上，我们进一步修正依赖侦测的判断条件，并且将数据冒险细分为**执行阶段 (EX) 冒险**和**访存阶段 (MEM) 冒险**两类，得到以下语句：
-	
-	```c
-	// EX hazard
-	if (EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0)
-	    and (EX/MEM.RegisterRd = ID/EX.RegisterRs1))
-	        ForwardA = 10
-	
-	if (EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0)
-	    and (EX/MEM.RegisterRd = ID/EX.RegisterRs2))
-	        ForwardB = 10
-	
-	// MEM hazard
-	if (MEM/WB.RegWrite and (MEM/WB.RegisterRd != 0)
-	    and not(EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0)
-	        and (EX/MEM.RegisterRd = ID/EX.RegisterRs1))
-	    and (MEM/WB.RegisterRd = ID/EX.RegisterRs1))
-	        ForwardA = 01
-	
-	if (MEM/WB.RegWrite and (MEM/WB.RegisterRd != 0)
-	    and not(EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0)
-	        and (EX/MEM.RegisterRd = ID/EX.RegisterRs2))
-	    and (MEM/WB.RegisterRd = ID/EX.RegisterRs2))
-	        ForwardB = 01
-	```
 
 
 ***
