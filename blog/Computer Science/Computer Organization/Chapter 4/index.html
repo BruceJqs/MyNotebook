@@ -1082,6 +1082,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#an-overview-of-pipelining" class="md-nav__link">
+    <span class="md-ellipsis">
+      An Overview of Pipelining
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4269,6 +4278,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#an-overview-of-pipelining" class="md-nav__link">
+    <span class="md-ellipsis">
+      An Overview of Pipelining
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4567,7 +4585,7 @@
 </blockquote>
 <h3 id="building-controller">Building Controller<a class="headerlink" href="#building-controller" title="Permanent link">&para;</a></h3>
 <h4 id="alu-symbol-control">ALU Symbol &amp; Control<a class="headerlink" href="#alu-symbol-control" title="Permanent link">&para;</a></h4>
-<p>在所有的 7 个控制信号中，最重要的是 ALU 的控制信号（即上图的 <code>ALU operation</code> ），因为不管何种指令都需要用到这个元件，而且不同的指令会利用它达到不同的目的。</p>
+<p>在所有的 8 个控制信号中，最重要的是 ALU 的控制信号（即上图的 <code>ALU operation</code> ），因为不管何种指令都需要用到这个元件，而且不同的指令会利用它达到不同的目的。</p>
 <p>ALU 控制信号一共有 4 位：</p>
 <ul>
 <li>其中 2 位分别来自指令中的 <code>funct3</code> 和 <code>funct7</code> 字段</li>
@@ -4693,7 +4711,7 @@
 </ul>
 <hr />
 <h4 id="signals-for-datapath">Signals For Datapath<a class="headerlink" href="#signals-for-datapath" title="Permanent link">&para;</a></h4>
-<p>接下来，我们还要处理剩余的 6 个控制信号，它们的作用如下：</p>
+<p>接下来，我们还要处理剩余的 7 个控制信号，它们的作用如下：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241110175311.png" /></p>
 <ul>
 <li><code>RegWrite</code>、<code>MemRead</code>、<code>MemWrite</code>：它们在低电平的时候均无作用，高电平时会允许寄存器 / 内存的读写</li>
@@ -4936,7 +4954,7 @@
 <p>执行指令的步骤：</p>
 <ul>
 <li>从指令内存中获取指令，并递增 PC</li>
-<li>从寄存器堆读取寄存器<code>x1</code>和<code>x2</code></li>
+<li>从寄存器堆读取寄存器 <code>x1</code> 和 <code>x2</code></li>
 <li>ALU 将读取的两个数据相减；同时将 PC 的值与左移 1 位之后的立即数相加，得到分支目标地址</li>
 <li>通过 ALU 的<code>Zero</code>信号来决定如何更新 PC</li>
 </ul>
@@ -4963,6 +4981,96 @@
 </div>
 </div>
 </div>
+<p>总结来说，不同类型的执行步骤如下表：</p>
+<table>
+<thead>
+<tr>
+<th><strong>类型</strong></th>
+<th>取指</th>
+<th>译码</th>
+<th>执行</th>
+<th>访存</th>
+<th>写回</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R-Type</td>
+<td>根据 PC 提供的地址，从指令存储器中取出指令</td>
+<td>取 <code>rs1</code> 和 <code>rs2</code></td>
+<td>逻辑运算</td>
+<td>/</td>
+<td>将运算结果写回 <code>rd</code></td>
+</tr>
+<tr>
+<td>Load</td>
+<td>根据 PC 提供的地址，从指令存储器中取出指令</td>
+<td>取 <code>rs</code> 和扩展后的立即数</td>
+<td>计算内存地址</td>
+<td>读数据存储器，取得数据</td>
+<td>将访存数据写回寄存器堆</td>
+</tr>
+<tr>
+<td>Store</td>
+<td>根据 PC 提供的地址，从指令存储器中取出指令</td>
+<td>取 <code>rs</code> 和扩展后的立即数</td>
+<td>计算内存地址</td>
+<td>写数据存储器</td>
+<td>/</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>根据 PC 提供的地址，从指令存储器中取出指令</td>
+<td>取 PC 和分支偏移量</td>
+<td>比较</td>
+<td>地址写回 PC</td>
+<td>/</td>
+</tr>
+<tr>
+<td>Jump</td>
+<td>根据 PC 提供的地址，从指令存储器中取出指令</td>
+<td>取 PC 和扩展后的目标地址</td>
+<td>计算内存地址</td>
+<td>地址写回 PC</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到，在单周期实现中：</p>
+<ul>
+<li>每条指令都在一个时钟周期内完成，<span class="arithmatex">\(CPI=1\)</span></li>
+<li>时钟周期取决于最长指令的执行时长（<code>ld</code> 指令使用全部 5 个阶段，其他指令虽然只用 4 个阶段，但仍然要花费5个阶段的时间）</li>
+</ul>
+<hr />
+<h2 id="an-overview-of-pipelining">An Overview of Pipelining<a class="headerlink" href="#an-overview-of-pipelining" title="Permanent link">&para;</a></h2>
+<p>根据以上描述的，我们可以发现，因为规定每个时钟周期的长度一致，而时钟周期又取决于最长通路的执行时长（<code>ld</code> 指令需要 5 个阶段的执行时长）因此这样的 CPU 是十分低效的。</p>
+<p>改进的方法是用流水线（Pipelining）的思想，所谓<strong>流水线</strong>，就是一种使多条指令能够被重叠执行的实现技术，类似工厂里的组装线。</p>
+<div class="admonition example">
+<p class="admonition-title">类比</p>
+<p>假设我们要洗一堆脏衣服，将这件事分为四个步骤：用洗衣机洗、用烘干机烘干、折叠衣物、放入衣柜，假定这四个步骤所花的时间是一样的。现在有四堆脏衣服要洗，如果一个时间段只完成一个步骤，那么整个过程如下所示（耗时为 16）：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241111101601.png" /></p>
+<p>但如果我们采用流水线的思想来洗这四堆衣物，那么整个过程所花的时间就会显著缩短（耗时为 7）：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241111101638.png" /></p>
+<p>可以发现，对于单个工作，流水线技术并没有缩短其运行时间；但是由于多个工作可以并行地执行，流水线技术可以更好地压榨资源，使得它们被同时而不是轮流使用，在工作比较多的时候可以增加整体的 <strong>吞吐率</strong>（Throughput），从而减少了完成整个任务的时间。</p>
+<ul>
+<li>由于流水线开始和结束的时候并没有完全充满，开头和结尾部分的阶段仅执行部分任务（即整个系统没有满负荷运载），因此吞吐率不及原来的 4 倍（4 来自于例子中有 4 个步骤）；但是当工作数足够多的时候，吞吐率就几乎是原来的 4 倍了。</li>
+</ul>
+</div>
+<p>在 RISC-V 中，为了实现流水线指令的执行，需要将单个 RISC-V 指令划分为 5 个阶段：</p>
+<ul>
+<li><strong>IF（取指，Instruction Fetch）</strong>：从内存中获取指令</li>
+<li><strong>ID（译码，Instruction Decode）</strong>：读取寄存器，对指令进行译码</li>
+<li><strong>EX（执行，Execute）</strong>：执行（算术 / 逻辑）运算或计算地址</li>
+<li><strong>MEM（访存，Memory）</strong>：从数据内存中访问操作数</li>
+<li><strong>WB（写回，Write Back）</strong>：将结果写回寄存器中</li>
+</ul>
+<p>用图形符号来表示这五个阶段：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241111102151.png" /></p>
+<ul>
+<li>图形的左半边阴影表示写入，右半边阴影表示读取，全阴影表示两者皆有</li>
+<li>之所以如此规定，是因为这里假设在一个时钟周期内，元件的前半个周期可以进行<strong>写</strong>操作，后半个周期可以进行<strong>读</strong>操作</li>
+</ul>
+<p>本章讨论的流水线 CPU 均为这种五级流水线 CPU，即单个时钟周期内至多能并行执行五个阶段的 CPU。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5032,7 +5140,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月10日 23:34:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月11日 10:24:25</span>
   </span>
 
     
