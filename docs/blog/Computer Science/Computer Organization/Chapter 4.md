@@ -655,7 +655,7 @@ RISC-V 指令集的设计很好地适配了流水线执行：
 		- EX/MEM.RegisterRd = ID/EX.RegisterRs1(or ID/EX.RegisterRs2)
 		- MEM/WB.RegisterRd = ID/EX.RegisterRs1(or ID/EX.RegisterRs2)
 	
-		其中等号的左右两边对应的是不同的指令，且等号右边对应的指令依赖于左边对应指令的结果。如果满足上述情况，等号左半边的寄存器的数据应当**前递**给等号右半边的寄存器。
+		其中等号的左右两边对应的是不同的指令的流水线寄存器，且等号右边对应的指令依赖于左边对应指令的结果。如果满足上述情况，等号左半边的寄存器的数据应当**前递**给等号右半边的寄存器。
 		
 		对于上例，`sub` 和 `add` 指令间的数据冒险属于第一类（EX/MEM.RegisterRd = ID/EX.RegisterRs1），而 `sub` 和 `or` 指令间的数据冒险属于第二类（MEM/WB.RegisterRd = ID/EX.RegisterRs2）。下图展示了正确实现前递的流水线图：
 	
@@ -706,10 +706,10 @@ RISC-V 指令集的设计很好地适配了流水线执行：
 	
 		虽然前递能够解决大多数情况下的数据冒险问题，但还是无法克服与加载指令相关的数据冒险问题。这里需要在原来的 CPU 中再加入一个**冒险侦测单元**(hazard detection unit)，用于发现合适的停顿时机。与上面的分析类似，我们也给出它的判断条件：
 		
-		```
+		```c
 		if (ID/EX.MemRead &&        // MemRead represents load instruction
-    ((ID/EX.RegisterRd == IF/ID.RegisterRs1) || (ID/EX.RegisterRd == IF/ID.RegisterRs2)))
-    stall the pipeline       // the load instruction is stalled in the ID stage
+			((ID/EX.RegisterRd == IF/ID.RegisterRs1) || (ID/EX.RegisterRd == IF/ID.RegisterRs2)))
+			    stall the pipeline       // the load instruction is stalled in the ID stage
 		```
 		
 		具体来说要想停止流水线的运行，需要做到（这也是冒险侦测单元的三个输出）：
