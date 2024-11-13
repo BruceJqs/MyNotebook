@@ -130,7 +130,7 @@ $$
 			    
 			- 将这个式子代入递推公式，得：
 			
-			$$ 
+			$$
 			T(N)=2T(\lfloor\frac{N}{2}\rfloor)+N\leq 2c\lfloor\frac{N}{2}\rfloor+N\leq cN+N=O(N)
 			$$
 			​
