@@ -1147,17 +1147,17 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#control-hazards" class="md-nav__link">
     <span class="md-ellipsis">
       Control Hazards
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4418,17 +4418,17 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#control-hazards" class="md-nav__link">
     <span class="md-ellipsis">
       Control Hazards
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5468,7 +5468,18 @@
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">))</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">        </span><span class="n">ForwardB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">01</span>
 </span></code></pre></div></td></tr></table></div>
-<p>其中第 12,13 和第 18,19 行是为了避免 MEM/WB.RegisterRd, EX/MEM.RegisterRd 和 ID/EX.RegisterRs1(2) 三者一起发生冲突，造成新的数据冒险问题</p>
+<p>其中第 12,13 和第 18,19 行是为了避免 MEM/WB.RegisterRd, EX/MEM.RegisterRd 和 ID/EX.RegisterRs1(2) 三者一起发生冲突，造成新的数据冒险问题（即 Double Data Hazards）</p>
+<div class="admonition note">
+<p class="admonition-title">Double Data Hazards</p>
+<p>我们考虑如下 RISC-V 指令段：</p>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x3</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span>
+</span></code></pre></div></td></tr></table></div>
+<p>此时 <code>x1</code> 被多次调用</p>
+</div>
 <ul>
 <li>这里设置了两个前递信号：<code>ForwardA</code> 和 <code>ForwardB</code>，它们实质上是 MUX 的控制信号，而这两个 MUX 分别用来决定参加 ALU 运算的两个操作数（默认均为 <code>00</code>）。下表展示的是不同 MUX 控制信号对应的功能：</li>
 </ul>
@@ -5478,11 +5489,11 @@
 </div>
 <div class="tabbed-block">
 <p>虽然前递能够解决大多数情况下的数据冒险问题，但还是无法克服与加载指令相关的数据冒险问题。这里需要在原来的 CPU 中再加入一个<strong>冒险侦测单元</strong>(hazard detection unit)，用于发现合适的停顿时机。与上面的分析类似，我们也给出它的判断条件：</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">MemRead</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">        </span><span class="c1">// MemRead represents load instruction</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="p">((</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">IF</span><span class="o">/</span><span class="n">ID</span><span class="p">.</span><span class="n">RegisterRs1</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">IF</span><span class="o">/</span><span class="n">ID</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">)))</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="n">stall</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">pipeline</span><span class="w">       </span><span class="c1">// the load instruction is stalled in the ID stage</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">MemRead</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">        </span><span class="c1">// MemRead represents load instruction</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="p">((</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">IF</span><span class="o">/</span><span class="n">ID</span><span class="p">.</span><span class="n">RegisterRs1</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">IF</span><span class="o">/</span><span class="n">ID</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">)))</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="n">stall</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">pipeline</span><span class="w">       </span><span class="c1">// the load instruction is stalled in the ID stage</span>
 </span></code></pre></div></td></tr></table></div>
 <p>具体来说要想停止流水线的运行，需要做到（这也是冒险侦测单元的三个输出）：</p>
 <ul>
@@ -5499,15 +5510,15 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>对于以下指令段：</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nf">ld</span><span class="w">  </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nf">and</span><span class="w"> </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x5</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nf">or</span><span class="w">  </span><span class="no">x8</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="nf">add</span><span class="w"> </span><span class="no">x9</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nf">sub</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span><span class="p">,</span><span class="w"> </span><span class="no">x7</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nf">ld</span><span class="w">  </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nf">and</span><span class="w"> </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x5</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nf">or</span><span class="w">  </span><span class="no">x8</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nf">add</span><span class="w"> </span><span class="no">x9</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="nf">sub</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span><span class="p">,</span><span class="w"> </span><span class="no">x7</span>
 </span></code></pre></div></td></tr></table></div>
 <p>如果只用前递来解决数据冒险的话，效果是这样的：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241111145155.png" /></p>
@@ -5518,7 +5529,98 @@
 </ul>
 </div>
 <hr />
-<h3 id="control-hazards">Control Hazards<a class="headerlink" href="#control-hazards" title="Permanent link">&para;</a></h3>
+<h4 id="control-hazards">Control Hazards<a class="headerlink" href="#control-hazards" title="Permanent link">&para;</a></h4>
+<p><strong>控制冒险 / 分支冒险</strong>指的是取到的指令并不是 CPU 所需要的，即指令地址的流向并不在 CPU 的预期内，例如 <code>beq</code> 指令在 IF 阶段中还不清楚它包含的跳转地址，因此在下个时钟周期还不能执行下一条指令，需要等 <code>beq</code> 指令到 MEM 阶段才能决定跳转地址，因为在 EXE 阶段结束后（即 MEM 阶段开始时），我们才会知道寄存器的比较结果，才能决定是继续执行下一条指令，还是跳转到指定地址。</p>
+<p>但是，我们可以通过一系列改进，使得 <code>beq</code> 指令到 ID 阶段就能决定跳转地址（在后面会进行说明），但这不足以解决这个问题。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113101321.png" /></p>
+<p>假设我们已经完成了改进，使 <code>beq</code> 指令到 ID 阶段就能决定跳转地址，接下来的一种简单的解决方法是停顿，让 <code>beq</code> 指令与下一条指令之间有一个固定的停顿（多等 1 个时钟周期，等待 ID 阶段完成以后再进行操作）。这样虽然是稳扎稳打的做法，但是效率太低了。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113101959.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Optimizing Methods</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Static Branch Prediction</label><label for="__tabbed_8_2">Dynamic Branch Prediction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>静态分支预测指的是预先假设每次执行 <code>beq</code> 指令后，都会跳转到下一条连续指令（<code>PC + 4</code>），而不是跳转到指定指令。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113102159.png" /></p>
+<ul>
+<li>如果预测正确，就无需停顿，可以连续地执行指令了（上图）</li>
+<li>而预测失败的话就要撤回那个错误的下条指令，这需要额外的一个时钟周期，其效果与停顿一样（下图）</li>
+<li>由于既能解决控制冒险，也保证了速度，因而这种方法实际用于 RISC-V 中</li>
+</ul>
+<p>对于静态分支预测来说，如果发生跳转的概率为 50%，且抛弃指令的成本较低，则这种优化方法能减少解决控制冒险的一半成本。</p>
+<p>抛弃指令的具体做法为：除了将控制信号置 0 外，还要<strong>清除</strong>(Flush) 前 3 个阶段的指令（因为在不优化的情况下此时分支指令进行到 MEM 阶段）。</p>
+<p>然而这种做法使得跳转分支的成本过高，为了降低成本，需要将条件分支的执行提到前面来。具体来说需要做到两件事：</p>
+<ul>
+<li><strong>提前计算分支跳转地址</strong><ul>
+<li>实际上，PC 值和立即数字段已经存储在 IF/ID 寄存器内，所以只需要将分支地址的计算移到 ID 阶段即可，即在 ID 阶段添一个专门的分支加法器</li>
+<li>虽然这个加法器可能会在任何指令执行到 ID 阶段时会进行加法运算，但是只有在条件分支指令时会用到它的计算结果</li>
+</ul>
+</li>
+<li><strong>提前进行分支跳转决策</strong>（这里假设需要跳转分支）<ul>
+<li>要提前进行寄存器值的比较，需要额外的前递和冒险检测装置</li>
+<li>在 ID 阶段新增一个相等检验单元 (Equality Test Unit)，用于比较两个寄存器的值，其判断结果会存在 ID/EXE 寄存器中</li>
+<li>在下一个周期上，冒险侦测单元会获取 ID/EXE 的值（实现前递），发现有一个 <code>beq</code> 指令，且需要跳转分支，因此会先清除当前 IF 阶段的指令，并取得跳转后的指令<ul>
+<li>通过 IF.Flush 控制信号实现清除</li>
+<li>此时的 ID 阶段执行空操作 </li>
+</ul>
+</li>
+<li>如果条件分支指令前有一条 ALU 指令，则条件分支指令需要停顿一个周期；如果前面是一条加载指令，则需要停顿两个周期</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>对于以下指令段：</p>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="err">36</span><span class="w"> </span><span class="nf">sub</span><span class="w"> </span><span class="no">x10</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="no">x8</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="err">40</span><span class="w"> </span><span class="nf">beq</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x3</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">    </span><span class="c1">// PC-relative branch to 40 + 16 * 2 = 72</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="err">44</span><span class="w"> </span><span class="nf">and</span><span class="w"> </span><span class="no">x12</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x5</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="err">48</span><span class="w"> </span><span class="nf">or</span><span class="w">  </span><span class="no">x13</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="err">52</span><span class="w"> </span><span class="nf">add</span><span class="w"> </span><span class="no">x14</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="err">56</span><span class="w"> </span><span class="nf">sub</span><span class="w"> </span><span class="no">x15</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span><span class="p">,</span><span class="w"> </span><span class="no">x7</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="na">...</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="err">72</span><span class="w"> </span><span class="nf">ld</span><span class="w">  </span><span class="no">x4</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">(</span><span class="no">x7</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>下面给出在第 3 和第 4 个时钟周期内逻辑原理图：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">第 3 个时钟周期</label><label for="__tabbed_9_2">第 4 个时钟周期</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在第 3 个时钟周期，<code>beq</code> 指令的 ID 阶段结束，分支加法器计算跳转地址</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113104359.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>在第 4 个时钟周期，冒险侦测单元判别需要跳转分支，通过 IF.Flush 控制信号实现清除，并且此时 ID 阶段执行 <code>nop</code>，IF 阶段就读入跳转指令。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113104549.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>虽然上述的静态分支预测足以应付五级流水线的控制冒险问题，但是对于更高级数，或更高要求的处理器，这种预测的失败成本还是太大，于是引入了<strong>动态分支预测</strong>(Dynamic Branch Prediction)——在程序执行过程中，根据上一条条件分支指令的运行结果来预测分支是否跳转。</p>
+<p>具体实现中，需要借助<strong>分支预测缓存</strong>(Branch Prediction Buffer)（或<strong>分支历史表</strong>，Branch History Table），它是一块由分支指令的低位地址来索引的很小的内存，包含 1 位或多位分支是否跳转的信息。</p>
+<ul>
+<li>对于最简单的 1 位缓存，可以仅用 0 和 1 区别上次的分支指令是否发生跳转。如果预测失败，则需要翻转这个比特。然而缺陷是即使几乎所有的分支指令都发生跳转（比如循环，只有最后不跳转），这种方法还是会有两次错误预测（一次在开头，一次在结尾）</li>
+<li>2 位缓存能够提高预测精度，虽然它需要 2 次预测错误才会改变预测值，但是对于执行一连串跳转情况一致的指令时这种方法的优势更大，下面给出对应的有限状态机图：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113110137.png" /></p>
+<ul>
+<li>其他更强大的预测器：<ul>
+<li>相关预测器 (Correlating Predictor)：结合特定分支指令的局部预测和近几条分支指令的全局预测来进行预测</li>
+<li>锦标赛预测器 (Tournament Branch Predictor)：对于每个分支指令进行多种预测，用一个选择器来决定用哪种预测</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <hr />
 <p>根据指令执行的五个阶段，用虚线将单周期 CPU 的数据通路划分为五个部分：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241111130722.png" /></p>
@@ -5596,7 +5698,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月12日 00:02:54</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月13日 11:03:29</span>
   </span>
 
     
