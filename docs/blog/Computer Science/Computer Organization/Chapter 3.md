@@ -5,7 +5,7 @@ hide:
   - footer
   - feedback
 comments: true
----  
+---
 # Chapter 3 : Arithmetic for Computer
 
 ## Introduction

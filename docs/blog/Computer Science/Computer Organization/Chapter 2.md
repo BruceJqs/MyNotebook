@@ -5,7 +5,7 @@ hide:
   - footer
   - feedback
 comments: true
----  
+---
 # Chapter 2 : Instructions : Language of the Machine
 
 ## Introduction
