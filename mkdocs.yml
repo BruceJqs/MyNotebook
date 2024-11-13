@@ -182,7 +182,7 @@ nav:
     - Seedlab:
       - blog/Research/Seedlab/index.md
       - Basic-labs:
-        - "A00_simple_as": blog/Research/Seedlab/Basic-labs/A00_simple_as.md
+        - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:
   #   - 大模型: 
   #     - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
