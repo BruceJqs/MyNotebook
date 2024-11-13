@@ -178,6 +178,11 @@ nav:
       - Crypto:
         - "Crypto｜ezxor": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md
         - "Crypto｜Shad0wTime": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-2.md
+  - Research:
+    - Seedlab:
+      - blog/Research/Seedlab/index.md
+      - Basic-labs:
+        - "A00_simple_as": blog/Research/Seedlab/Basic-labs/A00_simple_as.md
   # - Internship:
   #   - 大模型: 
   #     - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md
