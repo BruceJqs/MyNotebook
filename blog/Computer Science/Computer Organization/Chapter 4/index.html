@@ -4523,6 +4523,11 @@
 
 
 <h1 id="chapter-4-the-processors">Chapter 4 : The Processors<a class="headerlink" href="#chapter-4-the-processors" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>这一章的 PPT 真的好乱，尤其是流水线那部分（）</p>
+<p>为了理解得更有一些条理（至少我个人认为）我把各部分内容都整合起来一起讲了。</p>
+</div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <ul>
 <li>CPU 性能因素<ul>
@@ -5691,6 +5696,81 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241113110841.png" /></p>
 <hr />
 <h2 id="exceptions-and-interrupts">Exceptions and Interrupts<a class="headerlink" href="#exceptions-and-interrupts" title="Permanent link">&para;</a></h2>
+<p>控制是处理器设计中最难处理的部分，其中一项控制要完成的任务是实现<strong>异常</strong>(Exception) 和<strong>中断</strong>(Interrupt)。这两个词往往会被混为一谈，均指除分支指令外改变指令流的意外事件；但在教材中这两者是有所区分的，下表展示它们的区别和各自对应的事件：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113111200.png" /></p>
+<p>下面仅考虑<strong>未定义指令</strong>(Undefined Instruction) 和<strong>硬件故障</strong>(Hardware Malfunction) 这两种事件，这里给出了解决异常的两种方法：</p>
+<ul>
+<li>保存发生异常的指令地址，并将控制权交给操作系统内<ul>
+<li>第一步用到了两个寄存器：<ul>
+<li><strong>SEPC</strong>(Supervisor Exception Program Counter, 超级用户异常程序计数器)：一个用于保存受影响的指令地址的 64 位寄存器</li>
+<li><strong>SCAUSE</strong>(Supervisor Exception Cause Register, 超级用户异常原因寄存器)：记录异常原因的 64 位寄存器（尽管大多数位没有用到），这里假设用 2 位记录未定义指令事件，用 12 位表示硬件故障事件</li>
+</ul>
+</li>
+<li>第二步的实现：跳转到操作系统的处理程序 (Handler) 上，假设地址为 <span class="arithmatex">\(\text{0000 0000 1C09 0000}_{\text{hex}}\)</span></li>
+</ul>
+</li>
+<li><strong>向量中断</strong>(Vectored Interrupt)：根据异常的原因来决定传输控制地址的一种中断<ul>
+<li>
+<p>异常向量地址会被加到向量表基寄存器上：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113111917.png" />
+- 处理程序可以执行以下行为：
+    - 如果可以重启的话，则采取纠错措施，并使用 SEPC 保存的地址返回到原程序
+    - 否则的话采取中止程序，使用 SEPC、SCAUSE 时报告错误等措施</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>在流水线处理器中，可以将异常看作另一种控制冒险的类型。假设执行指令 <code>add x1, x2, x1</code> 时，在 <code>EX</code> 阶段发生了硬件故障，具体的处理措施如下：</p>
+<ul>
+<li>阻止 <code>x1</code> 被异常破坏</li>
+<li>确保前面的指令仍然能够正常执行</li>
+<li>清除 (Flush) 这条 <code>add</code> 指令以及后面的指令，需要在 ID 和 EX 阶段加入清除信号（IF 的清除信号已经加好了）</li>
+<li>将这条异常的指令地址保存在 SEPC 上，并用 SCAUSE 记录异常原因</li>
+<li>将控制权交给处理程序，具体来说，将地址 <span class="arithmatex">\(\text{0000 0000 1C09 0000}_{\text{hex}}\)</span> 赋给 PC，让处理器跳转到这个地址上</li>
+</ul>
+<p>下面给出了添加异常处理后的流水线处理器的原理图：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113112105.png" /></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>我们考虑以下指令段：</p>
+<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="err">40</span><span class="w"> </span><span class="nf">sub</span><span class="w"> </span><span class="no">x11</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="err">44</span><span class="w"> </span><span class="nf">and</span><span class="w"> </span><span class="no">x12</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x5</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="err">48</span><span class="w"> </span><span class="nf">or</span><span class="w">  </span><span class="no">x13</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="err">4</span><span class="nf">C</span><span class="w"> </span><span class="no">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="err">50</span><span class="w"> </span><span class="nf">sub</span><span class="w"> </span><span class="no">x15</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span><span class="p">,</span><span class="w"> </span><span class="no">x7</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="err">54</span><span class="w"> </span><span class="nf">ld</span><span class="w">  </span><span class="no">x16</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">(</span><span class="no">x7</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>假设异常发生后会执行以下指令：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>1C090000 sd x26, 1000(x10)
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>1C090004 sd x27, 1008(x10)
+</span></code></pre></div></td></tr></table></div>
+<p>下面展示执行 <code>add x1, x2, x1</code> 指令的 EX 阶段时发生硬件故障时，处理器应对异常的措施：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">第 6 个时钟周期</label><label for="__tabbed_10_2">第 7 个时钟周期</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在第 6 个时钟周期中，异常在 <code>add x1, x2, x1</code> 指令的 EX 阶段中被检测出来，此时地址 <span class="arithmatex">\(\text{0000 0000 1C09 0000}_{\text{hex}}\)</span> ​ 被放入 PC 寄存器中</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113112908.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>在第 7 个时钟周期中，<code>add x1, x2, x1</code> 指令和之后的指令被清除（但 <code>add x1, x2, x1</code> 指令地址被保存），且与异常处理相关的第一条指令进入 IF 阶段</p>
+</div>
+</div>
+</div>
+</div>
+<p>在单个时钟周期中，因为流水线可以执行多条指令，因此有可能发生<strong>多重异常</strong>(Multiple Exception)。解决方法是：给这些异常排个优先级，决定先解决哪个异常。在 RISC-V 中，最早执行的指令先被处理。</p>
+<p>上面给出的是一种“精确”的异常处理，而“不精确”的异常处理方法是：</p>
+<ul>
+<li>停止流水线的运行，并保存当前状态（包括异常原因）</li>
+<li>让处理程序识别发生异常的指令，以及需要完成或清除的指令（可能需要手工完成）</li>
+</ul>
+<p>这种做法简化了硬件，而使软件（处理程序）更加复杂了。对于复杂的多发射无序流水线而言，这种异常处理就不太靠谱了。</p>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5760,7 +5840,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月13日 11:11:13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月13日 11:31:47</span>
   </span>
 
     
