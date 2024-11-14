@@ -246,7 +246,9 @@ $$
 - 若 $C$ 是常数，则 $Var(C)=0$ ；
 - 设 $X$ 是随机变量， $C$ 是常数，则 $Var(C⋅X)=C^2⋅Var(X)$；
 - 设 $X,Y$ 是两个随机变量，则 $Var(X±Y)=Var(X)+Var(Y)±2E{[X−E(X)][Y−E(Y)]}=Var(X)+Var(Y)±2Cov(X,Y)$
-	- 特别地，如果 $X,Y$ 相互独立，则 $Var(X±Y)=Var(X)+Var(Y)$；进一步地，如果$X_i(i=1,2,...,n)$ 彼此独立，则 $Var(c_1X_1±c_2X_2±...±c_nX_n)=c_1^2Var(X_1)+c_2^2Var(X_2)+...+c_n^2Var(X_n)$
+	- $Cov(X,Y)$ 为协方差，后面会讲到
+	- 更一般地，$Var(\sum\limits_{i=1}^nX_i)=\sum\limits_{i=1}^nVar(X_i)+2\sum\limits_{1\leq i<j\leq n}Cov(X_i,X_j)$
+		- 特别地，如果 $X,Y$ 相互独立，则 $Var(X±Y)=Var(X)+Var(Y)$；进一步地，如果$X_i(i=1,2,...,n)$ 彼此独立，则 $Var(c_1X_1±c_2X_2±...±c_nX_n)=c_1^2Var(X_1)+c_2^2Var(X_2)+...+c_n^2Var(X_n)$
 
 !!! tip
 
@@ -256,3 +258,121 @@ $$
 - $Var(X)\leq E((X−c)^2)$，并且当且仅当 $E(X)=c$ 时等号成立；
 - $Var(X)=0\Leftrightarrow P(X=c)=1\text{ and }c=E(X)$；
 ***
+## 标准化变量
+
+设随机变量 $X$ 的数学期望 $E(X)=\mu$，方差 $Var(X)=\sigma^2\not=0$
+
+中心化：使随机变量 $X$ 的数学期望为0，则称随机变量 $X−\mu$ 为 $X$ 的**中心化变量**。
+
+标准化：使随机变量 $X$ 的数学期望为0，方差为1，则称随机变量 $\frac{X−\mu}{\sigma}$ 为 $X$ 的**标准化变量**。
+
+- 标准化变量的数学期望为 $E(X^∗)=0$，方差为 $Var(X^∗)=1$。
+***
+### 变异系数
+
+**变异系数**(Coefficient of Variation)又叫“**标准差率**”，是衡量资料中各观测值变异程度的一个数字特征。它可以消除单位或平均数不同对两个或多个资料变异程度比较的影响。
+
+设随机变量 $X$ 具有数学期望 $E(X)=\mu$，方差 $Var(X)=\sigma^2\not=0$，则称 $C_v=\frac{\sigma}{\mu}$ 为 $X$ 的变异系数。
+***
+## 协方差与相关系数
+
+定义：$E\{[X-E(X)][Y-E(Y)]\}$ 称为随机变量 $X$ 与 $Y$ 的协方差，记为 $Cov(X,Y)$，即 $Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}$，称 $\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)D(Y)}}$ 为随机变量 $X$ 和 $Y$ 的相关系数，$\rho_{XY}$ 是一个无量纲的量。
+
+- 协方差其实就是把 $X$ 和 $Y$ 都中心化后的期望成绩
+***
+### 协方差的性质
+
+协方差具有线性性：
+
+- $Cov(X,X)=Var(X)$；
+- $Cov(X,Y)=Cov(Y,X)$；
+- $Cov(aX,bY)=abCov(X,Y),a,b\in\mathbb{R}$；
+- $Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)$；
+
+- $Cov(X,Y)=E(XY)−E(X)E(Y)$；
+- $Cov(aX+bY,cX+dY)=acVar(X)+bdVar(Y)+(ad+bc)Cov(X,Y)$；
+- $Cov(c,Y)=E(cY)−E(c)E(Y)=0,c\in\mathbb{R}$；
+- $Cov(X+Y,X−Y)=Cov(X,X)−Cov(Y,Y)=Var(X)−Var(Y)$；
+- $D(aX+bY)=a^2Var(X)+b^2Var(Y)+2abCov(X,Y)$；
+***
+### 相关系数的性质
+
+- $|\rho_{XY}|\leq 1$；
+
+!!! note "证明"
+
+	我们有：
+	
+	$$
+	\begin{aligned}
+	D(\frac{X-E(X)}{\sqrt{D(X)}}\pm\frac{Y-E(Y)}{\sqrt{D(Y)}})&=D(\frac{X-E(X)}{\sqrt{D(X)}})+D(\frac{Y-E(Y)}{\sqrt{D(Y)}})\pm2Cov(\frac{X-E(X)}{\sqrt{D(X)}},\frac{Y-E(Y)}{\sqrt{D(Y)}})\\
+	&=2(1\pm\rho_{XY})\geq 0
+	\end{aligned}
+	$$
+	
+
+- $|\rho_{XY}|=1\Leftrightarrow\exists a,b\in\mathbb{R}$，使得 $P(Y=a+bX)=1$；
+    - $\rho_{XY}=+1$ 时，$b>0$；
+    - $\rho_{XY}=−1$ 时，$b<0$；
+
+上述两条性质可以合并写成：
+
+当 $Var(X)Var(Y)\not=0$ 时，有 $Cov(X,Y)^2\leq Var(X)Var(Y)$，其中等号当且仅当 $X,Y$ 之间有严格的线性关系，即存在常数 $a,b$，使 $P(Y=a+bx)=1$；
+
+相关系数 $\rho_{XY}$ 是用来表征 $X,Y$ 之间**线性关系紧密程度**的量。此外，考虑以 $X$ 的线性函数 $a+bX$ 来近似表示 $Y$，**均方误差** $e(a,b)=E\{[Y−(a+bX)]^2\}$ 也可以用来衡量 $X,Y$ 之间线性关系紧密程度。
+
+!!! note "最佳近似值"
+
+	由两个偏导数为 0 可得最佳近似值：
+	
+	$$
+	a_0=E(Y)−b_0E(X),b_0=Cov(X,Y)Var(X)
+	$$
+	
+	于是有：
+	
+	$$
+	e(a_0,b_0)=Var(Y)-\frac{[Cov(X,Y)]^2}{Var(X)}=Var(Y)[1-\rho_{XY}^2]
+	$$
+	
+
+- $|\rho_{XY}|$ 比较大时，误差较小，表示 $X,Y$ 线性关系的程度好；
+- $|\rho_{XY}|=1$ 时，误差为 0，表示 $X,Y$ 之间以概率 1 存在线性关系；
+- $|\rho_{XY}|$比较小时，误差较大，表明 $X,Y$ 线性关系的程度差；
+- $\rho_{XY}>0$ 时，$X,Y$ 正相关；
+- $\rho_{XY}<0$ 时，$X,Y$ 负相关；
+- $\rho_{XY}=0$ 时，称 $X,Y$ **不相关**或**零相关**（仅仅对于线性关系来说，与**独立**的含义不同）；
+
+!!! note ""
+
+	  $\rho_{XY}=0$ 时:
+	  
+	  - $Cov(X,Y)=0$；
+	  - $E(XY)=E(X)E(Y)$；
+	  - $Var(X\pm Y)=Var(X)+Var(Y)$；
+	  
+	  于是有结论：
+	  
+	  - $X,Y$ 互相独立 $\Rightarrow$ $X,Y$ 不相关
+	  - $X,Y$ 相关 $Rightarrow$ $X,Y$ 不独立
+	
+	<font color="red">反之不一定成立</font>
+
+***
+## 二维正态分布
+
+### 参数含义
+
+参数 $\mu_1,\mu_2$ 分别表示 $X,Y$ 的数学期望，$σ_1^2,σ_2^2$ 分别表示 $X,Y$ 的方差，$\rho$ 表示 $X,Y$ 的相关系数。
+
+当 $\rho=0$ 时，称 $X,Y$ 不相关，而此时可推出 $X,Y$ 独立。因此对于二维正态分布，$X,Y$ 独立与不相关是等价的。
+***
+### 二元正态变量性质
+
+- 二元随机变量 $X,Y$ 服从二元正态分布 $\Leftrightarrow X,Y$ 的任意线性组合 $aX+bY$ 服从一元正态分布，其中 $a,b$ 均为不为 0 的参数，且 $aX+bY~N(E(aX+bY),D(aX+bY))$
+- 正态变量的线性变换不变性：若 $X,Y$ 服从二元正态分布，设 $Z_1,Z_2$ 是 $X,Y$ 的线性函数，则 $Z_1,Z_2$ 也服从二元正态分布
+***
+## 总结
+
+![](../../../assets/Pasted%20image%2020241114101630.png)
+
