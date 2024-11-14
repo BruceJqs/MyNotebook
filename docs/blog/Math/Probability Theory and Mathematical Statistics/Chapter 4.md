@@ -354,7 +354,7 @@ $$
 	  于是有结论：
 	  
 	  - $X,Y$ 互相独立 $\Rightarrow$ $X,Y$ 不相关
-	  - $X,Y$ 相关 $Rightarrow$ $X,Y$ 不独立
+	  - $X,Y$ 相关 $\Rightarrow$ $X,Y$ 不独立
 	
 	<font color="red">反之不一定成立</font>
 

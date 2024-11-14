@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 4"
+              "title": "Chapter 5"
             }
           },
           {
@@ -153,10 +153,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 4"
+              "title": "Outline of Chapter 5"
             }
           },
           {
@@ -191,15 +191,16 @@
   },
   "active": "c4fbc51185f1ae7a",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/assets/Pasted image 20241114101830.png",
     "docs/assets/Pasted image 20241114101630.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/assets/Pasted image 20241113153326.png",
     "docs/blog/Research/Seedlab.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/index.md",
     "docs/blog/Research/Seedlab/Basic-Labs",
     "docs/blog/Research/Seedlab",
@@ -229,7 +230,6 @@
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
     "docs/blog/Others/TOEFL Reading/Lesson 6.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
-    "docs/blog/Computer Science/ADS/Chapter 1.md",
     "JioNLP/test/test_time_parser.py",
     "JioNLP/test/test_time_extractor.py",
     "JioNLP/test/test_text_aug.py",
