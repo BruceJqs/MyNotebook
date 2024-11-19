@@ -5085,7 +5085,7 @@
 <p><img alt="image-20240530135557128" src="../../../../assets/image-20240530135557128.png" /></p>
 <h3 id="challenge-2">Challenge 2<a class="headerlink" href="#challenge-2" title="Permanent link">&para;</a></h3>
 <h4 id="_1">阅读程序解释其功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -5120,7 +5120,7 @@
 <p>其功能：输入一个字符串，输出其长度，并且将其中的大写字母转换为小写字母，小写字母转换为大写字母，其他字符不变，形成新的字符串输出。</p>
 <h4 id="calculator">Calculator<a class="headerlink" href="#calculator" title="Permanent link">&para;</a></h4>
 <h5 id="1">法 1：借用提供的部分代码<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -5243,7 +5243,7 @@
 <p><img alt="image-20240602003546693" src="../../../../assets/image-20240602003546693.png" /></p>
 <p><img alt="image-20240602111248059" src="../../../../assets/image-20240602111248059.png" /></p>
 <h5 id="2-python-pwntools">法 2：使用 python pwntools 库<a class="headerlink" href="#2-python-pwntools" title="Permanent link">&para;</a></h5>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -5309,7 +5309,7 @@
 <p><img alt="image-20240602123044055" src="../../../../assets/image-20240602123044055.png" /></p>
 <p>至此，我们可以猜测，该任务即需要我们反复得到刷新的 token 访问网页共 1337 次，即可得到 flag。</p>
 <p>那么，我们可以利用 python 爬虫来反复爬取页面的内容，累计访问次数得到 flag。代码如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -5361,7 +5361,7 @@
 <p>可以猜想有过滤，在 Burpsuite 中爆破：</p>
 <p><img alt="img" src="../../../../assets/1937992-20200911094122880-1747349205.png" /></p>
 <p>长度为 472 的是没有被过滤掉的，Python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -5417,7 +5417,7 @@
 <p><img alt="image-20240602232414835" src="../../../../assets/image-20240602232414835.png" /></p>
 <h2 id="pwn">Pwn<a class="headerlink" href="#pwn" title="Permanent link">&para;</a></h2>
 <p>Program.c 源程序如下：</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -5581,7 +5581,7 @@
 <p>在第 66 行与 74 行中，程序只是设定了在 err 时 free p 指针，但是没有考虑没有 err 时的情况，那么会造成内存溢出。</p>
 <h3 id="_2">交互<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>我们编写第一个生成数据的 c 程序体现 Bug 1：</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -5656,7 +5656,7 @@
 <p>运行输入可得该程序一直在等待输入。</p>
 <p><img alt="image-20240703143947998" src="../../../../assets/image-20240703143947998.png" /></p>
 <p>第二个 c 程序体现程序的内存溢出情况：</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
@@ -5732,7 +5732,7 @@
 <p><img alt="image-20240703144538995" src="../../../../assets/image-20240703144538995.png" /></p>
 <h3 id="_3">修复程序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>最后修复完成的程序如下：</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
@@ -5943,7 +5943,7 @@
 <p>由 RSA 原理，公钥加密私钥解密：</p>
 <p><span class="arithmatex">\(d=e^{-1}\space mod\space\phi(n),m=c^d\space mod\space n\)</span></p>
 <p>结合 python pycryptodome 库可编写 Python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-9-4"> 4</a></span>

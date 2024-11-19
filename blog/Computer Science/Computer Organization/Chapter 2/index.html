@@ -5282,12 +5282,12 @@
 <ul>
 <li><code>add</code>：寄存器 1 + 寄存器 2</li>
 </ul>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nf">add</span><span class="w"> </span><span class="no">reg1</span><span class="p">,</span><span class="w"> </span><span class="no">reg2</span><span class="p">,</span><span class="w"> </span><span class="no">reg3</span><span class="w">    </span><span class="c1">// (in C) reg1 = reg2 + reg3</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nf">add</span><span class="w"> </span><span class="no">reg1</span><span class="p">,</span><span class="w"> </span><span class="no">reg2</span><span class="p">,</span><span class="w"> </span><span class="no">reg3</span><span class="w">    </span><span class="c1">// (in C) reg1 = reg2 + reg3</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li><code>addi</code>(Add Immediate)：寄存器 + 常量</li>
 </ul>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nf">addi</span><span class="w"> </span><span class="no">reg1</span><span class="p">,</span><span class="w"> </span><span class="no">reg2</span><span class="p">,</span><span class="w"> </span><span class="no">const</span><span class="w">  </span><span class="c1">// (in C) reg1 = reg2 + const</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nf">addi</span><span class="w"> </span><span class="no">reg1</span><span class="p">,</span><span class="w"> </span><span class="no">reg2</span><span class="p">,</span><span class="w"> </span><span class="no">const</span><span class="w">  </span><span class="c1">// (in C) reg1 = reg2 + const</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
@@ -5295,7 +5295,7 @@
 <ul>
 <li><code>sub</code>：寄存器 1 - 寄存器 2</li>
 </ul>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">sub</span><span class="w"> </span><span class="no">reg1</span><span class="p">,</span><span class="w"> </span><span class="no">reg2</span><span class="p">,</span><span class="w"> </span><span class="no">reg3</span><span class="w">    </span><span class="c1">// (in C) reg1 = reg2 - reg3</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">sub</span><span class="w"> </span><span class="no">reg1</span><span class="p">,</span><span class="w"> </span><span class="no">reg2</span><span class="p">,</span><span class="w"> </span><span class="no">reg3</span><span class="w">    </span><span class="c1">// (in C) reg1 = reg2 - reg3</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>注意：没有<code>subi</code>，但是可以通过<code>addi</code>一个负常数来实现</li>
@@ -5315,7 +5315,7 @@
 <li>逻辑右移时最左边补 0</li>
 <li>
 <p>不带<code>i</code>的指令表示根据寄存器的值确定移动位数，带<code>i</code>的指令表示用立即数确定移动位数</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nf">slli</span><span class="w"> </span><span class="no">x11</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w">    </span><span class="c1">// reg x11 = reg x19 &lt;&lt; 4 bits</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nf">slli</span><span class="w"> </span><span class="no">x11</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w">    </span><span class="c1">// reg x11 = reg x19 &lt;&lt; 4 bits</span>
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ul>
@@ -5351,7 +5351,7 @@
 <hr />
 <h3 id="making-decisions">Making Decisions<a class="headerlink" href="#making-decisions" title="Permanent link">&para;</a></h3>
 <p>计算机与计算器的一大不同之处在于计算机具备决策的能力：它能够执行分支（条件）语句、循环语句等。在 RISC-V 汇编语言中，关于决策的指令格式均为：</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nf">inst</span><span class="w"> </span><span class="no">rs1</span><span class="p">,</span><span class="w"> </span><span class="no">rs2</span><span class="p">,</span><span class="w"> </span><span class="no">L1</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nf">inst</span><span class="w"> </span><span class="no">rs1</span><span class="p">,</span><span class="w"> </span><span class="no">rs2</span><span class="p">,</span><span class="w"> </span><span class="no">L1</span>
 </span></code></pre></div></td></tr></table></div>
 <p>其中<code>rs1</code>、<code>rs2</code>是寄存器，<code>L1</code>是标签（跳转位置，也可以是立即数 imm，表示跳转到 PC+imm 的指令），<code>inst</code>是指令，比较的是补码值。</p>
 <p>其分类如下：</p>
@@ -5419,7 +5419,7 @@
 </div>
 </div>
 <h4 id="set-on-less-than">Set on less than<a class="headerlink" href="#set-on-less-than" title="Permanent link">&para;</a></h4>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nf">slt</span><span class="w"> </span><span class="no">x5</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x20</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nf">slt</span><span class="w"> </span><span class="no">x5</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x20</span>
 </span></code></pre></div></td></tr></table></div>
 <p>这句指令意为如果 x19&lt;x20，那么将 x5 赋值为 1</p>
 <div class="admonition example">
@@ -5483,7 +5483,7 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>对于指令 <code>beq x10, x0, L1</code>，如果 <code>L1</code> 地址过远，这条指令会被替换成以下指令：</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">    </span><span class="nf">bne</span><span class="w"> </span><span class="no">x10</span><span class="p">,</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="w"> </span><span class="no">L2</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nf">jal</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="w"> </span><span class="no">L1</span>
@@ -5496,7 +5496,7 @@
 <ul>
 <li>
 <p><code>ld</code>（Load Doubleword）：加载指令，将数据从内存拷贝到寄存器当中</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
 <span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nf">ld</span><span class="w"> </span><span class="no">reg</span><span class="p">,</span><span class="w"> </span><span class="no">offset</span><span class="p">(</span><span class="no">mem_base_addr</span><span class="p">)</span>
@@ -5510,7 +5510,7 @@
 </li>
 <li>
 <p><code>sd</code>（Store Doubleword）：存储指令，将寄存器的数据拷贝到内存中</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nf">sd</span><span class="w"> </span><span class="no">reg</span><span class="p">,</span><span class="w"> </span><span class="no">offset</span><span class="p">(</span><span class="no">mem_base_addr</span><span class="p">)</span>
@@ -5561,7 +5561,7 @@
 <ul>
 <li>
 <p>一般的做法是将常数保存在一个寄存器当中，通过一个地址指针指向这个寄存器，然后通过 <code>add</code> 指令实现加法操作</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nf">ld</span><span class="w"> </span><span class="no">x9</span><span class="p">,</span><span class="w"> </span><span class="no">AddrConstant4</span><span class="p">(</span><span class="no">x3</span><span class="p">)</span><span class="w"> </span><span class="c1">//x9 = constant 4</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nf">add</span><span class="w"> </span><span class="no">x22</span><span class="p">,</span><span class="w"> </span><span class="no">x22</span><span class="p">,</span><span class="w"> </span><span class="no">x9</span>
 </span></code></pre></div></td></tr></table></div>
@@ -5690,10 +5690,10 @@
 </div>
 <div class="tabbed-block">
 <p>先取这个立即数上第 12 位到第 31 位的数字，用指令<code>lui</code>将这些数字放入寄存器<code>x19</code>上的第 12 位到第 31 位</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nf">lui</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="mi">976</span><span class="w">  </span><span class="c1">// 976 = 0000 0000 0011 1101 0000</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nf">lui</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="mi">976</span><span class="w">  </span><span class="c1">// 976 = 0000 0000 0011 1101 0000</span>
 </span></code></pre></div></td></tr></table></div>
 <p>然后将立即数的低 12 位加到寄存器上即可</p>
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nf">addi</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="mi">1280</span><span class="w">  </span><span class="c1">// 1280 = 00000101 00000000</span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nf">addi</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="mi">1280</span><span class="w">  </span><span class="c1">// 1280 = 00000101 00000000</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5846,7 +5846,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">C</label><label for="__tabbed_8_2">RISC-V</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
@@ -5860,7 +5860,7 @@
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
 <span class="normal"><a href="#__codelineno-13-4">4</a></span>
@@ -5883,7 +5883,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">C</label><label for="__tabbed_9_2">RISC-V</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span>
@@ -5901,7 +5901,7 @@
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-asm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<div class="language-asm highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>

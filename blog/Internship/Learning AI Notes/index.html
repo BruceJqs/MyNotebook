@@ -4723,7 +4723,7 @@
 <h1 id="learning-ai-notes">Learning AI Notes<a class="headerlink" href="#learning-ai-notes" title="Permanent link">&para;</a></h1>
 <h2 id="_1">梯度下降<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>下面这个程序使用梯度下降法计算最小二乘法：<span class="arithmatex">\(J(\theta)=\frac{1}{2m}\sum\limits_1^m(h_{\theta}(x)-y)^2\)</span> ，其中 <span class="arithmatex">\(m\)</span> 为数据点总数，<span class="arithmatex">\(y\)</span> 为数据集中每个点的真实 <span class="arithmatex">\(y\)</span> 坐标的值，<span class="arithmatex">\(h_{\theta}(x)\)</span> 为预测函数，<span class="arithmatex">\(h_{\theta}(x)=\theta_0+\theta_1x\)</span> ，寻找出最佳的 <span class="arithmatex">\(\theta\)</span> 组。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4826,7 +4826,7 @@ W_{ji}=W_{ji}+a\times\delta_j^l\times x_{ji}\\
 b_{ji}=b_{ji}+a\times\delta_j^{l}
 \]</div>
 <p>总的代码如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">  3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">  4</a></span>
@@ -5062,7 +5062,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <h3 id="_6">卷积运算<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>e.g.对高速公路上的跑车的位置进行追踪，对于运动中的目标，采样时间越长，由于滞后性的原因，定位的准确率越低；采样时间越短，就越接近真实值。因此，可以对不同的时间段赋予不同的权重，即 <span class="arithmatex">\(s(t)=\int x(a)\omega(t-a)da\)</span> ，这样的运算称为卷积运算，也记为 <span class="arithmatex">\(s(t)=(x\omega)(t)\)</span>。</p>
 <p>而对于一个矩阵（一般可以是一张图片信息）来说，我们设定一个卷积核（其大小一般远小于输入矩阵），通过卷积运算后可以提取图片特征，减少后续的计算量。（如果卷积核设定得当可以对图片起到锐化、获取轮廓、模糊等效果）</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -5109,7 +5109,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <li>strides：步进大小，默认为 1；如果参数是 stride=(2,1) 那么在高步长为 2，在宽步长为 1</li>
 <li>padding：补全方式，只能为 0 或 1，padding 为 1 时图像边缘用一圈 0 补齐，使得卷积结果与原输入矩阵的大小一致</li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -5136,7 +5136,7 @@ b_{ji}=b_{ji}+a\times\delta_j^{l}
 <p>在卷积获得了图像特征之后，我们下一步希望对这些特征进行分类。</p>
 <p>特征提取可以计算图像在一个区域上的某个特定特征的平均值（或最大值），结果不仅具有低得多的维度，同时还会改善结果（不容易过拟合），这种聚合的操作叫做池化（Pooling）。</p>
 <p>如果选择图像中的连续范围作为池化区域，并且只是池化相同的隐藏单元产生的特征，那么这些池化单元就具有平移不变性。这意味着即使图像经历了一个小的平移，依然会产生相同的池化特征。比如判定一幅图像是否包含人脸时，并不需要判定眼睛的位置，而是需要知道有一只眼睛出现在脸部的左侧，另一只出现在右侧。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
@@ -5178,7 +5178,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <li>对获取的图像特征进行缩减</li>
 <li>全连接层：用于对图像进行分类</li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -5321,7 +5321,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p>膨胀卷积又称空洞卷积，在卷积核中增加空洞，可以增加单位面积中计算的大小，从而扩大模型的计算视野。</p>
 <p><img alt="img" src="https://pic2.zhimg.com/80/v2-f58615821f14fcb6585b2fc7fa1a2a11_1440w.webp" /></p>
 <p>普通卷积即为膨胀卷积 dilation=1 的情况。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -5453,7 +5453,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <h2 id="pytorch_1">PyTorch 数据处理与模型展示<a class="headerlink" href="#pytorch_1" title="Permanent link">&para;</a></h2>
 <h3 id="torchutilsdata-dataset">torch.utils.data Dataset 封装自定义数据集<a class="headerlink" href="#torchutilsdata-dataset" title="Permanent link">&para;</a></h3>
 <p>在 PyTorch 2.0 中，数据集的自定义使用需要继承 <strong>torch.utils.data.Dataset</strong> 类，基本的 Dataset 类架构如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
 <span class="normal"><a href="#__codelineno-7-4">4</a></span>
@@ -5474,7 +5474,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p>Dataset 除了基本的 init 函数，还需要补充额外的两个函数：<strong>getitem</strong> 和 <strong>len</strong>，这是仿照数组进行的定义，返回 index 对应的数据以及范围数据集大小。</p>
 <h3 id="dataset-transform">改变数据类型的 Dataset 类中的 transform<a class="headerlink" href="#dataset-transform" title="Permanent link">&para;</a></h3>
 <p>我们可以利用自定义的数据处理转换类来对输入数据进行一些类型上的处理。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
@@ -5561,7 +5561,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p><img alt="" src="../../../assets/image-20240717152439180.png" /></p>
 <h3 id="dataloader">批量输出数据的 DataLoader 类<a class="headerlink" href="#dataloader" title="Permanent link">&para;</a></h3>
 <p>DataLoader 可以解决使用 Dataset 自定义封装的数据时无法对数据进行批量化处理的问题，其定义如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">MNIST_Dataset</span><span class="p">(</span><span class="n">transform</span> <span class="o">=</span> <span class="n">ToTenSor</span><span class="p">())</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
@@ -5574,7 +5574,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p><img src="https://pic4.zhimg.com/80/v2-1ae69df03709e46bc3cc6d9e2d35930b_1440w.webp" alt="img" style="zoom:50%;" /></p>
 <p>左图是基于普通卷积的二层残差学习单元，称为 BasicBlock；右图第一层采用 <span class="arithmatex">\(1\times1\)</span> 卷积核，对特征矩阵进行降维操作，将特征矩阵的深度由 256 降为 64；第三层 <span class="arithmatex">\(1\times1\)</span> 卷积核对特征矩阵进行升维操作，将特征矩阵的深度由 64 升为 256，整体称为 Bottleneck，能更好减少参数。</p>
 <p>对于经典 BasicBlock 模型的代码：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
@@ -5637,7 +5637,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p><img src="https://pic1.zhimg.com/80/v2-b87b43af5d42670e2b1c15b8fc5d6780_1440w.webp" alt="img" style="zoom:50%;" /></p>
 <p>深层（50/101/152）：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-b3c148ca6aee1c5fe8a46488c744d3e4_1440w.webp" alt="img" style="zoom:50%;" /></p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
@@ -5823,7 +5823,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p>词嵌入本质上是一类技术，单个词在预定义的向量空间中被表示为实数向量，每个单词都映射到一个向量。</p>
 <h3 id="_12">文本清洗<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>对于一篇新闻，内含标点符号和一些特殊字符，我们可以通过正则表达式对整篇新闻进行清洗，获得较为干净的词库。同时文章里面会含很多没有意义的副词（如 is,are,the 等），我们也可以利用消除停用词（python nltk 工具包）减少要处理的词汇量以减少后续程序的复杂度。除此之外，英文单词由于时态、复数等变化，我们也可以使用 nltk 中的 PorterStemmer 工具将其还原成原词干。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
@@ -5888,7 +5888,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p><img alt="img" src="https://pic3.zhimg.com/80/v2-ded34fa32e7e10eb5c5f24b6c4048d3e_1440w.webp" /></p>
 <p>CBOW 模型是根据上下文去预测目标词来训练得到词向量，而 Skip-gram 模型则是根据目标词去预测上下文来训练得到词向量。CBOW 适合于数据集较小的情况，而 Skip-Gram 在大型语料中表现更好。</p>
 <p>Python 实现 Word2Vec 模型，需要 <code>from gensim.models import word2vec</code> 导入 word2vec 函数，其主要参数：<code>Word2Vec(sentences, workers = num_workers, vector_size = num_features, min_count = min_word_count, window = context, sample = downsampling, epochs = 5)</code> 其中 sentences 是输入数据，worker 是并行运行的线程数，vector_size 是词向量的维数，min_count 是最小的词频，window是上下文窗口大小，sample 是对频繁词汇下采样设置，epochs 是循环的次数，一般不是有特殊要求，按默认值设置即可。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
@@ -5967,7 +5967,7 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 逆文档概率(IDF)=\log(\frac{语料库的文本总数}{语料库中包含该词的文本数+1})\\
 TF-IDF=TF\times IDF
 \]</div>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
@@ -6158,7 +6158,7 @@ $$
 <li><code>epochs</code> ：模型迭代的次数。</li>
 <li><code>seed(int, optional)</code> ：随机数发生器种子。</li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
@@ -6220,7 +6220,7 @@ $$
 <p><img alt="image-20240718144844422" src="../../../assets/image-20240718144844422.png" /></p>
 <p>但是对于不同长度的单词，会生成不同的矩阵，我们需要对其进行规范化处理，长的截短，短的补长。</p>
 <p>最后构建数据集。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
@@ -6404,7 +6404,7 @@ $$
 <p>作为解决办法，使用 Word2Vec 的 Word Embedding，通过学习将字库中的词转换成维度一定的向量，作为卷积神经网络的计算依据。</p>
 <h4 id="_16">分词模型的处理<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
 <p>不同于字符卷积，我们需要返回的是一个包含所有单词的列表，方便 Word2Vec 处理。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
 <span class="normal"><a href="#__codelineno-17-3">3</a></span>
 <span class="normal"><a href="#__codelineno-17-4">4</a></span>
@@ -6422,7 +6422,7 @@ $$
 </span></code></pre></div></td></tr></table></div>
 <h4 id="_17">分词模型的训练与载入<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <p>对于 Word2Vec 词向量来说，简单地将待补全的矩阵用全 0 补全是不合适的，最好的方法是将全 0 矩阵修改为一个非常小的常数矩阵。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
@@ -6473,7 +6473,7 @@ $$
 </span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25"></a>    <span class="k">return</span> <span class="n">train_dataset</span><span class="p">,</span> <span class="n">label_dataset</span>
 </span></code></pre></div></td></tr></table></div>
 <p>最后使用二维卷积对其进行模型训练学习即可。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
@@ -6613,7 +6613,7 @@ $$
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_18">汉字的文本处理<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <h4 id="_19">拼音库包<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
 <span class="normal"><a href="#__codelineno-20-2">2</a></span>
 <span class="normal"><a href="#__codelineno-20-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="kn">from</span> <span class="nn">pypinyin</span> <span class="kn">import</span> <span class="n">pinyin</span><span class="p">,</span> <span class="n">lazy_pinyin</span><span class="p">,</span> <span class="n">Style</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="n">value</span> <span class="o">=</span> <span class="n">lazy_pinyin</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="p">)</span>
@@ -6622,7 +6622,7 @@ $$
 <p><img alt="image-20240718155936841" src="../../../assets/image-20240718155936841.png" /></p>
 <h4 id="_20">词向量<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>较为常用，使用分词器对文本进行分词，除去停用词和副词之后制作词向量。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-21-4"> 4</a></span>

@@ -4540,7 +4540,7 @@
 <p>而且根据<sub>~观察</sub>~大胆猜测 crc32_table 每个元素的末 8 位不同，可以知道执行操作的 crc_table 元素的完整数据，那么根据异或操作 <code>a ^ b = c</code> 可推出 <code>b = a ^ c</code> ，即可获得前一次操作 <code>a3 &lt;&lt; 8</code> 的值。</p>
 <p>将 a3 右移八位，同之前的道理，还是可以得到最初的 crc_table 元素的完整数据，此时我们也知道初始的 a3 为 <code>0x414243</code> ，那么异或一下我们就可以得到中间算出的 a3 完整数据，这样对应的字符也就迎刃而解了！（撒花！）</p>
 <p>编写 Python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>

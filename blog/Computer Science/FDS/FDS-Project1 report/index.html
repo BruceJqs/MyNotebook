@@ -5059,7 +5059,7 @@
 <p>The output file requires to print out all pairs <span class="arithmatex">\(&lt;a,b&gt;\)</span> for each query in the format "No.X : A + B = C"</p>
 <p>If there is no answer,print "Cannot find the possible <a,b>!"</p>
 <h4 id="sample-input">Sample Input<a class="headerlink" href="#sample-input" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>10
@@ -5068,7 +5068,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>11
 </span></code></pre></div></td></tr></table></div>
 <h4 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -5112,7 +5112,7 @@
 <h2 id="chapter-2-algorithm-specification">Chapter 2 : Algorithm Specification<a class="headerlink" href="#chapter-2-algorithm-specification" title="Permanent link">&para;</a></h2>
 <h3 id="algorithm-1">Algorithm 1<a class="headerlink" href="#algorithm-1" title="Permanent link">&para;</a></h3>
 <p>Algorithm 1 uses 2 "for" loops to solve this problem.The first loop enumerates <span class="arithmatex">\(a\)</span> while the second loop enumerates <span class="arithmatex">\(b\)</span>.Then check whether <span class="arithmatex">\(a+b=c\)</span>.Pseudo-code is shown below:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
@@ -5128,7 +5128,7 @@
 </span></code></pre></div></td></tr></table></div>
 <h3 id="algorithm-2">Algorithm 2<a class="headerlink" href="#algorithm-2" title="Permanent link">&para;</a></h3>
 <p>Algorithm 2 uses Binary_Search Algorithm and Quick_Sort Algorithm to solve this problem.We enumerate <span class="arithmatex">\(a\)</span> and check whether <span class="arithmatex">\(c-a\)</span> exists in the array.To check whether <span class="arithmatex">\(c-a\)</span> exists in the array,the fastest algorithm is Binary_Search Algorithm,but we still need Quick_Sort Algorithm because Binary_Search Algorithm asks the array to be in ascending order or in descending order.Pseudo-code is shown below:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -5284,7 +5284,7 @@
 <p>There are more algorithms to solve this problem, such as Hash-Table Algorithm.</p>
 <h2 id="appendix-source-code">Appendix : Source Code<a class="headerlink" href="#appendix-source-code" title="Permanent link">&para;</a></h2>
 <h3 id="algorithm-1on2">Algorithm 1（<span class="arithmatex">\(O(N^2)\)</span>）<a class="headerlink" href="#algorithm-1on2" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -5395,7 +5395,7 @@
 <div style="page-break-after:always;"></div>
 
 <h3 id="algorithm-2onlogn">Algorithm 2（<span class="arithmatex">\(O(NlogN)\)</span>）<a class="headerlink" href="#algorithm-2onlogn" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -5582,7 +5582,7 @@
 <div style="page-break-after:always;"></div>
 
 <h3 id="data-generator">Data Generator<a class="headerlink" href="#data-generator" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>

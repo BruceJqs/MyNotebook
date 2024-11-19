@@ -4527,7 +4527,7 @@
 <p>往下翻会发现跟 flag 字符 ASCII 值有关的语句：</p>
 <p><img alt="image-20240714191731700" src="../../../../assets/image-20240714191731700.png" /></p>
 <p>由上图我们从第 1 行到第 10 行可以看出攻击者最后把 flag 的 ASCII 码定位在了 102，即 flag 第一位为 f，我们执行命令行 <code>tshark -r sqltest.pcapng -Y "http.request" -T fields -e http.request.full_uri &gt; data.txt</code> 导出这些数据为 data.txt，并编写 python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -4559,7 +4559,7 @@
 <p>通过 wireshark 打开 dnscap.pcap，发现全是 DNS 协议，打开看其发起的查询：</p>
 <p><img alt="image-20240715124237630" src="../../../../assets/image-20240715124237630.png" /></p>
 <p>均为 xxx.skullsecloabs.org 格式，我们使用命令行 <code>tshark -r dnscap.pcap -T fields -e dns.qry.name &gt; data.txt</code>  并编写 python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -4585,7 +4585,7 @@
 <p><img alt="image-20240715215331086" src="../../../../assets/image-20240715215331086.png" /></p>
 <p>这其中前九个 Byte 的数据均为 dns 发送端接收端等相关数据，是我们所不需要的，我们需要的是这里的 Data。</p>
 <p>完善 python 代码：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -4675,7 +4675,7 @@
 <p>点击 Get new instance，可以看到合约地址：</p>
 <p><img alt="image-20240721131040204" src="../../../../assets/image-20240721131040204.png" /></p>
 <p>根据题目描述，我们需要连续 10 次猜对硬币的正反面。所给代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -4738,7 +4738,7 @@
 </span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>根据代码，我们可以看到 blockValue 是由前一个区块而决定的，但是我们无法知道前一个区块，所以我们可以在自己的内部创造一个合约，将结果送给合约即可，编写 solidity 代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -4819,7 +4819,7 @@
 <p>根据题意，这个关卡要求获得合约 Delegation 的所有权，我们先查看 Delegation 的 owner：</p>
 <p><img alt="image-20240721145916285" src="../../../../assets/image-20240721145916285.png" /></p>
 <p>因此我们需要将 contract.owner()更改成 player，所给代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -4886,7 +4886,7 @@
 <p><img alt="" src="../../../../assets/image-20240721150142117.png" /></p>
 <h3 id="vault">Vault<a class="headerlink" href="#vault" title="Permanent link">&para;</a></h3>
 <p>根据题意，这个关卡需要我们将合约中的 locked 变量改为 false，代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>

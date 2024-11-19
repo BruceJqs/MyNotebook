@@ -5187,7 +5187,7 @@
 <p>The output contains <span class="arithmatex">\(T\)</span> lines. For each pair of source and destination, list all the transportation hubs on the way in the ascending order in the line.</p>
 <p>If there is no transportation hub on the way, print <span class="arithmatex">\(None\)</span> in the line.</p>
 <h4 id="sample-input">Sample Input<a class="headerlink" href="#sample-input" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -5230,7 +5230,7 @@
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>5 5
 </span></code></pre></div></td></tr></table></div>
 <h4 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>2 3 4 5
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>None
@@ -5253,7 +5253,7 @@
 <h4 id="step-1-apply-dijkstra-algorithm">Step 1 : Apply Dijkstra Algorithm<a class="headerlink" href="#step-1-apply-dijkstra-algorithm" title="Permanent link">&para;</a></h4>
 <p>To solve this problem, we only need to make several little changes to the common Dijkstra Algorithm. In the Loose Operation, we also need to consider the situation when the path length to reach other points through that vertex is equal to directly reaching the source point. This means there is probably more than one minimum path. Store the path.</p>
 <p>We use <strong>heap</strong> to find the smallest unknown distance vertex thus optimizing the dijkstra algorithm. Also an <strong>array</strong> <span class="arithmatex">\(dis\)</span> is applied to store the smallest path from starting point to the destination. Pseudo-code is shown below:</p>
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -5303,7 +5303,7 @@
 <p>Finally we use DFS Algorithm to count the times that the vertix appears in the path and judge whether it is a transportation hub or not.</p>
 <p>We will store all possible previous vertex in the smallest distance path in an <strong>array</strong> <span class="arithmatex">\(pre\)</span>. Then for every previous vertex <span class="arithmatex">\(pre[i]\)</span> in the <span class="arithmatex">\(pre\)</span>, explore further to get the previous vertices of <span class="arithmatex">\(pre[i]\)</span>. Dug deeper until we reach the starting point. This means we have found one smallest distance path. Step back to explore further until we have found all smallest distance path.</p>
 <p>Lastly use an <strong>array</strong> <span class="arithmatex">\(bucket\)</span> to count and judge whether a vertix is a transportation hub or not. Pseudo-code is shown below:</p>
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -5327,7 +5327,7 @@
 <h3 id="test-case-1">Test case 1<a class="headerlink" href="#test-case-1" title="Permanent link">&para;</a></h3>
 <p>Test case 1 wants to test the graph of 10 vertices and 38 edges with the threshold being 1 and query times being 5.</p>
 <h4 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -5418,7 +5418,7 @@
 </span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45"></a>3 7
 </span></code></pre></div></td></tr></table></div>
 <h4 id="output_1">Output<a class="headerlink" href="#output_1" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
@@ -5432,7 +5432,7 @@
 <h3 id="test-case-2">Test case 2<a class="headerlink" href="#test-case-2" title="Permanent link">&para;</a></h3>
 <p>Test case 2 wants to test the graph of 20 vertices and 137 edges with the threshold being 2 and query times being 10.</p>
 <h4 id="input_2">Input<a class="headerlink" href="#input_2" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -5465,7 +5465,7 @@
 </span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a>1 3
 </span></code></pre></div></td></tr></table></div>
 <h4 id="output_2">Output<a class="headerlink" href="#output_2" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
@@ -5489,7 +5489,7 @@
 <h3 id="test-case-3">Test case 3<a class="headerlink" href="#test-case-3" title="Permanent link">&para;</a></h3>
 <p>Test case 3 wants to test the graph of 50 vertices and 1089 edges with the threshold being 2 and query times being 20.</p>
 <h4 id="input_3">Input<a class="headerlink" href="#input_3" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
@@ -5540,7 +5540,7 @@
 </span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25"></a>30 15
 </span></code></pre></div></td></tr></table></div>
 <h4 id="output_3">Output<a class="headerlink" href="#output_3" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
@@ -5584,7 +5584,7 @@
 <h3 id="test-case-4">Test case 4<a class="headerlink" href="#test-case-4" title="Permanent link">&para;</a></h3>
 <p>Test case 4 wants to the graph of 200 vertices and 8558 edges with the threshold being 1 and query times being 100.</p>
 <h4 id="input_4">Input<a class="headerlink" href="#input_4" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
 <span class="normal"><a href="#__codelineno-10-4">4</a></span>
@@ -5601,7 +5601,7 @@
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>23 152
 </span></code></pre></div></td></tr></table></div>
 <h4 id="output_4">Output<a class="headerlink" href="#output_4" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
 <span class="normal"><a href="#__codelineno-11-4">4</a></span>
@@ -5615,7 +5615,7 @@
 <h3 id="test-case-5">Test case 5<a class="headerlink" href="#test-case-5" title="Permanent link">&para;</a></h3>
 <p>Test case 5 wants to test the graph of 500 vertices and 124750 edges with the threshold being 4 and query times being 500. (Maximum test cases)</p>
 <h4 id="input_5">Input<a class="headerlink" href="#input_5" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
@@ -5632,7 +5632,7 @@
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>426 206
 </span></code></pre></div></td></tr></table></div>
 <h4 id="output_5">Output<a class="headerlink" href="#output_5" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
 <span class="normal"><a href="#__codelineno-13-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>None
@@ -5661,7 +5661,7 @@
 <p>This program successfully complete the task, but the DFS algorithm slow down the whole program, making the optimizing part of the Dijkstra algorithm a bit useless. It can be possibly improved. </p>
 <h2 id="appendix-source-code">Appendix : Source Code<a class="headerlink" href="#appendix-source-code" title="Permanent link">&para;</a></h2>
 <h3 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h3>
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">  1</a></span>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">  3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">  4</a></span>
@@ -5874,7 +5874,7 @@
 </span><span id="__span-14-106"><a id="__codelineno-14-106" name="__codelineno-14-106"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="data-generator">Data Generator<a class="headerlink" href="#data-generator" title="Permanent link">&para;</a></h3>
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
