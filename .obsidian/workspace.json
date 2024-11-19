@@ -15,7 +15,7 @@
               "state": {
                 "file": "docs/blog/Computer Science/ADS/Chapter 10.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Chapter 10"
@@ -156,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -175,16 +175,16 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "402cd8ba2abfcaa2",
+  "active": "3d142c13a9deda6e",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/Chapter 9.md",
+    "docs/blog/Computer Science/ADS/Chapter 10.md",
     "docs/assets/Pasted image 20241119143900.png",
     "docs/assets/Pasted image 20241119113625.png",
     "docs/assets/Pasted image 20241119112514.png",
     "docs/assets/Pasted image 20241119105739.png",
     "docs/blog/Computer Science/Computer Organization/Homework 4.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 10.md",
-    "docs/blog/Computer Science/ADS/Chapter 9.md",
     "docs/blog/Computer Science/ADS/Chapter 8.md",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
     "docs/blog/Computer Science/ADS/index.md",
@@ -206,7 +206,6 @@
     "site/assets/output.png",
     "site/assets/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg",
     "site/assets/miao~870F6C667A6CDC0D1F533859E72C48E0 1.jpg",
-    "site/assets/image.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
