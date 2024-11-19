@@ -65,13 +65,11 @@ NPC 即 NP complete，NP 完全，是 NP 中最难的**决定性**问题（并�
 	而采取数学语言来描述，则是：
 	
 	$$
-	\begin{aligned}
-	A \leq_{p} B 
-	\;\;\Leftrightarrow\;\;
-	& \exists f() \text{ which runs in polynomial time}, \\
-	& s.t.    \;\; \forall x \in A,\; f(x) \in B \\
-	& \text{and}\; \forall f(x) \in B,\; y \in A
-	\end{aligned}
+	\begin{gather}
+	A\leq_p B\Leftrightarrow \exists f() \text{ which runs in polynomial time},\\
+	s.t.\forall x\in A,f(x)\in B\\
+	\text{and }\forall f(x)\in B,y\in A
+	\end{gather}
 	$$
 	​
 
