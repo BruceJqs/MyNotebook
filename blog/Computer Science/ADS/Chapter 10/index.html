@@ -4614,14 +4614,13 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241119112514.png" /></p>
 <p>如果我们能在多项式时间的复杂度内，将问题 A 转化为问题 B，则称问题 A 可以<strong>多项式时间归约</strong>为 B，记为 <span class="arithmatex">\(A\leq_p B\)</span>，表示 A 不会比 B 难。</p>
 <p>而采取数学语言来描述，则是：</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{gather}
-A\leq_p B\Leftrightarrow \exists f() \text{ which runs in polynomial time},\
-s.t.\forall x\in A,f(x)\in B\
+A\leq_p B\Leftrightarrow \exists f() \text{ which runs in polynomial time},\\
+s.t.\forall x\in A,f(x)\in B\\
 \text{and }\forall f(x)\in B,y\in A
 \end{gather}
-$$
-​</p>
+\]</div>
 </div>
 <p>由 2 可以有结论，所有的 NPC 问题难度相同——一旦有一个 NPC 问题被解决，那么所有 NPC 问题，乃至所有 NP 问题都能被解决。</p>
 <p>如果我们试图证明一个问题是 NPC 问题，我们可以通过这种手段：</p>
@@ -4759,7 +4758,7 @@ $$
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 12:07:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 12:12:24</span>
   </span>
 
     
