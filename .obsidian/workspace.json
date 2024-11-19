@@ -15,7 +15,7 @@
               "state": {
                 "file": "docs/blog/Computer Science/ADS/Chapter 10.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Chapter 10"
@@ -156,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -177,6 +177,7 @@
   },
   "active": "402cd8ba2abfcaa2",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241119143900.png",
     "docs/assets/Pasted image 20241119113625.png",
     "docs/assets/Pasted image 20241119112514.png",
     "docs/assets/Pasted image 20241119105739.png",
@@ -206,7 +207,6 @@
     "site/assets/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg",
     "site/assets/miao~870F6C667A6CDC0D1F533859E72C48E0 1.jpg",
     "site/assets/image.png",
-    "site/assets/image-8.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
