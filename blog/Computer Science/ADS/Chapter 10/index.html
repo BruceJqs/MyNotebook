@@ -823,6 +823,8 @@
       
         
       
+        
+      
     
     
       
@@ -1002,6 +1004,27 @@
   
   <span class="md-ellipsis">
     Homework 02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Homework%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 04
   </span>
   
 
@@ -4401,22 +4424,44 @@
 <p>停机问题是一个典型的不可计算问题，它指的是，对于任意一个程序，我们无法设计一个算法来判断它是否会在有限时间内停机（即判断程序是否会死循环）。</p>
 <p>我们通过反证法可以证明：</p>
 <p>假设存在函数 <code>willHalt(func F)</code> 可以判断函数 F 是否会停机，如果会，则返回 <code>true</code>，否则返回 <code>false</code>。那么我们可以构造一个这样的函数 <code>foo()</code>：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>void foo() {
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    if ( willHalt(foo) ) {
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>        while (true) {} // Endless loop.
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    }
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    return;
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>}
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">willHalt</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// Endless loop.</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>接下来，如果我们想知道 <code>foo()</code> 是否会停机，就会执行 <code>willHalt(foo)</code>。然而在 <code>foo()</code> 内部也有一个 <code>willHalt(foo)</code>，如果它认为 <code>foo()</code> 会停机，则构造一个死循环；而如果它认为 <code>foo()</code> 不会停机，则选择让它立刻停机，于是这里就产生了矛盾。</p>
 <p>理解上面这段内容的关键就是，这里虽然不存在事实意义上的“死循环”，但可以理解为这里存在一个逻辑上的递归，而这种“逻辑上的递归”，正是导致停机问题成为一个不可计算问题的原因。</p>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">P</p>
+<p>P 取自 polynomial time，指的是可以用<strong>确定型图灵机</strong>在<strong>多项式</strong>时间内<strong>解决</strong>的问题。</p>
+<p>也就是我们通常意义下所说的，可以在<strong>多项式</strong>时间内<strong>解决</strong>的问题。</p>
+<div class="admonition note">
+<p class="admonition-title">Turing Machine</p>
+<p>图灵机有一些变体，而我们在这里引入图灵机是为了介绍 P/NP，只介绍<strong><a href="https://en.wikipedia.org/wiki/Turing_machine">确定型图灵机</a></strong>和<strong><a href="https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine">非确定型图灵机</a></strong>。</p>
+</div>
+</div>
+<blockquote>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  图灵机由一个**无限长的纸带**和一个**读写头**组成。纸带被划分为一个个**格子**，每个格子上有一个**符号**，读写头可以在纸带上移动，读写头可以读取当前格子上的符号，也可以改变当前格子上的符号。图灵机的**状态**是一个有限集合，每个状态都有一个**转移函数**，转移函数的输入是当前状态和当前格子上的符号，输出是下一个状态、下一个格子上的符号和读写头的移动方向。
+</code></pre></div></td></tr></table></div>
+</blockquote>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>    确定型图灵机每次都能执行一个指令，并且&lt;font color=&quot;red&quot;&gt;根据当前指令跳转到下一个唯一的指令&lt;/font&gt;，非确定型图灵机&lt;font color=&quot;red&quot;&gt;可以从有限集中随意选择下一步&lt;/font&gt;，如果当前得到了一个答案，那么&lt;font color=&quot;red&quot;&gt;它一直都会选择正确的那一步&lt;/font&gt;。
+
+    更本质的来说，图灵机是一种**计算模型**，我们可以用它来表示任何有限逻辑数学过程。确定型图灵机与我们常规理解的计算机逻辑类似，即下一步要做什么可以根据当前状态确定。而非确定型图灵机则类似于能够进行无限并行，并且最终总是选择通向正确答案的方向的那条路（有点类似于它能开平行宇宙，并且总是让你观测到正确的那一个平行宇宙）。
+</code></pre></div></td></tr></table></div>
+<p>我们可以用这样一张图来表示后四个概念的关系：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241119105739.png" /></p>
+<p>这体现了 NP–hard 可以是 NP 问题，也可以不是 NP 问题。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4486,7 +4531,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 10:53:54</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 11:09:58</span>
   </span>
 
     
