@@ -168,7 +168,7 @@ NPH 即 NP hard，NP 困难，它不一定需要是 NP 问题。而所有 NP 问
 	首先回顾证明 NPC 的步骤：
 	
 	1. 判定该问题是一个 NP 问题；
-	2. 判定一个已知的 NPC 问题可以**多项式时间归约*为该问题，或者说判定该问题是 NPH 问题；
+	2. 判定一个已知的 NPC 问题可以**多项式时间归约**为该问题，或者说判定该问题是 NPH 问题；
 	
 	代入到这个问题中，也就是我们需要证明：
 	
@@ -216,4 +216,106 @@ NPH 即 NP hard，NP 困难，它不一定需要是 NP 问题。而所有 NP 问
 综上所述，由于 $TSP\in NP$ 且 $TSP\in NPH$，所以 $TSP\in NPC$。
 ***
 ### A Formal-Language Framework
+
+在形式语言中，我们将问题分为两类：**抽象问题**（Abstract Problem）和**具体问题**（Concrete Problem）。
+
+- 抽象问题 $Q$ 是一个关于集合 $I$ 和集合 $S$ 的一个二元关系。其中 $I$ 表示问题**实例**（Instance），$S$ 表示问题的**解**（Solution）
+- 具体问题实际上是对抽象问题的一种**编码**（Encoding)——将 $I$ 映射到一个位串上（用一个 01 串 $\{0,1\}^∗$ 表示），$Q$ 就变成了具体问题
+
+!!! example
+
+	对于最短路问题来说：
+    
+    - $I=\{<G,u,v>:G=(V,E)\text{ is an undirected graph}; u,v\in V\}$
+    - $S=\{<u,w_1,w_2,…,w_k,v>:<u,w_1>,…,<w_k,v>\in E\}$
+    - 则 $\forall i\in I,\text{SHORTEST-PATH}(i)=s\in S$
+    
+	而对于路径决策问题：
+	    
+	    - $I=\{<G,u,v,k>:G=(V,E)\text{ is an undirected graph}; u,v\in V;k\geq 0\text{ is an integer}\}$
+	    - $S=\{0,1\}$
+	    - 则 $\forall i\in I,\text{PATH}(i)=1\text{ or }0$
+
+形式语言的正式定义：
+
+- 字母表 $\Sigma$ 表示一个有限符号集
+- 语言 $L$ 表示由 $\Sigma$ 中的字符构成的字符串集
+- 记空字符串为 $\epsilon$，空语言为 $\phi$
+- 包含所有字符串的语言记作 $\Sigma^∗$
+- $L$ 的**补**(complement) 记作 $\overline{L}=\Sigma^∗−L$
+- $L_1$ 和 $L_2$​ 的**拼接**（Concatation）为 $L=\{x_1x_2:x_1\in L_1\land x_2\in L_2\}$
+- $L$ 的克莱尼闭包（Kleene Closure） 为 $L^∗=\{\epsilon\}\bigcup L\bigcup L^2\bigcup L^3\bigcup…$，其中 $L_k$ 表示连续拼接 $k$ 个 $L$
+
+> 在决策问题当中，$\Sigma=\{0,1\},L=\{x\in\Sigma^∗:Q(x)=1\}$
+
+- 若 $A(x)=1$，称算法 $A$ **接受**了字符串 $x\in\{0,1\}^∗$；若 $A(x)=0$，称算法 $A$ **拒绝**了字符串 $x$
+- 如果 $L$ 的每一个位串都能够被算法 $A$ 接受或拒绝，称语言 $L$ 能够被算法 $A$ **判定**
+
+因此 $P$ 类问题可以用形式语言表述为：
+
+$$
+P=\{L\subseteq \{0,1\}^∗\}:\text{ there exists an algorithm A that decides L in polynomial time}
+$$
+
+- **验证算法**（Verification Algorithm） 是一个由两个参数的算法，第一个参数是一个输入字符串 $x$，另一个参数是一个位串 $y$，称为**证书**（Certificate）（其实就是问题的解）
+    - 如果对于输入字符串 $x$，存在证书 $y$，使得 $A(x,y)=1$ 成立，则称双参数算法 $A$ 能够验证 $x$
+    - 如果对于 $L=\{x\in\{0,1\}^∗\}$，存在 $y\in\{0,1\}^∗$ 使得 $A(x,y)=1$ 成立，则称验证算法 $A$ 能够验证语言 $L$
+
+!!! example
+
+	对于 SAT 问题，令 $x=(\overline{x_1}\lor x_2\lor x_3)\land(x_1\lor \overline{x_2}\lor x_3)\land(x_1\lor x_2\lor x_4)\land(\overline{x_1}\lor\overline{x_3}\lor\overline{x_4})$，那么证书 $y=\{x_1=1,x_2=1,x_3=0,x_4=1\}$
+
+所以，语言 $L$ 为 NP 问题的充要条件为：存在一个多项式复杂度的双参数算法 $A$ 和一个常数 $c$，使得 $L=\{x\in\{0,1\}^∗:\text{ there exists a certificate }y\text{ with }|y|=O(|x|^c)\text{ such that }A(x,y)=1\}$，我们称算法 $A$ 能够在多项式时间内验证 $L$ 的解的正确性。
+
+假如已知 $L\in NP$，那么我们是否能够得出 $\overline{L}\in NP$ 的结论（这类问题被称为 [co-NP 问题](https://en.wikipedia.org/wiki/Co-NP)）呢？目前有以下四种猜想：
+
+![](../../../assets/Pasted%20image%2020241119163852.png)
+
+---
+
+如果存在多项式复杂度的可计算的函数 $f:\{0,1\}^∗\rightarrow\{0,1\}^∗,\forall x\in\{0,1\}^∗,x\in L_1$​ 的充要条件为 $f(x)\in L_2$​，则称语言 $L_1​$ 是可以多项式时间内归约为语言 $L_2​$ 的，记为 $L_1\leq_P L_2$（$L_1$​ 的难度不大于 $L_2​$），称 $f$ 为**归约函数**（Reduction Function），称计算 $f$ 的多项式时间算法 $F$ 为**归约算法**（Reduction Algorithm）。
+
+现在可以用形式语言描述 NP 完全问题：如果满足下列条件，称语言 $L\subseteq\{0,1\}^∗$ 为 NP 完全问题：
+
+- $L\in NP$
+- $\forall L'\in NP,L'\leq_P L$
+
+!!! example
+
+	=== "Question"
+	
+		假设我们已经知道**团问题**(Clique Problem) 是 NP 完全问题，请证明**顶点覆盖问题**(Vertex Cover Problem) 也是 NP 完全问题。
+
+		- 团问题：给定无向图 $G=(V,E)$ 和整数 $K$，$G$ 是否存在一个（至少）包含 $K$ 个顶点的**完全子图（团）**
+		- 顶点覆盖问题：给定无向图 $G=(V,E)$ 和整数 $K$，$G$ 是否存在一个顶点子集 $V'\subseteq V$，使得 $∣V'∣\leq K$ 且 $G$ 中的每条边上的顶点被包含在 $V'$ 中（顶点覆盖）
+	
+	=== "Proof"
+	
+		先用抽象问题来描述：
+
+		- $CLIQUE=\{<G,K>: G\text{ is a graph with a clique of size }K\}$
+		- $VERTEX-COVER=\{<G,K>: G\text{ has a vertex cover of size }K\}$
+		
+		我们需要证明两件事：
+		
+		- $VERTEX-COVER\in NP$：
+		    
+		    - $\forall x=<G,K>$，令证书 $y$ 为顶点子集 $V'\subseteq V$
+		    - 归约算法为：
+		        - 检查是否满足 $∣V'∣=K$
+		        - 检查是否 $\forall edge (u,v)$，使得 $u\in V'$ 或 $v\in V'$
+	        - 时间复杂度：$O(N^3)$（遍历所有边（$N^2$）× 每条边至少检验其中一点是否在 $V'$ 内（$N$））
+		- CLIQUE$\leq_P$VERTEX-COVER，即证 $G$ 有一个大小为 $K$ 的**团**的充要条件为 $\overline{G}$ 有一个大小为 $∣V∣−K$ 的**顶点覆盖**
+		    
+		    - 充分性：
+		        - 令 $(u,v)$ 为 $\overline{E}$ 上的任意一边，可以得到以下结论
+		        - $u,v$ 中至少有一点不属于 $V'$，且至少有一点属于 $V−V'$
+		        - 每条在 $\overline{G}$ 内的边，它的一个顶点在 $V−V'$ 内
+		        - 因此大小为 $∣V∣−K$ 的集合 $V−V'$ 构成了 $\overline{G}$ 的一个顶点覆盖
+		    - 必要性：
+		        - $\forall u,v\in V$，如果 $(u,v)\not\in E$，那么 $u\in V'$ 或 $v\in V'$，或两者皆满足
+		        - $\forall u,v\in V$，如果 $u\not\in V'$ 且 $v\not\in V'$，则 $(u,v)\in E$
+		        - 所以 $V−V'$ 是一个大小为 $∣V∣−∣V'∣=K$ 的团
+
+
 
