@@ -4718,7 +4718,7 @@ s.t.\forall x\in A,f(x)\in B\\
 <p>首先回顾证明 NPC 的步骤：</p>
 <ol>
 <li>判定该问题是一个 NP 问题；</li>
-<li>判定一个已知的 NPC 问题可以*<em>多项式时间归约</em>为该问题，或者说判定该问题是 NPH 问题；</li>
+<li>判定一个已知的 NPC 问题可以<strong>多项式时间归约</strong>为该问题，或者说判定该问题是 NPH 问题；</li>
 </ol>
 <p>代入到这个问题中，也就是我们需要证明：</p>
 <ol>
@@ -4778,6 +4778,123 @@ s.t.\forall x\in A,f(x)\in B\\
 <p>综上所述，由于 <span class="arithmatex">\(TSP\in NP\)</span> 且 <span class="arithmatex">\(TSP\in NPH\)</span>，所以 <span class="arithmatex">\(TSP\in NPC\)</span>。</p>
 <hr />
 <h3 id="a-formal-language-framework">A Formal-Language Framework<a class="headerlink" href="#a-formal-language-framework" title="Permanent link">&para;</a></h3>
+<p>在形式语言中，我们将问题分为两类：<strong>抽象问题</strong>（Abstract Problem）和<strong>具体问题</strong>（Concrete Problem）。</p>
+<ul>
+<li>抽象问题 <span class="arithmatex">\(Q\)</span> 是一个关于集合 <span class="arithmatex">\(I\)</span> 和集合 <span class="arithmatex">\(S\)</span> 的一个二元关系。其中 <span class="arithmatex">\(I\)</span> 表示问题<strong>实例</strong>（Instance），<span class="arithmatex">\(S\)</span> 表示问题的<strong>解</strong>（Solution）</li>
+<li>具体问题实际上是对抽象问题的一种<strong>编码</strong>（Encoding)——将 <span class="arithmatex">\(I\)</span> 映射到一个位串上（用一个 01 串 <span class="arithmatex">\(\{0,1\}^∗\)</span> 表示），<span class="arithmatex">\(Q\)</span> 就变成了具体问题</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>对于最短路问题来说：</p>
+<ul>
+<li><span class="arithmatex">\(I=\{&lt;G,u,v&gt;:G=(V,E)\text{ is an undirected graph}; u,v\in V\}\)</span></li>
+<li><span class="arithmatex">\(S=\{&lt;u,w_1,w_2,…,w_k,v&gt;:&lt;u,w_1&gt;,…,&lt;w_k,v&gt;\in E\}\)</span></li>
+<li>则 <span class="arithmatex">\(\forall i\in I,\text{SHORTEST-PATH}(i)=s\in S\)</span></li>
+</ul>
+<p>而对于路径决策问题：</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>- $I=\{&lt;G,u,v,k&gt;:G=(V,E)\text{ is an undirected graph}; u,v\in V;k\geq 0\text{ is an integer}\}$
+- $S=\{0,1\}$
+- 则 $\forall i\in I,\text{PATH}(i)=1\text{ or }0$
+</code></pre></div></td></tr></table></div>
+</div>
+<p>形式语言的正式定义：</p>
+<ul>
+<li>字母表 <span class="arithmatex">\(\Sigma\)</span> 表示一个有限符号集</li>
+<li>语言 <span class="arithmatex">\(L\)</span> 表示由 <span class="arithmatex">\(\Sigma\)</span> 中的字符构成的字符串集</li>
+<li>记空字符串为 <span class="arithmatex">\(\epsilon\)</span>，空语言为 <span class="arithmatex">\(\phi\)</span></li>
+<li>包含所有字符串的语言记作 <span class="arithmatex">\(\Sigma^∗\)</span></li>
+<li><span class="arithmatex">\(L\)</span> 的<strong>补</strong>(complement) 记作 <span class="arithmatex">\(\overline{L}=\Sigma^∗−L\)</span></li>
+<li><span class="arithmatex">\(L_1\)</span> 和 <span class="arithmatex">\(L_2\)</span>​ 的<strong>拼接</strong>（Concatation）为 <span class="arithmatex">\(L=\{x_1x_2:x_1\in L_1\land x_2\in L_2\}\)</span></li>
+<li><span class="arithmatex">\(L\)</span> 的克莱尼闭包（Kleene Closure） 为 <span class="arithmatex">\(L^∗=\{\epsilon\}\bigcup L\bigcup L^2\bigcup L^3\bigcup…\)</span>，其中 <span class="arithmatex">\(L_k\)</span> 表示连续拼接 <span class="arithmatex">\(k\)</span> 个 <span class="arithmatex">\(L\)</span></li>
+</ul>
+<blockquote>
+<p>在决策问题当中，<span class="arithmatex">\(\Sigma=\{0,1\},L=\{x\in\Sigma^∗:Q(x)=1\}\)</span></p>
+</blockquote>
+<ul>
+<li>若 <span class="arithmatex">\(A(x)=1\)</span>，称算法 <span class="arithmatex">\(A\)</span> <strong>接受</strong>了字符串 <span class="arithmatex">\(x\in\{0,1\}^∗\)</span>；若 <span class="arithmatex">\(A(x)=0\)</span>，称算法 <span class="arithmatex">\(A\)</span> <strong>拒绝</strong>了字符串 <span class="arithmatex">\(x\)</span></li>
+<li>如果 <span class="arithmatex">\(L\)</span> 的每一个位串都能够被算法 <span class="arithmatex">\(A\)</span> 接受或拒绝，称语言 <span class="arithmatex">\(L\)</span> 能够被算法 <span class="arithmatex">\(A\)</span> <strong>判定</strong></li>
+</ul>
+<p>因此 <span class="arithmatex">\(P\)</span> 类问题可以用形式语言表述为：</p>
+<div class="arithmatex">\[
+P=\{L\subseteq \{0,1\}^∗\}:\text{ there exists an algorithm A that decides L in polynomial time}
+\]</div>
+<ul>
+<li><strong>验证算法</strong>（Verification Algorithm） 是一个由两个参数的算法，第一个参数是一个输入字符串 <span class="arithmatex">\(x\)</span>，另一个参数是一个位串 <span class="arithmatex">\(y\)</span>，称为<strong>证书</strong>（Certificate）（其实就是问题的解）<ul>
+<li>如果对于输入字符串 <span class="arithmatex">\(x\)</span>，存在证书 <span class="arithmatex">\(y\)</span>，使得 <span class="arithmatex">\(A(x,y)=1\)</span> 成立，则称双参数算法 <span class="arithmatex">\(A\)</span> 能够验证 <span class="arithmatex">\(x\)</span></li>
+<li>如果对于 <span class="arithmatex">\(L=\{x\in\{0,1\}^∗\}\)</span>，存在 <span class="arithmatex">\(y\in\{0,1\}^∗\)</span> 使得 <span class="arithmatex">\(A(x,y)=1\)</span> 成立，则称验证算法 <span class="arithmatex">\(A\)</span> 能够验证语言 <span class="arithmatex">\(L\)</span></li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>对于 SAT 问题，令 <span class="arithmatex">\(x=(\overline{x_1}\lor x_2\lor x_3)\land(x_1\lor \overline{x_2}\lor x_3)\land(x_1\lor x_2\lor x_4)\land(\overline{x_1}\lor\overline{x_3}\lor\overline{x_4})\)</span>，那么证书 <span class="arithmatex">\(y=\{x_1=1,x_2=1,x_3=0,x_4=1\}\)</span></p>
+</div>
+<p>所以，语言 <span class="arithmatex">\(L\)</span> 为 NP 问题的充要条件为：存在一个多项式复杂度的双参数算法 <span class="arithmatex">\(A\)</span> 和一个常数 <span class="arithmatex">\(c\)</span>，使得 <span class="arithmatex">\(L=\{x\in\{0,1\}^∗:\text{ there exists a certificate }y\text{ with }|y|=O(|x|^c)\text{ such that }A(x,y)=1\}\)</span>，我们称算法 <span class="arithmatex">\(A\)</span> 能够在多项式时间内验证 <span class="arithmatex">\(L\)</span> 的解的正确性。</p>
+<p>假如已知 <span class="arithmatex">\(L\in NP\)</span>，那么我们是否能够得出 <span class="arithmatex">\(\overline{L}\in NP\)</span> 的结论（这类问题被称为 <a href="https://en.wikipedia.org/wiki/Co-NP">co-NP 问题</a>）呢？目前有以下四种猜想：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241119163852.png" /></p>
+<hr />
+<p>如果存在多项式复杂度的可计算的函数 <span class="arithmatex">\(f:\{0,1\}^∗\rightarrow\{0,1\}^∗,\forall x\in\{0,1\}^∗,x\in L_1\)</span>​ 的充要条件为 <span class="arithmatex">\(f(x)\in L_2\)</span>​，则称语言 <span class="arithmatex">\(L_1​\)</span> 是可以多项式时间内归约为语言 <span class="arithmatex">\(L_2​\)</span> 的，记为 <span class="arithmatex">\(L_1\leq_P L_2\)</span>（<span class="arithmatex">\(L_1\)</span>​ 的难度不大于 <span class="arithmatex">\(L_2​\)</span>），称 <span class="arithmatex">\(f\)</span> 为<strong>归约函数</strong>（Reduction Function），称计算 <span class="arithmatex">\(f\)</span> 的多项式时间算法 <span class="arithmatex">\(F\)</span> 为<strong>归约算法</strong>（Reduction Algorithm）。</p>
+<p>现在可以用形式语言描述 NP 完全问题：如果满足下列条件，称语言 <span class="arithmatex">\(L\subseteq\{0,1\}^∗\)</span> 为 NP 完全问题：</p>
+<ul>
+<li><span class="arithmatex">\(L\in NP\)</span></li>
+<li><span class="arithmatex">\(\forall L'\in NP,L'\leq_P L\)</span></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Question</label><label for="__tabbed_1_2">Proof</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设我们已经知道<strong>团问题</strong>(Clique Problem) 是 NP 完全问题，请证明<strong>顶点覆盖问题</strong>(Vertex Cover Problem) 也是 NP 完全问题。</p>
+<ul>
+<li>团问题：给定无向图 <span class="arithmatex">\(G=(V,E)\)</span> 和整数 <span class="arithmatex">\(K\)</span>，<span class="arithmatex">\(G\)</span> 是否存在一个（至少）包含 <span class="arithmatex">\(K\)</span> 个顶点的<strong>完全子图（团）</strong></li>
+<li>顶点覆盖问题：给定无向图 <span class="arithmatex">\(G=(V,E)\)</span> 和整数 <span class="arithmatex">\(K\)</span>，<span class="arithmatex">\(G\)</span> 是否存在一个顶点子集 <span class="arithmatex">\(V'\subseteq V\)</span>，使得 <span class="arithmatex">\(∣V'∣\leq K\)</span> 且 <span class="arithmatex">\(G\)</span> 中的每条边上的顶点被包含在 <span class="arithmatex">\(V'\)</span> 中（顶点覆盖）</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>先用抽象问题来描述：</p>
+<ul>
+<li><span class="arithmatex">\(CLIQUE=\{&lt;G,K&gt;: G\text{ is a graph with a clique of size }K\}\)</span></li>
+<li><span class="arithmatex">\(VERTEX-COVER=\{&lt;G,K&gt;: G\text{ has a vertex cover of size }K\}\)</span></li>
+</ul>
+<p>我们需要证明两件事：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(VERTEX-COVER\in NP\)</span>：</p>
+<ul>
+<li><span class="arithmatex">\(\forall x=&lt;G,K&gt;\)</span>，令证书 <span class="arithmatex">\(y\)</span> 为顶点子集 <span class="arithmatex">\(V'\subseteq V\)</span></li>
+<li>归约算法为：<ul>
+<li>检查是否满足 <span class="arithmatex">\(∣V'∣=K\)</span></li>
+<li>检查是否 <span class="arithmatex">\(\forall edge (u,v)\)</span>，使得 <span class="arithmatex">\(u\in V'\)</span> 或 <span class="arithmatex">\(v\in V'\)</span></li>
+</ul>
+</li>
+<li>时间复杂度：<span class="arithmatex">\(O(N^3)\)</span>（遍历所有边（<span class="arithmatex">\(N^2\)</span>）× 每条边至少检验其中一点是否在 <span class="arithmatex">\(V'\)</span> 内（<span class="arithmatex">\(N\)</span>））</li>
+</ul>
+</li>
+<li>
+<p>CLIQUE<span class="arithmatex">\(\leq_P\)</span>VERTEX-COVER，即证 <span class="arithmatex">\(G\)</span> 有一个大小为 <span class="arithmatex">\(K\)</span> 的<strong>团</strong>的充要条件为 <span class="arithmatex">\(\overline{G}\)</span> 有一个大小为 <span class="arithmatex">\(∣V∣−K\)</span> 的<strong>顶点覆盖</strong></p>
+<ul>
+<li>充分性：<ul>
+<li>令 <span class="arithmatex">\((u,v)\)</span> 为 <span class="arithmatex">\(\overline{E}\)</span> 上的任意一边，可以得到以下结论</li>
+<li><span class="arithmatex">\(u,v\)</span> 中至少有一点不属于 <span class="arithmatex">\(V'\)</span>，且至少有一点属于 <span class="arithmatex">\(V−V'\)</span></li>
+<li>每条在 <span class="arithmatex">\(\overline{G}\)</span> 内的边，它的一个顶点在 <span class="arithmatex">\(V−V'\)</span> 内</li>
+<li>因此大小为 <span class="arithmatex">\(∣V∣−K\)</span> 的集合 <span class="arithmatex">\(V−V'\)</span> 构成了 <span class="arithmatex">\(\overline{G}\)</span> 的一个顶点覆盖</li>
+</ul>
+</li>
+<li>必要性：<ul>
+<li><span class="arithmatex">\(\forall u,v\in V\)</span>，如果 <span class="arithmatex">\((u,v)\not\in E\)</span>，那么 <span class="arithmatex">\(u\in V'\)</span> 或 <span class="arithmatex">\(v\in V'\)</span>，或两者皆满足</li>
+<li><span class="arithmatex">\(\forall u,v\in V\)</span>，如果 <span class="arithmatex">\(u\not\in V'\)</span> 且 <span class="arithmatex">\(v\not\in V'\)</span>，则 <span class="arithmatex">\((u,v)\in E\)</span></li>
+<li>所以 <span class="arithmatex">\(V−V'\)</span> 是一个大小为 <span class="arithmatex">\(∣V∣−∣V'∣=K\)</span> 的团</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4847,7 +4964,7 @@ s.t.\forall x\in A,f(x)\in B\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 15:50:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 17:05:39</span>
   </span>
 
     
