@@ -71,7 +71,8 @@ NPC 即 NP complete，NP 完全，是 NP 中最难的**决定性**问题（并�
 	\text{and }\forall f(x)\in B,y\in A
 	\end{gather}
 	$$
-	​
+	
+	
 
 由 2 可以有结论，所有的 NPC 问题难度相同——一旦有一个 NPC 问题被解决，那么所有 NPC 问题，乃至所有 NP 问题都能被解决。
 
