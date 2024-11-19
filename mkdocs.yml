@@ -95,6 +95,8 @@ nav:
       - "Chapter 06: Backtracking": blog/Computer Science/ADS/Chapter 6.md
       - "Chapter 07: Divide and Conquer": blog/Computer Science/ADS/Chapter 7.md
       - "Chapter 08: Dynamic Programming": blog/Computer Science/ADS/Chapter 8.md
+      - "Chapter 09: Greedy Algorithms": blog/Computer Science/ADS/Chapter 9.md
+      - "Chapter 10: NP Completeness": blog/Computer Science/ADS/Chapter 10.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
