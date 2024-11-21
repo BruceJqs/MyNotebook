@@ -21,3 +21,4 @@ comments: true
 - [Chapter 03 : 多元随机变量及其分布](Chapter%203/)
 - [Chapter 04 : 随机变量的数字特征](Chapter%204/)
 - [Chapter 05 : 大数定律和中心极限定理](Chapter%205/)
+- [Chapter 06 : 数理统计的基本概念](Chapter%206/)
