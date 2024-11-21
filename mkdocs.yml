@@ -186,6 +186,7 @@ nav:
   - Research:
     - Seedlab:
       - blog/Research/Seedlab/index.md
+      - "配置问题及其解决方法": blog/Research/Seedlab/Questions.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:

@@ -20,5 +20,6 @@ comments: true
 ***
 ## Table of Contents
 
+- [Construction Questions](Questions/)
 - Basic-Labs
 	- [A00_simple_as](Basic-Labs/A00_simple_as/)

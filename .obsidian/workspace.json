@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
+                "file": "docs/blog/Research/Seedlab/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 6"
+              "title": "index"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md"
+                "file": "docs/blog/Research/Seedlab/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 6"
+              "title": "Outline of index"
             }
           },
           {
@@ -177,8 +177,12 @@
   },
   "active": "402cd8ba2abfcaa2",
   "lastOpenFiles": [
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+    "docs/blog/Research/Seedlab/Questions.md",
+    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/tag.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md",
@@ -196,7 +200,6 @@
     "docs/blog/Computer Science/ADS/Chapter 7.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
-    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "site/search/search_index.json",
     "site/search",
     "site/tag/index.html",
@@ -215,14 +218,11 @@
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
-    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab.md",
     "docs/blog/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
-    "docs/blog/Computer Science/ADS/Chapter 3.md",
-    "docs/blog/Internship/Learning AI Notes.md",
     "未命名.canvas"
   ]
 }
