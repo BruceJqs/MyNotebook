@@ -48,7 +48,7 @@ $P\{|X−\mu|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}\text{ or }P\{|X−μ|
 
 > 大数定律主要讨论什么条件下，随机变量序列的算术平均依概率收敛到一个稳定值
 
-!!! note “大数定律的一般形式”
+!!! note "大数定律的一般形式"
 
 	设 $\{Y_i,i\geq1\}$ 为一随机变量**序列**，若存在**常数**序列 $\{c_n,n\geq 1\}$，使得 $\forall\epsilon>0$，均有：$\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n|\geq\epsilon\}=0$ 或 $\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n|<\epsilon\}=1$ 成立，即有 $(\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n)\stackrel{P}{\rightarrow}0,n\rightarrow+\infty$，则称随机变量序列 $\{Y_i,i\geq1\}$ 服从**弱大数定理(Weak Law of Large Numbers)**，简称服从**大数定律**。
 	
@@ -61,6 +61,15 @@ $P\{|X−\mu|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}\text{ or }P\{|X−μ|
 对此我们有推论：设 $\{X_i,i\geq1\}$ 为相互独立的随机变量序列，若它们的方差存在且相同（记为 $\sigma^2$），则随机变量 $\{X_i,i\geq1\}$ 服从大数定律。
 
 - 特别地，设 $X_1,X_2,...,X_n,...$ 相互独立，具有相同的数学期望 $\mu$ 和相同的方差 $\sigma^2$，则当 $n\rightarrow+\infty$ 时，$\frac{1}{n}\sum\limits_{k=1}^nX_k\stackrel{P}{\rightarrow}\mu$（这个结论比较常用）
+	
+	!!! note "证明"
+	
+		$\because E(\frac{1}{n}\sum\limits_{i=1}^nX_i)=\mu,D(\frac{1}{n}\sum\limits_{i=1}^nX_i)=\frac{\sigma^2}{n}$
+		
+		利用切比雪夫不等式：
+		
+		$P(|\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu|\geq\epsilon)\leq\frac{D(\frac{1}{n}\sum\limits_{i=1}^nX_i)}{\epsilon^2}=\frac{\sigma^2}{n\epsilon^2}\rightarrow 0$
+
 ***
 #### 辛钦大数定律
 
