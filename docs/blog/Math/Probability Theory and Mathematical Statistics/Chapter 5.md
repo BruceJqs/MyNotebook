@@ -27,7 +27,7 @@ comments: true
 ***
 ### 两个重要不等式
 
-#### 马尔可夫（Markov）不等式
+#### 马尔可夫不等式
 
 - 考试不要求（）
 
@@ -35,7 +35,7 @@ comments: true
 
 $P\{|Y|\geq\epsilon\}\leq \frac{E(|Y|^k)}{\epsilon^k}\text{ or }P\{|Y|<\epsilon\}\geq 1−\frac{E(|Y|^k)}{\epsilon^k}$；特别地，当 $Y$ 取非负值的随机变量且它的 $k$ 阶矩存在时，有：$P\{Y\geq\epsilon\}\leq \frac{E(Y^k)}{\epsilon^k}$
 ***
-#### 切比雪夫（Chebyshev）不等式
+#### 切比雪夫不等式
 
 若随机变量 $X$ 具有数学期望 $E(X)=\mu$，方差 $Var(X)=\sigma^2$，则对 $\forall\epsilon>0$，均有：
 
@@ -70,10 +70,40 @@ $P\{|X−\mu|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}\text{ or }P\{|X−μ|
 		
 		$P(|\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu|\geq\epsilon)\leq\frac{D(\frac{1}{n}\sum\limits_{i=1}^nX_i)}{\epsilon^2}=\frac{\sigma^2}{n\epsilon^2}\rightarrow 0$
 
+接下来给出几种常见的大数定律，它们的区别体现在**条件**上：有些是相互独立的随机变量，有些是相依的随机变量；有些是同分布的随机变量，有些是不同分布的随机变量。
 ***
 #### 辛钦大数定律
 
 设 $X_1,X_2,...,X_n,...$ 独立同分布，$E(X_i)=\mu$，则当 $n\rightarrow+\infty,\forall\epsilon>0$ 时，有 $\frac{1}{n}\sum\limits_{k=1}^nX_k\stackrel{P}{\rightarrow}\mu$ 或 $\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{k=1}^nX_k-\mu|\geq\epsilon\}=0$ 成立，即随机变量序列 $\{X_i,i\geq1\}$ 服从大数定律。
 
 对此我们有推论：设 $\{X_i,i\geq 1\}$ 为独立同分布的随机变量序列，若 $h(x)$ 为连续函数，且 $E(|h(X_1)|)<+\infty$，则对于 $\forall\epsilon>0$，有：$\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nh(X_i)−a|≥\epsilon\}=0$ 或 $\frac{1}{n}\sum\limits_{i=1}^nh(X_i)\stackrel{P}{\rightarrow}a,n\rightarrow+\infty$ 成立，其中 $a=E(|h(X_1)|)$，即随机变量 $\{h(X_i),i\geq 1\}$ 也服从大数定律。
+***
+#### 贝努里大数定律
 
+设 $n_A$ 为 $n$ 重贝努里试验中事件 $A$ 发生的次数，并记事件 $A$ 在每次试验中发生的概率为 $p$，则当 $n\rightarrow+\infty$ 时，有 $\frac{n_A}{n}\stackrel{P}{\rightarrow}p$
+
+- 伯努利大数定律建立了在大量重复试验中事件出现频率的稳定性，正因为这种稳定性，**概率**的概念才有客观意义；
+- 伯努利大数定律还提供了通过试验来确定事件概率的方法：既然频率 $\frac{n_A}{n}$ 与概率 $p$ 有较大偏差的可能性很小，因此可以通过做试验来确定某事件发生的**频率**，并把它作为相应的**概率**估计。这是一种参数估计法，该方法的重要理论基础之一就是大数定律
+***
+## 中心极限定理
+
+> 中心极限定理讨论什么条件下，独立随机变量的和的分布函数 $Y=\sum X_i$ 会收敛于正态分布。
+
+### 独立同分布情形
+
+设 $X_1,X_2,...,X_n,...$ 独立同分布，$E(X_i)=\mu,D(X_i)=\sigma^2(\sigma>0)$，则当 $\forall x\in\mathbb{R}$ 时，有：
+
+$$
+\begin{aligned}
+\lim\limits_{n\rightarrow+\infty}P\Bigg\{\frac{\sum\limits_{i=1}^nX_i-E(\sum\limits_{i=1}^nX_i)}{\sqrt{Var(\sum\limits_{i=1}^nX_i)}}\leq x\Bigg\}&=\lim\limits_{n\rightarrow+\infty}P\Bigg\{\frac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\leq x\Bigg\}\\
+&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt=\Phi(x)
+\end{aligned}
+$$
+
+换句话来说，当 $n$ 足够大时 $\sum\limits_{i=1}^nX_i\stackrel{近似}{～}N(n\mu,n\sigma^2)$，即 $\frac{1}{n}\sum\limits_{i=1}^nX_i\stackrel{近似}{～}N(\mu,\sigma^2)$，也可以写成：
+
+$$
+\frac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\stackrel{近似}{～}N(0,1)\text{ 或 }\frac{\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu}{\frac{\sigma}{\sqrt{n}}}\stackrel{近似}{～}N(0,1)
+$$
+
+***
