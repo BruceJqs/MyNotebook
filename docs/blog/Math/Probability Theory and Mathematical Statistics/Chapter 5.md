@@ -91,7 +91,7 @@ $P\{|X−\mu|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}\text{ or }P\{|X−μ|
 
 ### 独立同分布情形
 
-设 $X_1,X_2,...,X_n,...$ 独立同分布，$E(X_i)=\mu,D(X_i)=\sigma^2(\sigma>0)$，则当 $\forall x\in\mathbb{R}$ 时，有：
+**林德伯格-莱维中心极限定理**：设 $X_1,X_2,...,X_n,...$ 独立同分布，$E(X_i)=\mu,D(X_i)=\sigma^2(\sigma>0)$，则当 $\forall x\in\mathbb{R}$ 时，有：
 
 $$
 \begin{aligned}
@@ -106,4 +106,13 @@ $$
 \frac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\stackrel{近似}{～}N(0,1)\text{ 或 }\frac{\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu}{\frac{\sigma}{\sqrt{n}}}\stackrel{近似}{～}N(0,1)
 $$
 
+!!! note "推论（棣莫弗-拉普拉斯中心极限定理）"
+
+	设 $n_A$ 为 $n$ 重贝努里试验中 $A$ 发生的次数，$P(A)=p(0<p<1)$，则对任何实数 $x$，有：
+	
+	$$
+	\lim\limits_{n\rightarrow+\infty}P\bigg(\frac{n_A-np}{\sqrt{np(1-p)}}\leq x\bigg)=\int_{-\infty}^x\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\Phi(x)
+	$$
+	
+	即当 $n$ 充分大时，$B(n,p)\stackrel{近似}{～}N(np,np(1-p))$
 ***
