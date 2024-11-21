@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Questions"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md"
+                "file": "docs/blog/Research/Seedlab/Questions.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Questions"
             }
           },
           {
@@ -177,9 +177,9 @@
   },
   "active": "402cd8ba2abfcaa2",
   "lastOpenFiles": [
+    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
-    "docs/blog/Research/Seedlab/index.md",
     "docs/tag.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",

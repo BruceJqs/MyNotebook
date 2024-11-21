@@ -11,9 +11,9 @@ comments: true
 
 ## Urllib3 包版本过老
 
-- 当进行配置试验时，运行 Python 文件会出现报错：`ModuleNotFoundError: No module named 'urllib3.packages.six.moves'`
+当进行配置试验时，运行 Python 文件会出现报错：`ModuleNotFoundError: No module named 'urllib3.packages.six.moves'`
 
-这是因为 requirement.txt 当中设定的 urllib3 包可能有些老了，升级一下 `pip install --upgrade urllib3` 即可
+- 这是因为 requirement.txt 当中设定的 urllib3 包可能有些老了，升级一下 `pip install --upgrade urllib3` 即可
 ***
 ## Docker 换源问题
 

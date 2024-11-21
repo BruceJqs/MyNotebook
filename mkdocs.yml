@@ -288,7 +288,7 @@ plugins:
       #   kwds:
       #     case: lower
       pagination_url_format: "page/{page}"
-      authors_file: "{blog}/.authors.yml" #作者信息
+      # authors_file: "{blog}/.authors.yml" #作者信息
   - tags:
       tags_file: tag.md #分类标签
 
