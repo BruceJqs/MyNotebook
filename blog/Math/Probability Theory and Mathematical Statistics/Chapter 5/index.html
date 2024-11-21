@@ -4582,18 +4582,24 @@
 <blockquote>
 <p>大数定律主要讨论什么条件下，随机变量序列的算术平均依概率收敛到一个稳定值</p>
 </blockquote>
-<p>!!! note “大数定律的一般形式”</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>设 $\{Y_i,i\geq1\}$ 为一随机变量**序列**，若存在**常数**序列 $\{c_n,n\geq 1\}$，使得 $\forall\epsilon&gt;0$，均有：$\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n|\geq\epsilon\}=0$ 或 $\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n|&lt;\epsilon\}=1$ 成立，即有 $(\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n)\stackrel{P}{\rightarrow}0,n\rightarrow+\infty$，则称随机变量序列 $\{Y_i,i\geq1\}$ 服从**弱大数定理(Weak Law of Large Numbers)**，简称服从**大数定律**。
-
-特别地，若 $c_n\equiv c$ 无关，则可以写为：$\frac{1}{n}\sum\limits_{i=1}^nY_i\stackrel{P}{\rightarrow}c,n\rightarrow+\infty$
-</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">大数定律的一般形式</p>
+<p>设 <span class="arithmatex">\(\{Y_i,i\geq1\}\)</span> 为一随机变量<strong>序列</strong>，若存在<strong>常数</strong>序列 <span class="arithmatex">\(\{c_n,n\geq 1\}\)</span>，使得 <span class="arithmatex">\(\forall\epsilon&gt;0\)</span>，均有：<span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n|\geq\epsilon\}=0\)</span> 或 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n|&lt;\epsilon\}=1\)</span> 成立，即有 <span class="arithmatex">\((\frac{1}{n}\sum\limits_{i=1}^nY_i−c_n)\stackrel{P}{\rightarrow}0,n\rightarrow+\infty\)</span>，则称随机变量序列 <span class="arithmatex">\(\{Y_i,i\geq1\}\)</span> 服从<strong>弱大数定理(Weak Law of Large Numbers)</strong>，简称服从<strong>大数定律</strong>。</p>
+<p>特别地，若 <span class="arithmatex">\(c_n\equiv c\)</span> 无关，则可以写为：<span class="arithmatex">\(\frac{1}{n}\sum\limits_{i=1}^nY_i\stackrel{P}{\rightarrow}c,n\rightarrow+\infty\)</span></p>
+</div>
 <h4 id="_5">切比雪夫大数定律<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(\{X_i,i\geq 1\}\)</span> 为相互独立的随机变量序列，若存在常数 <span class="arithmatex">\(C\)</span>，使得 <span class="arithmatex">\(Var(X_i)\leq C,i=1,2,...\)</span>，即所有的 <span class="arithmatex">\(X_i\)</span> 的方差有共同的上界，则对 <span class="arithmatex">\(\forall\epsilon&gt;0\)</span>，有 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}P\{|\frac{1}{n}\sum\limits_{i=1}^nX_i−\frac{1}{n}E(X_i)|\geq\epsilon\}=0\)</span> 成立，即随机变量 <span class="arithmatex">\(\{X_i,i\geq1\}\)</span> 服从大数定律。</p>
 <p>对此我们有推论：设 <span class="arithmatex">\(\{X_i,i\geq1\}\)</span> 为相互独立的随机变量序列，若它们的方差存在且相同（记为 <span class="arithmatex">\(\sigma^2\)</span>），则随机变量 <span class="arithmatex">\(\{X_i,i\geq1\}\)</span> 服从大数定律。</p>
 <ul>
-<li>特别地，设 <span class="arithmatex">\(X_1,X_2,...,X_n,...\)</span> 相互独立，具有相同的数学期望 <span class="arithmatex">\(\mu\)</span> 和相同的方差 <span class="arithmatex">\(\sigma^2\)</span>，则当 <span class="arithmatex">\(n\rightarrow+\infty\)</span> 时，<span class="arithmatex">\(\frac{1}{n}\sum\limits_{k=1}^nX_k\stackrel{P}{\rightarrow}\mu\)</span>（这个结论比较常用）</li>
+<li>
+<p>特别地，设 <span class="arithmatex">\(X_1,X_2,...,X_n,...\)</span> 相互独立，具有相同的数学期望 <span class="arithmatex">\(\mu\)</span> 和相同的方差 <span class="arithmatex">\(\sigma^2\)</span>，则当 <span class="arithmatex">\(n\rightarrow+\infty\)</span> 时，<span class="arithmatex">\(\frac{1}{n}\sum\limits_{k=1}^nX_k\stackrel{P}{\rightarrow}\mu\)</span>（这个结论比较常用）</p>
+<div class="admonition note">
+<p class="admonition-title">证明</p>
+<p><span class="arithmatex">\(\because E(\frac{1}{n}\sum\limits_{i=1}^nX_i)=\mu,D(\frac{1}{n}\sum\limits_{i=1}^nX_i)=\frac{\sigma^2}{n}\)</span></p>
+<p>利用切比雪夫不等式：</p>
+<p><span class="arithmatex">\(P(|\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu|\geq\epsilon)\leq\frac{D(\frac{1}{n}\sum\limits_{i=1}^nX_i)}{\epsilon^2}=\frac{\sigma^2}{n\epsilon^2}\rightarrow 0\)</span></p>
+</div>
+</li>
 </ul>
 <hr />
 <h4 id="_6">辛钦大数定律<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
@@ -4668,7 +4674,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月21日 10:35:43</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月21日 10:41:26</span>
   </span>
 
     
