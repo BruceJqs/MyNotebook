@@ -4685,7 +4685,7 @@
 <p>中心极限定理讨论什么条件下，独立随机变量的和的分布函数 <span class="arithmatex">\(Y=\sum X_i\)</span> 会收敛于正态分布。</p>
 </blockquote>
 <h3 id="_11">独立同分布情形<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>设 <span class="arithmatex">\(X_1,X_2,...,X_n,...\)</span> 独立同分布，<span class="arithmatex">\(E(X_i)=\mu,D(X_i)=\sigma^2(\sigma&gt;0)\)</span>，则当 <span class="arithmatex">\(\forall x\in\mathbb{R}\)</span> 时，有：</p>
+<p><strong>林德伯格-莱维中心极限定理</strong>：设 <span class="arithmatex">\(X_1,X_2,...,X_n,...\)</span> 独立同分布，<span class="arithmatex">\(E(X_i)=\mu,D(X_i)=\sigma^2(\sigma&gt;0)\)</span>，则当 <span class="arithmatex">\(\forall x\in\mathbb{R}\)</span> 时，有：</p>
 <div class="arithmatex">\[
 \begin{aligned}
 \lim\limits_{n\rightarrow+\infty}P\Bigg\{\frac{\sum\limits_{i=1}^nX_i-E(\sum\limits_{i=1}^nX_i)}{\sqrt{Var(\sum\limits_{i=1}^nX_i)}}\leq x\Bigg\}&amp;=\lim\limits_{n\rightarrow+\infty}P\Bigg\{\frac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\leq x\Bigg\}\\
@@ -4696,6 +4696,14 @@
 <div class="arithmatex">\[
 \frac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\stackrel{近似}{～}N(0,1)\text{ 或 }\frac{\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu}{\frac{\sigma}{\sqrt{n}}}\stackrel{近似}{～}N(0,1)
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">推论（棣莫弗-拉普拉斯中心极限定理）</p>
+<p>设 <span class="arithmatex">\(n_A\)</span> 为 <span class="arithmatex">\(n\)</span> 重贝努里试验中 <span class="arithmatex">\(A\)</span> 发生的次数，<span class="arithmatex">\(P(A)=p(0&lt;p&lt;1)\)</span>，则对任何实数 <span class="arithmatex">\(x\)</span>，有：</p>
+<div class="arithmatex">\[
+\lim\limits_{n\rightarrow+\infty}P\bigg(\frac{n_A-np}{\sqrt{np(1-p)}}\leq x\bigg)=\int_{-\infty}^x\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt=\Phi(x)
+\]</div>
+<p>即当 <span class="arithmatex">\(n\)</span> 充分大时，<span class="arithmatex">\(B(n,p)\stackrel{近似}{～}N(np,np(1-p))\)</span></p>
+</div>
 <hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -4766,7 +4774,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月21日 11:11:54</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月21日 11:19:11</span>
   </span>
 
     
