@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 200
   },
   "right": {
     "id": "db8c2c75e178d5b7",
@@ -160,7 +160,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 235.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,14 +171,18 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "markdown-table-editor:Open Markdown Table Editor": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "402cd8ba2abfcaa2",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 4.md",
     "docs/blog/Research/Seedlab/Questions.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/index.md",
+    "docs/assets/Pasted image 20241122173905.png",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/tag.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
@@ -214,15 +218,10 @@
     "site/assets/头像.jpg",
     "site/assets/入门杂项指北.jpg",
     "site/assets/output.png",
-    "site/assets/miao~870F6C667A6CDC0D1F533859E72C48E0.jpg",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
     "docs/blog/Research/Seedlab.md",
-    "docs/blog/index.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "未命名.canvas"
   ]
 }
