@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="../Homework%203/">
+      
+      
+        <link rel="next" href="../../../CTF/">
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Homework 4 - BruceJin's Notebook</title>
+        <title>Homework 04 - BruceJin's Notebook</title>
       
     
     
@@ -158,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Homework 4
+              Homework 04
             
           </span>
         </div>
@@ -355,16 +359,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -2247,8 +2255,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2257,17 +2267,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2278,7 +2291,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             ACEE
@@ -2288,6 +2301,8 @@
               
                 
   
+  
+    
   
   
   
@@ -2310,17 +2325,19 @@
       
         
       
+        
+      
     
     
       
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
           
@@ -2342,7 +2359,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             数学建模｜Mathematical Modeling
@@ -2472,6 +2489,85 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Homework 04
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Homework 04
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 01
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 02
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4333,6 +4429,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#question-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 02
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4372,9 +4477,16 @@
 <div class="arithmatex">\[
 \begin{aligned}
 S_B&amp;=\sum\limits_{j=1}^n\frac{L_{i-1}+L_i}{2}·\frac{1}{n}=\frac{1}{2n}(2\sum\limits_{i=1}^nL_i-L_n)\\
-&amp;=\frac{1}{n}\sum\limits_{i=1}^n L_i
+&amp;=\frac{1}{n}\sum\limits_{i=1}^n L_i-\frac{1}{2n}=\frac{1}{n\sum\limits_{j=1}^ny_j}\sum\limits_{i=1}^n(n-i+1)y_i-\frac{1}{2n}\\
 \end{aligned}
 \]</div>
+<p>因此 <span class="arithmatex">\(G=2(\frac{1}{2}-S_B)=\frac{n+1}{n}-\frac{2}{n\sum\limits_{j=1}^ny_j}\sum\limits_{i=1}^n(n-i+1)y_i\)</span></p>
+<p>由于 <span class="arithmatex">\(y_1\leq y_2\leq ...\leq y_n\)</span> ，因此 <span class="arithmatex">\(L_i\leq\frac{i}{n}\)</span> ,即 <span class="arithmatex">\(L\)</span> 总在直线 <span class="arithmatex">\(y = x\)</span> 的下方，<span class="arithmatex">\(G\)</span> 越大，<span class="arithmatex">\(L\)</span> 在横坐标较小时增长较慢，在横坐标较大时增长迅速，说明少部分人占有收入比例很高，家庭收入差异大。</p>
+<hr />
+<h2 id="question-02">Question 02<a class="headerlink" href="#question-02" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241122232340.png" /></p>
+<p>（1）若进入会场时有 n 个座位可供选择，与会者选择每个座位的概率均为 <span class="arithmatex">\(\frac{1}{n}\)</span>。若他选择了第 <span class="arithmatex">\(i\)</span> 个座位,下一个进入会场者只有其左侧的 <span class="arithmatex">\(i − 1\)</span> 个座位可供选择。因此，可得递推关系：<span class="arithmatex">\(E_n=1+\frac{1}{n}\sum\limits_{i=1}^nE_{i-1}\)</span>，即 <span class="arithmatex">\(nE_n=n+\sum\limits_{i=1}^nE_{i-1}\)</span>，再写一项我们有 <span class="arithmatex">\((n+1)E_{n+1}=n+1+\sum\limits_{i=1}^{n+1}E_{i-1}\)</span>，两式相减即得 <span class="arithmatex">\((n+1)E_{n+1}-nE_n=1+E_n\)</span>，即 <span class="arithmatex">\(E_{n+1}=E_n+\frac{1}{n+1}\)</span>，由 <span class="arithmatex">\(E_1=1\)</span>，则 <span class="arithmatex">\(E_n=\sum\limits_{i=1}^n\frac{1}{i}\)</span></p>
+<p>（2）记 <span class="arithmatex">\(G_n\)</span> 为只有一侧有入口时最终入座人数的期望，则 <span class="arithmatex">\(G_n\)</span> 满足递推关系 <span class="arithmatex">\(G_n=1+pG_{n-1}+(1-p)·\frac{1}{n}\sum\limits_{i=1}^nG_{i-1}\)</span>，则 <span class="arithmatex">\(F_n\)</span> 满足递推关系 <span class="arithmatex">\(F_n=1+pF_{n-1}+(1-p)·\frac{1}{n}\sum\limits_{i=1}^n(G_{i-1}+G_{n-i})\)</span></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4444,7 +4556,7 @@ S_B&amp;=\sum\limits_{j=1}^n\frac{L_{i-1}+L_i}{2}·\frac{1}{n}=\frac{1}{2n}(2\su
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月22日 23:04:59</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月24日 17:11:25</span>
   </span>
 
     
@@ -4638,6 +4750,63 @@ S_B&amp;=\sum\limits_{j=1}^n\frac{L_{i-1}+L_i}{2}·\frac{1}{n}=\frac{1}{2n}(2\su
 
   <!-- Link to previous and/or next page -->
   
+    
+      
+        
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        hidden
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../Homework%203/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: Homework 03"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Homework 03
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../../../CTF/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 欢迎来到 Bruce 的 CTF 世界！"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                欢迎来到 Bruce 的 CTF 世界！
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
 
