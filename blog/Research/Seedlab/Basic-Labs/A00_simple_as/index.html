@@ -4497,14 +4497,14 @@
 <p><img alt="" src="../../../../../assets/Pasted%20image%2020241110135856.png" /></p>
 <p>随后 <code>docker-compose build &amp;&amp; docker-compose up</code> 即可构建完成。</p>
 <p><img alt="" src="../../../../../assets/Pasted%20image%2020241113142544.png" /></p>
-<p>最终我们可以通过访问 localhost 的 8080 端口里面的 map.html 文件（即https://localhost:8080/map.html），可看到可视化界面：</p>
+<p>最终我们可以通过访问 localhost 的 8080 端口里面的 map.html 文件（即 <a href="https://localhost:8080/map.html">https://localhost:8080/map.html</a> ），可看到可视化界面：</p>
 <p><img alt="" src="../../../../../assets/Pasted%20image%2020241113150602.png" /></p>
 <hr />
 <h2 id="_2">代码分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>这里截取 <code>simple_as.py</code> 中的一些进行解释：</p>
+<p>这里将 <code>simple_as.py</code> 进行详细分析：</p>
 <div class="admonition note">
 <p class="admonition-title">Explanation</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Import</label><label for="__tabbed_1_2">Initialization</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Import</label><label for="__tabbed_1_2">Initialization</label><label for="__tabbed_1_3">Creation</label><label for="__tabbed_1_4">BGP Peering</label><label for="__tabbed_1_5">Rendering</label><label for="__tabbed_1_6">Compilation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -4545,16 +4545,121 @@
 <li>在非路由器角色主机上设置适当的默认路由，以指向网络中的第一个路由器</li>
 </ul>
 </li>
-<li><code>Ebgp</code> 提供 BGP 路由</li>
-<li></li>
+<li><code>Ebgp</code> 提供对外 BGP 连接的 API</li>
+<li><code>WebService</code> 提供在主机上安装 nginx web server 的 API</li>
 </ul>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Create an Internet Exchange</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">base</span><span class="o">.</span><span class="n">createInternetExchange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>在这里函数 <code>Base::createInternetExchange</code> 建立了一个新的数据交换中心。默认情况下，它建立了一个全局网络 10.<span class="arithmatex">\(\{\text{id}\}\)</span>.0.0/24(其中 <span class="arithmatex">\(\text{id}\)</span> 为数据交换中心的 ID，随后可以通过函数 <code>Node::joinNetwork</code> 将路由加入网络。</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Create and set up AS-150</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># Create an autonomous system </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">as150</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">createAutonomousSystem</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1"># Create a network </span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">as150</span><span class="o">.</span><span class="n">createNetwork</span><span class="p">(</span><span class="s1">&#39;net0&#39;</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1"># Create a router and connect it to two networks</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">as150</span><span class="o">.</span><span class="n">createRouter</span><span class="p">(</span><span class="s1">&#39;router0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinNetwork</span><span class="p">(</span><span class="s1">&#39;net0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinNetwork</span><span class="p">(</span><span class="s1">&#39;ix100&#39;</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="c1"># Create a host called web and connect it to a network</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="n">as150</span><span class="o">.</span><span class="n">createHost</span><span class="p">(</span><span class="s1">&#39;web&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">joinNetwork</span><span class="p">(</span><span class="s1">&#39;net0&#39;</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="c1"># Create a web service on virtual node, give it a name</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="c1"># This will install the web service on this virtual node</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="n">web</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;web150&#39;</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1"># Bind the virtual node to a physical node </span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="n">emu</span><span class="o">.</span><span class="n">addBinding</span><span class="p">(</span><span class="n">Binding</span><span class="p">(</span><span class="s1">&#39;web150&#39;</span><span class="p">,</span> <span class="nb">filter</span> <span class="o">=</span> <span class="n">Filter</span><span class="p">(</span><span class="n">nodeName</span> <span class="o">=</span> <span class="s1">&#39;web&#39;</span><span class="p">,</span> <span class="n">asn</span> <span class="o">=</span> <span class="mi">150</span><span class="p">)))</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>函数 <code>Base::createAutonomousSystem</code> 返回一个自治系统的类实例，可以被用于建立主机和网络</li>
+<li>函数 <code>AutonomousSystem::createNetwork</code> 建立了一个新的本地网络，和我们在 <code>Base::createInternetExchange</code> 建立的网络不同，它只能加入自治系统当中的节点；和 <code>Base::createInternetExchange</code> 建立的网络相同的是，默认情况下它使用 10.<span class="arithmatex">\(\text{asn}\)</span>.<span class="arithmatex">\(\text{id}\)</span>.0/24，其中 <span class="arithmatex">\(\text{asn}\)</span> 为</li>
+<li>函数 <code>AutonomoousSystem::createRouter</code> 建立了一个 BGP 路由</li>
+<li>函数 <code>Node::joinNetwork</code> 指的是将一个节点连接到一个网络当中，这个网络可以是自治系统的全局网络，也可以是自治系统的本地网络，这个函数默认会先搜寻本地网络有没有可连接的</li>
+<li>函数 <code>AutonomousSystem::createHost</code> 将会返回一个主机节点实例，在这个例子里面我们将其命名为 <code>Web</code> 因为我们将会在其上面建立 Web 服务</li>
+<li>函数 <code>web.install</code> 将会建立一个虚拟的节点（在这个例子当中为 <code>web150</code>），在这个虚拟节点上面配置 Web 服务</li>
+<li>函数 <code>emu.addBinding</code> 将我们建立的虚拟节点绑定到真实的节点上面（在这个例子当中为 <code>web</code>）</li>
+</ul>
+<details class="question">
+<summary>为什么要建立一个虚拟节点</summary>
+<p>或许有人会问，为什么要多此一举建立这个虚拟的节点，再去绑定，这是因为虚拟的节点可以看作是真实节点的模板（或者叫蓝图），一来是能复用这个模板更加方便，二来所有的改动都是在模板上进行改动，也比较方便。</p>
+</details>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Peering these ASes at Internet Exchange IX-100</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">ebgp</span><span class="o">.</span><span class="n">addRsPeer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">ebgp</span><span class="o">.</span><span class="n">addRsPeer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">151</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">ebgp</span><span class="o">.</span><span class="n">addRsPeer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">152</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>函数 <code>ebgp.addRsPeer</code> 通过建立的数据交换中心建立不同 BGP 路由之间的联系，能让不同的自治系统能相互连接传递数据。</p>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Rendering </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">emu</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">emu</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">routing</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">emu</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">ebgp</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">emu</span><span class="o">.</span><span class="n">addLayer</span><span class="p">(</span><span class="n">web</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="k">if</span> <span class="n">dumpfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="n">emu</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dumpfile</span><span class="p">)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="n">emu</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<p>这段代码就实现了将所有的功能下放到各节点当中（软件会被安装到节点上，路由表、协议和 BGP 连接会被配置……）</p>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># Compilation</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">emu</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">Docker</span><span class="p">(</span><span class="n">platform</span><span class="o">=</span><span class="n">platform</span><span class="p">),</span> <span class="s1">&#39;./output&#39;</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>这段代码就将所有的文件通过 docker 编译器编译成 Docker 文件，并放入 output 目录当中。</p>
 </div>
 </div>
 </div>
 </div>
 <hr />
 <h2 id="_3">功能展示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>这是一个最简单最小型的互联网仿真，有三套自治系统【每套自治系统内含一台 BGP 路由（圆形表示）、一个构建网络的 Network（菱形表示）以及一台主机（分别为 10.150/151/152.0.71，正六边形表示）】、一个数据交换中心（五角星表示）和控制数据交换中心的主机（100/ix100，正六边形表示）。每套自治系统都我们建立自治系统相互的连接</p>
+<p>这是一个最简单最小型的互联网仿真，有三套自治系统【每套自治系统掩码位为 24 位，内含一台 BGP 路由（圆形表示），连接一个构建网络的 Network（菱形表示），每个 Network 上连接一台主机（分别为 10.150/151/152.0.71.24，正六边形表示，在真实情况下可能连接非常多的主机）】、一个数据交换中心（五角星表示，负责和 BGP 路由进行数据交换）和控制数据交换中心的主机（100/ix100，正六边形表示）。</p>
 <p>当我们想从 10.152.0.71 传输数据到 10.150.0.71，我们只需要在 10.152.0.71 的终端（点击 Launch Console）命令行 <code>ping 10.150.0.71</code> 即可，同时在最上面输入 <code>icmp</code>（显示 <code>icmp</code> 包的流向），那么网页便会通过闪烁的方式来展示整个数据传输的路径（从当前主机走出自治系统，来到数据交换中心，经过数据交换中心处理之后送到对方的自治系统进入对方主机），如下图所示：</p>
 <p><img alt="" src="../../../../../assets/Pasted%20image%2020241113153326.png" /></p>
 <!--
@@ -4626,7 +4731,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月24日 17:55:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月24日 20:43:09</span>
   </span>
 
     
