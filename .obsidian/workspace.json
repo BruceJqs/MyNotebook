@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Questions.md",
+                "file": "docs/blog/Research/Seedlab/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Questions"
+              "title": "index"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Questions.md"
+                "file": "docs/blog/Research/Seedlab/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Questions"
+              "title": "Outline of index"
             }
           },
           {
@@ -176,15 +176,16 @@
   },
   "active": "b8fd35edf163c251",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241124170509.png",
+    "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/index.md",
+    "docs/assets/Pasted image 20241124170509.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
     "docs/assets/Pasted image 20241122232340.png",
-    "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/assets/Pasted image 20241122173905.png",
@@ -219,7 +220,6 @@
     "site/develop/lighthouse/index.html",
     "site/assets/images/favicon.png",
     "site/assets/头像.jpg",
-    "site/assets/入门杂项指北.jpg",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "未命名.canvas"
