@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Questions"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md"
+                "file": "docs/blog/Research/Seedlab/Questions.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Questions"
             }
           },
           {
@@ -176,8 +176,11 @@
   },
   "active": "b8fd35edf163c251",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241124175022.png",
+    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/index.md",
+    "docs/assets/Pasted image 20241124173115.png",
     "docs/blog/index.md",
     "docs/assets/Pasted image 20241124170509.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
@@ -189,7 +192,6 @@
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/assets/Pasted image 20241122173905.png",
-    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/tag.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
@@ -219,9 +221,7 @@
     "site/develop/vercel/index.html",
     "site/develop/lighthouse/index.html",
     "site/assets/images/favicon.png",
-    "site/assets/头像.jpg",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "未命名.canvas"
   ]
 }

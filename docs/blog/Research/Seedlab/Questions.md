@@ -7,7 +7,7 @@ hide:
 comments: true
 ---  
 
-# 配置问题及解决办法
+# 各类问题及解决办法
 
 ## 部署问题
 
@@ -53,6 +53,24 @@ comments: true
   ]
 }
 ```
+***
+## Docker Compose 版本问题
+
+当运行 `docker-compose up` 时，可能会出现以下情况：
+
+![](../../../assets/Pasted%20image%2020241124173115.png)
+
+这是因为对老版本 docker-compose，V1 语法 docker-compose 仍然适用，但是到新版本 docker-compose（Ubuntu 22.04 之后）时，转换成 V2 语法 docker compose，因此把命令行变更为 `docker compose up` 即可。
+***
+## 清理“缓存” docker 问题
+
+举例来说，当我们运行完 B00_mini_internet 这个 lab 之后，再重新运行 A00_simple_as 这个 lab，在可视化（即 http://localhost:8080/map.html ）中会出现下面的情况：
+
+![](../../../assets/Pasted%20image%2020241124175022.png)
+
+可以看到 B00 建立的东西还是存在，而 A00 则是把 B00 建立和其重复的部分又重新拼了起来，那么为了观察方便我们就应该在运行完 B00 之后清理掉这些类似“缓存”的东西
+
+请谨记：我们应当<font color="red">使用命令行</font> `docker-compose down` 将上一个 lab 建立的所有 docker 及其 network 清理干净，再去运行下一个 lab 的相关程序。
 ***
 ## B00_mini_internet 网段冲突
 
