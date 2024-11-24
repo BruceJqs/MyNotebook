@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Questions.md",
+                "file": "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Questions"
+              "title": "A00_simple_as"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Questions.md"
+                "file": "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Questions"
+              "title": "Outline of A00_simple_as"
             }
           },
           {
@@ -176,10 +176,11 @@
   },
   "active": "b8fd35edf163c251",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241124175022.png",
+    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
     "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
-    "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Research/Seedlab/Questions.md",
+    "docs/assets/Pasted image 20241124175022.png",
     "docs/assets/Pasted image 20241124173115.png",
     "docs/blog/index.md",
     "docs/assets/Pasted image 20241124170509.png",
@@ -205,7 +206,6 @@
     "docs/assets/Pasted image 20241119113625.png",
     "docs/assets/Pasted image 20241119112514.png",
     "docs/assets/Pasted image 20241119105739.png",
-    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/ADS/Chapter 8.md",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
@@ -220,7 +220,6 @@
     "site/develop/Markdown/MWeb/index.html",
     "site/develop/vercel/index.html",
     "site/develop/lighthouse/index.html",
-    "site/assets/images/favicon.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "未命名.canvas"
   ]
