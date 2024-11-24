@@ -19,8 +19,10 @@ comments: true
 
 对于 Mac 用户可就闹腾了，需要首先有一个 Ubuntu 系统，来源可以有以下几个：
 
-- Parallel/VMware Fusion 虚拟机（这个是最方便的，同时具有 UI 界面）
-- 服务器（需要建立 UI 界面，根据 [Github](https://github.com/seed-labs/seed-labs/blob/master/manuals/cloud/seedvm-cloud.md) 的指导下载 VNCServer 即可，但是对于 Ubuntu20.04 来说这个教程是没有问题的；对于 Ubuntu22.04 来说会出现在 seed 账户下命令行 `vncserver -localhost no` 执行报错【No Display】情况，这大概是因为 22.04 的普通账户没有 Screen 的权限，一种方法是找到 Screen 赋予权限【待试验】；另一种是在 root 下启动 vncserver，然后转移至 seed 账户当中【也还没试验过】）
+- Parallel Desktop/VMware Fusion 虚拟机（这个是最方便的，同时具有 UI 界面）
+- 服务器（需要建立 UI 界面，根据 [Github](https://github.com/seed-labs/seed-labs/blob/master/manuals/cloud/seedvm-cloud.md) 的指导下载 VNCServer 即可，但是对于 Ubuntu20.04 来说这个教程是没有问题的；对于 Ubuntu22.04 来说会出现在 seed 账户下命令行 `vncserver -localhost no` 执行报错【No Display】情况，这大概是因为 22.04 的普通账户没有 Screen 的权限，一种方法是找到 Screen 赋予权限【待试验】。目前 Bruce 采用了下下策，即在 root 下开启 vncserver（这个非常危险）
+
+随后在 Ubuntu 当中进行相应配置即可。
 ***
 ## Urllib3 包版本过老
 
@@ -52,5 +54,13 @@ comments: true
 }
 ```
 ***
-## 在服务器上安装 TexStudio
+## B00_mini_internet 网段冲突
+
+B00_mini_internet 实验在 VM 当中运行到 `docker-compose up` 时会发生如下错误：
+
+![](../../../assets/Pasted%20image%2020241124170509.png)
+
+发生这样的情况的原因在于我们创建的 networks 手动指定了 subnet 网段地址，而该网段地址已经存在，因此产生了冲突，我们可以通过命令行 `docker system prune -a` 和 `docker network prune` 清除未被使用的网络。再次运行 `docker-compose up` 即可。
+***
+
 
