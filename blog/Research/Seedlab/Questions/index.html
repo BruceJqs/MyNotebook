@@ -3900,6 +3900,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose 版本问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      清理“缓存” docker 问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#b00_mini_internet" class="md-nav__link">
     <span class="md-ellipsis">
       B00_mini_internet 网段冲突
@@ -4514,6 +4532,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose 版本问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      清理“缓存” docker 问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#b00_mini_internet" class="md-nav__link">
     <span class="md-ellipsis">
       B00_mini_internet 网段冲突
@@ -4553,7 +4589,7 @@
   
 
 
-<h1 id="_1">配置问题及解决办法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">各类问题及解决办法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">部署问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>对于 Windows 用户，按照 <a href="https://github.com/seed-labs/seed-labs/blob/master/manuals/vm/seedvm-manual.md">Github</a> 中的建立 Virtualbox 即可，需要注意的是，这里提供的 Ubuntu 是有 Python3.8 的，为了后续管理方便&amp;可能遇到的奇怪错误建议下一个 conda 建立 Python3.12 虚拟环境来运行。</p>
@@ -4608,6 +4644,17 @@
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">  </span><span class="p">]</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="docker-compose">Docker Compose 版本问题<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
+<p>当运行 <code>docker-compose up</code> 时，可能会出现以下情况：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241124173115.png" /></p>
+<p>这是因为对老版本 docker-compose，V1 语法 docker-compose 仍然适用，但是到新版本 docker-compose（Ubuntu 22.04 之后）时，转换成 V2 语法 docker compose，因此把命令行变更为 <code>docker compose up</code> 即可。</p>
+<hr />
+<h2 id="docker_1">清理“缓存” docker 问题<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<p>举例来说，当我们运行完 B00_mini_internet 这个 lab 之后，再重新运行 A00_simple_as 这个 lab，在可视化（即 <a href="http://localhost:8080/map.html">http://localhost:8080/map.html</a> ）中会出现下面的情况：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241124175022.png" /></p>
+<p>可以看到 B00 建立的东西还是存在，而 A00 则是把 B00 建立和其重复的部分又重新拼了起来，那么为了观察方便我们就应该在运行完 B00 之后清理掉这些类似“缓存”的东西</p>
+<p>请谨记：我们应当<font color="red">使用命令行</font> <code>docker-compose down</code> 将上一个 lab 建立的所有 docker 及其 network 清理干净，再去运行下一个 lab 的相关程序。</p>
 <hr />
 <h2 id="b00_mini_internet">B00_mini_internet 网段冲突<a class="headerlink" href="#b00_mini_internet" title="Permanent link">&para;</a></h2>
 <p>B00_mini_internet 实验在 VM 当中运行到 <code>docker-compose up</code> 时会发生如下错误：</p>
@@ -4683,7 +4730,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月24日 17:11:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月24日 17:55:08</span>
   </span>
 
     
