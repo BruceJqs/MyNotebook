@@ -1071,6 +1071,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Basics of Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-of-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access of Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-mapping-mechanism-in-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Address Mapping Mechanism in Cache
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4538,6 +4571,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Basics of Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-of-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access of Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of Cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-mapping-mechanism-in-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Address Mapping Mechanism in Cache
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4705,7 +4771,7 @@
 </ul>
 </li>
 </ul>
-<p>因此，结构化的 memory 被设计出来，便有了<strong>内存层级</strong>（Memory Hierarchy），它是一种多级的存储结构，其规定：越靠近处理器的内存，它的访问时间更短、存储空间更小、成本更高。</p>
+<p>因此，结构化的内存被设计出来，便有了<strong>内存层级</strong>（Memory Hierarchy），它是一种多级的存储结构，其规定：越靠近处理器的内存，它的访问时间更短、存储空间更小、成本更高。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125132943.png" /></p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125133030.png" /></p>
 <ul>
@@ -4714,25 +4780,157 @@
 </ul>
 <p>与内存层级相关的一些基本概念：</p>
 <ul>
+<li>块 / 行 (Block/Line)：在两级内存结构中的最小信息单元（下图标出的蓝色方块）</li>
 <li>
-<p>块 / 行 (Block/Line)：在两级内存结构中的最小信息单元（下图标出的蓝色方块）</p>
+<p>字（Word）：Cache 与 CPU 之间进行信息交互的单元</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125133605.png" /></p>
 </li>
 <li>
-<p><strong>命中</strong>（Hit）：处理器所需的数据出现于上层内存中</p>
+<p><strong>命中</strong>（Hit）：处理器所需的数据出现于本层内存中</p>
 <ul>
-<li><strong>命中率</strong>（Hit Rate/Ratio）：能够在上层内存中找到数据的比率</li>
-<li><strong>命中时间</strong>（Hit Time）：访问上层内存所需的时间，包括判断是否命中或失效所需的时间</li>
+<li><strong>命中率</strong>（Hit Rate/Ratio）：能够在本层内存中找到数据的次数占总次数的比例，通常作为层次结构的性能衡量指标之一</li>
+<li><strong>命中时间</strong>（Hit Time）：访问本层内存所需的时间，包括判断是否命中或失效所需的时间</li>
 </ul>
 </li>
-<li><strong>失效</strong>（Miss）：处理器所需的数据不存在于上层内存中，此时需要访问下层内存的内容并检索所需数据<ul>
-<li><strong>失效率</strong>（Miss Rate/Ratio）（<span class="arithmatex">\(= 1 - \text{命中率}\)</span>）：未能在上层内存中找到数据的比率</li>
-<li><strong>失效损失</strong>（Miss Penalty）：从下层内存中获取所需数据块的时间，包括以下操作：访问数据块、将数据从下层传输到上层、将数据插入上层内存的合适位置、将数据块继续传给处理器</li>
+<li><strong>缺失</strong>（Miss）：处理器所需的数据不存在于本层内存中，此时需要访问下层内存的内容并检索所需数据<ul>
+<li><strong>缺失率</strong>（Miss Rate/Ratio）（<span class="arithmatex">\(= 1 - \text{命中率}\)</span>）：未能在本层内存中找到数据的次数占总次数的比例</li>
+<li><strong>缺失损失</strong>（Miss Penalty）：从下层内存中获取所需数据块的时间，包括以下操作：访问数据块、将数据从下层传输到上层、将数据插入上层内存的合适位置、将数据块继续传给处理器</li>
 </ul>
 </li>
 </ul>
 <hr />
 <h2 id="the-basics-of-cache">The Basics of Cache<a class="headerlink" href="#the-basics-of-cache" title="Permanent link">&para;</a></h2>
+<p><strong>缓存</strong>（Cache）：在内存层级中表示介于处理器和主内存之间的层级，也可以指代任何借助局部访问优势的存储器。但本章内容所涉及到的缓存均指处理器内部的缓存。</p>
+<p>利用上面我们所说的局部性原则，缓存的体现如下：</p>
+<ul>
+<li>空间局部性：从主存中取回待访问数据时，会同时取回与其位置相邻的主存单元的数据</li>
+<li>时间局部性：保存近期频繁被访问的主存单元的数据</li>
+</ul>
+<hr />
+<h3 id="access-of-cache">Access of Cache<a class="headerlink" href="#access-of-cache" title="Permanent link">&para;</a></h3>
+<p>Cache 的访问过程如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125135222.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125135407.png" /></p>
+<hr />
+<h3 id="structure-of-cache">Structure of Cache<a class="headerlink" href="#structure-of-cache" title="Permanent link">&para;</a></h3>
+<p>Cache 的主要结构如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125135734.png" /></p>
+<ul>
+<li>Cache 被分成若干行，每行的大小与主存块相同</li>
+<li>Cache 每行包含四部分：<ul>
+<li>标签 Tag 从 CPU 访问主存的地址中剥离得到（识别数据在 Cache 保存的具体数据块）</li>
+<li>Data 是与主存交换的数据块</li>
+<li>Valid 表示 Cache 中的数据是否有效（1 表示数据存在，0 表示不存在，初始均为 0）</li>
+<li>Dirty 表示 Cache 中的数据是否为最新</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="address-mapping-mechanism-in-cache">Address Mapping Mechanism in Cache<a class="headerlink" href="#address-mapping-mechanism-in-cache" title="Permanent link">&para;</a></h3>
+<p>先考虑一种很简单的缓存，以及一个很简单的情况：假如处理器请求一个单字数据 <span class="arithmatex">\(X_n\)</span>，缓存的内容发生了如下的变化：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125134134.png" /></p>
+<p>由于原来缓存内只有数据 <span class="arithmatex">\(X_1,X_2,…,X_{n−1}\)</span>，因此 <span class="arithmatex">\(X_n\)</span>​ 不在缓存内，所以出现了缺失的情况，需要从更底层的内存中获取该数据，并且放在缓存中。那么我们如何得知数据是否在缓存中，且如何找到该数据呢？</p>
+<p>我们很容易想到可以用地址映射来解决这个问题，让每个字数据基于内存地址进行定位，这能够确保每个字数据占据唯一的一块空间，帮助实现在Cache中快速查找数据，Cache 内部的映射机制大致如下：</p>
+<p><img alt="" src="Pasted%20image%2020241125140110.png" /></p>
+<p>不难发现，可能会存在不同字数据占据相同缓存块的情况，这里我们用<strong>标签</strong>（Tag）来区分数据。因为底层内存的空间更大，因此通常会用数据在底层内存的低位地址来表示在缓存中的地址，而<strong>高位地址</strong>就作为区分相同缓存块下不同数据的标签，如下图所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125142155.png" /></p>
+<p>上面的图片中，缓存块数为 8，而内存块数为 32，因此字数据内存地址的低 3 位（因为 <span class="arithmatex">\(8=2^3\)</span>）对应它在缓存中的地址（灰色和蓝色表示两类低位地址），而剩下的高 2 位则作为区分同一缓存块下的不同数据的标签。</p>
+<p>最简单的一种映射被称为<strong>直接映射缓存</strong>（Direct-Mapped Cache)。可以用下面的公式计算字数据在缓存中的位置：</p>
+<div class="arithmatex">\[
+\text{Cache Location} = (\text{Block address})\text{ modulo }(\text{Number of blocks in the cache})
+\]</div>
+<ul>
+<li>特别地（也是在一般情况下地），若 Cache 有 <span class="arithmatex">\(2^n\)</span> 个数据块，那么索引值即为主存块地址的最低 <span class="arithmatex">\(n\)</span> 位</li>
+<li>在直接映射缓存当中，Cache 利用索引+标签+Valid+Dirty 位共同锁定目标：<ul>
+<li>首先根据给出的主存块大小、Cache大小，从主存地址中剥离出字节偏移量字段、索引字段以及标签字段</li>
+<li>根据索引字段找到目标 Cache 行</li>
+<li>目标 Cache 行中的标签字段与剥离出的标签字段进行匹配，如果匹配成功则找到正确的数据</li>
+<li>判断 Valid 位、Dirty 位是否有效</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125140856.png" /></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>我们对一个八块的缓存进行九次访问：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125144038.png" /></p>
+<p>下图展示了在访问过程中缓存内容的变化：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125144102.png" /></p>
+<p>不难发现，第 8 次访问（<span class="arithmatex">\(18=(10010)_{\text{two}}\)</span>）与第 2 次访问（<span class="arithmatex">\(26=(11010)_{\text{two}}​\)</span>）存在冲突，因为它们占据相同的缓存块。这种情况下，最近访问的数据将会占据该缓存块的位置（即覆写缓存块内已有的数据），这体现了时间局部性的思想。</p>
+</div>
+<p>下图展示了内存地址（假定为 64 位）与缓存位置之间的关系：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125144732.png" /></p>
+<p>正如前面提到过的，我们可以将内存地址分为以下几部分：</p>
+<ul>
+<li><strong>标签字段</strong>：用于区别相同缓存块下的不同数据</li>
+<li><strong>缓存索引</strong>：用于选择缓存块</li>
+<li>由于一个地址表示一个字节，并且在缓存中数据是以<strong>字</strong>（4 字节）为单位的，因此地址的低 2 位可以被忽略</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">计算直接映射缓存的空间大小</p>
+<p>给定以下条件：</p>
+<ul>
+<li>64 位的内存地址</li>
+<li>共有 <span class="arithmatex">\(2^n\)</span> 个缓存块，因此用 <span class="arithmatex">\(n\)</span> 位地址来表示索引</li>
+<li>每个缓存块可容纳 <span class="arithmatex">\(2^m\)</span> 个字数据（即 <span class="arithmatex">\(2^{m+2}\)</span> 字节的数据），因此用 <span class="arithmatex">\(m\)</span> 位地址来表示字</li>
+</ul>
+<p>那么剩下用于表示标签字段的位数为 <span class="arithmatex">\(64−(n+m+2)\)</span> 位</p>
+<p>则缓存空间大小的计算公式为（单位为 bit）：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; 2^n\times(\text{block size + tag size + valid field size})\\
+=&amp; 2^n\times(2^m\times 32+(64-n-m-2)+1)\\
+=&amp; 2^n\times(2^m\times 32+63-n-m)
+\end{aligned}
+\]</div>
+<p>对于上面给出的缓存，它有 <span class="arithmatex">\(2^{10}\)</span> 个缓存块（有 10 位索引位），每个缓存块仅有 <span class="arithmatex">\(2^0\)</span> 个字数据，因此它的标签位有 52 位。</p>
+</div>
+<ul>
+<li>在一般的命名传统中，我们仅用缓存存储的子数据大小来表示缓存。对于上面的缓存，由于它一共可容纳 1024 个字数据，即 4096 字节的数据，因此可以称其为 4 KiB 缓存。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Example 1</label><label for="__tabbed_3_2">Example 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Question</label><label for="__tabbed_4_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>若一个缓存可容纳 16 KiB 的数据，且每个缓存块可容纳四个字数据（假定使用 64 位地址），那么该缓存所需的空间大小是多少呢？（单位：位）</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>先计算缓存块的个数：由题意缓存可容纳 4096 个字，又因每个块可装四个字，因此一共有 1024 个块</li>
+<li>标签位数为：64-10-2-2=50</li>
+<li>所以总的空间大小为：</li>
+</ul>
+<div class="arithmatex">\[
+2^{10}×(4×32+50+1)=2^{10}×179=179\text{ Kibibits}=22.4\text{ KiB}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Question</label><label for="__tabbed_5_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>给定一个缓存，它有 64 块，每块空间为 16 字节，请问内存字节地址为 1200 的数据所映射到的块的编号为多少？</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>每个缓存块仅容纳一个字数据</li>
+<li>该数据是内存中第 <span class="arithmatex">\(\frac{1200}{16} = 75\)</span> 个字数据</li>
+<li>对应块编号为 <span class="arithmatex">\(75\text{ mod }64 = 11\)</span></li>
+<li>实际上，内存地址在 1200-1215 之间的数据都会映射到这个缓存块上</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4802,7 +5000,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月25日 13:39:30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月25日 15:18:12</span>
   </span>
 
     
@@ -4823,6 +5021,38 @@
     
 
     <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
