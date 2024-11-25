@@ -1011,12 +1011,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Memory Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sram" class="md-nav__link">
+    <span class="md-ellipsis">
+      SRAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    <span class="md-ellipsis">
+      DRAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#memory-hierarchy-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       Memory Hierarchy Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-basics-of-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Basics of Cache
     </span>
   </a>
   
@@ -4427,12 +4478,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Memory Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sram" class="md-nav__link">
+    <span class="md-ellipsis">
+      SRAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    <span class="md-ellipsis">
+      DRAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#memory-hierarchy-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       Memory Hierarchy Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-basics-of-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Basics of Cache
     </span>
   </a>
   
@@ -4471,12 +4573,11 @@
 
 <h1 id="chapter-5-memory-hierarchy">Chapter 5 : Memory Hierarchy<a class="headerlink" href="#chapter-5-memory-hierarchy" title="Permanent link">&para;</a></h1>
 <h2 id="memory-technologies">Memory Technologies<a class="headerlink" href="#memory-technologies" title="Permanent link">&para;</a></h2>
-<p>内存中常用的四大工艺如下：</p>
-<div class="admonition note">
-<p class="admonition-title">四大工艺</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SRAM</label><label for="__tabbed_1_2">DRAM</label><label for="__tabbed_1_3">Flash</label><label for="__tabbed_1_4">Disk</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<blockquote>
+<p>内存中常用的有四大工艺：SRAM、DRAM 、Flash 和 Disk</p>
+</blockquote>
+<hr />
+<h3 id="sram">SRAM<a class="headerlink" href="#sram" title="Permanent link">&para;</a></h3>
 <p>SRAM（静态随机访问存储器）具有如下特性：</p>
 <ul>
 <li>它只有一个访问端口，具备读和写的能力</li>
@@ -4486,7 +4587,9 @@
 <li>通常用 6-8 个晶体管表示一个位，用于防止读取对存储信息的干扰，也因此比 DRAM 占用更多空间</li>
 <li>耗电少</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Transistor</label><label for="__tabbed_2_2">Invertor(CMOS)</label></div>
+<div class="admonition note">
+<p class="admonition-title">SRAM 相关结构</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Transistor</label><label for="__tabbed_1_2">Invertor(CMOS)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125122548.png" /></p>
@@ -4497,7 +4600,7 @@
 </div>
 </div>
 </div>
-<div class="tabbed-block">
+<h3 id="dram">DRAM<a class="headerlink" href="#dram" title="Permanent link">&para;</a></h3>
 <p>DRAM（动态随机访问存储器）具有如下特性：</p>
 <ul>
 <li>1 位数据以电荷的形式被存储在 1 个电容中<ul>
@@ -4510,22 +4613,24 @@
 </li>
 <li>用 1 个晶体管对数据（电荷）进行访问（读 / 写）（晶体管用比 SRAM 少，因此更便宜）</li>
 <li>
+<p>DRAM 内部被划分为多个<strong>存储体</strong>（Memory Bank），每个存储体都有一些<strong>行缓冲器</strong>（Row Buffer），这样可以实现对同一地址的同步访问</p>
 <ul>
 <li>假如有 n 个存储体，在一个访问时间内便能轮换访问 n 个存储体，使得带宽提升了 n 倍，这种轮换访问方法被称为地址交错 (Address Interleaving)</li>
 </ul>
-<p>DRAM 内部被划分为多个<strong>存储体</strong>（Memory Bank），每个存储体都有一些<strong>行缓冲器</strong>（Row Buffer），这样可以实现对同一地址的同步访问</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125122909.png" /></p>
 </li>
 </ul>
-<p>其读写操作如下所示：</p>
+<div class="admonition note">
+<p class="admonition-title">DRAM 的读写操作</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125122956.png" /></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Write</label><label for="__tabbed_3_2">Read</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Write</label><label for="__tabbed_2_2">Read</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>根据输入数据（0/1）将当前位线（Bit line）设置为高/低电平，并将当前字线（Word Line）设置为高电平对电容充电</p>
 </div>
 <div class="tabbed-block">
 <p>现将每一条位线都预充电（Precharge）到一个中间状态（即介于高电平和低电平之间），然后将字线设置为高电平对电容充电，每个电容或是向位线放电，或是由位线充电。放电位线电压就上升一点，充电位线电压就下降一点，由放大器（Sence Amplifier）检测到电压波动并输出结果（即原来电容存储的是 0 还是 1）</p>
+</div>
 </div>
 </div>
 </div>
@@ -4538,8 +4643,8 @@
 <li>QDR（Quad Data Rate）DRAM：将 DDR DRAM 的输入和输出分开</li>
 <li>双内联内存模块 (Dual Inline Memory Module)</li>
 </ul>
-</div>
-<div class="tabbed-block">
+<hr />
+<h3 id="flash">Flash<a class="headerlink" href="#flash" title="Permanent link">&para;</a></h3>
 <p>闪存（Flash Storage）具有如下特性：</p>
 <ul>
 <li>是一种非易失性（即断电数据也不会丢失）、电子可擦除、可编程只读的半导体存储器 (EEPROM)</li>
@@ -4552,20 +4657,20 @@
 </ul>
 <p>闪存有如下几类：</p>
 <ul>
-<li>或非闪存：每一个 cell 像是一个或非门<ul>
+<li>或非闪存：每一个 Cell 像是一个或非门<ul>
 <li>随机读写更快</li>
 <li>通常用于存储嵌入式系统的指令</li>
 </ul>
 </li>
-<li>与非闪存：每一个 cell 像是一个与非门<ul>
+<li>与非闪存：每一个 Cell 像是一个与非门<ul>
 <li>更为密集，但是以块为单位进行操作</li>
 <li>更为便宜</li>
 <li>通常用于存储 USB 密钥、媒体数据等</li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="tabbed-block">
+<hr />
+<h3 id="disk">Disk<a class="headerlink" href="#disk" title="Permanent link">&para;</a></h3>
 <p>磁盘（Disk）是一个非易失性、利用磁技术的存储器，由一组绕轴旋转的金属盘片（Platter）构成，盘片上覆有磁记录材料，通过一个读写头（Read-Write Head）来读写信息，整个驱动器被密封在磁盘内部</p>
 <ul>
 <li>迹（Track）：磁盘表面上的同心圆</li>
@@ -4587,12 +4692,47 @@
 <li>旋转时延</li>
 <li>数据传输</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
 <hr />
 <h2 id="memory-hierarchy-introduction">Memory Hierarchy Introduction<a class="headerlink" href="#memory-hierarchy-introduction" title="Permanent link">&para;</a></h2>
+<p>内存层级中涉及到的一个重要思想是局部性原则（Principle of Locality），它由以下两部分组成：</p>
+<ul>
+<li><strong>时间局部性</strong>（Temporal Locality）：如果内存的某个项目被用到过，那么在短时间内它很有可能被再次使用<ul>
+<li>举例：循环中的指令很可能会被重复访问</li>
+</ul>
+</li>
+<li><strong>空间局部性</strong>（Spatial Locality）：如果内存的某个项目被用到过，与它地址邻近的项目很可能在不久后也会被使用<ul>
+<li>举例：通常指令是按顺序执行的、按顺序访问数组元素</li>
+</ul>
+</li>
+</ul>
+<p>因此，结构化的 memory 被设计出来，便有了<strong>内存层级</strong>（Memory Hierarchy），它是一种多级的存储结构，其规定：越靠近处理器的内存，它的访问时间更短、存储空间更小、成本更高。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125132943.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125133030.png" /></p>
+<ul>
+<li>更靠近处理器的一级内存是离处理器更远的内存的一个子集，且所有的数据被存储在最底层的内存中</li>
+<li>在一个时间段内，数据只能在相邻的两个内存层级之间进行传输（复制），因此在同一时间内我们仅关注相邻的两级内存结构</li>
+</ul>
+<p>与内存层级相关的一些基本概念：</p>
+<ul>
+<li>
+<p>块 / 行 (Block/Line)：在两级内存结构中的最小信息单元（下图标出的蓝色方块）</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125133605.png" /></p>
+</li>
+<li>
+<p><strong>命中</strong>（Hit）：处理器所需的数据出现于上层内存中</p>
+<ul>
+<li><strong>命中率</strong>（Hit Rate/Ratio）：能够在上层内存中找到数据的比率</li>
+<li><strong>命中时间</strong>（Hit Time）：访问上层内存所需的时间，包括判断是否命中或失效所需的时间</li>
+</ul>
+</li>
+<li><strong>失效</strong>（Miss）：处理器所需的数据不存在于上层内存中，此时需要访问下层内存的内容并检索所需数据<ul>
+<li><strong>失效率</strong>（Miss Rate/Ratio）（<span class="arithmatex">\(= 1 - \text{命中率}\)</span>）：未能在上层内存中找到数据的比率</li>
+<li><strong>失效损失</strong>（Miss Penalty）：从下层内存中获取所需数据块的时间，包括以下操作：访问数据块、将数据从下层传输到上层、将数据插入上层内存的合适位置、将数据块继续传给处理器</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="the-basics-of-cache">The Basics of Cache<a class="headerlink" href="#the-basics-of-cache" title="Permanent link">&para;</a></h2>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4662,7 +4802,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月25日 13:11:13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月25日 13:39:30</span>
   </span>
 
     
