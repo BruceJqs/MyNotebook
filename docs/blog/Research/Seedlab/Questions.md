@@ -70,7 +70,7 @@ comments: true
 
 可以看到 B00 建立的东西还是存在，而 A00 则是把 B00 建立和其重复的部分又重新拼了起来，那么为了观察方便我们就应该在运行完 B00 之后清理掉这些类似“缓存”的东西
 
-请谨记：我们应当<font color="red">使用命令行</font> `docker-compose down` 将上一个 lab 建立的所有 docker 及其 network 清理干净，再去运行下一个 lab 的相关程序。
+请谨记：我们应当<font color="red">在上一个 lab 的 output 目录当中</font>使用命令行 `docker-compose down`（因为 docker-compose 需要通过 output 当中的 docker-compose.yml 文件来进行清理）将上一个 lab 建立的所有 docker 及其 network 清理干净，再去运行下一个 lab 的相关程序。
 ***
 ## B00_mini_internet 网段冲突
 
