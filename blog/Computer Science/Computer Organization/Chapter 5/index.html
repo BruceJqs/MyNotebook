@@ -1013,6 +1013,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory-hierarchy-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Hierarchy Introduction
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4420,6 +4429,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory-hierarchy-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Hierarchy Introduction
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4453,6 +4471,128 @@
 
 <h1 id="chapter-5-memory-hierarchy">Chapter 5 : Memory Hierarchy<a class="headerlink" href="#chapter-5-memory-hierarchy" title="Permanent link">&para;</a></h1>
 <h2 id="memory-technologies">Memory Technologies<a class="headerlink" href="#memory-technologies" title="Permanent link">&para;</a></h2>
+<p>内存中常用的四大工艺如下：</p>
+<div class="admonition note">
+<p class="admonition-title">四大工艺</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SRAM</label><label for="__tabbed_1_2">DRAM</label><label for="__tabbed_1_3">Flash</label><label for="__tabbed_1_4">Disk</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>SRAM（静态随机访问存储器）具有如下特性：</p>
+<ul>
+<li>它只有一个访问端口，具备读和写的能力</li>
+<li>数据以一对反相门（Inverting Gates）来存储</li>
+<li>尽管读和写的访问时间不同，访问任何数据所需的时间是固定的</li>
+<li>由于无需刷新 (Refresh)，因此访问时间接近于处理器的周期时间，读写非常快</li>
+<li>通常用 6-8 个晶体管表示一个位，用于防止读取对存储信息的干扰，也因此比 DRAM 占用更多空间</li>
+<li>耗电少</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Transistor</label><label for="__tabbed_2_2">Invertor(CMOS)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125122548.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125122625.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>DRAM（动态随机访问存储器）具有如下特性：</p>
+<ul>
+<li>1 位数据以电荷的形式被存储在 1 个电容中<ul>
+<li>因此需要周期性地对电容<strong>刷新</strong>（Refresh）以长时间保存电荷，具体做法就是读取并且写回该数据</li>
+</ul>
+</li>
+<li>比较小型，但是因为要不断刷新所以比 SRAM 慢很多（大概能慢 5 到 10 倍）<ul>
+<li>为了减少刷新对访问时间的占用，DRAM 通过两级译码结构实现一次性刷新一整行的数据（这种行结构也有助于提升性能）</li>
+</ul>
+</li>
+<li>用 1 个晶体管对数据（电荷）进行访问（读 / 写）（晶体管用比 SRAM 少，因此更便宜）</li>
+<li>
+<ul>
+<li>假如有 n 个存储体，在一个访问时间内便能轮换访问 n 个存储体，使得带宽提升了 n 倍，这种轮换访问方法被称为地址交错 (Address Interleaving)</li>
+</ul>
+<p>DRAM 内部被划分为多个<strong>存储体</strong>（Memory Bank），每个存储体都有一些<strong>行缓冲器</strong>（Row Buffer），这样可以实现对同一地址的同步访问</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125122909.png" /></p>
+</li>
+</ul>
+<p>其读写操作如下所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125122956.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Write</label><label for="__tabbed_3_2">Read</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>根据输入数据（0/1）将当前位线（Bit line）设置为高/低电平，并将当前字线（Word Line）设置为高电平对电容充电</p>
+</div>
+<div class="tabbed-block">
+<p>现将每一条位线都预充电（Precharge）到一个中间状态（即介于高电平和低电平之间），然后将字线设置为高电平对电容充电，每个电容或是向位线放电，或是由位线充电。放电位线电压就上升一点，充电位线电压就下降一点，由放大器（Sence Amplifier）检测到电压波动并输出结果（即原来电容存储的是 0 还是 1）</p>
+</div>
+</div>
+</div>
+<p>DRAM 的架构如下图所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125124228.png" /></p>
+<p>DRAM 有如下类别：</p>
+<ul>
+<li>SDRAM（同步 DRAM）：通过一个时钟来消除同步内存和寄存器所需的时间</li>
+<li>DDR（Double Data Rate）DRAM：能在时钟的上升沿和下降沿中进行数据传输，从而提升了一倍的带宽 (Bandwidth)</li>
+<li>QDR（Quad Data Rate）DRAM：将 DDR DRAM 的输入和输出分开</li>
+<li>双内联内存模块 (Dual Inline Memory Module)</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>闪存（Flash Storage）具有如下特性：</p>
+<ul>
+<li>是一种非易失性（即断电数据也不会丢失）、电子可擦除、可编程只读的半导体存储器 (EEPROM)</li>
+<li>比磁盘快百倍到千倍</li>
+<li>更小型、耗电更小，但也更贵（介于地盘和 DRAM）</li>
+<li>写操作可能会磨损存储器内的数据<ul>
+<li>为减缓磨损，闪存会用一个控制器来分散 (Spread) 写操作到被更少使用的区域，这称为<strong>磨损均衡</strong>(Wear Leveling)</li>
+</ul>
+</li>
+</ul>
+<p>闪存有如下几类：</p>
+<ul>
+<li>或非闪存：每一个 cell 像是一个或非门<ul>
+<li>随机读写更快</li>
+<li>通常用于存储嵌入式系统的指令</li>
+</ul>
+</li>
+<li>与非闪存：每一个 cell 像是一个与非门<ul>
+<li>更为密集，但是以块为单位进行操作</li>
+<li>更为便宜</li>
+<li>通常用于存储 USB 密钥、媒体数据等</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>磁盘（Disk）是一个非易失性、利用磁技术的存储器，由一组绕轴旋转的金属盘片（Platter）构成，盘片上覆有磁记录材料，通过一个读写头（Read-Write Head）来读写信息，整个驱动器被密封在磁盘内部</p>
+<ul>
+<li>迹（Track）：磁盘表面上的同心圆</li>
+<li>区（Sector）：构成迹的某个片段，是能够被读写的最小单位的信息<ul>
+<li>每个区记录了区的 ID、数据和纠错码（Error Correcting Code, ECC，用于隐藏和记录错误）</li>
+</ul>
+</li>
+<li>柱面（Cylinder）：读写头下所有的迹（形成一个柱面）</li>
+<li>磁材料上记录的序列：区号、间隔、包含纠错码的区信息、间隔、下个区的编号 ...</li>
+<li>寻找（Seek）：定位读写头到要被访问的迹的过程</li>
+<li>旋转时延（Rotation Latency）：将要访问的区旋转至读写头下所需的时间，通常假设为旋转时间的一半</li>
+<li>传输时间（Transfer Time）</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125130532.png" /></p>
+<p>如果要访问其中的一个区，其大致步骤如下：</p>
+<ul>
+<li>等待前一个访问</li>
+<li>通过移动读写头寻找被访问的迹</li>
+<li>旋转时延</li>
+<li>数据传输</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="memory-hierarchy-introduction">Memory Hierarchy Introduction<a class="headerlink" href="#memory-hierarchy-introduction" title="Permanent link">&para;</a></h2>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4522,7 +4662,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月13日 13:57:03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月25日 13:11:13</span>
   </span>
 
     
