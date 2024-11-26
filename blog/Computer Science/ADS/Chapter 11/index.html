@@ -1456,10 +1456,85 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Knapsack Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fractional-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fractional Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0-1-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      0-1 Version
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-center-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Center Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Center Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naive-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive Greedy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2r-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2r-Greedy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smarter-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smarter Greedy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
       
@@ -4580,10 +4655,85 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Knapsack Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fractional-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fractional Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0-1-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      0-1 Version
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-center-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-Center Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Center Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naive-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive Greedy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2r-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2r-Greedy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smarter-greedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smarter Greedy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
       
@@ -4763,6 +4913,231 @@ S(B_{2M-1})\leq 1
 <p>FFD 策略总是使用不超过 <span class="arithmatex">\(\frac{11}{9}M+\frac{6}{9}\)</span> 个 bin，并且存在一族能对边界取等的输入，其中 <span class="arithmatex">\(M\)</span> 表示准确解的 bin 个数。因此该算法是一个 1.2-近似算法。</p>
 <hr />
 <h3 id="knapsack-problem">Knapsack Problem<a class="headerlink" href="#knapsack-problem" title="Permanent link">&para;</a></h3>
+<p>一个与装箱问题很像的问题是背包问题。其大致描述如下：给定一个容量为 <span class="arithmatex">\(M\)</span> 的背包，以及 <span class="arithmatex">\(N\)</span> 个 item，第 <span class="arithmatex">\(i\)</span> 个 item 的重量为 <span class="arithmatex">\(w_i\)</span>，其利润为 <span class="arithmatex">\(p_i\)</span>。要求在不超过背包容量的前提下，使得背包中的利润最大化。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>请注意，我们这里讨论的背包问题有一个非常重要的特点就是，容量和利润都是<strong>实数</strong>，更直白的来说，我们没办法通过将容量或利润作为状态来 dp 求准确解。</p>
+</div>
+<p>而根据每一个物品能否自由拆分，背包问题分为 fractional version 和 0-1 version 两类。</p>
+<hr />
+<h4 id="fractional-version">Fractional Version<a class="headerlink" href="#fractional-version" title="Permanent link">&para;</a></h4>
+<p>如果我们记 <span class="arithmatex">\(x_i\in [0,1]\)</span> 为第 <span class="arithmatex">\(i\)</span> 个 item 的选中量（即假设 item 都是连续可分的），则约束条件可以表述为 <span class="arithmatex">\(\sum\limits_{i=1}^nw_ix_i\leq M\)</span>，现在求 <span class="arithmatex">\(\sum\limits_{i=1}^Np_ix_i\)</span> 的最大值。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>假设现在 <span class="arithmatex">\(M=20.0\)</span>，并且 <span class="arithmatex">\(N=3\)</span>，分别是：</p>
+<ul>
+<li>item 1: <span class="arithmatex">\(w_1=18.0,p_1=25.0\)</span>;</li>
+<li>item 2: <span class="arithmatex">\(w_2=15.0,p_2=24.0\)</span>;</li>
+<li>item 3: <span class="arithmatex">\(w_3=10.0,p_3=15.0\)</span>;</li>
+</ul>
+<p>则最优解为 <span class="arithmatex">\(x_1=0,x_2=1,x_3=\frac{1}{2}\)</span>​，此时 <span class="arithmatex">\(\sum\limit_{i=1}^Np_ix_i=31.5\)</span>。</p>
+</div>
+<p>由于 <span class="arithmatex">\(x_i\in[0,1]\)</span>，给了我们极大的选择自由，我们可以选择任意多的某个物品。那么非常朴素的一个想法就是，尽可能多地选择“性价比”高的物品。也就是说，我们可以按照 <span class="arithmatex">\(\frac{p_i}{w_i}\)</span>（即性价比）降序排序，而后从大到小依次选择物品，直到背包装满为止。</p>
+<p>不过该做法已经是准确解了，所以我们不对它进行关于近似算法的讨论。</p>
+<hr />
+<h4 id="0-1-version">0-1 Version<a class="headerlink" href="#0-1-version" title="Permanent link">&para;</a></h4>
+<p>相较于 fractional version，0-1 version 要求 <span class="arithmatex">\(x_i\in\{0,1\}\)</span>，换句话说每一个物品要么选要么不选。这是一个经典的 NPH 问题（0-1 背包的判定问题才是一个 NPC 问题），我们尝试使用近似算法来求较优解。</p>
+<div class="admonition note">
+<p class="admonition-title">solution</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">贪心</label><label for="__tabbed_2_2">动态规划</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>我们可以使用贪心算法，贪心策略可以是总是选<strong>利润最大</strong>的或 <span class="arithmatex">\(\frac{p_i}{w_i}\)</span>​​ <strong>最大</strong>的。这些做法的近似比都是 2。</p>
+<div class="admonition note">
+<p class="admonition-title">Proof</p>
+<p>通过已知条件，可以得到下列不等式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+p_{max}&amp; \leq P_{optimal}\leq P_{frac}\\
+p_{max}&amp; \leq P_{greedy}\\
+P_{optimal}&amp; \leq P_{greedy}+p_{max}
+\end{aligned}
+\]</div>
+<p>其中，<span class="arithmatex">\(p_{max}=\max⁡\limits_{1\leq i\leq n}\{p_i\}\)</span>，<span class="arithmatex">\(P_{optimal}\)</span>​ 表示本题的最优解，<span class="arithmatex">\(P_{frac}\)</span>​ 表示上一类背包问题的解，<span class="arithmatex">\(P_{greedy​}\)</span> 表示本题的贪心解。</p>
+<ul>
+<li>第一个不等式：左边的不等号显然成立，右边的不等号是因为分数版本的背包问题可以取部分物品，那么它一定能够在 0-1 背包的基础上，通过塞入部分物品将背包塞满，所以分数背包的解一定不小于 0-1 背包的最优解</li>
+<li>第二个不等式也是显然成立的</li>
+<li>第三个不等式：不等号两边同时减去 <span class="arithmatex">\(P_{greedy}​\)</span>，即最优解与贪心解之差一定不超过最大价值</li>
+</ul>
+<p>根据这三个不等式，可以推出：</p>
+<div class="arithmatex">\[
+\frac{P_{opt}}{P_{greedy}}\leq 1+\frac{p_{max}}{P_{greedy}}\leq 2
+\]</div>
+</div>
+</div>
+<div class="tabbed-block">
+<p>令 <span class="arithmatex">\(W_{i,p}\)</span>​ 为物品 1 到物品 <span class="arithmatex">\(i\)</span> 之间的最小质量，总价值为 <span class="arithmatex">\(p\)</span></p>
+<ul>
+<li>分类讨论：<ul>
+<li>取物品 <span class="arithmatex">\(i\)</span>：<span class="arithmatex">\(W_{i,p}=w_i+W_{i−1,p−p_i}\)</span></li>
+<li>不取物品 <span class="arithmatex">\(i\)</span>：<span class="arithmatex">\(W_{i,p}=W_{i−1,p}​\)</span></li>
+<li>不可能得到价值 <span class="arithmatex">\(p\)</span>：<span class="arithmatex">\(W_{i,p}=\infty\)</span></li>
+</ul>
+</li>
+<li>状态转移方程：</li>
+</ul>
+<div class="arithmatex">\[
+W_{i,p}=\begin{cases}
+\infty,i=0\\
+W_{i-1,p},p_i&gt;p\\
+\min\{W_{i-1,p},w_i+W_{i-1,p-p_i}\},\text{otherwise}
+\end{cases}
+\]</div>
+<ul>
+<li>其中，<span class="arithmatex">\(i=1,…,n,p=1,…,np_{max}​\)</span>，因此时间复杂度为 <span class="arithmatex">\(O(n^2p_{max})\)</span></li>
+<li>如果 <span class="arithmatex">\(p_{max}\)</span>​ 很大，可以考虑将它们近似取整，类似于将浮点数向上取整。</li>
+</ul>
+<details class="question">
+<summary>Question</summary>
+<p>从上面的分析来看，似乎 DP 能以多项式时间复杂度解决问题了，为什么还叫 0-1 背包问题为 NPH 问题呢？</p>
+<p>这其实是因为所谓的“多项式时间内”，指的是关于输入数据规模 <span class="arithmatex">\(n\)</span> 的多项式。而上面给出的时间复杂度中还有一项 <span class="arithmatex">\(p_{max}\)</span>，它与数据规模 <span class="arithmatex">\(n\)</span> 独立，因此这个数可以很大很大，超出 <span class="arithmatex">\(n\)</span> 的指数级倍。因此，我们无法保证 DP 解法能够在多项式时间内产生解。</p>
+<p>一种（也许）可行的做法是只保留 <span class="arithmatex">\(p_i\)</span>​ 的高位，但保证能够区分这些 <span class="arithmatex">\(p_i\)</span>​ 的大小：</p>
+<ul>
+<li>但这种做法会损失价值的精度，且如果所有价值的位数一致时，这种做法就不太有效了</li>
+<li>对于上述方法，有 <span class="arithmatex">\((1+\epsilon)P_{alg}\leq P\)</span>，其中 <span class="arithmatex">\(\epsilon\)</span> 为精度参数</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="k-center-problem">K-Center Problem<a class="headerlink" href="#k-center-problem" title="Permanent link">&para;</a></h3>
+<p>（二维）K 中心问题指：给定平面上的一系列 site（即点），在平面中找出 <span class="arithmatex">\(k\)</span> 个不同的 center，记 <span class="arithmatex">\(site_i\)</span>​ 到离它最近的 center 的距离为 <span class="arithmatex">\(dis_i\)</span>，求 <span class="arithmatex">\(\max⁡\{dis_i\}\)</span> 的最小值。</p>
+<p>用数学化的语言来表示，设 <span class="arithmatex">\(C=\{c_1,c_2,...,c_k\}\)</span> 为 <span class="arithmatex">\(k\)</span> 个 center，<span class="arithmatex">\(S=\{s_1,s_2,...,s_n\}\)</span> 为 <span class="arithmatex">\(n\)</span> 个 site，我们定义 site 到关于 center 的集合 <span class="arithmatex">\(C\)</span> 的距离为 <span class="arithmatex">\(dis(s_i​,C)=\min\limits_{c_i\in C}\{dis(s_i​,c_i​)\}\)</span>，即 <span class="arithmatex">\(s_i\)</span> 到距离它最近的 center 的距离。定义最大的最小覆盖半径为：<span class="arithmatex">\(r(C)=\max\limits_{s_i\in S}​\{dis(s_i​,C)\}\)</span>，现在要寻找一个 <span class="arithmatex">\(C\)</span> 使得 <span class="arithmatex">\(r(C)\)</span> 最小。</p>
+<p>对于这里的距离（其实就是数学意义上的距离），有如下三个性质：</p>
+<ul>
+<li>同一性（Identity）：<span class="arithmatex">\(dist(x,x)=0\)</span></li>
+<li>对称性（symmetry）：<span class="arithmatex">\(dist(x,y)=dist(y,x)\)</span></li>
+<li>三角不等式（Triangle Inequality）：<span class="arithmatex">\(dist(x,y)\leq dist(x,z)+dist(z,y)\)</span></li>
+</ul>
+<hr />
+<h4 id="naive-greedy">Naive Greedy<a class="headerlink" href="#naive-greedy" title="Permanent link">&para;</a></h4>
+<p>一种最简单的贪心做法是，我们每次都选择最可能成为中心的那个点，具体来说：</p>
+<ol>
+<li>如果是第一个点，就选取所有点的中心；</li>
+<li>如果不是第一个点，就选取能一个最能让 <span class="arithmatex">\(r(C)\)</span> 下降的；</li>
+</ol>
+<p>但是，如下图所示，假设整个点集包括两个相距很远的子集，且 <span class="arithmatex">\(K=2\)</span>。此时第一个中心点就会被放在两个子集的中间，但最优解应该是中心点位于子集的中间位置的时候，所以这种贪心策略就失效了。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241126151239.png" /></p>
+<hr />
+<h4 id="2r-greedy">2r-Greedy<a class="headerlink" href="#2r-greedy" title="Permanent link">&para;</a></h4>
+<p>既然正向做很困难，那我们能不能反着做呢？有一种套路叫二分答案，即先猜答案，再验证是否是答案。在这个问题中我们可以迁移这个思想，即先猜一个 <span class="arithmatex">\(r\)</span>，然后尝试用 <span class="arithmatex">\(k\)</span> 个半径为 <span class="arithmatex">\(r\)</span> 的圆去覆盖剩下的所有点。</p>
+<p>更具体的来说，假设准确解对应的一个 center 集合为 <span class="arithmatex">\(C^∗\)</span>，那么 <span class="arithmatex">\(\forall r(C_x)≥r(C^∗)\)</span> 的 <span class="arithmatex">\(C_x​\)</span> 都必定存在覆盖方案；反过来说，如果我们能够验证对于 <span class="arithmatex">\(C_x\)</span>​ 能够覆盖所有的点，那么就可以约束准确解 <span class="arithmatex">\(r(C^∗)≤r(C_x)\)</span>。</p>
+<p>那么我们再次梳理一下这个算法，它包含内外两层，首先外部通过在答案的候选区间（即 <span class="arithmatex">\((0,r_{max}]\)</span>，<span class="arithmatex">\(r_{max}\)</span>​ 为最远的两个点的距离）二分候选值，接着通过判定算法来判定接下来的二分方向，伪代码如下所示：</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pseudo Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Centers</span><span class="w"> </span><span class="n">Greedy</span><span class="mi">-2</span><span class="n">r</span><span class="p">(</span><span class="n">Sites</span><span class="w"> </span><span class="n">S</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">Sites</span><span class="w"> </span><span class="n">S1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[];</span><span class="w">  </span><span class="c1">// S1 is the set of the remaining sites</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">Centers</span><span class="w"> </span><span class="n">C</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">S1</span><span class="p">[]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="n">Select</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="n">S1</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="n">Delete</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S1</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="n">r</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// end-while</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">|</span><span class="n">C</span><span class="o">|</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">K</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;No set of K centers with covering radius at most r&quot;</span><span class="p">);</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Explanation</p>
+<p>在改进的贪心算法中，我们直接挑选某个地址作为中心点。这种做法之所以可行，是因为某个中心点覆盖半径为 <span class="arithmatex">\(r\)</span> 的区域，可以近似为以（接近）区域边界上一点 <span class="arithmatex">\(s\)</span> 为新的中心点，<span class="arithmatex">\(2r\)</span> 为半径的区域。虽然这个区域明显比原区域大，但它保证能够覆盖原区域所能覆盖的点。这样的话我们就不必通过繁琐的计算算出中心点，而是从原有的地址中选择中心点，这样就方便了很多。</p>
+<p>下面来解释一下上面的伪代码：</p>
+<p>设 <span class="arithmatex">\(C_x​\)</span> 表示选中的 center，<span class="arithmatex">\(S_x\)</span> 表示尚未被任何圆覆盖的 site，<span class="arithmatex">\(r_x\)</span>​ 表示当前二分出来的，要我们判断的半径，<span class="arithmatex">\(S\)</span> 依然表示所有 site 的集合：</p>
+<ol>
+<li>初始化 <span class="arithmatex">\(C_x=\phi\)</span>；</li>
+<li>当 <span class="arithmatex">\(S_x\not=\phi\)</span> 时（即还有点没被覆盖时），重复这些操作：<ol>
+<li>随机选取一个 site <span class="arithmatex">\(s_i\in S_x​\)</span>，将其插入 <span class="arithmatex">\(C_x\)</span>​（即将 <span class="arithmatex">\(s_i​\)</span> 当作一个 center），并从 <span class="arithmatex">\(S_x\)</span>​ 中将 <span class="arithmatex">\(s_i\)</span>​ 删除（即 <span class="arithmatex">\(s_i\)</span>​ 必定被覆盖）；</li>
+<li>删除 <span class="arithmatex">\(S_x\)</span>​ 中所有距离 <span class="arithmatex">\(s_i\)</span>​ 不足 <span class="arithmatex">\(r_x\)</span>​ 的点（即删除满足 <span class="arithmatex">\(dis(s_i,s_j)\leq r_x\)</span> 的所有 <span class="arithmatex">\(s_k\in S_x\)</span>​）；</li>
+</ol>
+</li>
+<li>当所有点都被覆盖后：<ol>
+<li>如果 <span class="arithmatex">\(∣C_x∣\leq k\)</span>，则返回 yes；</li>
+<li>否则返回 no；</li>
+</ol>
+</li>
+</ol>
+<p>如果返回 yes，则下一个 <span class="arithmatex">\(r_x\)</span>​ 应当取更小的 <span class="arithmatex">\(r_x\)</span>​；如果返回 no，下一次应该取更大的 <span class="arithmatex">\(r_x\)</span>（这里的时间复杂度为 <span class="arithmatex">\(O(\log r_{max})\)</span></p>
+<p>这是一个启发式的做法，旨在每次寻找还没被覆盖的点作为新的 center，用一个半径为 <span class="arithmatex">\(2r_x\)</span>​ 的圆去覆盖剩下的点。通过判断这样所需要的 center 数量是否超过 <span class="arithmatex">\(k\)</span> 来判断是否能够覆盖。</p>
+<ol>
+<li>当这个启发式搜索成功时，说明 <span class="arithmatex">\(2r_x\geq r(C^∗)\)</span>，即 <span class="arithmatex">\(k\)</span> 个 <span class="arithmatex">\(2r_x\)</span>​ 的圆可以覆盖所有点；</li>
+<li>当这个启发式搜索失败时，<strong>不能</strong>说明 <span class="arithmatex">\(2r_x\geq r(C^∗)\)</span>，即 <span class="arithmatex">\(k\)</span> 个 <span class="arithmatex">\(2r_x\)</span>​ 的圆不能覆盖所有点，因为启发式方案并不是最优方案；<strong>但是能说明必定不存在 <span class="arithmatex">\(r_x\)</span>​ 的覆盖，即 <span class="arithmatex">\(r_x\leq r(C^∗)\)</span></strong>（证明见下方 Lemma）</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Lemma</p>
+<p>假设半径为 <span class="arithmatex">\(r\)</span>，以 <span class="arithmatex">\(c\)</span> 为圆心的圆 <span class="arithmatex">\(C\)</span> 覆盖了 <span class="arithmatex">\(S\)</span> 中的所有点，那么，对于固定的半径 <span class="arithmatex">\(r^'\)</span>，要想取任意的 <span class="arithmatex">\(s_i\in S\)</span> 为圆心，形成的圆 <span class="arithmatex">\(C_i​\)</span>，<strong>总是</strong>能覆盖 <span class="arithmatex">\(S\)</span> 中的所有点，则 <span class="arithmatex">\(r^'\geq 2r\)</span>。</p>
+<p>这个引理的附加结论就是：<span class="arithmatex">\(\forall i,C\subset C_i\)</span>，即以 <span class="arithmatex">\(r\)</span> 为半径的最优覆盖圆，一定能被以任意 <span class="arithmatex">\(s_i\)</span>​ 为圆心、<span class="arithmatex">\(2r\)</span> 为半径的圆所覆盖。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241126161212.png" /></p>
+</div>
+<p>当我们发现我们处于上述情况 1 时，我们开心的发现我们确实得到了一个距离 <span class="arithmatex">\(r(C^∗)\)</span> 更近的上界 <span class="arithmatex">\(2r_x\)</span>，由于二分的性质，我们每次通过情况 1 确定的上界，总是越来越紧的。</p>
+<p>当我们处于上述情况 2 时，我们不知道 <span class="arithmatex">\(2r_x\)</span>​ 和 <span class="arithmatex">\(r(C^∗)\)</span> 的大小关系，但是知道 <span class="arithmatex">\(r_x\)</span> 和 <span class="arithmatex">\(r(C^∗)\)</span> 的关系，由于二分的性质，我们每次通过情况 2 确定的下界，也总是越来越紧的。</p>
+<p>而最终，我们会得到一个最终的 <span class="arithmatex">\(r_{x_0}\)</span>，满足：<span class="arithmatex">\(r_{x_0}\leq r(C^∗)\leq 2r_{x_0}\)</span>（式中哪边能取等取决于最后落在情况 1 还是 2）。</p>
+<p>而我们最终给出的<strong>答案</strong>是 <span class="arithmatex">\(2r_{x_0}\)</span>（因为 <span class="arithmatex">\(r_{x_0}\)</span>​​ 不满足条件，不是解，更不是近似解）。</p>
+<p>我们有：</p>
+<div class="arithmatex">\[
+\begin{gather}
+\because r_{x_0}\leq r(C^*)\leq 2r_{x_0}\\
+\frac{1}{2}\leq \frac{r(C^*)}{2r_{x_0}}\leq 1\\
+1\leq \frac{2r_{x_0}}{r(C^*)}\leq 2\\
+\therefore \rho=\max\bigg\{\frac{r(C^*)}{2r_{x_0}},\frac{2r_{x_0}}{r(C^*)}\bigg\}=2
+\end{gather}
+\]</div>
+</div>
+<hr />
+<h4 id="smarter-greedy">Smarter Greedy<a class="headerlink" href="#smarter-greedy" title="Permanent link">&para;</a></h4>
+<p>我们关注到，上面那个做法总是随机的选取新的 <span class="arithmatex">\(c_i​\)</span>，但是对于 center 的选取，我们其实可以总是选择距离已有的 center 最远的点，此外，当 <span class="arithmatex">\(∣C∣&gt;k\)</span> 时，我们也没必要继续做了。伪代码如下：</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pseudo Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">8</a></span>
+<span class="normal"><a href="#__codelineno-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">Centers</span><span class="w"> </span><span class="n">Greedy</span><span class="o">-</span><span class="n">Kcenter</span><span class="p">(</span><span class="n">Sites</span><span class="w"> </span><span class="n">S</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">Centers</span><span class="w"> </span><span class="n">C</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">Select</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">|</span><span class="n">C</span><span class="o">|</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">K</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="n">Select</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="n">Add</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="c1">// end-while</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>由于这个做法实际上只是优化了一下启发式的策略，并没有改变内核，所以其近似比仍然是 2。</p>
+<details class="question">
+<summary>存在 <span class="arithmatex">\(\rho&lt;2\)</span> 的近似算法吗？</summary>
+<p>实际上是不存在的，用归谬法证明：</p>
+<ul>
+<li>假如存在多项式时间的 <span class="arithmatex">\(2−\epsilon\)</span> 的近似算法，那么我们也能在多项式时间内解决<a href="https://en.wikipedia.org/wiki/Dominating_set">支配集 (dominating-set) 问题</a>（它是一个 NPC 问题，这一结论来自 NPC 问题的<a href="https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2010/#np-complete-problems">性质</a>）</li>
+<li>当前仅当存在中心选择问题的最优中心点集半径 <span class="arithmatex">\(r(C^∗)=1\)</span> 时，规模为 <span class="arithmatex">\(K\)</span> 的支配集存在解</li>
+</ul>
+</details>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>关于算法的设计，我们考虑这三个维度：</p>
+<ol>
+<li>最优性（Optimality）：即能求准确解；</li>
+<li>高效性（Efficiency）：即算法是否高效；</li>
+<li>普遍性（All Instances）：即算法是否普遍适用于所有的情况；</li>
+</ol>
+<p>倘若一个解法：</p>
+<ol>
+<li>同时满足最优性和高效性，那么这个算法对特殊情况能高效求准确解；</li>
+<li>同时满足最优性和普遍性，那么这个算法对所有情况都能求准确解；</li>
+<li>同时满足高效性和普遍性，那么这个算法可能是个近似算法；</li>
+</ol>
+<p>就算 N=NP 成立，我们仍然无法保证三个愿望一次满足。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4832,7 +5207,7 @@ S(B_{2M-1})\leq 1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月26日 12:11:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月26日 16:43:18</span>
   </span>
 
     
