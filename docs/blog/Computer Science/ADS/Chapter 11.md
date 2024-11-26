@@ -107,3 +107,48 @@ $$
 			即 item 的总 size 至少为 M，即至少需要 M 个 bin。
 			
 			2.而当 NF 的结果是需要 $2M$ 个 bin 时，可以转化为 $2M−1$ 的情况，至少需要 $M+1$ 个 bin。
+	
+	=== "First Fit(FF)"
+	
+		FF 策略总是选择第一个能放下当前 item 的 bin，若所有 bin 都无法容纳当前 item，则新开一个 bin。
+		
+		```c title="Pseudo Code"
+		void FirstFit() {
+		    while (read item) {
+		        scan for the first bin that is large enough for item;
+		        if (found)
+		            place item in that bin;
+		        else
+		            create a new bin for item;
+		    } // end-while
+		}
+		```
+		
+		- 时间复杂度：$O(N\log N)$（循环内扫描桶的时间复杂度可优化至 $O(\log⁡ N)$）
+		- FF 策略总是使用不超过 $\lfloor 1.7M\rfloor$ 个 bin，并且存在一族能对边界取等的输入，其中 $M$ 表示准确解的 bin 个数。因此该算法是一个 1.7-近似算法。
+	
+	=== "Best Fit(BF)"
+	
+		BF 策略总是选择能够容纳当前 item 且剩余空间最小的 bin（即 tightest），若所有 bin 都无法容纳当前 item，则新开一个 bin。
+		
+		- 时间复杂度：$O(N\log⁡ N)$
+		- BF 策略也总是使用不超过 $\lfloor 1.7M\rfloor$ 个 bin，并且存在一族能对边界取等的输入，其中 $M$ 表示准确解的 bin 个数。因此该算法是一个 1.7-近似算法。
+
+由于在线算法无法得知输入何时结束，因此始终无法得到最优解。具体来说，有以下定理：对于本题的所有近似算法，得到的近似解桶数至少是最优解桶数 $\frac{5}{3}$​ 倍。因此，我们需要采用**离线算法**来提升近似的准确度。
+***
+#### Offline Algorithm
+
+离线做法的优势在于它能够获得所有 item 的信息以求统筹规划。这里给出的近似做法（First Fit/Best Fit Decreasing）是，将 item 按照 size 降序排序，而后使用 FF（或 BF，由于单调性，两者等价）。
+
+!!! example "Example"
+
+	给定 7 个 item，size 分别为 $0.2,0.5,0.4,0.7,0.1,0.3,0.8$，经过排序后，它们的 size 分别为 $0.8, 0.7, 0.5, 0.4, 0.3, 0.2, 0.1$，则最少需要 3 个 bin（准确解）：
+	
+	- bin 1: 0.8+0.2;
+	- bin 2: 0.7+0.3;
+	- bin 3: 0.5+0.4+0.1;
+
+FFD 策略总是使用不超过 $\frac{11}{9}M+\frac{6}{9}$ 个 bin，并且存在一族能对边界取等的输入，其中 $M$ 表示准确解的 bin 个数。因此该算法是一个 1.2-近似算法。
+***
+### Knapsack Problem
+
