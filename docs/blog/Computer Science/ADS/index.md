@@ -7,7 +7,7 @@ hide:
 comments: true
 ---
 
-# 高级数据结构与算法分析｜Advanced Data Structure s and Algorithm Analysis
+# 高级数据结构与算法分析｜Advanced Data Structures and Algorithm Analysis
 
 !!! 课程信息
 	授课老师：王灿
@@ -28,3 +28,4 @@ comments: true
 - [Chapter 08 : Dynamic Programming](Chapter%208/)
 - [Chapter 09 : Greedy Algorithms](Chapter%209/)
 - [Chapter 10 : NP Completeness](Chapter%2010)
+- [Chapter 11 : Approximation](Chapter%2011/)
