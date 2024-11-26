@@ -231,10 +231,10 @@ NPH 即 NP hard，NP 困难，它不一定需要是 NP 问题。而所有 NP 问
     - 则 $\forall i\in I,\text{SHORTEST-PATH}(i)=s\in S$
     
 	而对于路径决策问题：
-	    
-	    - $I=\{<G,u,v,k>:G=(V,E)\text{ is an undirected graph}; u,v\in V;k\geq 0\text{ is an integer}\}$
-	    - $S=\{0,1\}$
-	    - 则 $\forall i\in I,\text{PATH}(i)=1\text{ or }0$
+	
+	- $I=\{<G,u,v,k>:G=(V,E)\text{ is an undirected graph}; u,v\in V;k\geq 0\text{ is an integer}\}$
+	- $S=\{0,1\}$
+	- 则 $\forall i\in I,\text{PATH}(i)=1\text{ or }0$
 
 形式语言的正式定义：
 
