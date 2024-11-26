@@ -1435,8 +1435,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#offline-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offline Algorithm
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knapsack-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knapsack Problem
+    </span>
+  </a>
   
 </li>
         
@@ -4541,8 +4559,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#offline-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offline Algorithm
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knapsack-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knapsack Problem
+    </span>
+  </a>
   
 </li>
         
@@ -4624,7 +4660,7 @@
 <h4 id="online-algorithm">Online Algorithm<a class="headerlink" href="#online-algorithm" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Online Algorithm</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Next Fit(NF)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Next Fit(NF)</label><label for="__tabbed_1_2">First Fit(FF)</label><label for="__tabbed_1_3">Best Fit(BF)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>NF 策略总是选择当前最后一个 bin，若能够容纳，则将当前 item 放入其中，否则新开一个 bin。</p>
@@ -4676,9 +4712,57 @@ S(B_{2M-1})\leq 1
 <p>2.而当 NF 的结果是需要 <span class="arithmatex">\(2M\)</span> 个 bin 时，可以转化为 <span class="arithmatex">\(2M−1\)</span> 的情况，至少需要 <span class="arithmatex">\(M+1\)</span> 个 bin。</p>
 </div>
 </div>
+<div class="tabbed-block">
+<p>FF 策略总是选择第一个能放下当前 item 的 bin，若所有 bin 都无法容纳当前 item，则新开一个 bin。</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Pseudo Code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">FirstFit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="n">scan</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">bin</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">large</span><span class="w"> </span><span class="n">enough</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="n">place</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">bin</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// end-while</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(N\log N)\)</span>（循环内扫描桶的时间复杂度可优化至 <span class="arithmatex">\(O(\log⁡ N)\)</span>）</li>
+<li>FF 策略总是使用不超过 <span class="arithmatex">\(\lfloor 1.7M\rfloor\)</span> 个 bin，并且存在一族能对边界取等的输入，其中 <span class="arithmatex">\(M\)</span> 表示准确解的 bin 个数。因此该算法是一个 1.7-近似算法。</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>BF 策略总是选择能够容纳当前 item 且剩余空间最小的 bin（即 tightest），若所有 bin 都无法容纳当前 item，则新开一个 bin。</p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(N\log⁡ N)\)</span></li>
+<li>BF 策略也总是使用不超过 <span class="arithmatex">\(\lfloor 1.7M\rfloor\)</span> 个 bin，并且存在一族能对边界取等的输入，其中 <span class="arithmatex">\(M\)</span> 表示准确解的 bin 个数。因此该算法是一个 1.7-近似算法。</li>
+</ul>
 </div>
 </div>
 </div>
+</div>
+<p>由于在线算法无法得知输入何时结束，因此始终无法得到最优解。具体来说，有以下定理：对于本题的所有近似算法，得到的近似解桶数至少是最优解桶数 <span class="arithmatex">\(\frac{5}{3}\)</span>​ 倍。因此，我们需要采用<strong>离线算法</strong>来提升近似的准确度。</p>
+<hr />
+<h4 id="offline-algorithm">Offline Algorithm<a class="headerlink" href="#offline-algorithm" title="Permanent link">&para;</a></h4>
+<p>离线做法的优势在于它能够获得所有 item 的信息以求统筹规划。这里给出的近似做法（First Fit/Best Fit Decreasing）是，将 item 按照 size 降序排序，而后使用 FF（或 BF，由于单调性，两者等价）。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>给定 7 个 item，size 分别为 <span class="arithmatex">\(0.2,0.5,0.4,0.7,0.1,0.3,0.8\)</span>，经过排序后，它们的 size 分别为 <span class="arithmatex">\(0.8, 0.7, 0.5, 0.4, 0.3, 0.2, 0.1\)</span>，则最少需要 3 个 bin（准确解）：</p>
+<ul>
+<li>bin 1: 0.8+0.2;</li>
+<li>bin 2: 0.7+0.3;</li>
+<li>bin 3: 0.5+0.4+0.1;</li>
+</ul>
+</div>
+<p>FFD 策略总是使用不超过 <span class="arithmatex">\(\frac{11}{9}M+\frac{6}{9}\)</span> 个 bin，并且存在一族能对边界取等的输入，其中 <span class="arithmatex">\(M\)</span> 表示准确解的 bin 个数。因此该算法是一个 1.2-近似算法。</p>
+<hr />
+<h3 id="knapsack-problem">Knapsack Problem<a class="headerlink" href="#knapsack-problem" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4748,7 +4832,7 @@ S(B_{2M-1})\leq 1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月26日 11:50:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月26日 12:11:40</span>
   </span>
 
     
