@@ -1101,6 +1101,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#handling-cache-hits-and-misses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Cache Hits and Misses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Cache Hits and Misses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4624,6 +4666,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#handling-cache-hits-and-misses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling Cache Hits and Misses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Cache Hits and Misses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4812,7 +4896,7 @@
 <p><strong>命中</strong>（Hit）：处理器所需的数据出现于本层内存中</p>
 <ul>
 <li><strong>命中率</strong>（Hit Rate/Ratio）：能够在本层内存中找到数据的次数占总次数的比例，通常作为层次结构的性能衡量指标之一</li>
-<li><strong>命中时间</strong>（Hit Time）：访问本层内存所需的时间，包括判断是否命中或失效所需的时间</li>
+<li><strong>命中时间</strong>（Hit Time）：访问本层内存所需的时间，包括判断是否命中或缺失所需的时间</li>
 </ul>
 </li>
 <li><strong>缺失</strong>（Miss）：处理器所需的数据不存在于本层内存中，此时需要访问下层内存的内容并检索所需数据<ul>
@@ -4954,6 +5038,72 @@
 </div>
 </div>
 </div>
+<p>想要降低缺失率（Miss Rate），一种可行的方法是<strong>适当增加每个缓存块的大小</strong>。然而，如果缓存块的空间过大，对于相同空间大小的缓存，那么该缓存的块数就会减小，那么就会产生更多的数据竞争问题，因此此时缺失率反而会升高。下图便展示了这一结果，其中不同曲线表示不同的缓存大小：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127101113.png" /></p>
+<p>事实上，增大缓存块的空间还会增大缺失损失（Miss Penalty），因为更大的缓存块意味着更久的传输时间。如果缓存块过大，由于缺失率降低的效果不明显，且缺失损失会越来越大，因此最终会带来缓存性能的损失。</p>
+<div class="admonition tip">
+<p class="admonition-title">补充</p>
+<p>下面给出一些减缓因增大缓存块而带来的缺失损失增大的方法：</p>
+<ul>
+<li>早重启（Early Restart）：当所需字数据还未返回时，令处理器继续执行后面的操作，而不是等下去。这种方法更适用于指令缓存中，但在数据缓存中表现效果不太好</li>
+<li>需求字优先/关键字优先（Requested/Critical Word First）：对内存进行组织，使得处理器请求的字数据得以优先进行传输，随后再传输其他不是那么重要的数据。该方法比早重启略快一些，但也有与前者同样的限制</li>
+</ul>
+</div>
+<hr />
+<h3 id="handling-cache-hits-and-misses">Handling Cache Hits and Misses<a class="headerlink" href="#handling-cache-hits-and-misses" title="Permanent link">&para;</a></h3>
+<h4 id="read">Read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Handling Cache Read Hits and Misses</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Hit</label><label for="__tabbed_6_2">Miss</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>由于这正是我们想要的，所以我们不需要进行任何多余操作</p>
+</div>
+<div class="tabbed-block">
+<p><strong>缓存缺失</strong>（Cache Miss）：处理器向缓存请求当前不存在于缓存中的数据，可分为<strong>指令</strong>缺失（Instruction miss）和<strong>数据</strong>缺失（Data Miss）两类，由处理器的控制单元和一个单独的控制器（初始化内存访问 + 重新填充缓存数据）共同处理。具体来说，指令缺失和数据缺失的处理方法是类似的，总体来说都遵循停止 CPU <span class="arithmatex">\(\rightarrow\)</span> 从内存获取数据块 <span class="arithmatex">\(\rightarrow\)</span> 将其送到 Cache <span class="arithmatex">\(\rightarrow\)</span> 重启 CPU 的读操作的顺序，以指令缓存为例具体如下：</p>
+<ol>
+<li>向内存发送原来的 PC 值（当前应该得是 PC-4 了因为我们已经执行过 PC+4 了，现在得倒推）</li>
+<li>令主内存执行读取操作，并等待内存完成访问</li>
+<li>将从内存中读到的数据放入缓存对应位置上，将内存地址的高位写入标签字段，并将 Valid 位置 1</li>
+<li>重新执行第 1 步所对应的指令，此时处理器成功地在缓存中获取正确的指令</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="write">Write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Handling Cache Write Hits and Misses</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Hit</label><label for="__tabbed_7_2">Misses</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对缓存进行写操作时需要考虑以下问题：执行存储指令时，我们会向缓存写入一个新的数据，但由于此时并没有改变底下内存的数据，因此内存和缓存的数据就存在不一致（Inconsistent）的现象。</p>
+<p>下面提供了两类解决方案：</p>
+<ul>
+<li><strong>写穿</strong>（Write-Through）：在更新缓存数据的同时也要更新底层内存对应的数据，这样能始终保证两者的一致性<ul>
+<li>这种方法简单粗暴，但是执行起来太慢了，因为每次向缓存写入数据就意味着要改变主内存的数据，而访问主内存的速度是很慢的，那 Cache 的开发就显得毫无意义了</li>
+<li>补救措施：添加一个<strong>写缓冲器</strong>（Write Buffer），它保存那些需要写入主内存的数据，此时向缓存写入数据后只需对写缓冲器进行写操作即可，处理器仍可以继续执行</li>
+<li>若缓冲器的内容被填满的话，处理器就不得不停下来，先让缓冲器向主内存写入数据、腾出一点空间后，它才能继续执行</li>
+<li>然而，如果向主内存写入数据的速度慢于处理器产生写操作的速度，那么无论多大的缓冲器都没有用</li>
+</ul>
+</li>
+<li><strong>写回</strong>（Write-Back）：执行写操作仅改变缓存的数据；当这个缓存块的数据要被新数据取代时，则将原数据写入底层的内存中（此时 Dirty 位的作用就展现出来了）<ul>
+<li>相比上一种方法，它提升了性能，但也变得更复杂</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>将整个数据块都读入到 Cache 中，然后将字写进去</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h4>
+<p>总的来说，处理 Cache 缺失情况如下图：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127103938.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5023,7 +5173,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月25日 15:18:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月27日 10:46:23</span>
   </span>
 
     
