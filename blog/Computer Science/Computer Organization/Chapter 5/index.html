@@ -1129,10 +1129,25 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#deep-concept-in-cache" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Deep Concept in Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Concept in Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Replacement
     </span>
   </a>
   
@@ -1140,6 +1155,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
         
@@ -4694,10 +4718,25 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#deep-concept-in-cache" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Deep Concept in Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Concept in Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Replacement
     </span>
   </a>
   
@@ -4705,6 +4744,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
         
@@ -5038,17 +5086,6 @@
 </div>
 </div>
 </div>
-<p>想要降低缺失率（Miss Rate），一种可行的方法是<strong>适当增加每个缓存块的大小</strong>。然而，如果缓存块的空间过大，对于相同空间大小的缓存，那么该缓存的块数就会减小，那么就会产生更多的数据竞争问题，因此此时缺失率反而会升高。下图便展示了这一结果，其中不同曲线表示不同的缓存大小：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241127101113.png" /></p>
-<p>事实上，增大缓存块的空间还会增大缺失损失（Miss Penalty），因为更大的缓存块意味着更久的传输时间。如果缓存块过大，由于缺失率降低的效果不明显，且缺失损失会越来越大，因此最终会带来缓存性能的损失。</p>
-<div class="admonition tip">
-<p class="admonition-title">补充</p>
-<p>下面给出一些减缓因增大缓存块而带来的缺失损失增大的方法：</p>
-<ul>
-<li>早重启（Early Restart）：当所需字数据还未返回时，令处理器继续执行后面的操作，而不是等下去。这种方法更适用于指令缓存中，但在数据缓存中表现效果不太好</li>
-<li>需求字优先/关键字优先（Requested/Critical Word First）：对内存进行组织，使得处理器请求的字数据得以优先进行传输，随后再传输其他不是那么重要的数据。该方法比早重启略快一些，但也有与前者同样的限制</li>
-</ul>
-</div>
 <hr />
 <h3 id="handling-cache-hits-and-misses">Handling Cache Hits and Misses<a class="headerlink" href="#handling-cache-hits-and-misses" title="Permanent link">&para;</a></h3>
 <h4 id="read">Read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h4>
@@ -5060,7 +5097,9 @@
 <p>由于这正是我们想要的，所以我们不需要进行任何多余操作</p>
 </div>
 <div class="tabbed-block">
-<p><strong>缓存缺失</strong>（Cache Miss）：处理器向缓存请求当前不存在于缓存中的数据，可分为<strong>指令</strong>缺失（Instruction miss）和<strong>数据</strong>缺失（Data Miss）两类，由处理器的控制单元和一个单独的控制器（初始化内存访问 + 重新填充缓存数据）共同处理。具体来说，指令缺失和数据缺失的处理方法是类似的，总体来说都遵循停止 CPU <span class="arithmatex">\(\rightarrow\)</span> 从内存获取数据块 <span class="arithmatex">\(\rightarrow\)</span> 将其送到 Cache <span class="arithmatex">\(\rightarrow\)</span> 重启 CPU 的读操作的顺序，以指令缓存为例具体如下：</p>
+<p><strong>缓存缺失</strong>（Cache Miss）：处理器向缓存请求当前不存在于缓存中的数据，可分为<strong>指令</strong>缺失（Instruction miss）和<strong>数据</strong>缺失（Data Miss）两类，由处理器的控制单元和一个单独的控制器（初始化内存访问 + 重新填充缓存数据）共同处理。具体来说，指令缺失和数据缺失的处理方法是类似的。</p>
+<p>对于数据缓存缺失，从内存中对应的数据块拿到 Cache 当中读取对应内容即可。</p>
+<p>对于指令缓存缺失，其遵循停止 CPU <span class="arithmatex">\(\rightarrow\)</span> 从内存获取数据块 <span class="arithmatex">\(\rightarrow\)</span> 将其送到 Cache <span class="arithmatex">\(\rightarrow\)</span> 重启 CPU 的读操作的顺序，具体如下：</p>
 <ol>
 <li>向内存发送原来的 PC 值（当前应该得是 PC-4 了因为我们已经执行过 PC+4 了，现在得倒推）</li>
 <li>令主内存执行读取操作，并等待内存完成访问</li>
@@ -5088,22 +5127,112 @@
 <li>然而，如果向主内存写入数据的速度慢于处理器产生写操作的速度，那么无论多大的缓冲器都没有用</li>
 </ul>
 </li>
-<li><strong>写回</strong>（Write-Back）：执行写操作仅改变缓存的数据；当这个缓存块的数据要被新数据取代时，则将原数据写入底层的内存中（此时 Dirty 位的作用就展现出来了）<ul>
-<li>相比上一种方法，它提升了性能，但也变得更复杂</li>
+<li><strong>写回</strong>（Write-Back）：执行写操作仅改变缓存的数据；当这个缓存块的数据要被新数据块取代覆盖时，则将原数据写入底层的内存中。此时 Dirty 位的作用就展现出来了，它记录了当前这个缓存数据块是否被写操作更新过，从而决定被覆盖前是否需要被写回内存<ul>
+<li>相比上一种方法，由于对同一个 block 通常会有多次写入，因此这种方式消耗的总带宽是更小的，提升了性能，但也变得更复杂</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="tabbed-block">
-<p>将整个数据块都读入到 Cache 中，然后将字写进去</p>
+<ul>
+<li><strong>写分配</strong>（Write-Allocate）：即像读缓存缺失一样先把数据块拿到缓存里再写入</li>
+<li><strong>写外围</strong>（Write Around/No Write Allocate）：考虑到既然本来就要去主内存，不如直接在里面写了，就不再拿到缓存里了</li>
+<li>写回只能使用写分配；一般来说，写穿使用写外围。</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <hr />
-<h4 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h4>
-<p>总的来说，处理 Cache 缺失情况如下图：</p>
+<h3 id="deep-concept-in-cache">Deep Concept in Cache<a class="headerlink" href="#deep-concept-in-cache" title="Permanent link">&para;</a></h3>
+<h4 id="block-replacement">Block Replacement<a class="headerlink" href="#block-replacement" title="Permanent link">&para;</a></h4>
+<p>事实上，除了直接映射机制，Cache 还有其他映射机制，其对比如下：</p>
+<ul>
+<li>直接映射机制：数据块只能放到 Cache 的唯一一个位置<ul>
+<li>放置位置通常为数据地址 mod Cache 中数据块个数</li>
+</ul>
+</li>
+<li>全相联机制（Full Associative）：数据块能放到 Cache 的<font color="red">任何位置</font><ul>
+<li>这种方式的好处是可以降低缺失率，坏处是每次需要跟所有数据块比较是否命中
+<img alt="" src="../../../../assets/Pasted%20image%2020241127112237.png" /></li>
+<li>通常有三种策略来决定数据块放到哪个位置：<ul>
+<li>随机替换（Random Replacement）：随机挑选一个幸运数据块覆盖掉（需要一个随机数生成器）</li>
+<li>LRU（Least Recently Used）：选择上一次使用时间距离现在最远的那个数据块覆盖掉（需要一些额外的位用来记录信息）</li>
+<li>FIFO（First In First Out）：选择进入时间最早的数据块覆盖掉（同样需要一些额外的位记录信息）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>组相联机制（Set Associative）：每个数据块仍然会根据其地址确定其可以存放的缓存数据块，但是可以放的地方并不是一个，而是一组<ul>
+<li>放置组号位置为地址 mod Cache 中的组数，在这个组中任意一个块放置</li>
+<li>如果一个组有 <span class="arithmatex">\(n\)</span> 个数据块，那么称这个 Cache 是 <span class="arithmatex">\(n-\)</span>组相联</li>
+<li>实际上直接映射机制（<span class="arithmatex">\(n=1\)</span>）和全相联机制（<span class="arithmatex">\(n=m,m\)</span> 为 Cache 的总数据块个数）是组相联机制的特例</li>
+<li>Example：一个 4-way set-associative
+<img alt="" src="../../../../assets/Pasted%20image%2020241127113403.png" /></li>
+</ul>
+</li>
+</ul>
+<p>三者的示意图如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127113003.png" /></p>
+<hr />
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p>总的来说，直接映射机制处理 Cache 缺失情况如下图：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241127103938.png" /></p>
+<p>简单总结一下：</p>
+<ul>
+<li>读缺失，我们就需要从内存获取数据存到缓存当中，考虑当前在缓存中的数据：<ul>
+<li>需要被写回（即 Dirty=1）：先保存缓存当中的数据块，然后将内存当中的数据块更新到缓存当中，再将保存的数据块写回内存</li>
+<li>不需要被写回（即 Dirty=0，写穿）：直接把内存当中的数据块更新到缓存</li>
+</ul>
+</li>
+<li>写缺失，考虑是否需要写到缓存当中：<ul>
+<li>需要写到缓存（即写分配）：考虑当前在缓存中的数据：<ul>
+<li>需要被写回（即 Dirty=1）：先保存缓存当中的数据块，然后将内存当中的数据块更新到缓存当中，再将保存的数据块写回内存，最后修改缓存当中的数据块</li>
+<li>不需要被写回（即 Dirty=0）：直接把内存当中的数据块更新到缓存，然后修改缓存当中的数据块</li>
+</ul>
+</li>
+<li>不需要写到缓存（即写外围）：直接修改内存当中的数据</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>在直接映射机制下，Cache 利用率较低，块冲突率较高，应用于大容量的 Cache 当中。</li>
+</ul>
+<p>想要降低缺失率（Miss Rate），一种可行的方法是<strong>适当增加每个缓存块的大小</strong>。然而，如果缓存块的空间过大，对于相同空间大小的缓存，那么该缓存的块数就会减小，那么就会产生更多的数据竞争问题，因此此时缺失率反而会升高。下图便展示了这一结果，其中不同曲线表示不同的缓存大小：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127101113.png" /></p>
+<p>事实上，增大缓存块的空间还会增大缺失损失（Miss Penalty），因为更大的缓存块意味着更久的传输时间。如果缓存块过大，由于缺失率降低的效果不明显，且缺失损失会越来越大，因此最终会带来缓存性能的损失。</p>
+<div class="admonition tip">
+<p class="admonition-title">补充</p>
+<p>下面给出一些减缓因增大缓存块而带来的缺失损失增大的方法：</p>
+<ul>
+<li>早重启（Early Restart）：当所需字数据还未返回时，令处理器继续执行后面的操作，而不是等下去。这种方法更适用于指令缓存中，但在数据缓存中表现效果不太好</li>
+<li>需求字优先/关键字优先（Requested/Critical Word First）：对内存进行组织，使得处理器请求的字数据得以优先进行传输，随后再传输其他不是那么重要的数据。该方法比早重启略快一些，但也有与前者同样的限制</li>
+</ul>
+</div>
+<hr />
+<div class="admonition example">
+<p class="admonition-title">Example : Intrinsity FastMATH</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127110818.png" /></p>
+<ul>
+<li>嵌入式 MIPS 处理器<ul>
+<li>12 级流水线</li>
+<li>每个时钟周期都可获取指令和数据</li>
+</ul>
+</li>
+<li>缓存分离：将指令缓存和数据缓存分离<ul>
+<li>每个缓存大小为 16KB：256 个数据块，每个数据块 16 个字</li>
+<li>数据缓存写穿/写回皆可</li>
+</ul>
+</li>
+<li>SPEC2000 缺失率<ul>
+<li>指令缓存：0.4%</li>
+<li>数据缓存：11.4%</li>
+<li>加权平均：3.2%</li>
+</ul>
+</li>
+</ul>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5173,7 +5302,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月27日 10:46:23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月27日 13:30:11</span>
   </span>
 
     
