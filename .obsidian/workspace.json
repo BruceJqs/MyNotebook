@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Homework 5"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 5.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Homework 5"
             }
           },
           {
@@ -176,11 +176,11 @@
   },
   "active": "34ec6dd691294339",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
     "docs/assets/Pasted image 20241128152834.png",
     "docs/assets/Pasted image 20241128145500.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 4.md",
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md",
