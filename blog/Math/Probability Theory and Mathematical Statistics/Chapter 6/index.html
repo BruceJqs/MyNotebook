@@ -2344,6 +2344,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      样本 \(k\) 阶矩
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4529,6 +4538,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      样本 \(k\) 阶矩
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4634,6 +4652,161 @@ S^2=\frac{1}{n−1}\sum\limits_{i=1}^n​(X_i​−X)^2
 </ul>
 <p>此外，<span class="arithmatex">\(S=\sqrt{S^2}=\sqrt{\frac{1}{n−1}\sum\limits_{i=1}^n(X_i−\overline{X})^2}\)</span>  称为样本标准差</p>
 <hr />
+<h4 id="k">样本 <span class="arithmatex">\(k\)</span> 阶矩<a class="headerlink" href="#k" title="Permanent link">&para;</a></h4>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶（原点）矩，常作为总体 <span class="arithmatex">\(j=k\)</span> 阶原点矩 <span class="arithmatex">\(\mu_k\)</span> 的估计：</p>
+<div class="arithmatex">\[
+A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k,k=1,2,...
+\]</div>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶中心距，常作为总体 <span class="arithmatex">\(j=k\)</span> 阶中心矩 <span class="arithmatex">\(\nu_k\)</span>​ 的估计，<span class="arithmatex">\(B_2\)</span> 可作为总体方差 <span class="arithmatex">\(\sigma_2\)</span> 的有偏估计：</p>
+<div class="arithmatex">\[
+B_k=\frac{1}{n}\sum\limits_{i=1}^n(X_i−\overline{X})^k,k=2,3,...
+\]</div>
+<p>样本 <span class="arithmatex">\(k\)</span> 阶矩的性质：</p>
+<ul>
+<li>假设 <span class="arithmatex">\(X_1,X_2,...,X_n\)</span>​ 是 <span class="arithmatex">\(X\)</span> 中抽取的样本，<span class="arithmatex">\(\mu_k=E(X_k)\)</span> 存在，由辛钦大数定律可知：  <span class="arithmatex">\(A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k\stackrel{P}{\rightarrow}\mu_k,k=1,2,...\)</span></li>
+</ul>
+<hr />
+<p>样本与总体的各阶矩对比表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>样本的矩（随机变量）</strong></th>
+<th style="text-align: center;"><strong>总体 X 的矩（常数）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">均值</td>
+<td style="text-align: center;"><span class="arithmatex">\(\overline{X}=\frac{1}{n}\sum\limits_{i=1}^nX_i\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(E(X)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">方差</td>
+<td style="text-align: center;"><span class="arithmatex">\(S^2=\frac{1}{n-1}\sum\limits_{i=1}^n(X_i-\overline{X})^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Var(X)=E(X-E(X))^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">均方差/标准差</td>
+<td style="text-align: center;"><span class="arithmatex">\(S=\sqrt{S^2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sigma=\sqrt{Var(X)}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(k\)</span> 阶原点矩</td>
+<td style="text-align: center;"><span class="arithmatex">\(A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mu_k=E(X^k)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(k\)</span> 阶中心矩</td>
+<td style="text-align: center;"><span class="arithmatex">\(B_k=\frac{1}{n}\sum\limits_{i=1}^n(X_i-\overline{X})^k\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\nu_k=E(X-E(X))^k\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">***</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">## 三大抽样分布</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>统计量的分布称为<strong>抽样分布（Sampling Distribution）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>统计量的构造</strong></th>
+<th style="text-align: center;"><strong>抽样分布密度函数</strong></th>
+<th style="text-align: center;"><strong>期望</strong></th>
+<th style="text-align: center;"><strong>方差</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\chi^2=x_1^2+x_2^2+...+x_n^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(p(y)=\frac{1}{\Gamma(\frac{n}{2})2^{\frac{n}{2}}}y^{\frac{n}{2}-1}e^{-\frac{y}{2}}(y&gt;0)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(n\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(2n\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(F=\frac{\frac{y_1^2+y_2^2+...+y_m^2}{m}}{\frac{x_1^2+x_2^2+...+x_n^2}{n}}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(p(y)=\frac{\Gamma(\frac{m+n}{2})(\frac{m}{n})^{\frac{m}{2}}}{\Gamma(\frac{m}{2})\Gamma(\frac{n}{2})}y^{\frac{m}{2}-1}·(1+\frac{m}{n}y)^{-\frac{m+n}{2}}(y&gt;0)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{n}{n-2}(n&gt;2)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{2n^2(m+n-2)}{m(n-2)^2(n-4)}(n&gt;4)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(t=\frac{y_1}{\sqrt{\frac{x_1^2+x_2^2+...+x_n^2}{n}}}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(p(y)=\frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(\frac{n}{2})}(1+\frac{y^2}{n})^{-\frac{n+1}{2}}(-\infty&lt;y&lt;+\infty)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0(n&gt;1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{n}{n-2}(n&gt;2)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">***</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">### <span class="arithmatex">\(\chi^2\)</span> 分布 / 卡方分布</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>设 <span class="arithmatex">\(X_1,X_2,...,X_n\)</span>​ 为独立同分布，服从 <span class="arithmatex">\(N(0,1)\)</span>。则称 <span class="arithmatex">\(\chi_n^2=\sum\limits_{i=1}^nX_i^2\)</span>​ 服从自由度（即等式右端包含的独立变量的个数）为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 分布，记 <span class="arithmatex">\(\chi_n^2∼\chi^2(n)\)</span>。</p>
+<p><span class="arithmatex">\(\chi^2\)</span> 分布的密度函数（不要求）：</p>
+<div class="arithmatex">\[
+f_{\chi^2}(x)=\begin{cases}
+\frac{1}{\Gamma(\frac{n}{2})2^{\frac{n}{2}}}x^{\frac{n}{2}-1}e^{-\frac{x}{2}},x&gt;0\\
+0,x\leq 0
+\end{cases}
+\]</div>
+<p>其中，<span class="arithmatex">\(\Gamma(\alpha)=\int_0^{+\infty}x^{\alpha-1}e^{-x}dx\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Gamma 函数的性质</p>
+<p>其实是 vjf 就讲过的东西，但几乎全忘了（bushi</p>
+<ul>
+<li><span class="arithmatex">\(\Gamma(\alpha+1)=\alpha\Gamma(\alpha)\)</span></li>
+<li><span class="arithmatex">\(\Gamma(n+1)=n!,\Gamma(\frac{1}{2})=\sqrt{\pi}\)</span></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title"><span class="arithmatex">\(\Gamma(\frac{1}{2})=\sqrt{\pi}\)</span></p>
+<div class="arithmatex">\[
+\begin{gather}
+\Gamma(\frac{1}{2})=\int_0^{+\infty}x^{-\frac{1}{2}}e^{-x}dx=\int_{-\infty}^{+\infty}e^{-x^2}dx=I\\
+I^2=\int_{-\infty}^{+\infty}e^{-x^2}dx\times\int_{-\infty}^{+\infty}e^{-y^2}dy=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}dxdy=\int_0^{2\pi}d\theta\int_0^{+\infty}e^{-r^2}rdr=\pi
+\end{gather}
+\]</div>
+</div>
+</div>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241128103641.png" /></p>
+<p><span class="arithmatex">\(\chi^2\)</span> 分布有如下性质：</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X∼\chi^2(n)\)</span>，则有 <span class="arithmatex">\(E(X)=n\)</span>，<span class="arithmatex">\(Var(X)=2n\)</span>；
+    !!! note
+        $$
+        \begin{aligned}
+        E(X<sup _infty="+\infty">4)&amp;=\int_{-\infty}</sup>x<sup>4\frac{1}{\sqrt{2\pi}}e</sup>{-\frac{x<sup _infty="+\infty">2}{2}}dx=2\int_0</sup>x<sup -_frac_x_2="-\frac{x^2">4\frac{1}{\sqrt{2\pi}}e</sup>dx\
+        &amp;\stackrel{\frac{x}{2}<sup _infty="+\infty">2}{2}=t}{\rightarrow}2\int_0</sup>4t<sup -t="-t">2\frac{1}{\sqrt{2\pi}}e</sup>\int_0}\sqrt{2}\frac{1}{2\sqrt{t}}dt=\frac{4}{\sqrt{\pi}<sup _frac_3="\frac{3">{+\infty}t</sup>dt\
+        &amp;=\frac{4}{\sqrt{\pi}}\Gamma(\frac{5}{2})=\frac{4}{\sqrt{\pi}}\frac{3}{2}\Gamma(\frac{3}{2})=\frac{4}{\sqrt{\pi}}\frac{3}{2}\frac{1}{2}\Gamma(\frac{1}{2})=3\
+        D(X}{2}}e^{-t<sup>2)&amp;=E(X</sup>4)-(E(X<sup>2))</sup>2=3-1=2
+        \end{aligned}
+        $$</p>
+</li>
+<li>
+<p>设 <span class="arithmatex">\(Y_1∼\chi^2(m)\)</span>，<span class="arithmatex">\(Y_2∼\chi^2(n)\)</span>，且两者互相独立，则 <span class="arithmatex">\(Y_1+Y_2∼\chi^2(m+n)\)</span>；</p>
+<ul>
+<li>这一性质被称为 <span class="arithmatex">\(\chi^2\)</span> 分布的可加性，可以推广到有限个相加的情形：<span class="arithmatex">\(Y_i∼\chi^2(n_i),i=1,2,...,m\)</span>，并假设 <span class="arithmatex">\(Y_1,Y_2,...,Y_m\)</span> 相互独立，则 <span class="arithmatex">\(\sum\limits_{i=1}^mY_i∼\chi^2(\sum\limits_{i=1}^mn_i)\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\chi^2\)</span> 分布的上 <span class="arithmatex">\(\alpha\)</span> 分位数：<br />
+    对于给定的正数 <span class="arithmatex">\(\alpha,0&lt;\alpha&lt;1\)</span>，称满足条件 <span class="arithmatex">\(P\{\chi^2&gt;\chi_{\alpha}^2(n)\}=\int_{\chi_{\alpha}^2}^{+\infty}(n)f_{\chi^2}(x)dx=\alpha\)</span> 的点 <span class="arithmatex">\(\chi_{\alpha}^2(n)\)</span> 为 <span class="arithmatex">\(\chi^2(n)\)</span> 分布的上 <span class="arithmatex">\(\alpha\)</span> 分位数；</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241128110059.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4703,7 +4876,7 @@ S^2=\frac{1}{n−1}\sum\limits_{i=1}^n​(X_i​−X)^2
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月21日 13:50:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月28日 11:09:32</span>
   </span>
 
     
