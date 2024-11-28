@@ -4518,7 +4518,35 @@
 <h1 id="homework-5">Homework 5<a class="headerlink" href="#homework-5" title="Permanent link">&para;</a></h1>
 <h2 id="question-01">Question 01<a class="headerlink" href="#question-01" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241128145500.png" /></p>
-<p>（1）对于每支球队来说，设先罚进球数为 <span class="arithmatex">\(X\)</span>，其分布律如下：</p>
+<p>（1）在现规则下，对于每支球队来说，设先罚进球数为 <span class="arithmatex">\(X\)</span>，其分布律如下：</p>
+<div class="arithmatex">\[
+\begin{gather}
+P\{X=0\}=(1-p)^2\\
+P\{X=1\}=2p(1-p)\\
+P\{X=2\}=p^2
+\end{gather}
+\]</div>
+<p>设后罚进球数为 <span class="arithmatex">\(Y\)</span>，其分布律如下：</p>
+<div class="arithmatex">\[
+\begin{gather}
+P\{Y=0\}=(1-q)^2\\
+P\{Y=1\}=2q(1-q)\\
+P\{Y=2\}=q^2
+\end{gather}
+\]</div>
+<p>因此：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P\{\text{先罚获胜}\}&amp;=(1-q)^2[2p(1-p)+p^2]+2q(1-q)p^2\\
+&amp;=p(1-q)(3pq-2q-p+2)\\
+P\{\text{后罚获胜}\}&amp;=(1-p)^2[2q(1-q)+q^2]+2p(1-p)q^2\\
+&amp;=q(1-p)(3pq-2p-q+2)\\
+P\{\text{进球相同}\}&amp;=(1-p)^2(1-q)^2+4pq(1-p)(1-q)+p^2q^2
+\end{aligned}
+\]</div>
+<p>当 <span class="arithmatex">\(p=\frac{3}{4},q=\frac{2}{3}\)</span> 时，有 <span class="arithmatex">\(P\{先罚获胜\}=\frac{17}{48},P\{后罚获胜\}=\frac{2}{9},P\{进球相同\}=\frac{61}{144}\)</span></p>
+<hr />
+<p>在新规则下，对于每支球队来说，设先罚进球数为 <span class="arithmatex">\(X\)</span>，其分布律如下：</p>
 <div class="arithmatex">\[
 \begin{gather}
 P\{X=0\}=(1-p)(1-q)=1-p-q+pq\\
@@ -4549,19 +4577,21 @@ P\{\text{进球相同}\}&amp;=(1-p-q+pq)^2+(p+q-2pq)^2+p^2q^2
 <p>（2）在现规则下：</p>
 <div class="arithmatex">\[
 \begin{aligned}
-P\{先罚获胜\}=p(1-q)+pq·p(1-q)+p^2q^2·p(1-q)+...=\frac{p-pq}{1-pq}\\
-P\{后罚获胜\}=(1-p)q+pq·(1-p)q+p^2q^2·(1-p)q+...=\frac{q-pq}{1-pq}
+P\{先罚获胜\}&amp;=p(1-q)+[pq+(1-p)(1-q)]·p(1-q)+[pq+(1-p)(1-q)]^2·p(1-q)+...\\
+&amp;=\frac{p-pq}{p+q-2pq}\\
+P\{后罚获胜\}&amp;=(1-p)q+[pq+(1-p)(1-q)]·(1-p)q+[pq+(1-p)(1-q)]^2·(1-p)q+...\\
+&amp;=\frac{q-pq}{p+q-2pq}
 \end{aligned}
 \]</div>
 <p>在新规则下：</p>
 <div class="arithmatex">\[
 \begin{aligned}
-P\{先罚获胜\}&amp;=p(1-q)+pq·(1-p)q+p^2q^2·p(1-q)+...\\
-&amp;=\frac{p-pq}{1-p^2q^2}+pq\frac{q-pq}{1-p^2q^2}\\
-&amp;=\frac{p+pq^2-pq-p^2q^2}{1-p^2q^2}\\
-P\{后罚获胜\}&amp;=(1-p)q+pq·p(1-q)+p^2q^2(1-p)q+...\\
-&amp;=\frac{q-pq}{1-p^2q^2}+pq\frac{p-pq}{1-p^2q^2}\\
-&amp;=\frac{p^2q+q-pq-p^2q^2}{1-p^2q^2}
+P\{先罚获胜\}&amp;=p(1-q)+[pq+(1-p)(1-q)]·(1-p)q+[pq+(1-p)(1-q)]^2·p(1-q)+...\\
+&amp;=\frac{p-pq}{1-[pq+(1-p)(1-q)]^2}+[pq+(1-p)(1-q)]\frac{q-pq}{1-[pq+(1-p)(1-q)]^2}\\
+&amp;=\frac{p-pq+[pq+(1-p)(1-q)](q-pq)}{1-[pq+(1-p)(1-q)]^2}\\
+P\{后罚获胜\}&amp;=(1-p)q+[pq+(1-p)(1-q)]·p(1-q)+[pq+(1-p)(1-q)]^2·(1-p)q+...\\
+&amp;=\frac{q-pq}{1-[pq+(1-p)(1-q)]^2}+[pq+(1-p)(1-q)]\frac{p-pq}{1-[pq+(1-p)(1-q)]^2}\\
+&amp;=\frac{q-pq+[pq+(1-p)(1-q)](p-pq)}{1-[pq+(1-p)(1-q)]^2}
 \end{aligned}
 \]</div>
 <hr />
@@ -4642,7 +4672,7 @@ P\{后罚获胜\}&amp;=(1-p)q+pq·p(1-q)+p^2q^2(1-p)q+...\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月28日 16:09:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月28日 17:11:14</span>
   </span>
 
     
