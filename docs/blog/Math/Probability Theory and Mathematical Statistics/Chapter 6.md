@@ -70,3 +70,96 @@ $$
 
 此外，$S=\sqrt{S^2}=\sqrt{\frac{1}{n−1}\sum\limits_{i=1}^n(X_i−\overline{X})^2}$  称为样本标准差
 ***
+#### 样本 $k$ 阶矩
+
+样本 $k$ 阶（原点）矩，常作为总体 $j=k$ 阶原点矩 $\mu_k$ 的估计：
+
+$$
+A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k,k=1,2,...
+$$
+
+样本 $k$ 阶中心距，常作为总体 $j=k$ 阶中心矩 $\nu_k$​ 的估计，$B_2$ 可作为总体方差 $\sigma_2$ 的有偏估计：
+
+$$
+B_k=\frac{1}{n}\sum\limits_{i=1}^n(X_i−\overline{X})^k,k=2,3,...
+$$
+
+样本 $k$ 阶矩的性质：
+
+- 假设 $X_1,X_2,...,X_n$​ 是 $X$ 中抽取的样本，$\mu_k=E(X_k)$ 存在，由辛钦大数定律可知：  $A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k\stackrel{P}{\rightarrow}\mu_k,k=1,2,...$
+***
+样本与总体的各阶矩对比表：
+
+|          |                       **样本的矩（随机变量）**                       |    **总体 X 的矩（常数）**     |
+| :------: | :--------------------------------------------------------: | :--------------------: |
+|    均值    |      $\overline{X}=\frac{1}{n}\sum\limits_{i=1}^nX_i$      |         $E(X)$         |
+|    方差    | $S^2=\frac{1}{n-1}\sum\limits_{i=1}^n(X_i-\overline{X})^2$ |  $Var(X)=E(X-E(X))^2$  |
+| 均方差/标准差  |                       $S=\sqrt{S^2}$                       | $\sigma=\sqrt{Var(X)}$ |
+| $k$ 阶原点矩 |         $A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k$          |     $\mu_k=E(X^k)$     |
+| $k$ 阶中心矩 |  $B_k=\frac{1}{n}\sum\limits_{i=1}^n(X_i-\overline{X})^k$  |  $\nu_k=E(X-E(X))^k$   |
+***
+## 三大抽样分布
+
+统计量的分布称为**抽样分布（Sampling Distribution）**
+
+|                                 **统计量的构造**                                  |                                                                          **抽样分布密度函数**                                                                          |        **期望**        |                  **方差**                  |
+| :-------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------: | :--------------------------------------: |
+|                       $\chi^2=x_1^2+x_2^2+...+x_n^2$                        |                                   $p(y)=\frac{1}{\Gamma(\frac{n}{2})2^{\frac{n}{2}}}y^{\frac{n}{2}-1}e^{-\frac{y}{2}}(y>0)$                                    |         $n$          |                   $2n$                   |
+| $F=\frac{\frac{y_1^2+y_2^2+...+y_m^2}{m}}{\frac{x_1^2+x_2^2+...+x_n^2}{n}}$ | $p(y)=\frac{\Gamma(\frac{m+n}{2})(\frac{m}{n})^{\frac{m}{2}}}{\Gamma(\frac{m}{2})\Gamma(\frac{n}{2})}y^{\frac{m}{2}-1}·(1+\frac{m}{n}y)^{-\frac{m+n}{2}}(y>0)$ | $\frac{n}{n-2}(n>2)$ | $\frac{2n^2(m+n-2)}{m(n-2)^2(n-4)}(n>4)$ |
+|           $t=\frac{y_1}{\sqrt{\frac{x_1^2+x_2^2+...+x_n^2}{n}}}$            |                    $p(y)=\frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(\frac{n}{2})}(1+\frac{y^2}{n})^{-\frac{n+1}{2}}(-\infty<y<+\infty)$                    |       $0(n>1)$       |           $\frac{n}{n-2}(n>2)$           |
+***
+### $\chi^2$ 分布 / 卡方分布
+
+设 $X_1,X_2,...,X_n$​ 为独立同分布，服从 $N(0,1)$。则称 $\chi_n^2=\sum\limits_{i=1}^nX_i^2$​ 服从自由度（即等式右端包含的独立变量的个数）为 $n$ 的 $\chi^2$ 分布，记 $\chi_n^2∼\chi^2(n)$。
+
+$\chi^2$ 分布的密度函数（不要求）：
+
+$$
+f_{\chi^2}(x)=\begin{cases}
+\frac{1}{\Gamma(\frac{n}{2})2^{\frac{n}{2}}}x^{\frac{n}{2}-1}e^{-\frac{x}{2}},x>0\\
+0,x\leq 0
+\end{cases}
+$$
+
+其中，$\Gamma(\alpha)=\int_0^{+\infty}x^{\alpha-1}e^{-x}dx$
+
+!!! note "Gamma 函数的性质"
+
+	其实是 vjf 就讲过的东西，但几乎全忘了（bushi
+	
+	- $\Gamma(\alpha+1)=\alpha\Gamma(\alpha)$
+	- $\Gamma(n+1)=n!,\Gamma(\frac{1}{2})=\sqrt{\pi}$
+	
+	!!! tip "$\Gamma(\frac{1}{2})=\sqrt{\pi}$"
+	
+		$$
+		\begin{gather}
+		\Gamma(\frac{1}{2})=\int_0^{+\infty}x^{-\frac{1}{2}}e^{-x}dx=\int_{-\infty}^{+\infty}e^{-x^2}dx=I\\
+		I^2=\int_{-\infty}^{+\infty}e^{-x^2}dx\times\int_{-\infty}^{+\infty}e^{-y^2}dy=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}dxdy=\int_0^{2\pi}d\theta\int_0^{+\infty}e^{-r^2}rdr=\pi
+		\end{gather}
+		$$
+		
+
+![](../../../assets/Pasted%20image%2020241128103641.png)
+
+$\chi^2$ 分布有如下性质：
+
+- 设 $X∼\chi^2(n)$，则有 $E(X)=n$，$Var(X)=2n$；
+	!!! note
+		$$
+		\begin{aligned}
+		E(X^4)&=\int_{-\infty}^{+\infty}x^4\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx=2\int_0^{+\infty}x^4\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
+		&\stackrel{\frac{x^2}{2}=t}{\rightarrow}2\int_0^{+\infty}4t^2\frac{1}{\sqrt{2\pi}}e^{-t}\sqrt{2}\frac{1}{2\sqrt{t}}dt=\frac{4}{\sqrt{\pi}}\int_0^{+\infty}t^{\frac{3}{2}}e^{-t}dt\\
+		&=\frac{4}{\sqrt{\pi}}\Gamma(\frac{5}{2})=\frac{4}{\sqrt{\pi}}\frac{3}{2}\Gamma(\frac{3}{2})=\frac{4}{\sqrt{\pi}}\frac{3}{2}\frac{1}{2}\Gamma(\frac{1}{2})=3\\
+		D(X^2)&=E(X^4)-(E(X^2))^2=3-1=2
+		\end{aligned}
+		$$
+		
+- 设 $Y_1∼\chi^2(m)$，$Y_2∼\chi^2(n)$，且两者互相独立，则 $Y_1+Y_2∼\chi^2(m+n)$；
+    - 这一性质被称为 $\chi^2$ 分布的可加性，可以推广到有限个相加的情形：$Y_i∼\chi^2(n_i),i=1,2,...,m$，并假设 $Y_1,Y_2,...,Y_m$ 相互独立，则 $\sum\limits_{i=1}^mY_i∼\chi^2(\sum\limits_{i=1}^mn_i)$
+- $\chi^2$ 分布的上 $\alpha$ 分位数：  
+    对于给定的正数 $\alpha,0<\alpha<1$，称满足条件 $P\{\chi^2>\chi_{\alpha}^2(n)\}=\int_{\chi_{\alpha}^2}^{+\infty}(n)f_{\chi^2}(x)dx=\alpha$ 的点 $\chi_{\alpha}^2(n)$ 为 $\chi^2(n)$ 分布的上 $\alpha$ 分位数；
+
+![](../../../assets/Pasted%20image%2020241128110059.png)
+
+
