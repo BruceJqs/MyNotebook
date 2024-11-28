@@ -785,6 +785,8 @@ x86 的整数指令有以下几类：
 
 ![](../../../assets/Pasted%20image%2020241016110545.png)
 
+- 这里 `lbu` 的解释打错了，应该是 load byte, unsigned（cngg 好细致哦～）
+
 ![](../../../assets/Pasted%20image%2020241016110627.png)
 
 ![](../../../assets/Pasted%20image%2020241022115927.png)
