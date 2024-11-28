@@ -101,14 +101,13 @@ $$
 ***
 ## 三大抽样分布
 
-统计量的分布称为**抽样分布（Sampling Distribution）**
+> 统计量的分布称为**抽样分布（Sampling Distribution）**
 
 |                                 **统计量的构造**                                  |                                                                             **抽样分布密度函数**                                                                             |           **期望**           |                     **方差**                     |
 | :-------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------: | :--------------------------------------------: |
 |                       $\chi^2=x_1^2+x_2^2+...+x_n^2$                        |                                      $p(y)=\frac{1}{\Gamma(\frac{n}{2})2^{\frac{n}{2}}}y^{\frac{n}{2}-1}e^{-\frac{y}{2}}(y>0)$                                       |            $n$             |                      $2n$                      |
 | $F=\frac{\frac{y_1^2+y_2^2+...+y_m^2}{m}}{\frac{x_1^2+x_2^2+...+x_n^2}{n}}$ | $p(y)=\frac{\Gamma(\frac{m+n}{2})(\frac{m}{n})^{\frac{m}{2}}}{\Gamma(\frac{m}{2})\Gamma(\frac{n}{2})}y^{\frac{m}{2}-1}·(1+\frac{m}{n}y)^{-\frac{m+n}{2}}$<br>$(y>0)$ | $\frac{n}{n-2}$<br>$(n>2)$ | $\frac{2n^2(m+n-2)}{m(n-2)^2(n-4)}$<br>$(n>4)$ |
 |           $t=\frac{y_1}{\sqrt{\frac{x_1^2+x_2^2+...+x_n^2}{n}}}$            |                    $p(y)=\frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(\frac{n}{2})}(1+\frac{y^2}{n})^{-\frac{n+1}{2}}$<br>$(-\infty<y<+\infty)$                    |       $0$<br>$(n>1)$       |           $\frac{n}{n-2}$<br>$(n>2)$           |
-|                                                                             |                                                                                                                                                                      |                            |                                                |
 
 ***
 ### 卡方分布
@@ -164,7 +163,7 @@ $\chi^2$ 分布有如下性质：
 
 ![](../../../assets/Pasted%20image%2020241128110059.png)
 ***
-### $t$ 分布
+### t 分布
 
 设 $X∼N(0,1)$，$Y∼\chi^2(n)$，且 $X,Y$ 相互独立，则称随机变量 $T=\frac{X}{\sqrt{\frac{Y}{n}}​}$ 服从自由度为 $n$ 的 $t$ 分布，记做 $T∼t(n)$。
 
@@ -204,3 +203,26 @@ F 分布有如下性质：
 - 设 $X∼t(n)$，则 $X^2∼F(1,n)$；
 - $F_{1−\alpha}(n_1,n_2)=\frac{1}{F_{\alpha}(n_2,n_1)}$；
 
+![](../../../assets/Pasted%20image%2020241128114546.png)
+***
+### 三大抽样分布表
+
+- [卡方分布](https://www.obhrm.net/index.php/%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%E8%A1%A8_Chi-Square_Probabilities)
+- [t 分布](https://en.wikipedia.org/wiki/Student%27s_t-distribution#Table_of_selected_values)
+- [F 分布](https://blog.csdn.net/sinat_34439107/article/details/78577412)
+***
+## 正态总体下的抽样分布
+
+设 $X_1,X_2,...,X_n$ 是来自正态总体 $N(\mu,\sigma^2)$ 的样本，$\overline{X}$ 是样本均值，$S^2$ 是样本方差，则有：
+
+1. $\overline{X}∼N(\mu,\frac{\sigma^2}{n})$；
+2. $\frac{(n−1)S^2}{\sigma^2}∼\chi^2(n−1)$；
+3. $\overline{X}$ 与 $S^2$ 相互独立；
+4. $\frac{\overline{X}−\mu}{\frac{S}{\sqrt{n}}}∼t(n−1)$；
+5. 这里注意区别一下：$\frac{\overline{X}−\mu}{\frac{\sigma}{\sqrt{n}}}∼N(0,1)$；
+
+设 $X_1,X_2,...,X_n$​​ 和 $Y_1,Y_2,...,Y_n$ 是分别来自正态总体 $N(\mu_1,\sigma_1^2)$ 和 $N(\mu_2,\sigma_2^2)$，并且它们相互独立，$\overline{X},\overline{Y}$ 是样本均值，$S_1^2,S_2^2$​ 是样本方差，则有：
+
+1. $\frac{\frac{S_1^2}{\sigma_1^2}}{\frac{S_2^2}{\sigma_2^2}}∼F(n_1−1,n_2−1)$；
+2. $\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}∼N(0,1)$；
+3. 当 $\sigma_1^2=\sigma_2^2=\sigma^2$ 时：$\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{S_{\omega}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}∼t(n_1+n_2−2)$，其中 $S_{\omega}^2=\frac{(n_1−1)S_1^2+(n_2−1)S_2^2}{n_1+n_2−2}$；
