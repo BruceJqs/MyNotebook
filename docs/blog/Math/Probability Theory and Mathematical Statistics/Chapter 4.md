@@ -197,8 +197,7 @@ $$
 
 $$
 \begin{aligned}
-&\because E(X^2)=E(X(X−1)+X)=E(X(X−1))+E(X)=\sum\limits_{k=0}^{+
-infty}k(k−1)\frac{\lambda^ke^{−\lambda}}{k!}+\lambda=\lambda^2+\lambda\\
+&\because E(X^2)=E(X(X−1)+X)=E(X(X−1))+E(X)=\sum\limits_{k=0}^{+\infty}k(k−1)\frac{\lambda^ke^{−\lambda}}{k!}+\lambda=\lambda^2+\lambda\\
 &\therefore Var(X)=E(X^2)−E^2(X)=\lambda^2+\lambda−\lambda^2=\lambda
 \end{aligned}
 $$

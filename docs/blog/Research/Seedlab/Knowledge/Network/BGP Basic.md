@@ -68,6 +68,29 @@ comments: true
 
 两个自治系统可以通过直接或间接（通过另一个自治系统，其实就是转送自治系统）的方式互联。对于直接连接的方式，即两个网络需要在物理意义上被连接，这被称为<font color="red">对等互连</font>，两个自治系统的关系被称为对等关系（Peer）。全球自治系统连接情况（即每个自治系统与哪些自治系统连接）可以参见 [https://stat.ripe.net/widget/asn-neighbours](https://stat.ripe.net/widget/asn-neighbours)
 
+对等关系在现实中根据身份的不同还细分为多种，分别为：
+
+- 普通对等关系（Peering，即直接互连）：两个 AS 之间协商仅在它们以及他们的客户 AS 之间交换流量，也就是相互通告相应的路由，以改善相互间的可达性以及健硕性，并减少向上游的转送成本（有点像并查集合并成一个大家庭了）。
+- 上流供应商对等关系（Upstream Provider Peering，即上级运营商）：当前 AS 可能需要通过大型的 Transit AS 与其他 AS 得到交流，这中间的 Transit AS 可能会对当前 AS 收取一定的费用（比如在现实中的中国御三家联通移动和电信）
+- 下流客户对等关系（Downstream Customers Peering，即下级客户）：当前 AS 也可能会作为其他 AS 的 Provider，那么那个 AS 即为当前 AS 的客户
+
+!!! note "不同类对等关系的理解"
+
+	![](../../../../../assets/Pasted image 20241130121950.png)
+	
+	上图展现了一个大致的对等关系图，对于 AS-150 来说（这里 Unfiltered Peers 是个特例，不过也很好理解）：
+	
+	- 向 Provider 传递当前 AS 和 Customer 的信息
+		- 从现实角度考虑，这是因为当前 AS 支付了费用所以 Provider 理应提供服务，而 Customer 也给当前 AS 支付了费用，所以间接当前 AS 得到的服务也应当与 Customer 共享
+		- <font color="red">当前 AS 不需要向 Provider 传递自己的 Peer 的信息</font>，因为 Peer 如果需要 Provider 的服务应当自行支付费用而不是利用当前 AS，那样会破坏互惠互利的对等关系
+		- <font color="red">当前 AS 不需要向 Provider 传递自己其他 Provider 的信息</font>，因为这会导致 Providers 反过来利用当前 AS 进行相互通信，这显然是不符合商业规定的
+	- 向 Peer 传递当前 AS 和 Customer 的信息
+		- 从现实角度考虑，这是因为当前 AS 和 Peer 进行对等的信息交换，所以 AS 自身需要传送给 Peer，而 AS 的 Customer 由于购买了服务所以也需要附带传送
+		- <font color="red">当前 AS 不需要向 Peer 传递自己的 Provider 的信息</font>，一样地，如果这样 Peer 就可以利用 AS 不支付费用使用 Provider 的服务，这显然破坏了互惠互利的对等关系
+	- 向下级 Customer 提供自己所知道的所有除其他 Customer 的信息
+		- 从现实角度考虑，毕竟 Customer 是支付了费用的，所以理应将所有信息告诉 Customer
+		- 但是我们不能把其他 Customer 的信息进行传送，因为这样不就泄露其他 Customer 的信息了不是吗
+***
 对等互连可以在数据中心（在此两个自治系统相互连接）秘密地完成，也可以在一个公共的地点（该地
 点为自治系统提供对等互连的设施）进行对等互连。这种公开的场所称为互联网交换点（IXP）或互联
 网交换中心（IX）。全球互联网交换中心地图可以参见 [http://www.datacentermap.com](http://www.datacentermap.com/)
@@ -100,7 +123,7 @@ comments: true
 	
 	- A,B,D 三者是通过直接互连的方式，所以首先 A 通过 ① 和 ② 分别向 D 和 B 发送自己的 IP 前缀信息，将自己的 ASN 放到 AS Path 当中（即下划线部分）并一起传送（即此时 B 和 D 可以通过直接 $AS150$ 到达 A）
 	- 对于 D 来说，有一定可能到达 A 是通过 $D\rightarrow B\rightarrow A$ 的方式，因此 B 作为中间者通过 ③ 向 D 发送信息，将自己的 ASN 放到 AS Path 当中（即此时 D 可以通过 $AS151 \rightarrow AS150$ 的方式到达 A，也可以直接 $AS150$ 到达 A）；同样的，对于 B 来说，有一定可能到达 A 是通过 $B\rightarrow D\rightarrow A$ 的方式，因此 D 作为中间者通过 ④ 向 B 发送信息，将自己的 ASN 放到 AS Path 当中（即此时 B 可以通过 $AS11 \rightarrow AS150$ 的方式到达 A，也可以直接 $AS150$ 到达 A）
-	- 对于 E,F 来说，它们和 D 处在同一个 AS 当中，自然和 D 共享同样的信息，D 通过 ⑤ 向 E 和 F 传输自己收到的相同信息（不知道为什么这里没有把收到的 $AS151\rightarrow AS150$ 一起传过去）
+	- 对于 E,F 来说，它们和 D 处在同一个 AS 当中，自然和 D 共享同样的信息，D 通过 ⑤ 向 E 和 F 传输自己收到的相同信息（但是在这里 D 其实是收到了两条路径的，D 会<font color="red">根据相关指标判断该选择哪条路径更优，将最优路径发出，其他的路径作为备用</font>，关于如何通过指标判断后面会讲，这里我们默认 $AS150$ 是更优路径）
 	- 对于 G 来说，由于它需要经过 F（即 $AS11$）才能到达 A，所以这里 F 通过 ⑥ 向 G 发送信息，将自己的 ASN 放到 AS Path 中
 	- 对于 C 来说，由于它需要经过 E（即 $AS11$）才能到达 A，所以这里 E 通过 ⑦ 向 G 发送信息，将自己的 ASN 放到 AS Path 中
 ***
@@ -125,8 +148,34 @@ protocol bgp u_as2{
 
  其中：
  
--  `t_bgp` 这个 table 保存了 AS150 的内核路由表；
-- `import` 和 `export` 表示从 AS150 的内核路由表导入和导出的相关操作，可以根据需要（比如 Peer 关系，会在后面讲到）设置过滤器，也可以直接 `import none` 和 `export all`；
+- `t_bgp` 这个 table 保存了 AS150 的内核路由表；
+- `import` 和 `export` 表示从 AS150 的内核路由表导入和导出的相关操作，可以根据需要（比如 Customer 与 Provider 关系）设置过滤器，也可以直接 `import none` 和 `export all`；
 - `next hop` 表示下一个跳转的 BGP 路由（有可能一个自治系统不止一个路由，这里设置成自己而已）
 - `local` 表示将自己的 IP 地址设置成 AS150 本地；
 - `neighbor` 表示将 AS2 的 IP 地址设置成 AS150 的邻居（即 AS150 可以连接到的 AS）
+***
+### BGP 更新信息
+
+当一个 AS 的连接情况有所更改时，它的 BGP 也会有相关的更新（举个例子，可能不给某个 Provider 支付费用了，或者增加给某个 Customer 提供服务了），为了让全世界所有的 AS 都知道这个信息以便更新 AS Path，当前 AS 会发送出一个 BGP 的更新信息，里面包含了增添和收回路由的相关信息：
+
+![](../../../../../assets/Pasted%20image%2020241201002450.png)
+***
+#### 路由通告
+
+当我们需要加上一个新的路由（即建立一个新的 BGP 连接，这可能是又建立了个普通 Peer 关系，可能是向其他 Provider 支付了费用，还可能是 Customer 向当前 AS 支付了费用）时，我们需要更新 BGP 的相关信息，下图就展现了加入 AS164 后传递的更新数据包：
+
+![](../../../../../assets/Pasted%20image%2020241201003410.png)
+
+需要关注的是 `Path attributes` 部分，其中更新了 AS_PATH 以及对应的下一跳，将路径更改了过来，随后对 AS164 进行了连通性测试（NLRI），公布了 AS164 的 IP 前缀。
+***
+#### 路由收回
+
+当我们断开一个 BGP 连接时（这可能是停止向 Provider 支付费用，也可能是停止普通 Peer 关系，还可能是终止向 Customer 提供服务），我们也需要更新 BGP 相关信息，下图展现了收回 AS164 后传递的更新数据包：
+
+![](../../../../../assets/Pasted%20image%2020241201004114.png)
+
+收回数据包相对简单一些，只需要宣告需要收回的路由前缀即可
+***
+### BGP 实现不同对等关系
+
+对于不同的对等关系，

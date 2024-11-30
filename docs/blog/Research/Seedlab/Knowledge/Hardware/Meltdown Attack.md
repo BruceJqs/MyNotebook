@@ -93,7 +93,7 @@ void flushSideChannel()
 {
 	int i;
 	
-	// 将数据写入数组，并将其存到RAM 当中以避免写时复制
+	// 将数据写入数组，并将其存到 RAM 当中以避免写时复制
 	for (i = 0; i < 256; i++) array[i*4096 + DELTA] = 1;
 	
 	// 清除缓存中的数组值
