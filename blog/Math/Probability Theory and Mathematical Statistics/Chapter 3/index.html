@@ -5131,7 +5131,7 @@
 <p>由定义我们容易得：<span class="arithmatex">\(F_X(x)=P(X\leq x)=P(X\leq x,Y\leq +\infty)=F(x,+\infty),F_Y(y)=P(Y\leq y)=P(X\leq +\infty,Y\leq y)=F(+\infty,y)\)</span></p>
 <hr />
 <h3 id="_8">条件分布函数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>若 <span class="arithmatex">\(P(Y=y)&gt;0\)</span>，则在 <span class="arithmatex">\(Y=y\)</span> 条件下，<span class="arithmatex">\(X\)</span> 的条件分布函数为：<span class="arithmatex">\(F_{X|Y}(x|y)=P(X\leq x|Y=y)=\frac{P(X\leq x,Y=y)}{Y=y}\)</span>，若 <span class="arithmatex">\(P(Y=y)=0\)</span>，但对任给 <span class="arithmatex">\(\epsilon&gt;0,P(y&lt;Y&lt;y+\epsilon)&gt;0\)</span>，则在 <span class="arithmatex">\(Y=y\)</span> 条件下，<span class="arithmatex">\(X\)</span> 的条件分布函数为：<span class="arithmatex">\(F_{X|Y}(x|y)=\lim\limits_{\epsilon\rightarrow 0^+}P(X\leq x|y&lt;Y\leq y+\epsilon)\)</span></p>
+<p>若 <span class="arithmatex">\(P(Y=y)&gt;0\)</span>，则在 <span class="arithmatex">\(Y=y\)</span> 条件下，<span class="arithmatex">\(X\)</span> 的条件分布函数为：<span class="arithmatex">\(F_{X|Y}(x|y)=P(X\leq x|Y=y)=\frac{P(X\leq x,Y=y)}{P(Y=y)}\)</span>，若 <span class="arithmatex">\(P(Y=y)=0\)</span>，但对任给 <span class="arithmatex">\(\epsilon&gt;0,P(y&lt;Y&lt;y+\epsilon)&gt;0\)</span>，则在 <span class="arithmatex">\(Y=y\)</span> 条件下，<span class="arithmatex">\(X\)</span> 的条件分布函数为：<span class="arithmatex">\(F_{X|Y}(x|y)=\lim\limits_{\epsilon\rightarrow 0^+}P(X\leq x|y&lt;Y\leq y+\epsilon)\)</span></p>
 <hr />
 <h2 id="_9">二元连续型随机变量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="_10">联合概率密度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
@@ -5141,8 +5141,10 @@
 <li><span class="arithmatex">\(F(+\infty,+\infty)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(u,v)dudv=1\)</span>；</li>
 <li>在 <span class="arithmatex">\(f(x,y)\)</span> 的连续点 <span class="arithmatex">\((x,y)\)</span> 上有 <span class="arithmatex">\(\frac{\partial^2F(x,y)}{\partial x\partial y}=f(x,y)\)</span>；</li>
 <li><span class="arithmatex">\((X,Y)\)</span> 落入 <span class="arithmatex">\(xOy\)</span> 平面任意区域 <span class="arithmatex">\(D\)</span> 的概率为：<span class="arithmatex">\(P\{(X,Y)\in D\}=\iint\limits_D f(x,y)dxdy\)</span>；</li>
-<li>由于其几何意义为落在以 <span class="arithmatex">\(D\)</span> 为底，以曲面 <span class="arithmatex">\(z=f(x,y)\)</span> 为顶面的柱体体积，所以当 <span class="arithmatex">\(D\)</span> 面积为 <span class="arithmatex">\(0\)</span> 时概率为 <span class="arithmatex">\(0\)</span>；</li>
+<li>由于其几何意义为落在以 <span class="arithmatex">\(D\)</span> 为底，以曲面 <span class="arithmatex">\(z=f(x,y)\)</span> 为顶面的柱体体积，所以当 <span class="arithmatex">\(D\)</span> 面积为 <span class="arithmatex">\(0\)</span> 时概率为 <span class="arithmatex">\(0\)</span>；<ul>
 <li><code>eg</code>：<span class="arithmatex">\(P(X=1,Y=1)=0,P(X+Y=1)=0,P(X^2+Y^2=1)\not=0\)</span>；</li>
+</ul>
+</li>
 </ul>
 <hr />
 <h3 id="_11">边际（边缘）概率密度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
@@ -5329,7 +5331,7 @@ F_{\min}(z)&amp;=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]...[1-F_{X_n}(z)]
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月31日 14:43:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月1日 00:59:01</span>
   </span>
 
     
