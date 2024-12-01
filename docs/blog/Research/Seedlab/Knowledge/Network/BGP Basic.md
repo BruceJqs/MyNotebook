@@ -78,7 +78,7 @@ comments: true
 
 	![](../../../../../assets/Pasted image 20241130121950.png)
 	
-	上图展现了一个大致的对等关系图，对于 AS-150 来说（这里 Unfiltered Peers 是个特例，不过也很好理解）：
+	上图展现了一个大致的对等关系图，对于 AS-150 来说（这里 Unfiltered Peers 是个仿真器当中的特例，在现实似乎没有对应的实际情况）：
 	
 	- 向 Provider 传递当前 AS 和 Customer 的信息
 		- 从现实角度考虑，这是因为当前 AS 支付了费用所以 Provider 理应提供服务，而 Customer 也给当前 AS 支付了费用，所以间接当前 AS 得到的服务也应当与 Customer 共享
@@ -87,9 +87,9 @@ comments: true
 	- 向 Peer 传递当前 AS 和 Customer 的信息
 		- 从现实角度考虑，这是因为当前 AS 和 Peer 进行对等的信息交换，所以 AS 自身需要传送给 Peer，而 AS 的 Customer 由于购买了服务所以也需要附带传送
 		- <font color="red">当前 AS 不需要向 Peer 传递自己的 Provider 的信息</font>，一样地，如果这样 Peer 就可以利用 AS 不支付费用使用 Provider 的服务，这显然破坏了互惠互利的对等关系
-	- 向下级 Customer 提供自己所知道的所有除其他 Customer 的信息
-		- 从现实角度考虑，毕竟 Customer 是支付了费用的，所以理应将所有信息告诉 Customer
-		- 但是我们不能把其他 Customer 的信息进行传送，因为这样不就泄露其他 Customer 的信息了不是吗
+		- <font color="red">当前 AS 不需要向 Peer 传递自己其他 Peer 的信息</font>，因为<font color="red">对待 Peer 的原则是只交换信息，不提供服务</font>，如果交换其他 Peer 的信息，那其他 Peer 又会反过来利用当前 AS 进行信息交换
+	- 向下级 Customer 提供自己所知道的所有信息
+		- 从现实角度考虑，毕竟 Customer 是支付了费用的，所以理应将所有信息告诉 Customer，让 Customer 能与所有有连接的 AS 进行联系
 ***
 对等互连可以在数据中心（在此两个自治系统相互连接）秘密地完成，也可以在一个公共的地点（该地
 点为自治系统提供对等互连的设施）进行对等互连。这种公开的场所称为互联网交换点（IXP）或互联
@@ -178,4 +178,107 @@ protocol bgp u_as2{
 ***
 ### BGP 实现不同对等关系
 
-对于不同的对等关系，
+对于不同的对等关系，在 BGP 当中会往一个自带的表格（这个表格保存了所有的 Peer 关系，我们称之为 BGP 团体，BGP Large Community）中添加属性，用一个三元组（每个均为 4 字节整数） 来表示。这个三元组称为 BGP 团体属性（BGP Large Community Attribute），其中三个整数分别为 `ASN:Function:Parameter` ，在 SEED 仿真器当中定义如下：
+
+![](../../../../../assets/Pasted%20image%2020241201133839.png)
+
+那么有了三元组的定义，我们就可以对不同的对等关系实现相关的过滤，使得对于不同的对等关系传输该传输的 BGP 信息。
+
+!!! note "不同对等关系的信息过滤"
+
+	=== "Provider"
+	
+		```nginx title="Provider.conf"
+		protocol bgp u_as4{
+			ipv4 {
+				table t_bgp;
+				import filter {
+					bgp_large_community.add(PROVIDER_COMM);
+					bgp_local_pref = 10;
+					accept;
+				};
+				export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
+				next hop self;
+			};
+			local 10.102.0.11 as 11;
+			neighbor 10.102.0.4 as 4;
+		}
+		```
+		
+		对于 Provider，就像之前我们说的那样，从 Provider 那导入提供的路由信息，并向 Provider 导出自己和自己的 Customer 的路由信息，实现一个双向互通。
+	
+	=== "Customer"
+	
+		```nginx title="Customer.conf"
+		protocol bgp u_as4{
+			ipv4 {
+				table t_bgp;
+				import filter {
+					bgp_large_community.add(CUSTOMER_COMM);
+					bgp_local_pref = 30;
+					accept;
+				};
+				export all;
+				next hop self;
+			};
+			local 10.102.0.11 as 11;
+			neighbor 10.102.0.154 as 154;
+		}
+		```
+		
+		对于 Customer 来说，当前 AS 应当导入 Customer 的相关路由信息，并向 Customer 导出所有自己知道的路由信息，实现双向互通。
+	
+	=== "Peer"
+	
+		```
+		protocol bgp p_as151 {
+			ipv4 {
+				table t_bgp;
+				import filter {
+					# Put the route in the PEER_COMM community
+					bgp_large_community.add(PEER_COMM);
+					...
+				};
+				# Only export the routes from the specified communities
+				export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
+			};
+			...
+		}
+		```
+		
+		对于 Peer 来说，当前 AS 需要导入 Peer 的路由信息，并向 Peer 导出自己和自己的 Customer 的信息。
+***
+### 路径选择
+
+对于 SEED 仿真器来说，可以在某个 AS 的 BGP 路由容器中的 `bird` 交互中用命令行 `show route all` 可以查看当前路由连接的其他 AS 情况：
+
+![](../../../../../assets/Pasted%20image%2020241201150423.png)
+
+从上面可以看到，存在两条 AS_PATH 可以通向 AS153，我们可以通过 `ip route show 10.153.0.0/24` 来查看：
+
+![](../../../../../assets/Pasted%20image%2020241201162922.png)
+
+但是具体 BGP 为什么会选择 `10.102.0.2` 而不是 `10.102.0.11` 呢？对于路径选择来说，优先级依次从上到下为：
+
+- 权重（这个在 SEED 仿真器并未体现）
+- 本地偏好（即上面的 `local_pref`）
+	- 这个由当前 AS 进行决定，从现实角度来说，一个 AS 会有一条主传输线和副传输线（以防止万一主传输线失效还能正常通信）
+	- 举个例子来说，一个 AS 有两个 Provider，由于资金问题只能购买一个 Provider 的顶级套餐，另一个只能购买最低级的套餐，那当前 AS 肯定希望多使用性能更高的高级套餐 Provider 线路，将低级套餐 Provider 当作备用，那么当前 AS 会设置高级套餐的 Provider 线路的本地偏好值相对更高。
+- 本地生成（在 SEED 仿真器并未体现）
+- AS Path 长度
+	- 这个非常好理解，相对来说更短的 AS Path 更好一些，但这并不代表着短的 AS Path 一定更好，有可能中途全是 Transit AS，费用会更高一些，这也是为什么 AS Path 长度优先级并没有那么高的原因。
+
+!!! example "Example"
+
+	对一台 `10.153.0.0/24` 进行 `show route all` 如下：
+	
+	![](../../../../../assets/Pasted image 20241201155613.png)
+	
+	此时，如果我们在 AS150 的 BGP 路由中查看，发现对于不同的目的地，AS2 是主要被选择的途径点：
+	
+	![](../../../../../assets/Pasted image 20241201163149.png)
+	
+	如果我们将 AS-3 的 Local Preference 提升到 15，再重新查看，会发现 AS3 成为了主要被选择的途径点：
+	
+	![](../../../../../assets/Pasted image 20241201163227.png)
+
