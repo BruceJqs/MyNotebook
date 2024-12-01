@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
     
     
       
@@ -4166,6 +4166,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径选择
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4829,6 +4838,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径选择
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4932,7 +4950,7 @@
 <div class="admonition note">
 <p class="admonition-title">不同类对等关系的理解</p>
 <p><img alt="" src="../../../../../../assets/Pasted%20image%2020241130121950.png" /></p>
-<p>上图展现了一个大致的对等关系图，对于 AS-150 来说（这里 Unfiltered Peers 是个特例，不过也很好理解）：</p>
+<p>上图展现了一个大致的对等关系图，对于 AS-150 来说（这里 Unfiltered Peers 是个仿真器当中的特例，在现实似乎没有对应的实际情况）：</p>
 <ul>
 <li>向 Provider 传递当前 AS 和 Customer 的信息<ul>
 <li>从现实角度考虑，这是因为当前 AS 支付了费用所以 Provider 理应提供服务，而 Customer 也给当前 AS 支付了费用，所以间接当前 AS 得到的服务也应当与 Customer 共享</li>
@@ -4943,11 +4961,11 @@
 <li>向 Peer 传递当前 AS 和 Customer 的信息<ul>
 <li>从现实角度考虑，这是因为当前 AS 和 Peer 进行对等的信息交换，所以 AS 自身需要传送给 Peer，而 AS 的 Customer 由于购买了服务所以也需要附带传送</li>
 <li><font color="red">当前 AS 不需要向 Peer 传递自己的 Provider 的信息</font>，一样地，如果这样 Peer 就可以利用 AS 不支付费用使用 Provider 的服务，这显然破坏了互惠互利的对等关系</li>
+<li><font color="red">当前 AS 不需要向 Peer 传递自己其他 Peer 的信息</font>，因为<font color="red">对待 Peer 的原则是只交换信息，不提供服务</font>，如果交换其他 Peer 的信息，那其他 Peer 又会反过来利用当前 AS 进行信息交换</li>
 </ul>
 </li>
-<li>向下级 Customer 提供自己所知道的所有除其他 Customer 的信息<ul>
-<li>从现实角度考虑，毕竟 Customer 是支付了费用的，所以理应将所有信息告诉 Customer</li>
-<li>但是我们不能把其他 Customer 的信息进行传送，因为这样不就泄露其他 Customer 的信息了不是吗</li>
+<li>向下级 Customer 提供自己所知道的所有信息<ul>
+<li>从现实角度考虑，毕竟 Customer 是支付了费用的，所以理应将所有信息告诉 Customer，让 Customer 能与所有有连接的 AS 进行联系</li>
 </ul>
 </li>
 </ul>
@@ -5037,7 +5055,136 @@
 <p>收回数据包相对简单一些，只需要宣告需要收回的路由前缀即可</p>
 <hr />
 <h3 id="bgp_3">BGP 实现不同对等关系<a class="headerlink" href="#bgp_3" title="Permanent link">&para;</a></h3>
-<p>对于不同的对等关系，</p>
+<p>对于不同的对等关系，在 BGP 当中会往一个自带的表格（这个表格保存了所有的 Peer 关系，我们称之为 BGP 团体，BGP Large Community）中添加属性，用一个三元组（每个均为 4 字节整数） 来表示。这个三元组称为 BGP 团体属性（BGP Large Community Attribute），其中三个整数分别为 <code>ASN:Function:Parameter</code> ，在 SEED 仿真器当中定义如下：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201133839.png" /></p>
+<p>那么有了三元组的定义，我们就可以对不同的对等关系实现相关的过滤，使得对于不同的对等关系传输该传输的 BGP 信息。</p>
+<div class="admonition note">
+<p class="admonition-title">不同对等关系的信息过滤</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Provider</label><label for="__tabbed_2_2">Customer</label><label for="__tabbed_2_3">Peer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-nginx highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Provider.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">protocol</span><span class="w"> </span><span class="s">bgp</span><span class="w"> </span><span class="s">u_as4</span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kn">ipv4</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="kn">table</span><span class="w"> </span><span class="s">t_bgp</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="kn">import</span><span class="w"> </span><span class="s">filter</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="kn">bgp_large_community.add(PROVIDER_COMM)</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="kn">bgp_local_pref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="kn">accept</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="p">}</span>;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="kn">export</span><span class="w"> </span><span class="s">where</span><span class="w"> </span><span class="s">bgp_large_community</span><span class="w"> </span><span class="p">~</span><span class="w"> </span><span class="sr">[LOCAL_COMM,</span><span class="w"> </span><span class="s">CUSTOMER_COMM]</span><span class="p">;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="kn">next</span><span class="w"> </span><span class="s">hop</span><span class="w"> </span><span class="s">self</span><span class="p">;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="kn">local</span><span class="w"> </span><span class="mi">10</span><span class="s">.102.0.11</span><span class="w"> </span><span class="s">as</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="kn">neighbor</span><span class="w"> </span><span class="mi">10</span><span class="s">.102.0.4</span><span class="w"> </span><span class="s">as</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>对于 Provider，就像之前我们说的那样，从 Provider 那导入提供的路由信息，并向 Provider 导出自己和自己的 Customer 的路由信息，实现一个双向互通。</p>
+</div>
+<div class="tabbed-block">
+<div class="language-nginx highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Customer.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">protocol</span><span class="w"> </span><span class="s">bgp</span><span class="w"> </span><span class="s">u_as4</span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kn">ipv4</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="kn">table</span><span class="w"> </span><span class="s">t_bgp</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="kn">import</span><span class="w"> </span><span class="s">filter</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">            </span><span class="kn">bgp_large_community.add(CUSTOMER_COMM)</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">            </span><span class="kn">bgp_local_pref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">            </span><span class="kn">accept</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="p">}</span>;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="kn">export</span><span class="w"> </span><span class="s">all</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">        </span><span class="kn">next</span><span class="w"> </span><span class="s">hop</span><span class="w"> </span><span class="s">self</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="kn">local</span><span class="w"> </span><span class="mi">10</span><span class="s">.102.0.11</span><span class="w"> </span><span class="s">as</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="kn">neighbor</span><span class="w"> </span><span class="mi">10</span><span class="s">.102.0.154</span><span class="w"> </span><span class="s">as</span><span class="w"> </span><span class="mi">154</span><span class="p">;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>对于 Customer 来说，当前 AS 应当导入 Customer 的相关路由信息，并向 Customer 导出所有自己知道的路由信息，实现双向互通。</p>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>protocol bgp p_as151 {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    ipv4 {
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>        table t_bgp;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>        import filter {
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>            # Put the route in the PEER_COMM community
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>            bgp_large_community.add(PEER_COMM);
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>            ...
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>        };
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>        # Only export the routes from the specified communities
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>        export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>    };
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>    ...
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>}
+</span></code></pre></div></td></tr></table></div>
+<p>对于 Peer 来说，当前 AS 需要导入 Peer 的路由信息，并向 Peer 导出自己和自己的 Customer 的信息。</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="_5">路径选择<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>对于 SEED 仿真器来说，可以在某个 AS 的 BGP 路由容器中的 <code>bird</code> 交互中用命令行 <code>show route all</code> 可以查看当前路由连接的其他 AS 情况：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201150423.png" /></p>
+<p>从上面可以看到，存在两条 AS_PATH 可以通向 AS153，我们可以通过 <code>ip route show 10.153.0.0/24</code> 来查看：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201162922.png" /></p>
+<p>但是具体 BGP 为什么会选择 <code>10.102.0.2</code> 而不是 <code>10.102.0.11</code> 呢？对于路径选择来说，优先级依次从上到下为：</p>
+<ul>
+<li>权重（这个在 SEED 仿真器并未体现）</li>
+<li>本地偏好（即上面的 <code>local_pref</code>）<ul>
+<li>这个由当前 AS 进行决定，从现实角度来说，一个 AS 会有一条主传输线和副传输线（以防止万一主传输线失效还能正常通信）</li>
+<li>举个例子来说，一个 AS 有两个 Provider，由于资金问题只能购买一个 Provider 的顶级套餐，另一个只能购买最低级的套餐，那当前 AS 肯定希望多使用性能更高的高级套餐 Provider 线路，将低级套餐 Provider 当作备用，那么当前 AS 会设置高级套餐的 Provider 线路的本地偏好值相对更高。</li>
+</ul>
+</li>
+<li>本地生成（在 SEED 仿真器并未体现）</li>
+<li>AS Path 长度<ul>
+<li>这个非常好理解，相对来说更短的 AS Path 更好一些，但这并不代表着短的 AS Path 一定更好，有可能中途全是 Transit AS，费用会更高一些，这也是为什么 AS Path 长度优先级并没有那么高的原因。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>对一台 <code>10.153.0.0/24</code> 进行 <code>show route all</code> 如下：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201155613.png" /></p>
+<p>此时，如果我们在 AS150 的 BGP 路由中查看，发现对于不同的目的地，AS2 是主要被选择的途径点：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201163149.png" /></p>
+<p>如果我们将 AS-3 的 Local Preference 提升到 15，再重新查看，会发现 AS3 成为了主要被选择的途径点：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201163227.png" /></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5107,7 +5254,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月1日 00:59:01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月1日 16:35:10</span>
   </span>
 
     
