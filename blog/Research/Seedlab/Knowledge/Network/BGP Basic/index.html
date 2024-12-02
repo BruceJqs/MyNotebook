@@ -5288,7 +5288,95 @@
 <p>根据上述可以看到，在 Announce 过程中，网络的 IP 前缀是由 AS 自行设定的。BGP 劫持攻击正是利用了这点，因为 BGP 并没有一个能验证 IP 前缀属于谁的机制，所以攻击者可以用自己的 BGP 路由器宣称一个假的 IP 前缀，这样就导致会有一些数据包被误传到攻击者手中，从而造成劫持攻击。</p>
 <p>BGP 的匹配机制采取“匹配更多位数优先”原则，举个例子：</p>
 <p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201165324.png" /></p>
-<p>这里有两个 BGP 路由，分别为 <code>10.164.0.0/25</code> 和 <code>10.164.0.0/24</code>，</p>
+<p>这里有两个 BGP 路由，分别为 <code>10.164.0.0/25</code> 和 <code>10.164.0.0/24</code>，而对于一个 <code>10.164.0.71</code> 来说，两者理论上都是匹配的，但是 <code>10.164.0.0/25</code> 路由会被选择因为它有 25 位匹配而 <code>10.164.0.0/24</code> 只有 24 位匹配。</p>
+<p>就因为这个特性，攻击者就可以借此发起攻击，通过宣称更多位数的路由使得数据包的路径选择朝攻击者想要的方向流动，从而劫持数据包，举个例子来说，如果我想劫持 <code>10.164.0.0/24</code>，根据上面的说法，仅凭 <code>10.164.0.0/25</code> 只能劫持一半的数据包（因为匹配关系，只能匹配 <code>10.164.0.0</code> 到 <code>10.164.0.127</code> 的数据包），所以我们在多加一个宣称 <code>10.164.0.128/25</code> 即可匹配剩下 <code>10.164.0.128</code> 到 <code>10.164.0.255</code> 的数据包，从而劫持所有与 <code>10.164.0.0/24</code> 通信的数据包。</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241202223946.png" /></p>
+<p>在 AS150（即攻击者）的 BGP 路由中，我们设置如下：</p>
+<div class="language-nginx highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Attacker.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span>
+<span class="normal"><a href="#__codelineno-4-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">protocol</span><span class="w"> </span><span class="s">static</span><span class="w"> </span><span class="s">hijacks</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kn">ipv4</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kn">table</span><span class="w"> </span><span class="s">t_bgp</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kn">route</span><span class="w"> </span><span class="mi">10</span><span class="s">.164.0.0/25</span><span class="w"> </span><span class="s">blackhole</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="kn">bgp_large_community.add(LOCAL_COMM)</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="kn">route</span><span class="w"> </span><span class="mi">10</span><span class="s">.164.0.128/25</span><span class="w"> </span><span class="s">blackhole</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="kn">bgp_large_community.add(LOCAL_COMM)</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>当然，这样的攻击其实也有主动解决方法（Fight Back！），既然 Attacker 比我多宣称一位，那作为 Victim 我再多宣称一位就能把数据包给抢回来了，具体来说如下：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241202225422.png" /></p>
+<p>配置文件如下：</p>
+<div class="language-nginx highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Victim.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">protocol</span><span class="w"> </span><span class="s">static</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kn">ipv4</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kn">table</span><span class="w"> </span><span class="s">t_bgp</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kn">route</span><span class="w"> </span><span class="mi">10</span><span class="s">.164.0.0/26</span><span class="w"> </span><span class="s">via</span><span class="w"> </span><span class="s">&quot;net0&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">        </span><span class="kn">bgp_large_community.add(LOCAL_COMM)</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="kn">route</span><span class="w"> </span><span class="mi">10</span><span class="s">.164.0.64/26</span><span class="w"> </span><span class="s">via</span><span class="w"> </span><span class="s">&quot;net0&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">        </span><span class="kn">bgp_large_community.add(LOCAL_COMM)</span><span class="p">;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="kn">route</span><span class="w"> </span><span class="mi">10</span><span class="s">.164.0.128/26</span><span class="w"> </span><span class="s">via</span><span class="w"> </span><span class="s">&quot;net0&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="kn">bgp_large_community.add(LOCAL_COMM)</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="kn">route</span><span class="w"> </span><span class="mi">10</span><span class="s">.164.0.192/26</span><span class="w"> </span><span class="s">via</span><span class="w"> </span><span class="s">&quot;net0&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">        </span><span class="kn">bgp_large_community.add(LOCAL_COMM)</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<details class="question">
+<summary>思考</summary>
+<p>或许有人会问，那我直接把所有的 IP 都宣称个遍，不给 Victim 反击的余地，攻击不就能成功了吗？这样想固然有道理，但是从现实角度来说，不仅一下子搞出 255 个 IP 很麻烦，而且大量的 IP 前缀涌入整个网络系统当中，这也无疑增加了传输的负担，也可能导致攻击的数据包传输速度减慢。</p>
+<p>也正因为如此，通过抢位数来回击的方法也只是临时性恢复的一种做法，能让 Victim 在发现时不依赖上层供应商主动解决问题，但是到最后查明原因后还是需要靠上层供应商通过一定的过滤条件来解决这类问题，假设 AS2 是 AS150（Attacker） 的上层供应商，它可以改动配置文件如下：</p>
+<div class="language-nginx highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Provider.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">protocol</span><span class="w"> </span><span class="s">bgp</span><span class="w"> </span><span class="s">c_as150</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="kn">ipv4</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">        </span><span class="kn">table</span><span class="w"> </span><span class="s">t_bgp</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">        </span><span class="kn">import</span><span class="w"> </span><span class="s">filter</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">            </span><span class="kn">bgp_large_community.add(CUSTOMER_COMM)</span><span class="p">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">            </span><span class="kn">bgp_local_pref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">            </span><span class="kn">if</span><span class="w"> </span><span class="s">(net</span><span class="w"> </span><span class="s">!=</span><span class="w"> </span><span class="mi">10</span><span class="s">.150.0.0/24)</span><span class="w"> </span><span class="s">then</span><span class="w"> </span><span class="s">reject</span><span class="p">;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">            </span><span class="kn">accept</span><span class="p">;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>通过添加过滤条件强制将 AS150 的 IP 前缀限定死，那就算 AS150 怎么宣称都无法抢夺数据包，从而解决了这次攻击。</p>
+</details>
+<div class="admonition example">
+<p class="admonition-title">现实案例</p>
+<p>2008 年 2 月 24 日，巴基斯坦的通讯公司为了建立自己的防火墙，将 YouTube 的网站隔离在外，却误宣称自己的 IP 前缀，导致反过来劫持了 YouTube 的部分数据包：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241202232229.png" /></p>
+<p>其实，在 20:07（UTC）时 YouTube 方还宣称错了 IP 前缀导致没反击成功，20:18（UTC）宣称的才是正确的反击手段，而 21:01（UTC）则是上层供应商出手解决了这个问题。</p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5358,7 +5446,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 15:03:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 23:25:35</span>
   </span>
 
     
