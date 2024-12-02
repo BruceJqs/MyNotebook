@@ -1186,8 +1186,77 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#solution-3-designing-the-memory-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 3 : Designing the Memory System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-4-multilevel-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 4 : Multilevel Caches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-5-software-optimization-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 5 : Software Optimization Blocking
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pages-virtual-memory-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pages : Virtual Memory Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Tables
+    </span>
+  </a>
   
 </li>
         
@@ -5091,8 +5160,77 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#solution-3-designing-the-memory-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 3 : Designing the Memory System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-4-multilevel-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 4 : Multilevel Caches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-5-software-optimization-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 5 : Software Optimization Blocking
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pages-virtual-memory-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pages : Virtual Memory Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Tables
+    </span>
+  </a>
   
 </li>
         
@@ -5504,21 +5642,6 @@
 </li>
 </ul>
 <hr />
-<ul>
-<li>在直接映射机制下，Cache 利用率较低，块冲突率较高，应用于大容量的 Cache 当中。</li>
-</ul>
-<p>想要降低缺失率（Miss Rate），一种可行的方法是<strong>适当增加每个缓存块的大小</strong>。然而，如果缓存块的空间过大，对于相同空间大小的缓存，那么该缓存的块数就会减小，那么就会产生更多的数据竞争问题，因此此时缺失率反而会升高。下图便展示了这一结果，其中不同曲线表示不同的缓存大小：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241127101113.png" /></p>
-<p>事实上，增大缓存块的空间还会增大缺失损失（Miss Penalty），因为更大的缓存块意味着更久的传输时间。如果缓存块过大，由于缺失率降低的效果不明显，且缺失损失会越来越大，因此最终会带来缓存性能的损失。</p>
-<div class="admonition tip">
-<p class="admonition-title">补充</p>
-<p>下面给出一些减缓因增大缓存块而带来的缺失损失增大的方法：</p>
-<ul>
-<li>早重启（Early Restart）：当所需字数据还未返回时，令处理器继续执行后面的操作，而不是等下去。这种方法更适用于指令缓存中，但在数据缓存中表现效果不太好</li>
-<li>需求字优先/关键字优先（Requested/Critical Word First）：对内存进行组织，使得处理器请求的字数据得以优先进行传输，随后再传输其他不是那么重要的数据。该方法比早重启略快一些，但也有与前者同样的限制</li>
-</ul>
-</div>
-<hr />
 <div class="admonition example">
 <p class="admonition-title">Example : Intrinsity FastMATH</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241127110818.png" /></p>
@@ -5776,6 +5899,149 @@
 </ul>
 <hr />
 <h4 id="solution-2-choosing-different-block-size">Solution 2 : Choosing Different Block Size<a class="headerlink" href="#solution-2-choosing-different-block-size" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>在直接映射机制下，Cache 利用率较低，块冲突率较高，应用于大容量的 Cache 当中。</p>
+</blockquote>
+<p>想要降低缺失率（Miss Rate），一种可行的方法是<strong>适当增加每个缓存块的大小</strong>。然而，如果缓存块的空间过大，对于相同空间大小的缓存，那么该缓存的块数就会减小，那么就会产生更多的数据竞争问题，因此此时缺失率反而会升高。下图便展示了这一结果，其中不同曲线表示不同的缓存大小：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127101113.png" /></p>
+<p>事实上，增大缓存块的空间还会增大缺失损失（Miss Penalty），因为更大的缓存块意味着更久的传输时间。如果缓存块过大，由于缺失率降低的效果不明显，且缺失损失会越来越大，因此最终会带来缓存性能的损失。</p>
+<div class="admonition tip">
+<p class="admonition-title">补充</p>
+<p>下面给出一些减缓因增大缓存块而带来的缺失损失增大的方法：</p>
+<ul>
+<li>早重启（Early Restart）：当所需字数据还未返回时，令处理器继续执行后面的操作，而不是等下去。这种方法更适用于指令缓存中，但在数据缓存中表现效果不太好</li>
+<li>需求字优先/关键字优先（Requested/Critical Word First）：对内存进行组织，使得处理器请求的字数据得以优先进行传输，随后再传输其他不是那么重要的数据。该方法比早重启略快一些，但也有与前者同样的限制</li>
+</ul>
+</div>
+<hr />
+<h4 id="solution-3-designing-the-memory-system">Solution 3 : Designing the Memory System<a class="headerlink" href="#solution-3-designing-the-memory-system" title="Permanent link">&para;</a></h4>
+<p>我们可以通过改变内存系统的架构来支撑 Cache 的运作，一般来说，有以下三种架构：</p>
+<div class="admonition note">
+<p class="admonition-title">内存系统的三种架构</p>
+<p>我们假设：</p>
+<ul>
+<li>需要 1 个时钟周期来传输地址</li>
+<li>每次 DRAM 访问需要 15 个内存总线时钟周期</li>
+<li>需要 1 个总线时钟周期来发送一个字的数据</li>
+<li>数据块大小为 4 个字</li>
+<li>每个字 4 字节</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Basic Memory</label><label for="__tabbed_15_2">Wider Main Memory</label><label for="__tabbed_15_3">Four-way Interleaved Memory</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>基本的内存以一个字为宽度，示意图如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202200225.png" /></p>
+<p>那么传输一个字的数据需要 <span class="arithmatex">\(1+15+1=17\)</span> 个时钟周期，而缺失损失（即从内存传输一个数据块到 Cache 的时间）为 <span class="arithmatex">\(1+4\times(1+15)=65\)</span> 个时钟周期，则带宽（Bandwidth，即数据传输率，公式为传输数据位数/传输时间）为 <span class="arithmatex">\(\frac{4\times 4}{65}\approx\frac{1}{4}\)</span></p>
+<p>因为数据块大小为 4 个字，其中可能只有一个字对我们是有用的，其他的三个字是没用的，所以对于一个四个字为一个数据块的缓存来说，这样的内存系统是不太可行的。</p>
+</div>
+<div class="tabbed-block">
+<p>我们将内存的宽度变宽，示意图如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202201742.png" /></p>
+<p>如果对于一个两个字（64 位）为宽度的内存来说：</p>
+<ul>
+<li>缺失损失：<span class="arithmatex">\(1+2\times(15+1)=33\)</span> 个时钟周期</li>
+<li>带宽：<span class="arithmatex">\(\frac{4\times 4}{33}=\frac{16}{33}\approx 0.48\)</span></li>
+</ul>
+<p>对于一个四个字（128 位）为宽度的内存来说：</p>
+<ul>
+<li>缺失损失：<span class="arithmatex">\(1+(15+1)=17\)</span> 个时钟周期，这已经跟传输一个字的时间一样了</li>
+<li>带宽：<span class="arithmatex">\(\frac{4\times 4}{17}=\frac{16}{17}\approx 0.98\)</span></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>我们将内存分成四个块进行存储，而访问是并行的，示意图如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202202529.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202202739.png" /></p>
+<ul>
+<li>缺失损失：<span class="arithmatex">\(1+15+4\times 1=20\)</span> 个时钟周期,几乎和传输一个字的时间一样了</li>
+<li>带宽：<span class="arithmatex">\(\frac{4\times 4}{20}=0.8\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="solution-4-multilevel-caches">Solution 4 : Multilevel Caches<a class="headerlink" href="#solution-4-multilevel-caches" title="Permanent link">&para;</a></h4>
+<p>我们在 Cache 和 Memory 之间再添加一层 Cache，如下图所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202203255.png" /></p>
+<p>如果在第一级 Cache 当中未命中，可以去访问第二级 Cache，如果第二级 Cache 命中，那么就避免了从主内存中拿数据块的情况，这样也能一定程度提高 Cache 的性能。</p>
+<ul>
+<li>一般来说，第二级的 Cache 用的是 SRAM</li>
+<li>而且，我们还能在两级的 Cache 接着用之前讲到的一下优化方法进行优化，主体大概是：<ul>
+<li>优化第一级 Cache 的命中次数</li>
+<li>优化第二级 Cache 的缺失率</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>一台机器的 CPI 为 1.0，Clock Rate 为 5GHz，缺失率为 2%，DRAM 访问时间为 100ns，添加一个访问时间为 5ns 的二级 Cache 可以将缺失率降低到 0.5%</p>
+<p>对于主内存的缺失损失为 <span class="arithmatex">\(\frac{100ns}{0.2ns}=500\text{ Clock cycles}\)</span>，那么当没有二级 Cache 的时候，<span class="arithmatex">\(\text{CPI}=1+2\%\times 500=11.0\)</span></p>
+<p>当有了二级 Cache 的时候，对于访问到二级 Cache 命中不需要访问主内存的情况，缺失损失为 <span class="arithmatex">\(\frac{5ns}{0.2ns}=25\text{ Clock cycles}\)</span>，那么整体的 <span class="arithmatex">\(\text{CPI}=1+2\%\times 25+0.5\% 500=4.0\)</span></p>
+<p>整体处理速度翻了 <span class="arithmatex">\(\frac{11.0}{4.0}=2.8\)</span> 倍</p>
+</div>
+<hr />
+<h4 id="solution-5-software-optimization-blocking">Solution 5 : Software Optimization Blocking<a class="headerlink" href="#solution-5-software-optimization-blocking" title="Permanent link">&para;</a></h4>
+<p>从一定程度上来说，不同的算法（涉及不同的内存需求）和不同的编译器也在一定程度上会影响 Cache 的性能：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202205326.png" /></p>
+<div class="admonition example">
+<p class="admonition-title">DGEMM via Blocking</p>
+<p>一个非常经典的例子就是矩阵乘法：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202210251.png" /></p>
+<p>根据线性代数我们知道可以将矩阵分块进行矩阵乘法，这在大规模数据中能保持一定的运算速度：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202210453.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202210523.png" /></p>
+</div>
+<hr />
+<h2 id="virtual-memory">Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>主内存可以被看作下属存储（即磁盘）的“缓存”。或者，反过来说，我们把那些在主内存里放不下的内容存到磁盘里，这种技术被称为虚拟内存（Virtual Memory）技术</p>
+</blockquote>
+<p>虚拟内存技术可以让多个程序之间高效、安全地共享内存，同时允许单个程序使用超过内存容量的内存（虽然 CPU 取数据时是从 Cache 中取的，但是它能访问到的数据的数目比 Cache 的容量要大）。在远古时期，很多程序因为需要使用过大的内存而无法被运行；但现在由于虚拟内存技术的广泛使用，这些程序都不成问题了。</p>
+<p>如下图所示，实际上的主内存我们称之为物理内存（Physical Memory）中的地址称为物理地址,（Physical Addresses）；而我们给每一个程序内部使用到的内存另外编一套地址，称为虚拟地址（ Virtual Addresses）；虚拟内存技术负责了这两个地址之间的转换（Address Translation）</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202211754.png" /></p>
+<p>从这张图中我们也可以很容易地看出“虚拟内存技术可以允许单个程序访问超过物理内存大小限制的内存”的原因，即有一些内存可以被临时地存放在磁盘上，到被访问的时候再被放到物理内存中，就像  Cache 做的那样。</p>
+<hr />
+<h3 id="pages-virtual-memory-blocks">Pages : Virtual Memory Blocks<a class="headerlink" href="#pages-virtual-memory-blocks" title="Permanent link">&para;</a></h3>
+<p>虚拟存储技术和 Cache 的原理是一样的，但是一些术语的名字并不相同。对应于 Cache 中的 Block / Line，虚拟存储的内存单元称为页面（Page），当我们要访问的页面不在主存中而是在磁盘里，也就是 Miss，我们称之为一次 <strong>Page Fault</strong>。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ul>
+<li>在一些地方，Virtual Page 称为 Page，Physical Page 称为<strong>帧, Frame</strong>；我们的课本并未采用这种称呼。但无论如何，在看到单独出现的 <em>Page</em> 时，应当参考上下文判断它是 Virtual 还是 Physical。</li>
+<li>在一些地方，Virtual Address 也被称为 Logical Address。</li>
+</ul>
+</div>
+<p>我们知道，访问磁盘相比于访问内存是非常慢的（相差大约十万倍），这个主要时延来自于磁盘转到正确的位置上的时间花费；所以我们希望一次读进来多一点从而来分摊这个访问时间。典型的页面大小从 4KiB ~ 64KiB 不等。</p>
+<p>同时，从上面的图中，我们还可以注意到物理内存的存放并没有分组的概念，即用 Cache 的术语来说，主内存是全相联的。这是因为相比于查询时间长来说，去访问磁盘所多花的 Page Fault 更为可怕，所以说我们还是尽量去降低缺失率。</p>
+<p>同样的道理，由于读写磁盘是非常慢的，需要访问下级内存的写穿策略并不合适，因此在虚拟内存技术中，我们采取写回的方式。</p>
+<hr />
+<h3 id="mapping-mechanism">Mapping Mechanism<a class="headerlink" href="#mapping-mechanism" title="Permanent link">&para;</a></h3>
+<p>和 Cache 的全相联相似地，我们不妨假设一个页面的大小是 4KiB，那么其页内的偏移 <strong>Page Offset</strong>（相当于 Cache 的 Byte Offset）就需要 12 位来表示；那么物理地址中除去后 12 位以外前面的部分就表征着它是属于哪一页的，我们称之为虚拟页码（Physical Page Number，相当于 Cache 的 Tag）。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202214122.png" /></p>
+<p>而虚拟地址的形式与之类似，由若干位页码和若干位 Page Offset 组成。</p>
+<p>之前提到，我们通过转换（Address Translation）可以找到虚拟页面对应的物理页面，因此当我们要访问一个虚拟地址时，将其虚拟页码通过转换变为物理页码（这种转换也会负责 Page Fault 的处理并给出正确的转换），而 Page Offset 表示的是在一页内的偏移，保持不变即可。这样我们就获得了这个虚拟地址对应的物理地址，也就是它在实际的主内存中存储的位置。如下图所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202214335.png" /></p>
+<hr />
+<h3 id="page-tables">Page Tables<a class="headerlink" href="#page-tables" title="Permanent link">&para;</a></h3>
+<p>那么虚拟内存是如何实现转换翻译的呢？我们知道全相联的一个重要问题就是如何去定位某一项，这里我们引入页表（Page Table）这种结构，它被存在主内存当中，每个进程都有一个自己的页表；同时硬件上有一个页表寄存器（Page Table Register）保存当前进程这个页表的地址。</p>
+<p>使用页表时，我们根据虚拟页码找到对应页表条目（Page Table Entry, PTE）在页表中的偏移，然后与页表寄存器相加得到对应条目的物理地址，从中读取对应的条目。其实就是说，页表就是一个数组， <code>page_table[i]</code> 表示第 <code>i</code> 个 Virtual Page 对应的 Physical Page Number。</p>
+<p>如下图所示，每个条目中包含了一个 Valid Bit 和物理页码。如果 Valid Bit = 1，那么转换完成；否则就触发 Page Fault。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202215127.png" /></p>
+<p>当 Page Fault 触发时，由操作系统接管控制，处理完之后再将控制交还给进程。操作系统要做的事情是在下属存储中找到这一页面，将其放到主内存里（可能需要与当前主存中的某个页面交换），然后更新页表。</p>
+<p>操作系统在创建进程时在 磁盘 (或者闪存) 上创建一个虚拟地址空间那么大的空间，以便上述的交换；这个空间称为交换区（Swap Space）。下面的问题是操作系统如何在交换区中找到需要的页面。</p>
+<p>我们可以看到，如果页表条目的 Valid Bit 为 0，那么后面的物理页码是没有用到的。我们可以利用这个字段存储对应页面被交换到了磁盘的哪个位置；或者另外开辟一个索引结构，在其中记录每个虚拟页码对应的磁盘位置。下图为利用页表条目中的物理页码存储交换位置的示意图：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202215650.png" /></p>
+<details class="question">
+<summary>页表有多大？</summary>
+<p>假设：</p>
+<ul>
+<li>虚拟页码为 32 位</li>
+<li>页面大小为 4KB</li>
+<li>条目大小为 4 Bytes</li>
+</ul>
+<p>那么页表条目数为 <span class="arithmatex">\(\frac{2^32}{2^12}=2^20\)</span></p>
+<p>那么页表大小为 <span class="arithmatex">\(2^20\times 4=2^22\text{ Bytes}=4\text{ MB}\)</span></p>
+</details>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5845,7 +6111,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 16:41:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 22:04:06</span>
   </span>
 
     
