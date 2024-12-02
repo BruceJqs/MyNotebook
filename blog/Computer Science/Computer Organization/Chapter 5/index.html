@@ -1172,6 +1172,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#measuring-and-improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring and Improving Cache Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring and Improving Cache Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measuring-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring Cache Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improving Cache Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4366,6 +4399,8 @@
       
         
       
+        
+      
     
     
       
@@ -4677,6 +4712,77 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    大学物理实验｜College Physics Experiments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            大学物理实验｜College Physics Experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Others/College Physics Experiments/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4970,6 +5076,39 @@
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-and-improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring and Improving Cache Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring and Improving Cache Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measuring-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring Cache Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improving Cache Performance
     </span>
   </a>
   
@@ -5452,6 +5591,124 @@
 </li>
 </ul>
 </div>
+<hr />
+<h2 id="measuring-and-improving-cache-performance">Measuring and Improving Cache Performance<a class="headerlink" href="#measuring-and-improving-cache-performance" title="Permanent link">&para;</a></h2>
+<h3 id="measuring-cache-performance">Measuring Cache Performance<a class="headerlink" href="#measuring-cache-performance" title="Permanent link">&para;</a></h3>
+<p>我们使用 CPU 时间来评估缓存的表现，在第 1 章中，我们已经给出了 CPU 时间的计算公式。现在我们应当将缓存给考虑进去（因为缺失问题，缓存可能会引入额外的周期数），因此需要对原公式进行修改，得到以下公式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{CPU Time}&amp;=(\text{CPU execution clock cycles }+\text{ Memory-stall clock cycles})\times\text{Clock cycle time}\\
+&amp;=(\text{Instructions}\times\text{CPI}+\text{Instructions}\times\text{Miss Ratio}\times\text{Miss Penalty})\times\text{Clock cycle time}\\
+&amp;=(\text{Instructions}\times\text{CPI}+\text{Read-stall cycles}+\text{Write-stall cycles})\times\text{Clock cycle time}\\
+\end{aligned}
+\]</div>
+<p>缺失问题可以来自读操作，也可来自写操作，对于 <span class="arithmatex">\(\text{Read-stall cycles}\)</span> 来说：</p>
+<div class="arithmatex">\[
+\text{Read-stall cycles}=\frac{\text{Reads}}{\text{Program}}\times\text{Read miss rate}\times\text{Read miss penalty}
+\]</div>
+<p>对于 <span class="arithmatex">\(\text{Write-stall cycles}\)</span> 来说，我们假定使用写穿策略加上写缓冲器的设计，此时停顿的原因可分为两类：写失效（要求我们在继续写操作前先获取该缓存块），以及写缓冲器停顿（缓冲器内容已满，需要向主内存倒入一些数据以腾出空间），用公式表示为：</p>
+<div class="arithmatex">\[
+\text{Write-stall cycles​}=(\frac{\text{Writes}}{\text{Program}}\times \text{Write miss rate}\times\text{Write miss penalty})+\text{Write buffer stalls}​
+\]</div>
+<ul>
+<li>如果提供了足够深度的写缓冲器，且内存接受写操作的速度快于处理器生成写操作的速度，那么写缓冲器的停顿就变得很小，可以忽略不计</li>
+<li>如果缓存块的大小仅仅只是一个字，那么 <span class="arithmatex">\(\text{Write miss penalty}\)</span> 为 0</li>
+</ul>
+<p>在大多数采取写穿策略的缓存中，读和写的缺失损失大致相等。假如不计写缓冲器停顿时间，那么可以同时考虑读和写操作，即：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Memory-stall clock cycles}&amp;=\frac{\text{Memory accesses}}{\text{Program}}\times\text{Miss rate}\times\text{Miss penalty}\\
+&amp;=\frac{\text{Instructions}}{\text{Program}}\times\frac{\text{Misses}}{\text{Instructions}}\times\text{Miss penalty}
+\end{aligned}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<p>假设有一个这样的缓存：</p>
+<ul>
+<li>指令缓存的失效率为 2%，数据缓存的失效率为 4%</li>
+<li>若处理器在没有任何内存停顿的情况下，CPI = 2</li>
+<li>对于所有的失效，失效损失为 100 个时钟周期</li>
+<li>加载和失效指令的频率为 36%</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Example 1</label><label for="__tabbed_8_2">Example 2</label><label for="__tabbed_8_3">Example 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Question</label><label for="__tabbed_9_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>一个带有不发生任何停顿的完美缓存的处理器比带此类缓存的处理器快了多少倍？</p>
+</div>
+<div class="tabbed-block">
+<p>设 <span class="arithmatex">\(I\)</span> 为指令总数，那么有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Instruction miss cycles}&amp;=I\times2\%\times 100=2.00I\\
+\text{Data miss cycles}&amp;=I\times36\%\times4\%\times 100=1.44I\\
+\text{Total memory-stall cycles}&amp;=2.00I+1.44I=3.44I\\
+\text{CPI with stall}&amp;=\text{CPI with perfect cache}+\text{Total memory-stalls}\\
+&amp;=(2+3.44)I=5.44I
+\end{aligned}
+\]</div>
+<p>与未停顿的 CPI 取比值，有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\text{CPU Time with stalls}}{\text{CPU Time with perfect cache}}&amp;=\frac{I\times\text{CPI}_{\text{stall}}\times\text{Clock cycle}}{I\times\text{CPI}_{\text{perfect}}\times\text{Clock cycle}}\\
+&amp;=\frac{\text{CPI}_{\text{stall}}}{\text{CPI}_{\text{perfect}}}=\frac{5.44}{2}=2.72
+\end{aligned}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Question</label><label for="__tabbed_10_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在 Example 1 的基础上，如果我们通过将 CPI 从 2 提升为 1 来提升处理器的性能，结果又会如何？</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[
+\begin{aligned}
+\text{CPU with stall}&amp;=\text{CPI with perfect cache}+\text{Total memory-stalls}\\
+&amp;=(1+3.44)I=4.44I\\
+\therefore \frac{\text{CPU Time with stalls}}{\text{CPU Time with perfect cache}}&amp;=\frac{\text{CPI}_{\text{stall}}}{\text{CPI}_{\text{perfect}}}=\frac{4.44}{1}=4.44
+\end{aligned}
+\]</div>
+<p>由上来看，内存停顿对 CPI 的影响占比从 <span class="arithmatex">\(\frac{3.44}{5.44}=63\%\)</span> 到 <span class="arithmatex">\(\frac{4.44}{5.44}=77\%\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Question</label><label for="__tabbed_11_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在 Example 1 的基础上，如果我们通过将 Clock Rate 翻倍来提升处理器的性能，结果又会如何？</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Total miss cycles per instruction}&amp;=(2\%\times200)+36\%\times(4\%\times200)=6.88\\
+\text{CPI with cache misses}&amp;= 2+ 6.88=8.88\\
+\therefore \frac{\text{Performance with fast clock}}{\text {Performance with slow clock}}&amp;=\frac{\text{Execution time with fast clock}}{\text {Execution time with slow clock}}\\
+&amp;=\frac{I\times\text{CPI}_{\text{slow clock}}\times\text{Clock cycle}}{I\times\text{CPI}_{\text{fast clock}}\times\text{Clock cycle}/2}\\
+&amp;=\frac{5.44}{8.88/2}=1.23
+\end{aligned}
+\]</div>
+<p>由上来看，更快的时钟只能提升到 1.2 倍的性能而非期望的 2 倍性能。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>从上面的 Example 2 和 3 能看出，如果只提升 CPU 的速度（比如提高 CPU 的时钟频率，降低周期数等等），而没有对内存系统进行相应的提升，那么反而会拉长 CPU 的执行时间，即降低 CPU 的性能。比如降低 CPU 的 CPI 值（无停顿），由于内存的停顿周期数不变，那么内存的停顿对实际 CPI 的影响占比就会增大，这意味着在相同的执行时间内，这类“改进后”的 CPU 反而遭遇更多的内存停顿，因而性能不佳。</p>
+</div>
+<hr />
+<h3 id="improving-cache-performance">Improving Cache Performance<a class="headerlink" href="#improving-cache-performance" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5521,7 +5778,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月27日 13:30:11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 15:03:07</span>
   </span>
 
     

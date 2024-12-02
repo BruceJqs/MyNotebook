@@ -4180,6 +4180,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bgp_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      BGP 劫持攻击
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4299,6 +4308,8 @@
   
     
     
+      
+        
       
         
       
@@ -4615,6 +4626,77 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    大学物理实验｜College Physics Experiments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            大学物理实验｜College Physics Experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Others/College Physics Experiments/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4849,6 +4931,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bgp_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      BGP 劫持攻击
+    </span>
+  </a>
   
 </li>
       
@@ -5125,7 +5216,7 @@
 <p>对于 Customer 来说，当前 AS 应当导入 Customer 的相关路由信息，并向 Customer 导出所有自己知道的路由信息，实现双向互通。</p>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-nginx highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Peer.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -5137,19 +5228,19 @@
 <span class="normal"><a href="#__codelineno-3-10">10</a></span>
 <span class="normal"><a href="#__codelineno-3-11">11</a></span>
 <span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>protocol bgp p_as151 {
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    ipv4 {
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>        table t_bgp;
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>        import filter {
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>            # Put the route in the PEER_COMM community
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>            bgp_large_community.add(PEER_COMM);
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>            ...
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>        };
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>        # Only export the routes from the specified communities
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>        export where bgp_large_community ~ [LOCAL_COMM, CUSTOMER_COMM];
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>    };
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>    ...
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>}
+<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">protocol</span><span class="w"> </span><span class="s">bgp</span><span class="w"> </span><span class="s">p_as151</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="kn">ipv4</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="kn">table</span><span class="w"> </span><span class="s">t_bgp</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">        </span><span class="kn">import</span><span class="w"> </span><span class="s">filter</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">            </span><span class="c1"># Put the route in the PEER_COMM community</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">            </span><span class="kn">bgp_large_community.add(PEER_COMM)</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">            </span><span class="kn">...</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="err">}</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="c1"># Only export the routes from the specified communities</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="kn">export</span><span class="w"> </span><span class="s">where</span><span class="w"> </span><span class="s">bgp_large_community</span><span class="w"> </span><span class="p">~</span><span class="w"> </span><span class="sr">[LOCAL_COMM,</span><span class="w"> </span><span class="s">CUSTOMER_COMM]</span><span class="p">;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="p">}</span>;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="kn">...</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="err">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>对于 Peer 来说，当前 AS 需要导入 Peer 的路由信息，并向 Peer 导出自己和自己的 Customer 的信息。</p>
 </div>
@@ -5182,9 +5273,22 @@
 <p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201155613.png" /></p>
 <p>此时，如果我们在 AS150 的 BGP 路由中查看，发现对于不同的目的地，AS2 是主要被选择的途径点：</p>
 <p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201163149.png" /></p>
-<p>如果我们将 AS-3 的 Local Preference 提升到 15，再重新查看，会发现 AS3 成为了主要被选择的途径点：</p>
+<p>如果我们将 AS-3 的 Local Preference 提升到 15：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201163919.png" /></p>
+<p>再重新查看，会发现 AS3 成为了主要被选择的途径点：</p>
 <p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201163227.png" /></p>
 </div>
+<p>从上面的例子我们能看到，对于一个 AS 来说它的 Local Preference 决定了它如何选择路由，但是这仅仅只是保证了包通过 AS 想要的路径传递出去，但是如何保证包也能大部分从想要的路径传回来呢（即如何让 AS 的 Peer 也去使用这条路径呢）？</p>
+<p>在 BGP 当中有一个小技巧，因为 AS Path 传到每个 BGP 路由后都是可随意编辑的，我们通过在不想要的 AS Path 中添加多个自己，使得 AS Path 变得比较长，这样在路径选择时就不太可能选到我们不想要的路径，具体就是更改 Peer 关系的配置文件：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201164742.png" /></p>
+<p>这样就使得 AS Path 变得更长了：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201164806.png" /></p>
+<hr />
+<h2 id="bgp_4">BGP 劫持攻击<a class="headerlink" href="#bgp_4" title="Permanent link">&para;</a></h2>
+<p>根据上述可以看到，在 Announce 过程中，网络的 IP 前缀是由 AS 自行设定的。BGP 劫持攻击正是利用了这点，因为 BGP 并没有一个能验证 IP 前缀属于谁的机制，所以攻击者可以用自己的 BGP 路由器宣称一个假的 IP 前缀，这样就导致会有一些数据包被误传到攻击者手中，从而造成劫持攻击。</p>
+<p>BGP 的匹配机制采取“匹配更多位数优先”原则，举个例子：</p>
+<p><img alt="" src="../../../../../../assets/Pasted%20image%2020241201165324.png" /></p>
+<p>这里有两个 BGP 路由，分别为 <code>10.164.0.0/25</code> 和 <code>10.164.0.0/24</code>，</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5254,7 +5358,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月1日 16:35:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 15:03:07</span>
   </span>
 
     
