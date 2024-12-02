@@ -406,8 +406,126 @@ $$
 		- 指令缓存：0.4%
 		- 数据缓存：11.4%
 		- 加权平均：3.2%
+***
+## Measuring and Improving Cache Performance
 
+### Measuring Cache Performance
 
+我们使用 CPU 时间来评估缓存的表现，在第 1 章中，我们已经给出了 CPU 时间的计算公式。现在我们应当将缓存给考虑进去（因为缺失问题，缓存可能会引入额外的周期数），因此需要对原公式进行修改，得到以下公式：
+
+$$
+\begin{aligned}
+\text{CPU Time}&=(\text{CPU execution clock cycles }+\text{ Memory-stall clock cycles})\times\text{Clock cycle time}\\
+&=(\text{Instructions}\times\text{CPI}+\text{Instructions}\times\text{Miss Ratio}\times\text{Miss Penalty})\times\text{Clock cycle time}\\
+&=(\text{Instructions}\times\text{CPI}+\text{Read-stall cycles}+\text{Write-stall cycles})\times\text{Clock cycle time}\\
+\end{aligned}
+$$
+
+缺失问题可以来自读操作，也可来自写操作，对于 $\text{Read-stall cycles}$ 来说：
+
+$$
+\text{Read-stall cycles}=\frac{\text{Reads}}{\text{Program}}\times\text{Read miss rate}\times\text{Read miss penalty}
+$$
+
+对于 $\text{Write-stall cycles}$ 来说，我们假定使用写穿策略加上写缓冲器的设计，此时停顿的原因可分为两类：写失效（要求我们在继续写操作前先获取该缓存块），以及写缓冲器停顿（缓冲器内容已满，需要向主内存倒入一些数据以腾出空间），用公式表示为：
+
+$$
+\text{Write-stall cycles​}=(\frac{\text{Writes}}{\text{Program}}\times \text{Write miss rate}\times\text{Write miss penalty})+\text{Write buffer stalls}​
+$$
+
+- 如果提供了足够深度的写缓冲器，且内存接受写操作的速度快于处理器生成写操作的速度，那么写缓冲器的停顿就变得很小，可以忽略不计
+- 如果缓存块的大小仅仅只是一个字，那么 $\text{Write miss penalty}$ 为 0
+
+在大多数采取写穿策略的缓存中，读和写的缺失损失大致相等。假如不计写缓冲器停顿时间，那么可以同时考虑读和写操作，即：
+
+$$
+\begin{aligned}
+\text{Memory-stall clock cycles}&=\frac{\text{Memory accesses}}{\text{Program}}\times\text{Miss rate}\times\text{Miss penalty}\\
+&=\frac{\text{Instructions}}{\text{Program}}\times\frac{\text{Misses}}{\text{Instructions}}\times\text{Miss penalty}
+\end{aligned}
+$$
+
+!!! example "Examples"
+
+	假设有一个这样的缓存：
+	
+	- 指令缓存的失效率为 2%，数据缓存的失效率为 4%
+	- 若处理器在没有任何内存停顿的情况下，CPI = 2
+	- 对于所有的失效，失效损失为 100 个时钟周期
+	- 加载和失效指令的频率为 36%
+	
+	=== "Example 1"
+	
+		=== "Question"
+		
+			一个带有不发生任何停顿的完美缓存的处理器比带此类缓存的处理器快了多少倍？
+		
+		=== "Answer"
+		
+			设 $I$ 为指令总数，那么有：
+			
+			$$
+			\begin{aligned}
+			\text{Instruction miss cycles}&=I\times2\%\times 100=2.00I\\
+			\text{Data miss cycles}&=I\times36\%\times4\%\times 100=1.44I\\
+			\text{Total memory-stall cycles}&=2.00I+1.44I=3.44I\\
+			\text{CPI with stall}&=\text{CPI with perfect cache}+\text{Total memory-stalls}\\
+			&=(2+3.44)I=5.44I
+			\end{aligned}
+			$$
+			
+			与未停顿的 CPI 取比值，有：
+			
+			$$
+			\begin{aligned}
+			\frac{\text{CPU Time with stalls}}{\text{CPU Time with perfect cache}}&=\frac{I\times\text{CPI}_{\text{stall}}\times\text{Clock cycle}}{I\times\text{CPI}_{\text{perfect}}\times\text{Clock cycle}}\\
+			&=\frac{\text{CPI}_{\text{stall}}}{\text{CPI}_{\text{perfect}}}=\frac{5.44}{2}=2.72
+			\end{aligned}
+			$$
+			
+	=== "Example 2"
+	
+		=== "Question"
+		
+			在 Example 1 的基础上，如果我们通过将 CPI 从 2 提升为 1 来提升处理器的性能，结果又会如何？
+		
+		=== "Answer"
+		
+			$$
+			\begin{aligned}
+			\text{CPU with stall}&=\text{CPI with perfect cache}+\text{Total memory-stalls}\\
+			&=(1+3.44)I=4.44I\\
+			\therefore \frac{\text{CPU Time with stalls}}{\text{CPU Time with perfect cache}}&=\frac{\text{CPI}_{\text{stall}}}{\text{CPI}_{\text{perfect}}}=\frac{4.44}{1}=4.44
+			\end{aligned}
+			$$
+			
+			由上来看，内存停顿对 CPI 的影响占比从 $\frac{3.44}{5.44}=63\%$ 到 $\frac{4.44}{5.44}=77\%$
+	
+	=== "Example 3"
+	
+		=== "Question"
+		
+			在 Example 1 的基础上，如果我们通过将 Clock Rate 翻倍来提升处理器的性能，结果又会如何？
+		
+		=== "Answer"
+		
+			$$
+			\begin{aligned}
+			\text{Total miss cycles per instruction}&=(2\%\times200)+36\%\times(4\%\times200)=6.88\\
+			\text{CPI with cache misses}&= 2+ 6.88=8.88\\
+			\therefore \frac{\text{Performance with fast clock}}{\text {Performance with slow clock}}&=\frac{\text{Execution time with fast clock}}{\text {Execution time with slow clock}}\\
+			&=\frac{I\times\text{CPI}_{\text{slow clock}}\times\text{Clock cycle}}{I\times\text{CPI}_{\text{fast clock}}\times\text{Clock cycle}/2}\\
+			&=\frac{5.44}{8.88/2}=1.23
+			\end{aligned}
+			$$
+			
+			由上来看，更快的时钟只能提升到 1.2 倍的性能而非期望的 2 倍性能。
+
+!!! warning "注意"
+
+	从上面的 Example 2 和 3 能看出，如果只提升 CPU 的速度（比如提高 CPU 的时钟频率，降低周期数等等），而没有对内存系统进行相应的提升，那么反而会拉长 CPU 的执行时间，即降低 CPU 的性能。比如降低 CPU 的 CPI 值（无停顿），由于内存的停顿周期数不变，那么内存的停顿对实际 CPI 的影响占比就会增大，这意味着在相同的执行时间内，这类“改进后”的 CPU 反而遭遇更多的内存停顿，因而性能不佳。
+***
+### Improving Cache Performance
 
 
 
