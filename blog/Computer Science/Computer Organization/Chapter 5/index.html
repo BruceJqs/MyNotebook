@@ -1134,39 +1134,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#deep-concept-in-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deep Concept in Cache
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deep Concept in Cache">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#block-replacement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Block Replacement
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1197,6 +1164,30 @@
       Improving Cache Performance
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Improving Cache Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-1-flexible-block-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1 : Flexible Block Placement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-2-choosing-different-block-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2 : Choosing Different Block Size
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5048,39 +5039,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#deep-concept-in-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deep Concept in Cache
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deep Concept in Cache">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#block-replacement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Block Replacement
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -5111,6 +5069,30 @@
       Improving Cache Performance
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Improving Cache Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-1-flexible-block-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1 : Flexible Block Placement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-2-choosing-different-block-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2 : Choosing Different Block Size
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5502,38 +5484,6 @@
 </div>
 </div>
 <hr />
-<h3 id="deep-concept-in-cache">Deep Concept in Cache<a class="headerlink" href="#deep-concept-in-cache" title="Permanent link">&para;</a></h3>
-<h4 id="block-replacement">Block Replacement<a class="headerlink" href="#block-replacement" title="Permanent link">&para;</a></h4>
-<p>事实上，除了直接映射机制，Cache 还有其他映射机制，其对比如下：</p>
-<ul>
-<li>直接映射机制：数据块只能放到 Cache 的唯一一个位置<ul>
-<li>放置位置通常为数据地址 mod Cache 中数据块个数</li>
-</ul>
-</li>
-<li>全相联机制（Full Associative）：数据块能放到 Cache 的<font color="red">任何位置</font><ul>
-<li>这种方式的好处是可以降低缺失率，坏处是每次需要跟所有数据块比较是否命中
-<img alt="" src="../../../../assets/Pasted%20image%2020241127112237.png" /></li>
-<li>通常有三种策略来决定数据块放到哪个位置：<ul>
-<li>随机替换（Random Replacement）：随机挑选一个幸运数据块覆盖掉（需要一个随机数生成器）</li>
-<li>LRU（Least Recently Used）：选择上一次使用时间距离现在最远的那个数据块覆盖掉（需要一些额外的位用来记录信息）</li>
-<li>FIFO（First In First Out）：选择进入时间最早的数据块覆盖掉（同样需要一些额外的位记录信息）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>组相联机制（Set Associative）：每个数据块仍然会根据其地址确定其可以存放的缓存数据块，但是可以放的地方并不是一个，而是一组<ul>
-<li>放置组号位置为地址 mod Cache 中的组数，在这个组中任意一个块放置</li>
-<li>如果一个组有 <span class="arithmatex">\(n\)</span> 个数据块，那么称这个 Cache 是 <span class="arithmatex">\(n-\)</span>组相联</li>
-<li>实际上直接映射机制（<span class="arithmatex">\(n=1\)</span>）和全相联机制（<span class="arithmatex">\(n=m,m\)</span> 为 Cache 的总数据块个数）是组相联机制的特例</li>
-<li>Example：一个 4-way set-associative
-<img alt="" src="../../../../assets/Pasted%20image%2020241127113403.png" /></li>
-</ul>
-</li>
-</ul>
-<p>三者的示意图如下：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241127113003.png" /></p>
-<hr />
-<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
 <p>总的来说，直接映射机制处理 Cache 缺失情况如下图：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241127103938.png" /></p>
 <p>简单总结一下：</p>
@@ -5709,6 +5659,123 @@
 </div>
 <hr />
 <h3 id="improving-cache-performance">Improving Cache Performance<a class="headerlink" href="#improving-cache-performance" title="Permanent link">&para;</a></h3>
+<h4 id="solution-1-flexible-block-placement">Solution 1 : Flexible Block Placement<a class="headerlink" href="#solution-1-flexible-block-placement" title="Permanent link">&para;</a></h4>
+<p>事实上，为了减少 Cache 的缺失，除了直接映射机制，Cache 还有其他更灵活的映射机制，其对比如下：</p>
+<ul>
+<li>直接映射机制：数据块只能放到 Cache 的唯一一个位置<ul>
+<li>放置位置通常为数据地址 mod Cache 中数据块个数</li>
+</ul>
+</li>
+<li>
+<p>全相联机制（Full Associative）：数据块能放到 Cache 的<font color="red">任何位置</font></p>
+<ul>
+<li>这种方式的好处是可以降低缺失率，坏处是每次需要跟所有数据块比较是否命中</li>
+<li>
+<p>较为实际的做法是用比较器 (Comparator) 进行并行查找，提高查找速度，但显然会引入更大的硬件开销
+<img alt="" src="../../../../assets/Pasted%20image%2020241127112237.png" /></p>
+</li>
+<li>
+<p>通常有三种策略来决定数据块放到哪个位置：</p>
+<ul>
+<li>随机替换（Random Replacement）：随机挑选一个幸运数据块覆盖掉（需要一个随机数生成器）</li>
+<li>LRU（Least Recently Used）：选择上一次使用时间距离现在最远的那个数据块覆盖掉（需要一些额外的位用来记录信息）</li>
+<li>FIFO（First In First Out）：选择进入时间最早的数据块覆盖掉（同样需要一些额外的位记录信息）</li>
+</ul>
+</li>
+<li>组相联机制（Set Associative）：每个数据块仍然会根据其地址确定其可以存放的缓存数据块，但是可以放的地方并不是一个，而是一组</li>
+<li>放置组号位置为地址 mod Cache 中的组数，在这个组中任意一个块放置</li>
+<li>如果一个组有 <span class="arithmatex">\(n\)</span> 个数据块，那么称这个 Cache 是 <span class="arithmatex">\(n-\)</span>组相联</li>
+<li>实际上直接映射机制（<span class="arithmatex">\(n=1\)</span>）和全相联机制（<span class="arithmatex">\(n=m,m\)</span> 为 Cache 的总数据块个数）是组相联机制的特例</li>
+</ul>
+</li>
+</ul>
+<p>三者的示意图如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127113003.png" /></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Question</label><label for="__tabbed_12_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设有一个具有 4 个单字缓存块的缓存，有以下访问内存地址序列：0, 8, 0, 6, 8，分别计算在采用全相联、2-组相联和直接映射的置放方案时缓存的缺失次数。</p>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">直接映射</label><label for="__tabbed_13_2">2-组相联</label><label for="__tabbed_13_3">全相联</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202151327.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202151346.png" /></p>
+<p>缺失次数为 5</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202151438.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202151505.png" /></p>
+<p>缺失次数为 4</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202151534.png" /></p>
+<p>缺失次数为 3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>下图展示了一个缓存块大小为 16 字的 64KiB 缓存，在采用不同的置放方案后，数据失效率的提升水平：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202151614.png" /></p>
+<details class="question">
+<summary>在组相联中该如何寻找缓存块？</summary>
+<p>与直接映射缓存一样，我们将内存地址划分为以下几个字段：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202152350.png" /></p>
+<ul>
+<li><strong>标签</strong>（Tag）：用于区分同一组内的不同缓存块<ul>
+<li>需要通过比较器实现并行查找，对于 <span class="arithmatex">\(n\)</span> 路组联合缓存，需要有 <span class="arithmatex">\(n\)</span> 个比较器，以及一个 <span class="arithmatex">\(n-1\)</span> 多路选择器</li>
+</ul>
+</li>
+<li><strong>索引</strong>（Index）：用于区分不同的组<ul>
+<li>对于全联合缓存，它没有索引位，因为它只有一个组</li>
+<li><span class="arithmatex">\(n\)</span> 位索引表示 <span class="arithmatex">\(2^n\)</span> 个组</li>
+</ul>
+</li>
+<li>块偏移量（Block Offset）：表示单个缓存块的大小，块偏移量为 <span class="arithmatex">\(x\)</span> 表示大小为 <span class="arithmatex">\(2^x\)</span> 字节 <span class="arithmatex">\(= 2^{x−2}\)</span> 字</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Question</label><label for="__tabbed_14_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设一个缓存有 4K 个缓存块，每个块的大小为 4 个字，并且内存采用 32 位地址。请计算在直接映射、2-组相联、4-组相联以及全相联的置放方案下缓存的组数以及总的标签位数。</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>每个块的大小为 <span class="arithmatex">\(16\)</span> 字节，因此块偏移量为 <span class="arithmatex">\(4\)</span>，那么标签位和索引位的位数之和为 <span class="arithmatex">\(32 - 4 = 28\)</span> 位</li>
+<li>直接映射：组数 = 块数 = <span class="arithmatex">\(12\)</span> 组，因此索引位数为 <span class="arithmatex">\(\log_{⁡2}(4096)=12\text{bits}\)</span>，那么总标签位数为 <span class="arithmatex">\((28-12)\times 4K = 64\text{Kbits}\)</span></li>
+<li>2-组相联：组数 = 块数 - <span class="arithmatex">\(\log_{⁡2}(2) = 11\)</span> 组，总标签位数为 <span class="arithmatex">\((28 - 11)\times 2\times 2K= 68\text{Kbits}\)</span></li>
+<li>4-组相联：组数 = 块数 - <span class="arithmatex">\(\log_{⁡2}(4) = 10\)</span> 组，总标签位数为 <span class="arithmatex">\((28 - 10)\times 4\times 1K= 72\text{Kbits}\)</span></li>
+<li>全相联：组数 = 1 组，总标签位数为 <span class="arithmatex">\(28\times 4K\times 1 = 112\text{Kbits}\)</span></li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241202154750.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<p>下面是一个 4-组相联缓存的原理图：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241127113403.png" /></p>
+<p>不难发现，访问一个联合缓存需要先选择某个组，然后在组内进行查找，这带来了因比较和选择而产生的延时成本，因此在选择置放方案时需要权衡好<strong>缺失（Miss）成本</strong>和<strong>联合（Associativity）成本</strong>。</p>
+<hr />
+<p>在缓存中访问某个数据时，可能存在失效的情况，即该数据的对应缓存块已经放了别的数据。不同的置放方案会有不同的处理策略：</p>
+<ul>
+<li>直接映射：由于数据在缓存中的位置是唯一的，所以新访问的数据就直接替代原来缓存块内的数据</li>
+<li>全联合：由于可以随机访问缓存的任一位置，因此每个缓存块的原始数据都有被新数据替代的可能</li>
+<li>组联合：新来的数据可能替代它所在组内的任何缓存块中的数据<ul>
+<li>通常采取<strong>最早使用</strong>（LRU）策略，即那些很久没有被访问过的数据会优先被新数据替代掉</li>
+<li>实现这一策略需要跟踪组内缓存块数据的使用情况，对于 2-组相联缓存来说只需额外保留 1 位即可，但对于更多分路的组相联，实现该策略就相对比较困难了</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="solution-2-choosing-different-block-size">Solution 2 : Choosing Different Block Size<a class="headerlink" href="#solution-2-choosing-different-block-size" title="Permanent link">&para;</a></h4>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5778,7 +5845,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 15:03:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月2日 16:41:06</span>
   </span>
 
     
