@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "BGP Basic"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md"
+                "file": "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of BGP Basic"
             }
           },
           {
@@ -176,6 +176,11 @@
   },
   "active": "34ec6dd691294339",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241202232229.png",
+    "docs/assets/Pasted image 20241202225422.png",
+    "docs/assets/Pasted image 20241202224039.png",
+    "docs/assets/Pasted image 20241202223946.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/assets/Pasted image 20241202215650.png",
     "docs/assets/Pasted image 20241202215238.png",
     "docs/assets/Pasted image 20241202215234.png",
@@ -183,13 +188,8 @@
     "docs/assets/Pasted image 20241202214335.png",
     "docs/assets/Pasted image 20241202214122.png",
     "docs/assets/Pasted image 20241202211754.png",
-    "docs/assets/Pasted image 20241202210523.png",
-    "docs/assets/Pasted image 20241202210453.png",
-    "docs/assets/Pasted image 20241202210251.png",
-    "docs/assets/Pasted image 20241202205326.png",
     "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Others/College English Band IV/index.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",

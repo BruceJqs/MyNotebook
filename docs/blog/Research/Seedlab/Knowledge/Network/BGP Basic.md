@@ -304,4 +304,78 @@ BGP 的匹配机制采取“匹配更多位数优先”原则，举个例子：
 
 ![](../../../../../assets/Pasted%20image%2020241201165324.png)
 
-这里有两个 BGP 路由，分别为 `10.164.0.0/25` 和 `10.164.0.0/24`，
+这里有两个 BGP 路由，分别为 `10.164.0.0/25` 和 `10.164.0.0/24`，而对于一个 `10.164.0.71` 来说，两者理论上都是匹配的，但是 `10.164.0.0/25` 路由会被选择因为它有 25 位匹配而 `10.164.0.0/24` 只有 24 位匹配。
+
+就因为这个特性，攻击者就可以借此发起攻击，通过宣称更多位数的路由使得数据包的路径选择朝攻击者想要的方向流动，从而劫持数据包，举个例子来说，如果我想劫持 `10.164.0.0/24`，根据上面的说法，仅凭 `10.164.0.0/25` 只能劫持一半的数据包（因为匹配关系，只能匹配 `10.164.0.0` 到 `10.164.0.127` 的数据包），所以我们在多加一个宣称 `10.164.0.128/25` 即可匹配剩下 `10.164.0.128` 到 `10.164.0.255` 的数据包，从而劫持所有与 `10.164.0.0/24` 通信的数据包。
+
+![](../../../../../assets/Pasted%20image%2020241202223946.png)
+
+在 AS150（即攻击者）的 BGP 路由中，我们设置如下：
+
+```nginx title="Attacker.conf"
+protocol static hijacks {
+	ipv4 { table t_bgp; };
+	route 10.164.0.0/25 blackhole {
+		bgp_large_community.add(LOCAL_COMM);
+	};
+	route 10.164.0.128/25 blackhole {
+		bgp_large_community.add(LOCAL_COMM);
+	};
+}
+```
+
+当然，这样的攻击其实也有主动解决方法（Fight Back！），既然 Attacker 比我多宣称一位，那作为 Victim 我再多宣称一位就能把数据包给抢回来了，具体来说如下：
+
+![](../../../../../assets/Pasted%20image%2020241202225422.png)
+
+配置文件如下：
+
+```nginx title="Victim.conf"
+protocol static {
+	ipv4 { table t_bgp; };
+	route 10.164.0.0/26 via "net0" {
+		bgp_large_community.add(LOCAL_COMM);
+	};
+	route 10.164.0.64/26 via "net0" {
+		bgp_large_community.add(LOCAL_COMM);
+	};
+	route 10.164.0.128/26 via "net0" {
+		bgp_large_community.add(LOCAL_COMM);
+	};
+	route 10.164.0.192/26 via "net0" {
+		bgp_large_community.add(LOCAL_COMM);
+	};
+}
+```
+
+??? question "思考"
+
+	或许有人会问，那我直接把所有的 IP 都宣称个遍，不给 Victim 反击的余地攻击不就能成功了嘛。这样想固然有道理，但是从现实角度来说，不仅一下子搞出 255 个 IP 很麻烦，而且大量的 IP 前缀涌入整个网络系统当中，这也无疑增加了传输的负担，也可能导致攻击的数据包传输速度减慢。
+	
+	也正因为如此，通过抢位数来回击的方法也只是临时性恢复的一种做法，能让 Victim 在发现时不依赖上层供应商主动解决问题，但是到最后查明原因后还是需要靠上层供应商通过一定的过滤条件来解决这类问题，假设 AS2 是 AS150（Attacker） 的上层供应商，它可以改动配置文件如下：
+	
+	```nginx title="Provider.conf"
+	protocol bgp c_as150 {
+		ipv4 {
+			table t_bgp;
+			import filter {
+				bgp_large_community.add(CUSTOMER_COMM);
+				bgp_local_pref = 30;
+				if (net != 10.150.0.0/24) then reject;
+				accept;
+			}
+		}
+	}
+	```
+	
+	通过添加过滤条件强制将 AS150 的 IP 前缀限定死，那就算 AS150 怎么宣称都无法抢夺数据包，从而解决了这次攻击。
+
+!!! example "现实案例"
+
+	2008 年 2 月 24 日，巴基斯坦的通讯公司为了建立自己的防火墙，将 YouTube 的网站隔离在外，却误宣称自己的 IP 前缀，导致反过来劫持了 YouTube 的部分数据包：
+	
+	![](../../../../../assets/Pasted image 20241202232229.png)
+	
+	其实，在 20:07（UTC）时 YouTube 方还宣称错了 IP 前缀导致没反击成功，20:18（UTC）宣称的才是正确的反击手段，而 21:01（UTC）则是上层供应商出手解决了这个问题。
+
+
