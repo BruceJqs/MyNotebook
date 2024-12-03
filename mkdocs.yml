@@ -99,6 +99,7 @@ nav:
       - "Chapter 09: Greedy Algorithms": blog/Computer Science/ADS/Chapter 9.md
       - "Chapter 10: NP Completeness": blog/Computer Science/ADS/Chapter 10.md
       - "Chapter 11: Approximation": blog/Computer Science/ADS/Chapter 11.md
+      - "Chapter 12: Local Search": blog/Computer Science/ADS/Chapter 12.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
