@@ -29,6 +29,9 @@ comments: true
 	
 - 树
 	- 连通的无圈图称为树（Tree）
+	- 图 $G$ 的生成子图称为生成树（Spanning Tree）
+		- 最小生成树（MST）是赋权图所有生成树中总权和最少的生成树
+		- 可以用 Kruskal 和 Prim 算法解决
 ***
 ### 简单图
 
@@ -54,6 +57,7 @@ comments: true
 	- 经过顶点互不相同的途径称为路（Path）
 		- 起点和终点相同，其余顶点互不相同，也不与起点和终点相同的途径称为圈（Cycle）
 		- 边赋权图中一条路所含边的权之和称为它的长度
+		- 最短路：图 $G=(V,E)$ 中起点为 $s$，终点为 $t$ 的长度最短的路称为 $s$ 到 $t$ 的最短路（Shortest Path），可以用 Bellman-Ford（无负权圈）、Dijkstra（非负权图，时间复杂度 $O(|E|+|V|\log|V|)$）、Floyd-Warshall（无负权圈）算法解决
 
 ![](../../../assets/Pasted%20image%2020241204165308.png)
 ***
@@ -69,3 +73,22 @@ comments: true
 
 ![](../../../assets/Pasted%20image%2020241204165212.png)
 ***
+### 最短连接
+
+给定 Euclidean 平面上 $n$ 个点，如何用总长度最短的若干条线段将它们连接起来？
+
+用最小生成树解决最短连接问题：构造 $n$ 个顶点的赋权完全图 $K_n$，边的权为它的两个端点的Euclidean 距离。问题的解即为 $K_n$ 的最小生成树
+
+#### 最小 Steiner 树
+
+允许增加任意多个 Steiner 点的最短连接（就是说，可以在原有的点集中增加任意多个点，使得最后的连接线段总长度最短）
+
+![](../../../assets/Pasted%20image%2020241204230135.png)
+
+- Gilbert-Pollak 猜想：最小 Steiner 树长度不小于最小生成树长度的 32 倍（当 $n=3,4,5,6$ 时结论是成立的）
+***
+#### Hamilton 圈与 Hamilton 图
+
+经过图的所有顶点恰好一次的圈称为 Hamilton 圈（Hamiltion cycle）
+
+存在 Hamilton 圈的图称为 Hamilton 图
