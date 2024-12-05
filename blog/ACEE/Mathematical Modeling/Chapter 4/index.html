@@ -2115,6 +2115,8 @@
       
         
       
+        
+      
     
     
       
@@ -2273,6 +2275,27 @@
   
   <span class="md-ellipsis">
     Chapter 06: 数理统计的基本概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 07: 参数估计
   </span>
   
 
@@ -2567,6 +2590,39 @@
       二部图与连通
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      最短连接
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最短连接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steiner" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小 Steiner 树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hamilton-hamilton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamilton 圈与 Hamilton 图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4842,6 +4898,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      最短连接
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最短连接">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steiner" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小 Steiner 树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hamilton-hamilton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hamilton 圈与 Hamilton 图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4912,6 +5001,11 @@
 <p>树</p>
 <ul>
 <li>连通的无圈图称为树（Tree）</li>
+<li>图 <span class="arithmatex">\(G\)</span> 的生成子图称为生成树（Spanning Tree）<ul>
+<li>最小生成树（MST）是赋权图所有生成树中总权和最少的生成树</li>
+<li>可以用 Kruskal 和 Prim 算法解决</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -4944,6 +5038,7 @@
 <li>经过顶点互不相同的途径称为路（Path）<ul>
 <li>起点和终点相同，其余顶点互不相同，也不与起点和终点相同的途径称为圈（Cycle）</li>
 <li>边赋权图中一条路所含边的权之和称为它的长度</li>
+<li>最短路：图 <span class="arithmatex">\(G=(V,E)\)</span> 中起点为 <span class="arithmatex">\(s\)</span>，终点为 <span class="arithmatex">\(t\)</span> 的长度最短的路称为 <span class="arithmatex">\(s\)</span> 到 <span class="arithmatex">\(t\)</span> 的最短路（Shortest Path），可以用 Bellman-Ford（无负权圈）、Dijkstra（非负权图，时间复杂度 <span class="arithmatex">\(O(|E|+|V|\log|V|)\)</span>）、Floyd-Warshall（无负权圈）算法解决</li>
 </ul>
 </li>
 </ul>
@@ -4969,6 +5064,19 @@
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241204165212.png" /></p>
 <hr />
+<h3 id="_5">最短连接<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>给定 Euclidean 平面上 <span class="arithmatex">\(n\)</span> 个点，如何用总长度最短的若干条线段将它们连接起来？</p>
+<p>用最小生成树解决最短连接问题：构造 <span class="arithmatex">\(n\)</span> 个顶点的赋权完全图 <span class="arithmatex">\(K_n\)</span>，边的权为它的两个端点的Euclidean 距离。问题的解即为 <span class="arithmatex">\(K_n\)</span> 的最小生成树</p>
+<h4 id="steiner">最小 Steiner 树<a class="headerlink" href="#steiner" title="Permanent link">&para;</a></h4>
+<p>允许增加任意多个 Steiner 点的最短连接（就是说，可以在原有的点集中增加任意多个点，使得最后的连接线段总长度最短）</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241204230135.png" /></p>
+<ul>
+<li>Gilbert-Pollak 猜想：最小 Steiner 树长度不小于最小生成树长度的 32 倍（当 <span class="arithmatex">\(n=3,4,5,6\)</span> 时结论是成立的）</li>
+</ul>
+<hr />
+<h4 id="hamilton-hamilton">Hamilton 圈与 Hamilton 图<a class="headerlink" href="#hamilton-hamilton" title="Permanent link">&para;</a></h4>
+<p>经过图的所有顶点恰好一次的圈称为 Hamilton 圈（Hamiltion cycle）</p>
+<p>存在 Hamilton 圈的图称为 Hamilton 图</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5038,7 +5146,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月4日 17:02:14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月5日 13:39:34</span>
   </span>
 
     
