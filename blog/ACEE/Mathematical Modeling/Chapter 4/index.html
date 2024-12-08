@@ -2400,6 +2400,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -2626,6 +2630,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      特殊顶点集
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2736,6 +2749,48 @@
   
   <span class="md-ellipsis">
     Homework 05
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Homework%206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 06
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Homework%207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 07
   </span>
   
 
@@ -4931,6 +4986,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      特殊顶点集
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5077,6 +5141,34 @@
 <h4 id="hamilton-hamilton">Hamilton 圈与 Hamilton 图<a class="headerlink" href="#hamilton-hamilton" title="Permanent link">&para;</a></h4>
 <p>经过图的所有顶点恰好一次的圈称为 Hamilton 圈（Hamiltion cycle）</p>
 <p>存在 Hamilton 圈的图称为 Hamilton 图</p>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Icosian Game</label><label for="__tabbed_1_2">骑士环游（Knight's Tour）</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>问题描述：一个正十二面体的二十个顶点各代表一个城市，是否有一条从某个城市出发，沿正十二面体的棱行走，经过每个城市恰好一次，最后回到出发城市的路线？</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241208132611.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>在 <span class="arithmatex">\(8\times 8\)</span> 国际象棋棋盘上，马能否按其走子规则，从一个格子出发，经过其它格子恰好一次，最后回到起点？</p>
+<ul>
+<li>构造“跳马图”，每一格子为图的一个顶点，两个格子之间有 边相连当且仅当马可按走子规则从一个格子跳到另一个格子</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241208132834.png" /></p>
+<ul>
+<li>推广到一般情况，<span class="arithmatex">\(m\times n(m\leq n)\)</span> 方格棋盘对应的“跳马图”为 Hamilton 图，除非：<ul>
+<li><span class="arithmatex">\(m,n\)</span> 均为奇数</li>
+<li>或 <span class="arithmatex">\(m=1,2,4\)</span></li>
+<li>或 <span class="arithmatex">\(m=3,n=4,6,8\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="_6">特殊顶点集<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5146,7 +5238,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月5日 13:39:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月8日 13:31:39</span>
   </span>
 
     
