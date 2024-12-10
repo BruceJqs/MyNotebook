@@ -1479,6 +1479,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#randomized-quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Randomized Quicksort
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4957,6 +4966,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#randomized-quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Randomized Quicksort
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5225,6 +5243,41 @@ Pr[S] &amp; = \sum\limits_{i=k+1}^N Pr[S_i] = \sum\limits_{i=k+1}^N \frac{k}{N(i
 <p>如果能力最佳的候选者出现在前 <span class="arithmatex">\(k\)</span> 个人里面，那么这种在线算法就无法得到正确结果，因此该算法<strong>无法保证</strong>总是能够找到正确解。</p>
 </div>
 <hr />
+<h2 id="randomized-quicksort">Randomized Quicksort<a class="headerlink" href="#randomized-quicksort" title="Permanent link">&para;</a></h2>
+<p>我们在 FDS 学的<strong>快速排序</strong>（Quicksort）是一种确定性（Deterministic）的排序，它的时间复杂度为：</p>
+<ul>
+<li><span class="arithmatex">\(\Theta(N^2)\)</span>：最坏情况下的运行时间</li>
+<li><span class="arithmatex">\(\Theta(N\log ⁡N)\)</span>：平均情况下的运行时间</li>
+</ul>
+<p>确定性的快排是基于每种输入排列是等可能分布的假设，因此它没有很好地处理最坏情况。要想避免最坏情况，我们可以用随机算法来解决。随机化快排的关键在于随机且均匀地挑选<strong>支点</strong>（Pivot）。</p>
+<ul>
+<li><strong>中央分离器</strong>（Central Splitter）：一种较好的支点，它分开数据集后使得每个子集至少包含 <span class="arithmatex">\(\frac{n}{4}\)</span>​ 的数据<ul>
+<li>这样就可以消除支点出现在数据两端（相当于没有分）的最坏情况</li>
+</ul>
+</li>
+<li>修改后的快速排序：在递归前始终能够选出一个中央分离器</li>
+</ul>
+<p>结论：预期的寻找中央分离器的迭代次数至多为 2</p>
+<ul>
+<li>根据下面的示意图，不难发现从所有数据中随机选出合适中央分离器的概率为 <span class="arithmatex">\(\frac{1}{2}​\)</span>（中间的一半数据），因此即使第 1 次挑选失败后，第 2 次就能选出正确的中央分离器</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241210161209.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">随机化快排的时间复杂度</p>
+<ul>
+<li>如果有不等式 <span class="arithmatex">\(N(\frac{3}{4})^{j+1}\leq∣S∣\leq N(\frac{3}{4})^j\)</span>，记子问题 <span class="arithmatex">\(S\)</span> 为类型 <span class="arithmatex">\(j\)</span><ul>
+<li><span class="arithmatex">\(\frac{3}{4}​\)</span> 表示的是选择了最边上的中央分离器的情况，此时数据被分为了 <span class="arithmatex">\(\frac{1}{4}N\)</span> 和 <span class="arithmatex">\(\frac{3}{4}N\)</span> 两部分，我们关注的是较大的那部分</li>
+</ul>
+</li>
+<li>结论：对于类型 <span class="arithmatex">\(j\)</span>，至多有 <span class="arithmatex">\((\frac{4}{3})^{j+1}\)</span> 个子问题<ul>
+<li>这里用到了上面不等式的左半边——因为子问题最小为 <span class="arithmatex">\(N(\frac{3}{4})^{j+1}\)</span>，因此子问题最多有 <span class="arithmatex">\(\frac{N}{N(\frac{3}{4})^{j+1}}=(\frac{4}{3})^{j+1}\)</span> 个</li>
+</ul>
+</li>
+<li>期望 <span class="arithmatex">\(E[T_{\text{type j}}]=O(N(\frac{3}{4})^j)\times(\frac{4}{3})^{j+1}=O(N)\)</span></li>
+<li>不同类型的个数为 <span class="arithmatex">\(\log_{\frac{⁡4}{3}}N=O(\log⁡ N)\)</span></li>
+<li>结合上面两条，随机化快排的时间复杂度为稳定的 <span class="arithmatex">\(O(N\log⁡ N)\)</span></li>
+</ul>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5294,7 +5347,7 @@ Pr[S] &amp; = \sum\limits_{i=k+1}^N Pr[S_i] = \sum\limits_{i=k+1}^N \frac{k}{N(i
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月10日 15:40:17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月10日 16:16:23</span>
   </span>
 
     
