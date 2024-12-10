@@ -30,3 +30,4 @@ comments: true
 - [Chapter 10 : NP Completeness](Chapter%2010)
 - [Chapter 11 : Approximation](Chapter%2011/)
 - [Chapter 12 : Local Search](Chapter%2012/)
+- [Chapter 13 : Randomized Algorithm](Chapter%2013/)
