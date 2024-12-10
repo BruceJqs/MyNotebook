@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 4"
+              "title": "Chapter 7"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 7.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 4"
+              "title": "Outline of Chapter 7"
             }
           },
           {
@@ -174,33 +174,33 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "34ec6dd691294339",
+  "active": "66d528dac0297541",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241208132834.png",
-    "docs/assets/Pasted image 20241208132611.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 6.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
-    "docs/assets/Pasted image 20241208005837.png",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
-    "docs/assets/Pasted image 20241208003910.png",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
+    "docs/assets/Pasted image 20241208171658.png",
+    "docs/assets/Pasted image 20241208171402.png",
+    "docs/assets/Pasted image 20241208163827.png",
+    "docs/assets/Pasted image 20241208162333.png",
+    "docs/assets/Pasted image 20241208152957.png",
+    "docs/assets/Pasted image 20241208150343.png",
+    "docs/assets/Pasted image 20241208150245.png",
+    "docs/assets/Pasted image 20241208145013.png",
+    "docs/assets/Pasted image 20241208135227.png",
+    "docs/assets/Pasted image 20241208134540.png",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/test-report.md",
-    "docs/assets/Pasted image 20241205234556.png",
-    "docs/assets/Pasted image 20241205233046.png",
-    "docs/assets/Pasted image 20241205232749.png",
-    "docs/assets/Screenshot 2024-12-05 at 23.25.48.png",
-    "docs/assets/Pasted image 20241205230802.png",
-    "docs/assets/Pasted image 20241205230652.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
-    "docs/assets/Pasted image 20241204230135.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/blog/Research/Seedlab/Basic-Labs/A01_transit_as.md",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
@@ -210,7 +210,6 @@
     "docs/blog/Computer Science/ADS/Chapter 11.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",

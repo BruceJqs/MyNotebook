@@ -31,7 +31,7 @@ $$
 
 $$
 \begin{gather}
-(mg+f(v)dx=\frac{1}{2}m[(v-dv)^2-v^2]\\
+(mg+f(v))dx=\frac{1}{2}m[(v-dv)^2-v^2]\\
 \Rightarrow -mvdv=(mg+f(v))dx
 \end{gather}
 $$
@@ -42,7 +42,7 @@ $$
 
 由上升下降距离相同有 $\int_0^{v_0}\frac{mvdv}{mg+f(v)}=\int_0^{v_f}\frac{mvdv}{mg-f(v)}$
 
-（2）由 $mg+f(v)>mg-f(v)$，所以 $v_0>v_f,t_a>t_d$
+（2）由 $mg+f(v)>mg-f(v)$，所以 $v_0>v_f,t_a<t_d$
 ***
 ### Question 02
 
