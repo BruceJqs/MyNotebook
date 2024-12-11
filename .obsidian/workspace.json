@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Appendix.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Appendix"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Appendix.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Appendix"
             }
           },
           {
@@ -176,17 +176,28 @@
   },
   "active": "34ec6dd691294339",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241211141454.png",
-    "docs/assets/Pasted image 20241211141315.png",
-    "docs/assets/Pasted image 20241211140926.png",
-    "docs/assets/Pasted image 20241211111648.png",
-    "docs/assets/Pasted image 20241211110627.png",
-    "docs/assets/Pasted image 20241211110004.png",
-    "docs/assets/Pasted image 20241211105911.png",
-    "docs/assets/Pasted image 20241211105806.png",
-    "docs/assets/Pasted image 20241211104745.png",
-    "docs/assets/Pasted image 20241211104453.png",
-    "docs/assets/Pasted image 20241211104437.png",
+    "docs/assets/Pasted image 20241211171750.png",
+    "docs/assets/Pasted image 20241211165146.png",
+    "docs/assets/Pasted image 20241211165133.png",
+    "docs/assets/Pasted image 20241211163359.png",
+    "docs/assets/Pasted image 20241211163234.png",
+    "docs/assets/Pasted image 20241211163217.png",
+    "docs/assets/Pasted image 20241211162903.png",
+    "docs/assets/Pasted image 20241211162814.png",
+    "docs/assets/Pasted image 20241211162651.png",
+    "docs/assets/Pasted image 20241211161115.png",
+    "docs/assets/Pasted image 20241211160836.png",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/Computer Science/Computer Organization/Appendix.md",
+    "docs/blog/Computer Science/Computer Organization/index.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+    "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 3.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 2.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",
     "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
@@ -194,26 +205,15 @@
     "docs/blog/Computer Science/Tech/Iterm2/Iterm2.md",
     "docs/blog/Computer Science/Tech/CTF/Docker/Docker.md",
     "docs/blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md",
-    "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
     "docs/blog/Computer Science/ADS/Chapter 13.md",
     "docs/blog/Computer Science/Tech/Ubuntu",
     "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/blog/Computer Science/ADS/Chapter 9.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 6.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
-    "docs/blog/Research/Seedlab/Questions.md",
-    "docs/blog/Research/Seedlab/index.md",
-    "docs/blog/Research/Seedlab/test-report.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
