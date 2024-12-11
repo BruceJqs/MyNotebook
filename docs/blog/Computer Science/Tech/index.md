@@ -20,3 +20,8 @@ comments: true
 ## Iterm2
 
 - [Iterm2](Iterm2/Iterm2/)
+
+## Ubuntu Linux 系列
+
+- [Tex](Ubuntu/Tex/)
+- 

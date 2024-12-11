@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 13.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 13"
+              "title": "Chapter 5"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 13.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 13"
+              "title": "Outline of Chapter 5"
             }
           },
           {
@@ -176,12 +176,30 @@
   },
   "active": "34ec6dd691294339",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241210161209.png",
+    "docs/assets/Pasted image 20241211141454.png",
+    "docs/assets/Pasted image 20241211141315.png",
+    "docs/assets/Pasted image 20241211140926.png",
+    "docs/assets/Pasted image 20241211111648.png",
+    "docs/assets/Pasted image 20241211110627.png",
+    "docs/assets/Pasted image 20241211110004.png",
+    "docs/assets/Pasted image 20241211105911.png",
+    "docs/assets/Pasted image 20241211105806.png",
+    "docs/assets/Pasted image 20241211104745.png",
+    "docs/assets/Pasted image 20241211104453.png",
+    "docs/assets/Pasted image 20241211104437.png",
+    "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
+    "docs/blog/Computer Science/Tech/Ubuntu/Figs",
+    "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
+    "docs/blog/Computer Science/Tech/index.md",
+    "docs/blog/Computer Science/Tech/Iterm2/Iterm2.md",
+    "docs/blog/Computer Science/Tech/CTF/Docker/Docker.md",
+    "docs/blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md",
+    "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
+    "docs/blog/Computer Science/ADS/Chapter 13.md",
+    "docs/blog/Computer Science/Tech/Ubuntu",
+    "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/blog/Computer Science/ADS/Chapter 9.md",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 13.md",
-    "docs/assets/Pasted image 20241210153136.png",
-    "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
@@ -191,27 +209,11 @@
     "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
-    "docs/assets/Pasted image 20241208171658.png",
-    "docs/assets/Pasted image 20241208171402.png",
-    "docs/assets/Pasted image 20241208163827.png",
-    "docs/assets/Pasted image 20241208162333.png",
-    "docs/assets/Pasted image 20241208152957.png",
-    "docs/assets/Pasted image 20241208150343.png",
-    "docs/assets/Pasted image 20241208150245.png",
-    "docs/assets/Pasted image 20241208145013.png",
-    "docs/assets/Pasted image 20241208135227.png",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/test-report.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
-    "docs/blog/Research/Seedlab/Basic-Labs/A01_transit_as.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
-    "docs/blog/Computer Science/ADS/Chapter 10.md",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
@@ -220,8 +222,6 @@
     "site/search",
     "site/tag/index.html",
     "site/tag",
-    "site/develop/designbeauty/my-to-desihn/index.html",
-    "site/develop/designbeauty/db1/index.html",
     "未命名.canvas"
   ]
 }

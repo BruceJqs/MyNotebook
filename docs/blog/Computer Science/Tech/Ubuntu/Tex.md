@@ -7,4 +7,8 @@ hide:
 comments: true
 ---   
 
-# Docker
+# Tex 在 Ubuntu 的安装
+
+!!! abstract 
+
+	使用系统：Ubuntu 22.04
