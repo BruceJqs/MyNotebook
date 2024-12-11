@@ -1260,6 +1260,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#virtual-memory-for-large-virtual-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Memory for Large Virtual Address
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Memory for Large Virtual Address">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-level-page-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Level Page Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-of-virtual-memory-tlbs-and-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration of Virtual Memory, TLBs and Caches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protection-in-the-virtual-memory-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protection in the Virtual Memory System
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5372,6 +5423,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#virtual-memory-for-large-virtual-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Memory for Large Virtual Address
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Memory for Large Virtual Address">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-level-page-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Level Page Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-of-virtual-memory-tlbs-and-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration of Virtual Memory, TLBs and Caches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protection-in-the-virtual-memory-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protection in the Virtual Memory System
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5817,7 +5919,7 @@
 <div class="arithmatex">\[
 \text{Read-stall cycles}=\frac{\text{Reads}}{\text{Program}}\times\text{Read miss rate}\times\text{Read miss penalty}
 \]</div>
-<p>对于 <span class="arithmatex">\(\text{Write-stall cycles}\)</span> 来说，我们假定使用写穿策略加上写缓冲器的设计，此时停顿的原因可分为两类：写失效（要求我们在继续写操作前先获取该缓存块），以及写缓冲器停顿（缓冲器内容已满，需要向主内存倒入一些数据以腾出空间），用公式表示为：</p>
+<p>对于 <span class="arithmatex">\(\text{Write-stall cycles}\)</span> 来说，我们假定使用写穿策略加上写缓冲器的设计，此时停顿的原因可分为两类：写缺失（要求我们在继续写操作前先获取该缓存块），以及写缓冲器停顿（缓冲器内容已满，需要向主内存倒入一些数据以腾出空间），用公式表示为：</p>
 <div class="arithmatex">\[
 \text{Write-stall cycles​}=(\frac{\text{Writes}}{\text{Program}}\times \text{Write miss rate}\times\text{Write miss penalty})+\text{Write buffer stalls}​
 \]</div>
@@ -5836,10 +5938,10 @@
 <p class="admonition-title">Examples</p>
 <p>假设有一个这样的缓存：</p>
 <ul>
-<li>指令缓存的失效率为 2%，数据缓存的失效率为 4%</li>
+<li>指令缓存的缺失率为 2%，数据缓存的缺失率为 4%</li>
 <li>若处理器在没有任何内存停顿的情况下，CPI = 2</li>
-<li>对于所有的失效，失效损失为 100 个时钟周期</li>
-<li>加载和失效指令的频率为 36%</li>
+<li>对于所有的缺失，缺失损失为 100 个时钟周期</li>
+<li>加载和缺失指令的频率为 36%</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Example 1</label><label for="__tabbed_8_2">Example 2</label><label for="__tabbed_8_3">Example 3</label></div>
 <div class="tabbed-content">
@@ -5982,7 +6084,7 @@
 </div>
 </div>
 </div>
-<p>下图展示了一个缓存块大小为 16 字的 64KiB 缓存，在采用不同的置放方案后，数据失效率的提升水平：</p>
+<p>下图展示了一个缓存块大小为 16 字的 64KiB 缓存，在采用不同的置放方案后，数据缺失率的提升水平：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241202151614.png" /></p>
 <details class="question">
 <summary>在组相联中该如何寻找缓存块？</summary>
@@ -6025,7 +6127,7 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241127113403.png" /></p>
 <p>不难发现，访问一个联合缓存需要先选择某个组，然后在组内进行查找，这带来了因比较和选择而产生的延时成本，因此在选择置放方案时需要权衡好<strong>缺失（Miss）成本</strong>和<strong>联合（Associativity）成本</strong>。</p>
 <hr />
-<p>在缓存中访问某个数据时，可能存在失效的情况，即该数据的对应缓存块已经放了别的数据。不同的置放方案会有不同的处理策略：</p>
+<p>在缓存中访问某个数据时，可能存在缺失的情况，即该数据的对应缓存块已经放了别的数据。不同的置放方案会有不同的处理策略：</p>
 <ul>
 <li>直接映射：由于数据在缓存中的位置是唯一的，所以新访问的数据就直接替代原来缓存块内的数据</li>
 <li>全联合：由于可以随机访问缓存的任一位置，因此每个缓存块的原始数据都有被新数据替代的可能</li>
@@ -6135,7 +6237,7 @@
 <blockquote>
 <p>主内存可以被看作下属存储（即磁盘）的“缓存”。或者，反过来说，我们把那些在主内存里放不下的内容存到磁盘里，这种技术被称为虚拟内存（Virtual Memory）技术</p>
 </blockquote>
-<p>虚拟内存技术可以让多个程序之间高效、安全地共享内存，同时允许单个程序使用超过内存容量的内存（虽然 CPU 取数据时是从 Cache 中取的，但是它能访问到的数据的数目比 Cache 的容量要大）。在远古时期，很多程序因为需要使用过大的内存而无法被运行；但现在由于虚拟内存技术的广泛使用，这些程序都不成问题了。</p>
+<p>虚拟内存技术可以让多个程序之间高效、安全地共享内存，同时允许单个程序使用超过内存容量的内存（虽然 CPU 取数据时是从 Cache 中取的，但是它能访问到的数据的数目比 Cache 的容量要大）。以前，很多程序因为需要使用过大的内存而无法被运行，需要由程序员使用各种技巧使得程序能够被容纳下；但现在由于虚拟内存技术的广泛使用，这些程序都不成问题了。</p>
 <p>如下图所示，实际上的主内存我们称之为物理内存（Physical Memory）中的地址称为物理地址,（Physical Addresses）；而我们给每一个程序内部使用到的内存另外编一套地址，称为虚拟地址（ Virtual Addresses）；虚拟内存技术负责了这两个地址之间的转换（Address Translation）</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241202211754.png" /></p>
 <p>从这张图中我们也可以很容易地看出“虚拟内存技术可以允许单个程序访问超过物理内存大小限制的内存”的原因，即有一些内存可以被临时地存放在磁盘上，到被访问的时候再被放到物理内存中，就像  Cache 做的那样。</p>
@@ -6152,6 +6254,9 @@
 <p>我们知道，访问磁盘相比于访问内存是非常慢的（相差大约十万倍），这个主要时延来自于磁盘转到正确的位置上的时间花费；所以我们希望一次读进来多一点从而来分摊这个访问时间。典型的页面大小从 4KiB ~ 64KiB 不等。</p>
 <p>同时，从上面的图中，我们还可以注意到物理内存的存放并没有分组的概念，即用 Cache 的术语来说，主内存是全相联的。这是因为相比于查询时间长来说，去访问磁盘所多花的 Page Fault 更为可怕，所以说我们还是尽量去降低缺失率。</p>
 <p>同样的道理，由于读写磁盘是非常慢的，需要访问下级内存的写穿策略并不合适，因此在虚拟内存技术中，我们采取写回的方式。</p>
+<ul>
+<li>与高速缓存类似，我们在页表中会额外使用一个 Dirty Bit 来追踪某个页是否在被读入内存后被覆写，置位表示被覆写，这种被覆写的页被称为 Dirty Page</li>
+</ul>
 <hr />
 <h3 id="mapping-mechanism">Mapping Mechanism<a class="headerlink" href="#mapping-mechanism" title="Permanent link">&para;</a></h3>
 <p>和 Cache 的全相联相似地，我们不妨假设一个页面的大小是 4KiB，那么其页内的偏移 <strong>Page Offset</strong>（相当于 Cache 的 Byte Offset）就需要 12 位来表示；那么物理地址中除去后 12 位以外前面的部分就表征着它是属于哪一页的，我们称之为虚拟页码（Physical Page Number，相当于 Cache 的 Tag）。</p>
@@ -6167,8 +6272,12 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241202215127.png" /></p>
 <p>当 Page Fault 触发时，由操作系统接管控制，处理完之后再将控制交还给进程。操作系统要做的事情是在下属存储中找到这一页面，将其放到主内存里（可能需要与当前主存中的某个页面交换），然后更新页表。</p>
 <p>操作系统在创建进程时在磁盘 (或者闪存) 上创建一个虚拟地址空间那么大的空间，以便上述的交换；这个空间称为交换区（Swap Space）。下面的问题是操作系统如何在交换区中找到需要的页面。</p>
-<p>我们可以看到，如果页表条目的 Valid Bit 为 0，那么后面的物理页码是没有用到的。我们可以利用这个字段存储对应页面被交换到了磁盘的哪个位置；或者另外开辟一个索引结构，在其中记录每个虚拟页码对应的磁盘位置。下图为利用页表条目中的物理页码存储交换位置的示意图：</p>
+<p>我们可以看到，如果页表条目的 Valid Bit 为 0，那么后面的物理页码是没有用到的。我们可以利用这个字段存储对应页面被交换到了磁盘的哪个位置；或者另外开辟一个索引结构，在其中记录每个虚拟页码对应的磁盘位置。下图为利用页表条目中的物理页码存储交换位置的示意图（灰色部分就是交换空间内的元素）：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241202215650.png" /></p>
+<p>操作系统同时也创建了一个用于跟踪每个物理页使用进程或虚拟地址的情况的数据结构。当页错误发生时，如果主存中的每个页都被使用，那么操作系统必须选择其中一个要被替换的页，此时采取的策略是<strong>LRU</strong>（Least Recently Used, 最早使用），即替换很久没有被访问过的页（将这个被替换的页放入二级内存的交换空间中）。</p>
+<p>由于采取精确的 LRU 策略过于复杂（需要记录每个页的使用情况），因此大多数的操作系统采用的是近似的 LRU 策略。RISC-V 额外引入了一个<strong>引用位</strong>（Reference/Use/Access Bit），用于记录页的访问情况，操作系统会周期性地清零和设置该位，这样就能在一个特定时间段内确定页的访问情况。</p>
+<hr />
+<h3 id="virtual-memory-for-large-virtual-address">Virtual Memory for Large Virtual Address<a class="headerlink" href="#virtual-memory-for-large-virtual-address" title="Permanent link">&para;</a></h3>
 <details class="question">
 <summary>页表有多大？</summary>
 <p>假设：</p>
@@ -6177,9 +6286,111 @@
 <li>页面大小为 4KB</li>
 <li>条目大小为 4 Bytes</li>
 </ul>
-<p>那么页表条目数为 <span class="arithmatex">\(\frac{2^32}{2^12}=2^20\)</span></p>
-<p>那么页表大小为 <span class="arithmatex">\(2^{20}\times 4=2^{22}\text{ Bytes}=4\text{ MB}\)</span></p>
+<p>那么页表条目数为 <span class="arithmatex">\(2^32\)</span>（这里 PPT 当中有错，虚拟页码位数即为页表条目数；如果说是虚拟地址为 32 位那么页表条目数才是 PPT 当中的 <span class="arithmatex">\(2^20\)</span></p>
+<p>那么页表大小为 <span class="arithmatex">\(2^{32}\times 4=2^{34}\text{ Bytes}=16\text{ GB}\)</span></p>
 </details>
+<p>从上面的例子来看，一张页表的大小大的吓人，而每个进程都需要一张页表，如果直接存储这些页表是不现实的，所以需要采用一些技术来减小页表的存储。我们有以下方法：</p>
+<ul>
+<li>保留一个限制寄存器，用于限制每个给定进程的页的大小（设置一个阈值），若虚拟页编号大于寄存器的阈值时，则在页表中新开一个条目。这个技术需要确保地址空间是单向扩展的</li>
+<li>将页表分为两个单独的小页表（每个页表有单独的限制），一张页表从高地址向下扩展（对应堆结构），另一张页表从低地址向上扩展（对应栈结构）<ul>
+<li>这样将地址空间划分为两段，此时高位地址用于决定使用哪个段。每个段的限制寄存器制定了当前段的大小。然而，应用程序还会认为是一个完整的段</li>
+<li>缺点：在非连续、稀疏的地址空间上表现不佳</li>
+</ul>
+</li>
+<li>对虚拟地址使用散列函数，这样得到的结构称为<strong>逆页表</strong>（Inverted Page Table），由于不再使用索引，因此查找起来就比较复杂</li>
+<li>将每个页表当作一个页存放起来</li>
+<li><strong>使用多级页表减少页表所需存储空间</strong></li>
+</ul>
+<hr />
+<h4 id="multi-level-page-table">Multi-Level Page Table<a class="headerlink" href="#multi-level-page-table" title="Permanent link">&para;</a></h4>
+<p>如我们之前所述，页表是一个数组，<code>page_table[i]</code> 中存储的是 Page Number 为 i 的 Page 所对应的 Frame Number。考虑我们的逻辑地址结构：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211104142.png" /></p>
+<p>这样的逻辑地址结构需要一个存储 <span class="arithmatex">\(2^p\)</span> 个元素的 page table，即需要这么大的连续内存，这是非常大的消耗。我们考虑将 p 再分为 <span class="arithmatex">\(p_1\)</span> 和 <span class="arithmatex">\(p_2\)</span> ：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211104453.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211104437.png" /></p>
+<p>我们使用一个两级页表， <code>outer_page_table[i]</code>  中存储的是 <span class="arithmatex">\(p_1\)</span> 为 i 的 Inner Page Table，即 <code>inner_page_table[i][]</code> 的基地址；而 <code>inner_page_table[i][j]</code> 中存储的就是 <span class="arithmatex">\(p_1\)</span> 为 i，<span class="arithmatex">\(p_2\)</span> 为 j 的 Page 对应的 Frame Number，即 Page Number 为 <span class="arithmatex">\(p_1p_2\)</span>（即没有分割时的 p）对应的 Frame Number。</p>
+<p>这里，我们称 <span class="arithmatex">\(p_1\)</span> 为 <strong>Page Directory Number</strong> ，<span class="arithmatex">\(p_2\)</span> 为 <strong>Page Table Number</strong>，d 为 <strong>Page Offset</strong>。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211104745.png" /></p>
+<p>这样做的好处：Hierarchical Paging 其实就是对页表的分页（Page the Page Table）。因此，它避免了页表必须处在连续内存的问题，这一问题在 p 比较大时尤其严重。</p>
+<p>另外，这样做在一般情况下可以节省空间。我们之前提到，页表不一定会全部使用；并且由于逻辑地址是连续的，因此用到的页表项也是连续的，都排在页表的头部。因此如果我们采用了二级页表，那么许多排在后面的 Inner Page Table 将完全为空；此时我们可以直接不给这些 Inner Page Table 分配空间。这样我们可以节省很多空间。即使在最差的情况下，所有页表都被使用了，我们的页表所用的总条目数也只有 <span class="arithmatex">\(2p_1+2^{p_1}⋅2^{p_2}=2p_1+2^{p_1+p_2}\)</span> 个，只比单级页表结构多了 <span class="arithmatex">\(2p_1\)</span>，是完全可以接受的。</p>
+<p>类似地，我们可以设计更多级的页表。例如，64 位的逻辑地址空间使用二级页表就是不够的，否则它的页表就会长成这样：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211105806.png" /></p>
+<p>这样 Outer Page 就会超级大。我们可以 Page the Outer Page：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211105911.png" /></p>
+<p>这样，我们就建立了一个三级页表。</p>
+<p>实际上，我们不必使用全部的 64 位，即我们不需要一个 64 位那么巨大的虚拟地址空间。AMD-64 支持 48 位的虚拟地址，ARM64 支持 39 位和 48 位的虚拟地址空间：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211110004.png" /></p>
+<p>当然，使用多级页表的缺点在于地址转译的过程会变得更复杂。</p>
+<hr />
+<h3 id="tlb">TLB<a class="headerlink" href="#tlb" title="Permanent link">&para;</a></h3>
+<p>在使用页表时，要访问虚拟地址对应的物理地址，我们首先要根据页表寄存器和页码来找到页表在内存的位置，并在其中得到 Page 对应的 Frame Number，这需要一次内存访问；然后我们根据 Frame Number 和 Page Offset 算出真实的物理地址，并访问对应的字节内容。即，访问一个字节需要两次内存访问，这会加倍原本的内存访问的时间，这是难以接受的。</p>
+<p>为了解决这个办法，我们再添加一个最近使用过的地址 Cache，称其为<strong>转译 - 旁路缓冲器</strong>（Translation-Lookaside Buffer, <strong>TLB</strong>）。小规模的 TLB 采用全相联，大规模的 TLB 相联程度会小一些。下图是一个全相联的 TLB 的例子：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211110627.png" /></p>
+<ul>
+<li>其中 TLB 中的每个项的标签位保存了虚拟页编号，而数据位保存了物理页编号，同时也保留了页表中的几个状态位（合法位、引用位、脏位等）</li>
+<li>TLB 也可以在多级页表中使用，此时 TLB 只记录物理地址和来自最后一级页表的标签</li>
+<li>如果访问 TLB 时出现<strong>缺失</strong>（Miss），那么还需要进一步判断这是否是一个 Page Fault，因此接下来要访问（最后一级）页表。如果在页表中都没找到，那么 Page Fault 就发生了。显然 TLB 缺失比页错误发生地更频繁些<ul>
+<li>解决流程：使用异常机制——中断当前活跃的进程，将控制权转移给操作系统，之后继续执行被中断的进程<ul>
+<li>使用寄存器 SPEC 保存被中断的指令，以便之后继续执行</li>
+<li>TLB 缺失或页错误需要在当前时钟周期结束时及时声明，这样的话下一个时钟周期就会执行异常进程而非后面的正常指令，及时防止可能得写入操作带来的破坏</li>
+<li>有时操作系统会遇到处理多个异常的情况，如果不做特殊处理，后来的异常就会覆盖先前异常的状态，从而无法返回到对应的发生页错误的指令。因此需要对异常进行<strong>启用</strong>（Enable）或<strong>禁用</strong>（Disable），当处理一个异常时，应当禁用其他所有的异常，并用 SPEC 和 SCAUSE 寄存器保存状态，以便回到原来的指令。这时再启用其他的异常处理就不会造成破坏了。</li>
+<li>操作系统具体要做的事：<ul>
+<li>使用虚拟地址查找页表，在二级内存中找到对应的页的位置</li>
+<li>选择要被替代的物理页，如果此页的 Dirty Bit 为 1，那么还需要先将它里面的内容写入二级内存中</li>
+<li>将从二级内存中读到的页写入这个被选中的物理页内</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上述是针对指令访问的问题，对于数据访问，页错误的异常将会更加难处理，因为这类页错误会发生在指令执行期间，并且在处理好异常之前指令无法继续执行下去，即使处理好之后该指令也得重新开始</li>
+</ul>
+</li>
+<li>
+<p>TLB 的大致规格</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211111648.png" /></p>
+</li>
+</ul>
+<p>总体来说，加上了 TLB，整个读/写穿操作的流程图如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211141315.png" /></p>
+<hr />
+<h3 id="integration-of-virtual-memory-tlbs-and-caches">Integration of Virtual Memory, TLBs and Caches<a class="headerlink" href="#integration-of-virtual-memory-tlbs-and-caches" title="Permanent link">&para;</a></h3>
+<p>现在来看完整的内存层级，包括了虚拟内存、TLB 和高速缓存。需要注意的内容有：</p>
+<ul>
+<li>高速缓存不能保存主存中没有的页，若出现这种情况，需要清除高速缓存中的对应内容，同时修改页表和 TLB，以维持正常的内存层级。此时若想在高速缓存中访问此页，就会出现页错误</li>
+<li>
+<p>失效问题可能会发生在三个部件中：TLB、页表和高速缓存</p>
+<ul>
+<li>根据上面例子给出的内存层级，有以下几种不同失效情况的组合：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241211141454.png" /></p>
+<ul>
+<li>后面三种情况是不存在的，原因是 TLB 本身就是 Page Table 的子集，父集都缺失了子集不可能命中；如果当前页面都不在内存当中数据也不可能存在于缓存当中</li>
+<li>上表假设在高速缓存访问地址前，所有的内存地址被转译为物理地址，所以高速缓存使用的是物理的索引和物理的标签</li>
+</ul>
+<hr />
+<h3 id="protection-in-the-virtual-memory-system">Protection in the Virtual Memory System<a class="headerlink" href="#protection-in-the-virtual-memory-system" title="Permanent link">&para;</a></h3>
+</li>
+</ul>
+<p>为了使操作系统能够实现对虚拟内存系统的保护，硬件必须提供至少以下三种基本的能力：</p>
+<ul>
+<li>提供至少两种模式，对应于<strong>用户进程</strong>和<strong>操作系统进程</strong>（后者也称为超级管理员（Supervisor）进程或核（Kernel）进程）</li>
+<li>提供一种处理器状态，使得用户进程只读不写，该状态可以用一个用户/超级管理员模式位来表示，表示处理器处于用户模式还是管理员模式。要实现写操作，需要使用一些只有在管理员模式下才能使用的特殊指令</li>
+<li>提供一种能够在用户和管理员模式之间切换的机制<ul>
+<li>用户<span class="arithmatex">\(\rightarrow\)</span>管理员：<strong>系统调用</strong>（System Call），它是一种异常（Exception），通过特殊指令（比如 RISC-V 中的<code>ecall</code>）将控制权转移给超级用户者模式下的代码空间</li>
+<li>寄存器 SPEC 用于保存调用系统调用时的 PC 值</li>
+<li><code>sret</code>（Supervisor Exception Return）指令用于重置为用户模式，并回到 SPEC 所保存 PC 值所在的指令</li>
+</ul>
+</li>
+</ul>
+<p>有以下几种保护类型：</p>
+<ul>
+<li><strong>写入</strong>保护：阻止某个进程向另一个进程或操作系统的地址空间写入数据（比如 TLB 用到写访问位来保护页）</li>
+<li><strong>读取</strong>保护：进程不应随便读取别的进程的数据<ul>
+<li>如果操作系统能够确保页表组织良好，使得独立的虚拟页映射到不相交的物理页，那么就可以确保一个进程不会读到另一个进程上</li>
+<li>将页表放入受保护的地址空间，使得只有操作系统能够修改页表，而用户无权修改</li>
+</ul>
+</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6249,7 +6460,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月10日 13:02:15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月11日 14:23:28</span>
   </span>
 
     
@@ -6270,6 +6481,38 @@
     
 
     <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
