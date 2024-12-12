@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Appendix.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Appendix"
+              "title": "Chapter 7"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Appendix.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Appendix"
+              "title": "Outline of Chapter 7"
             }
           },
           {
@@ -176,25 +176,29 @@
   },
   "active": "34ec6dd691294339",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20241211171750.png",
-    "docs/assets/Pasted image 20241211165146.png",
-    "docs/assets/Pasted image 20241211165133.png",
-    "docs/assets/Pasted image 20241211163359.png",
-    "docs/assets/Pasted image 20241211163234.png",
-    "docs/assets/Pasted image 20241211163217.png",
-    "docs/assets/Pasted image 20241211162903.png",
-    "docs/assets/Pasted image 20241211162814.png",
-    "docs/assets/Pasted image 20241211162651.png",
-    "docs/assets/Pasted image 20241211161115.png",
-    "docs/assets/Pasted image 20241211160836.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/assets/Pasted image 20241212134354.png",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 5.md",
+    "docs/assets/Pasted image 20241212014322.png",
+    "docs/assets/Pasted image 20241212013744.png",
+    "docs/blog/Others/TOEFL Reading/Lesson 7.md",
+    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
+    "docs/assets/Pasted image 20241211234404.png",
+    "docs/assets/Pasted image 20241211234341.png",
+    "docs/assets/Pasted image 20241211232744.png",
+    "docs/assets/Pasted image 20241211231735.png",
+    "docs/assets/Pasted image 20241211231541.png",
+    "docs/assets/Pasted image 20241211225524.png",
+    "docs/assets/Pasted image 20241211224043.png",
+    "docs/assets/Pasted image 20241211223929.png",
     "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
@@ -210,10 +214,6 @@
     "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/blog/Computer Science/ADS/Chapter 9.md",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 7.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",

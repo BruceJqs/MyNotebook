@@ -78,7 +78,7 @@ I/O 设备的三大特性：
 		
 		- 这里分子取 0.5 转的原因是磁头只能朝一个方向转，最慢是转一圈，最快是不用转，因此平均下来一次期望转的圈数为 0.5 转
 		
-		对于 15000 RPM 的磁盘来说，平均旋转延迟 $=\frac{0.5\text{ 转}}{15000\text{ RPM}}=\frac{0.5\text{ 转}}{15000\text{ RPM}/60\text{ 秒/分钟}}=0.0020s=2.0ms$
+		对于 15000 RPM 的磁盘来说，平均旋转延迟 $=\frac{0.5\text{ 转}}{15000\text{ RPM}}=\frac{0.5\text{ 转}}{15000\text{ RPM}/60(\text{ 秒/分钟})}=0.0020s=2.0ms$
 	
 - 传输（Transfer）：把硬盘的数据搬到内存，当下的传输速率一般在 30-80 MB/s
 - 磁盘控制（Disk Control）：检查数据访问是否合法
@@ -90,7 +90,7 @@ I/O 设备的三大特性：
 	$$
 	\begin{aligned}
 	\text{Access Time}&=\text{Seek Time}+\text{Rotational Latency}+\text{Transfer Time}+\text{Controller Time}\\
-	&=6ms+\frac{0.5}{10000\text{ RPM}}+\frac{0.5\text{ KB}}{50\text{ MB/sec}}+0.2ms\\
+	&=6ms+\frac{0.5}{10000\text{ RPM}}+\frac{0.5\text{ KB}}{50\text{ MB/s}}+0.2ms\\
 	&=6+3.0+0.01+0.2=9.2ms
 	\end{aligned}
 	$$

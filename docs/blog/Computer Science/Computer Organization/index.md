@@ -28,7 +28,7 @@ comments: true
 - [Chapter 02 : Instructions : Language of the Machine](Chapter%202/)
 - [Chapter 04 : The Processor](Chapter%204/)
 - [Chapter 05 : Memory Hierarchy](Chapter%205/)
-- [Appendix](Appendix/)
+- [Appendix : Storage, Networks and Other Peripherals](Appendix/)
 
 ### Homeworks
 
