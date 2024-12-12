@@ -2480,6 +2480,72 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="区间估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      评价区间估计的原则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      枢轴量法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      正态总体参数的区间估计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正态总体参数的区间估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      单个正态总体的情形
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个正态总体的情形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      非正态总体参数的区间估计
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -5062,6 +5128,72 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="区间估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      评价区间估计的原则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      枢轴量法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      正态总体参数的区间估计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正态总体参数的区间估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      单个正态总体的情形
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个正态总体的情形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      非正态总体参数的区间估计
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -5176,6 +5308,69 @@
 </ul>
 <p>双侧置信区间和单侧置信区间的关系：</p>
 <p>设 <span class="arithmatex">\(\theta_L=\theta_L(X_1,X_2,...,X_n)\)</span>，<span class="arithmatex">\(\theta_U=\theta_U(X_1,X_2,...,X_n)\)</span> 分别是 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1−\alpha_1\)</span> 和 <span class="arithmatex">\(1−\alpha_2\)</span> 的单侧置信下限及上限，且对于任何样本都满足 <span class="arithmatex">\(\theta_L&lt;\theta_U\)</span>，则 <span class="arithmatex">\((\theta_L,\theta_U)\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1−\alpha_1−\alpha_2\)</span> 的双侧置信区间。</p>
+<hr />
+<h3 id="_10">评价区间估计的原则<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>置信度原则</strong>：希望随机区间 <span class="arithmatex">\([\theta_L,\theta_U]\)</span> 包含真值 <span class="arithmatex">\(\theta\)</span> 的概率越大越好
+- <strong>精确度原则</strong>：可以用随机区间的平均长度 <span class="arithmatex">\(E(\theta_U−\theta_L)\)</span> 去衡量，希望其越短越好；并称二分之一区间的平均长度为置信区间的<strong>误差限</strong> </li>
+<li>这是一对矛盾的标准，现实应用中我们通常希望在保证置信度的前提下，尽可能提高精确度</li>
+</ul>
+<hr />
+<h3 id="_11">枢轴量法<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>枢轴量法是寻求区间估计的常用方法。</p>
+<p><strong>枢轴量</strong>是样本 <span class="arithmatex">\(X=(X_1,X_2,...,X_n)\)</span> 和待估参数 <span class="arithmatex">\(\theta\)</span> 的函数，即 <span class="arithmatex">\(G=G(X_1,X_2,...,X_n;\theta)\)</span>，并且要求 <span class="arithmatex">\(G\)</span> 的分布已知且不依赖于任何未知参数。</p>
+<p>具体步骤如下：</p>
+<ol>
+<li>构造枢轴量 <span class="arithmatex">\(G(X;\theta)\)</span></li>
+<li>对于给定的置信度 <span class="arithmatex">\(1−\alpha\)</span>，确定两个常数 <span class="arithmatex">\(a,b\)</span>，使得：<span class="arithmatex">\(P\{a&lt;G(X;\theta)&lt;b\}\geq 1−\alpha\)</span></li>
+<li>若能从 <span class="arithmatex">\(a&lt;G(X;\theta)&lt;b\)</span> 反解出不等式：<span class="arithmatex">\(\theta_L(X)&lt;\theta&lt;\theta_U(X)\)</span></li>
+</ol>
+<p>那么 <span class="arithmatex">\([\theta_L,\theta_U]\)</span> 就是 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1−\alpha\)</span> 的置信区间，称<strong>同等置信区间</strong></p>
+<p>值得注意的是：</p>
+<ul>
+<li>若要求单侧置信限，只需要将 <span class="arithmatex">\(P\{a&lt;G(X;\theta)&lt;b\}\geq 1−\alpha\)</span> 相应地改为 <span class="arithmatex">\(P\{a&lt;G(X;\theta)\}\geq 1−\alpha\)</span> 或 <span class="arithmatex">\(P\{G(X;\theta)&lt;b\}\geq 1−\alpha\)</span> 即可</li>
+<li>枢轴量和统计量的区别：<ul>
+<li>枢轴量是样本和待估参数的函数，其分布不依赖于任何未知参数</li>
+<li>统计量只是样本的函数，其分布常依赖于未知参数</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="_12">正态总体参数的区间估计<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">单个正态总体的情形<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>设 <span class="arithmatex">\(X_1,X_2,...,X_n\)</span> 来自总体 <span class="arithmatex">\(N(\mu,\sigma_2)\)</span>，<span class="arithmatex">\(\overline{X}\)</span> 和 <span class="arithmatex">\(S^2\)</span> 分别为样本均值和样本方差，置信度为 <span class="arithmatex">\(1−\alpha\)</span>：</p>
+<p>1. <span class="arithmatex">\(\sigma^2\)</span> 已知时 <span class="arithmatex">\(\mu\)</span> 的置信区间：</p>
+<p>取枢轴量 <span class="arithmatex">\(\frac{\overline{X}−\mu}{\sigma/\sqrt{n}}∼N(0,1)\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}−\frac{\sigma}{\sqrt{n}}z_{\alpha/2},\overline{X}+\frac{\sigma}{\sqrt{n}}z_{\alpha/2})\)</span>。</p>
+<p>若只考虑单侧置信限，以单侧置信下限为例，单侧置信区间为 <span class="arithmatex">\((\overline{X}−\frac{\sigma}{\sqrt{n}}z_{\alpha},+\infty)\)</span>。</p>
+<hr />
+<p>2. <span class="arithmatex">\(\sigma^2\)</span> 未知时 <span class="arithmatex">\(\mu\)</span> 的置信区间:</p>
+<p>取枢轴量 <span class="arithmatex">\(\frac{\overline{X}−\mu}{S/\sqrt{n}}∼t(n−1)\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}-\frac{S}{\sqrt{n}}t_{\alpha/2}(n−1),\overline{X}+\frac{S}{\sqrt{n}}t_{\alpha/2}(n−1))\)</span>。</p>
+<hr />
+<p>3. <span class="arithmatex">\(\sigma_2\)</span> 的置信区间（当作 <span class="arithmatex">\(\mu\)</span> 未知）：</p>
+<p>取枢轴量 <span class="arithmatex">\(\frac{(n−1)S^2}{\sigma^2}∼\chi^2(n−1)\)</span>，置信区间为 <span class="arithmatex">\((\frac{(n−1)S^2}{χ^2_{\alpha/2}(n−1)},\frac{(n−1)S^2}{\chi^2_{1−\alpha/2}(n−1)})\)</span>。</p>
+<hr />
+<h3 id="_14">两个正态总体的情形<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>设 <span class="arithmatex">\(X_1,X_2,...,X_{n_1}\)</span> 来自 <span class="arithmatex">\(N(\mu_1,\sigma_1^2)\)</span>，<span class="arithmatex">\(Y_1,Y_2,...,Y_{n_2}\)</span> 来自 <span class="arithmatex">\(N(\mu_2,\sigma_2^2)\)</span>，这两个样本相互独立，<span class="arithmatex">\(\overline{X}=\frac{1}{n_1}\sum\limits_{i=1}^{n_1}X_i\)</span>，<span class="arithmatex">\(\overline{Y}=\frac{1}{n_2}\sum\limits_{i=1}^{n_2}Y_i\)</span>，<span class="arithmatex">\(S_1^2\)</span> 和 <span class="arithmatex">\(S_2^2\)</span> 分别为它们的样本均值和样本方差，置信度为 <span class="arithmatex">\(1−\alpha\)</span>：</p>
+<ul>
+<li>比较均值（估计 <span class="arithmatex">\(\mu_1−\mu_2\)</span>，也称为 Behrens-Fisher 问题）</li>
+<li>比较方差（估计 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span>）</li>
+</ul>
+<p>1. <span class="arithmatex">\(\sigma_1^2,\sigma_2^2\)</span> 已知时 <span class="arithmatex">\(\mu_1−\mu_2\)</span> 的置信区间：</p>
+<p>取枢轴量 <span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}∼N(0,1)\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}-\overline{Y}\pm z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}})\)</span>。</p>
+<p>2. <span class="arithmatex">\(\sigma_1^2=\sigma_2^2=\sigma^2\)</span> 未知时 <span class="arithmatex">\(\mu_1−\mu_2\)</span> 的置信区间：</p>
+<p>取枢轴量 <span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{S_{\omega}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}∼t(n_1+n_2−2)\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}−\overline{Y}\pm t_{\alpha/2}(n_1+n_2−2)S_{\omega}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}})\)</span>。</p>
+<p>3. <span class="arithmatex">\(\sigma_1^2\not=\sigma_2^2\)</span> 且未知时 <span class="arithmatex">\(\mu_1−\mu_2\)</span> 的置信区间：</p>
+<p>当样本容量 <span class="arithmatex">\(n_1\)</span> 和 <span class="arithmatex">\(n_2\)</span> 都充分大时（一般要大于 50），取枢轴量 <span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}∼N(0,1)\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}-\overline{Y}\pm z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}})\)</span>。</p>
+<p>对于有限小样本，仍取枢轴量 <span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}}}\)</span>，可以证明其近似服从自由度为 <span class="arithmatex">\(k\)</span> 的 <span class="arithmatex">\(t\)</span> 分布，其中 <span class="arithmatex">\(k=\frac{(\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2})^2}{\frac{(S_1^2)^2}{n_1^2(n_1−1)}+\frac{(S_2^2)^2}{n_2^2(n_2−1)}}\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}−\overline{Y}\pm t_{\alpha/2}(k)\sqrt{\frac{S_1^2}{n_1}+\frac{S_2^2}{n_2}})\)</span>。</p>
+<p>实际使用中，也常用 <span class="arithmatex">\(\min(n_1−1,n_2−1)\)</span> 近似代替上述自由度 <span class="arithmatex">\(k\)</span>。</p>
+<p>4. <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的置信区间（当作 <span class="arithmatex">\(\mu_1,\mu_2\)</span> 未知）：</p>
+<p>取枢轴量 <span class="arithmatex">\(\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}∼F(n_1−1,n_2−1)\)</span>，置信区间为 <span class="arithmatex">\((\frac{S_1^2/S_2^2}{F_{\alpha/2}(n_1−1,n_2−1)},\frac{S_1^2/S_2^2}{F_{1−\alpha/2}(n_1−1,n_2−1)})\)</span>。</p>
+<hr />
+<p>总结：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241212134354.png" /></p>
+<hr />
+<h2 id="_15">非正态总体参数的区间估计<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>通常把这个非正态分布根据中心极限定理近似成一个正态分布，从而利用上文的方法构造枢轴量，并求解置信区间。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5245,7 +5440,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月5日 13:39:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月12日 13:44:27</span>
   </span>
 
     
