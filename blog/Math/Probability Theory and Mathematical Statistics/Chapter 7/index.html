@@ -822,6 +822,8 @@
       
         
       
+        
+      
     
     
       
@@ -1043,6 +1045,27 @@
   
   <span class="md-ellipsis">
     Homework 04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Organization/Homework%205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 05
   </span>
   
 
@@ -5288,10 +5311,10 @@
 </ul>
 <hr />
 <h3 id="_8">相合性准则<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>若对于 <span class="arithmatex">\(\forall\epsilon&gt;0\)</span>，有 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}P{|\hat{\theta}_n−\theta|&lt;\epsilon}=1\)</span>，即 <span class="arithmatex">\(\hat{\theta}_n\stackrel{P}{\rightarrow}\theta\)</span>，则称 <span class="arithmatex">\(\hat{\theta}_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的相合估计量（Consistent Estimation）或一致估计量。</p>
+<p>若对于 <span class="arithmatex">\(\forall\epsilon&gt;0\)</span>，有 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}P{|\hat{\theta}_n−\theta|\geq\epsilon}=0\)</span>，即 <span class="arithmatex">\(\hat{\theta}_n\stackrel{P}{\rightarrow}\theta\)</span>，则称 <span class="arithmatex">\(\hat{\theta}_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的相合估计量（Consistent Estimation）或一致估计量。</p>
 <p>有如下定理：</p>
 <ul>
-<li>设 <span class="arithmatex">\(\hat{\theta}_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的一个估计量，若 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}E(\hat{\theta})=\theta\)</span>，<span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}Var(\hat{\theta}_n)=0\)</span>，则 <span class="arithmatex">\(\hat{\theta}_n\)</span> 是 <span class="arithmatex">\(θ\)</span> 的相合估计。</li>
+<li>设 <span class="arithmatex">\(\hat{\theta}_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的一个估计量，若 <span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}E(\hat{\theta_n})=\theta\)</span>，<span class="arithmatex">\(\lim\limits_{n\rightarrow+\infty}Var(\hat{\theta}_n)=0\)</span>，则 <span class="arithmatex">\(\hat{\theta}_n\)</span> 是 <span class="arithmatex">\(θ\)</span> 的相合估计。</li>
 </ul>
 <hr />
 <h2 id="_9">区间估计<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
@@ -5301,7 +5324,7 @@
 <li>置信区间：设总体 <span class="arithmatex">\(X\)</span> 的分布函数 <span class="arithmatex">\(F(x;\theta)\)</span> 含有一个未知参数 <span class="arithmatex">\(\theta\)</span>，对于给定的值 <span class="arithmatex">\(\alpha\)</span>，如果有两个统计量 <span class="arithmatex">\(\theta_L=\theta_L(X_1,X_2,...,X_n)\)</span>，<span class="arithmatex">\(\theta_U=\theta_U(X_1,X_2,...,X_n)\)</span>，<span class="arithmatex">\(\theta_L&lt;\theta_U\)</span>，使得 <span class="arithmatex">\(P\{\theta_L(X_1,X_2,...,X_n)&lt;\theta&lt;\theta_U(X_1,X_2,...,X_n)\}\geq 1−\alpha,\forall\theta\in\Theta\)</span>，则称随机区间 <span class="arithmatex">\([\theta_L,\theta_U]\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1−\alpha\)</span> 的<strong>双侧置信区间</strong>，简称<strong>置信区间</strong></li>
 <li>置信下限和置信上限：分别是 <span class="arithmatex">\(\theta_L\)</span> 和 <span class="arithmatex">\(\theta_U\)</span></li>
 <li>置信度（置信水平）：<span class="arithmatex">\(1−\alpha\)</span></li>
-<li>单侧置信区间：在置信区间的定义中，如果修改为 <span class="arithmatex">\(P\{\theta_L(X1,X2,...,Xn)&lt;θ\}\geq 1−\,\forall\theta\in\Theta\)</span>，则称随机区间 <span class="arithmatex">\([\theta_L,+\infty]\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1−\alpha\)</span> 的<strong>单侧置信区间</strong><ul>
+<li>单侧置信区间：在置信区间的定义中，如果修改为 <span class="arithmatex">\(P\{\theta_L(X_1,X_2,...,X_n)&lt;\theta\}\geq 1−\alpha,\forall\theta\in\Theta\)</span>，则称随机区间 <span class="arithmatex">\([\theta_L,+\infty]\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的置信水平为 <span class="arithmatex">\(1−\alpha\)</span> 的<strong>单侧置信区间</strong><ul>
 <li>相应地，我们还可以定义单侧置信下限，以及具有单侧置信上限的单侧置信区间 <span class="arithmatex">\((−\infty,\theta_U)\)</span></li>
 </ul>
 </li>
@@ -5311,8 +5334,8 @@
 <hr />
 <h3 id="_10">评价区间估计的原则<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>置信度原则</strong>：希望随机区间 <span class="arithmatex">\([\theta_L,\theta_U]\)</span> 包含真值 <span class="arithmatex">\(\theta\)</span> 的概率越大越好
-- <strong>精确度原则</strong>：可以用随机区间的平均长度 <span class="arithmatex">\(E(\theta_U−\theta_L)\)</span> 去衡量，希望其越短越好；并称二分之一区间的平均长度为置信区间的<strong>误差限</strong> </li>
+<li><strong>置信度原则</strong>：希望随机区间 <span class="arithmatex">\([\theta_L,\theta_U]\)</span> 包含真值 <span class="arithmatex">\(\theta\)</span> 的概率越大越好</li>
+<li><strong>精确度原则</strong>：可以用随机区间的平均长度 <span class="arithmatex">\(E(\theta_U−\theta_L)\)</span> 去衡量，希望其越短越好；并称二分之一区间的平均长度为置信区间的<strong>误差限</strong></li>
 <li>这是一对矛盾的标准，现实应用中我们通常希望在保证置信度的前提下，尽可能提高精确度</li>
 </ul>
 <hr />
@@ -5346,7 +5369,7 @@
 <p>2. <span class="arithmatex">\(\sigma^2\)</span> 未知时 <span class="arithmatex">\(\mu\)</span> 的置信区间:</p>
 <p>取枢轴量 <span class="arithmatex">\(\frac{\overline{X}−\mu}{S/\sqrt{n}}∼t(n−1)\)</span>，置信区间为 <span class="arithmatex">\((\overline{X}-\frac{S}{\sqrt{n}}t_{\alpha/2}(n−1),\overline{X}+\frac{S}{\sqrt{n}}t_{\alpha/2}(n−1))\)</span>。</p>
 <hr />
-<p>3. <span class="arithmatex">\(\sigma_2\)</span> 的置信区间（当作 <span class="arithmatex">\(\mu\)</span> 未知）：</p>
+<p>3. <span class="arithmatex">\(\sigma^2\)</span> 的置信区间（当作 <span class="arithmatex">\(\mu\)</span> 未知）：</p>
 <p>取枢轴量 <span class="arithmatex">\(\frac{(n−1)S^2}{\sigma^2}∼\chi^2(n−1)\)</span>，置信区间为 <span class="arithmatex">\((\frac{(n−1)S^2}{χ^2_{\alpha/2}(n−1)},\frac{(n−1)S^2}{\chi^2_{1−\alpha/2}(n−1)})\)</span>。</p>
 <hr />
 <h3 id="_14">两个正态总体的情形<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
@@ -5440,7 +5463,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月12日 13:44:27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月13日 22:18:05</span>
   </span>
 
     
