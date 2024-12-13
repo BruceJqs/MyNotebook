@@ -87,6 +87,7 @@ nav:
       - "Homework 03": blog/Computer Science/Computer Organization/Homework 3.md
       - "Homework 02": blog/Computer Science/Computer Organization/Homework 2.md
       - "Homework 04": blog/Computer Science/Computer Organization/Homework 4.md
+      - "Homework 05": blog/Computer Science/Computer Organization/Homework 5.md
     - 高级数据结构与算法分析｜Advanced Data Structure and Algorithm Analysis:
       - blog/Computer Science/ADS/index.md
       - "Chapter 01: AVL trees, Splay Trees, and Amortized Analysis": blog/Computer Science/ADS/Chapter 1.md

@@ -7,7 +7,7 @@ hide:
 comments: true
 --- 
 
-# Homework 6
+# Homework 06
 
 ### Question 01
 

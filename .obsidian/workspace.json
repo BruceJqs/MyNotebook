@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
+                "file": "docs/blog/Computer Science/Computer Organization/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 7"
+              "title": "index"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md"
+                "file": "docs/blog/Computer Science/Computer Organization/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 7"
+              "title": "Outline of index"
             }
           },
           {
@@ -156,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -176,25 +176,32 @@
   },
   "active": "34ec6dd691294339",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/Computer Organization/Homework 5.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
+    "docs/assets/Pasted image 20241212172141.png",
+    "docs/assets/Pasted image 20241212172110.png",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 6.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 4.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
+    "docs/blog/Computer Science/Computer Organization/index.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/assets/Pasted image 20241212134354.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 5.md",
     "docs/assets/Pasted image 20241212014322.png",
     "docs/assets/Pasted image 20241212013744.png",
     "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Homework 4.md",
     "docs/assets/Pasted image 20241211234404.png",
     "docs/assets/Pasted image 20241211234341.png",
     "docs/assets/Pasted image 20241211232744.png",
     "docs/assets/Pasted image 20241211231735.png",
     "docs/assets/Pasted image 20241211231541.png",
-    "docs/assets/Pasted image 20241211225524.png",
-    "docs/assets/Pasted image 20241211224043.png",
-    "docs/assets/Pasted image 20241211223929.png",
-    "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
@@ -205,15 +212,7 @@
     "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",
     "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
-    "docs/blog/Computer Science/Tech/index.md",
-    "docs/blog/Computer Science/Tech/Iterm2/Iterm2.md",
-    "docs/blog/Computer Science/Tech/CTF/Docker/Docker.md",
-    "docs/blog/Computer Science/Tech/CTF/CyberChef/CyberChef.md",
-    "docs/blog/Computer Science/ADS/Chapter 13.md",
     "docs/blog/Computer Science/Tech/Ubuntu",
-    "docs/blog/Computer Science/ADS/Chapter 12.md",
-    "docs/blog/Computer Science/ADS/Chapter 9.md",
-    "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
