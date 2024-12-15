@@ -59,7 +59,7 @@ $$
 
 当 $\lambda=1$ 时，$r(t)=\frac{r_0}{|\frac{\tan\frac{\theta(t)}{2}}{\tan\frac{\theta_0}{2}}|\frac{\sin\theta(t)}{\sin\theta_0}}=r_0\frac{\sin^2\frac{\theta_0}{2}}{\sin^2\frac{\theta(t)}{2}}=r_0\frac{1-\cos\theta_0}{1-\cos\theta(t)}=\frac{r_0-x_0}{1-\cos\theta(t)}$
 
-代入 $\frac{d\theta(t)}{dt}=\frac{v_a\sin\theta(t)(1-\cos\theta(t))}{r_0-x_0}$，积分解得 $t=\frac{r_0-x_0}{2v_a}(\ln|\cos\frac{\theta(t)}{2}+\tan\frac{\theta(t)}{2}|-\frac{1}{\sin\frac{\theta(t)}{2}})$
+代入 $\frac{d\theta(t)}{dt}=\frac{v_a\sin\theta(t)(1-\cos\theta(t))}{r_0-x_0}$，积分解得 $t=\frac{r_0-x_0}{2v_a}(\ln|\frac{\tan\frac{\theta(t)}{2}}{\tan\frac{\theta_0}{2}}|-\frac{1}{4\sin^2\frac{\theta(t)}{2}}+\frac{1}{4\sin^2\frac{\theta_0}{2}})$，其中 $\tan\theta_0=\frac{y_0}{x_0}$
 ***
 ## Question 02
 

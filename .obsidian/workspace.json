@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Homework 8"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/index.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 8.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Homework 8"
             }
           },
           {
@@ -176,6 +176,7 @@
   },
   "active": "1dd558e93161bb2f",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
     "docs/blog/Computer Science/Computer Organization/Homework 5.md",
@@ -213,7 +214,6 @@
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
     "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
-    "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",
     "docs/blog/Computer Science/Tech/Ubuntu",
     "docs/blog/Others/College Physical Experiments",
