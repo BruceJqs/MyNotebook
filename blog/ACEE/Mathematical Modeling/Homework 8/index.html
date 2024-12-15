@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="../Homework%207/">
+      
+      
+        <link rel="next" href="../../../CTF/">
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
@@ -355,16 +359,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -2385,8 +2393,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2395,17 +2405,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2416,7 +2429,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             ACEE
@@ -2426,6 +2439,8 @@
               
                 
   
+  
+    
   
   
   
@@ -2458,17 +2473,19 @@
       
         
       
+        
+      
     
     
       
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
           
@@ -2490,7 +2507,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             数学建模｜Mathematical Modeling
@@ -2725,6 +2742,85 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Homework 08
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Homework 08
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 01
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 02
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4898,19 +4994,51 @@
 <h1 id="homework-08">Homework 08<a class="headerlink" href="#homework-08" title="Permanent link">&para;</a></h1>
 <h2 id="question-01">Question 01<a class="headerlink" href="#question-01" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241212172110.png" /></p>
+<p>本题没有明确定义“夹角”，这里直接视为函数看待</p>
 <p>（1）<span class="arithmatex">\(x_a(t),y_a(t),x_b(t),y_b(t)\)</span> 满足以下微分方程组：</p>
 <div class="arithmatex">\[
 \begin{cases}
 \frac{dx_a(t)}{dt}=v_a(t)\cos\alpha(t)\\
 \frac{dy_a(t)}{dt}=v_a(t)\sin\alpha(t)\\
 \frac{dx_b(t)}{dt}=v_b(t)\cos\beta(t)\\
-\frac{dx_b(t)}{dt}=v_b(t)\sin\beta(t)
+\frac{dy_b(t)}{dt}=v_b(t)\sin\beta(t)
 \end{cases}
 \]</div>
-<p>（2）以商船为参考系，</p>
+<p>（2）令 <span class="arithmatex">\(X(t)=x_b(t)-x_a(t), Y(t)=y_b(t)-y_a(t)\)</span>，则有 <span class="arithmatex">\(r(t)=\sqrt{X^2(t)+Y^2(t)}\)</span></p>
+<p>则 <span class="arithmatex">\(\frac{dr(t)}{dt}=\frac{X(t)(v_b(t)\cos\beta(t)-v_a(t)\cos\alpha(t))+Y(t)(v_b(t)\sin\beta(t)-v_a(t)\sin\alpha(t))}{r(t)}\)</span></p>
+<p>我们又有 <span class="arithmatex">\(X(t)=r(t)\cos\theta(t),Y(t)=-r(t)\sin\theta(t)\)</span>，代入可得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{dr(t)}{dt}&amp;=\cos\theta(t)(v_b(t)\cos\beta(t)-v_a(t)\cos\alpha(t))-\sin\theta(t)(v_b(t)\sin\beta(t)-v_a(t)\sin\alpha(t))\\
+&amp;=v_b(t)cos(\theta(t)+\beta(t))-v_a(t)cos(\theta(t)+\alpha(t))
+\end{aligned}
+\]</div>
+<p>因为 <span class="arithmatex">\(\alpha(t)\)</span> 是未定的，想要让 <span class="arithmatex">\(r(t)\)</span> 下降的最快即使前一项绝对值最大，即 <span class="arithmatex">\(\theta(t)=\pi-\beta(t)\)</span>，即海盗应选择始终朝着商船的方向</p>
+<p>（3）代入即可得 <span class="arithmatex">\(\frac{dr(t)}{dt}=-\lambda v_a-v_a\cos(\theta(t)+\alpha(t))\)</span></p>
+<p>由 <span class="arithmatex">\(\cos\theta(t)=\frac{x_b(t)-x_a(t)}{r(t)}\)</span>，有 <span class="arithmatex">\(-\sin\theta(t)·\frac{d\theta(t)}{dt}=\frac{\lambda v_a\cos\beta(t)-v_a\cos\alpha(t)-\cos\theta(t)\frac{dr(t)}{dt}}{r(t)}\)</span></p>
+<p>同理由 <span class="arithmatex">\(\sin\theta(t)=\frac{y_b(t)-y_a(t)}{r(t)}\)</span>，有 <span class="arithmatex">\(cos\theta(t)·\frac{d\theta(t)}{dt}=\frac{\lambda v_a\sin\beta(t)-v_asin\alpha(t)-\sin\theta(t)\frac{dr(t)}{dt}}{r(t)}\)</span></p>
+<p>消去 <span class="arithmatex">\(\frac{dr}{dt}\)</span> 即可得 <span class="arithmatex">\(\frac{d\theta(t)}{dt}=\frac{\lambda v_a\sin(\beta(t)-\theta(t))-v_a\sin(\alpha(t)-\theta(t))}{r(t)}=\frac{v_a\sin(\theta(t)-\alpha(t))}{r(t)}\)</span></p>
+<p>（4）代入 <span class="arithmatex">\(\alpha(t)=0\)</span>，有 <span class="arithmatex">\(\frac{dr(t)}{dt}=-\lambda v_a-v_a\cos\theta(t)\)</span>，<span class="arithmatex">\(\frac{d\theta(t)}{dt}=\frac{v_a\sin\theta(t)}{r(t)}\)</span></p>
+<p>两式相除有 <span class="arithmatex">\(\frac{dr(t)}{d\theta(t)}=\frac{r(t)(-\lambda-\cos\theta(t))}{\sin\theta(t)}\)</span>，即 <span class="arithmatex">\(\frac{1}{r(t)}dr(t)=-\frac{\lambda+\cos\theta(t)}{\sin\theta(t)}d\theta(t)\)</span></p>
+<p>两边积分，有 <span class="arithmatex">\(\ln r(t)-\ln r_0=-\lambda\ln|\frac{\tan\frac{\theta(t)}{2}}{\tan\frac{\theta_0}{2}}|-\ln\frac{\sin\theta(t)}{\sin\theta_0}\)</span></p>
+<p>即 <span class="arithmatex">\(r(t)=\frac{r_0}{(|\frac{\tan\frac{\theta(t)}{2}}{\tan\frac{\theta_0}{2}}|)^{\lambda}\frac{\sin\theta(t)}{\sin\theta_0}}\)</span>，其中 <span class="arithmatex">\(\tan\theta_0=\frac{y_0}{x_0},r_0=\sqrt{x_0^2+y_0^2}\)</span></p>
+<p>当 <span class="arithmatex">\(\lambda=1\)</span> 时，<span class="arithmatex">\(r(t)=\frac{r_0}{|\frac{\tan\frac{\theta(t)}{2}}{\tan\frac{\theta_0}{2}}|\frac{\sin\theta(t)}{\sin\theta_0}}=r_0\frac{\sin^2\frac{\theta_0}{2}}{\sin^2\frac{\theta(t)}{2}}=r_0\frac{1-\cos\theta_0}{1-\cos\theta(t)}=\frac{r_0-x_0}{1-\cos\theta(t)}\)</span></p>
+<p>代入 <span class="arithmatex">\(\frac{d\theta(t)}{dt}=\frac{v_a\sin\theta(t)(1-\cos\theta(t))}{r_0-x_0}\)</span>，积分解得 <span class="arithmatex">\(t=\frac{r_0-x_0}{2v_a}(\ln|\cos\frac{\theta(t)}{2}+\tan\frac{\theta(t)}{2}|-\frac{1}{\sin\frac{\theta(t)}{2}})\)</span></p>
 <hr />
 <h2 id="question-02">Question 02<a class="headerlink" href="#question-02" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241212172141.png" /></p>
+<p>（1）<span class="arithmatex">\(\frac{dx}{d\theta}=\frac{dx}{dt}\times\frac{dt}{d\theta}=\frac{nv_A\cos\omega}{\frac{v_A}{a}}=na\cos\omega\)</span>，同理 <span class="arithmatex">\(\frac{dy}{d\theta}=na\sin\omega\)</span></p>
+<p>（2）切线方程 <span class="arithmatex">\(y=\tan\omega(x-x(t))+y(t)\)</span>，法线方程 <span class="arithmatex">\(y=-\frac{1}{\tan\omega}(x-x(t))+y(t)\)</span></p>
+<p>（3）令 <span class="arithmatex">\(X=a\cos\theta-x,Y=a\sin\theta-y\)</span>，<span class="arithmatex">\(\rho=\sqrt{X^2+Y^2}\)</span>，则：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{d\rho}{d\theta}&amp;=\frac{(a\cos\theta-x)(-a\sin\theta-na\cos\omega)+(a\sin\theta-y)(a\cos\theta-na\sin\omega)}{\rho}\\
+&amp;=\frac{xa\sin\theta-ya\cos\theta-na^2cos(\theta+\omega)+xna\cos\omega+yna\sin\omega}{\rho}
+\end{aligned}
+\]</div>
+<p>由 <span class="arithmatex">\(\cos\omega=\frac{X}{\rho}\)</span>，有 <span class="arithmatex">\(-\sin\omega\frac{d\omega}{d\theta}=\frac{-a\sin\theta-na\cos\omega-\cos\omega\frac{d\rho}{d\theta}}{\rho}\)</span></p>
+<p>同理 <span class="arithmatex">\(\sin\omega=\frac{Y}{\rho}\Rightarrow \cos\omega\frac{d\omega}{d\theta}=\frac{a\cos\theta-na\sin\omega-\sin\omega\frac{d\rho}{d\theta}}{\rho}\)</span></p>
+<p>两式联立消去 <span class="arithmatex">\(\frac{d\rho}{d\theta}\)</span> 可得 <span class="arithmatex">\(\frac{d\omega}{d\theta}=\frac{a\cos(\theta-\omega)}{\rho}\)</span></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -4980,7 +5108,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月13日 22:18:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月15日 21:45:26</span>
   </span>
 
     
@@ -5174,6 +5302,63 @@
 
   <!-- Link to previous and/or next page -->
   
+    
+      
+        
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        hidden
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../Homework%207/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: Homework 07"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Homework 07
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../../../CTF/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 欢迎来到 Bruce 的 CTF 世界！"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                欢迎来到 Bruce 的 CTF 世界！
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
 
