@@ -1,8 +1,9 @@
 {
   "attachmentFolderPath": "docs/assets",
   "pdfExportSettings": {
+    "includeName": false,
     "pageSize": "A4",
-    "landscape": true,
+    "landscape": false,
     "margin": "0",
     "downscalePercent": 100
   },

@@ -30,3 +30,4 @@ comments: true
 - [Homework 05](Homework%205/)
 - [Homework 06](Homework%206/)
 - [Homework 07](Homework%207/)
+- [Homework 08](Homework%208/)

@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a344f63fec6aba98",
+        "id": "5231653dcbf0c41d",
         "type": "tabs",
         "children": [
           {
-            "id": "34ec6dd691294339",
+            "id": "1dd558e93161bb2f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/index.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/index.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/index.md"
               },
               "icon": "lucide-list",
               "title": "Outline of index"
@@ -156,11 +156,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 328.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -174,11 +174,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "34ec6dd691294339",
+  "active": "1dd558e93161bb2f",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Project.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
     "docs/blog/Computer Science/Computer Organization/Homework 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
+    "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
+    "docs/assets/image-20241215174129952.png",
+    "docs/assets/image-20241215173748179.png",
+    "docs/assets/image-20241215173626261.png",
+    "docs/assets/image-20241215173459366.png",
+    "docs/assets/image-20241215173357340.png",
+    "docs/assets/image-20241215173203359.png",
+    "docs/blog/CTF/2024.12国赛/rasnd.md",
+    "docs/blog/CTF/2024.12国赛/fffffhash.md",
+    "docs/assets/Pasted image 20241215181213.png",
+    "docs/blog/CTF/index.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-6.md",
+    "docs/blog/CTF/2024.12国赛",
+    "docs/blog/CTF/2024.9 MoeCTF/index.md",
+    "docs/blog/CTF/2024.9 MoeCTF/Untitled",
+    "docs/blog/Research/Seedlab/Testing Scheme.md",
+    "docs/blog/Research/Seedlab/Questions.md",
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Research/Seedlab/test-report.md",
+    "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/assets/Pasted image 20241212172141.png",
     "docs/assets/Pasted image 20241212172110.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
@@ -187,31 +208,13 @@
     "docs/blog/ACEE/Mathematical Modeling/Homework 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
-    "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/assets/Pasted image 20241212134354.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/assets/Pasted image 20241212014322.png",
-    "docs/assets/Pasted image 20241212013744.png",
     "docs/blog/Others/TOEFL Reading/Lesson 7.md",
     "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
-    "docs/assets/Pasted image 20241211234404.png",
-    "docs/assets/Pasted image 20241211234341.png",
-    "docs/assets/Pasted image 20241211232744.png",
-    "docs/assets/Pasted image 20241211231735.png",
-    "docs/assets/Pasted image 20241211231541.png",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
-    "docs/blog/Computer Science/Tech/CTF/BurpSuite Professional/BurpSuite Professional.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 3.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 2.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
-    "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",
-    "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
     "docs/blog/Computer Science/Tech/Ubuntu",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
@@ -219,8 +222,6 @@
     "docs/blog/Research/Seedlab/Knowledge",
     "site/search/search_index.json",
     "site/search",
-    "site/tag/index.html",
-    "site/tag",
     "未命名.canvas"
   ]
 }
