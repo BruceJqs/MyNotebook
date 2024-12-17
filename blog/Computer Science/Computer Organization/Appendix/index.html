@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1149,6 +1149,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interfacing-io-devices-to-the-memory-processor-and-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfacing I/O Devices to the Memory, Processor, and Operating System
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1261,6 +1270,8 @@
       
         
           
+        
+      
         
       
         
@@ -1594,6 +1605,27 @@
   
   <span class="md-ellipsis">
     Chapter 13: Randomized Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADS/Chapter%2014/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 14: Parallel Algorithms
   </span>
   
 
@@ -5164,6 +5196,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interfacing-io-devices-to-the-memory-processor-and-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfacing I/O Devices to the Memory, Processor, and Operating System
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5566,7 +5607,52 @@
 </div>
 </div>
 </div>
+<p>从上面例子我们可以得知，如果想要提高带宽，可以：</p>
+<ul>
+<li>增大数据总线的宽度</li>
+<li>使用分开的地址和数据块</li>
+<li>传输多个字</li>
+</ul>
 <hr />
+<h2 id="interfacing-io-devices-to-the-memory-processor-and-operating-system">Interfacing I/O Devices to the Memory, Processor, and Operating System<a class="headerlink" href="#interfacing-io-devices-to-the-memory-processor-and-operating-system" title="Permanent link">&para;</a></h2>
+<p>I/O 系统的三大特征：</p>
+<ul>
+<li>多个程序共用（Share）I/O 系统</li>
+<li>通常使用<strong>中断</strong>（Interrupt）来实现 I/O 操作的信息传递（Communicate）<ul>
+<li>必需的传递类型有：<ul>
+<li>OS 必须能够为 I/O 设备提供<strong>命令</strong>（Commands）<ul>
+<li>内存映射 I/O：部分的内存地址空间会被分配给 I/O 设备，且 <code>lw</code> 和 <code>sw</code> 指令能够访问 I/O 端口</li>
+<li>特殊 I/O 指令<ul>
+<li>输入：<code>in al, port</code></li>
+<li>输出：<code>out port, al</code></li>
+</ul>
+</li>
+<li>命令端口、数据端口<ul>
+<li>状态寄存器（记录完成位（Done Bit）、错误位（Error Bit）等）</li>
+<li>数据寄存器、命令寄存器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>当 I/O 设备完成操作或遇到错误时，必须<strong>通知</strong>（Notify）OS</li>
+<li>数据必须在内存和 I/O 设备之间传输</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对 I/O 设备的底层控制较为复杂</li>
+</ul>
+<p>处理器与 I/O 设备之间的通信：</p>
+<ul>
+<li><strong>轮询</strong>（Polling）：处理器周期性地检查状态位，观察当前是否需要进行下一步 I/O 操作<ul>
+<li>缺点：浪费大量的处理器时间</li>
+</ul>
+</li>
+<li><strong>中断</strong>（Interrupt）<ul>
+<li>中断驱动的 I/O 模式：它的优点是并发操作（Concurrent Operation）</li>
+</ul>
+</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5636,7 +5722,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月12日 13:44:27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月17日 16:38:36</span>
   </span>
 
     
@@ -5926,7 +6012,7 @@
     
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="../../../../javascripts/extra.js"></script>
       
