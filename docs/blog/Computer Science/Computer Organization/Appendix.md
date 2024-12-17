@@ -359,4 +359,35 @@ I/O 设备的三大特性：
 			每秒的总线事务数为 $16\text{transactions}\times\frac{1\text{ second}}{4560ns}=3.51M\text{ transactions/s}$
 		
 		所以 16 字大小的块带宽比 4 字大小的块带宽高 3.16 倍
+
+从上面例子我们可以得知，如果想要提高带宽，可以：
+
+- 增大数据总线的宽度
+- 使用分开的地址和数据块
+- 传输多个字
 ***
+## Interfacing I/O Devices to the Memory, Processor, and Operating System
+
+I/O 系统的三大特征：
+
+- 多个程序共用（Share）I/O 系统
+- 通常使用**中断**（Interrupt）来实现 I/O 操作的信息传递（Communicate）
+    - 必需的传递类型有：
+        - OS 必须能够为 I/O 设备提供**命令**（Commands）
+            - 内存映射 I/O：部分的内存地址空间会被分配给 I/O 设备，且 `lw` 和 `sw` 指令能够访问 I/O 端口
+            - 特殊 I/O 指令
+                - 输入：`in al, port`
+                - 输出：`out port, al`
+            - 命令端口、数据端口
+                - 状态寄存器（记录完成位（Done Bit）、错误位（Error Bit）等）
+                - 数据寄存器、命令寄存器
+        - 当 I/O 设备完成操作或遇到错误时，必须**通知**（Notify）OS
+        - 数据必须在内存和 I/O 设备之间传输
+- 对 I/O 设备的底层控制较为复杂
+
+处理器与 I/O 设备之间的通信：
+
+- **轮询**（Polling）：处理器周期性地检查状态位，观察当前是否需要进行下一步 I/O 操作
+    - 缺点：浪费大量的处理器时间
+- **中断**（Interrupt）
+    - 中断驱动的 I/O 模式：它的优点是并发操作（Concurrent Operation）

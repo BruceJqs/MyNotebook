@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homework 8"
+              "title": "Chapter 14"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 8.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 14.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Homework 8"
+              "title": "Outline of Chapter 14"
             }
           },
           {
@@ -176,21 +176,30 @@
   },
   "active": "1dd558e93161bb2f",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241217163742.png",
+    "docs/blog/Computer Science/ADS/Chapter 13.md",
+    "docs/blog/Computer Science/ADS/Chapter 10.md",
+    "docs/blog/Computer Science/ADS/Chapter 14.md",
+    "docs/assets/Pasted image 20241217153606.png",
+    "docs/assets/Pasted image 20241217152801.png",
+    "docs/assets/Pasted image 20241217150551.png",
+    "docs/assets/Pasted image 20241217150236.png",
+    "docs/assets/Pasted image 20241217144803.png",
+    "docs/assets/Pasted image 20241217143216.png",
+    "docs/assets/Pasted image 20241217142523.png",
+    "docs/assets/Pasted image 20241217122100.png",
+    "docs/assets/Pasted image 20241217122040.png",
+    "docs/assets/Pasted image 20241217122013.png",
+    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 5.md",
+    "docs/blog/Computer Science/Computer Organization/Appendix.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 5.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
-    "docs/assets/image-20241215174129952.png",
-    "docs/assets/image-20241215173748179.png",
-    "docs/assets/image-20241215173626261.png",
-    "docs/assets/image-20241215173459366.png",
-    "docs/assets/image-20241215173357340.png",
-    "docs/assets/image-20241215173203359.png",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
     "docs/blog/CTF/2024.12国赛/fffffhash.md",
-    "docs/assets/Pasted image 20241215181213.png",
     "docs/blog/CTF/index.md",
     "docs/blog/CTF/2024.9 MoeCTF/Crypto/Crypto-6.md",
     "docs/blog/CTF/2024.12国赛",
@@ -201,19 +210,10 @@
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/test-report.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/assets/Pasted image 20241212172141.png",
-    "docs/assets/Pasted image 20241212172110.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 7.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 6.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 5.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 4.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 3.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
-    "docs/assets/Pasted image 20241212134354.png",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 7.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 1.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",
     "docs/blog/Computer Science/Tech/Ubuntu",
     "docs/blog/Others/College Physical Experiments",

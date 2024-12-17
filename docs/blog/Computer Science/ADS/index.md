@@ -31,3 +31,4 @@ comments: true
 - [Chapter 11 : Approximation](Chapter%2011/)
 - [Chapter 12 : Local Search](Chapter%2012/)
 - [Chapter 13 : Randomized Algorithm](Chapter%2013/)
+- [Chapter 14 : Parallel Algorithms](Chapter%2014/)

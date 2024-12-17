@@ -55,7 +55,7 @@ $\text{Total Bits}=2^9\times(16\times 64+48+1)=536.5\text{K bits}$
 
 ### 5.5.1
 
-块大小 $=2^5/2^3=4$ 个字
+块大小 $=2^5/2^2=8$ 个字
 ***
 ### 5.5.2
 
@@ -63,7 +63,9 @@ $\text{Total Bits}=2^9\times(16\times 64+48+1)=536.5\text{K bits}$
 ***
 ### 5.5.3
 
-总位数 $=2^5\times(4\times 64+54+1)=9952\text{ bits}$
+总位数 $=2^5\times(8\times 32+54+1)=9952\text{ bits}$
+
+比例即为 $\frac{9952}{2^5\times 8\times 32}\approx 1.2$
 ***
 ### 5.5.4
 
@@ -140,7 +142,7 @@ $\text{AMAT}_{P2}=\frac{6\%\times 70.90ns+94\%\times 0.90ns}{0.90ns}=5.667\text{
 
 $\text{CPI}_{P1}=1+8\%\times\frac{70ns}{0.66ns}+8\%\times 36\%\times\frac{70ns}{0.66ns}=12.54$
 
-$\text{CPI}_{P2}=1+6\%\times\frac{70ns}{0.90ns}+6\%\times 36\%\times\frac{70ns}{0.90ns}=9.65$
+$\text{CPI}_{P2}=1+6\%\times\frac{70ns}{0.90ns}+6\%\times 36\%\times\frac{70ns}{0.90ns}=7.35$
 
 P2 更快
 ***
@@ -162,9 +164,9 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})<1+8\%\times\
 ***
 ### 5.10.7
 
-$1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})<9.65$
+$1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})<7.35$
 
-解得 $\alpha<67.0\%$
+解得 $\alpha<47.0\%$
 ***
 ## 5.11
 

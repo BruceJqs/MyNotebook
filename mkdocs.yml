@@ -103,6 +103,7 @@ nav:
       - "Chapter 11: Approximation": blog/Computer Science/ADS/Chapter 11.md
       - "Chapter 12: Local Search": blog/Computer Science/ADS/Chapter 12.md
       - "Chapter 13: Randomized Algorithm": blog/Computer Science/ADS/Chapter 13.md
+      - "Chapter 14: Parallel Algorithms": blog/Computer Science/ADS/Chapter 14.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
