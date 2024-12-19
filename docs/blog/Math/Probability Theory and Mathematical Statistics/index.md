@@ -23,3 +23,4 @@ comments: true
 - [Chapter 05 : 大数定律和中心极限定理](Chapter%205/)
 - [Chapter 06 : 数理统计的基本概念](Chapter%206/)
 - [Chapter 07 : 参数估计](Chapter%207/)
+- [Chapter 08 : 假设检验](Chapter%208/)
