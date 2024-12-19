@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Appendix.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Appendix"
+              "title": "Chapter 4"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Appendix.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Appendix"
+              "title": "Outline of Chapter 4"
             }
           },
           {
@@ -176,6 +176,8 @@
   },
   "active": "1dd558e93161bb2f",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241220002137.png",
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/assets/Pasted image 20241219234747.png",
@@ -194,7 +196,6 @@
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md",
     "docs/assets/Pasted image 20241218235755.png",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
