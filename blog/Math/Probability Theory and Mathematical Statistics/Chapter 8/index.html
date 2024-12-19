@@ -5211,7 +5211,7 @@
 &amp;=P\{\frac{\overline{X}-6.0}{\sigma/\sqrt{n}}\geq\frac{C}{\sigma/\sqrt{n}}|\mu=6.0\}
 \end{aligned}
 \]</div>
-<p>由于当 <span class="arithmatex">\(H_0\)</span> 成立时，即 <span class="arithmatex">\(\mu=6.0\)</span> 时，<span class="arithmatex">\(\frac{\overline{X}-6.0}{\sigma/\sqrt{n}}∼N(0,1)\)</span>，因此 <span class="arithmatex">\(\alpha(C)=2-2\Phi(\frac{C}{\sigma/\sqrt{n}}\)</span></p>
+<p>由于当 <span class="arithmatex">\(H_0\)</span> 成立时，即 <span class="arithmatex">\(\mu=6.0\)</span> 时，<span class="arithmatex">\(\frac{\overline{X}-6.0}{\sigma/\sqrt{n}}∼N(0,1)\)</span>，因此 <span class="arithmatex">\(\alpha(C)=2-2\Phi(\frac{C}{\sigma/\sqrt{n}})\)</span></p>
 <p>犯第 II 类错误的概率：</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -5245,6 +5245,11 @@
 <ul>
 <li>P_值：当原假设成立时，检验统计量取比观察到的结果更为极端的数值的概率</li>
 </ul>
+<p>P_ 值与显著水平 <span class="arithmatex">\(\alpha\)</span> 的关系：</p>
+<ul>
+<li>若 <span class="arithmatex">\(P\_\leq\alpha\)</span>，等价于样本落在拒绝域内，因此，拒绝原假设，此时称检验结果在水平 <span class="arithmatex">\(\alpha\)</span> 下是统计显著的</li>
+<li>若 <span class="arithmatex">\(P\_&gt;\alpha\)</span>，等价于样本不落在拒绝域内，因此，不拒绝（接受）原假设，此时称检验结果在水平 <span class="arithmatex">\(\alpha\)</span> 下是统计不显著</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>对于上面这个例子，有:</p>
@@ -5256,11 +5261,6 @@ P\_=P_{H_0}(|\overline{X}-6.0|\geq|6.4-6.0|)=P_{H_0}(|\frac{\overline{X}-6.0}{0.
 <blockquote>
 <p>用 P_ 值计算来判断拒绝还是接受原假设相对更为简单，而且能知道概率大小</p>
 </blockquote>
-<p>P_ 值与显著水平 <span class="arithmatex">\(\alpha\)</span> 的关系：</p>
-<ul>
-<li>若 <span class="arithmatex">\(P\_\leq\alpha\)</span>，等价于样本落在拒绝域内，因此，拒绝原假设，此时称检验结果在水平 <span class="arithmatex">\(\alpha\)</span> 下是统计显著的</li>
-<li>若 <span class="arithmatex">\(P\_&gt;\alpha\)</span>，等价于样本不落在拒绝域内，因此，不拒绝（接受）原假设，此时称检验结果在水平 <span class="arithmatex">\(\alpha\)</span> 下是统计不显著</li>
-</ul>
 <hr />
 <h2 id="_4">处理假设检验问题的基本步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
@@ -5341,7 +5341,7 @@ P\_=P_{H_0}(|\overline{X}-6.0|\geq|6.4-6.0|)=P_{H_0}(|\frac{\overline{X}-6.0}{0.
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月19日 16:30:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月19日 23:48:30</span>
   </span>
 
     

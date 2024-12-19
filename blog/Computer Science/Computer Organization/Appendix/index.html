@@ -1158,6 +1158,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#io-performance-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Performance Measures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#designing-an-io-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Designing an I/O System
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5251,6 +5269,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#io-performance-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Performance Measures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#designing-an-io-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Designing an I/O System
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5283,6 +5319,12 @@
 
 
 <h1 id="appendix-storage-networks-and-other-peripherals">Appendix : Storage, Networks and Other Peripherals<a class="headerlink" href="#appendix-storage-networks-and-other-peripherals" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">写在前面</p>
+<p>sdgg 说，因为出厂商都是以十进制来描述硬盘大小的，所以这一整章的 M,K 都表示 <span class="arithmatex">\(10^6\)</span> 和 <span class="arithmatex">\(10^3\)</span>，并非我们认知中的 <span class="arithmatex">\(2^20\)</span> 和 <span class="arithmatex">\(2^10\)</span>。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241219231902.png" /></p>
+<p>所以实际上标着 1T 的硬盘实际上就只有 931G 是对的，因为电脑认的是二进制（学到了，sdgg 太腻害啦(✧∀✧)）</p>
+</div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>设计<strong>输入/输出设备</strong>(I/O Devices) 需要考虑一下因素：</p>
 <ul>
@@ -5694,11 +5736,132 @@
 <li>缺点：浪费大量的处理器时间</li>
 </ul>
 </li>
-<li><strong>中断</strong>（Interrupt）<ul>
-<li>中断驱动的 I/O 模式：它的优点是并发操作（Concurrent Operation）</li>
+<li>
+<p><strong>中断</strong>（Interrupt）</p>
+<ul>
+<li>中断驱动的 I/O 模式，优点是并发操作（Concurrent Operation）</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241219181855.png" /></p>
+</li>
+<li>
+<p><strong>直接内存访问</strong>（Direct Memory Access, DMA）：设备控制器直接向/从内存传输数据，不需要处理器的介入</p>
+<ul>
+<li>
+<p>DMA 传输模式</p>
+<ul>
+<li>首先处理器通过提供一些信息来设置 DMA 模式，具体包括：设备 ID、操作、待传输数据的内存源地址和目标地址、需要传输的字节数等</li>
+<li>DMA 开始执行操作，并对总线进行仲裁。若某个请求需要在总线上多次传输数据，那么 DMA 单元生成下一个内存的地址，并发起下一次传输</li>
+<li>一旦 DMA 传输完成，控制器向处理器发起中断，随后检查是否发生错误</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241219182403.png" /></p>
+</li>
 </ul>
 </li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">比较三种通信方式的开销</p>
+<p>假设：</p>
+<ul>
+<li>处理器的时钟频率为 500 MHz</li>
+<li>软盘以 16 位为单元传输数据给处理器，并且传输速度为 50KB/s</li>
+<li>硬盘以 4 字的块为单元传输数据，传输速度为 4MB/s</li>
+<li>没有错漏任何数据传输</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">轮询</label><label for="__tabbed_6_2">中断</label><label for="__tabbed_6_3">DMA</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Question</label><label for="__tabbed_7_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设：</p>
+<ul>
+<li>轮询操作需要的时钟周期数为 400</li>
+<li>轮询操作足够频繁，所有的数据都没有缺失</li>
+<li>所有设备大概率一直都非常忙碌（应该是被占用的意思）</li>
+<li>鼠标必须每秒钟轮询 30 次，确保我们没有错漏用户的任何动作</li>
+</ul>
+<p>求出 CPU 浪费在鼠标、软盘和硬盘的时间比例</p>
+</div>
+<div class="tabbed-block">
+<p>对于鼠标来说：每秒为了轮询需要的时钟周期为 <span class="arithmatex">\(30\times 400=12000\text{ Cycles}\)</span>，则浪费比例为 <span class="arithmatex">\(\frac{12\times 10^3}{500\times 10^6}=0.002\%\)</span></p>
+<p>对于软盘来说，每秒需要的轮询次数为 <span class="arithmatex">\(\frac{50KB}{2B}=25K\)</span>，需要的时钟周期为 <span class="arithmatex">\(25K\times 400=10\times 10^6\)</span>，则浪费比例为 <span class="arithmatex">\(\frac{10\times 10^6}{500\times 10^6}=2\%\)</span></p>
+<p>对于硬盘来说，每秒需要的轮询次数为 <span class="arithmatex">\(\frac{4MB}{16B}=0.25M\)</span>，需要的时钟周期为 <span class="arithmatex">\(0.25M\times 400=10\times 10^7\)</span>，则浪费比例为 <span class="arithmatex">\(\frac{10\times 10^7}{500\times 10^6}=20\%\)</span></p>
+<p>可以看出，对于鼠标来说，轮询是不会太大影响到处理器的性能的，但是对于硬盘来说就是不可接受的了</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Question</label><label for="__tabbed_8_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设每次数据传输，包括中断时间，加起来一共需要 500 个时钟周期</p>
+<p>如果硬盘只在 5% 的时间中传输数据，求出处理器浪费的时间比例</p>
+</div>
+<div class="tabbed-block">
+<p>我们首先假设硬盘在 100% 的时间中传输数据，此时中断率和轮询率是一样的，对于硬盘来说每秒的时钟周期为 <span class="arithmatex">\(0.25M\times 500=125\times 10^6\text{ Cycles Per Seconed}\)</span>，此时的浪费比例为 <span class="arithmatex">\(\frac{125\times 10^6}{500\times 10^6}=25\%\)</span></p>
+<p>实际上硬盘只在 5% 的时间中传输数据，那么浪费比例即为 <span class="arithmatex">\(25%\times 5\%=1.25\%\)</span></p>
+<p>我们可以看到，一个中断驱动的 I/O 设备如果并没有在传输数据时，是不需要 CPU 时间的。这便是终端驱动相对于轮询的优点。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Question</label><label for="__tabbed_9_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设：</p>
+<ul>
+<li>DMA 传输的初始设置需要 1000 个时钟周期</li>
+<li>DMA 结束后的中断处理需要 500 个时钟周期</li>
+<li>从磁盘中传输数据的平均大小为 8KB</li>
+<li>磁盘在 100% 的时间都在传输数据</li>
+</ul>
+<p>求出处理器浪费的时间比例</p>
+</div>
+<div class="tabbed-block">
+<p>每次传输 8KB 的时间为 <span class="arithmatex">\(\frac{8KB}{4MB/\text{second}}=2\times 10^{-3}\text{seconds}\)</span></p>
+<p>那么每秒需要的时钟周期数为 <span class="arithmatex">\(\frac{(1000+500)\frac{\text{Cycles}}{\text{Transfer}}}{2\times 10^{-3}\frac{\text{Seconds}}{\text{Transfer}}}=750\times 10^3\frac{\text{Clock Cycles}}{\text{Second}}\)</span></p>
+<p>则浪费时间比例为 <span class="arithmatex">\(\frac{750\times 10^3}{500\times 10^6}=0.2%\)</span></p>
+<p>与轮询和中断驱动的 I/O 都不相同，DMA 可以被用于连接硬盘，而不会消耗单个 I/O 的所有处理器周期</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="io-performance-measures">I/O Performance Measures<a class="headerlink" href="#io-performance-measures" title="Permanent link">&para;</a></h2>
+<p>几类关于 I/O 的基准测试（Benchmark）：</p>
+<ul>
+<li>超级计算机 I/O 基准测试</li>
+<li>事务处理 I/O 基准测试<ul>
+<li>I/O 速率：每秒访问硬盘的数量（数据速率的倒数）</li>
+</ul>
+</li>
+<li>文件系统 I/O 基准测试：包括 MakeDir、Copy、ScanDir、ReadAll、Make 操作等</li>
+</ul>
+<hr />
+<h2 id="designing-an-io-system">Designing an I/O System<a class="headerlink" href="#designing-an-io-system" title="Permanent link">&para;</a></h2>
+<p>设计 I/O 系统的通用方法：</p>
+<ul>
+<li>找到 I/O 系统最弱的连接，它是 I/O 通路上限制设计的一个组件。工作负载和配置限制都可以决定最弱链接的位置</li>
+<li>通过配置该部件来维持所需带宽。确定系统其余部分的要求，并配置它们以支持此带宽</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Question</label><label for="__tabbed_10_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241219234712.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241219234747.png" /></p>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5768,7 +5931,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月17日 16:38:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月19日 23:48:30</span>
   </span>
 
     
