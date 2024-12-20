@@ -409,9 +409,9 @@ for P_i, 1 <= i <= n pardo
 		- $A_1=A(1),…,A(\sqrt{n})\Rightarrow M_1$
 		- $A_2​=A(\sqrt{n}​+1),…,A(2\sqrt{n}​)\Rightarrow M_2​$
 		- ......
-		- $A_n=A(n−\sqrt{n}+1),…,A(n)\Rightarrow M_n$
+		- $A_{\sqrt{n}}=A(n−\sqrt{n}+1),…,A(n)\Rightarrow M_{\sqrt{n}}$
 		
-		最后从每个子问题得到的最大值 $M_1,M_2,…M_n$ 中选取最大值为 $A_{\text{max}}$
+		最后从每个子问题得到的最大值 $M_1,M_2,…M_{\sqrt{n}}$ 中选取最大值为 $A_{\text{max}}$
 		
 		分析：
 		

@@ -50,7 +50,7 @@ $$
 ***
 #### 矩阵检测方案
 
-> 矩阵检测方案是概率群式的改进方案
+> 矩阵检测方案是二阶段群式的改进方案
 
 !!! note "矩阵检测方案"
 
@@ -67,6 +67,8 @@ $$
 		这样需要的检测次数恒为 $m+n$
 ***
 #### 三阶段检测方案
+
+> 三阶段检测方案也是二阶段群式的改进方案
 
 - 第一阶段：有 $n$ 个人，进行总体的混合检测，若结果为阴性，说明这 $n$ 人均未感染。若结果为阳性，说明这 $n$ 人中至少有一人已感染。进入第二阶段
 - 第二阶段：将这 $n$ 人分成 $A,B$ 两组，每组 $\frac{n}{2}$ 人，先对 $A$ 组进行检测，若结果为阴性，说明这 $\frac{n}{2}$ 人均未感染，且确定感染者在 $B$ 组。若结果为阳性，说明这 $\frac{n}{2}$ 人中至少有一人已感染，但仍需确定 $B$ 组是否有感染者，此时对 $B$ 组进行总体的混合检测
@@ -94,3 +96,30 @@ $$
 	
 	平均检测次数的数学期望为 $1+\frac{3}{n}-(1+\frac{1}{n})(1-p)^{\frac{n}{2}}-\frac{1}{n}(1-p)^n$
 ***
+## 随机变量
+
+详见 [概统](https://brucejqs.github.io/MyNotebook/blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%202/) 笔记
+***
+## 赠券收集问题
+
+??? question "问题描述"
+
+	一套赠券共有 $N$ 种，商家在每件商品中随机放入一张赠券。假设每件商品中放入各种赠券的概率相同，那么集齐全套赠券平均需购买多少件商品？
+
+### De Morgan 定律
+
+定义随机变量 $X$ 为“集齐全套赠券需购买的商品件数”，$E(X)=\sum\limits_{i=1}^Ni⋅P(X=i)$。记 $B_i$ 为事件“购买 $i$ 件商品后集齐全套赠券”，记 $A_i^j$ 为事件“购买 $i$ 件商品后收集到第 $j$ 种赠券”。则有:
+
+$$ 
+\begin{aligned}
+P(A_i^j)&=1−P(\overline{A_i^j})=1−(1−\frac{1}{N})^i\\
+P(B_i)&=P(A_i^1\cap A_i^2\cap...\cap A_i^N)\\
+&=1−P(\overline{A_i^1\cap A_i^2\cap...\cap A_i^N})\\
+&=1−P(\overline{A_i^1}\cup \overline{A_i^2}\cup ...\cup\overline{A_i^N})\\
+&=1−(\sum\limits_{j=1}^NP(\overline{A_i^j})−\sum\limits_{1\leq j_1<j_2\leq N}P(\overline{A_i^j}\cap\overline{A_i^k})+...+(−1)^{N−1}P(\overline{A_i^1}\cap\overline{A_i^2}\cap...\cap\overline{A_i^N}))
+\end{aligned}
+$$
+
+分析括号中的第二项，对任意固定的 $j,k,1\leq j<k\leq N$，$\overline{A_i^j}\cap\overline{A_i^k}$ 表示购买 $i$ 件商品后未收集到第 $j$ 种和第 $k$ 种赠券，有 $P(\overline{A_i^j}\cap \overline{A_i^k})=(1-\frac{2}{N})^i$
+
+同理，对任意 $1\leq j_1<j_2<...<j_k\leq N$，$$
