@@ -20,6 +20,8 @@ comments: true
 - [Chapter 02 : 数学规划](Chapter%202/)
 - [Chapter 03 : 组合优化](Chapter%203/)
 - [Chapter 04 : 图论模型](Chapter%204/)
+- [Chapter 05 : 数论与组合模型](Chapter%205/)
+- [Chapter 06 : 随机模型](Chapter%206/)
 
 ### Homeworks
 
