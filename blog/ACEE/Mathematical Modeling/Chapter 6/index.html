@@ -2791,6 +2791,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      赠券收集问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="赠券收集问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-morgan" class="md-nav__link">
+    <span class="md-ellipsis">
+      De Morgan 定律
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5171,6 +5204,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      赠券收集问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="赠券收集问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-morgan" class="md-nav__link">
+    <span class="md-ellipsis">
+      De Morgan 定律
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5251,7 +5317,7 @@ P(A|B)=\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\overline{A})P(\overline{A})}=\frac{pr}{
 <hr />
 <h4 id="_5">矩阵检测方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>矩阵检测方案是概率群式的改进方案</p>
+<p>矩阵检测方案是二阶段群式的改进方案</p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">矩阵检测方案</p>
@@ -5270,6 +5336,9 @@ P(A|B)=\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\overline{A})P(\overline{A})}=\frac{pr}{
 </div>
 <hr />
 <h4 id="_6">三阶段检测方案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>三阶段检测方案也是二阶段群式的改进方案</p>
+</blockquote>
 <ul>
 <li>第一阶段：有 <span class="arithmatex">\(n\)</span> 个人，进行总体的混合检测，若结果为阴性，说明这 <span class="arithmatex">\(n\)</span> 人均未感染。若结果为阳性，说明这 <span class="arithmatex">\(n\)</span> 人中至少有一人已感染。进入第二阶段</li>
 <li>第二阶段：将这 <span class="arithmatex">\(n\)</span> 人分成 <span class="arithmatex">\(A,B\)</span> 两组，每组 <span class="arithmatex">\(\frac{n}{2}\)</span> 人，先对 <span class="arithmatex">\(A\)</span> 组进行检测，若结果为阴性，说明这 <span class="arithmatex">\(\frac{n}{2}\)</span> 人均未感染，且确定感染者在 <span class="arithmatex">\(B\)</span> 组。若结果为阳性，说明这 <span class="arithmatex">\(\frac{n}{2}\)</span> 人中至少有一人已感染，但仍需确定 <span class="arithmatex">\(B\)</span> 组是否有感染者，此时对 <span class="arithmatex">\(B\)</span> 组进行总体的混合检测</li>
@@ -5298,6 +5367,27 @@ P(A|B)=\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\overline{A})P(\overline{A})}=\frac{pr}{
 <p>平均检测次数的数学期望为 <span class="arithmatex">\(1+\frac{3}{n}-(1+\frac{1}{n})(1-p)^{\frac{n}{2}}-\frac{1}{n}(1-p)^n\)</span></p>
 </div>
 <hr />
+<h2 id="_7">随机变量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>详见 <a href="https://brucejqs.github.io/MyNotebook/blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%202/">概统</a> 笔记</p>
+<hr />
+<h2 id="_8">赠券收集问题<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>问题描述</summary>
+<p>一套赠券共有 <span class="arithmatex">\(N\)</span> 种，商家在每件商品中随机放入一张赠券。假设每件商品中放入各种赠券的概率相同，那么集齐全套赠券平均需购买多少件商品？</p>
+</details>
+<h3 id="de-morgan">De Morgan 定律<a class="headerlink" href="#de-morgan" title="Permanent link">&para;</a></h3>
+<p>定义随机变量 <span class="arithmatex">\(X\)</span> 为“集齐全套赠券需购买的商品件数”，<span class="arithmatex">\(E(X)=\sum\limits_{i=1}^Ni⋅P(X=i)\)</span>。记 <span class="arithmatex">\(B_i\)</span> 为事件“购买 <span class="arithmatex">\(i\)</span> 件商品后集齐全套赠券”，记 <span class="arithmatex">\(A_i^j\)</span> 为事件“购买 <span class="arithmatex">\(i\)</span> 件商品后收集到第 <span class="arithmatex">\(j\)</span> 种赠券”。则有:</p>
+<div class="arithmatex">\[ 
+\begin{aligned}
+P(A_i^j)&amp;=1−P(\overline{A_i^j})=1−(1−\frac{1}{N})^i\\
+P(B_i)&amp;=P(A_i^1\cap A_i^2\cap...\cap A_i^N)\\
+&amp;=1−P(\overline{A_i^1\cap A_i^2\cap...\cap A_i^N})\\
+&amp;=1−P(\overline{A_i^1}\cup \overline{A_i^2}\cup ...\cup\overline{A_i^N})\\
+&amp;=1−(\sum\limits_{j=1}^NP(\overline{A_i^j})−\sum\limits_{1\leq j_1&lt;j_2\leq N}P(\overline{A_i^j}\cap\overline{A_i^k})+...+(−1)^{N−1}P(\overline{A_i^1}\cap\overline{A_i^2}\cap...\cap\overline{A_i^N}))
+\end{aligned}
+\]</div>
+<p>分析括号中的第二项，对任意固定的 <span class="arithmatex">\(j,k,1\leq j&lt;k\leq N\)</span>，<span class="arithmatex">\(\overline{A_i^j}\cap\overline{A_i^k}\)</span> 表示购买 <span class="arithmatex">\(i\)</span> 件商品后未收集到第 <span class="arithmatex">\(j\)</span> 种和第 <span class="arithmatex">\(k\)</span> 种赠券，有 <span class="arithmatex">\(P(\overline{A_i^j}\cap \overline{A_i^k})=(1-\frac{2}{N})^i\)</span></p>
+<p>同理，对任意 <span class="arithmatex">\(1\leq j_1&lt;j_2&lt;...&lt;j_k\leq N\)</span>，$$</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5367,7 +5457,7 @@ P(A|B)=\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\overline{A})P(\overline{A})}=\frac{pr}{
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月20日 17:22:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月20日 20:29:08</span>
   </span>
 
     
