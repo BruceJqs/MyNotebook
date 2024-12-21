@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 7"
+              "title": "Chapter 9"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 7"
+              "title": "Outline of Chapter 9"
             }
           },
           {
@@ -176,42 +176,42 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 6.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 8.md",
+    "docs/assets/Pasted image 20241221210351.png",
+    "docs/assets/Pasted image 20241221205216.png",
+    "docs/assets/Pasted image 20241221200800.png",
+    "docs/assets/Pasted image 20241221200415.png",
+    "docs/assets/Pasted image 20241221200348.png",
+    "docs/assets/Pasted image 20241221194444.png",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 9.md",
     "docs/assets/Pasted image 20241221173259.png",
     "docs/assets/Pasted image 20241221165254.png",
     "docs/assets/Pasted image 20241221164534.png",
     "docs/assets/Pasted image 20241221164308.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 6.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
-    "docs/assets/Pasted image 20241221155544.png",
-    "docs/assets/Pasted image 20241221151804.png",
-    "docs/assets/Pasted image 20241221150019.png",
     "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
-    "docs/assets/Pasted image 20241221142826.png",
-    "docs/assets/Pasted image 20241221133517.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 14.md",
-    "docs/assets/Pasted image 20241220171251.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
     "().md",
-    "docs/assets/Pasted image 20241220162940.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 8.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 9.md",
     "Untitled.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch11.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
-    "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",
