@@ -14,7 +14,7 @@
         <link rel="prev" href="../Chapter%205/">
       
       
-        <link rel="next" href="../Homework%201/">
+        <link rel="next" href="../Chapter%207/">
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
@@ -2527,6 +2527,8 @@
       
         
       
+        
+      
     
     
       
@@ -2819,8 +2821,68 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何分布
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markov" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov 过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      赌徒破产问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pascal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pascal 问题
+    </span>
+  </a>
   
 </li>
       
@@ -2828,6 +2890,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter%207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 07 : 秘书问题
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -5232,8 +5315,68 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何分布
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markov" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov 过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      赌徒破产问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pascal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pascal 问题
+    </span>
+  </a>
   
 </li>
       
@@ -5387,7 +5530,91 @@ P(B_i)&amp;=P(A_i^1\cap A_i^2\cap...\cap A_i^N)\\
 \end{aligned}
 \]</div>
 <p>分析括号中的第二项，对任意固定的 <span class="arithmatex">\(j,k,1\leq j&lt;k\leq N\)</span>，<span class="arithmatex">\(\overline{A_i^j}\cap\overline{A_i^k}\)</span> 表示购买 <span class="arithmatex">\(i\)</span> 件商品后未收集到第 <span class="arithmatex">\(j\)</span> 种和第 <span class="arithmatex">\(k\)</span> 种赠券，有 <span class="arithmatex">\(P(\overline{A_i^j}\cap \overline{A_i^k})=(1-\frac{2}{N})^i\)</span></p>
-<p>同理，对任意 <span class="arithmatex">\(1\leq j_1&lt;j_2&lt;...&lt;j_k\leq N\)</span>，$$</p>
+<p>同理，对任意 <span class="arithmatex">\(1\leq j_1&lt;j_2&lt;...&lt;j_k\leq N\)</span>，<span class="arithmatex">\(\overline{A_i^j}\cap\overline{A_i^k}\)</span> 表示购买 <span class="arithmatex">\(i\)</span> 件商品后未收集到第 <span class="arithmatex">\(j_1\)</span> 种、第 <span class="arithmatex">\(j_2\)</span> 种、...、 第 <span class="arithmatex">\(j_k\)</span> 种赠券，有 <span class="arithmatex">\(P(\overline{A_i^{j_1}}\cap\overline{A_i^{j_2}}\cap...\cap\overline{A_i^{j_k}})=(1-\frac{k}{N})^i\)</span>。因此，有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(B_i)&amp;=1-(\sum\limits_{j=1}^NP(\overline{A_i^j})-\sum\limits_{1\leq j_1&lt;j_2\leq N}P(\overline{A_i^j}\cap\overline{A_i^k})+...+(-1)^{N-1}P(\overline{A_i^1}\cap\overline{A_i^2}\cap...\cap\overline{A_i^N}))\\
+&amp;=1-(\sum\limits_{j=1}^N(1-\frac{1}{N})^i-\sum\limits_{1\leq j_1&lt;j_2\leq N}(1-\frac{2}{N})^i+...+(-1)^{N-1}(1-\frac{N}{N})^i)\\
+&amp;=1-(C_N^1(1-\frac{1}{N})^i-C_N^2(1-\frac{2}{N})^i+...+(-1)^{N-1}C_N^N(1-\frac{N}{N})^i)\\
+&amp;=1-\sum\limits_{j=1}^N(-1)^{j-1}C_N^j(1-\frac{j}{N})^i\\
+&amp;=\sum\limits_{j=0}^N(-1)^jC_N^j(1-\frac{j}{N})^i
+\end{aligned}
+\]</div>
+<p>所以其期望为 <span class="arithmatex">\(\sum\limits_{i=1}^N i·P(X=i)=\sum\limits_{i=1}^N i·\sum\limits_{j=0}^N(-1)^jC_N^j(1-\frac{j}{N})^i\)</span></p>
+<hr />
+<h3 id="_9">几何分布<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>记随机变量 <span class="arithmatex">\(X\)</span> 为“集齐全套赠券购买的商品件数”，定义随机变量 <span class="arithmatex">\(Y\)</span> 为“从收集到 <span class="arithmatex">\(k−1\)</span> 种赠券到 <span class="arithmatex">\(k\)</span> 种赠券购买的商品件数”，则有：<span class="arithmatex">\(X=Y_1+Y_2+⋯+Y_N\)</span></p>
+<p>我们考察 <span class="arithmatex">\(Y_k\)</span>。<span class="arithmatex">\(Y_k=j\)</span> 意味着先购买的 <span class="arithmatex">\(j−1\)</span> 件商品中的赠券均为已收集到的 <span class="arithmatex">\(k−1\)</span> 种中的一种，第 <span class="arithmatex">\(j\)</span> 件商品中有未收集到的 <span class="arithmatex">\(N−k+1\)</span> 种赠券中的一种。可知，<span class="arithmatex">\(Y_k\)</span> 服从参数为 <span class="arithmatex">\(\frac{N−k+1}{N}\)</span> 的几何分布</p>
+<p>所以，根据几何分布的性质，有 <span class="arithmatex">\(E(Y_k)=\frac{N}{N−k+1}\)</span>。因此，<span class="arithmatex">\(E(X)=\sum\limits_{k=1}^NE(Y_k)=\sum\limits_{k=1}^N\frac{N}{N−k+1}=N\sum\limits_{k=1}^N\frac{1}{k}\)</span></p>
+<blockquote>
+<p>显然，方法二的计算量要小于方法一；而且，方法二的思路更加简单，更加容易理解</p>
+</blockquote>
+<hr />
+<h2 id="_10">随机过程<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">随机过程<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>随机过程是描述随机现象随时间推移而演化的一类数学模型。</p>
+<p>• 一族随机变量 <span class="arithmatex">\(\{X(t),t\in T\}\)</span> ，其中 <span class="arithmatex">\(t\)</span> 是参数，<span class="arithmatex">\(T\)</span> 为参数集。 <span class="arithmatex">\(\cdot T\)</span> 为整数集的随机过程称为随机序列。</p>
+<h3 id="markov">Markov 过程<a class="headerlink" href="#markov" title="Permanent link">&para;</a></h3>
+<p>Markov 过程意味着：在已知目前的状态（现在）的条件下，它未来的演变（将来）不依赖于它以往的演变（过去）</p>
+<p>对随机序列 <span class="arithmatex">\(\{X_n,n=0,1,2⋯\}\)</span>（<span class="arithmatex">\(X_n\)</span> 为有限个或可数个），<span class="arithmatex">\(P(X_{n+1}=i_{n+1})\)</span> 只与 <span class="arithmatex">\(X_n\)</span> 有关， 而与 <span class="arithmatex">\(X_{n−1},X_{n−2},⋯\)</span> 无关，则称 <span class="arithmatex">\(\{X_n,n=0,1,2⋯\}\)</span> 为 Markov 链。用数学语言描述为<span class="arithmatex">\(P(X_{n+1}=i_{n+1}|X_n=i_n,X_{n−1}=i_{n−1},⋯,X_0=i_0)=P(X_{n+1}=i_{n+1}|X_n=i_n)\)</span></p>
+<hr />
+<h2 id="_12">赌徒破产问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>问题描述</summary>
+<p>一个赌徒在初始时拥有 <span class="arithmatex">\(h\)</span> 个单位财富。在每局赌博中以概率 <span class="arithmatex">\(p\)</span> 赢一个单位财富，以概率 <span class="arithmatex">\(q=1−p\)</span> 输一个单位财富。各局赌博结果独立。当赌徒的财富达到 <span class="arithmatex">\(N\)</span> 个单位或 <span class="arithmatex">\(0\)</span> 个单位（破产）时停止赌博。求赌徒破产的概率。</p>
+</details>
+<p>记 <span class="arithmatex">\(P_h\)</span> 和 <span class="arithmatex">\(Q_h\)</span> 分别为赌徒初始财富为 <span class="arithmatex">\(h\)</span> 个单位时，财富最终达到 <span class="arithmatex">\(N\)</span> 个单位的和 <span class="arithmatex">\(0\)</span> 个单位的概率，显然有初始条件 <span class="arithmatex">\(P_N=1,P_0=0,Q_N=0,Q_0=1\)</span></p>
+<hr />
+<p>对 <span class="arithmatex">\(P_h\)</span>，可以由如下 Markov 链得到：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241221133517.png" /></p>
+<p>那么有 <span class="arithmatex">\(P_h=pP_{h+1}+qP_{h-1},1\leq h\leq N-1\)</span>，即 <span class="arithmatex">\(P_h-P_{h+1}=\frac{q}{p}(P_{h-1}-P_h)\)</span></p>
+<p>解递推关系，可得 <span class="arithmatex">\(P_h=\begin{cases}\frac{1-(\frac{q}{p})^h}{1-(\frac{q}{p})^N}, &amp; q\not=p\\\frac{h}{N}, &amp; q=p\end{cases}\)</span></p>
+<hr />
+<p>对 <span class="arithmatex">\(Q_h\)</span>，设想赌徒与另一位在初始时拥有 <span class="arithmatex">\(N−h\)</span> 个单位财富的虚拟赌徒赌博。在每局赌博中虚拟赌徒以概率 <span class="arithmatex">\(q\)</span> 赢一个单位财富，以概率 <span class="arithmatex">\(p\)</span> 输一个单位财富。赌徒破产时，虚拟赌徒财富达到 <span class="arithmatex">\(N\)</span> 个单位。</p>
+<p>所以真实赌徒从 <span class="arithmatex">\(h\)</span> 输到破产就相当于虚拟赌徒从 <span class="arithmatex">\(N−h\)</span> 的赚到 <span class="arithmatex">\(N\)</span> 个单位，即 <span class="arithmatex">\(Q_h=P_{N−h}'\)</span></p>
+<p>因为 <span class="arithmatex">\(P_h'=\begin{cases}\frac{1−(\frac{p}{q})^h}{1−(\frac{p}{q})^N}, &amp; p\not=q\\\frac{h}{N}, &amp; p=q\end{cases}\)</span>（输赢需要对调），所以 <span class="arithmatex">\(Q_h=P_{N-h}'=\begin{cases}\frac{1−(\frac{p}{q})^{N-h}}{1−(\frac{p}{q})^N}=\frac{(\frac{q}{p})^N-(\frac{q}{p})^h}{(\frac{q}{p})^N-1}, &amp; p\not=q\\\frac{N-h}{N}, &amp; p=q\end{cases}\)</span></p>
+<hr />
+<h2 id="pascal">Pascal 问题<a class="headerlink" href="#pascal" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>问题描述</summary>
+<p>A,B 两人玩一种游戏，初始时两人各有 12 分。一次掷三枚骰子，若点数恰为 11 则 A 胜 B 负，点数恰为 14 则 B 胜 A 负，其他点数不分胜负。对出现胜负的一次投掷，胜一方增 1 分，负一方减 1 分。分数先为 0 分的一方失败。求双方获胜的概率之比</p>
+</details>
+<p>我们采用多项式的方法计算掷三枚骰子，点数恰为 <span class="arithmatex">\(j\)</span> 的概率。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+(x+x^2+x^3+x^4+x^5+x^6)^3&amp;=x^{18}+3x^{17}+6x^{16}+10x^{15}+15x^{14}+21x^{13}+25x^{12}+27x^{11}\\
+&amp;+27x^{10}+25x^9+21x^8+15x^7+10x^6+6x^5+3x^4+x^3
+\end{aligned}
+\]</div>
+<p>总可能性为 <span class="arithmatex">\(6^3=216\)</span> ，所以点数恰为 <span class="arithmatex">\(j\)</span> 的概率为 <span class="arithmatex">\(\frac{a_j}{216}\)</span> ，其中 <span class="arithmatex">\(a_j\)</span> 为上式中 <span class="arithmatex">\(x_j\)</span> 的系数。</p>
+<p>一次投掷，A 胜的概率为 <span class="arithmatex">\(p=a_{11}{216}=\frac{27}{216}\)</span> ，B 胜的概率为 <span class="arithmatex">\(q=\frac{a_{14}}{216}=\frac{15}{216}\)</span>，不分胜负的概率为 <span class="arithmatex">\(1−p−q=\frac{1−a_{11}−a_{14}}{216}=\frac{174}{216}\)</span></p>
+<p>我们从获胜的角度来看，就是判断从 12 分到 24 分的概率。我们可以用 Markov 链来解决这个问题</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241221142826.png" /></p>
+<p>记 <span class="arithmatex">\(P_h\)</span> 为 A 从 <span class="arithmatex">\(h\)</span> 分到 24 分的概率，<span class="arithmatex">\(Q_h\)</span> 为 B 从 <span class="arithmatex">\(h\)</span> 分到 24 分的概率，显然有初始条件 <span class="arithmatex">\(P_{24}=1,P_0=0,Q_{24}=1,Q_0=0\)</span></p>
+<p>根据 Markov 链，我们可以得到如下递推关系：</p>
+<div class="arithmatex">\[
+\begin{cases}
+P_h=pP_{h+1}+qP_{h-1}+(1-p-q)P_h, &amp; 1\leq h\leq 23\\
+Q_h=qQ_{h+1}+pQ_{h-1}+(1-p-q)Q_h, &amp; 1\leq h\leq 23
+\end{cases}
+\]</div>
+<p>即：</p>
+<div class="arithmatex">\[
+\begin{cases}
+P_h-P_{h+1}=\frac{q}{p}(P_{h-1}-P_h), &amp; 1\leq h \leq 23\\
+Q_h-Q_{h+1}=\frac{p}{q}(Q_{h-1}-Q_h), &amp; 1\leq h\leq 23
+\end{cases}
+\]</div>
+<p>解递推关系，有 <span class="arithmatex">\(P_h=\frac{1-(\frac{q}{p})^h}{1-(\frac{q}{p})^{24}},Q_h=\frac{1-(\frac{p}{q})^h}{1-(\frac{p}{q})^{24}}\)</span></p>
+<p>代入 <span class="arithmatex">\(h=12\)</span>，得到：</p>
+<div class="arithmatex">\[
+\begin{cases}
+P_{12}=\frac{1-(\frac{q}{p})^{12}}{1-(\frac{q}{p})^{24}}=\frac{1-(\frac{15}{27})^{12}}{1-(\frac{15}{27})^{24}}=\frac{1-\frac{5^{12}}{3^{24}}}{1-\frac{5^{24}}{3^{48}}}=\frac{3^{48}-3^{24}5^{12}}{3^{48}-5^{24}}\\
+Q_{12}=\frac{1-(\frac{p}{q})^{12}}{1-(\frac{p}{q})^{24}}=\frac{1-(\frac{27}{15})^{12}}{1-(\frac{27}{15})^{24}}=\frac{1-\frac{3^{24}}{5^{12}}}{1-\frac{3^{48}}{5^{24}}}=\frac{5^{24}-3^{24}5^{12}}{5^{24}-3^{38}}
+\end{cases}
+\]</div>
+<p>所以 <span class="arithmatex">\(\frac{P_{12}}{Q_{12}}=\frac{3^{48}-3^{24}5^{12}}{3^{24}5^{12}-5^{24}}=\frac{3^{24}}{5^{12}}=\frac{282429536481}{244140625}\)</span></p>
+<p>显然 A 获胜的概率要远大于 B 获胜的概率</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5457,7 +5684,7 @@ P(B_i)&amp;=P(A_i^1\cap A_i^2\cap...\cap A_i^N)\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月20日 20:29:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月21日 14:49:53</span>
   </span>
 
     
@@ -5689,16 +5916,16 @@ P(B_i)&amp;=P(A_i^1\cap A_i^2\cap...\cap A_i^N)\\
         
           
           <a
-            href="../Homework%201/"
+            href="../Chapter%207/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Homework 01"
+            aria-label="下一页: Chapter 07 : 秘书问题"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Homework 01
+                Chapter 07 : 秘书问题
               </div>
             </div>
             <div class="md-footer__button md-icon">
