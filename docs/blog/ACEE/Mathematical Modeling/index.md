@@ -22,6 +22,7 @@ comments: true
 - [Chapter 04 : 图论模型](Chapter%204/)
 - [Chapter 05 : 数论与组合模型](Chapter%205/)
 - [Chapter 06 : 随机模型](Chapter%206/)
+- [Chapter 07 : 秘书问题](Chapter%207/)
 
 ### Homeworks
 

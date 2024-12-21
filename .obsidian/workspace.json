@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 14.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 14"
+              "title": "Chapter 7"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 14.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 14"
+              "title": "Outline of Chapter 7"
             }
           },
           {
@@ -177,9 +177,16 @@
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
     "docs/blog/ACEE/Mathematical Modeling/Chapter 6.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
+    "docs/blog/ACEE/Mathematical Modeling/Homework 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/index.md",
+    "docs/blog/ACEE/Mathematical Modeling/Project.md",
+    "docs/assets/Pasted image 20241221142826.png",
+    "docs/assets/Pasted image 20241221133517.png",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
+    "docs/blog/Computer Science/ADS/Chapter 14.md",
     "docs/assets/Pasted image 20241220171251.png",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
-    "docs/blog/ACEE/Mathematical Modeling/index.md",
     "().md",
     "docs/assets/Pasted image 20241220162940.png",
     "docs/assets/Pasted image 20241220162845.png",
@@ -188,9 +195,6 @@
     "docs/assets/Pasted image 20241220154801.png",
     "docs/assets/Pasted image 20241220154708.png",
     "docs/assets/Pasted image 20241220153041.png",
-    "docs/assets/Pasted image 20241220152958.png",
-    "docs/assets/Pasted image 20241220152924.png",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 1.md",
@@ -206,11 +210,8 @@
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
-    "docs/blog/ACEE/Mathematical Modeling/Project.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 8.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 4.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 5.md",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",
     "docs/blog/Computer Science/Tech/Ubuntu/Figs",

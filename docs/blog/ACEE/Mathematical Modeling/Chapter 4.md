@@ -183,7 +183,7 @@ comments: true
 ***
 ### 割
 
-- 设 $S\subseteq V$ 为图 $G=(V,E)$ 顶点集的任一子集，$S=V\backslash S$，边集 $(S,\overline{S})$ 称为 $G$ 的割（Cut）
+- 设 $S\subseteq V$ 为图 $G=(V,E)$ 顶点集的任一子集，$\overline{S}=V\backslash S$，边集 $(S,\overline{S})$ 称为 $G$ 的割（Cut）
 	- 若 $G$ 为无向图，$(S,\overline{S})$ 为端点分属 $S$ 与 $\overline{S}$ 的边的集合
 	- 若 $G$ 为有向图，$(S,\overline{S})$ 为起点属于 $S$，终点属于 $\overline{S}$ 的弧的集合
 - 赋权图中割的权之和称为割量
