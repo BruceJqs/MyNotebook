@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 10"
+              "title": "Homework 10"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Homework 10.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 10"
+              "title": "Outline of Homework 10"
             }
           },
           {
@@ -176,10 +176,10 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/ACEE/Mathematical Modeling/Homework 10.md",
     "docs/blog/ACEE/Mathematical Modeling/Project.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/assets/Pasted image 20241222154314.png",

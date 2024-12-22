@@ -150,6 +150,8 @@ nav:
       - "Chapter 06 : 随机模型": blog/ACEE/Mathematical Modeling/Chapter 6.md
       - "Chapter 07 : 秘书问题": blog/ACEE/Mathematical Modeling/Chapter 7.md
       - "Chapter 08 : 差分方程模型": blog/ACEE/Mathematical Modeling/Chapter 8.md
+      - "Chapter 09 : 常微分方程模型": blog/ACEE/Mathematical Modeling/Chapter 9.md
+      - "Chapter 10 : 博弈论模型": blog/ACEE/Mathematical Modeling/Chapter 10.md
       - "Homework 01": blog/ACEE/Mathematical Modeling/Homework 1.md
       - "Homework 02": blog/ACEE/Mathematical Modeling/Homework 2.md
       - "Homework 03": blog/ACEE/Mathematical Modeling/Homework 3.md
@@ -159,6 +161,7 @@ nav:
       - "Homework 07": blog/ACEE/Mathematical Modeling/Homework 7.md
       - "Homework 08": blog/ACEE/Mathematical Modeling/Homework 8.md
       - "Homework 09": blog/ACEE/Mathematical Modeling/Homework 9.md
+      - "Homework 10": blog/ACEE/Mathematical Modeling/Homework 10.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
