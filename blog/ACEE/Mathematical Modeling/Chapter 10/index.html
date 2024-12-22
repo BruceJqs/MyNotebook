@@ -5954,7 +5954,7 @@
 <p>唯一性：</p>
 <ul>
 <li>若存在两个最优解 <span class="arithmatex">\((x_1,y_1),(x_2,y_2)\)</span>，则 <span class="arithmatex">\((x_1-x_0)(y_1-y_0)=(x_2-x_0)(y_2-y_0)\geq(\overline{x}-x_0)(\overline{y}-y_0)&gt;0\)</span>，那么有 <span class="arithmatex">\(x_1\not=x_0\Rightarrow x_1&gt;x_0\Rightarrow x_1\not=x_2\)</span></li>
-<li>不妨设 <span class="arithmatex">\(x_1&lt;x_2\)</span>，则 <span class="arithmatex">\(y_1&gt;y_2\)</span>。由 <span class="arithmatex">\(S\)</span> 的凸性 <span class="arithmatex">\((\frac{x_1+x_2}{2},\frac{y_1+y_2}{2})\in S\)</span>，而 <span class="arithmatex">\((\frac{x_1+x_2}{2}-x_0)(\frac{y_1+y_2}{2}-y_0)=(x_1-x_0)(y_1-y_0)+\frac{1}{4}(y_2-y_1)(x_1-x_2)&gt;(x_1-x_0)(y_1_y_0)\)</span> 矛盾</li>
+<li>不妨设 <span class="arithmatex">\(x_1&lt;x_2\)</span>，则 <span class="arithmatex">\(y_1&gt;y_2\)</span>。由 <span class="arithmatex">\(S\)</span> 的凸性 <span class="arithmatex">\((\frac{x_1+x_2}{2},\frac{y_1+y_2}{2})\in S\)</span>，而 <span class="arithmatex">\((\frac{x_1+x_2}{2}-x_0)(\frac{y_1+y_2}{2}-y_0)=(x_1-x_0)(y_1-y_0)+\frac{1}{4}(y_2-y_1)(x_1-x_2)&gt;(x_1-x_0)(y_1-y_0)\)</span> 矛盾</li>
 </ul>
 </li>
 </ul>
@@ -6007,9 +6007,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">唯一性</p>
+<ul>
+<li>对任一满足CG性质的解，将各组容器断开，向每组容器中注入相应的水量  </li>
+<li>为满足CG性质，任意两组容器的水平面等高，否则连通这两组容器重注后，容器中水量会有变化  </li>
+</ul>
 </div>
-<p>- 对任一满足CG性质的解，将各组容器断开，向每组容器中注入相应的水量<br />
-     - 为满足CG性质，任意两组容器的水平面等高，否则连通这两组容器重注后，容器中水量会有变化  </p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241222211134.png" /></p>
 </div>
 <div class="admonition note">
@@ -6110,7 +6112,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月22日 21:21:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月22日 21:28:13</span>
   </span>
 
     
