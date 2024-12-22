@@ -25,6 +25,7 @@ comments: true
 - [Chapter 07 : 秘书问题](Chapter%207/)
 - [Chapter 08 : 差分方程模型](Chapter%208/)
 - [Chapter 09 : 常微分方程模型](Chapter%209/)
+- [Chapter 10 : 博弈论模型](Chapter%2010/)
 
 ### Homeworks
 
@@ -37,3 +38,4 @@ comments: true
 - [Homework 07](Homework%207/)
 - [Homework 08](Homework%208/)
 - [Homework 09](Homework%209/)
+- [Homework 10](Homework%2010/)

@@ -54,7 +54,7 @@ comments: true
 
 ![](../../../assets/Pasted%20image%2020241221150019.png)
 
-!!! note
+!!! note ""
 
 	简单解释一下 `2314` 的例子：
 	
