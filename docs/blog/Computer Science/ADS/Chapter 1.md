@@ -12,7 +12,7 @@ comments: true
 
 ### Why?
 
->对于一棵二叉搜索树，其对点的操作代价为 $O(\log⁡\space n)$。然而在最坏情况下，它会退化成 $O(n)$。
+>对于一棵二叉搜索树，其对点的操作代价为 $O(\log⁡\space n)$。然而在最坏情况（退化成一条链）下，它会退化成 $O(n)$。
 
 >如果我们想让一棵二叉树好维护（即时间复杂度低），那么就希望它的高度尽可能低，而在点数固定的情况下，一种朴素的思想是让节点尽可能“均匀”地分布在树上。
 ***
@@ -27,7 +27,7 @@ comments: true
 
 	!!! note "Balance Factor"
 
-		- 一个节点的平衡因子被用来描述一个节点的平衡状态，对于节点 $T_P$，它的左子树为 $T_L$​，右子树为 $T_R$​，则 $BF(T_P)=h(T_L)-h(T_R)$
+		- 一个节点的平衡因子（Balance Factor）被用来描述一个节点的平衡状态，对于节点 $T_P$，它的左子树为 $T_L$​，右子树为 $T_R$​，则 $BF(T_P)=h(T_L)-h(T_R)$
 	
 		- 在一个 AVL 树中，其每一个节点的平衡因子均为 -1 或 0 或 1
 
@@ -76,7 +76,7 @@ comments: true
 	
 !!! note "Rotation Operations"
 
-	值得注意的是，在实际情况中可能会出现多个 "Trouble Finder",但我们只关注 **"距离案发现场最近的 Trouble Finder"** 为根的子树。
+	值得注意的是，在实际情况中可能会出现多个 "Trouble Finder",但我们只关注<font color="red">"距离案发现场最近的 Trouble Finder"</font>为根的子树。
 	
 	=== "LL"
 	
@@ -106,11 +106,11 @@ comments: true
 	 
 	我们可以得到当下有如下性质：
 	 
-	- $BF(Trouble Finder)=h(New Left Subtree)−h(Right Subtree)=2$
-	- $h(New L Left Subtree)−h(L Right Subtree)=1$
+	- $BF(\text{Trouble Finder})=h(\text{New Left Subtree})−h(\text{Right Subtree})=2$
+	- $h(\text{New L Left Subtree})−h(\text{L Right Subtree})=1$
 		- 如果此差为 0，则不应当成为 Trouble Maker，若此差为 2，则 Left Child 应当为 Trouble Finder；
 	
-	现在我们希望在保留二叉搜索树的性质下，要让 $∣BF(Trouble Finder)∣$ 变小，一个很自然的想法就是让 $h(New Left Subtree)$ 减 1，让 $h(Right Subtree)$ 加 1。那么我们可以有如下操作：
+	现在我们希望在保留二叉搜索树的性质下，要让 $∣BF(\text{Trouble Finder})∣$ 变小，一个很自然的想法就是让 $h(\text{New Left Subtree})$ 减 1，让 $h(\text{Right Subtree})$ 加 1。那么我们可以有如下操作：
 	
 	=== "Initial"
 	

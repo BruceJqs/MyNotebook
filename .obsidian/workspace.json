@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 10"
+              "title": "Chapter 1"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 1.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 10"
+              "title": "Outline of Chapter 1"
             }
           },
           {
@@ -176,10 +176,10 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
     "docs/blog/Computer Science/Computer Organization/Homework 5.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/assets/Pasted image 20241222212006.png",
     "docs/assets/Pasted image 20241222211916.png",
     "docs/assets/Pasted image 20241222211849.png",
