@@ -5925,6 +5925,15 @@ R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
 <p>所以看到 D 两种情况都是常数项级别</p>
 </details>
 </div>
+<div class="admonition question">
+<p class="admonition-title">Question 04-Midterm</p>
+<p>Recall that the worst-case time complexities of insertions and deletions in a heap of size <span class="arithmatex">\(N\)</span> are both <span class="arithmatex">\(O(\log N)\)</span>. Then, without changing the data structure, the amortized time complexity of insertions in a heap is also <span class="arithmatex">\(O(\log N)\)</span>, and that of deletions is <span class="arithmatex">\(O(1)\)</span>.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 均摊分析下，我们需要保证的是任何一个操作序列乘以均摊复杂度并加和之后。其总复杂度要高于真实的操作复杂度（<span class="arithmatex">\(O(\log N)\)</span>）。只要满足这个性质，就是一个合理的均摊复杂度分析。不需要管这到底是什么奇怪的堆（离谱至极哦是 yds 出的那没事了）</p>
+<p>具体来说，其实和上面栈的 push pop 相似的，只要 insert 的均摊复杂度为 <span class="arithmatex">\(O(\log N)\)</span> 就满足总复杂度高于真实复杂度（因为最特殊的情况就是全插入，此时实际复杂度为 <span class="arithmatex">\(O(N\log N)\)</span>）</p>
+</details>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5994,7 +6003,7 @@ R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月23日 13:40:26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月23日 22:39:44</span>
   </span>
 
     
@@ -6015,38 +6024,6 @@ R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
     
 
     <!-- Authors (git-committers plugin) -->
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a
-          href="https://github.com/BruceJqs"
-          class="md-author"
-          title="@BruceJqs"
-        >
-          
-          <img
-            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
-            alt="BruceJqs"
-          />
-        </a>
-      
-
-      <!-- More authors -->
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
