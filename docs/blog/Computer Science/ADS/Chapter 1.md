@@ -174,7 +174,7 @@ comments: true
 ***
 !!! question "如果出现多个 Trouble Finder 该怎么办？"
 
-	之前我们提到过，我们关注的是 **"距离案发现场最近的 Trouble Finder"** 为根的子树，并以此作出 Rotation 操作，这也会导致其所有父节点的平衡因子都会相应发生变化。
+	之前我们提到过，我们关注的是<font color="red">"距离案发现场最近的 Trouble Finder"</font>为根的子树，并以此作出 Rotation 操作，这也会导致其所有父节点的平衡因子都会相应发生变化。
 ***
 ## Splay Tree
 ### Definition
@@ -187,7 +187,7 @@ comments: true
 ***
 ### Operations
 
-> 对于某个节点 X，我们记其父节点为 P(Parent)，其父节点的父节点为 G(Grandparent)。(<font color="red">请谨记，我们需要两层两层地来看这个子结构，再判断当前子结构到底是下面的哪种情况，作出相应的操作！</font>)
+> 对于某个节点 X，我们记其父节点为 P（Parent），其父节点的父节点为 G（Grandparent）。（<font color="red">请谨记，我们需要两层两层地来看，再判断当前子结构到底是下面的哪种情况，作出相应的操作，而并非是随意地自底向上/自上而下地旋转！</font>）
 
 - 当我们访问到 X 时：
 	- 如果 P 是根节点，则直接进行一次 Single Rotation（即类似 AVL Tree 中的 LL / RR Rotation）
@@ -224,7 +224,7 @@ comments: true
 可以得到如下不等式：
 
 $$
-worst\_case\space bound\geq amortized\space bound\geq average\_case\space bound
+\text{worst\_case bound}\geq\text{amortized bound}\geq\text{average\_case bound}
 $$
 
 具体解释如下：
@@ -240,7 +240,7 @@ $$
 聚合法相对简单，即求 N 次操作的平均代价：
 
 $$
-T_{amortized} = \frac{\sum\limits_{i=1}^nc_i}{n}
+T_{\text{amortized}} = \frac{\sum\limits_{i=1}^nc_i}{n}
 $$
 
 其中 $c_i$ 表示一次操作的实际成本
@@ -255,19 +255,17 @@ $$
 	
 	$$
 	\begin{aligned}
-	T(n)&=\sum\limits_{i=1}^n c_i=push\_times+pop\_times\\
-	&\leq 2\times push\_times\\
-	&\leq 2n
+	T(n)&=\sum\limits_{i=1}^n c_i=\text{push\_times}+\text{pop\_times}\\
+	&\leq 2\times\text{push\_times}\\
+	&\leq 2n\\
+	\therefore T_{\text{amortized}}&=\frac{\sum\limits_{i=1}^nc_i}{n}=\frac{O(n)}{n}=O(1)
 	\end{aligned}
 	$$
 	
-	$$
-	\therefore T_{amortized}=\frac{\sum\limits_{i=1}^nc_i}{n}=\frac{O(n)}{n}=O(1)
-	$$
 ***
 ### Accounting Method
 
-核算法进行均摊分析时，我们对不同操作赋予不同费用，称为**均摊代价**。均摊代价可能多于或少于其实际代价。当一个操作的均摊代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为**信用**。对于后续操作中均摊代价小于实际代价的情况，信用可以用来支付差额。
+记账算法进行均摊分析时，我们对不同操作赋予不同费用，称为**均摊代价**。均摊代价可能多于或少于其实际代价。当一个操作的均摊代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为**信用（Credit）**。对于后续操作中均摊代价小于实际代价的情况，信用可以用来支付差额。
 
 值得注意的是，信用必须保持非负，因为均摊代价须为实际代价的上界。
 
@@ -297,7 +295,7 @@ $$
 ***
 ### Potential Method
 
-势能法与核算法相似。每次操作后得到的数据结构都对应一个势能 $\Phi(i)$，每次的信用 $\hat c_i - c_i = Credit\_i = \Phi(D_i) - \Phi(D_{i-1})$ 
+势能法和记账算法相似。每次操作后得到的数据结构都对应一个势能 $\Phi(i)$，每次的信用 $\hat c_i - c_i = \text{Credit}_i = \Phi(D_i) - \Phi(D_{i-1})$ 
 
 于是累加所有式子，得到 $n$ 个操作的总均摊代价为：
 
@@ -475,3 +473,61 @@ $$
 	&= O(\log N)
 	\end{aligned}
 	$$
+***
+## Homework
+
+!!! Question "Question 01"
+
+	For the result of accessing the keys 3, 9, 1, 5 in order in the splay tree in the following figure, which one of the following statements is FALSE?
+	
+	![](../../../assets/Pasted%20image%2020241223105454.png)
+	
+	- A. 5 is the root
+	- B. 1 and 9 are siblings
+	- C. 6 and 10 are siblings
+	- D. 3 is the parent of 4
+	
+	??? note "Answer"
+	
+		D. 3 is the parent of 4
+		
+		本身不难，谨记的是两层两层地进行旋转，尤其会出错的是在 zig-zig 情况，这时候应该自顶向下旋转而非自底向上，大致过程如下（原谅我图画的有点丑）：
+		
+		![](../../../assets/Pasted%20image%2020241223110521.png)
+
+!!! Question "Question 02"
+
+	When doing amortized analysis, which one of the following statements is FALSE?
+	
+	- A. Aggregate analysis shows that for all n, a sequence of n operations takes worst-case time T(n) in total. Then the amortized cost per operation is therefore T(n)/n
+	- B. For potential method, a good potential function should always assume its maximum at the start of the sequence
+	- C. For accounting method, when an operation's amortized cost exceeds its actual cost, we save the difference as credit to pay for later operations whose amortized cost is less than their actual cost
+	- D. The difference between aggregate analysis and accounting method is that the later one assumes that the amortized costs of the operations may differ from each other
+	
+	??? note "Answer"
+	
+		B. For potential method, a good potential function should always assume its maximum at the start of the sequence
+		
+		这里根据定义，我们需要定义的是下限（Minimum）而非上限，因为我们要保证 $\Phi(D_n)\geq\Phi(D_0)$ 即定义了势能函数就定义了下限
+
+!!! Question "Question 03"
+
+	Consider the following buffer management problem. Initially the buffer size (the number of blocks) is one. Each block can accommodate exactly one item. As soon as a new item arrives, check if there is an available block. If yes, put the item into the block, induced a cost of one. Otherwise, the buffer size is doubled, and then the item is able to put into. Moreover, the old items have to be moved into the new buffer so it costs $k+1$ to make this insertion, where $k$ is the number of old items. Clearly, if there are $N$ items, the worst-case cost for one insertion can be $\Omega(N)$. To show that the average cost is $O(1)$, let us turn to the amortized analysis. To simplify the problem, assume that the buffer is full after all the $N$ items are placed. Which of the following potential functions works?
+	
+	- A. The number of items currently in the buffer
+	- B. The opposite number of items currently in the buffer
+	- C. The number of available blocks currently in the buffer
+	- D. The opposite number of available blocks in the buffer
+	
+	??? note "Answer"
+	
+		D. The opposite number of available blocks in the buffer
+		
+		题目说平均花费为 $O(1)$，所以我们希望均摊分析下来也是一个 $O(1)$ 的情况，那么就需要每次操作都为常数集，设 $\text{size}_i$ 为第 $i$ 次插入前 buffer 的大小，有 $\hat{c_i}=c_i+\phi_i-\phi_{i-1}$，如果插入前 buffer 没满，那么 $c_i=1$，否则 $c_i=\text{size}_i+1$，一个一个来分析：
+		
+		- A：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(\text{size}_i+1)-\text{size}_i=2$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(\text{size_i+1)-\text{size}_i=\text{size}_i+2$
+		- B：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-\text{size}_i-1)-(-\text{size}_i)=0$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(-\text{size_i-1)-(-\text{size}_i)=\text{size}_i$
+		- C：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-1)=0$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(\text{size}_i-1)-0=2\text{size}_i$
+		- D：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+1=2$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(-\text{size}_i+1)-0=2$
+		
+		所以看到 D 两种情况都是常数项级别
