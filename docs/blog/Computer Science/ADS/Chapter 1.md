@@ -525,7 +525,7 @@ $$
 		
 		题目说平均花费为 $O(1)$，所以我们希望均摊分析下来也是一个 $O(1)$ 的情况，那么就需要每次操作都为常数集，设 $\text{size}_i$ 为第 $i$ 次插入前 buffer 的大小，有 $\hat{c_i}=c_i+\phi_i-\phi_{i-1}$，如果插入前 buffer 没满，那么 $c_i=1$，否则 $c_i=\text{size}_i+1$，一个一个来分析：
 		
-		- A：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(\text{size}_i+1)-\text{size}_i=2$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(\text{size_i}+1)-\text{size}_i=\text{size}_i+2$
+		- A：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(\text{size}_i+1)-\text{size}_i=2$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(\text{size}_i+1)-\text{size}_i=\text{size}_i+2$
 		- B：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-\text{size}_i-1)-(-\text{size}_i)=0$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(-\text{size}_i-1)-(-\text{size}_i)=\text{size}_i$
 		- C：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-1)=0$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(\text{size}_i-1)-0=2\text{size}_i$
 		- D：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+1=2$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(-\text{size}_i+1)-0=2$
