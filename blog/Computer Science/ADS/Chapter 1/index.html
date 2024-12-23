@@ -5917,8 +5917,8 @@ R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
 <p>D. The opposite number of available blocks in the buffer</p>
 <p>题目说平均花费为 <span class="arithmatex">\(O(1)\)</span>，所以我们希望均摊分析下来也是一个 <span class="arithmatex">\(O(1)\)</span> 的情况，那么就需要每次操作都为常数集，设 <span class="arithmatex">\(\text{size}_i\)</span> 为第 <span class="arithmatex">\(i\)</span> 次插入前 buffer 的大小，有 <span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}\)</span>，如果插入前 buffer 没满，那么 <span class="arithmatex">\(c_i=1\)</span>，否则 <span class="arithmatex">\(c_i=\text{size}_i+1\)</span>，一个一个来分析：</p>
 <ul>
-<li>A：如果插入前 buffer 没满，<span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(\text{size}_i+1)-\text{size}_i=2\)</span>；如果插入前 buffer 满了，<span class="arithmatex">\(\hat{c_i}=(\text{size}_i+1)+(\text{size_i+1)-\text{size}_i=\text{size}_i+2\)</span></li>
-<li>B：如果插入前 buffer 没满，<span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-\text{size}_i-1)-(-\text{size}_i)=0\)</span>；如果插入前 buffer 满了，<span class="arithmatex">\(\hat{c_i}=(\text{size}_i+1)+(-\text{size_i-1)-(-\text{size}_i)=\text{size}_i\)</span></li>
+<li>A：如果插入前 buffer 没满，<span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(\text{size}_i+1)-\text{size}_i=2\)</span>；如果插入前 buffer 满了，<span class="arithmatex">\(\hat{c_i}=(\text{size}_i+1)+(\text{size_i}+1)-\text{size}_i=\text{size}_i+2\)</span></li>
+<li>B：如果插入前 buffer 没满，<span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-\text{size}_i-1)-(-\text{size}_i)=0\)</span>；如果插入前 buffer 满了，<span class="arithmatex">\(\hat{c_i}=(\text{size}_i+1)+(-\text{size}_i-1)-(-\text{size}_i)=\text{size}_i\)</span></li>
 <li>C：如果插入前 buffer 没满，<span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+(-1)=0\)</span>；如果插入前 buffer 满了，<span class="arithmatex">\(\hat{c_i}=(\text{size}_i+1)+(\text{size}_i-1)-0=2\text{size}_i\)</span></li>
 <li>D：如果插入前 buffer 没满，<span class="arithmatex">\(\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+1=2\)</span>；如果插入前 buffer 满了，<span class="arithmatex">\(\hat{c_i}=(\text{size}_i+1)+(-\text{size}_i+1)-0=2\)</span></li>
 </ul>
@@ -5994,7 +5994,7 @@ R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月23日 13:22:44</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月23日 13:34:13</span>
   </span>
 
     
@@ -6015,38 +6015,6 @@ R_2(G)+R_1(X) &amp;= \log_2 S_2(G)+\log_2 S_1(X)\\
     
 
     <!-- Authors (git-committers plugin) -->
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a
-          href="https://github.com/BruceJqs"
-          class="md-author"
-          title="@BruceJqs"
-        >
-          
-          <img
-            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
-            alt="BruceJqs"
-          />
-        </a>
-      
-
-      <!-- More authors -->
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
