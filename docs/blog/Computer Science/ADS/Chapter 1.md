@@ -531,3 +531,13 @@ $$
 		- D：如果插入前 buffer 没满，$\hat{c_i}=c_i+\phi_i-\phi_{i-1}=1+1=2$；如果插入前 buffer 满了，$\hat{c_i}=(\text{size}_i+1)+(-\text{size}_i+1)-0=2$
 		
 		所以看到 D 两种情况都是常数项级别
+
+!!! question "Question 04-Midterm"
+
+	Recall that the worst-case time complexities of insertions and deletions in a heap of size $N$ are both $O(\log N)$. Then, without changing the data structure, the amortized time complexity of insertions in a heap is also $O(\log N)$, and that of deletions is $O(1)$.
+	
+	??? note "Answer"
+	
+		True. 均摊分析下，我们需要保证的是任何一个操作序列乘以均摊复杂度并加和之后。其总复杂度要高于真实的操作复杂度（$O(\log N)$）。只要满足这个性质，就是一个合理的均摊复杂度分析。不需要管这到底是什么奇怪的堆（离谱至极哦是 yds 出的那没事了）
+		
+		具体来说，其实和上面栈的 push pop 相似的，只要 insert 的均摊复杂度为 $O(\log N)$ 就满足总复杂度高于真实复杂度（因为最特殊的情况就是全插入，此时实际复杂度为 $O(N\log N)$）

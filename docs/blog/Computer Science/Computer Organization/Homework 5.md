@@ -196,6 +196,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xba | 1011_1010 | 0xb |   5   |   0    |   Miss   | Tag(1)=0<br>Tag(2)=b<br>Tag(4)=5<br>Tag(5)=2<br>Tag(7)=b | Tag(5)=b<br>Tag(7)=0 | Tag(7)=1 |
 | 0x2e | 0010_1110 | 0x2 |   7   |   0    |   Miss   | Tag(1)=0<br>Tag(2)=b<br>Tag(4)=5<br>Tag(5)=2<br>Tag(7)=b | Tag(5)=b<br>Tag(7)=2 | Tag(7)=1 |
 | 0xce | 1100_1110 | 0xc |   7   |   0    |   Miss   | Tag(1)=0<br>Tag(2)=b<br>Tag(4)=5<br>Tag(5)=2<br>Tag(7)=b | Tag(5)=b<br>Tag(7)=2 | Tag(7)=c |
+
 ***
 ### 5.11.3
 
@@ -220,6 +221,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xba | 1011_1010 | 0xba |   Miss   | 0x1f, 0xb5, 0xba, 0x02, 0xbe, 0x58, 0xbf, 0x0e |
 | 0x2e | 0010_1110 | 0x2e |   Miss   | 0x1f, 0xb5, 0xba, 0x2e, 0xbe, 0x58, 0xbf, 0x0e |
 | 0xce | 1100_1110 | 0xce |   Miss   | 0x1f, 0xb5, 0xba, 0x2e, 0xce, 0x58, 0xbf, 0x0e |
+
 ***
 ### 5.11.5
 
@@ -242,6 +244,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xba | 1011_1010 | 0x5d |   0    |   Miss   | (0x1e, 0x1f), (0xb4, 0xb5), <br>(0xbe, 0xbf), (0xba, 0xbb)  |
 | 0x2e | 0010_1110 | 0x17 |   0    |   Miss   | (0xb4, 0xb5), (0xbe, 0xbf),<br> (0xba, 0xbb), (0x2e, 0x2f)  |
 | 0xce | 1100_1110 | 0x67 |   0    |   Miss   | (0xbe, 0xbf), (0xba, 0xbb), <br>(0x2e, 0x2f), (0xce, 0xcf)  |
+
 ***
 ### 5.11.7
 
@@ -261,6 +264,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xba | 1011_1010 | 0x5d |   0    |   Miss   | (0x2a, 0x2b), (0x02, 0x03),<br>   (0xbe, 0xbf), (0xba, 0xbb) |
 | 0x2e | 0010_1110 | 0x17 |   0    |   Miss   | (0x2a, 0x2b), (0x02, 0x03),<br>   (0xbe, 0xbf), (0x2e, 0xef) |
 | 0xce | 1100_1110 | 0x67 |   0    |   Miss   | (0x2a, 0x2b), (0x02, 0x03),<br>   (0xbe, 0xbf), (0xce, 0xcf) |
+
 ***
 ### 5.11.8
 
@@ -280,6 +284,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xba | 1011_1010 | 0x5d |   0    |   Miss   | (0x1e, 0x1f), (0xb4, 0xb5), <br>(0xba, 0xbb), (0xbe, 0xbf) |
 | 0x2e | 0010_1110 | 0x17 |   0    |   Miss   | (0x1e, 0x1f), (0xb4, 0xb5), <br>(0x2e, 0x2f), (0xbe, 0xbf) |
 | 0xce | 1100_1110 | 0x67 |   0    |   Miss   | (0x1e, 0x1f), (0xb4, 0xb5), <br>(0xce, 0xcf), (0xbe, 0xbf) |
+
 ***
 ## 5.16
 
@@ -319,6 +324,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xc049  |     0xc      |     Miss     |        Miss         |    True    |   1   | 0x8 |      14       |
 | 0xc049  |     0xc      |     Miss     |        Miss         |    True    |   1   | 0x3 |       6       |
 | 0xc049  |     0xc      |     Miss     |        Miss         |    True    |   1   | 0xb |      12       |
+
 ***
 ### 5.16.2
 
@@ -396,6 +402,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xc049  | 0xc |  6  |   0   |     Miss     |    Miss     | True  |   1   | 0x1 |  6  |   1   |
 | 0xc049  | 0xc |  6  |   0   |     Miss     |    Miss     | True  |   1   | 0x4 | 14  |   0   |
 | 0xc049  | 0xc |  6  |   0   |     Miss     |    Miss     | True  |   1   | 0x5 | 12  |   1   |
+
 ***
 ### 5.16.4
 
@@ -429,6 +436,7 @@ $1+8\%\times(\frac{5.62ns}{0.66ns}+\alpha\times\frac{70ns}{0.66ns})+8\%\times 36
 | 0xc049  | 0xc |  3  |   0   |     Miss     |    Miss     | True  |   1   | 0x0 | 13  |   1   |
 | 0xc049  | 0xc |  3  |   0   |     Miss     |    Miss     | True  |   1   | 0x3 |  6  |   2   |
 | 0xc049  | 0xc |  3  |   0   |     Miss     |    Miss     | True  |   1   | 0x0 |  6  |   3   |
+
 ***
 ### 5.16.5
 

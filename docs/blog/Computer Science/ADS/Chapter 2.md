@@ -34,7 +34,7 @@ comments: true
 
 !!! Definition "Black-Height"
 
-	对于任何一个节点 $x$，它的黑高（Black-Height），记作 $bh(x)$，等于该节点到 NIL 结点的简单路径中（不包括自身）黑色节点的数量。$bh(Tree)=bh(root)$
+	对于任何一个节点 $x$，它的黑高（Black-Height），记作 $\text{bh}(x)$，等于该节点到 NIL 结点的简单路径中（不包括自身）黑色节点的数量。$\text{bh}(Tree)=\text{bh}(root)$
 
 !!! Lemma
 
@@ -44,27 +44,27 @@ comments: true
 	
 	=== "Proof"
 	
-		我们首先证明 $bh(Tree)\leq log_2(N+1)$，即对于任意节点 $x$，$sizeof(x)(以 x 为根节点的子树的内部节点个数)\geq 2^{bh(x)}-1$，用数学归纳法来证明：
+		我们首先证明 $\text{bh}(Tree)\leq log_2(N+1)$，即对于任意节点 $x$，$\text{sizeof}(x)(以 x 为根节点的子树的内部节点个数)\geq 2^{\text{bh}(x)}-1$，用数学归纳法来证明：
 		
-		如果 $h(x)=0$，$x$ 为 NULL $\Rightarrow sizeof(x)=2^0-1=0$，成立。
+		如果 $h(x)=0$，$x$ 为 NULL $\Rightarrow\text{sizeof}(x)=2^0-1=0$，成立。
 		
 		假设如果对于每一个满足 $h(x)\leq k$ 的 $x$ 结论都成立：
 		
-		对于 $h(x)=k+1$ 的节点 $x$，$bh(child)=bh(x)或bh(x)-1$
+		对于 $h(x)=k+1$ 的节点 $x$，$\text{bh}(\text{child})=\text{bh}(x)$ 或 $\text{bh}(x)-1$
 		
-		很容易可以得到 $h(child)\leq k$，而根据数学归纳法的假设，此时 $sizeof(child)\geq 2^{bh(child)}-1\geq 2^{bh(x)-1}-1$
+		很容易可以得到 $h(\text{child})\leq k$，而根据数学归纳法的假设，此时 $\text{sizeof}(\text{child})\geq 2^{\text{bh}(\text{child})}-1\geq 2^{\text{bh}(x)-1}-1$
 		
-		这样我们就有 $sizeof(x)=1+2sizeof(child)\geq 2^{bh(x)}-1$，证毕。
+		这样我们就有 $\text{sizeof}(x)=1+2\text{sizeof}(\text{child})\geq 2^{\text{bh}(x)}-1$，证毕。
 		
 		***
 		
-		再接着我们来证明 $bh(Tree)\geq\frac{h(Tree)}{2}$
+		再接着我们来证明 $\text{bh}(\text{Tree})\geq\frac{h(\text{Tree})}{2}$
 		
 		对于每一个红节点，由红黑树性质其两个孩子节点一定都是黑节点，因此每一条从根节点到 NIL 的简单路径中，至少有一半的节点（不包含根节点）是黑色的，那么就能证明这个命题。
 		
 		***
 		
-		综合以上两个命题的证明，我们有 $h(Tree)\leq 2bh(Tree)\leq 2log_2(N+1)$，证毕。
+		综合以上两个命题的证明，我们有 $h(\text{Tree})\leq 2\text{bh}(\text{Tree})\leq 2log_2(N+1)$，证毕。
 
 !!! Example "Example 01"
 
@@ -156,17 +156,19 @@ comments: true
 ***
 #### Deletion
 
+> <font color="red">这里的删除方法与那沟槽的 PPT 有不同！补药看那沟槽 PPT 看</font> [OI Wiki](https://oi-wiki.org/ds/rbtree/#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C) <font color="red">这个方法！</font>（Midterm 因为这个爆亏 6 分 www）【这便是 Bruce 反感课内课程的开始】
+
 对于删除操作，我们先不管红黑性质，按照常规二叉搜索树的删除操作将其删除：
 
 - 首先通过二分找到我们要删除的元素，这里需要 $O(\log N)$ 的时间复杂度
 - 对这个节点进行分类讨论：
-	- 没有非 NIL 子节点 $\rightarrow$ 直接用 NIL 节点代替
-	- 有一个非 NIL 子节点 $\rightarrow$ 直接删除，用子节点来代替它
-	- 有两个非 NIL 子节点 $\rightarrow$ 用左子树最大值节点或右子树最小值节点来代替它，然后从子树删除代替的那个节点
 
-这其中，每一项操作都会导致一个点的消失，如果消失的是红色节点，那么将不会影响黑高；如果消失的是黑色节点，那么将会导致黑高减少一，此时我们需要做进一步操作。
+1. 如果该节点为树中唯一节点的话，直接删除即可
+2. 如果该节点既有左子节点又有右子节点，则用它的前驱或后继节点进行替换（仅替换数据，不改变节点颜色和内部引用关系），值得注意也可以证明（或者感性感受一下）的是，它的前驱或后继节点保证不会是一个既有非 NIL 左子节点又有非 NIL 右子节点的节点，所以可以跳转到第 3 或第 4 条递归删除前驱/后继节点（现在应该是当前节点的值了）
+3. 如果该节点为叶子节点，若该节点为红色，直接删除即可；如果为黑色，则平衡树性质被打破，需要重新维护
+4. 如果该节点有且仅有一个非 NIL 子节点，则子节点 S 一定为红色（这个上面的 Example 01 也已经说明了），那么待删除节点 N 为黑色，所以直接使用子节点 S 替代 N 并将其染黑后即可
 
-我们还是将情况分为 4 种（同样的，这里的叶子节点指 NIL 节点；“需要被删除的目标点”由于递归转移，也可能是**由于删除了某个结点，黑高 -1 的子树**【请记住这个点，Bruce 因为这个没明白倒腾了一下午也没搞清楚删除操作的 qwq】）：
+可以看到上面只有情况 3 需要重新维护，其他情况都可以一下解决。对此我们还是将情况分为 4 种（同样的，这里的叶子节点指 NIL 节点；“需要被删除的目标点”由于递归转移，也可能是**由于删除了某个结点，黑高 -1 的子树**【请记住这个点，Bruce 因为这个没明白倒腾了一下午也没搞清楚删除操作的 qwq】）：
 
 ![](../../../assets/Pasted%20image%2020240921151415.png)
 
@@ -175,7 +177,7 @@ comments: true
 	如上面所说的，在一开始我们就可以找到 x 并根据不同情况将其删去，但是后续的操作我们仍旧保留了这个“需要被删除的目标点” 概念，是为了更便于理解，更直观地能看出操作的进程（可以把这个点当作一个虚空的点，或者就是 NIL 节点）
 	其实我们可以统一这个定义为“由于删除了某个结点，黑高 -1 的子树”（因为删除了这个黑目标点就等价于以这个节点为根节点的子树黑高 -1 了，在第一轮调整时就需要以这个节点为 x 进行调整）
 
-类似于我们在「Insertion / case 1」里提到的“下放”黑节点，删除操作的思路基本上是“上放”黑节点，或者说“吸纳”黑节点。这个“吸纳”的行为，指的是一个黑点，原来只为右子树中的所有路径提供了黑高，现在由于它的 sibling 子树中少了一个黑色节点，我们将这个黑色节点转移到它们的家长节点，于是这个节点同时为左右子树的所有路径都贡献了黑高，保证为左子树再提供一个黑高的同时右子树黑高不变。
+类似于我们在「Insertion / Case 1」里提到的“下放”黑节点，删除操作的思路基本上是“上放”黑节点，或者说“吸纳”黑节点。这个“吸纳”的行为，指的是一个黑点，原来只为右子树中的所有路径提供了黑高，现在由于它的 sibling 子树中少了一个黑色节点，我们将这个黑色节点转移到它们的家长节点，于是这个节点同时为左右子树的所有路径都贡献了黑高，保证为左子树再提供一个黑高的同时右子树黑高不变。
 
 接下来我们逐个分析这四种情况（<font color="red">请记住，在每一轮调整结束之后我们要寻找那个黑高 -1 的子树【值得注意的是，我们只需要在删掉的点到根路径上面的这一些树根寻找，因为在前面的交换操作中没有改变树的形态，只有在最后删除这里减少了一个黑点。所以后续的平衡维护的过程中其实都是在调整这一条链上的树】，将它作为 x 再来看这四种情况该用哪一种【这是删除的关键！】</font>）：
 
@@ -262,10 +264,10 @@ B+ 树是一种用树状形式维护有序数列比较信息的数据结构，�
 	一个 $M$ 阶（一般 $M$ 取 $3$ 或 $4$）$B+$ 树是满足如下结构性质的树：
 	
 	- 根节点要么是叶子节点，要么有 $2～M$ 个孩子
-	- 所有非叶子节点（除了根节点）有 $\lceil \frac{M}{2} \rceil$~$M$ 个孩子
+	- 所有非叶子节点（除了根节点）有 $\lceil \frac{M}{2} \rceil$～$M$ 个孩子
 	- 所有叶子节点都在同一层
 	
-	> 假设每一个非根的叶子节点也都有 $\lceil \frac{M}{2} \rceil$~$M$ 个孩子
+	> 假设每一个非根的叶子节点也都有 $\lceil \frac{M}{2} \rceil$～$M$ 个孩子
 	
 	如下图就是一个 $M=4$ 的 $B+$ 树（也可称为 $2-3-4$ 树）：
 	
@@ -380,3 +382,38 @@ $B+$ 树的查找和二叉树的查找十分相似
 		由于根部被裂开了，所以我们需要添加一个新的根，这也意味着树的层数增高了。
 		
 		现在，我们终于完成了插入。
+***
+## Homework
+
+!!! question "Question 01-Midterm"
+
+	Is it true that a red-black tree Deletion operation requires O(1) nodes recoloring in the worst case?
+	
+	??? note "Answer"
+	
+		False. 我们根据上面画的状态机可以发现，Recolor 操作是每个 Case 都需要发生的，但是 Rotation 操作并不是，所以期中的时候对应的第二套题目考的就是 Rotation 是不是 $O(1)$，第二套应该是对的，在这里则不是，为 $O(\log N)$（期中的时候误认为 Recolor 只伴随 Rotation 一起发生了实际上是可以只 Recolor 不 Rotation 的 www）
+
+!!! question "Question 02-Midterm"
+
+	After deleting 10 from the red-black tree given in the figure, which one of the following statements must be FALSE?
+	
+	![](../../../assets/Pasted%20image%2020241223220729.png)
+	
+	- A. 8 is the parent of 15, and there are 2 red nodes in the tree
+	- B. 11 is the parent of 6, and 14 is red
+	- C. 8 is the parent of 15, and 7 is black
+	- D. 11 is the parent of 15, and there are 2 red nodes in the tree
+	
+	??? note "Answer"
+	
+		A. 8 is the parent of 15, and there are 2 red nodes in the tree
+		
+		根据上面描述的删除做法，可以得到两种情况：（分别是用前驱节点 8 和后继节点 11 替换的情况，其中画圈表示为红色）
+		
+		![](../../../assets/Pasted%20image%2020241223221017.png)
+		
+		其中如果按照 PPT 的做法用 8 替换不会长这样（因为它不考虑我们所讲的情况 4 直接一股脑直接用四个 Case 干，这样固然能得到一个正确的删法但是就会造成两个答案（沟槽 ADS 出个题还不跟自己远古 PPT 对应的什么破课导致我爆亏 6 分）
+		
+		??? warning "大骂 ADS 破防时刻"
+		
+			![](../../../assets/Pasted%20image%2020241223223905.png)
