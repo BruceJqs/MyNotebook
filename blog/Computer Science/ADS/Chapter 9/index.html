@@ -1403,6 +1403,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5195,6 +5204,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5231,6 +5249,67 @@
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>贪心算法是一个非常常用的算法，在 OI 中是一个非常基本的内容，Bruce 和夏神都是一起打过 NOIP 的所以这里就不多赘述（Bruce 想偷懒），贪心也是一个非常宽泛且非常多例子的算法，需要不断练习，见过才算会，可转至：<a href="https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/Lec09/">夏神的网站</a></p>
+</div>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>Let S be the set of activities in Activity Selection Problem. Then the earliest finish activity am​ must be included in all the maximum-size subset of mutually compatible activities of S.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>False. 这题有点 Tricky，我们贪心的最优解确实是包含了最早结束的活动，但是也有可能会有其他和贪心同样优且并不包含最早结束的活动的方案</p>
+<p>简单来说，贪心出来的最优解只是最优解的一种，换个说法 "There must be some maximum-size subset of mutually compatible activities of S that includes the earliest finish activity." 这就对了</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 02</p>
+<p>Let <span class="arithmatex">\(C\)</span> be an alphabet in which each character <span class="arithmatex">\(c\)</span> in <span class="arithmatex">\(C\)</span> has frequency <span class="arithmatex">\(c.\text{freq}\)</span>. If the size of <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(n\)</span>, the length of the optimal prefix code for any character <span class="arithmatex">\(c\)</span> is not greater than <span class="arithmatex">\(n−1\)</span>.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 哈夫曼树的性质，哈夫曼编码最短长度为 <span class="arithmatex">\(1\)</span> 最长长度为 <span class="arithmatex">\(n-1\)</span></p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 03</p>
+<p>Consider the problem of making change for <span class="arithmatex">\(n\)</span> cents using the fewest number of coins. Assume that each coin's value is an integer.  </p>
+<p>The coins of the lowest denomination（面额） is the cent.</p>
+<p>(I) Suppose that the available coins are quarters (25 cents), dimes (10 cents), nickels (5 cents), and pennies (1 cent). The greedy algorithm always yields an optimal solution.</p>
+<p>(II) Suppose that the available coins are in the denominations that are powers of c, that is, the denominations are <span class="arithmatex">\(c^0, c^1, ..., c^k\)</span> for some integers <span class="arithmatex">\(c&gt;1\)</span> and <span class="arithmatex">\(k&gt;=1\)</span>. The greedy algorithm always yields an optimal solution.</p>
+<p>(III) Given any set of <span class="arithmatex">\(k\)</span> different coin denominations which includes a penny (1 cent) so that there is a solution for every value of <span class="arithmatex">\(n\)</span>, greedy algorithm always yields an optimal solution.</p>
+<p>Which of the following is correct?</p>
+<ul>
+<li>A. Statement (I) is false.</li>
+<li>B. Statement (II) is false.</li>
+<li>C. Statement (III) is false.</li>
+<li>D. All of the three statements are correct.</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>C. Statement (III) is false.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">选项 I</label><label for="__tabbed_1_2">选项 II</label><label for="__tabbed_1_3">选项 III</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对于第一个选项来说，较大的硬币面额是较小面额的整数倍（例如，<span class="arithmatex">\(10 = 2 \times 5，25 = 2.5 \times 10\)</span>）。贪心算法每次选择当前最大的可用硬币时，剩余金额可以通过较小面额的硬币精确表示。因此，无论需要找零的总金额 <span class="arithmatex">\(n\)</span> 是多少，贪心算法都能找到最少硬币数的最优解。</p>
+</div>
+<div class="tabbed-block">
+<p>当硬币面额为 <span class="arithmatex">\(c\)</span> 的幂次方时，每个更高面额都是前一面额的 <span class="arithmatex">\(c\)</span> 倍（如 <span class="arithmatex">\(c=2\)</span> 时，面额为 <span class="arithmatex">\(1, 2, 4, 8, ...\)</span>）。这种递增关系确保了贪心算法的选择总是最优的，因为每次选择最大的面额时，剩余金额也能通过较小面额的组合精确表示。</p>
+</div>
+<div class="tabbed-block">
+<p>虽然包含 1 美分可以确保任何金额 <span class="arithmatex">\(n\)</span> 都有解，但并不保证贪心算法总是能够得到最优解。存在一些硬币面额的组合，包含 1 美分，但贪心算法无法找到最少硬币数的最优解。</p>
+<p>例如：硬币面额为1美分、3美分和4美分，需要找零6美分</p>
+<ul>
+<li><strong>贪心算法选择：</strong><ul>
+<li>选择 1 个 4 美分，剩余 2 美分</li>
+<li>选择 2 个 1 美分</li>
+</ul>
+</li>
+<li><strong>最优解：</strong>2 个 3 美分</li>
+</ul>
+<p>因此，贪心算法未能找到最优解</p>
+</div>
+</div>
+</div>
+</details>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -5301,7 +5380,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月19日 10:53:54</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 00:42:00</span>
   </span>
 
     
