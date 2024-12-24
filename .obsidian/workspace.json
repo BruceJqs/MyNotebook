@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 15.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 15"
+              "title": "Chapter 5"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 15.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 15"
+              "title": "Outline of Chapter 5"
             }
           },
           {
@@ -176,6 +176,9 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/Chapter 6.md",
+    "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/assets/Pasted image 20241224161800.png",
     "docs/assets/Pasted image 20241224161745.png",
     "docs/assets/Pasted image 20241224161504.png",
@@ -186,12 +189,9 @@
     "docs/assets/Pasted image 20241224154253.png",
     "docs/assets/Pasted image 20241224115206.png",
     "docs/assets/Pasted image 20241224114850.png",
-    "docs/assets/Pasted image 20241224114442.png",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/Computer Science/ADS/Chapter 14.md",
     "docs/blog/Computer Science/ADS/Chapter 13.md",
-    "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
