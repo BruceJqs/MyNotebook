@@ -1557,6 +1557,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#replacement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replacement Selection
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5256,6 +5265,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#replacement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replacement Selection
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5389,6 +5407,80 @@
 <hr />
 <h3 id="polyphase-merge">Polyphase Merge<a class="headerlink" href="#polyphase-merge" title="Permanent link">&para;</a></h3>
 <p>我们希望在降低趟数的同时能够尽可能避免磁带数的提升，因此尝试一下在保持子序列个数不变的情况下减少所需磁带数，下面以 <span class="arithmatex">\(k=2\)</span>，磁带数 <span class="arithmatex">\(=3\)</span> 为例进行分析：</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>如果原序列已经排成了 34 个 run：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224105736.png" /></p>
+<p>我们将原来的 34 个 run 均分为包含 17 个 run 的两个子序列，然后对它们进行合并，形成一个 17 个 run 的完整序列，此时每个 run 会包含更多排好序的记录。</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224105910.png" /></p>
+<ul>
+<li>由于这么一趟下来后只有一条磁带里包含记录，为了继续合并，还是需要将所有的 run 一分为二。因此在进入下一趟操作前，需要将包含记录的磁带的一半的 run 拷贝到另一个空磁带上。</li>
+<li>但是对于磁盘来说，拷贝所需成本有些大，所以如果像这样简单地减少磁带数量，可能会带来更大的成本损耗（像这个例子就需要 6 个 Pass，5 次拷贝）</li>
+</ul>
+</div>
+<p>这里给出一种更聪明的算法——<strong>多相合并</strong>（Polymerge Sort），它的改进之处在于：在起始步的时候，对原序列进行<strong>不均等的分割</strong>，形成大小不一的子序列。这样可以确保在每一趟结束后，（除了最后阶段外）始终会有多个包含记录的子序列，因此无需额外高昂的拷贝操作。照着上面的例子来看：</p>
+<div class="admonition example">
+<p class="admonition-title">Polymerge Sort</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:7"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><input id="__tabbed_4_6" name="__tabbed_4" type="radio" /><input id="__tabbed_4_7" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Pass 1</label><label for="__tabbed_4_2">Pass 2</label><label for="__tabbed_4_3">Pass 3</label><label for="__tabbed_4_4">Pass 4</label><label for="__tabbed_4_5">Pass 5</label><label for="__tabbed_4_6">Pass 6</label><label for="__tabbed_4_7">Pass 7</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>我们将原序列（34 runs）划分为大小不一的两个子序列（21 runs + 13 runs）</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110041.png" /></p>
+<p>合并两个子序列后，还会剩下两个子序列：</p>
+<ul>
+<li>其中一个是刚合并好的结果序列（13 runs）</li>
+<li>另一个是剩下未进行合并的子序列（8 runs）</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110353.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>按 Pass 1 类似的方法进行合并，变成合并后的 8 runs 子序列和剩下的 5 runs 子序列：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110440.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>按 Pass 1 类似的方法进行合并，变成合并后的 5 runs 子序列和剩下的 3 runs 子序列：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110556.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>按 Pass 1 类似的方法进行合并，变成合并后的 3 runs 子序列和剩下的 2 runs 子序列：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110650.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>按 Pass 1 类似的方法进行合并，变成合并后的 2 runs 子序列和剩下的 1 run 子序列：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110756.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>按 Pass 1 类似的方法进行合并，变成合并后的 1 run 子序列和剩下的 1 run 子序列：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110840.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>最后合并完成：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224110927.png" /></p>
+</div>
+</div>
+</div>
+<p>一共需要 7 个 Pass</p>
+</div>
+<p>当然，这个方法非常吃分割的方法，如果我们将 34 个分割成 22 和 12，就会出现下面的情况：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224111201.png" /></p>
+<p>需要 10 个 Run，还外带一次拷贝，就非常难蚌，那么怎么分才能达到上例呈现的效果呢？或许有人根据上面的例子能看出猫腻了，<code>13,8,5,3,2...</code> ，这难道不是 Fibonacci 数列嘛？下面给出结论：</p>
+<ul>
+<li>对于两路归并排序，如果序列中 Run 的数量是一个<strong>斐波那契数</strong> <span class="arithmatex">\(F_N\)</span>​，那么最好的分割情况是将它分成包含 <span class="arithmatex">\(F_{N−1}\)</span> 个 run 和 <span class="arithmatex">\(F_{N−2}\)</span> 个 run 的子序列。<ul>
+<li>如果初始 run 的数量不是一个斐波那契数的话也没有问题，只需找到离该数最接近的斐波那契数，然后按照这个斐波那契数的递推式将其分成两个子序列（注意其中一个子序列可能也不是斐波那契数）</li>
+</ul>
+</li>
+<li>对于 <span class="arithmatex">\(k\)</span> 路归并排序，<span class="arithmatex">\(F_N(k)=F_{N−1}(k)+⋯+F{N−k}(k)\)</span>，其中 <span class="arithmatex">\(F_N(k)=0(0\leq N\leq k−2),F_{k−1}(k)=1\)</span><ul>
+<li>因此，对于 <span class="arithmatex">\(k\)</span> 路归并排序，只需要 <span class="arithmatex">\(k+1\)</span> 个磁带就够了</li>
+<li>一般情况下，可能很难做到将 Run 的数量划分为多个斐波那契数，但我们应确保有尽可能多的斐波那契数</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="replacement-selection">Replacement Selection<a class="headerlink" href="#replacement-selection" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>FDS Bonus 第二道题就是这个算法（回过头才发现原来第一道是计组学的 LRU hhh）</p>
+</blockquote>
+<p>除了提升 <span class="arithmatex">\(k\)</span> 值外，我们还可以尝试通过生成更长的 Run 来减小趟数，这里我们用到一个称为<strong>置换选择</strong>（Replacement Selection）的算法来实现这一目标</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5458,7 +5550,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月24日 10:49:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月24日 11:23:02</span>
   </span>
 
     
