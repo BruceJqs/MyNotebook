@@ -1571,6 +1571,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buffer-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimizing-the-merge-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimizing the Merge Time
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5279,6 +5297,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#buffer-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimizing-the-merge-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimizing the Merge Time
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5469,7 +5505,7 @@
 <li>如果初始 run 的数量不是一个斐波那契数的话也没有问题，只需找到离该数最接近的斐波那契数，然后按照这个斐波那契数的递推式将其分成两个子序列（注意其中一个子序列可能也不是斐波那契数）</li>
 </ul>
 </li>
-<li>对于 <span class="arithmatex">\(k\)</span> 路归并排序，<span class="arithmatex">\(F_N(k)=F_{N−1}(k)+⋯+F{N−k}(k)\)</span>，其中 <span class="arithmatex">\(F_N(k)=0(0\leq N\leq k−2),F_{k−1}(k)=1\)</span><ul>
+<li>对于 <span class="arithmatex">\(k\)</span> 路归并排序，<span class="arithmatex">\(F_N(k)=F_{N−1}(k)+⋯+F_{N−k}(k)\)</span>，其中 <span class="arithmatex">\(F_N(k)=0(0\leq N\leq k−2),F_{k−1}(k)=1\)</span><ul>
 <li>因此，对于 <span class="arithmatex">\(k\)</span> 路归并排序，只需要 <span class="arithmatex">\(k+1\)</span> 个磁带就够了</li>
 <li>一般情况下，可能很难做到将 Run 的数量划分为多个斐波那契数，但我们应确保有尽可能多的斐波那契数</li>
 </ul>
@@ -5481,6 +5517,113 @@
 <p>FDS Bonus 第二道题就是这个算法（回过头才发现原来第一道是计组学的 LRU hhh）</p>
 </blockquote>
 <p>除了提升 <span class="arithmatex">\(k\)</span> 值外，我们还可以尝试通过生成更长的 Run 来减小趟数，这里我们用到一个称为<strong>置换选择</strong>（Replacement Selection）的算法来实现这一目标</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>我们基于以下序列生成一个更长的 Run：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224114442.png" /></p>
+<p>我们还是使用大小为 3 的最小堆来选取数据，遵循一个原则：</p>
+<p>每次从堆中删除元素时，需要比较这个被删除的元素与下一个进入堆的元素：</p>
+<ul>
+<li>如果前者更小，说明后者将会与前者处于同一个 Run 内</li>
+<li>否则的话，后者要放在与前者不同的 Run 内，且它不会与堆内和它处于不同 Run 下的元素进行堆排序</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:6"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><input id="__tabbed_5_6" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Step 1</label><label for="__tabbed_5_2">Step 2</label><label for="__tabbed_5_3">Step 3</label><label for="__tabbed_5_4">Step 4</label><label for="__tabbed_5_5">Step 5</label><label for="__tabbed_5_6">Step 6</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224114850.png" /></p>
+<p>前 4 个数据正常进堆</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224115206.png" /></p>
+<p>当 12 进入的时候发现出堆的 94 比它大，说明它们俩不会在同一个 Run 内，须新开一个 Run，标记为红</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224154253.png" /></p>
+<p>同理，35 比要出堆的 96 小，说明它们俩不会在同一个 Run 内，标记为红</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224154509.png" /></p>
+<p>这时候 17 入堆，新开一个 Run</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224154651.png" /></p>
+<p>一直正常进堆出堆直到 15 的出现，此时它比出堆的 75 小，不会在同一个 Run 内，标记为红</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224154818.png" /></p>
+<p>最后直到只剩 15，新开一个 Run</p>
+</div>
+</div>
+</div>
+</div>
+<p>结论：</p>
+<ul>
+<li>用这种算法生成得到的 Run 的平均长度 <span class="arithmatex">\(L_{avg}=2M\)</span></li>
+<li>当序列的数据处于接近排好序的状态时，这种算法的表现就很不错</li>
+</ul>
+<hr />
+<h2 id="buffer-handling">Buffer Handling<a class="headerlink" href="#buffer-handling" title="Permanent link">&para;</a></h2>
+<p>那么我们该如何并行地处理缓存呢？在了解并行的做法前，我们不妨先来看一下串行的做法：</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Question</label><label for="__tabbed_6_2">Analysis</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对一个包含 3250 份记录的文件排序，限制条件为：</p>
+<ul>
+<li>用于排序的计算机的主存最多能容纳 750 份记录</li>
+<li>单个的输入文件是一个包含 250 份记录的记录块</li>
+</ul>
+<p>可以看到，题目的模型与前面的例子是类似的，但这里我们要重点分析这个主存是如何输入和输出数据的。</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>首先，我们需要将主存划分为<strong>输入缓冲</strong>和<strong>输出缓冲</strong>两个部分（此时内部排序应为归并排序）</li>
+<li>然后从两个子序列中分别读出一个记录块到输入缓存中，开始进行内部排序</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224161424.png" /></p>
+<ul>
+<li>对于输入缓存的记录，我们需要逐条记录地进行比较和排序，最后得到一部分答案</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241224161745.png" /></p>
+<ul>
+<li>由于输出缓存空间有限，所以还没排完序输出缓存空间已满。因此不得不暂停排序过程，将输出缓存排好序的部分记录块丢给空闲的磁带，然后清空缓存的内容，以迎接之后的排序结果。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>对于并行的情况来说：</p>
+<ul>
+<li>修改输出缓存：<ul>
+<li>在上面的例子中，我们看到，当输出缓存空间爆满时，排序就得暂时中止，这样有些浪费时间。</li>
+<li>为了让主存在清空输出缓存的同时还能继续对输入缓存的记录进行排序，我们可以将输出缓存<strong>一分为二</strong>（请注意，<font color="red">这并不是增加额外的空间</font>）。当其中一个输出缓存爆满，需要清空时，另一个闲置的输出缓存可以接替后续的排序任务，也就是两个输出缓存轮流保存排序结果，这样就可以确保排序的不间断进行</li>
+</ul>
+</li>
+<li>修改输入缓存：<ul>
+<li>我们貌似还忽略了一个问题，输入缓存读取子序列的记录块也要时间，所以如果输入缓存的记录都排完后，那么就要到子序列读取新的记录块，这个过程也需要一定的时间，那么排序过程就又一次中断了。</li>
+<li>解决方案是借鉴输出缓存的做法，对于 <span class="arithmatex">\(k\)</span> 路归并排序，我们将输入缓存划分为 <span class="arithmatex">\(2k\)</span> 个子空间。其中的 <span class="arithmatex">\(k\)</span> 个子空间用于容纳正在进行排序的记录，而另外 <span class="arithmatex">\(k\)</span> 个子空间用于读取子序列的记录块，这样的话一半空间的记录排完后，可以紧接着对另一半的记录进行排序，不会被读取给耽搁</li>
+<li><span class="arithmatex">\(k\uparrow\Rightarrow \text{number of input buffers}\uparrow\Rightarrow\text{buffer size}\downarrow\Rightarrow\text{block size on disk}\downarrow\Rightarrow\text{seek time}\uparrow\)</span>（即 I/O 时间的增加），因此这种划分方法对于更大的 <span class="arithmatex">\(k\)</span> 而言效果可能不是特别好。为了取得最佳效果，我们需要综合磁盘参数和用于缓存的主存空间容量来选择合适的 <span class="arithmatex">\(k\)</span> 值</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="minimizing-the-merge-time">Minimizing the Merge Time<a class="headerlink" href="#minimizing-the-merge-time" title="Permanent link">&para;</a></h2>
+<p>另一种提升外部排序的速度的想法是：令合并时间最小化。这里我们借助哈夫曼编码——在合并数个长度不一的 run 时，我们应避免多次合并长度较长的 run，而哈夫曼编码的贪心策略正符合我们的需求。下面来看个例子，以便更清楚地了解该算法在合并过程中的应用：</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Question</label><label for="__tabbed_7_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设我们有 4 个 Run，长度分别为 2, 4, 5, 15。请计算最小的合并时长。</p>
+</div>
+<div class="tabbed-block">
+<p>最小时间 <span class="arithmatex">\(= 2 * 3 + 4 * 3 + 5 * 2 + 15 * 1 = 43\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>结论：最小合并时间 <span class="arithmatex">\(= O(\text{the weighted external path length})\)</span>（哈夫曼树的带权路径和）</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5550,7 +5693,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月24日 11:23:02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月24日 17:44:41</span>
   </span>
 
     
