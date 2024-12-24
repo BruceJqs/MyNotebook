@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md",
+                "file": "docs/blog/Computer Science/ADS/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2"
+              "title": "index"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 2.md"
+                "file": "docs/blog/Computer Science/ADS/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 2"
+              "title": "Outline of index"
             }
           },
           {
@@ -176,11 +176,22 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/Chapter 15.md",
+    "docs/assets/Pasted image 20241224103559.png",
+    "docs/assets/Pasted image 20241224103500.png",
+    "docs/assets/Pasted image 20241224102359.png",
+    "docs/assets/Pasted image 20241224102306.png",
+    "docs/assets/Pasted image 20241224102145.png",
+    "docs/assets/Pasted image 20241224101750.png",
+    "docs/blog/Computer Science/ADS/Chapter 14.md",
+    "docs/blog/Computer Science/ADS/Chapter 13.md",
+    "docs/blog/Computer Science/ADS/Chapter 4.md",
+    "docs/blog/Computer Science/ADS/Chapter 3.md",
+    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/assets/Pasted image 20241223223905.png",
     "docs/assets/Pasted image 20241223221017.png",
     "docs/assets/Pasted image 20241223220729.png",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Homework 5.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
@@ -196,22 +207,10 @@
     "docs/blog/Others/TOEFL Reading/Lesson 3.md",
     "docs/blog/Others/TOEFL Reading/Lesson 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/assets/Pasted image 20241223105454.png",
     "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
-    "docs/assets/Pasted image 20241222212006.png",
-    "docs/assets/Pasted image 20241222211916.png",
-    "docs/assets/Pasted image 20241222211849.png",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch10.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch08.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch07.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch05.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch03.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
-    "docs/assets/Pasted image 20241222211209.png",
-    "docs/assets/Pasted image 20241222211152.png",
-    "docs/assets/Pasted image 20241222211134.png",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",

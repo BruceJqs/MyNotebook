@@ -29,9 +29,9 @@ comments: true
 
 	- 如果一个结点的左孩子或右孩子为空结点，则该结点的 NPL 为 $0$，这种结点被称为外结点
 	
-	- 如果一个结点的左孩子和右孩子都不为空，则该结点的 NPL 为 $\min⁡\{NPL(left child),NPL(right child)\}+1$；
+	- 如果一个结点的左孩子和右孩子都不为空，则该结点的 NPL 为 $\min⁡\{\text{NPL}(\text{left child}),\text{NPL}(\text{right child})\}+1$；
 	
-	或者更为直接地，定义 $NPL(NULL)=-1$，那么有 $NPL(X)=\min\{NPL(C)+1\},C为X的孩子$
+	或者更为直接地，定义 $\text{NPL}(\text{NULL})=-1$，那么有 $\text{NPL}(X)=\min\{\text{NPL}(C)+1\}，C 为 X 的孩子$
 	
 	![](../../../assets/Pasted image 20241008102305.png)
 
@@ -43,9 +43,9 @@ comments: true
 
 !!! Properties
 
-	- 结点的 NPL 等于 $NPL(right child)+1$（假设 $NPL(NULL)=−1$）
+	- 结点的 NPL 等于 $\text{NPL}(\text{right child})+1$（假设 $\text{NPL}(\text{NULL})=−1$）
 
-	- 如果 $NPL(i)=N$，则以 $i$ 为根的子树**至少**是一个 $N+1$ 层的满二叉树，即这个子树至少有 $2^{N+1}−1$ 个结点；
+	- 如果 $\text{NPL}(i)=N$，则以 $i$ 为根的子树**至少**是一个 $N+1$ 层的满二叉树，即这个子树至少有 $2^{N+1}−1$ 个结点；
 	
 	![](../../../assets/Pasted image 20241008103628.png)
 
@@ -69,7 +69,7 @@ comments: true
 	
 		递归式先比较当前两个待合并子树的根结点的键值，选择较小（较大）的那个作为根结点，其左子树依然为左子树，右子树更新为「右子树和另一个待合并子树的合并结果」。
 		
-		当然，在递归地更新完后，我们需要检查左子树和右子树是否满足 $NPL(left child)\geq NPL(right child)$ 的性质，如果不满足，我们则需要**交换左右子树**来维持性质。
+		当然，在递归地更新完后，我们需要检查左子树和右子树是否满足 $\text{NPL}(\text{left child})\geq\text{NPL}(\text{right child})$ 的性质，如果不满足，我们则需要**交换左右子树**来维持性质。
 		
 		```c
 		LeftistHeapNode * merge(LeftistHeapNode * x, LeftistHeapNode * y) {
@@ -301,6 +301,7 @@ LeftistHeapNode * del(LeftistHeapNode * cur, ElementType x) {
 ### Why?
 
 >左偏堆由于需要自下而上地维护 NPL，所以我们无法进行并发操作。回顾 AVL 树，同样为了维护它比较严格的平衡性质，我们也无法进行并发操作，而红黑树则通过一个能够仅仅通过变色就能调整的黑高来规避了必须自下而上维护的问题，实现了并发。
+>
 >换句话来说，要想将左偏堆改变地能够进行自上而下维护，就需要改变甚至放弃它的左偏性质的严格性——而这就是斜堆的由来。
 ***
 ### Definition
@@ -363,7 +364,7 @@ $$
 
 !!! Definition "Heavy Node & Light Node"
 
-	对于一个子堆 $H$，如果 $size(H.right_{descendant})\geq\frac{1}{2}size(H)$，则 $H$ 是 heavy node，否则是 light node。
+	对于一个子堆 $H$，如果 $\text{size}(H.\text{right}_{\text{descendant}})\geq\frac{1}{2}\text{size}(H)$，则 $H$ 是 heavy node，否则是 light node。
 
 !!! Properties
 
@@ -374,10 +375,10 @@ $$
 列出公式：
 
 $$
-\hat{c}=c+\Phi(H_{merged})−\Phi(H_x)−\Phi(H_y)
+\hat{c}=c+\Phi(H_\text{merged})−\Phi(H_x)−\Phi(H_y)
 $$
 
-其中，$c$ 为合并操作的（最坏）复杂度，$H_{merged}$ 为合并后的堆，$H_x$ 和 $H_y$​ 分别为合并前的两个堆。
+其中，$c$ 为合并操作的（最坏）复杂度，$H_\text{merged}$ 为合并后的堆，$H_x$ 和 $H_y$​ 分别为合并前的两个堆。
 
 根据 property 3，在合并过程中并非所有节点都受到影响。我们可以单独记录 $l_x$ 为 $H_x$​ 最右侧路径上的 light node 数量，$h_x$ 为 $H_x$​ 最右侧路径上的 heavy node 数量，$h_x^0$​ 为 $H_x$ 所有不在最右侧路径上的 heavy node 数量（即 $\text{count of heavy nodes of }H_x=h_x+h_x^0$​）。
 
@@ -387,7 +388,7 @@ $$
 \begin{cases}
 \begin{aligned}
 c &= l_x+h_x+l_y+h_y \space\space(1)\\
-\Phi(H_{merged})&\leq l_x+h_x^0+l_y+h_y^0\space\space(2)\\
+\Phi(H_\text{merged})&\leq l_x+h_x^0+l_y+h_y^0\space\space(2)\\
 \Phi(H_x)&=h_x+h_x^0\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space(3)\\
 \Phi(H_y)&=h_y+h_y^0\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space(4)
 \end{aligned}
@@ -404,10 +405,29 @@ $$
 
 $$
 \begin{aligned}
-\hat{c}&=c+\Phi(H_{merged}​)−\Phi(H_x​)−\Phi(H_y​)\\
+\hat{c}&=c+\Phi(H_\text{merged}​)−\Phi(H_x​)−\Phi(H_y​)\\
 &\leq(l_x​+h_x​+l_y​+h_y​)+(l_x​+h_x^0​+l_y​+h_y^0​)−(h_x​+h_x^0​)−(h_y​+h_y^0​)\\
 &\leq 2(l_x​+l_y​)\\
 \hat{c}&=O(\log N)
 \end{aligned}​
 $$
+***
+## Homework
 
+!!! question "Question 01"
+
+	The result of inserting keys 1 to $2^k−1$ for any $k>4$ in order into an initially empty skew heap is always a full binary tree.
+	
+	??? note "Answer"
+	
+		True. 这个模拟一下会发现真的很对，Skew Heap 都能很巧妙地将两边平衡，当结论记了（问就是不会证 hhh）
+
+!!! question "Question 02"
+
+	The right path of a skew heap can be arbitrarily long.
+	
+	??? note "Answer"
+	
+		True. 对于 Skew Heap 来说，其对于右路径的限制在于其长度需要小于左路径，而并没有具体数值的限制，所以自然可以做到无限长。（如我加一个左儿子后给这个左儿子加一个右儿子，再给这个右儿子加一个左儿子，如此左右左右往复，可以构成一个右路径任意大小的斜堆）
+		
+		但对于 Leftist Heap 就不一样了，因为 NPL 的存在它只能被限制在 $O(\log N)$ 里面
