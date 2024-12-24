@@ -1436,6 +1436,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5345,6 +5354,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5411,15 +5429,15 @@
 <p>首先我们假设在第一步中，我们求得两边求得的最小距离中较小的那个为 <span class="arithmatex">\(\delta\)</span>，换句话来说，如果答案在第二步中被更新，那么它的距离需要小于 <span class="arithmatex">\(\delta\)</span>。而我们知道，在第二步中被拿出来的点对，一定是一个在分界线左侧一个在分界线 L 右侧。朴素的来想，在距离分界线 <span class="arithmatex">\(\delta\)</span> 以外的点对中，我们是不需要考虑的。而在距离分界线 <span class="arithmatex">\(\delta\)</span> 以内的点，都存在成为答案点对的可能。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029105421.png" /></p>
 <p>如图，现在我们知道，只有落在两条深绿色之间的点才可能会更新答案。</p>
-<p>现在我们需要做的是，从分界线左侧的区域里拿一个点，和分界线右边的一个点做匹配，然后取所有结果中的最小点。不过这件事仍然可以优化——在二维的数据中，仅对一个纬度做约束往往会导致事情变得不那么稳定，所以我们同样考虑在另外一个方向做约束。</p>
-<p>也是基于范围约束的考虑。假设我们以左侧的点为基准，从上往下遍历这些点，那么对于点 <span class="arithmatex">\(p_{l_i}\)</span>​​，具有能够更新答案的，<span class="arithmatex">\(dis(p_{l_i​}​,p_{r_j}​​)\leq\delta\)</span> 的 <span class="arithmatex">\(p_{r_j}​​\)</span>，一定有 <span class="arithmatex">\(dis_{||bound}(p_{l_i},p_{r_j})\leq\delta\)</span>（直角三角形斜边最长）。</p>
-<p>因此，对于选定点 <span class="arithmatex">\(p_{l_i}\)</span>，其所有可能导致答案更新的点都被框定在一个 <span class="arithmatex">\(2\delta×\delta\)</span> 的矩形中。</p>
+<p>现在我们需要做的是，从分界线左侧的区域里拿一个点，和分界线右边的一个点做匹配，然后取所有结果中的最小点。不过这件事仍然可以优化——在二维的数据中，仅对 x 纬度做约束往往会导致事情变得不那么稳定，所以我们同样考虑在 y 方向做约束。</p>
+<p>也是基于范围约束的考虑。我们先对于两条深绿色之间的点关于 y 坐标从上到下排序，并且用一个宽为 <span class="arithmatex">\(\delta\)</span> 的分割线去划分区域，对于每个点，我们仅计算位于该点下方且距离该点小于等于 <span class="arithmatex">\(\delta\)</span> 的点和它之间的距离。</p>
+<p>因此，对于选定点 <span class="arithmatex">\(p_{l_i}\)</span>，其所有可能导致答案更新的点都被框定在一个 <span class="arithmatex">\(2\delta\times\delta\)</span> 的矩形中。</p>
 <p>而更奇妙的是，这个由参数 <span class="arithmatex">\(\delta\)</span> 指定的矩形，巧妙地约束了落在矩形中的点的最大数量。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029110835.png" /></p>
-<p>在这样一个区域中，我们需要约束所有落在 <span class="arithmatex">\(\delta×\delta\)</span> 的 L 区域中的点，互相的距离都大于等于 <span class="arithmatex">\(\delta\)</span>，对 R 区域中的点也有相同的约束。不难发现，在最理想最理想的情况下——闭区间、允许点重合的情况下，这个矩形最多也只能放八个点（两边各四个）：</p>
+<p>在这样一个区域中，我们需要约束所有落在 <span class="arithmatex">\(\delta\times\delta\)</span> 的 L 区域中的点，互相的距离都大于等于 <span class="arithmatex">\(\delta\)</span>（因为如果小于 <span class="arithmatex">\(\delta\)</span> 的话 <span class="arithmatex">\(\delta\)</span> 就不应该是当前这个数了应该是更小的这个值），对 R 区域中的点也有相同的约束。不难发现，在最理想最理想的情况下——闭区间、允许点重合的情况下，这个矩形最多也只能放八个点（两边各四个）：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241029111708.png" /></p>
-<p>而更一般的情况下，最多也只能放六个点（两边各三个）。</p>
-<p>无论如何，我们可以得到结论，在这种情况下，对于每一个选定的 <span class="arithmatex">\(p_{l_i}\)</span>，寻找其可能导致答案更新的点的复杂度都是常数级的。</p>
+<p>而更一般的情况下，最多也只能放六个点（两边各三个）。（这便是最坏的情况，也就是说在其他情况下这样的矩形内是塞不下更多的点的）</p>
+<p>因此我们可以得到结论，在这种情况下，对于每一个选定的 <span class="arithmatex">\(p_{l_i}\)</span>，寻找其可能导致答案更新的点的复杂度都是常数级的。</p>
 <p>而枚举这些“选定点”，也就是枚举 <span class="arithmatex">\(p_{l_i}\)</span>，其复杂度（撑死）是 <span class="arithmatex">\(O(N)\)</span>。</p>
 <p>于是我们能得到这个分治的时间复杂度计算递推公式：</p>
 <div class="arithmatex">\[
@@ -5438,7 +5456,7 @@ T(N)=aT(\frac{N}{b})+f(N),a,b\in\mathbb{Z}^+
 <hr />
 <h3 id="substitution-method">Substitution Method<a class="headerlink" href="#substitution-method" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>代换法(Substitution Method)的思路非常直白，首先我们通过某些手段（<del>比如大眼观察法👀</del>）来得到一个预设的结果，接下来通过代入、归纳的方法来证明这个结果。</p>
+<p>代换法（Substitution Method）的思路非常直白，首先我们通过某些手段（<del>比如大眼观察法👀</del>）来得到一个预设的结果，接下来通过代入、归纳的方法来证明这个结果。</p>
 </blockquote>
 <p>简单来说，就是大胆猜测，小心求证（先猜后证）！</p>
 <div class="admonition example">
@@ -5487,9 +5505,11 @@ T(N)=2T(\lfloor\frac{N}{2}\rfloor)+N\leq 2c\lfloor\frac{N}{2}\rfloor+N\leq cN+N=
 <div class="admonition tip">
 <p class="admonition-title">小技巧</p>
 <ul>
-<li>如果时间复杂度的递推关系式中出现类似 <span class="arithmatex">\(T(\sqrt{N})\)</span> 等形式，可以考虑<strong>换元法</strong>：</li>
+<li>如果时间复杂度的递推关系式中出现类似 <span class="arithmatex">\(T(\sqrt{N})\)</span> 等形式，可以考虑<strong>换元法</strong>：<ul>
 <li>令 <span class="arithmatex">\(m=\log⁡ n\)</span>，那么 <span class="arithmatex">\(T(\sqrt{n})=T(2^{\frac{m}{2}}),T(n)=T(2^m)\)</span></li>
 <li>再令 <span class="arithmatex">\(S(m)=T(2^m)\)</span>，那么 <span class="arithmatex">\(S(\frac{m}{2})=T(2^{\frac{m}{2}})\)</span>，这样整个递推关系式就被转化为一般的形式了</li>
+</ul>
+</li>
 <li>如果出现形如 <span class="arithmatex">\(T(f(N)+c)\)</span> 的形式（<span class="arithmatex">\(c\)</span> 为常数），由于 <span class="arithmatex">\(N\)</span> 足够大，因此可以忽略常数 <span class="arithmatex">\(c\)</span></li>
 </ul>
 </div>
@@ -5570,7 +5590,7 @@ T(N)​&amp;=\sum\limits_{i=0}^{\log_{4}^​N−1}​(\frac{3}{16}​)^icN^2+\Th
 <div class="tabbed-block">
 <ul>
 <li><span class="arithmatex">\(a=b=2,f(N)=N\log ⁡N\)</span>；<ul>
-<li><span class="arithmatex">\(f(N)=N\log ⁡N\)</span>，虽然 <span class="arithmatex">\(N\log ⁡N=\Theta(N^{log_⁡{2} 2})\)</span>，但是 <span class="arithmatex">\(N\log⁡ N\not=\Theta(N^{\log⁡_{2} 2+\epsilon})\)</span>，所以不适用于情况 3；</li>
+<li><span class="arithmatex">\(f(N)=N\log ⁡N\)</span>，虽然 <span class="arithmatex">\(N\log ⁡N=\Theta(N^{\log_{2}2})\)</span>，但是 <span class="arithmatex">\(N\log⁡ N\not=\Theta(N^{\log⁡_{2} 2+\epsilon})\)</span>，所以不适用于情况 3；</li>
 <li>具体来说，<span class="arithmatex">\(\lim\limits_{⁡N\rightarrow\infty}\frac{N\log ⁡N}{N^{1+\epsilon}}=\lim\limits_{⁡N\rightarrow\infty}\frac{\log ⁡N}{N^\epsilon}=0\text{ for fixed }\epsilon&gt;0\)</span>；</li>
 <li>这个例子体现出了 <span class="arithmatex">\(\epsilon\)</span> 的一定作用；</li>
 </ul>
@@ -5715,7 +5735,7 @@ f(N)∼Θ(a^{\log_{⁡b}N})=Θ(N^{\log_{⁡b}a})
 <ul>
 <li>先计算 <span class="arithmatex">\(af(\frac{N}{b})=4(\frac{N}{2})\log⁡(\frac{N}{2})=2N\log ⁡N−2N\)</span></li>
 <li>显然找不到任何常数 <span class="arithmatex">\(c\)</span> 满足 <span class="arithmatex">\(cf(N)=2N\log⁡ N−2N\)</span>，因此无法用这种主定理计算</li>
-<li>然而，用前一种主定理是可以算出来的：发现 <span class="arithmatex">\(O(N\log⁡_{b}a−\epsilon)=O(N^{2−\epsilon})=f(N)\)</span>，符合第 1 类情况，那么时间复杂度为 <span class="arithmatex">\(T=O(N^2)\)</span></li>
+<li>然而，用前一种主定理是可以算出来的：发现 <span class="arithmatex">\(O(N^{\log⁡_{b}a−\epsilon})=O(N^{2−\epsilon})=f(N)\)</span>，符合第 1 类情况，那么时间复杂度为 <span class="arithmatex">\(T=O(N^2)\)</span></li>
 </ul>
 </div>
 <hr />
@@ -5758,6 +5778,24 @@ O(N^k\log^{p}N),a&lt;b^k
 </div>
 </div>
 </div>
+</div>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>Which one of the following is the lowest upper bound of <span class="arithmatex">\(T(n)\)</span> for the following recursion <span class="arithmatex">\(T(n)=2T(n​)+\log n\)</span>?</p>
+<ul>
+<li>A. <span class="arithmatex">\(O(\log n\log\log n)\)</span></li>
+<li>B. <span class="arithmatex">\(O(\log^2 n)\)</span></li>
+<li>C. <span class="arithmatex">\(O(n\log n\)</span></li>
+<li>D. <span class="arithmatex">\(n^2\)</span></li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>A. <span class="arithmatex">\(O(\log n\log\log n)\)</span></p>
+<p>这就需要用到我们之前提到的小技巧，我们令 <span class="arithmatex">\(m=\log n\)</span>，那么有 <span class="arithmatex">\(T(\sqrt{n})=T(2^{\frac{m}{2}})\)</span>，此时 <span class="arithmatex">\(T(n)=T(2^m)\)</span></p>
+<p>再令 <span class="arithmatex">\(S(m)=T(2^m)\)</span>，原递推公式就变为 <span class="arithmatex">\(S(m)=2S(\frac{m}{2})+m\)</span>，根据主定理 3 我们可以得到 <span class="arithmatex">\(S(m)=O(m\log m)\)</span>，即 <span class="arithmatex">\(T(n)=T(2^m)=S(m)=O(m\log m)=O(\log n\log\log N)\)</span></p>
+</details>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -5828,7 +5866,7 @@ O(N^k\log^{p}N),a&lt;b^k
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月10日 13:02:15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月24日 23:40:48</span>
   </span>
 
     
