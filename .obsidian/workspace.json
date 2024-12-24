@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Chapter 6"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 5.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 6.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Chapter 6"
             }
           },
           {
@@ -176,6 +176,8 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20241224212607.png",
+    "docs/blog/Computer Science/ADS/Chapter 5.md",
     "docs/blog/Computer Science/ADS/Chapter 6.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
@@ -210,8 +212,6 @@
     "docs/blog/Others/TOEFL Reading/Lesson 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
     "docs/blog/Computer Science/Tech/Ubuntu/Tex.md",
-    "docs/blog/Computer Science/Tech/Ubuntu/Installation.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch09.md",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",
