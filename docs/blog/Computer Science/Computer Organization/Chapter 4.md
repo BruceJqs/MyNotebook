@@ -6,13 +6,24 @@ hide:
   - feedback
 comments: true
 ---
-# Chapter 4 : The Processors
+# Chapter 04 : The Processors
 
 !!! Abstract
 
 	这一章的 PPT 真的好乱，尤其是流水线那部分（）
 	
 	为了理解得更有一些条理（至少我个人认为）我把各部分内容都整合起来一起讲了。
+
+!!! abstract "考点"
+
+	- 单周期
+		- Datapath & Control Unit 构成
+		- Datapath 走向
+	- 流水线
+		- 时间相关计算（加速比、总时间、时钟频率）
+		- 五级流水线每一级构成及功能
+		- Hazards 及其解决方法
+		- Control 信号
 
 ## Introduction
 

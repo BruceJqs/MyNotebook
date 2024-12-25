@@ -6,7 +6,16 @@ hide:
   - feedback
 comments: true
 ---
-# Chapter 2 : Instructions : Language of the Machine
+# Chapter 02 : Instructions : Language of the Machine
+
+!!! abstract "考点"
+
+	- RISC-V 寄存器（x1-x32 及其别名）
+	- c 语言和汇编语言互相转换
+	- 汇编语言和机器语言互相转换
+	- 大小端编址
+	- 各类指令（参照指令表）
+	- 栈
 
 ## Introduction
 

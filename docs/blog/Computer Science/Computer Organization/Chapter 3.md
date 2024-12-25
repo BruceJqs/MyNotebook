@@ -6,7 +6,14 @@ hide:
   - feedback
 comments: true
 ---
-# Chapter 3 : Arithmetic for Computer
+# Chapter 03 : Arithmetic for Computer
+
+!!! abstract "考点"
+
+	- 数据表示（原码反码补码）
+	- ALU 运算
+		- 乘（V1-V3）除（V1-V2）法
+		- 浮点数运算
 
 ## Introduction
 

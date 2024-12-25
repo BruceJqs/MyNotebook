@@ -7,7 +7,20 @@ hide:
 comments: true
 ---
 
-# Chapter 5 : Memory Hierarchy
+# Chapter 05 : Memory Hierarchy
+
+!!! abstract "考点"
+
+	- 局部性原则
+	- Cache
+		- 基本概念（Hit，Miss，Miss Penalty…）
+		- 结构及映射机制（画图）
+		- 相关计算（时间、空间）
+		- 优化
+	- 虚拟存储
+		- Page Table
+		- 相关计算（空间）
+		- 优化（TLB）
 
 ## Memory Technologies
 

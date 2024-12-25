@@ -7,6 +7,12 @@ hide:
 comments: true
 ---
 # Chapter 01 : Computer abstractions and Technology
+
+!!! abstract "考点"
+
+	- Performance Measure
+	- 八大思想
+
 ## Introduction
 ### Von Neumann Architecture（冯·诺依曼架构）
 

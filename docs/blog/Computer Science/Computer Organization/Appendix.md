@@ -8,6 +8,13 @@ comments: true
 ---
 # Appendix : Storage, Networks and Other Peripherals
 
+!!! abstract "考点"
+
+	- 硬盘及其构成、相关计算（时间）
+	- RAID
+	- 数据总线及握手协议
+	- I/O 和处理器通讯（轮询、中断、DMA）
+
 !!! Abstract "写在前面"
 
 	sdgg 说，因为出厂商都是以十进制来描述硬盘大小的，所以这一整章的 M,K 都表示 $10^6$ 和 $10^3$，并非我们认知中的 $2^{20}$ 和 $2^{10}$。
