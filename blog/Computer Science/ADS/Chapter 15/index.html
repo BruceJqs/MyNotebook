@@ -1589,6 +1589,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5315,6 +5324,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5354,7 +5372,7 @@
 <p>然而，一旦数据量很大，主存无法容下所有待排序数据时，就需要用到<strong>外部排序</strong>(External Sorting) 算法。所谓“外部”，即用到磁盘的空间。我们在<a href="https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#memory-hierarchy-introduction">计算机组成</a>中也学过，磁盘相比主存空间更大，但访问速度更慢。举个例子：若要访问数组的某个元素 <code>a[i]</code>，它们所需的时间分别为：</p>
 <ul>
 <li>主存：<span class="arithmatex">\(O(1)\)</span>（用索引寻找，随机访问）</li>
-<li>磁盘：找到元素所在的迹 (Track) -&gt; 找到对应的区 (Sector)（磁盘存储信息的最小单位）-&gt; 找到元素 <code>a[i]</code> 并传输数据<ul>
+<li>磁盘：找到元素所在的迹（Track）<span class="arithmatex">\(\rightarrow\)</span> 找到对应的区（Sector）（磁盘存储信息的最小单位）<span class="arithmatex">\(\rightarrow\)</span> 找到元素 <code>a[i]</code> 并传输数据<ul>
 <li>这一过程的快慢还取决于设备的性能</li>
 <li>要想提升访问速度，我们应尽可能让磁盘读写头沿着一个方向移动，以避免磁盘频繁的旋转</li>
 </ul>
@@ -5400,7 +5418,7 @@
 </div>
 </div>
 <ul>
-<li>一般情况下，若要对 <span class="arithmatex">\(N\)</span> 条记录进行外部排序，且主存最多对 <span class="arithmatex">\(M\)</span> 条记录进行排序，需要的趟数为 <span class="arithmatex">\(1+\lceil\log_{2}\frac{N}{M}\rceil\)</span></li>
+<li>一般情况下，若要对 <span class="arithmatex">\(N\)</span> 条记录进行外部排序，且主存最多对 <span class="arithmatex">\(M\)</span> 条记录进行排序，需要的趟数为 <span class="arithmatex">\(1+\lceil\log_{2}\frac{N}{M}\rceil\)</span>（这里 1+ 表示数据分配到磁带的过程）</li>
 </ul>
 <p>在设计外部排序的时候，我们会关心以下问题：</p>
 <ul>
@@ -5439,7 +5457,7 @@
 </div>
 </div>
 </div>
-<p>有了以上的优化，我们的趟数就能降到 <span class="arithmatex">\(1+\lceil\log_{k}\frac{N}{M}\rceil\)</span>，但是所需的磁带数升至 <span class="arithmatex">\(2k\)</span> 个，这样的开销有点难以接受</p>
+<p>有了以上的优化，我们的趟数就能降到 <span class="arithmatex">\(1+\lceil\log_{k}\frac{N}{M}\rceil\)</span>，但是所需的磁带数升至 <span class="arithmatex">\(2k\)</span> 个，这样的开销有点难以接受，因为 <span class="arithmatex">\(k\)</span> 的增加也会导致内排序的复杂度增加，也会增加 pass 内的 seek 次数。</p>
 <hr />
 <h3 id="polyphase-merge">Polyphase Merge<a class="headerlink" href="#polyphase-merge" title="Permanent link">&para;</a></h3>
 <p>我们希望在降低趟数的同时能够尽可能避免磁带数的提升，因此尝试一下在保持子序列个数不变的情况下减少所需磁带数，下面以 <span class="arithmatex">\(k=2\)</span>，磁带数 <span class="arithmatex">\(=3\)</span> 为例进行分析：</p>
@@ -5624,6 +5642,271 @@
 </div>
 </div>
 <p>结论：最小合并时间 <span class="arithmatex">\(= O(\text{the weighted external path length})\)</span>（哈夫曼树的带权路径和）</p>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>If only one tape drive is available to perform the external sorting, then the tape access time for any algorithm will be <span class="arithmatex">\(\Omega(N^2)\)</span>.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 因为只有一个 Tape Drive，那么寻迹时间会增加</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 02</p>
+<p>Suppose we have the internal memory that can handle 12 numbers at a time, and the following two runs on the tapes:</p>
+<p><strong>Run 1</strong>: 1, 3, 5, 7, 8, 9, 10, 12</p>
+<p><strong>Run 2</strong>: 2, 4, 6, 15, 20, 25, 30, 32</p>
+<p>Use 2-way merge with 4 input buffers and 2 output buffers for parallel operations. Which of the following three operations are NOT done in parallel?</p>
+<ul>
+<li>A. 1 and 2 are written onto the third tape; 3 and 4 are merged into an output buffer; 6 and 15 are read into an input buffer</li>
+<li>B. 3 and 4 are written onto the third tape; 5 and 6 are merged into an output buffer; 8 and 9 are read into an input buffer</li>
+<li>C. 5 and 6 are written onto the third tape; 7 and 8 are merged into an output buffer; 20 and 25 are read into an input buffer</li>
+<li>D. 7 and 8 are written onto the third tape; 9 and 15 are merged into an output buffer; 10 and 12 are read into an input buffer</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>D. 7 and 8 are written onto the third tape; 9 and 15 are merged into an output buffer; 10 and 12 are read into an input buffer</p>
+<p>模拟一下整个过程：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:9"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><input id="__tabbed_8_5" name="__tabbed_8" type="radio" /><input id="__tabbed_8_6" name="__tabbed_8" type="radio" /><input id="__tabbed_8_7" name="__tabbed_8" type="radio" /><input id="__tabbed_8_8" name="__tabbed_8" type="radio" /><input id="__tabbed_8_9" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Step 1</label><label for="__tabbed_8_2">Step 2</label><label for="__tabbed_8_3">Step 3</label><label for="__tabbed_8_4">Step 4（对应 A 选项）</label><label for="__tabbed_8_5">Step 5（对应 B 选项）</label><label for="__tabbed_8_6">Step 6（对应 C 选项）</label><label for="__tabbed_8_7">Step 7（对应 D 选项）</label><label for="__tabbed_8_8">Step 8</label><label for="__tabbed_8_9">Step 9 &amp; 10</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>1,3 写入 Input Buffer 1，此时没有 Merge 条件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>B1</th>
+<th>B2</th>
+<th>B3</th>
+<th>B4</th>
+<th>B5</th>
+<th>B6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>2,4 写入 Input Buffer 2，此时没有 Merge 条件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>B1</th>
+<th>B2</th>
+<th>B3</th>
+<th>B4</th>
+<th>B5</th>
+<th>B6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,3</td>
+<td>2,4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>5,7 写入 Input Buffer 3</li>
+<li>1,2 Merge，写入 Output Buffer 1</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IB1</th>
+<th>IB2</th>
+<th>IB3</th>
+<th>IB4</th>
+<th>OB1</th>
+<th>OB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>5,7</td>
+<td>-</td>
+<td>1,2</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>6,15 写入 Input Buffer 4</li>
+<li>3,4 Merge，写入 Output Buffer 2</li>
+<li>1,2 输出到 Tape</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IB1</th>
+<th>IB2</th>
+<th>IB3</th>
+<th>IB4</th>
+<th>OB1</th>
+<th>OB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>5,7</td>
+<td>6,15</td>
+<td>-</td>
+<td>3,4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>8,9 写入 Input Buffer 1</li>
+<li>5,6 Merge，写入 Output Buffer 1</li>
+<li>3,4 输出到 Tape</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IB1</th>
+<th>IB2</th>
+<th>IB3</th>
+<th>IB4</th>
+<th>OB1</th>
+<th>OB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8,9</td>
+<td>-</td>
+<td>7</td>
+<td>15</td>
+<td>5,6</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>20,25 写入 Input Buffer 2</li>
+<li>7,8 Merge，写入 Output Buffer 2</li>
+<li>5,6 输出到 Tape</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IB1</th>
+<th>IB2</th>
+<th>IB3</th>
+<th>IB4</th>
+<th>OB1</th>
+<th>OB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>20,25</td>
+<td>-</td>
+<td>15</td>
+<td>-</td>
+<td>7,8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>10,12 写入 Input Buffer 3</li>
+<li>9,10 Merge，写入 Output Buffer 1</li>
+<li>7,8 输出到 Tape</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IB1</th>
+<th>IB2</th>
+<th>IB3</th>
+<th>IB4</th>
+<th>OB1</th>
+<th>OB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>20,25</td>
+<td>12</td>
+<td>15</td>
+<td>9,10</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>事实上，写入和输出是可以并行的，但是 Merge 还是有时序性的，这里 D 选项就错在此时 10 有被读进来，所以就紧随着去 Merge 了</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>30,32 写入 Input Buffer 1</li>
+<li>12,15 Merge，写入 Output Buffer 2</li>
+<li>9,10 输出到 Tape</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IB1</th>
+<th>IB2</th>
+<th>IB3</th>
+<th>IB4</th>
+<th>OB1</th>
+<th>OB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30,32</td>
+<td>20,25</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>12,15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>分别完成 20,25，30,32 的 Merge 与输出</p>
+</div>
+</div>
+</div>
+</details>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5693,7 +5976,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月24日 17:44:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月26日 01:32:54</span>
   </span>
 
     
