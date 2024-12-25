@@ -1625,6 +1625,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5429,6 +5438,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5709,7 +5727,7 @@
 <p>或许会有人注意到，第三种情况还有一种算法，利用 <span class="arithmatex">\(i-1\)</span> 为偶数套用第二种情况，就是 <span class="arithmatex">\(C(h,i)=C(h,i-1)+B(h,i)\)</span>，为什么不这么算呢？</p>
 </div>
 <div class="tabbed-block">
-<p>这是因为每层都是并行计算的，因此只能利用上一级的计算值以及自身的值。（而且不觉得上面这个式子长得跟正常前缀和公式一模一样嘛）</p>
+<p>这是因为每层都是并行计算的，因此只能利用上一级的计算值以及自身的值。（而且不觉得这个式子长得跟正常前缀和公式一模一样嘛）</p>
 </div>
 </div>
 </div>
@@ -5962,20 +5980,20 @@ n &amp; \text{if } B(j)&gt;A(n)
 <ul>
 <li>这里采用的是 CRCW 策略（任意规则写入）</li>
 <li>先从数组 <span class="arithmatex">\(A\)</span> 中的 <span class="arithmatex">\(n\)</span> 个元素中挑选 <span class="arithmatex">\(n^{\frac{7}{8}}\)</span> 个元素出来，形成数组 <span class="arithmatex">\(B\)</span></li>
-<li>将数组 <span class="arithmatex">\(B\)</span> 划分为多个大小为 <span class="arithmatex">\(n^{\frac{1}{8}}\)</span> 的小块，因此有 <span class="arithmatex">\(n^{\frac{3}{4}}\)</span>​ 个这样的小块。然后对每个小块求出最大值，得到了 <span class="arithmatex">\(n^{\frac{3}{4}}​\)</span> 局部最大值（使用 Compare All Pairs 方法计算）</li>
-<li>接下来将这些最大值划分为 <span class="arithmatex">\(n^{\frac{1}{2}}​\)</span> 个大小为 <span class="arithmatex">\(n^{\frac{1}{4}}\)</span> 的小块，然后对每个小块求出最大值，进而求出所有 <span class="arithmatex">\(n^{\frac{7}{8}}​\)</span> 个元素的最大值（使用 Compare All Pairs 方法计算）</li>
+<li>将数组 <span class="arithmatex">\(B\)</span> 划分为多个大小为 <span class="arithmatex">\(n^{\frac{1}{8}}\)</span> 的小块，因此有 <span class="arithmatex">\(n^{\frac{3}{4}}\)</span>​ 个这样的小块。然后对每个小块求出最大值，得到了 <span class="arithmatex">\(n^{\frac{3}{4}}​\)</span> 个局部最大值（使用 Compare All Pairs 方法计算）</li>
+<li>接下来将这些最大值划分为 <span class="arithmatex">\(n^{\frac{1}{2}}​\)</span> 个大小为 <span class="arithmatex">\(n^{\frac{1}{4}}\)</span> 的小块，然后对每个小块求出最大值，得到 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 个最大值，进而求出所有 <span class="arithmatex">\(n^{\frac{7}{8}}​\)</span> 个元素的最大值（使用 Compare All Pairs 方法计算）</li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241217163742.png" /></p>
 <p>复杂度分析如下：</p>
 <ul>
 <li>第 1 次划分：<ul>
 <li>时间：<span class="arithmatex">\(M_i^{(1)}∼T=O(1)\Rightarrow T(n)=O(1)\)</span></li>
-<li>工作量：<span class="arithmatex">\(W_i=O((n^{\frac{1}{8}})^2)=O(n^{\frac{1}{4}})\Rightarrow W(n)=O(n)\)</span></li>
+<li>工作量：<span class="arithmatex">\(W_i=O((n^{\frac{1}{8}})^2)=O(n^{\frac{1}{4}})\Rightarrow W(n)=n^{\frac{3}{4}}\times O(n^{\frac{1}{4}})=O(n)\)</span></li>
 </ul>
 </li>
 <li>第 2 次划分：<ul>
 <li>时间：<span class="arithmatex">\(M_i^{(2)}∼T=O(1)\Rightarrow T(n)=O(1)\)</span></li>
-<li>工作量：<span class="arithmatex">\(W_i=O((n^{\frac{1}{4}})^2)=O(n^{\frac{1}{2}})\Rightarrow W(n)=O(n)\)</span></li>
+<li>工作量：<span class="arithmatex">\(W_i=O((n^{\frac{1}{4}})^2)=O(n^{\frac{1}{2}})\Rightarrow W(n)=n^{\frac{1}{2}}\times O(n^{\frac{1}{2}})=O(n)\)</span></li>
 </ul>
 </li>
 <li>总结：<ul>
@@ -5996,6 +6014,33 @@ n &amp; \text{if } B(j)&gt;A(n)
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>值得注意的是，这个算法并不保证始终得到正确结果（因为解出的是 <span class="arithmatex">\(n^{\frac{7}{8}}\)</span> 中最大的），但是得到正确结果的概率相当大（失败概率为 <span class="arithmatex">\(O(\frac{1}{n^c})\)</span>），其中 <span class="arithmatex">\(c\)</span> 为一个正常数。</p>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>Sorting-by-merging is a classic serial algorithm. It can be translated directly into a reasonably efficient parallel algorithm. A recursive description follows.</p>
+<p>MERGE−SORT( A(1), A(2), ..., A(n); B(1), B(2), ..., B(n) )</p>
+<p>Assume that <span class="arithmatex">\(n=2^l\)</span> for some integer <span class="arithmatex">\(l\geq 0\)</span></p>
+<p>if n = 1 then return B(1) := A(1)</p>
+<p>else call, in parallel, MERGE−SORT( A(1), ..., A(n/2); C(1), ..., C(n/2) ) and</p>
+<ul>
+<li>MERGE−SORT(A(n/2+1), ..., A(n); C(n/2+1), ..., C(n) )</li>
+<li>Merge (C(1),...C(n/2)) and (C(n/2 + 1),...,C(n)) into (B(1), B(2), ..., B(n))</li>
+</ul>
+<p>Then the MERGE−SORT runs in __ .</p>
+<ul>
+<li>A. <span class="arithmatex">\(O(n\log n)\)</span> work and <span class="arithmatex">\(O(\log^2 n)\)</span> time</li>
+<li>B. <span class="arithmatex">\(O(n\log n)\)</span> work and <span class="arithmatex">\(O(\log n)\)</span> time</li>
+<li>C. <span class="arithmatex">\(O(n\log^2 n)\)</span> work and <span class="arithmatex">\(O(\log^2 n)\)</span> time</li>
+<li>D. <span class="arithmatex">\(O(n\log^2 n)\)</span> work and <span class="arithmatex">\(O(\log n)\)</span> time</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>A. <span class="arithmatex">\(O(n\log n)\)</span> work and <span class="arithmatex">\(O(\log^2 n)\)</span> time</p>
+<p>首先，递归深度有 <span class="arithmatex">\(\log n\)</span> 层，使用 Parallel Ranking 可以使得每一层的 <span class="arithmatex">\(W(n)=O(n)\)</span>，综合起来总工作量即为 <span class="arithmatex">\(O(n\log n)\)</span></p>
+<p>对于 <span class="arithmatex">\(T(n)\)</span>，不妨设 <span class="arithmatex">\(n=2^l\)</span>，有递推式 <span class="arithmatex">\(T(n)=\log 1+\log 2+\...+\log n=(0+1+...+l)\log 2=\frac{l(l+1)}{2}\log 2=O(\log^2 n)\)</span></p>
+</details>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6065,7 +6110,7 @@ n &amp; \text{if } B(j)&gt;A(n)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 22:45:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月26日 00:35:19</span>
   </span>
 
     
