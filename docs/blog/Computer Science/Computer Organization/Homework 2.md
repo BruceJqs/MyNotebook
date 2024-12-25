@@ -101,7 +101,7 @@ while (i >= 0){
 ![](../../../assets/Pasted%20image%2020241025103005.png)
 
 
-```RISC-V
+```asm
 fib:
 	beq x10,x0,done
 	addi x5,x0,1

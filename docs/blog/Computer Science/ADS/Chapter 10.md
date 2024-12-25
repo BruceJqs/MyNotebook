@@ -308,14 +308,50 @@ $$
 		- CLIQUE$\leq_P$VERTEX-COVER，即证 $G$ 有一个大小为 $K$ 的**团**的充要条件为 $\overline{G}$ 有一个大小为 $∣V∣−K$ 的**顶点覆盖**
 		    
 		    - 充分性：
-		        - 令 $(u,v)$ 为 $\overline{E}$ 上的任意一边，可以得到以下结论
-		        - $u,v$ 中至少有一点不属于 $V'$，且至少有一点属于 $V−V'$
-		        - 每条在 $\overline{G}$ 内的边，它的一个顶点在 $V−V'$ 内
-		        - 因此大小为 $∣V∣−K$ 的集合 $V−V'$ 构成了 $\overline{G}$ 的一个顶点覆盖
+		        - 令 $(u,v)$ 为 $\overline{E}$ 上的任意一边，可以得到以下结论：
+			        - $u,v$ 中至少有一点不属于 $V'$，且至少有一点属于 $V−V'$
+			        - 每条在 $\overline{G}$ 内的边，它的一个顶点在 $V−V'$ 内
+			        - 因此大小为 $∣V∣−K$ 的集合 $V−V'$ 构成了 $\overline{G}$ 的一个顶点覆盖
 		    - 必要性：
 		        - $\forall u,v\in V$，如果 $(u,v)\not\in E$，那么 $u\in V'$ 或 $v\in V'$，或两者皆满足
 		        - $\forall u,v\in V$，如果 $u\not\in V'$ 且 $v\not\in V'$，则 $(u,v)\in E$
 		        - 所以 $V−V'$ 是一个大小为 $∣V∣−∣V'∣=K$ 的团
+***
+## Homework
+
+!!! question "Question 01"
+
+	If $L_1\leq_p​ L_2$​ and $L_2​\in NP$, then $L_1​\in NP$.
+	
+	??? note "Answer"
+	
+		True. 因为 $L_2$ 为 NP 问题（即可以在非确定性图灵机上多项式时间解决），而 $L_1$ 不比 $L_2$ 难，那么 $L_1$ 可以先多项式归约到 $L_2$，再在非确定性图灵机上多项式时间解决 $L_2$，即 $L_1$ 也可以在非确定性图灵机上多项式时间解决，即 $L_1$ 也为 NP 问题
+
+!!! question "Question 02"
+
+	If a problem can be solved by dynamic programming, it must be solved in polynomial time.
+	
+	??? note "Answer"
+	
+		False. 0-1 背包问题是可以用动规解的，但是并不能在多项式时间内解决（因为背包问题的时间复杂度是 $O(nW)$，而 $W$ 是根据输入规模指数型变化的）
+
+!!! question "Question 03"
+
+	Suppose Q is a problem in NP, but not necessarily NP-complete. Which of the following is FALSE?
+	
+	- A. A polynomial-time algorithm for SAT would sufficiently imply a polynomial-time algorithm for Q.
+	- B. A polynomial-time algorithm for Q would sufficiently imply a polynomial-time algorithm for SAT.
+	- C. If $Q\not\in P$, then $P\not=NP$.
+	- D. If Q is NP-hard, then Q is NP-complete.
+	
+	??? note "Answer"
+	
+		B. A polynomial-time algorithm for Q would sufficiently imply a polynomial-time algorithm for SAT.
+		
+		- A 选项：如果说作为 NPC 的 SAT 问题都有多项式时间算法，那么就有 $P=NP$，那么作为 NP 问题的 Q 有多项式时间算法
+		- B 选项：当且仅当 Q 为 NPC 问题才可以这么说
+		- C 选项：如果 Q 不是 P 问题，那么根据上面的图可以得知 $P\not=NP$
+		- D 选项：NPH 问题和 NP 问题的交集即为 NPC 问题，所以可以得到 Q 为 NPC 问题
 
 
 
