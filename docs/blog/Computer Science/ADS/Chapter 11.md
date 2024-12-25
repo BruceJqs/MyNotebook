@@ -452,3 +452,41 @@ Centers Greedy-Kcenter(Sites S[], int n, int K) {
 		对于 C 选项，首先，因为每条边长度都不一样，我们很容易得到 S 中的某一条边最多是两个顶点有关的最大边（因为一条边就俩端点），所以有 $|S|\geq|V|/2\Rightarrow|T\backslash S|\leq|V|/2\leq|S|$
 		
 		而因为 $T\backslash S$ 中的每一条边对应都会小于 $S$ 中的任意一条边，我们设 $m$ 为 $S$ 中最小的边权，那么有 $w(T\backslash S)\leq m|S|\leq w(S)$，因此 $w(T)\leq w(S)+w(T\backslash S)\leq 2w(S)$
+
+!!! question "Question 05"
+
+	Assume that you are a real world Chinese postman, which have learned an awesome course "Advanced Data Structures and Algorithm Analysis" (ADS). Given a 2-dimensional map indicating $N$ positions $p_i​(x_i​,y_i​)$ of your post office and all the addresses you must visit, you'd like to find a shortest path starting and finishing both at your post office, and visit all the addresses at least once in the circuit. Fortunately, you have a magic item "Bamboo copter & Hopter" from "Doraemon", which makes sure that you can fly between two positions using the directed distance (or displacement).
+	
+	However, reviewing the knowledge in the ADS course, it is an NPC problem! Wasting too much time in finding the shortest path is unwise, so you decide to design a 2−approximation algorithm as follows, to achieve an acceptable solution.
+	
+	```
+	Compute a minimum spanning tree T connecting all the addresses. 
+	Regard the post office as the root of T. Start at the post office.
+	Visit the addresses in order of a _____ of T.
+	Finish at the post office.
+	```
+	
+	There are several methods of traversal which can be filled in the blank of the above algorithm. Assume that $P\not=NP$, how many methods of traversal listed below can fulfill the requirement?
+	
+	- Level-Order Traversal
+	- Pre-Order Traversal
+	- Post-Order Traversal
+	
+	- A. 0
+	- B. 1
+	- C. 2
+	- D. 3
+	
+	??? note "Answer"
+	
+		C. 2
+		
+		"Awesome" nm，这么难的题目（bushi
+		
+		事实上只有层级是不符合要求的，反例如下：
+		
+		![](../../../assets/Pasted%20image%2020241225171136.png)
+		
+		至于为什么另外两个是对的嘛……我不知道（）考场上也不可能证出来的 www
+		
+		![](../../../assets/Pasted%20image%2020241225171428.png)
