@@ -331,7 +331,7 @@ ConfigType State_flipping() {
 
 !!! question "Question 01"
 
-	We are given a set of sites $S=\{s_1​,s_2​,⋯,s_n\​}$ in the plane, and we want to choose a set of $k$ centers $C=\{c_1​,c_2​,⋯,c_k\​}$ so that the maximum distance from a site to the nearest center is minimized. Here $c_i​$ can be an arbitrary point in the plane.
+	We are given a set of sites $S=\{s_1​,s_2​,⋯,s_n\}$ in the plane, and we want to choose a set of $k$ centers $C=\{c_1​,c_2​,⋯,c_k\​}$ so that the maximum distance from a site to the nearest center is minimized. Here $c_i​$ can be an arbitrary point in the plane.
 	
 	A local search algorithm arbitrarily choose $k$ points in the plane to be the centers, then
 	
