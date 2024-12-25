@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 13.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 13"
+              "title": "Chapter 14"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 13.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 14.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 13"
+              "title": "Backlinks for Chapter 14"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 13.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 14.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 13"
+              "title": "Outgoing links from Chapter 14"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Chapter 13.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 14.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 13"
+              "title": "Outline of Chapter 14"
             }
           },
           {
@@ -176,8 +176,8 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
-    "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/blog/Computer Science/ADS/Chapter 13.md",
+    "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/assets/Pasted image 20241225222905.png",
     "docs/assets/Pasted image 20241225222808.png",
     "docs/blog/Computer Science/ADS/Chapter 14.md",

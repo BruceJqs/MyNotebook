@@ -232,7 +232,7 @@ if (i % 2 == 1 && i != 1)
 	
 	=== "Answer"
 	
-		这是因为每层都是并行计算的，因此只能利用上一级的计算值以及自身的值。（而且不觉得上面这个式子长得跟正常前缀和公式一模一样嘛）
+		这是因为每层都是并行计算的，因此只能利用上一级的计算值以及自身的值。（而且不觉得这个式子长得跟正常前缀和公式一模一样嘛）
 
 总结一下：我们先**自底向上**计算求和问题，然后根据求和问题的结果**自顶向下**计算前缀和问题，这两趟计算都用到了并行算法。伪代码如下所示：
 
@@ -452,8 +452,8 @@ for P_i, 1 <= i <= n pardo
 
 - 这里采用的是 CRCW 策略（任意规则写入）
 - 先从数组 $A$ 中的 $n$ 个元素中挑选 $n^{\frac{7}{8}}$ 个元素出来，形成数组 $B$
-- 将数组 $B$ 划分为多个大小为 $n^{\frac{1}{8}}$ 的小块，因此有 $n^{\frac{3}{4}}$​ 个这样的小块。然后对每个小块求出最大值，得到了 $n^{\frac{3}{4}}​$ 局部最大值（使用 Compare All Pairs 方法计算）
-- 接下来将这些最大值划分为 $n^{\frac{1}{2}}​$ 个大小为 $n^{\frac{1}{4}}$ 的小块，然后对每个小块求出最大值，进而求出所有 $n^{\frac{7}{8}}​$ 个元素的最大值（使用 Compare All Pairs 方法计算）
+- 将数组 $B$ 划分为多个大小为 $n^{\frac{1}{8}}$ 的小块，因此有 $n^{\frac{3}{4}}$​ 个这样的小块。然后对每个小块求出最大值，得到了 $n^{\frac{3}{4}}​$ 个局部最大值（使用 Compare All Pairs 方法计算）
+- 接下来将这些最大值划分为 $n^{\frac{1}{2}}​$ 个大小为 $n^{\frac{1}{4}}$ 的小块，然后对每个小块求出最大值，得到 $n^{\frac{1}{2}}$ 个最大值，进而求出所有 $n^{\frac{7}{8}}​$ 个元素的最大值（使用 Compare All Pairs 方法计算）
 
 ![](../../../assets/Pasted%20image%2020241217163742.png)
 
@@ -461,10 +461,10 @@ for P_i, 1 <= i <= n pardo
 
 - 第 1 次划分：
     - 时间：$M_i^{(1)}∼T=O(1)\Rightarrow T(n)=O(1)$
-    - 工作量：$W_i=O((n^{\frac{1}{8}})^2)=O(n^{\frac{1}{4}})\Rightarrow W(n)=O(n)$
+    - 工作量：$W_i=O((n^{\frac{1}{8}})^2)=O(n^{\frac{1}{4}})\Rightarrow W(n)=n^{\frac{3}{4}}\times O(n^{\frac{1}{4}})=O(n)$
 - 第 2 次划分：
     - 时间：$M_i^{(2)}∼T=O(1)\Rightarrow T(n)=O(1)$
-    - 工作量：$W_i=O((n^{\frac{1}{4}})^2)=O(n^{\frac{1}{2}})\Rightarrow W(n)=O(n)$
+    - 工作量：$W_i=O((n^{\frac{1}{4}})^2)=O(n^{\frac{1}{2}})\Rightarrow W(n)=n^{\frac{1}{2}}\times O(n^{\frac{1}{2}})=O(n)$
 - 总结：
     - 时间：$M(n^{\frac{7}{8}})∼T=O(1)$
     - 工作量：$W_i=O(n)$
@@ -480,3 +480,35 @@ while (there is an element larger than M) {
 ```
 
 值得注意的是，这个算法并不保证始终得到正确结果（因为解出的是 $n^{\frac{7}{8}}$ 中最大的），但是得到正确结果的概率相当大（失败概率为 $O(\frac{1}{n^c})$），其中 $c$ 为一个正常数。
+***
+## Homework
+
+!!! question "Question 01"
+
+	Sorting-by-merging is a classic serial algorithm. It can be translated directly into a reasonably efficient parallel algorithm. A recursive description follows.
+	
+	MERGE−SORT( A(1), A(2), ..., A(n); B(1), B(2), ..., B(n) )
+	
+	Assume that $n=2^l$ for some integer $l\geq 0$
+	
+	if n = 1 then return B(1) := A(1)
+	
+	else call, in parallel, MERGE−SORT( A(1), ..., A(n/2); C(1), ..., C(n/2) ) and
+	
+	- MERGE−SORT(A(n/2+1), ..., A(n); C(n/2+1), ..., C(n) )
+	- Merge (C(1),...C(n/2)) and (C(n/2 + 1),...,C(n)) into (B(1), B(2), ..., B(n))
+	
+	Then the MERGE−SORT runs in __ .
+	
+	- A. $O(n\log n)$ work and $O(\log^2 n)$ time
+	- B. $O(n\log n)$ work and $O(\log n)$ time
+	- C. $O(n\log^2 n)$ work and $O(\log^2 n)$ time
+	- D. $O(n\log^2 n)$ work and $O(\log n)$ time
+	
+	??? note "Answer"
+	
+		A. $O(n\log n)$ work and $O(\log^2 n)$ time
+		
+		首先，递归深度有 $\log n$ 层，使用 Parallel Ranking 可以使得每一层的 $W(n)=O(n)$，综合起来总工作量即为 $O(n\log n)$
+		
+		对于 $T(n)$，不妨设 $n=2^l$，有递推式 $T(n)=\log 1+\log 2+\...+\log n=(0+1+...+l)\log 2=\frac{l(l+1)}{2}\log 2=O(\log^2 n)$
