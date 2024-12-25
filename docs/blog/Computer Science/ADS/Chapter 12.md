@@ -326,3 +326,7 @@ ConfigType State_flipping() {
 	        - 时间复杂度：$O(n−k+1)$
 	    - 第 n 步：$(A_n,B_n)=(B,A)$
 	    - 因此，划分 $(A,B)$ 的邻居集为 $\{(A_1,B_1),...,(A_{n−1},B_{n−1})\}$，时间复杂度为 $O(n^2)$
+***
+## Homework
+
+!!! question 
