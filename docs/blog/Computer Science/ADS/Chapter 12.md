@@ -329,4 +329,110 @@ ConfigType State_flipping() {
 ***
 ## Homework
 
-!!! question 
+!!! question "Question 01"
+
+	We are given a set of sites $S=\{s_1​,s_2​,⋯,s_n\​}$ in the plane, and we want to choose a set of $k$ centers $C=\{c_1​,c_2​,⋯,c_k\​}$ so that the maximum distance from a site to the nearest center is minimized. Here $c_i​$ can be an arbitrary point in the plane.
+	
+	A local search algorithm arbitrarily choose $k$ points in the plane to be the centers, then
+	
+	- (1) divide $S$ into $k$ sets, where $S_i$​ is the set of all sites for which $c_i$​ is the nearest center; and
+	- (2) for each $S_i​$, compute the central position as a new center for all the sites in $S_i$​.
+	
+	If steps (1) and (2) cause the covering radius to strictly decrease, we perform another iteration, otherwise the algorithm stops.
+	
+	When the above local search algorithm terminates, the covering radius of its solution is at most 2 times the optimal covering radius.
+	
+	??? note "Answer"
+	
+		 False. 又一道沟槽好题（哦是 yds 那又没事了）
+		 
+		 先讲一下这个算法到底在干嘛，一开始先随便把 $n$ 个点分 $k$ 个集合，算出 $k$ 个中心，然后进入循环，每次循环，根据上一次算出的 $k$ 个中心，把 $n$ 个点重新分配到 $k$ 个集合（对于每个点离当前的中心集合内哪个中心近就分配给哪个集合），然后新形成的 $k$ 个集合再重新算 $k$ 个中心，如此循环直到无法再优化为止。
+		
+		反例是我们取四个点，构成一个长远大于宽的矩形，要求两个中心，然后一开始算法分组把同一条长边的两个点分为一组，会发现搜了半天最终的两个中心就是两个长边中心，但是实际上最优解是两个短边中心，此时的倍数可以说是无限大了
+		
+		其实这个例子很好地体现了什么叫“局部”搜索，很明显，这个反例就是一开始选错搜索范围了导致最后死都跳不出来到最优解
+
+!!! question "Question 02"
+
+	Local search algorithm can be used to solve lots of classic problems, such as SAT and N-Queen problems. Define the configuration of SAT to be X = vector of assignments of N boolean variables, and that of N-Queen to be Y = positions of the N queens in each column. The sizes of the search spaces of SAT and N-Queen are $O(2^N)$ and $O(N^N)$, respectively.
+	
+	??? note "Answer"
+	
+		True. 这题考察的就是 SAT 和 N 皇后的搜索空间，实际上 N 皇后搜索空间 $O(N!)$ 就足够了，但是因为是大 O 所以这么说也对
+
+!!! question "Question 03"
+
+	Spanning Tree Problem: Given an undirected graph $G=(V, E)$, where $|V|=n$ and $|E|=m$. Let $F$ be the set of all spanning trees of $G$. Define $d(u)$ to be the degree of a vertex u \in V. Define w(e) to be the weight of an edge e \in E.
+	
+	We have the following three variants of spanning tree problems:
+	
+	- (1) Max Leaf Spanning Tree: find a spanning tree $T \in F$ with a maximum number of leaves.
+	- (2) Minimum Spanning Tree: find a spanning tree $T \in F$ with a minimum total weight of all the edges in $T$.
+	- (3) Minimum Degree Spanning Tree: find a spanning tree $T \in F$ such that its maximum degree of all the vertices is the smallest.
+	
+	For a pair of edges $\left(e, e^{\prime}\right)$ where $e \in T$ and $e^{\prime} \in(G-T)$ such that $e$ belongs to the unique cycle of $T \cup e^{\prime}$, we define edge-swap $\left(e, e^{\prime}\right)$ to be $(T-e) \cup e^{\prime}$.
+
+	Here is a local search algorithm:
+	
+	```
+	T = any spanning tree in F_i  
+	while (there is an edge-swap (e, e') which reduces Cost(T)) {  
+		T = T - e + e';  
+	}  
+	return T;
+	```
+	
+	Here $\operatorname{cost}(T)$ is the number of leaves in $T$ in Max Leaf Spanning Tree; or is the total weight of $T$ in Minimum Spanning Tree; or else is the minimum degree of T in Minimum Degree Spanning Tree.
+	
+	Which of the following statements is TRUE?
+	
+	- A. The local search always return an optimal solution for Max Leaf Spanning Tree
+	- B. The local search always return an optimal solution for Minimum Spanning Tree
+	- C. The local search always return an optimal solution for Minimum Degree Spanning Tree
+	- D. For neither of the problems that this local search always return an optimal solution
+	
+	??? note "Answer"
+	
+		B. The local search always return an optimal solution for Minimum Spanning Tree.
+		
+		又一道 yds 出品极品好题（yds 天克我啊啊啊啊）
+		
+		究其本质，最小生成树如果有更好的选择一定能交换，因为进行的正是边交换，直接影响的就是树的整体权值。另外两种树的性质则与顶点相关，不能直接影响。
+		
+		举反例时刻：
+		
+		- Max Leaf Spanning Tree: 
+		
+		![](../../../assets/Pasted%20image%2020241225222808.png)
+		
+		- Minimum Degree Spanning Tree（同样的原图）：
+		
+		![](../../../assets/Pasted%20image%2020241225222905.png)
+
+!!! question "Question 04"
+
+	There are $n$ jobs, and each job $j$ has a processing time $t_{j}$. We will use a local search algorithm to partition the jobs into two groups A and B, where set A is assigned to machine $M_{1}$ and set B to $M_{2}$. The time needed to process all of the jobs on the two machines is $T_{1}=\sum_{j \in A} t_{j}$, $T_{2}=\sum_{j \in B} t_{j}$. The problem is to minimize $\left|T_{1}-T_{2}\right|$.
+	
+	Local search: Start by assigning jobs $1, \ldots, n / 2$ to $M_{1}$, and the rest to $M_{2}$.
+	
+	The local moves are to move a single job from one machine to the other, and we only move a job if the move decreases the absolute difference in the processing times. Which of the following statement is true?
+	
+	- A. The problem is NP-hard and the local search algorithm will not terminate.
+	- B. When there are many candidate jobs that can be moved to reduce the absolute difference, if we always move the job $j$ with maximum $t_j$ , then the local search terminates in at most $n$ moves.
+	- C. The local search algorithm always returns an optimal solution.
+	- D. The local search algorithm always returns a local solution with $\frac{1}{2}T_1\leqslant T\leqslant 2T_1$.
+	
+	??? note "Answer"
+	
+		B. When there are many candidate jobs that can be moved to reduce the absolute difference, if we always move the job $j$ with maximum $t_j$ , then the local search terminates in at most $n$ moves.
+		
+		天杀的这章怎么全是 yds...
+		
+		对于 A 选项，因为我们有最优解，而且每次移动都会使得当前结果变小，那么最优解作为下界必然能使程序终止，所以是错误的
+		
+		对于 B 选项，因为移过去的不可能再移回来了（不然不是做无用功吗），所以最多 $n$ 次是对的
+		
+		对于 C 选项，当然是不对的，考虑 $\{1,2,3,4,5\}=\{1,2,3\}+\{4,5\}$。理论最优解是$\{1,2,5\}+\{3,4\}$。然而局部搜索移动时，完全动不了，因为不管移哪个都违背了"We only move a job if the move decreases the absolute difference"，也就是说，局部搜索太短视了，它一下子移不了两个，看不到长远利益
+		
+		对于 D 选项，考虑 $\{1,2,100\}=\{1,2\}+\{100\}$
+

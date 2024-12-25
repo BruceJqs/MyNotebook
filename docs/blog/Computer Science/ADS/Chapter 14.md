@@ -288,7 +288,7 @@ $$
 \text{RANK}(j,A)=\begin{cases}
 i & \text{if } A(i)<B(j)<A(i+1),\text{for }1\leq i<n\\
 0 & \text{if } B(j)<A(1)\\
-n & \text{if } B(j)<A(n)
+n & \text{if } B(j)>A(n)
 \end{cases}
 $$
 
