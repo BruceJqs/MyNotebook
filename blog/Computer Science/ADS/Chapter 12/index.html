@@ -5679,7 +5679,96 @@ w(A^∗,B^∗)\leq\sum\limits_{\{u,v\}\subseteq A}​w_{uv}​+\sum\limits_{\{u,
 <hr />
 <h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
 <div class="admonition question">
-<p class="admonition-title">Question</p>
+<p class="admonition-title">Question 01</p>
+<p>We are given a set of sites <span class="arithmatex">\(S=\{s_1​,s_2​,⋯,s_n\​}\)</span> in the plane, and we want to choose a set of <span class="arithmatex">\(k\)</span> centers <span class="arithmatex">\(C=\{c_1​,c_2​,⋯,c_k\​}\)</span> so that the maximum distance from a site to the nearest center is minimized. Here <span class="arithmatex">\(c_i​\)</span> can be an arbitrary point in the plane.</p>
+<p>A local search algorithm arbitrarily choose <span class="arithmatex">\(k\)</span> points in the plane to be the centers, then</p>
+<ul>
+<li>(1) divide <span class="arithmatex">\(S\)</span> into <span class="arithmatex">\(k\)</span> sets, where <span class="arithmatex">\(S_i\)</span>​ is the set of all sites for which <span class="arithmatex">\(c_i\)</span>​ is the nearest center; and</li>
+<li>(2) for each <span class="arithmatex">\(S_i​\)</span>, compute the central position as a new center for all the sites in <span class="arithmatex">\(S_i\)</span>​.</li>
+</ul>
+<p>If steps (1) and (2) cause the covering radius to strictly decrease, we perform another iteration, otherwise the algorithm stops.</p>
+<p>When the above local search algorithm terminates, the covering radius of its solution is at most 2 times the optimal covering radius.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>False. 又一道沟槽好题（哦是 yds 那又没事了）</p>
+<p>先讲一下这个算法到底在干嘛，一开始先随便把 <span class="arithmatex">\(n\)</span> 个点分 <span class="arithmatex">\(k\)</span> 个集合，算出 <span class="arithmatex">\(k\)</span> 个中心，然后进入循环，每次循环，根据上一次算出的 <span class="arithmatex">\(k\)</span> 个中心，把 <span class="arithmatex">\(n\)</span> 个点重新分配到 <span class="arithmatex">\(k\)</span> 个集合（对于每个点离当前的中心集合内哪个中心近就分配给哪个集合），然后新形成的 <span class="arithmatex">\(k\)</span> 个集合再重新算 <span class="arithmatex">\(k\)</span> 个中心，如此循环直到无法再优化为止。</p>
+<p>反例是我们取四个点，构成一个长远大于宽的矩形，要求两个中心，然后一开始算法分组把同一条长边的两个点分为一组，会发现搜了半天最终的两个中心就是两个长边中心，但是实际上最优解是两个短边中心，此时的倍数可以说是无限大了</p>
+<p>其实这个例子很好地体现了什么叫“局部”搜索，很明显，这个反例就是一开始选错搜索范围了导致最后死都跳不出来到最优解</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 02</p>
+<p>Local search algorithm can be used to solve lots of classic problems, such as SAT and N-Queen problems. Define the configuration of SAT to be X = vector of assignments of N boolean variables, and that of N-Queen to be Y = positions of the N queens in each column. The sizes of the search spaces of SAT and N-Queen are <span class="arithmatex">\(O(2^N)\)</span> and <span class="arithmatex">\(O(N^N)\)</span>, respectively.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 这题考察的就是 SAT 和 N 皇后的搜索空间，实际上 N 皇后搜索空间 <span class="arithmatex">\(O(N!)\)</span> 就足够了，但是因为是大 O 所以这么说也对</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 03</p>
+<p>Spanning Tree Problem: Given an undirected graph <span class="arithmatex">\(G=(V, E)\)</span>, where <span class="arithmatex">\(|V|=n\)</span> and <span class="arithmatex">\(|E|=m\)</span>. Let <span class="arithmatex">\(F\)</span> be the set of all spanning trees of <span class="arithmatex">\(G\)</span>. Define <span class="arithmatex">\(d(u)\)</span> to be the degree of a vertex u \in V. Define w(e) to be the weight of an edge e \in E.</p>
+<p>We have the following three variants of spanning tree problems:</p>
+<ul>
+<li>(1) Max Leaf Spanning Tree: find a spanning tree <span class="arithmatex">\(T \in F\)</span> with a maximum number of leaves.</li>
+<li>(2) Minimum Spanning Tree: find a spanning tree <span class="arithmatex">\(T \in F\)</span> with a minimum total weight of all the edges in <span class="arithmatex">\(T\)</span>.</li>
+<li>(3) Minimum Degree Spanning Tree: find a spanning tree <span class="arithmatex">\(T \in F\)</span> such that its maximum degree of all the vertices is the smallest.</li>
+</ul>
+<p>For a pair of edges <span class="arithmatex">\(\left(e, e^{\prime}\right)\)</span> where <span class="arithmatex">\(e \in T\)</span> and <span class="arithmatex">\(e^{\prime} \in(G-T)\)</span> such that <span class="arithmatex">\(e\)</span> belongs to the unique cycle of <span class="arithmatex">\(T \cup e^{\prime}\)</span>, we define edge-swap <span class="arithmatex">\(\left(e, e^{\prime}\right)\)</span> to be <span class="arithmatex">\((T-e) \cup e^{\prime}\)</span>.</p>
+<p>Here is a local search algorithm:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>T = any spanning tree in F_i  
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>while (there is an edge-swap (e, e&#39;) which reduces Cost(T)) {  
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>    T = T - e + e&#39;;  
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>}  
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>return T;
+</span></code></pre></div></td></tr></table></div>
+<p>Here <span class="arithmatex">\(\operatorname{cost}(T)\)</span> is the number of leaves in <span class="arithmatex">\(T\)</span> in Max Leaf Spanning Tree; or is the total weight of <span class="arithmatex">\(T\)</span> in Minimum Spanning Tree; or else is the minimum degree of T in Minimum Degree Spanning Tree.</p>
+<p>Which of the following statements is TRUE?</p>
+<ul>
+<li>A. The local search always return an optimal solution for Max Leaf Spanning Tree</li>
+<li>B. The local search always return an optimal solution for Minimum Spanning Tree</li>
+<li>C. The local search always return an optimal solution for Minimum Degree Spanning Tree</li>
+<li>D. For neither of the problems that this local search always return an optimal solution</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>B. The local search always return an optimal solution for Minimum Spanning Tree.</p>
+<p>又一道 yds 出品极品好题（yds 天克我啊啊啊啊）</p>
+<p>究其本质，最小生成树如果有更好的选择一定能交换，因为进行的正是边交换，直接影响的就是树的整体权值。另外两种树的性质则与顶点相关，不能直接影响。</p>
+<p>举反例时刻：</p>
+<ul>
+<li>Max Leaf Spanning Tree: </li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241225222808.png" /></p>
+<ul>
+<li>Minimum Degree Spanning Tree（同样的原图）：</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241225222905.png" /></p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 04</p>
+<p>There are <span class="arithmatex">\(n\)</span> jobs, and each job <span class="arithmatex">\(j\)</span> has a processing time <span class="arithmatex">\(t_{j}\)</span>. We will use a local search algorithm to partition the jobs into two groups A and B, where set A is assigned to machine <span class="arithmatex">\(M_{1}\)</span> and set B to <span class="arithmatex">\(M_{2}\)</span>. The time needed to process all of the jobs on the two machines is <span class="arithmatex">\(T_{1}=\sum_{j \in A} t_{j}\)</span>, <span class="arithmatex">\(T_{2}=\sum_{j \in B} t_{j}\)</span>. The problem is to minimize <span class="arithmatex">\(\left|T_{1}-T_{2}\right|\)</span>.</p>
+<p>Local search: Start by assigning jobs <span class="arithmatex">\(1, \ldots, n / 2\)</span> to <span class="arithmatex">\(M_{1}\)</span>, and the rest to <span class="arithmatex">\(M_{2}\)</span>.</p>
+<p>The local moves are to move a single job from one machine to the other, and we only move a job if the move decreases the absolute difference in the processing times. Which of the following statement is true?</p>
+<ul>
+<li>A. The problem is NP-hard and the local search algorithm will not terminate.</li>
+<li>B. When there are many candidate jobs that can be moved to reduce the absolute difference, if we always move the job <span class="arithmatex">\(j\)</span> with maximum <span class="arithmatex">\(t_j\)</span> , then the local search terminates in at most <span class="arithmatex">\(n\)</span> moves.</li>
+<li>C. The local search algorithm always returns an optimal solution.</li>
+<li>D. The local search algorithm always returns a local solution with <span class="arithmatex">\(\frac{1}{2}T_1\leqslant T\leqslant 2T_1\)</span>.</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>B. When there are many candidate jobs that can be moved to reduce the absolute difference, if we always move the job <span class="arithmatex">\(j\)</span> with maximum <span class="arithmatex">\(t_j\)</span> , then the local search terminates in at most <span class="arithmatex">\(n\)</span> moves.</p>
+<p>天杀的这章怎么全是 yds...</p>
+<p>对于 A 选项，因为我们有最优解，而且每次移动都会使得当前结果变小，那么最优解作为下界必然能使程序终止，所以是错误的</p>
+<p>对于 B 选项，因为移过去的不可能再移回来了（不然不是做无用功吗），所以最多 <span class="arithmatex">\(n\)</span> 次是对的</p>
+<p>对于 C 选项，当然是不对的，考虑 <span class="arithmatex">\(\{1,2,3,4,5\}=\{1,2,3\}+\{4,5\}\)</span>。理论最优解是<span class="arithmatex">\(\{1,2,5\}+\{3,4\}\)</span>。然而局部搜索移动时，完全动不了，因为不管移哪个都违背了"We only move a job if the move decreases the absolute difference"，也就是说，局部搜索太短视了，它一下子移不了两个，看不到长远利益</p>
+<p>对于 D 选项，考虑 <span class="arithmatex">\(\{1,2,100\}=\{1,2\}+\{100\}\)</span></p>
+</details>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -5750,7 +5839,7 @@ w(A^∗,B^∗)\leq\sum\limits_{\{u,v\}\subseteq A}​w_{uv}​+\sum\limits_{\{u,
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 20:19:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 22:45:57</span>
   </span>
 
     
@@ -5771,6 +5860,38 @@ w(A^∗,B^∗)\leq\sum\limits_{\{u,v\}\subseteq A}​w_{uv}​+\sum\limits_{\{u,
     
 
     <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
