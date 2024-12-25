@@ -1592,6 +1592,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5489,6 +5498,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5767,8 +5785,8 @@ W_{i-1,p},p_i&gt;p\\
 <h4 id="naive-greedy">Naive Greedy<a class="headerlink" href="#naive-greedy" title="Permanent link">&para;</a></h4>
 <p>一种最简单的贪心做法是，我们每次都选择最可能成为中心的那个点，具体来说：</p>
 <ol>
-<li>如果是第一个点，就选取所有点的中心；</li>
-<li>如果不是第一个点，就选取能一个最能让 <span class="arithmatex">\(r(C)\)</span> 下降的；</li>
+<li>我们选取所有点的中心作为第一个中心点；</li>
+<li>随后的中心点我们选取最能让 <span class="arithmatex">\(r(C)\)</span> 下降的点；</li>
 </ol>
 <p>但是，如下图所示，假设整个点集包括两个相距很远的子集，且 <span class="arithmatex">\(K=2\)</span>。此时第一个中心点就会被放在两个子集的中间，但最优解应该是中心点位于子集的中间位置的时候，所以这种贪心策略就失效了。</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241126151239.png" /></p>
@@ -5889,7 +5907,70 @@ W_{i-1,p},p_i&gt;p\\
 <li>同时满足最优性和普遍性，那么这个算法对所有情况都能求准确解；</li>
 <li>同时满足高效性和普遍性，那么这个算法可能是个近似算法；</li>
 </ol>
-<p>就算 N=NP 成立，我们仍然无法保证三个愿望一次满足。</p>
+<p>就算 P=NP 成立，我们仍然无法保证三个愿望一次满足。</p>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>Suppose ALG is an <span class="arithmatex">\(\alpha\)</span>-approximation algorithm for an optimization problem <span class="arithmatex">\(\prod\)</span> whose approximation ratio is tight. Then for every <span class="arithmatex">\(\epsilon&gt;0\)</span> there is no <span class="arithmatex">\((\alpha−\epsilon)\)</span>-approximation algorithm for <span class="arithmatex">\(\prod\)</span> unless P = NP.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>False. 对于一种算法而言，近似比为 <span class="arithmatex">\(\alpha\)</span>，那么 <span class="arithmatex">\(\forall\beta&gt;\alpha\)</span>，都可以说 <span class="arithmatex">\(\beta\)</span> 是其近似比。如果 <span class="arithmatex">\(\alpha\)</span> 是 tight 的，则 <span class="arithmatex">\(\alpha\)</span> 是一个下确界</p>
+<p>但这都只是对这一种算法的分析，一个 tight 的近似比只能说明我们对这种算法的分析到位了，而不能说明这个问题没有更好的算法</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 02</p>
+<p>As we know there is a 2-approximation algorithm for the Vertex Cover problem. Then we must be able to obtain a 2-approximation algorithm for the Clique problem, since the Clique problem can be polynomially reduced to the Vertex Cover problem.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>False. 在 Clique problem 约化成的 Vertex Cover problem 中得到的解虽然符合 Vertex Cover problem 的 Cost 标准下的 2-近似，却并不一定符合 Clique problem 标准下的 2-近似。</p>
+<p>具体来说，设 Vertex Cover problem 的 2-近似算法得到的顶点覆盖规模为 <span class="arithmatex">\(T\)</span>，最优规模为 <span class="arithmatex">\(T^∗\)</span>，则：</p>
+<div class="arithmatex">\[
+\rho_{VCP}=\frac{T}{T^*}=2,\rho_{CP}=\frac{|V|-T^*}{|V|-T}=1+\frac{1}{\frac{V}{T^*}-2}
+\]</div>
+<p>可以看出 <span class="arithmatex">\(\rho_{CP}\)</span> 是不可控的，并不一定是 2</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 03</p>
+<p>For the bin-packing problem: let <span class="arithmatex">\(S=\sum S_i\)</span>​. Which of the following statements is FALSE?</p>
+<ul>
+<li>A. The number of bins used by the next-fit heuristic is never more than <span class="arithmatex">\(\lceil 2S\rceil\)</span></li>
+<li>B. The number of bins used by the first-fit heuristic is never more than <span class="arithmatex">\(\lceil 2S\rceil\)</span></li>
+<li>C. The next-fit heuristic leaves at most one bin less than half full</li>
+<li>D. The first-fit heuristic leaves at most one bin less than half full</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>C. The next-fit heuristic leaves at most one bin less than half full</p>
+<p>对于 A 选项，因为我们根据上面的证明知道当实际使用了 <span class="arithmatex">\(2M\)</span> 或 <span class="arithmatex">\(2M+1\)</span> 个 bin 时 <span class="arithmatex">\(S=\sum\limits_{i=1}^{2M+1}S(B_i)&gt;M\)</span>，所以有 <span class="arithmatex">\(2S&gt;2M\Rightarrow\lceil 2S\rceil\geq 2M+1\geq\text{The number of bins used}\)</span></p>
+<p>而 B 选项因为 first-fit 比 next-fit 优（1.7 近似算法）所以 A 对 B 铁对</p>
+<p>C 选项非常简单，只要少于半满的 bin 不相邻出现就可以（例如 item 大小分别为 0.2, 0.9, 0.2, 0.9）</p>
+<p>D 选项根据定义，如果出现两个少于半满的 bin，不可能不会将这两个 bin 合并，所以是正确的</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 04</p>
+<p>To approximate a maximum spanning tree <span class="arithmatex">\(T\)</span> of an undirected graph <span class="arithmatex">\(G=(V,E)\)</span> with distinct edge weights <span class="arithmatex">\(w(u,v)\)</span> on each edge <span class="arithmatex">\((u,v)\in E\)</span>, let's denote the set of maximum-weight edges incident on each vertex by <span class="arithmatex">\(S\)</span>. Also let <span class="arithmatex">\(w(E')=\sum\limits_{(u,v)\in E'}​w(u,v)\)</span> for any edge set <span class="arithmatex">\(E'\)</span>. Which of the following statements is TRUE?</p>
+<ul>
+<li>A. <span class="arithmatex">\(S=T\)</span> for any graph G</li>
+<li>B. <span class="arithmatex">\(S\not=T\)</span> for any graph G</li>
+<li>C. <span class="arithmatex">\(w(T)\geq w(S)/2\)</span> for any graph G</li>
+<li>D. None of the above</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>C. <span class="arithmatex">\(w(T)\geq w(S)/2\)</span> for any graph G</p>
+<p>AB 两个选项是很好排除的，S 可能和 T 一样也有可能不一样（感性理解一下就是取和每个顶点有关的最大边不一定能组成一棵树，如果能组成那就是等于，否则就是不等于），反例如下：</p>
+<ul>
+<li><span class="arithmatex">\(V=\{a,b,c,d\},E=\{(a,b),(b,c),(c,d),(b,d)\}\)</span>，边长度分别为 3,1,5,4，那么此时 <span class="arithmatex">\(S=\{(a,b),(b,d),(c,d)\}=T\)</span></li>
+<li><span class="arithmatex">\(V=\{a,b,c,d\},E=\{(a,b),(b,c),(c,d)\}\)</span>，边长度分别为 3,1,5，那么此时 <span class="arithmatex">\(S=\{(a,b),(c,d)\}\not=T\)</span></li>
+</ul>
+<p>对于 C 选项，首先，因为每条边长度都不一样，我们很容易得到 S 中的某一条边最多是两个顶点有关的最大边（因为一条边就俩端点），所以有 <span class="arithmatex">\(|S|\geq|V|/2\Rightarrow|T\backslash S|\leq|V|/2\leq|S|\)</span></p>
+<p>而因为 <span class="arithmatex">\(T\backslash S\)</span> 中的每一条边对应都会小于 <span class="arithmatex">\(S\)</span> 中的任意一条边，我们设 <span class="arithmatex">\(m\)</span> 为 <span class="arithmatex">\(S\)</span> 中最小的边权，那么有 <span class="arithmatex">\(w(T\backslash S)\leq m|S|\leq w(S)\)</span>，因此 <span class="arithmatex">\(w(T)\leq w(S)+w(T\backslash S)\leq 2w(S)\)</span></p>
+</details>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5959,7 +6040,7 @@ W_{i-1,p},p_i&gt;p\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月26日 17:06:35</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 16:14:10</span>
   </span>
 
     
