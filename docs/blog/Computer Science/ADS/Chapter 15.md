@@ -16,7 +16,7 @@ comments: true
 然而，一旦数据量很大，主存无法容下所有待排序数据时，就需要用到**外部排序**(External Sorting) 算法。所谓“外部”，即用到磁盘的空间。我们在[计算机组成](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#memory-hierarchy-introduction)中也学过，磁盘相比主存空间更大，但访问速度更慢。举个例子：若要访问数组的某个元素 `a[i]`，它们所需的时间分别为：
 
 - 主存：$O(1)$（用索引寻找，随机访问）
-- 磁盘：找到元素所在的迹 (Track) -> 找到对应的区 (Sector)（磁盘存储信息的最小单位）-> 找到元素 `a[i]` 并传输数据
+- 磁盘：找到元素所在的迹（Track）$\rightarrow$ 找到对应的区（Sector）（磁盘存储信息的最小单位）$\rightarrow$ 找到元素 `a[i]` 并传输数据
     - 这一过程的快慢还取决于设备的性能
     - 要想提升访问速度，我们应尽可能让磁盘读写头沿着一个方向移动，以避免磁盘频繁的旋转
 
@@ -58,7 +58,7 @@ comments: true
 		
 		因此我们一共用了 $1+3=4$ 趟
 
-- 一般情况下，若要对 $N$ 条记录进行外部排序，且主存最多对 $M$ 条记录进行排序，需要的趟数为 $1+\lceil\log_{2}\frac{N}{M}\rceil$
+- 一般情况下，若要对 $N$ 条记录进行外部排序，且主存最多对 $M$ 条记录进行排序，需要的趟数为 $1+\lceil\log_{2}\frac{N}{M}\rceil$（这里 1+ 表示数据分配到磁带的过程）
 
 在设计外部排序的时候，我们会关心以下问题：
 
@@ -97,7 +97,7 @@ comments: true
 		
 		本例中，第 3 个子序列为空，但为了一般性的解释，我们还是为第 3 个子序列预留了一个磁带。
 
-有了以上的优化，我们的趟数就能降到 $1+\lceil\log_{k}\frac{N}{M}\rceil$，但是所需的磁带数升至 $2k$ 个，这样的开销有点难以接受
+有了以上的优化，我们的趟数就能降到 $1+\lceil\log_{k}\frac{N}{M}\rceil$，但是所需的磁带数升至 $2k$ 个，这样的开销有点难以接受，因为 $k$ 的增加也会导致内排序的复杂度增加，也会增加 pass 内的 seek 次数。
 ***
 ### Polyphase Merge
 
@@ -296,3 +296,118 @@ comments: true
 		最小时间 $= 2 * 3 + 4 * 3 + 5 * 2 + 15 * 1 = 43$
 
 结论：最小合并时间 $= O(\text{the weighted external path length})$（哈夫曼树的带权路径和）
+***
+## Homework
+
+!!! question "Question 01"
+
+	If only one tape drive is available to perform the external sorting, then the tape access time for any algorithm will be $\Omega(N^2)$.
+	
+	??? note "Answer"
+	
+		True. 因为只有一个 Tape Drive，那么寻迹时间会增加
+
+!!! question "Question 02"
+
+	Suppose we have the internal memory that can handle 12 numbers at a time, and the following two runs on the tapes:
+	
+	**Run 1**: 1, 3, 5, 7, 8, 9, 10, 12
+	
+	**Run 2**: 2, 4, 6, 15, 20, 25, 30, 32
+	
+	Use 2-way merge with 4 input buffers and 2 output buffers for parallel operations. Which of the following three operations are NOT done in parallel?
+	
+	- A. 1 and 2 are written onto the third tape; 3 and 4 are merged into an output buffer; 6 and 15 are read into an input buffer
+	- B. 3 and 4 are written onto the third tape; 5 and 6 are merged into an output buffer; 8 and 9 are read into an input buffer
+	- C. 5 and 6 are written onto the third tape; 7 and 8 are merged into an output buffer; 20 and 25 are read into an input buffer
+	- D. 7 and 8 are written onto the third tape; 9 and 15 are merged into an output buffer; 10 and 12 are read into an input buffer
+	
+	??? note "Answer"
+	
+		D. 7 and 8 are written onto the third tape; 9 and 15 are merged into an output buffer; 10 and 12 are read into an input buffer
+		
+		模拟一下整个过程：
+		
+		=== "Step 1"
+		
+			- 1,3 写入 Input Buffer 1，此时没有 Merge 条件
+			
+			| B1  | B2  | B3 | B4 | B5 | B6 |
+			|-----|-----|----|----|----|----|
+			| 1,3 | -  | -  | -  | -  | -  |
+		
+		=== "Step 2"
+		
+			- 2,4 写入 Input Buffer 2，此时没有 Merge 条件
+			
+			| B1  | B2  | B3 | B4 | B5 | B6 |
+			|-----|-----|----|----|----|----|
+			| 1,3 | 2,4 | -  | -  | -  | -  |
+		
+		=== "Step 3"
+		
+			- 5,7 写入 Input Buffer 3
+			- 1,2 Merge，写入 Output Buffer 1
+			
+			| IB1  | IB2  | IB3 | IB4 | OB1 | OB2 |
+			|-----|-----|----|----|----|----|
+			| 3 | 4 | 5,7 | -  | 1,2 | -  |
+		
+		=== "Step 4（对应 A 选项）"
+		
+			- 6,15 写入 Input Buffer 4
+			- 3,4 Merge，写入 Output Buffer 2
+			- 1,2 输出到 Tape
+			
+			| IB1  | IB2  | IB3 | IB4 | OB1 | OB2 |
+			|-----|-----|----|----|----|----|
+			| -  | -  | 5,7 | 6,15 | -  | 3,4 |
+		
+		=== "Step 5（对应 B 选项）"
+		
+			- 8,9 写入 Input Buffer 1
+			- 5,6 Merge，写入 Output Buffer 1
+			- 3,4 输出到 Tape
+			
+			| IB1  | IB2  | IB3 | IB4 | OB1 | OB2 |
+			|-----|-----|----|----|----|----|
+			| 8,9  | -  | 7 | 15 | 5,6 | -  |
+		
+		=== "Step 6（对应 C 选项）"
+		
+			- 20,25 写入 Input Buffer 2
+			- 7,8 Merge，写入 Output Buffer 2
+			- 5,6 输出到 Tape
+			
+			| IB1  | IB2  | IB3 | IB4 | OB1 | OB2 |
+			|-----|-----|----|----|----|----|
+			| 9  | 20,25 | -  | 15 | -  | 7,8 |
+		
+		=== "Step 7（对应 D 选项）"
+		
+			- 10,12 写入 Input Buffer 3
+			- 9,10 Merge，写入 Output Buffer 1
+			- 7,8 输出到 Tape
+			
+			| IB1  | IB2  | IB3 | IB4 | OB1 | OB2 |
+			|-----|-----|----|----|----|----|
+			| -  | 20,25 | 12 | 15 | 9,10 | -  |
+			
+			- 事实上，写入和输出是可以并行的，但是 Merge 还是有时序性的，这里 D 选项就错在此时 10 有被读进来，所以就紧随着去 Merge 了
+		
+		=== "Step 8"
+		
+			- 30,32 写入 Input Buffer 1
+			- 12,15 Merge，写入 Output Buffer 2
+			- 9,10 输出到 Tape
+			
+			| IB1  | IB2  | IB3 | IB4 | OB1 | OB2 |
+			|-----|-----|----|----|----|----|
+			| 30,32 | 20,25 | -  | -  | -  | 12,15 |
+		
+		=== "Step 9 & 10"
+		
+			分别完成 20,25，30,32 的 Merge 与输出
+
+
+
