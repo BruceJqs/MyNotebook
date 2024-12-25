@@ -1526,6 +1526,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5399,6 +5408,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5719,10 +5737,12 @@ P=\{L\subseteq \{0,1\}^∗\}:\text{ there exists an algorithm A that deci
 <p>CLIQUE<span class="arithmatex">\(\leq_P\)</span>VERTEX-COVER，即证 <span class="arithmatex">\(G\)</span> 有一个大小为 <span class="arithmatex">\(K\)</span> 的<strong>团</strong>的充要条件为 <span class="arithmatex">\(\overline{G}\)</span> 有一个大小为 <span class="arithmatex">\(∣V∣−K\)</span> 的<strong>顶点覆盖</strong></p>
 <ul>
 <li>充分性：<ul>
-<li>令 <span class="arithmatex">\((u,v)\)</span> 为 <span class="arithmatex">\(\overline{E}\)</span> 上的任意一边，可以得到以下结论</li>
+<li>令 <span class="arithmatex">\((u,v)\)</span> 为 <span class="arithmatex">\(\overline{E}\)</span> 上的任意一边，可以得到以下结论：<ul>
 <li><span class="arithmatex">\(u,v\)</span> 中至少有一点不属于 <span class="arithmatex">\(V'\)</span>，且至少有一点属于 <span class="arithmatex">\(V−V'\)</span></li>
 <li>每条在 <span class="arithmatex">\(\overline{G}\)</span> 内的边，它的一个顶点在 <span class="arithmatex">\(V−V'\)</span> 内</li>
 <li>因此大小为 <span class="arithmatex">\(∣V∣−K\)</span> 的集合 <span class="arithmatex">\(V−V'\)</span> 构成了 <span class="arithmatex">\(\overline{G}\)</span> 的一个顶点覆盖</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>必要性：<ul>
@@ -5737,6 +5757,44 @@ P=\{L\subseteq \{0,1\}^∗\}:\text{ there exists an algorithm A that deci
 </div>
 </div>
 </div>
+</div>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>If <span class="arithmatex">\(L_1\leq_p​ L_2\)</span>​ and <span class="arithmatex">\(L_2​\in NP\)</span>, then <span class="arithmatex">\(L_1​\in NP\)</span>.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 因为 <span class="arithmatex">\(L_2\)</span> 为 NP 问题（即可以在非确定性图灵机上多项式时间解决），而 <span class="arithmatex">\(L_1\)</span> 不比 <span class="arithmatex">\(L_2\)</span> 难，那么 <span class="arithmatex">\(L_1\)</span> 可以先多项式归约到 <span class="arithmatex">\(L_2\)</span>，再在非确定性图灵机上多项式时间解决 <span class="arithmatex">\(L_2\)</span>，即 <span class="arithmatex">\(L_1\)</span> 也可以在非确定性图灵机上多项式时间解决，即 <span class="arithmatex">\(L_1\)</span> 也为 NP 问题</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 02</p>
+<p>If a problem can be solved by dynamic programming, it must be solved in polynomial time.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>False. 0-1 背包问题是可以用动规解的，但是并不能在多项式时间内解决（因为背包问题的时间复杂度是 <span class="arithmatex">\(O(nW)\)</span>，而 <span class="arithmatex">\(W\)</span> 是根据输入规模指数型变化的）</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 03</p>
+<p>Suppose Q is a problem in NP, but not necessarily NP-complete. Which of the following is FALSE?</p>
+<ul>
+<li>A. A polynomial-time algorithm for SAT would sufficiently imply a polynomial-time algorithm for Q.</li>
+<li>B. A polynomial-time algorithm for Q would sufficiently imply a polynomial-time algorithm for SAT.</li>
+<li>C. If <span class="arithmatex">\(Q\not\in P\)</span>, then <span class="arithmatex">\(P\not=NP\)</span>.</li>
+<li>D. If Q is NP-hard, then Q is NP-complete.</li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>B. A polynomial-time algorithm for Q would sufficiently imply a polynomial-time algorithm for SAT.</p>
+<ul>
+<li>A 选项：如果说作为 NPC 的 SAT 问题都有多项式时间算法，那么就有 <span class="arithmatex">\(P=NP\)</span>，那么作为 NP 问题的 Q 有多项式时间算法</li>
+<li>B 选项：当且仅当 Q 为 NPC 问题才可以这么说</li>
+<li>C 选项：如果 Q 不是 P 问题，那么根据上面的图可以得知 <span class="arithmatex">\(P\not=NP\)</span></li>
+<li>D 选项：NPH 问题和 NP 问题的交集即为 NPC 问题，所以可以得到 Q 为 NPC 问题</li>
+</ul>
+</details>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -5807,7 +5865,7 @@ P=\{L\subseteq \{0,1\}^∗\}:\text{ there exists an algorithm A that deci
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月26日 16:43:18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 10:58:22</span>
   </span>
 
     
