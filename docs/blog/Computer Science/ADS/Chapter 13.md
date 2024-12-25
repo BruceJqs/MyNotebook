@@ -117,7 +117,7 @@ int RandomizedHiring ( EventType C[ ], int N )
 
 离线算法（Offline Algorithm）在正式处理数据前需要知道所有的输入数据，它虽然能够确保计算结果总是正确的，但是效率并不是很高。现在我们考虑一种更高效的**在线算法**（Online Algorithm）
 
-我们先面试前 k 个候选者，找到他们之中最高的能力值，但并不会雇佣他们；然后面试后面的候选者，以先前确定的最高能力值作为阈值筛选这些候选者，如果高于这个阈值，就雇佣这个人并不再面试后面的人。
+我们先面试前 $k$ 个候选者，找到他们之中最高的能力值，但并不会雇佣他们；然后面试后面的候选者，以先前确定的最高能力值作为阈值筛选这些候选者，如果高于这个阈值，就雇佣这个人并不再面试后面的人。
 
 对于该算法，我们需要探讨两个问题：
 
@@ -197,9 +197,7 @@ int OnlineHiring ( EventType C[ ], int N, int k)
     - 这样就可以消除支点出现在数据两端（相当于没有分）的最坏情况
 - 修改后的快速排序：在递归前始终能够选出一个中央分离器
 
-结论：预期的寻找中央分离器的迭代次数至多为 2
-
-- 根据下面的示意图，不难发现从所有数据中随机选出合适中央分离器的概率为 $\frac{1}{2}​$（中间的一半数据），因此即使第 1 次挑选失败后，第 2 次就能选出正确的中央分离器
+结论：寻找中央分离器的期望迭代次数为 2（这个非常容易证，根据下面的示意图，每次所有数据中随机选出合适中央分离器的概率为 $\frac{1}{2}​$，那么 $E(X)=\sum\limits_{i=1}^{\infty}i\times\frac{i}{2^i}=2$）
 
 ![](../../../assets/Pasted%20image%2020241210161209.png)
 
@@ -210,8 +208,43 @@ int OnlineHiring ( EventType C[ ], int N, int k)
 	- 结论：对于类型 $j$，至多有 $(\frac{4}{3})^{j+1}$ 个子问题
 		- 这里用到了上面不等式的左半边——因为子问题最小为 $N(\frac{3}{4})^{j+1}$，因此子问题最多有 $\frac{N}{N(\frac{3}{4})^{j+1}}=(\frac{4}{3})^{j+1}$ 个
 	- 期望 $E[T_{\text{type j}}]=O(N(\frac{3}{4})^j)\times(\frac{4}{3})^{j+1}=O(N)$
-	- 不同类型的个数为 $\log_{\frac{⁡4}{3}}N=O(\log⁡ N)$
+	- 不同类型的个数为 $\log_{\frac{⁡4}{3}}N=O(\log⁡ N)$（因为当 $|S|=1$ 时循环终止）
 	- 结合上面两条，随机化快排的时间复杂度为稳定的 $O(N\log⁡ N)$
+***
+## Homework
 
+!!! question "Question 01"
 
+	Let $a=(a_1​,a_2​,…,a_i​,…,a_j​,…,a_n​)$ denote the list of elements we want to sort. In the quicksort algorithm, if the pivot is selected uniformly at random. Then any two elements get compared at most once and the probability of $a_i​$ and $a_j​$ being compared is $2/(j−i+1)$ for $j>i$, given that $a_i$​ or $a_j$​ is selected as the pivot.
+	
+	??? note "Answer"
+	
+		False. 举反例如下：$\{3, 4, 1, 2\}$。如果第一次选 3 或者 2 作为 pivot，那么 1 和 4 会被分开，不会被比较。
+		
+		如果第一次就选中 1 或 4，它们才会被比较。因此它们被比较的概率是 $1/2$。
+		
+		此时按照 $\frac{2}{j−i+1}$ 计算，应该是 1。所以错误
+		
+		实际上，这个结论在原序列已经有序的情况下才成立。因为这时候：
+		
+		- 取任何 i,j 以外的元素作为 pivot，i,j 还是在同一组
+		- 若取 i,j 之间的元素作为 pivot, i,j 就会被分到不同组中，因此不会被比较
+		- 只有取 i 或者 j，作为 pivot，才会比较
+
+!!! question "Question 02"
+
+	Given a linked list containg $N$ nodes. Our task is to remove all the nodes. At each step, we randomly choose one node in the current list, then delete the selected node together with all the nodes after it. Here we assume that each time we choose one node uniformly among all the remaining nodes. What is the expected number of steps to remove all the nodes?
+	
+	- A. $\Theta(\log N)$
+	- B. $N/e$
+	- C. $N/2$
+	- D. $N​$
+	
+	??? note "Answer"
+	
+		 A. $\Theta(\log N)$
+		 
+		我们考虑递推式，$T(N)=\frac{1}{N}\sum\limits_{i=1}^{N-1}T(i)+1$（其中 +1 是删除操作），并有 $T(1)=1$
+		
+		代入 BCD 就都可以排除
 
