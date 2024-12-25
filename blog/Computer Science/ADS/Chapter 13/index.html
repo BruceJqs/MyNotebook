@@ -1538,6 +1538,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5297,6 +5306,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5476,7 +5494,7 @@
 <hr />
 <h3 id="online-randomized-solution">Online Randomized Solution<a class="headerlink" href="#online-randomized-solution" title="Permanent link">&para;</a></h3>
 <p>离线算法（Offline Algorithm）在正式处理数据前需要知道所有的输入数据，它虽然能够确保计算结果总是正确的，但是效率并不是很高。现在我们考虑一种更高效的<strong>在线算法</strong>（Online Algorithm）</p>
-<p>我们先面试前 k 个候选者，找到他们之中最高的能力值，但并不会雇佣他们；然后面试后面的候选者，以先前确定的最高能力值作为阈值筛选这些候选者，如果高于这个阈值，就雇佣这个人并不再面试后面的人。</p>
+<p>我们先面试前 <span class="arithmatex">\(k\)</span> 个候选者，找到他们之中最高的能力值，但并不会雇佣他们；然后面试后面的候选者，以先前确定的最高能力值作为阈值筛选这些候选者，如果高于这个阈值，就雇佣这个人并不再面试后面的人。</p>
 <p>对于该算法，我们需要探讨两个问题：</p>
 <ul>
 <li>
@@ -5579,10 +5597,7 @@ Pr[S] &amp; = \sum\limits_{i=k+1}^N Pr[S_i] = \sum\limits_{i=k+1}^N \frac{k}{N(i
 </li>
 <li>修改后的快速排序：在递归前始终能够选出一个中央分离器</li>
 </ul>
-<p>结论：预期的寻找中央分离器的迭代次数至多为 2</p>
-<ul>
-<li>根据下面的示意图，不难发现从所有数据中随机选出合适中央分离器的概率为 <span class="arithmatex">\(\frac{1}{2}​\)</span>（中间的一半数据），因此即使第 1 次挑选失败后，第 2 次就能选出正确的中央分离器</li>
-</ul>
+<p>结论：寻找中央分离器的期望迭代次数为 2（这个非常容易证，根据下面的示意图，每次所有数据中随机选出合适中央分离器的概率为 <span class="arithmatex">\(\frac{1}{2}​\)</span>，那么 <span class="arithmatex">\(E(X)=\sum\limits_{i=1}^{\infty}i\times\frac{i}{2^i}=2\)</span>）</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241210161209.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">随机化快排的时间复杂度</p>
@@ -5596,9 +5611,43 @@ Pr[S] &amp; = \sum\limits_{i=k+1}^N Pr[S_i] = \sum\limits_{i=k+1}^N \frac{k}{N(i
 </ul>
 </li>
 <li>期望 <span class="arithmatex">\(E[T_{\text{type j}}]=O(N(\frac{3}{4})^j)\times(\frac{4}{3})^{j+1}=O(N)\)</span></li>
-<li>不同类型的个数为 <span class="arithmatex">\(\log_{\frac{⁡4}{3}}N=O(\log⁡ N)\)</span></li>
+<li>不同类型的个数为 <span class="arithmatex">\(\log_{\frac{⁡4}{3}}N=O(\log⁡ N)\)</span>（因为当 <span class="arithmatex">\(|S|=1\)</span> 时循环终止）</li>
 <li>结合上面两条，随机化快排的时间复杂度为稳定的 <span class="arithmatex">\(O(N\log⁡ N)\)</span></li>
 </ul>
+</div>
+<hr />
+<h2 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question 01</p>
+<p>Let <span class="arithmatex">\(a=(a_1​,a_2​,…,a_i​,…,a_j​,…,a_n​)\)</span> denote the list of elements we want to sort. In the quicksort algorithm, if the pivot is selected uniformly at random. Then any two elements get compared at most once and the probability of <span class="arithmatex">\(a_i​\)</span> and <span class="arithmatex">\(a_j​\)</span> being compared is <span class="arithmatex">\(2/(j−i+1)\)</span> for <span class="arithmatex">\(j&gt;i\)</span>, given that <span class="arithmatex">\(a_i\)</span>​ or <span class="arithmatex">\(a_j\)</span>​ is selected as the pivot.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>False. 举反例如下：<span class="arithmatex">\(\{3, 4, 1, 2\}\)</span>。如果第一次选 3 或者 2 作为 pivot，那么 1 和 4 会被分开，不会被比较。</p>
+<p>如果第一次就选中 1 或 4，它们才会被比较。因此它们被比较的概率是 <span class="arithmatex">\(1/2\)</span>。</p>
+<p>此时按照 <span class="arithmatex">\(\frac{2}{j−i+1}\)</span> 计算，应该是 1。所以错误</p>
+<p>实际上，这个结论在原序列已经有序的情况下才成立。因为这时候：</p>
+<ul>
+<li>取任何 i,j 以外的元素作为 pivot，i,j 还是在同一组</li>
+<li>若取 i,j 之间的元素作为 pivot, i,j 就会被分到不同组中，因此不会被比较</li>
+<li>只有取 i 或者 j，作为 pivot，才会比较</li>
+</ul>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 02</p>
+<p>Given a linked list containg <span class="arithmatex">\(N\)</span> nodes. Our task is to remove all the nodes. At each step, we randomly choose one node in the current list, then delete the selected node together with all the nodes after it. Here we assume that each time we choose one node uniformly among all the remaining nodes. What is the expected number of steps to remove all the nodes?</p>
+<ul>
+<li>A. <span class="arithmatex">\(\Theta(\log N)\)</span></li>
+<li>B. <span class="arithmatex">\(N/e\)</span></li>
+<li>C. <span class="arithmatex">\(N/2\)</span></li>
+<li>D. <span class="arithmatex">\(N​\)</span></li>
+</ul>
+<details class="note">
+<summary>Answer</summary>
+<p>A. <span class="arithmatex">\(\Theta(\log N)\)</span></p>
+<p>我们考虑递推式，<span class="arithmatex">\(T(N)=\frac{1}{N}\sum\limits_{i=1}^{N-1}T(i)+1\)</span>（其中 +1 是删除操作），并有 <span class="arithmatex">\(T(1)=1\)</span></p>
+<p>代入 BCD 就都可以排除</p>
+</details>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -5669,7 +5718,7 @@ Pr[S] &amp; = \sum\limits_{i=k+1}^N Pr[S_i] = \sum\limits_{i=k+1}^N \frac{k}{N(i
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月10日 16:16:23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 23:59:38</span>
   </span>
 
     
