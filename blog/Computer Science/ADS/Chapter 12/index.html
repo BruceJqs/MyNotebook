@@ -5479,7 +5479,7 @@
 </blockquote>
 <details class="question">
 <summary>问题描述</summary>
-<p>给定一张图（或者称为网络，Network）<span class="arithmatex">\(G=(V,E)\)</span>，每条边都有一个整数（不论正负）的权重 <span class="arithmatex">\(w\)</span>，每个顶点的取值（称为状态，State）<span class="arithmatex">\(s\)</span> 为 <span class="arithmatex">\(\pm 1\)</span>。权重的绝对值 <span class="arithmatex">\(|w|\)</span> 称为需求强度(Strength of Requirement）。</p>
+<p>给定一张图（或者称为网络，Network）<span class="arithmatex">\(G=(V,E)\)</span>，每条边都有一个整数（不论正负）的权重 <span class="arithmatex">\(w\)</span>，每个顶点的取值（称为状态，State）<span class="arithmatex">\(s\)</span> 为 <span class="arithmatex">\(\pm 1\)</span>。权重的绝对值 <span class="arithmatex">\(|w|\)</span> 称为需求强度（Strength of Requirement）。</p>
 <p>对于边 <span class="arithmatex">\(e=(u,v)\)</span>：</p>
 <ul>
 <li>如果 <span class="arithmatex">\(w_e&lt;0\)</span>，那么 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(v\)</span> 具备相同的状态（即都为 -1 或都为 1）</li>
@@ -5513,8 +5513,8 @@
 </div>
 <div class="tabbed-block">
 <p>这里给出其中一种可能的稳定布局：</p>
-<p>可以看到，除了 -5 那条边是一条坏边外，其他所有边都是好边。下面我们来检验一下是否所有的点都是满意点。由于只有一条坏边，因此只需检验坏边的两个端点即可：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241203110845.png" /></p>
+<p>可以看到，除了 -5 那条边是一条坏边外，其他所有边都是好边。下面我们来检验一下是否所有的点都是满意点。由于只有一条坏边，因此只需检验坏边的两个端点即可：</p>
 <p>这里用蓝笔标出坏边。通过计算发现坏边的两个端点的总权重均小于 0，满足定义，因此所有点都是满意点，这种布局是稳定的。</p>
 </div>
 </div>
@@ -5544,14 +5544,14 @@
 <div class="admonition note">
 <p class="admonition-title">Proof</p>
 <p>这里引用摊还分析中的<strong>势能函数法</strong>来证明该结论。</p>
-<p>令势能函数 <span class="arithmatex">\(\Phi(S)\sum_{e\text{ is good}}|w_e|\)</span>，当顶点 <span class="arithmatex">\(u\)</span> 翻转状态时（<span class="arithmatex">\(S\)</span> 会变成 <span class="arithmatex">\(S'\)</span>）:</p>
+<p>令势能函数 <span class="arithmatex">\(\Phi(S)=\sum\limits_{e\text{ is good}}|w_e|\)</span>，当顶点 <span class="arithmatex">\(u\)</span> 翻转状态时（<span class="arithmatex">\(S\)</span> 会变成 <span class="arithmatex">\(S'\)</span>）:</p>
 <ul>
 <li>所有与 <span class="arithmatex">\(u\)</span> 关联的好边都变成了坏边</li>
 <li>所有与 <span class="arithmatex">\(u\)</span> 关联的坏边都变成了好边</li>
 <li>其他边保持不变</li>
 </ul>
 <p>因此 <span class="arithmatex">\(\Phi(S') = \Phi(S) - \sum\limits_{e:e=(u,v) \in E \atop e \text{ is bad}}|w_e| + \sum\limits_{e:e=(u,v) \in E \atop e \text{ is good}}|w_e|\)</span></p>
-<p>由于每次翻转操作针对的是不满意点，因此翻转之后，该等式右边的最后两项权重和之差至少是 1。在最坏的情况下，一个布局的所有边都是坏边，最后都变成了好边，那么所需要的迭代次数就是 <span class="arithmatex">\(W\)</span> 了。因此可以得到 <span class="arithmatex">\(0\leq \phi(S)\leq W\)</span>。证毕。</p>
+<p>由于每次翻转操作针对的是不满意点，因此翻转之后，该等式右边的最后两项权重和之差至少是 1。在最坏的情况下，一个布局的所有边都是坏边，最后都变成了好边，那么所需要的迭代次数就是 <span class="arithmatex">\(W\)</span> 了。因此可以得到 <span class="arithmatex">\(0\leq \Phi(S)\leq W\)</span>。证毕。</p>
 </div>
 </details>
 <p>从局部搜索的角度来说，算法的步骤如下：</p>
@@ -5607,7 +5607,7 @@
 <p>同理我们有：</p>
 <div class="arithmatex">\[
 \begin{gather}
-2\sum\limits_{\{u,v\}\subseteq A}​w_{uv}\leq w(A,B)​
+2\sum\limits_{\{u,v\}\subseteq B}​w_{uv}\leq w(A,B)​
 \end{gather}
 \]</div>
 <p>(1)+(2) 并化简，得到：</p>
@@ -5643,7 +5643,7 @@ w(A^∗,B^∗)\leq\sum\limits_{\{u,v\}\subseteq A}​w_{uv}​+\sum\limits_{\{u,
 <li>但解的邻居也不能太大，因为我们希望能够在有限的步数内，在邻居集中高效地寻找最优解</li>
 </ul>
 </li>
-<li>改进方法：<span class="arithmatex">\(k\)</span> 翻转算法（一种启发式算法），时间复杂度为 <span class="arithmatex">\(\Theta(n^k)\)</span>，下面来看一下执行步骤：<ul>
+<li>改进方法：<span class="arithmatex">\(k\)</span> 翻转算法（一种启发式算法），时间复杂度为 <span class="arithmatex">\(\Theta(n^k)\)</span>，执行步骤如下：<ul>
 <li>第 1 步：对整个顶点集使用状态翻转算法（单顶点的翻转），此时得到的最优解为 <span class="arithmatex">\((A_1,B_1)\)</span>，被翻转的那个顶点记为 <span class="arithmatex">\(v_1\)</span><ul>
 <li>时间复杂度：<span class="arithmatex">\(O(n)\)</span></li>
 </ul>
@@ -5727,7 +5727,7 @@ w(A^∗,B^∗)\leq\sum\limits_{\{u,v\}\subseteq A}​w_{uv}​+\sum\limits_{\{u,
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 16:14:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 19:48:35</span>
   </span>
 
     
