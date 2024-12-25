@@ -260,8 +260,8 @@ FFD 策略总是使用不超过 $\frac{11}{9}M+\frac{6}{9}$ 个 bin，并且�
 
 一种最简单的贪心做法是，我们每次都选择最可能成为中心的那个点，具体来说：
 
-1. 如果是第一个点，就选取所有点的中心；
-2. 如果不是第一个点，就选取能一个最能让 $r(C)$ 下降的；
+1. 我们选取所有点的中心作为第一个中心点；
+2. 随后的中心点我们选取最能让 $r(C)$ 下降的点；
 
 但是，如下图所示，假设整个点集包括两个相距很远的子集，且 $K=2$。此时第一个中心点就会被放在两个子集的中间，但最优解应该是中心点位于子集的中间位置的时候，所以这种贪心策略就失效了。
 
@@ -380,4 +380,75 @@ Centers Greedy-Kcenter(Sites S[], int n, int K) {
 2. 同时满足最优性和普遍性，那么这个算法对所有情况都能求准确解；
 3. 同时满足高效性和普遍性，那么这个算法可能是个近似算法；
 
-就算 N=NP 成立，我们仍然无法保证三个愿望一次满足。
+就算 P=NP 成立，我们仍然无法保证三个愿望一次满足。
+***
+## Homework
+
+!!! question "Question 01"
+
+	Suppose ALG is an $\alpha$-approximation algorithm for an optimization problem $\prod$ whose approximation ratio is tight. Then for every $\epsilon>0$ there is no $(\alpha−\epsilon)$-approximation algorithm for $\prod$ unless P = NP.
+	
+	??? note "Answer"
+	
+		False. 对于一种算法而言，近似比为 $\alpha$，那么 $\forall\beta>\alpha$，都可以说 $\beta$ 是其近似比。如果 $\alpha$ 是 tight 的，则 $\alpha$ 是一个下确界
+		
+		但这都只是对这一种算法的分析，一个 tight 的近似比只能说明我们对这种算法的分析到位了，而不能说明这个问题没有更好的算法
+
+!!! question "Question 02"
+
+	As we know there is a 2-approximation algorithm for the Vertex Cover problem. Then we must be able to obtain a 2-approximation algorithm for the Clique problem, since the Clique problem can be polynomially reduced to the Vertex Cover problem.
+	
+	??? note "Answer"
+	
+		False. 在 Clique problem 约化成的 Vertex Cover problem 中得到的解虽然符合 Vertex Cover problem 的 Cost 标准下的 2-近似，却并不一定符合 Clique problem 标准下的 2-近似。
+		
+		具体来说，设 Vertex Cover problem 的 2-近似算法得到的顶点覆盖规模为 $T$，最优规模为 $T^∗$，则：
+		
+		$$
+		\rho_{VCP}=\frac{T}{T^*}=2,\rho_{CP}=\frac{|V|-T^*}{|V|-T}=1+\frac{1}{\frac{V}{T^*}-2}
+		$$
+		
+		可以看出 $\rho_{CP}$ 是不可控的，并不一定是 2
+
+!!! question "Question 03"
+
+	For the bin-packing problem: let $S=\sum S_i$​. Which of the following statements is FALSE?
+	
+	- A. The number of bins used by the next-fit heuristic is never more than $\lceil 2S\rceil$
+	- B. The number of bins used by the first-fit heuristic is never more than $\lceil 2S\rceil$
+	- C. The next-fit heuristic leaves at most one bin less than half full
+	- D. The first-fit heuristic leaves at most one bin less than half full
+	
+	??? note "Answer"
+	
+		C. The next-fit heuristic leaves at most one bin less than half full
+		
+		对于 A 选项，因为我们根据上面的证明知道当实际使用了 $2M$ 或 $2M+1$ 个 bin 时 $S=\sum\limits_{i=1}^{2M+1}S(B_i)>M$，所以有 $2S>2M\Rightarrow\lceil 2S\rceil\geq 2M+1\geq\text{The number of bins used}$
+		
+		而 B 选项因为 first-fit 比 next-fit 优（1.7 近似算法）所以 A 对 B 铁对
+		
+		C 选项非常简单，只要少于半满的 bin 不相邻出现就可以（例如 item 大小分别为 0.2, 0.9, 0.2, 0.9）
+		
+		D 选项根据定义，如果出现两个少于半满的 bin，不可能不会将这两个 bin 合并，所以是正确的
+
+!!! question "Question 04"
+
+	To approximate a maximum spanning tree $T$ of an undirected graph $G=(V,E)$ with distinct edge weights $w(u,v)$ on each edge $(u,v)\in E$, let's denote the set of maximum-weight edges incident on each vertex by $S$. Also let $w(E')=\sum\limits_{(u,v)\in E'}​w(u,v)$ for any edge set $E'$. Which of the following statements is TRUE?
+	
+	- A. $S=T$ for any graph G
+	- B. $S\not=T$ for any graph G
+	- C. $w(T)\geq w(S)/2$ for any graph G
+	- D. None of the above
+	
+	??? note "Answer"
+	
+		C. $w(T)\geq w(S)/2$ for any graph G
+		
+		AB 两个选项是很好排除的，S 可能和 T 一样也有可能不一样（感性理解一下就是取和每个顶点有关的最大边不一定能组成一棵树，如果能组成那就是等于，否则就是不等于），反例如下：
+		
+		- $V=\{a,b,c,d\},E=\{(a,b),(b,c),(c,d),(b,d)\}$，边长度分别为 3,1,5,4，那么此时 $S=\{(a,b),(b,d),(c,d)\}=T$
+		- $V=\{a,b,c,d\},E=\{(a,b),(b,c),(c,d)\}$，边长度分别为 3,1,5，那么此时 $S=\{(a,b),(c,d)\}\not=T$
+		
+		对于 C 选项，首先，因为每条边长度都不一样，我们很容易得到 S 中的某一条边最多是两个顶点有关的最大边（因为一条边就俩端点），所以有 $|S|\geq|V|/2\Rightarrow|T\backslash S|\leq|V|/2\leq|S|$
+		
+		而因为 $T\backslash S$ 中的每一条边对应都会小于 $S$ 中的任意一条边，我们设 $m$ 为 $S$ 中最小的边权，那么有 $w(T\backslash S)\leq m|S|\leq w(S)$，因此 $w(T)\leq w(S)+w(T\backslash S)\leq 2w(S)$
