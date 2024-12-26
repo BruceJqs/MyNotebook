@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../Chapter%201/">
+        <link rel="prev" href="../Chapter%2015/">
       
       
-        <link rel="next" href="../Chapter%202/">
+        <link rel="next" href="../../Tech/">
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Chapter 03: Arithmetic for Computers - BruceJin's Notebook</title>
+        <title>Final Review - BruceJin's Notebook</title>
       
     
     
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-03-arithmetic-for-computer" class="md-skip">
+        <a href="#final-review" class="md-skip">
           跳转至
         </a>
       
@@ -162,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 03: Arithmetic for Computers
+              Final Review
             
           </span>
         </div>
@@ -800,8 +800,6 @@
                 
   
   
-    
-  
   
   
     
@@ -809,662 +807,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    计算机组成｜Computer Organization
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            计算机组成｜Computer Organization
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter%201/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 01: Computer abstractions and Technology
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chapter 03: Arithmetic for Computers
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 03: Arithmetic for Computers
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#signed-and-unsigned-numbers-possible-representations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signed and Unsigned Numbers Possible Representations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arithmetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Arithmetic
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Arithmetic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#addition-subtraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Addition &amp; Subtraction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#constructing-an-alu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constructing an ALU
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fast-adders" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Adders
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fast Adders">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#carry-look-ahead-adder-cla" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carry Look-ahead Adder, CLA
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#carry-skip-adder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carry Skip Adder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#carry-select-adder-csa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carry Select Adder, CSA
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplication
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Multiplication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiplier-v1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplier V1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplier-v2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplier V2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplier-v3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplier V3
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signed-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signed Multiplication
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Signed Multiplication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#booths-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Booth's Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#faster-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Faster Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risc-v-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      RISC-V Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#division" class="md-nav__link">
-    <span class="md-ellipsis">
-      Division
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Division">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#division-v1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Division V1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#division-v2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Division V2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signed-division" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signed Division
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#faster-division" class="md-nav__link">
-    <span class="md-ellipsis">
-      Faster Division
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risc-v-division" class="md-nav__link">
-    <span class="md-ellipsis">
-      RISC-V Division
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#floating-point-numbers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Floating Point Numbers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Floating Point Numbers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ieee-754-standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      IEEE 754 Standard
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-point-addition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Floating-Point Addition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-point-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Floating-Point Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accurate-arithmetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accurate Arithmetic
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fallacies-and-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fallacies and Pitfalls
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter%202/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 02: Instructions : Language of the Machine
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter%204/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 04: The Processors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter%205/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 05: Memory Hierarchy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Appendix/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Appendix: Storage, Networks, and Other Peripherals
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Homework%203/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Homework 03
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Homework%202/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Homework 02
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Homework%204/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Homework 04
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Homework%205/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Homework 05
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1497,12 +839,318 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../ADS/" class="md-nav__link ">
+            <a href="../../Computer%20Organization/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    计算机组成｜Computer Organization
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机组成｜Computer Organization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Chapter%201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 01: Computer abstractions and Technology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Chapter%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 03: Arithmetic for Computers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Chapter%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 02: Instructions : Language of the Machine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Chapter%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 04: The Processors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Chapter%205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 05: Memory Hierarchy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Appendix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Appendix: Storage, Networks, and Other Peripherals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Homework%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Homework%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Homework%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Organization/Homework%205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 05
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1519,7 +1167,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             高级数据结构与算法分析｜Advanced Data Structure and Algorithm Analysis
@@ -1535,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%201/" class="md-nav__link">
+      <a href="../Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%202/" class="md-nav__link">
+      <a href="../Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1577,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%203/" class="md-nav__link">
+      <a href="../Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%204/" class="md-nav__link">
+      <a href="../Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1619,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%205/" class="md-nav__link">
+      <a href="../Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1640,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%206/" class="md-nav__link">
+      <a href="../Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1661,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%207/" class="md-nav__link">
+      <a href="../Chapter%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1682,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%208/" class="md-nav__link">
+      <a href="../Chapter%208/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1703,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%209/" class="md-nav__link">
+      <a href="../Chapter%209/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%2010/" class="md-nav__link">
+      <a href="../Chapter%2010/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1745,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%2011/" class="md-nav__link">
+      <a href="../Chapter%2011/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1766,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%2012/" class="md-nav__link">
+      <a href="../Chapter%2012/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1787,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%2013/" class="md-nav__link">
+      <a href="../Chapter%2013/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1808,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%2014/" class="md-nav__link">
+      <a href="../Chapter%2014/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1829,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/Chapter%2015/" class="md-nav__link">
+      <a href="../Chapter%2015/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1847,10 +1495,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ADS/Final/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Final Review
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1859,6 +1527,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 01
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 02
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5513,312 +5219,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#question-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Question 01
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#signed-and-unsigned-numbers-possible-representations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signed and Unsigned Numbers Possible Representations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arithmetic" class="md-nav__link">
+  <a href="#question-02" class="md-nav__link">
     <span class="md-ellipsis">
-      Arithmetic
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Arithmetic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#addition-subtraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Addition &amp; Subtraction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overflow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#constructing-an-alu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constructing an ALU
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fast-adders" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Adders
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fast Adders">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#carry-look-ahead-adder-cla" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carry Look-ahead Adder, CLA
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#carry-skip-adder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carry Skip Adder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#carry-select-adder-csa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carry Select Adder, CSA
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplication
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Multiplication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiplier-v1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplier V1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplier-v2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplier V2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplier-v3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multiplier V3
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signed-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signed Multiplication
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Signed Multiplication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#booths-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Booth's Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#faster-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Faster Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risc-v-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      RISC-V Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#division" class="md-nav__link">
-    <span class="md-ellipsis">
-      Division
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Division">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#division-v1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Division V1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#division-v2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Division V2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signed-division" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signed Division
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#faster-division" class="md-nav__link">
-    <span class="md-ellipsis">
-      Faster Division
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risc-v-division" class="md-nav__link">
-    <span class="md-ellipsis">
-      RISC-V Division
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#floating-point-numbers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Floating Point Numbers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Floating Point Numbers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ieee-754-standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      IEEE 754 Standard
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-point-addition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Floating-Point Addition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-point-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Floating-Point Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accurate-arithmetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accurate Arithmetic
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fallacies-and-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fallacies and Pitfalls
+      Question 02
     </span>
   </a>
   
@@ -5839,7 +5251,7 @@
                   
 
   
-    <a href="https://github.com/BruceJqs/MyNotebook/edit/master/docs/blog/Computer Science/Computer Organization/Chapter 3.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/BruceJqs/MyNotebook/edit/master/docs/blog/Computer Science/ADS/Final.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5848,423 +5260,36 @@
     
       
     
-    <a href="https://github.com/BruceJqs/MyNotebook/raw/master/docs/blog/Computer Science/Computer Organization/Chapter 3.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/BruceJqs/MyNotebook/raw/master/docs/blog/Computer Science/ADS/Final.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="chapter-03-arithmetic-for-computer">Chapter 03 : Arithmetic for Computer<a class="headerlink" href="#chapter-03-arithmetic-for-computer" title="Permanent link">&para;</a></h1>
+<h1 id="final-review">Final Review<a class="headerlink" href="#final-review" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
-<p class="admonition-title">考点</p>
-<ul>
-<li>数据表示（原码反码补码）</li>
-<li>ALU 运算<ul>
-<li>乘（V1-V3）除（V1-V2）法</li>
-<li>浮点数运算</li>
-</ul>
-</li>
-</ul>
+<p class="admonition-title">Abstract</p>
+<p>这里是 Bruce 期末刷历年卷遇到的各种各样的稀奇古怪的题目合集～</p>
 </div>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<h3 id="signed-and-unsigned-numbers-possible-representations">Signed and Unsigned Numbers Possible Representations<a class="headerlink" href="#signed-and-unsigned-numbers-possible-representations" title="Permanent link">&para;</a></h3>
+<h2 id="question-01">Question 01<a class="headerlink" href="#question-01" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241226105538.png" /></p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 有意思，其实就是问 <span class="arithmatex">\(x^n\)</span> 该怎么求，我想到的想法是类似 <a href="https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2014/#__tabbed_2_1">求和问题</a>，并行计算，可以得到 <span class="arithmatex">\(O(\log n)\)</span> 复杂度</p>
+</details>
+<hr />
+<h2 id="question-02">Question 02<a class="headerlink" href="#question-02" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241226110631.png" /></p>
+<details class="note">
+<summary>Answer</summary>
+<p>True. 补天还真补到不知道的东西了，这句话对应的完整定理为：对于右路径上有 <span class="arithmatex">\(l\)</span> 个轻结点的斜堆，整个斜堆至少有 <span class="arithmatex">\(2l−1\)</span> 个结点，这意味着一个 <span class="arithmatex">\(n\)</span> 结点的斜堆右路径上的轻结点个数为 <span class="arithmatex">\(O(\log n)\)</span></p>
+<p>证明：</p>
 <ul>
-<li>Sign-magnitude（原码）<ul>
-<li>二进制（开头第一个表示符号，0 正 1 负）</li>
+<li>对 <span class="arithmatex">\(l = 1\)</span> 显然成立</li>
+<li>假设对小于等于 <span class="arithmatex">\(l\)</span> 都成立。对于 <span class="arithmatex">\(l+1\)</span> 情况，我们找到右路径上的第二个轻结点，以它为根节点的子树至少有 <span class="arithmatex">\(2^l−1\)</span> 个结点。 现在考虑第一个轻结点，根据定义，<strong>轻结点的左子树更大</strong>，而右路径上的第二个轻结点在右子树中。所以第一个轻结点的左子树至少有 <span class="arithmatex">\(2^l−1\)</span> 个结点。 所以整个堆有<span class="arithmatex">\(1+2^l−1+2^l−1=2^{l+1}−1\)</span> 个结点</li>
 </ul>
-</li>
-<li>1's Complement Code（反码）<ul>
-<li>在原码的基础上，符号位不动，其它位取反</li>
-</ul>
-</li>
-<li>2's Complement Code（补码）<ul>
-<li>在反码的基础上，运算+1</li>
-<li>任何正数的原码=反码=补码，而负数都是通过补码表示的</li>
-</ul>
-</li>
-<li>Biased Notation（移码）<ul>
-<li>在补码的基础上，符号位取反</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2 id="arithmetic">Arithmetic<a class="headerlink" href="#arithmetic" title="Permanent link">&para;</a></h2>
-<h3 id="addition-subtraction">Addition &amp; Subtraction<a class="headerlink" href="#addition-subtraction" title="Permanent link">&para;</a></h3>
-<ul>
-<li>加法即二进制竖式加法</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110327.png" /></p>
-<ul>
-<li>减法有两种方式，一种是直接竖式减法，但在计算机中<strong>不存在减法</strong>，可以通过加补码的形式实现减法</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110524.png" /></p>
-<hr />
-<h3 id="overflow">Overflow<a class="headerlink" href="#overflow" title="Permanent link">&para;</a></h3>
-<ul>
-<li>在进行加减法时，由于硬件规模是有限的，我们可能遇到数据溢出的情况：</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110719.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110742.png" /></p>
-<ul>
-<li>对于有符号加法，当正数和正数相加得到负数，或者负数和负数相加得到正数时，就可以判定溢出：</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918110851.png" /></p>
-<ul>
-<li>对于无符号加法，如果结果小于二者中任意一个，也可以判定溢出</li>
-<li>当出现溢出情况时，硬件层面检测出溢出情况，并生成一个异常/中断指令，将这个指令的地址存储到一个特别的寄存器 EPC 里，然后跳转到 OS 中专门的程序中来处理这个溢出（异常处理）</li>
-</ul>
-<hr />
-<h3 id="constructing-an-alu">Constructing an ALU<a class="headerlink" href="#constructing-an-alu" title="Permanent link">&para;</a></h3>
-<ul>
-<li>两个建立 ALU（Arithmetic Logic Unit）的方法：<ul>
-<li>逐渐扩展加法器的功能</li>
-<li>并行冗余选择</li>
-</ul>
-</li>
-</ul>
-<div class="admonition notes">
-<p class="admonition-title">逐渐扩展加法器功能</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">半加器</label><label for="__tabbed_1_2">多个数相加</label><label for="__tabbed_1_3">进位情况</label><label for="__tabbed_1_4">全加器</label><label for="__tabbed_1_5">添加与、或运算</label><label for="__tabbed_1_6">添加减法运算</label><label for="__tabbed_1_7">添加比较功能</label><label for="__tabbed_1_8">添加检测溢出功能</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918111944.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112139.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112252.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112431.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112507.png" /></p>
-<ul>
-<li>n 位加法，需要 n 个全加器</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918112832.png" /></p>
-</div>
-<div class="tabbed-block">
-<ul>
-<li>结合一个选择器，我们就可以构造一个支持与、或以及加法运算的 1 bit ALU：</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918113017.png" /></p>
-</div>
-<div class="tabbed-block">
-<ul>
-<li>结合之前所讲，减法即为加补码，对于一位的情况，反转 b 并将 CarryIn 设置为 1（即实现 b 的补码转换，如果有多位就将第一位加法器的 CarryIn 设置为 1）</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918133122.png" /></p>
-</div>
-<div class="tabbed-block">
-<p>为了实现 <code>slt rd, rs1, rs2</code> 这个操作（即实现比较操作）（SLT 即 Set Less Than），如果 <code>rs1 &lt; rs2</code> ，那么将 <code>rd</code> 置为 <code>1</code> ，否则置为 <code>0</code> 。如何进行这一判断呢？很简单，<code>rs1 &lt; rs2</code> 即 <code>rs1 - rs2 &lt; 0</code>，也就是说如果 <code>rs1 - rs2</code> 结果的最高位是 <code>1</code> ，那么就说明 <code>rs1 &lt; rs2</code> 。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918134045.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918134234.png" /></p>
-<p>注：图中的 Overflow Detection 被复杂化了，实际上可以通过 <code>CarryIn</code> 和 <code>CarryOut</code> 的异或完成</p>
-</div>
-</div>
-</div>
-</div>
-<p>最终封装模块，可以得到完整的 32 位的 ALU 模块：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240918134416.png" /></p>
-<p>这里需要特别说明的是，对于 ALU31 这个 Set 线接到 ALU0 的 Less 而其余所有 ALU（包括 ALU31）的 Less 都置为 0 的原因在于 <code>slt</code> 这个操作的结果只有 0 或者 1，但是实际上我们通过减法运算的最高位是 0 还是 1 才能看出来，所以我们只能将其引到 ALU0，这样才能使得最终 ALU0~ALU31 呈现的 Less 结果是 0/1（否则留在 ALU31 结果就变成 <span class="arithmatex">\(2^{31}/0\)</span> 了） </p>
-<p>如果做减法或者 <code>slt</code> 的话，需要将 <code>Binvert</code> 和 ALU0 的 <code>CarryIn</code> 设成 <code>1</code> ，如果是加法的话这两个信号都是 <code>0</code> ；其他运算用不到这两个信号。因此这两个信号始终取值相等，我们可以将这两个信号合并为一个，称之为 <code>Bnegate</code> 。</p>
-<p>对于 <code>beq</code> 和 <code>bne</code> 这样的指令，也需要进行减法运算判断是否为零，因此我们还可以添加一个检测 0 的模块，添加进 ALU 模块当中：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923134808.png" /></p>
-<p>对于这样的一个 ALU，我们需要 4 bits 的 control lines，分别是 <code>Ainvert</code> , <code>Bnegate</code> 和 <code>Operation</code> (2 bits)。ALU 的符号和 control lines 的含义如下：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923135342.png" /></p>
-<hr />
-<h3 id="fast-adders">Fast Adders<a class="headerlink" href="#fast-adders" title="Permanent link">&para;</a></h3>
-<p>上面的 64 位加法的实现方式是通过 1 位加法器串联实现的，这种方式势必需要等待前一个加法器算出结果后才能算后一个的。这种多位加法器的实现称为行波加法器 <strong>Ripple Carry Adder, RCA</strong>。显然，这种实现方式比较慢。</p>
-<hr />
-<h4 id="carry-look-ahead-adder-cla">Carry Look-ahead Adder, CLA<a class="headerlink" href="#carry-look-ahead-adder-cla" title="Permanent link">&para;</a></h4>
-<p>课本指出，RCA 缓慢的重要原因是后一个 adder 需要等前一个 adder 的 carry 结果；但我们不妨讨论出现 carry 的可能。第一种可能是，如果 a 和 b 都是 1，那么一定会 <strong>生成</strong> 一个 carry；另一种可能是，如果 a 和 b 中有且仅有一个是 1，那么如果传入的 carry 是 1，则这里也会 carry，即 carry 被 <strong>传播</strong> 了。</p>
-<p>也就是说，<span class="arithmatex">\(c_{out}=a⋅b+(a+b)⋅c_{in}\)</span>。我们记 <strong>generate</strong> <span class="arithmatex">\(g=a⋅b\)</span>，<strong>propagate</strong> <span class="arithmatex">\(p=a+b\)</span>，则有 <span class="arithmatex">\(c_{out}=g+p⋅c_{in}\)</span>。所以，我们可以这样构造一个全加器：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923140200.png" /></p>
-<p>所以，我们可以推导出如下关系：</p>
-<div class="arithmatex">\[
-\begin{aligned}
-c_1 &amp;= g_0+(p_0·c_0)\\
-c_2 &amp;= g_1+(p_1·g_0)+(p_1·p_0·c_0)\\
-c_3 &amp;= g_2+(p_2·g_1)+(p_2·p_1·g_0)+(p_2·p_1·p_0·c_0)\\
-c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p_0·c_0)
-\end{aligned}
-\]</div>
-<p>利用这个关系，我们可以构造这样一个四位加法器：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923140246.png" /></p>
-<p>其实 CLA 的本质即为将可能的进位提前算出来，不需要等待前一位算出结果后再进位（这也是 Look-ahead 的来源），实现每位的加法器由串行转为并行，从而提高时间效率。</p>
-<p>上面的 PFA, Partial Fully Adder，就是前面我们构造的新全加器的一部分。可以看到，通过这样的方式，我们可以加速加法的运算；但是注意到越到高位，门的 fan-in 就越大，因此不能一直增加的。所以对于更多位数的加法器，我们将上面这样构成的 4-bit CLA 再通过类似的方式串起来！</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923140526.png" /></p>
-<h4 id="carry-skip-adder">Carry Skip Adder<a class="headerlink" href="#carry-skip-adder" title="Permanent link">&para;</a></h4>
-<p>老师没讲，应该不考（x）</p>
-<hr />
-<h4 id="carry-select-adder-csa">Carry Select Adder, CSA<a class="headerlink" href="#carry-select-adder-csa" title="Permanent link">&para;</a></h4>
-<p>老师还是没讲，应该还是不考（x）</p>
-<hr />
-<h2 id="multiplication">Multiplication<a class="headerlink" href="#multiplication" title="Permanent link">&para;</a></h2>
-<p>二进制乘法与十进制相同，都可以用竖式解决，我们需要看的是硬件方面如何实现。</p>
-<hr />
-<h3 id="multiplier-v1">Multiplier V1<a class="headerlink" href="#multiplier-v1" title="Permanent link">&para;</a></h3>
-<p>换句话来说，所谓的乘法实际上是根据 Multiplier（乘数） 的 0/1 来选择是否要将 Multiplicand（被乘数） 的对应位移结果加到 Product（乘积） 上。</p>
-<p>64 bits 乘法器的硬件实现大致如下：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923143352.png" /></p>
-<p>其流程如下：</p>
-<ol>
-<li>判断 Multiplier 寄存器的最低位是否是 1：</li>
-<li>如果是，则将 Multiplicand 寄存器的值加到 Product 寄存器里；</li>
-<li>如果否，进入下一步；</li>
-<li>将 Multiplier 寄存器的值右移一位（这是为了不断拿出每一位，相当于在枚举 Multiplier 的每一位），将 Multiplicand 寄存器的值左移一位（对应于和 Multiplier 的第几位乘得到的位移，类似在做竖式乘法）；</li>
-<li>判断是否做满 64 次，决定是否终止；</li>
-</ol>
-<hr />
-<h3 id="multiplier-v2">Multiplier V2<a class="headerlink" href="#multiplier-v2" title="Permanent link">&para;</a></h3>
-<p>可以发现，V1 中做了大量的 128 位加法，但是实际上被加过去的 Multiplicand 有效内容只有 64 位。V2 正是解决了这个问题。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923145124.png" /></p>
-<ul>
-<li>和之前课件有所不同的是，这里的乘积变成了 129 位，是为了保留进位</li>
-</ul>
-<p>其流程如下：</p>
-<ol>
-<li>判断 Multiplier 寄存器的最低位是否是 1：</li>
-<li>如果是，则将 Multiplicand 寄存器的值加到 Product 寄存器的左半部分里；</li>
-<li>如果否，进入下一步；</li>
-<li>将 Multiplier 寄存器的值右移一位，将 Product 寄存器的值右移一位；</li>
-<li>判断是否做满 64 次，决定是否终止；</li>
-</ol>
-<p>它将 Multiplicand 寄存器换为了 64 位，而将位移操作转移到了 Product 寄存器中进行。这里最重要的一点就是，64 位加法只影响 Product 寄存器左侧的 64 位，而之后的右移操作则是 128 位。这样，虽然最低位的结果一开始会被放在 Product 寄存器的第 65 位里，但是在经过 64 次右移之后，它就出现在第一位了。于是，所有的 128 位加法都被 64 位加法替代，实现了加速。</p>
-<hr />
-<h3 id="multiplier-v3">Multiplier V3<a class="headerlink" href="#multiplier-v3" title="Permanent link">&para;</a></h3>
-<p>我们还发现，我们对 Multiplier 的右移是为了枚举最低位，但是为了实现这个枚举，我们每次都要做 64 位的右移；除此之外，在一开始的几次中，Product 的右半部分大部分没有意义，但是仍然在 128 位的右移中影响效率。仔细一看，我们能发现，我们每右移一次 Multiplier 寄存器，就会右移一次 Product 寄存器，而前者将导致 Multiplier 寄存器中出现一个没意义的 bit，后者将导致 Product 寄存器中消失一个没意义的 bit。</p>
-<p>V3 正是抓住了这个点，直接将 Multiplier 存在了 Product 的低 64 位中。当我们从中取出最低位并经过一次判断后，这一位就不重要了，而恰好 Product 需要右移，就将这一位消除，方便我们下一次从最低位拿出下一个比特！</p>
-<p>那么这么做的好处在哪里呢？首先，少了一个寄存器，节省了空间；其次，原本需要 Multiplier 寄存器和 Product 寄存器都做右移，现在只需要 Product 寄存器右移即可，减少了一个 64 位右移操作。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923150036.png" /></p>
-<p>其流程如下：</p>
-<ol>
-<li>判断 Product 寄存器的最低位是否是 1：</li>
-<li>如果是，则将 Multiplicand 寄存器的值加到 Product 寄存器的左半部分里；</li>
-<li>如果否，进入下一步；</li>
-<li>将 Product 寄存器的值右移一位；</li>
-<li>判断是否做满 64 次，决定是否终止；</li>
-</ol>
-<hr />
-<h3 id="signed-multiplication">Signed Multiplication<a class="headerlink" href="#signed-multiplication" title="Permanent link">&para;</a></h3>
-<p>有符号数乘法主要是转化为无符号数乘法来做。首先存储两个数的符号，然后将它们转化为无符号数。接下来对两个无符号数做无符号乘法，最后根据之前存储的符号决定结果的符号并转化为有符号数。</p>
-<hr />
-<h4 id="booths-algorithm">Booth's Algorithm<a class="headerlink" href="#booths-algorithm" title="Permanent link">&para;</a></h4>
-<p>Booth's Algorithm 是一个优化乘法的算法。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152059.png" /></p>
-<p>Booth's Algorithm 的主要思想在于，减少乘数中“<code>1</code>”的数量。具体来说，在我们原先的乘法策略中，每当乘数中有一位 <code>1</code> 时，都会需要一个加法（将位移后的被乘数累加到结果中）。但是，如果乘数中有较长的一串 <code>1</code> 时，我们可以将它转化为一个大数字减一个小数，如：<code>00111100 = 01000000 - 00000100</code>，此时 4 个 <code>1</code> 变为 2 个 <code>1</code>，我们就可以减少做加法的次数。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152150.png" /></p>
-<p>在实际执行过程中，Booth's Algorithm 主要遵循两位比特的模式进行操作。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152241.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152406.png" /></p>
-<blockquote>
-<p>上面这张图实际上的表示是挪用了 V3 的乘法器。product 一列代表的是 product 寄存器，左一半一开始置 0，右一半一开始存放的是乘数，而上面提到的将被乘数加减累计到结果中的操作，也是对于左半部分来说的（<strong>换句话来说就是用 V3 做 Booth's</strong>）。需要提醒的是，在 Booth's Algorithm 中，两位识别是从第一位开始的，此时第一位作为两位中的高位，低位为 0，而后在下一轮中第一位作为低位，第二位作为高位，以此类推。</p>
-</blockquote>
-<p>Booth's Algorithm 也能应用于负数。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923152728.png" /></p>
-<p>仔细想想就会发现其实很合理，对于正数，其最高位一定是 <code>0</code>，因此不管怎么样它最终都会匹配到一个 <code>01</code> 的模式，来给一个 <code>1111..</code> 收尾。但是负数不然，负数的最高位是 <code>1</code>，这也意味着它最终不会执行所谓的 <code>01</code> 对应的加法操作来给 <code>111...</code> 收尾。</p>
-<hr />
-<h3 id="faster-multiplication">Faster Multiplication<a class="headerlink" href="#faster-multiplication" title="Permanent link">&para;</a></h3>
-<p>另一种提升乘法速度的方法是提升加法的速度。用多个 ALU 分层地进行加法运算。对于 64 位的乘法而言，第 1 层用到 32 个 ALU，每个 ALU 计算相邻 2 位的乘数分别与被乘数的乘积之和。这样得到的 32 个和在第二层的 16 个 ALU 中会被再一次汇总，如此下去，最终得到一个总的和。这样原本需要 64 次的加法时间，就缩短到 <span class="arithmatex">\(\log⁡_{2}64=6\)</span> 次，速度得到明显的提升。这种方法体现了<strong>并行</strong>运算的思想。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240923153034.png" /></p>
-<hr />
-<h3 id="risc-v-multiplication">RISC-V Multiplication<a class="headerlink" href="#risc-v-multiplication" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>mul</code>：低 64 位乘法<ul>
-<li>给出乘积的低 64 位</li>
-</ul>
-</li>
-<li><code>mulh</code>：高 64 位乘法<ul>
-<li>给出乘积的高 64 位（假设所有运算数是有符号数）</li>
-</ul>
-</li>
-<li><code>mulhu</code>：无符号高 64 位乘法<ul>
-<li>给出乘积的高 64 位（假设所有运算数是无符号数）</li>
-</ul>
-</li>
-<li><code>mulhsu</code>：有符号与无符号高 64 位乘法<ul>
-<li>给出乘积的高 64 位（假设一个运算数是无符号数一个运算数是有符号数）</li>
-</ul>
-</li>
-<li>我们可以用 <code>mulh</code> 的结果来检查有没有 64 位的溢出</li>
-</ul>
-<hr />
-<h2 id="division">Division<a class="headerlink" href="#division" title="Permanent link">&para;</a></h2>
-<p>二进制除法与十进制相同，都可以用竖式解决。</p>
-<hr />
-<h3 id="division-v1">Division V1<a class="headerlink" href="#division-v1" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930134723.png" /></p>
-<p>其流程如下：</p>
-<ol>
-<li>用 Remainder 寄存器的值减去 Divisor 寄存器的值，并将结果放在 Remainder 寄存器</li>
-<li>检查 Remainder 寄存器内的值<ul>
-<li>如果其值 <span class="arithmatex">\(\geq 0\)</span>（看符号位的数字），将 Quotient 寄存器里的值左移一位，并将最右端的位设成 1（即竖式除法商多添一个 1）</li>
-<li>如果其值 <span class="arithmatex">\(&lt;0\)</span>，将 Divisor 寄存器的值加到 Remainder 寄存器的值来恢复 Remainder 寄存器原来的值；然后将 Quotient 寄存器里的值左移一位，并将最右端的位设成 0（即竖式除法商多添一个 0）</li>
-</ul>
-</li>
-<li>将 Divisor 寄存器的值右移一位</li>
-<li>判断是否做满 64 次，决定是否终止；</li>
-</ol>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930134924.png" /></p>
-<hr />
-<h3 id="division-v2">Division V2<a class="headerlink" href="#division-v2" title="Permanent link">&para;</a></h3>
-<p>类似乘法 V1-V3 的改进方法，除法也能共用寄存器， 将 Remainder 和 Quotient 合并在同一个 129 位寄存器当中，下面为改进后的逻辑电路图：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241029100854.png" /></p>
-<p>流程如下：</p>
-<ol>
-<li>将 Remainder 寄存器左移一位；</li>
-<li>将 Remainder 寄存器左半部分的值减去 Divisor 寄存器的值，并将结果放在 Remainder 寄存器的左半部分；</li>
-<li>判断 Remainder 的值（即根据符号位判断刚刚的减法运算是否小于 0）<ul>
-<li>如果其值 <span class="arithmatex">\(\geq 0\)</span> ，那么将 Remainder 寄存器左移一位，并将最右边一位置为 1（即竖式除法商多添一个 1）</li>
-<li>如果其值 <span class="arithmatex">\(&lt;0\)</span> ，那么将 Divisor 寄存器的值加到 Remainder 左半部分寄存器的值来恢复 Remainder 寄存器原来的值，将 Remainder 寄存器左移一位，并将最右边一位置为 0（即竖式除法商多添一个 0）；</li>
-</ul>
-</li>
-<li>判断是否做满 64 次，决定是否终止；</li>
-<li>终止之前将 Remainder 寄存器的左半部分右移一位。</li>
-</ol>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930140813.png" /></p>
-<hr />
-<h3 id="signed-division">Signed Division<a class="headerlink" href="#signed-division" title="Permanent link">&para;</a></h3>
-<p>和带符号乘法一样，带符号除法也是先将符号位提取出来，然后做无符号数除法，最后根据两个符号位决定商的符号位。</p>
-<p>但有所不同的是，余数的值有所不同，它遵循以下规则：</p>
-<ul>
-<li>余数的符号位和被除数的符号位相同</li>
-<li>余数的绝对值不超过除数的绝对值</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241030100345.png" /></p>
-<hr />
-<h3 id="faster-division">Faster Division<a class="headerlink" href="#faster-division" title="Permanent link">&para;</a></h3>
-<p>我们不能像乘法运算那样，通过 ALU 的并行计算来提升除法速度，因为中间过程会用到很多减法运算，余数寄存器上的符号位是随时变化的，依赖于运算的顺序，所以只能在最后确定符号位，不能提前计算出来。</p>
-<p>改进措施：<a href="https://en.wikipedia.org/wiki/Division_algorithm#SRT_division">SRT Division</a>，在每一趟循环中尝试预测多个可能的商</p>
-<hr />
-<h3 id="risc-v-division">RISC-V Division<a class="headerlink" href="#risc-v-division" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>div,rem</code>：有符号求商，求余数</li>
-<li><code>divu,remu</code>：无符号求商，求余数</li>
-</ul>
-<p>值得注意的是，RISC-V 除法不会检测溢出和除 0 情况，只会按照定义给出结果，会比没有错误的除法更快。</p>
-<hr />
-<h2 id="floating-point-numbers">Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>大部分处理器可能本身并不支持浮点运算，只不过在软件层面可以将浮点运算转换为整数运算。</p>
-</blockquote>
-<h3 id="ieee-754-standard">IEEE 754 Standard<a class="headerlink" href="#ieee-754-standard" title="Permanent link">&para;</a></h3>
-<p>我们将小数点左边只有 1 位数字的表示数的方法称为<strong>科学记数法, scientific notation</strong>，而如果小数点左边的数字不是 0，我们称这个数的表示是一个<strong>规格化数, normalized number</strong>。科学记数法能用来表示十进制数，当然也能用来表示二进制数。</p>
-<p>IEEE 754 规定了一种浮点数标准：我们将浮点数表示为 <span class="arithmatex">\((−1)^S×F×2^E\)</span>  的形式，这里的 <span class="arithmatex">\(F×2^E\)</span> 是一个规格化数，而 <span class="arithmatex">\((−1)^S\)</span> 用来表示符号位：<span class="arithmatex">\(S\)</span> 为 <span class="arithmatex">\(0\)</span> 说明该浮点数为正数，为 <span class="arithmatex">\(1\)</span> 则为负数；<span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(E\)</span> 也用若干 bits 表示，分别表示尾数和指数，我们稍后讨论。也就是说，我们将其表示为 <span class="arithmatex">\(1.\text{xxxxx}_2×2^{\text{yyyy}}\)</span> 的形式。这意味着我们没法直接通过这种表达形式表示 <span class="arithmatex">\(0\)</span>（为什么小数点左边是 <span class="arithmatex">\(1\)</span> 呢？因为二进制只有 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(1\)</span>，而规格化要求小数点左边不能为 <span class="arithmatex">\(0\)</span>）。我们通过科学记数法调整了小数点的位置使其满足规格化的要求，因此我们称这种数的表示方法为<strong>浮点, floating point</strong>。</p>
-<p>小数点的英文是 decimal point，但是我们这种表示方法不再是 decimal 的了，因此我们起个新名字：<strong>二进制小数点, binary point</strong>。</p>
-<p>IEEE 754 规定了两种精度的浮点数格式，分别是 single precision 和 double precision（分别对应 C 语言中的 <code>float</code> 和 <code>double</code>），RISC-V 这两种都支持：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930143302.png" /></p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930143322.png" /></p>
-<p>可以看到，fraction 的位数越多，浮点数的精度就越高；而 exponent 的位数越多，浮点数能保存的范围就越大。</p>
-<p>那么对于 <span class="arithmatex">\((−1)^S×F×2^E\)</span>，<span class="arithmatex">\(S\)</span> 的二进制表示方法是显然的，仅需要一个 bit 就好了。那么 <span class="arithmatex">\(F\)</span> 和 <span class="arithmatex">\(E\)</span> 怎么表示呢？如我们之前所说，<span class="arithmatex">\(F\)</span> 就是 <span class="arithmatex">\(1.\text{xxxxx}_2\)</span> 的形式，这个 <span class="arithmatex">\(1\)</span> 是固定的，因此 <span class="arithmatex">\(F\)</span> 只需要保存 <span class="arithmatex">\(.\text{xxxxx}\)</span> 的部分就可以了（但是请注意，它的权重从左到右分别是 <span class="arithmatex">\(2^{−1},2^{−2},...\)</span>）那么 <span class="arithmatex">\(E\)</span> 怎么办呢？注意到这个指数在实际使用中可能是正整数、负整数或 0，因此我们使用一个偏移，使得保存的是一个无符号整数，对单精度浮点数偏移 <span class="arithmatex">\(127\)</span>，双精度浮点数偏移 <span class="arithmatex">\(1023\)</span>（刚好是表示范围的一半！），也就是说我们保存的 <code>exponent</code> 其实是 <span class="arithmatex">\(E+bias\)</span> 的二进制。也就是说，对于这样的一个表示，其值是：</p>
-<div class="arithmatex">\[
-(−1)^S⋅(1+\text{fraction})⋅2^{\text{exponent−bias}}
-\]</div>
-<p>对于 <span class="arithmatex">\(0\)</span> ，IEEE 754 有特别规定，用特殊的值保存它们：</p>
-<p><img alt="image.png" src="https://xuan-insr.github.io/assets/1654452874205-52d98ec3-52b4-499b-b318-548fdd6ea083.png" /></p>
-<p>在上表中：</p>
-<ul>
-<li>第 1 条表示 0；</li>
-<li>第 2 条表示非规格化数，这种数主要是为了用来表示一些很小的数，它的取值为 <span class="arithmatex">\((−1)^S⋅(0+\text{fraction})⋅2^{−\text{bias}}\)</span>；但是并非所有机器都支持这种表示，有的机器会直接抛出一个 exception。我们不考虑非规格数的存在；</li>
-<li>第 3 条表示正常的浮点数；</li>
-<li>第 4 条表示无穷大或者无穷小，出现在 exponent overflow 或者浮点数运算中非 0 数除以 0 的情况；</li>
-<li>第 5 条表示非数，出现在 0/0, inf / inf, inf - inf, inf * 0 的情况</li>
-</ul>
-<p>（如果数字过大不能表示，即 overflow，则结果置为 inf；如果数字过小不能表示，即 underflow，则结果置为 0。）</p>
-<p>这两种表示法的范围和精度分别是多少呢？</p>
-<ul>
-<li>
-<p>范围</p>
-<ul>
-<li>能表示值的 <strong>绝对值</strong> 的范围是 <span class="arithmatex">\(1.0_2×2^{1−\text{bias}}∼1.11…11_2×2^{11…11_2−1−\text{bias}}\)</span>，即 <span class="arithmatex">\(1×2^{1−\text{bias}}∼(2−2^{-\text{Fra}})\times 2^{(2^{\text{Exp}}−1)−1−\text{bias}}\)</span>，其中 <code>Fra</code> 和 <code>Exp</code> 分别表示 fraction 和 exponent 的位数；</li>
-<li>单精度浮点数：<span class="arithmatex">\(±1×2^{−126}∼±(2−2^{−23})×2^{127}\approx ±1.2×10^{−38}∼±3.4×10^{+38}\)</span></li>
-<li>双精度浮点数：<span class="arithmatex">\(±1×2^{−1022}∼±(2−2^{−52})×2^{1023}\approx ±2.2×10^{−308}∼±1.8×10^{+308}\)</span></li>
-</ul>
-</li>
-<li>
-<p>精度</p>
-<ul>
-<li><span class="arithmatex">\(2^{-Fra}\)</span></li>
-<li>单精度浮点数：<span class="arithmatex">\(2^{−23}\)</span>（约为 <span class="arithmatex">\(23\times\log_{10}2\approx 23\times 0.3\approx 6\)</span> 位十进制小数位精度）</li>
-<li>双精度浮点数：<span class="arithmatex">\(2^{−52}\)</span>（约为 <span class="arithmatex">\(52\times\log_{10}2\approx 52\times 0.3\approx 16\)</span> 位十进制小数位精度）</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>有时候题目里会出不同的浮点数表示法，让你比较精度，此时一般指的是，fraction + exponent 总位数相同的情况下，fraction 更多的一般更精确，也就是说这个精度更倾向于“能表示更多的小数位”。</p>
-</blockquote>
-<hr />
-<h3 id="floating-point-addition">Floating-Point Addition<a class="headerlink" href="#floating-point-addition" title="Permanent link">&para;</a></h3>
-<p>以 <span class="arithmatex">\(1.000_2×2^{−1}−1.110_2×2^{−2}\)</span> 为例， 浮点数的加减法分为以下几步：</p>
-<ol>
-<li>
-<p>Alignment: 指数对齐，<strong>将小指数对齐到大指数</strong>：<span class="arithmatex">\(−1.110_2×2^{−2}=−0.111×2^{−1}\)</span></p>
-<ul>
-<li>为什么是小对大？首先，小对大的过程是在小指数的 fraction 前补 <code>0</code>，可能导致末尾数据丢失；大对小的过程是在大指数的 fraction 后补 <code>0</code>，可能导致前面的数据丢失。在计算过程中，我们保持的精确位数是有限的，而在迫不得已丢去精度的过程中，让小的那个数的末几位被丢掉的代价比大的前几位丢失要小太多了；</li>
-</ul>
-</li>
-<li>
-<p>Addiction Fraction 部分相加减：<span class="arithmatex">\(1.000−0.111=0.001\)</span></p>
-</li>
-<li>Normalization: 将结果规格化：<span class="arithmatex">\(0.001×2^{−1}=1.000×2^{−4}\)</span>；同时需要检查是否出现 overflow 或者 underflow，如果出现则触发 Exception</li>
-<li>Rounding: 将 Fraction 部分舍入到正确位数；舍入结果可能还需要规格化，此时回到步骤 3 继续运行</li>
-</ol>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020240930145131.png" /></p>
-<hr />
-<h3 id="floating-point-multiplication">Floating-Point Multiplication<a class="headerlink" href="#floating-point-multiplication" title="Permanent link">&para;</a></h3>
-<p>分别处理符号位、exponent 和 fraction：</p>
-<ul>
-<li>将两个 Exponent 相加并 <strong>减去一个 bias</strong>，因为 bias 加了 2 次</li>
-<li>将两个 (1 + Fraction) 相乘，并将其规格化；此时同样要考虑 overflow 和 underflow；然后舍入，如果还需要规格化则重复执行</li>
-<li>根据两个操作数的符号决定结果的符号</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241030103741.png" /></p>
-<hr />
-<h3 id="accurate-arithmetic">Accurate Arithmetic<a class="headerlink" href="#accurate-arithmetic" title="Permanent link">&para;</a></h3>
-<p>IEEE 754 标准提供了四种舍入模式 (rounding mode)：</p>
-<ul>
-<li>向上取整</li>
-<li>向下取整</li>
-<li>截断取整</li>
-<li>round to nearest even</li>
-</ul>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012134951.png" /></p>
-<p>Round to nearest even 只对 0.5 有效，别的都和四舍五入一样。</p>
-<p>其规定了浮点数额外添加 2 位，分别称为 <strong>guard</strong> 和 <strong>round</strong>，这两位数字保留了浮点数计算的中间过程，其主要目的是让计算结果的舍入更加的精确。</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>下面左图使用了 guard 和 round，右图没有使用。</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241012135027.png" /><img alt="" src="../../../../assets/Pasted%20image%2020241030104706.png" /></p>
-<p>由于规定有效位数为 3 位，因此前者的最终计算结果为 2.37，从而可以看出 guard 和 round 确实能够提升浮点数计算的精度。</p>
-</div>
-<p>事实上加法只需要用到 guard，但是对于乘法，如果存在前导 0，需要将结果左移，这时候 round bit 就成了有效位，能避免精度的损失。</p>
-<p>另外还有一个位叫 sticky bit，其定义是：只要 round 右边出现过非零位，就将 sticky 置 1，这一点可以用在加法的右移中，可以记住是否有 1 被移出，从而能够实现 "round to nearest even"。</p>
-<p>RISC-V 浮点数相关汇编操作数和指令如下：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241030105305.png" /></p>
-<h2 id="fallacies-and-pitfalls">Fallacies and Pitfalls<a class="headerlink" href="#fallacies-and-pitfalls" title="Permanent link">&para;</a></h2>
-<ul>
-<li>将一个数右移就相当于对这个数整除以 2<ul>
-<li>这个结论对于无符号数是成立的，但是对于带符号数，如果整体向右移一位，符号位也会跟着右移，那么最高位就会变成 0，导致负数变成了正数</li>
-<li>解决方法：右移符号位 1 的时候，符号位左边的数均为 1，这样保证结果仍然是一个负数，但是这样实现的整除精度不是很高</li>
-</ul>
-</li>
-<li>浮点数没有结合律 (associative)，即对于浮点数 <span class="arithmatex">\(a,b,c,c+(a+b)\not=(c+a)+b\)</span></li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241030105729.png" /></p>
-<p>上图第二行等号左边括号打错了（）</p>
-<p>可以看到，使用结合律后，计算结果就完全不一样了</p>
-</div>
-<ul>
-<li>适用于整数的并行计算也同样适用于浮点数<ul>
-<li>并行计算的实现依赖于结合律，因此浮点数无法进行并行计算</li>
-</ul>
-</li>
-</ul>
+</details>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6334,7 +5359,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 11:54:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月26日 11:09:12</span>
   </span>
 
     
@@ -6346,7 +5371,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月3日 14:22:43</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月26日 11:09:12</span>
   </span>
 
     
@@ -6510,9 +5535,9 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
         
           
           <a
-            href="../Chapter%201/"
+            href="../Chapter%2015/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: Chapter 01: Computer abstractions and Technology"
+            aria-label="上一页: Chapter 15: External Sorting"
           >
             <div class="md-footer__button md-icon">
               
@@ -6523,7 +5548,7 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
                 上一页
               </span>
               <div class="md-ellipsis">
-                Chapter 01: Computer abstractions and Technology
+                Chapter 15: External Sorting
               </div>
             </div>
             
@@ -6534,16 +5559,16 @@ c_4 &amp;= g_3+(p_3·g_2)+(p_3·p_2·g_1)+(p_3·p_2·p_1·g_0)+(p_3·p_2·p_1·p
         
           
           <a
-            href="../Chapter%202/"
+            href="../../Tech/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Chapter 02: Instructions : Language of the Machine"
+            aria-label="下一页: 工具技术收集"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Chapter 02: Instructions : Language of the Machine
+                工具技术收集
               </div>
             </div>
             <div class="md-footer__button md-icon">
