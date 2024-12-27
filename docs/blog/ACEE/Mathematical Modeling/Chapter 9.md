@@ -143,7 +143,7 @@ $$
 \begin{aligned}
 R\theta'(t)&=v(t)=\sqrt{2gR\sin\theta(t)}\Rightarrow\frac{\theta'(t)}{\sqrt{\sin\theta(t)}}=\sqrt{\frac{2g}{R}}\\
 \int_0^{\frac{\pi}{2}}\frac{d\varphi}{\sqrt{\sin\varphi}}&=\int_0^T\frac{\theta'(t)}{\sqrt{\sin\theta(t)}}=\int_0^T\sqrt{\frac{2g}{R}}dt=\sqrt{\frac{2g}{R}}T\\
-\therefore T&=\sqrt{\frac{R}{2g}}\int_0^{\frac{\pi}{2}}\frac{d\varphi}{\sqrt{\sin\varphi}}\approx 1.8541\sqrt{\frac{R}{g}}
+\therefore T&=\sqrt{\frac{R}{2g}}\int_0^{\frac{\pi}{2}}\frac{d\varphi}{\sqrt{\sin\varphi}}\approx 1.8541\sqrt{\frac{R}{2g}}
 \end{aligned}
 $$
 
