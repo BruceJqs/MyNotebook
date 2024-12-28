@@ -10,7 +10,8 @@ comments: true
 
 !!! abstract "考点"
 
-	- Performance Measure
+	- 冯诺依曼结构
+	- Performance Measure（相关计算）
 	- 八大思想
 
 ## Introduction

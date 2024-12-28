@@ -120,7 +120,7 @@ comments: true
 
 - 顶点覆盖：$V$ 的子集 $S$ 称为 $G$ 的顶点覆盖（Vertex Cover），若 $E$ 中每条边至少有一个端点在 $S$ 中
 - 独立集：$V$ 的子集 $S$ 称为 $G$ 的独立集（Independent Set），若 $S$ 中任何两个顶点在 $G$ 中均不相邻
-- 支配集：$V$ 的子集 $S$ 称为 $G$ 的支配集（Dominated Set），若 $V\backslash S$ 是 $G$ 的顶点覆盖
+- 支配集：$V$ 的子集 $S$ 称为 $G$ 的支配集（Dominated Set），若任意 $S$ 中顶点均与某个 $V\backslash S$ 中顶点关联
 - 团：$V$ 的子集 $S$ 称为 $G$ 的团（Clique），若 $V$ 中任何两个顶点在 $G$ 中均相邻
 
 ![](../../../assets/Pasted%20image%2020241208134540.png)

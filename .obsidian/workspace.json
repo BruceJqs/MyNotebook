@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 9"
+              "title": "Chapter 4"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 9"
+              "title": "Backlinks for Chapter 4"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 9"
+              "title": "Outgoing links from Chapter 4"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md"
+                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 9"
+              "title": "Outline of Chapter 4"
             }
           },
           {
@@ -176,6 +176,14 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Organization/Appendix.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
     "docs/blog/Computer Science/ADS/Chapter 14.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
@@ -187,7 +195,6 @@
     "docs/blog/Computer Science/ADS/Chapter 8.md",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
     "docs/blog/Computer Science/ADS/Chapter 1.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/ADS/Final.md",
     "docs/blog/Computer Science/ADS/Chapter 12.md",
     "docs/blog/Computer Science/ADS/Chapter 13.md",
@@ -205,13 +212,6 @@
     "docs/assets/Pasted image 20241225205055.png",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/assets/Pasted image 20241225202055.png",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch06.md",
-    "docs/blog/Computer Science/Computer Organization/Appendix.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",

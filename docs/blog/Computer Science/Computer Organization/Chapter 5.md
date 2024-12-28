@@ -15,10 +15,11 @@ comments: true
 	- Cache
 		- 基本概念（Hit，Miss，Miss Penalty…）
 		- 结构及映射机制（画图）
+		- 缓存策略
 		- 相关计算（时间、空间）
 		- 优化
 	- 虚拟存储
-		- Page Table
+		- 翻译：Page Table
 		- 相关计算（空间）
 		- 优化（TLB）
 
