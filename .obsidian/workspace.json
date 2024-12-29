@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md"
               },
               "icon": "lucide-list",
               "title": "Outline of Chapter 4"
@@ -176,6 +176,10 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 6.md",
+    "docs/blog/Computer Science/ADS/Chapter 13.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
@@ -197,20 +201,16 @@
     "docs/blog/Computer Science/ADS/Chapter 1.md",
     "docs/blog/Computer Science/ADS/Final.md",
     "docs/blog/Computer Science/ADS/Chapter 12.md",
-    "docs/blog/Computer Science/ADS/Chapter 13.md",
     "docs/assets/Pasted image 20241226115828.png",
     "docs/assets/Pasted image 20241226115801.png",
     "docs/assets/Pasted image 20241226115515.png",
     "docs/assets/Pasted image 20241226115327.png",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/assets/Pasted image 20241226110631.png",
-    "docs/blog/Computer Science/ADS/Chapter 3.md",
-    "docs/blog/Computer Science/ADS/index.md",
     "docs/assets/Pasted image 20241226105538.png",
     "docs/assets/Pasted image 20241225222905.png",
     "docs/assets/Pasted image 20241225222808.png",
     "docs/assets/Pasted image 20241225205055.png",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/assets/Pasted image 20241225202055.png",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",

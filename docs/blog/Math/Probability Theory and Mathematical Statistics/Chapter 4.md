@@ -244,7 +244,7 @@ $$
 
 - 若 $C$ 是常数，则 $Var(C)=0$ ；
 - 设 $X$ 是随机变量， $C$ 是常数，则 $Var(C⋅X)=C^2⋅Var(X)$；
-- 设 $X,Y$ 是两个随机变量，则 $Var(X±Y)=Var(X)+Var(Y)±2E{[X−E(X)][Y−E(Y)]}=Var(X)+Var(Y)±2Cov(X,Y)$
+- 设 $X,Y$ 是两个随机变量，则 $Var(X\pm Y)=Var(X)+Var(Y)\pm 2E\{[X−E(X)][Y−E(Y)]\}=Var(X)+Var(Y)\pm 2Cov(X,Y)$
 	- $Cov(X,Y)$ 为协方差，后面会讲到
 	- 更一般地，$Var(\sum\limits_{i=1}^nX_i)=\sum\limits_{i=1}^nVar(X_i)+2\sum\limits_{1\leq i<j\leq n}Cov(X_i,X_j)$
 		- 特别地，如果 $X,Y$ 相互独立，则 $Var(X±Y)=Var(X)+Var(Y)$；进一步地，如果$X_i(i=1,2,...,n)$ 彼此独立，则 $Var(c_1X_1±c_2X_2±...±c_nX_n)=c_1^2Var(X_1)+c_2^2Var(X_2)+...+c_n^2Var(X_n)$

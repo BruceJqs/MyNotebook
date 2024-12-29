@@ -94,6 +94,7 @@ int RandomizedHiring ( EventType C[ ], int N )
             hire( i );  /* Ch */
         }
     }
+}
 ```
 
 这样，我们仅需在处理数据前先对数据进行**随机排列**（Randomized Permutation），即可得到随机排序的数据，从而避免了最坏情况；但缺点在于随机排列数据需要额外的时间成本。
