@@ -486,7 +486,7 @@ $$
 			\begin{aligned}
 			\text{Total miss cycles per instruction}&=(2\%\times200)+36\%\times(4\%\times200)=6.88\\
 			\text{CPI with cache misses}&= 2+ 6.88=8.88\\
-			\therefore \frac{\text{Performance with fast clock}}{\text {Performance with slow clock}}&=\frac{\text{Execution time with fast clock}}{\text {Execution time with slow clock}}\\
+			\therefore \frac{\text{Performance with fast clock}}{\text {Performance with slow clock}}&=\frac{\text{Execution time with slow clock}}{\text {Execution time with fast clock}}\\
 			&=\frac{I\times\text{CPI}_{\text{slow clock}}\times\text{Clock cycle}}{I\times\text{CPI}_{\text{fast clock}}\times\text{Clock cycle}/2}\\
 			&=\frac{5.44}{8.88/2}=1.23
 			\end{aligned}
@@ -688,7 +688,7 @@ $$
 	
 	对于主内存的缺失损失为 $\frac{100ns}{0.2ns}=500\text{ Clock cycles}$，那么当没有二级 Cache 的时候，$\text{CPI}=1+2\%\times 500=11.0$
 	
-	当有了二级 Cache 的时候，对于访问到二级 Cache 命中不需要访问主内存的情况，缺失损失为 $\frac{5ns}{0.2ns}=25\text{ Clock cycles}$，那么整体的 $\text{CPI}=1+2\%\times 25+0.5\% 500=4.0$
+	当有了二级 Cache 的时候，对于访问到二级 Cache 命中不需要访问主内存的情况，缺失损失为 $\frac{5ns}{0.2ns}=25\text{ Clock cycles}$，那么整体的 $\text{CPI}=1+2\%\times 25+0.5\%\times 500=4.0$
 	
 	整体处理速度翻了 $\frac{11.0}{4.0}=2.8$ 倍
 ***

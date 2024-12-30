@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Chapter 1"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 5"
+              "title": "Backlinks for Chapter 1"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 5"
+              "title": "Outgoing links from Chapter 1"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 5.md"
+                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Chapter 1"
             }
           },
           {
@@ -176,6 +176,8 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/Computer Organization/Appendix.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/assets/Pasted image 20241230172153.png",
     "docs/blog/Computer Science/Computer Organization/Chapter 3.md",
@@ -191,10 +193,8 @@
     "docs/blog/Computer Science/ADS/Chapter 13.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
-    "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
     "docs/blog/Computer Science/ADS/Chapter 14.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
