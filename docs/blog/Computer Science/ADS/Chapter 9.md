@@ -19,7 +19,7 @@ comments: true
 
 !!! question "Question 01"
 
-	Let S be the set of activities in Activity Selection Problem. Then the earliest finish activity am​ must be included in all the maximum-size subset of mutually compatible activities of S.
+	Let S be the set of activities in Activity Selection Problem. Then the earliest finish activity $a_m$​ must be included in all the maximum-size subset of mutually compatible activities of S.
 	
 	??? note "Answer"
 	

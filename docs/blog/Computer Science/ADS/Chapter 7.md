@@ -456,7 +456,7 @@ $$
 	
 	- A. $O(\log n\log\log n)$
 	- B. $O(\log^2 n)$
-	- C. $O(n\log n$
+	- C. $O(n\log n)$
 	- D. $n^2$
 	
 	??? note "Answer"
@@ -465,5 +465,5 @@ $$
 		
 		这就需要用到我们之前提到的小技巧，我们令 $m=\log n$，那么有 $T(\sqrt{n})=T(2^{\frac{m}{2}})$，此时 $T(n)=T(2^m)$
 		
-		再令 $S(m)=T(2^m)$，原递推公式就变为 $S(m)=2S(\frac{m}{2})+m$，根据主定理 3 我们可以得到 $S(m)=O(m\log m)$，即 $T(n)=T(2^m)=S(m)=O(m\log m)=O(\log n\log\log N)$
+		再令 $S(m)=T(2^m)$，原递推公式就变为 $S(m)=2S(\frac{m}{2})+m$，根据主定理 3 我们可以得到 $S(m)=O(m\log m)$，即 $T(n)=T(2^m)=S(m)=O(m\log m)=O(\log n\log\log n)$
 
