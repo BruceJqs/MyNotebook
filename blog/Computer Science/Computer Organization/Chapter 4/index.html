@@ -5879,7 +5879,7 @@
 <p>使用多路选择器的原因（顺序为从上到下）：</p>
 <ul>
 <li>对于第一个多路选择器，我们需要选择下一条需要执行的指令到底是按照顺序的下一个指令（PC+4）还是因为跳转的某个指定的指令</li>
-<li>对于第二个多路选择器，我们需要选择进行运算的数据是来自于 ALU 运算的结果还是内存中的数据</li>
+<li>对于第二个多路选择器，我们需要选择写入的数据是来自于 ALU 运算的结果还是内存中的数据</li>
 <li>对于第三个多路选择器，对于不同类型的指令，ALU 需要选择运算数是来自寄存器（例如 R 型指令）还是立即数（例如 I 型指令）</li>
 </ul>
 <p>那么对于多路选择器，我们也需要一个控制单元来决定选择哪个来源，而控制单元是根据输入的指令来作判断的。此外，控制单元还负责功能的控制，比如寄存器和内存的读写、是否进行分支操作等。最后整个大致图如下：</p>
@@ -7023,14 +7023,20 @@
 <li>第二步的实现：跳转到操作系统的处理程序 (Handler) 上，假设地址为 <span class="arithmatex">\(\text{0000 0000 1C09 0000}_{\text{hex}}\)</span></li>
 </ul>
 </li>
-<li><strong>向量中断</strong>(Vectored Interrupt)：根据异常的原因来决定传输控制地址的一种中断<ul>
+<li>
+<p><strong>向量中断</strong>(Vectored Interrupt)：根据异常的原因来决定传输控制地址的一种中断</p>
+<ul>
 <li>
 <p>异常向量地址会被加到向量表基寄存器上：</p>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020241113111917.png" />
-- 处理程序可以执行以下行为：
-    - 如果可以重启的话，则采取纠错措施，并使用 SEPC 保存的地址返回到原程序
-    - 否则的话采取中止程序，使用 SEPC、SCAUSE 时报告错误等措施</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241113111917.png" /></p>
 </li>
+</ul>
+</li>
+<li>
+<p>处理程序可以执行以下行为：</p>
+<ul>
+<li>如果可以重启的话，则采取纠错措施，并使用 SEPC 保存的地址返回到原程序</li>
+<li>否则的话采取中止程序，使用 SEPC、SCAUSE 时报告错误等措施</li>
 </ul>
 </li>
 </ul>
@@ -7248,7 +7254,7 @@
 <hr />
 <h3 id="energy-efficiency-and-advanced-pipelining">Energy Efficiency and Advanced Pipelining<a class="headerlink" href="#energy-efficiency-and-advanced-pipelining" title="Permanent link">&para;</a></h3>
 <p>指令集并行的缺陷在于能效问题，因为要提升性能，就需要用到更多的晶体管，但这样通常会降低能效。下表展示了不同处理器的流水线复杂度、核的数量以及能耗的对比表格：</p>
-<p><img alt="" src="https://note.noughtq.top/hardware/co/images/C4/80.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241230172153.png" /></p>
 <p>启示：多个更简单的核可能给处理器带来更高的能效。</p>
 <hr />
 <h2 id="fallacies-and-pitfalls">Fallacies and Pitfalls<a class="headerlink" href="#fallacies-and-pitfalls" title="Permanent link">&para;</a></h2>
@@ -7336,7 +7342,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 11:54:29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月30日 17:46:51</span>
   </span>
 
     

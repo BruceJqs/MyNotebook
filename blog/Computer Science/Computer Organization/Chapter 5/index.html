@@ -6071,7 +6071,7 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125134134.png" /></p>
 <p>由于原来缓存内只有数据 <span class="arithmatex">\(X_1,X_2,…,X_{n−1}\)</span>，因此 <span class="arithmatex">\(X_n\)</span>​ 不在缓存内，所以出现了缺失的情况，需要从更底层的内存中获取该数据，并且放在缓存中。那么我们如何得知数据是否在缓存中，且如何找到该数据呢？</p>
 <p>我们很容易想到可以用地址映射来解决这个问题，让每个字数据基于内存地址进行定位，这能够确保每个字数据占据唯一的一块空间，帮助实现在Cache中快速查找数据，Cache 内部的映射机制大致如下：</p>
-<p><img alt="" src="Pasted%20image%2020241125140110.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020241125140110.png" /></p>
 <p>不难发现，可能会存在不同字数据占据相同缓存块的情况，这里我们用<strong>标签</strong>（Tag）来区分数据。因为底层内存的空间更大，因此通常会用数据在底层内存的低位地址来表示在缓存中的地址，而<strong>高位地址</strong>就作为区分相同缓存块下不同数据的标签，如下图所示：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020241125142155.png" /></p>
 <p>上面的图片中，缓存块数为 8，而内存块数为 32，因此字数据内存地址的低 3 位（因为 <span class="arithmatex">\(8=2^3\)</span>）对应它在缓存中的地址（灰色和蓝色表示两类低位地址），而剩下的高 2 位则作为区分同一缓存块下的不同数据的标签。</p>
@@ -6827,7 +6827,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月28日 15:30:17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月30日 17:46:51</span>
   </span>
 
     
