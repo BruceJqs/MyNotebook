@@ -429,6 +429,6 @@ $$
 	
 	??? note "Answer"
 	
-		True. 这道题的 "Arbitrarily" 翻译为“任意”，值得是没有对长度没有限制，对于 Skew Heap 来说，其对于右路径的限制在于其长度需要小于左路径，而并没有具体数值的限制，所以自然可以做到任意长。
+		True. 这道题的 "Arbitrarily" 翻译为“任意”，指的是没有对长度没有限制，对于 Skew Heap 来说，定义上对右路径并没有具体数值的限制，所以自然可以做到任意长。
 		
 		但对于 Leftist Heap 就不一样了，它有 NPL 进行限制，所以如果这道题换成 Leftist Heap 就是 False.
