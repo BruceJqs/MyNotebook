@@ -5537,7 +5537,7 @@
 <hr />
 <h4 id="_5">样本方差<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
-S^2=\frac{1}{n−1}\sum\limits_{i=1}^n​(X_i​−X)^2
+S^2=\frac{1}{n−1}\sum\limits_{i=1}^n​(X_i​−\overline{X})^2
 \]</div>
 <p>样本方差反映了总体的方差，常作为总体方差 <span class="arithmatex">\(\sigma^2\)</span> 的无偏估计。</p>
 <p>样本方差的性质：</p>
@@ -5737,7 +5737,7 @@ f_F(x)=\frac{\Gamma(\frac{n_1+n_2}{2})(\frac{n_1}{n_2})^{\frac{n_1}{2}}}{\Gamma(
 <p>设 <span class="arithmatex">\(X_1,X_2,...,X_n\)</span>​​ 和 <span class="arithmatex">\(Y_1,Y_2,...,Y_n\)</span> 是分别来自正态总体 <span class="arithmatex">\(N(\mu_1,\sigma_1^2)\)</span> 和 <span class="arithmatex">\(N(\mu_2,\sigma_2^2)\)</span>，并且它们相互独立，<span class="arithmatex">\(\overline{X},\overline{Y}\)</span> 是样本均值，<span class="arithmatex">\(S_1^2,S_2^2\)</span>​ 是样本方差，则有：</p>
 <ol>
 <li><span class="arithmatex">\(\frac{\frac{S_1^2}{\sigma_1^2}}{\frac{S_2^2}{\sigma_2^2}}∼F(n_1−1,n_2−1)\)</span>；</li>
-<li><span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}∼N(0,1)\)</span>；</li>
+<li><span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}∼N(0,1)\)</span>；</li>
 <li>当 <span class="arithmatex">\(\sigma_1^2=\sigma_2^2=\sigma^2\)</span> 时：<span class="arithmatex">\(\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{S_{\omega}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}∼t(n_1+n_2−2)\)</span>，其中 <span class="arithmatex">\(S_{\omega}^2=\frac{(n_1−1)S_1^2+(n_2−1)S_2^2}{n_1+n_2−2}\)</span>；</li>
 </ol>
 <!--
@@ -5809,7 +5809,7 @@ f_F(x)=\frac{\Gamma(\frac{n_1+n_2}{2})(\frac{n_1}{n_2})^{\frac{n_1}{2}}}{\Gamma(
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月25日 10:58:22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月31日 11:18:00</span>
   </span>
 
     
