@@ -58,7 +58,7 @@ $$
 #### 样本方差
 
 $$
-S^2=\frac{1}{n−1}\sum\limits_{i=1}^n​(X_i​−X)^2
+S^2=\frac{1}{n−1}\sum\limits_{i=1}^n​(X_i​−\overline{X})^2
 $$
 
 样本方差反映了总体的方差，常作为总体方差 $\sigma^2$ 的无偏估计。
@@ -224,5 +224,5 @@ F 分布有如下性质：
 设 $X_1,X_2,...,X_n$​​ 和 $Y_1,Y_2,...,Y_n$ 是分别来自正态总体 $N(\mu_1,\sigma_1^2)$ 和 $N(\mu_2,\sigma_2^2)$，并且它们相互独立，$\overline{X},\overline{Y}$ 是样本均值，$S_1^2,S_2^2$​ 是样本方差，则有：
 
 1. $\frac{\frac{S_1^2}{\sigma_1^2}}{\frac{S_2^2}{\sigma_2^2}}∼F(n_1−1,n_2−1)$；
-2. $\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}∼N(0,1)$；
+2. $\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}∼N(0,1)$；
 3. 当 $\sigma_1^2=\sigma_2^2=\sigma^2$ 时：$\frac{(\overline{X}−\overline{Y})−(\mu_1−\mu_2)}{S_{\omega}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}∼t(n_1+n_2−2)$，其中 $S_{\omega}^2=\frac{(n_1−1)S_1^2+(n_2−1)S_2^2}{n_1+n_2−2}$；

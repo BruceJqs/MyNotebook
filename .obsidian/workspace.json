@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 1"
+              "title": "Chapter 6"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Chapter 1"
+              "title": "Backlinks for Chapter 6"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Chapter 1"
+              "title": "Outgoing links from Chapter 6"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Computer Organization/Chapter 1.md"
+                "file": "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 1"
+              "title": "Outline of Chapter 6"
             }
           },
           {
@@ -174,8 +174,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1e7dbafef6434e06",
+  "active": "3d142c13a9deda6e",
   "lastOpenFiles": [
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 5.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
+    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
@@ -187,21 +192,17 @@
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 6.md",
     "docs/blog/Computer Science/ADS/Chapter 13.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
     "docs/blog/Computer Science/ADS/Chapter 14.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
-    "docs/blog/Computer Science/ADS/Chapter 6.md",
-    "docs/blog/Computer Science/ADS/Chapter 11.md",
     "docs/assets/Pasted image 20241226115828.png",
     "docs/assets/Pasted image 20241226115801.png",
     "docs/assets/Pasted image 20241226115515.png",
