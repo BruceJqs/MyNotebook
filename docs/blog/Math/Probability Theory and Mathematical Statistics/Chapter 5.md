@@ -100,7 +100,7 @@ $$
 \end{aligned}
 $$
 
-换句话来说，当 $n$ 足够大时 $\sum\limits_{i=1}^nX_i\stackrel{近似}{～}N(n\mu,n\sigma^2)$，即 $\frac{1}{n}\sum\limits_{i=1}^nX_i\stackrel{近似}{～}N(\mu,\sigma^2)$，也可以写成：
+换句话来说，当 $n$ 足够大时 $\sum\limits_{i=1}^nX_i\stackrel{近似}{～}N(n\mu,n\sigma^2)$，即 $\frac{1}{n}\sum\limits_{i=1}^nX_i\stackrel{近似}{～}N(\mu,\frac{\sigma^2}{n})$，也可以写成：
 
 $$
 \frac{\sum\limits_{i=1}^nX_i-n\mu}{\sigma\sqrt{n}}\stackrel{近似}{～}N(0,1)\text{ 或 }\frac{\frac{1}{n}\sum\limits_{i=1}^nX_i-\mu}{\frac{\sigma}{\sqrt{n}}}\stackrel{近似}{～}N(0,1)

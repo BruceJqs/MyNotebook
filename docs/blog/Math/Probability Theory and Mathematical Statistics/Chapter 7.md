@@ -15,7 +15,7 @@ comments: true
 
 设总体 $X$ 的分布函数为 $F(x;\theta)$，$\theta=(\theta_1,\theta_2,...,\theta_k)$ 是未知的待估参数，$X_1,X_2,...,X_n$ 是 $X$ 的一个样本。点估计就是要对每一个未知参数 $\theta_i$ 构造一个适当的统计量 $\hat{\theta_i}=\hat{\theta_i}(X_1,X_2,...,X_n)$，用作对未知参数 $\theta_i$ 的估计，称为 $\theta_i$ 的**点估计量**。
 
-若已知样本的观察值为 $x_1,x_2,...,x_n$，则称 $\hat{\theta_i}=\hat{\theta_i}(X_1,X_2,...,X_n)$ 为 $\theta_i$ 的一个**点估计值**。
+若已知样本的观察值为 $x_1,x_2,...,x_n$，则称 $\hat{\theta_i}=\hat{\theta_i}(x_1,x_2,...,x_n)$ 为 $\theta_i$ 的一个**点估计值**。
 ***
 ### 矩法
 

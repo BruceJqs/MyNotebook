@@ -12,7 +12,7 @@ comments: true
 
 ### 离散型随机变量的数学期望
 
-设离散型随机变量 $X$ 的概率分布率为 $P\{X=x_i\}=p_i,i=1,2,..$.，若级数 $\sum\limits_{i=1}^{+\infty}=|x_i|p_i<+\infty$（绝对收敛），则称级数 $\sum\limits_{i=1}^{+\infty}=|x_i|p_i$ 为 $X$ 的数学期望（Mathematical Expectation）或均值（Mean），简称为期望，记 $E(X)=\sum\limits_{i=1}^{+\infty}x_ip_i$。
+设离散型随机变量 $X$ 的概率分布率为 $P\{X=x_i\}=p_i,i=1,2,..$.，若级数 $\sum\limits_{i=1}^{+\infty}=|x_i|p_i<+\infty$（绝对收敛），则称级数 $\sum\limits_{i=1}^{+\infty}x_ip_i$ 为 $X$ 的数学期望（Mathematical Expectation）或均值（Mean），简称为期望，记 $E(X)=\sum\limits_{i=1}^{+\infty}x_ip_i$。
 
 如果 $\sum\limits_{i=1}^{+\infty}=|x_i|p_i=+\infty$ 则称随机变量 $X$ 的数学期望不存在。
 ***
@@ -244,7 +244,7 @@ $$
 
 - 若 $C$ 是常数，则 $Var(C)=0$ ；
 - 设 $X$ 是随机变量， $C$ 是常数，则 $Var(C⋅X)=C^2⋅Var(X)$；
-- 设 $X,Y$ 是两个随机变量，则 $Var(X\pm Y)=Var(X)+Var(Y)\pm 2E\{[X−E(X)][Y−E(Y)]\}=Var(X)+Var(Y)\pm 2Cov(X,Y)$
+- 设 $X,Y$ 是两个随机变量，则 $Var(X\pm Y)=Var(X)+Var(Y)\pm 2E\{[X−E(X)][Y−E(Y)]\}=Var(X)+Var(Y)\pm 2[E(XY)-E(X)E(Y)]=Var(X)+Var(Y)\pm 2Cov(X,Y)$
 	- $Cov(X,Y)$ 为协方差，后面会讲到
 	- 更一般地，$Var(\sum\limits_{i=1}^nX_i)=\sum\limits_{i=1}^nVar(X_i)+2\sum\limits_{1\leq i<j\leq n}Cov(X_i,X_j)$
 		- 特别地，如果 $X,Y$ 相互独立，则 $Var(X±Y)=Var(X)+Var(Y)$；进一步地，如果$X_i(i=1,2,...,n)$ 彼此独立，则 $Var(c_1X_1±c_2X_2±...±c_nX_n)=c_1^2Var(X_1)+c_2^2Var(X_2)+...+c_n^2Var(X_n)$
@@ -261,15 +261,15 @@ $$
 
 设随机变量 $X$ 的数学期望 $E(X)=\mu$，方差 $Var(X)=\sigma^2\not=0$
 
-中心化：使随机变量 $X$ 的数学期望为0，则称随机变量 $X−\mu$ 为 $X$ 的**中心化变量**。
+中心化：使随机变量 $X$ 的数学期望为 0，则称随机变量 $X−\mu$ 为 $X$ 的**中心化变量**。
 
-标准化：使随机变量 $X$ 的数学期望为0，方差为1，则称随机变量 $\frac{X−\mu}{\sigma}$ 为 $X$ 的**标准化变量**。
+标准化：使随机变量 $X$ 的数学期望为 0，方差为 1，则称随机变量 $\frac{X−\mu}{\sigma}$ 为 $X$ 的**标准化变量**。
 
 - 标准化变量的数学期望为 $E(X^∗)=0$，方差为 $Var(X^∗)=1$。
 ***
 ### 变异系数
 
-**变异系数**(Coefficient of Variation)又叫“**标准差率**”，是衡量资料中各观测值变异程度的一个数字特征。它可以消除单位或平均数不同对两个或多个资料变异程度比较的影响。
+**变异系数**（Coefficient of Variation）又叫“**标准差率**”，是衡量资料中各观测值变异程度的一个数字特征。它可以消除单位或平均数不同对两个或多个资料变异程度比较的影响。
 
 设随机变量 $X$ 具有数学期望 $E(X)=\mu$，方差 $Var(X)=\sigma^2\not=0$，则称 $C_v=\frac{\sigma}{\mu}$ 为 $X$ 的变异系数。
 ***
@@ -368,7 +368,7 @@ $$
 ***
 ### 二元正态变量性质
 
-- 二元随机变量 $X,Y$ 服从二元正态分布 $\Leftrightarrow X,Y$ 的任意线性组合 $aX+bY$ 服从一元正态分布，其中 $a,b$ 均为不为 0 的参数，且 $aX+bY~N(E(aX+bY),D(aX+bY))$
+- 二元随机变量 $X,Y$ 服从二元正态分布 $\Leftrightarrow X,Y$ 的任意线性组合 $aX+bY$ 服从一元正态分布，其中 $a,b$ 均为不为 0 的参数，且 $aX+bY∼N(E(aX+bY),D(aX+bY))$
 - 正态变量的线性变换不变性：若 $X,Y$ 服从二元正态分布，设 $Z_1,Z_2$ 是 $X,Y$ 的线性函数，则 $Z_1,Z_2$ 也服从二元正态分布
 ***
 ## 其他数字特征
@@ -383,7 +383,7 @@ $$
     - 1 阶中心矩为 0；
     - 2 阶中心矩为方差；
 - $X, Y$ 的 $k+l$ 阶混合（原点）矩：$E(X^kY^l)$；
-- X, Y 的 $k+l$ 阶混合中心矩：$E\{[X-E(X)]^k[Y-E(Y)]^l\}$；
+- $X, Y$ 的 $k+l$ 阶混合中心矩：$E\{[X-E(X)]^k[Y-E(Y)]^l\}$；
 ***
 ### 分位数
 
