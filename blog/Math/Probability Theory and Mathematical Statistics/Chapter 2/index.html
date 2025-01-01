@@ -5661,7 +5661,7 @@ f(x)=\begin{cases}
 \end{aligned}
 \end{cases}
 \]</div>
-<p>其中 <span class="arithmatex">\(\lambda&gt;0\)</span>，则称 <span class="arithmatex">\(X\)</span> 服从<strong>参数为</strong> <span class="arithmatex">\(\lambda\)</span> <strong>的指数分布(exponential distribution)</strong>，记为 <span class="arithmatex">\(X∼E(\lambda)\)</span></p>
+<p>其中 <span class="arithmatex">\(\lambda&gt;0\)</span>，则称 <span class="arithmatex">\(X\)</span> 服从<strong>参数为</strong> <span class="arithmatex">\(\lambda\)</span> <strong>的指数分布（Exponential Distribution）</strong>，记为 <span class="arithmatex">\(X∼E(\lambda)\)</span></p>
 <p>指数分布对应的分布函数为：</p>
 <div class="arithmatex">\[
 F(x)=\int_{−\infty}^xf(t)dt=\begin{cases}
@@ -5671,39 +5671,46 @@ F(x)=\int_{−\infty}^xf(t)dt=\begin{cases}
 \end{aligned}
 \end{cases}
 \]</div>
-<p>指数分布具有无记忆性，即 <span class="arithmatex">\(P(X&gt;s|X&gt;t_0)=P(X&gt;s−t_0)\)</span>。</p>
+<ul>
+<li>指数分布具有无记忆性，即 <span class="arithmatex">\(P(X&gt;s|X&gt;t_0)=P(X&gt;s−t_0)\)</span></li>
+</ul>
 <hr />
 <h4 id="_13">正态分布<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <p>如果随机变量 <span class="arithmatex">\(X\)</span> 具有密度函数：</p>
 <div class="arithmatex">\[
 f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{−\frac{(x−\mu)^2}{2\sigma^2}},|x|&lt;+\infty
 \]</div>
-<p>其中 <span class="arithmatex">\(\sigma&gt;0,|\mu|&lt;+\infty\)</span> 为常数，则称 <span class="arithmatex">\(X\)</span> 服从<strong>参数为</strong> <span class="arithmatex">\((\mu,\sigma)\)</span> <strong>的正态分布(normal distribution / Gauss distribution)</strong>，或者称 <span class="arithmatex">\(X\)</span> 为<strong>正态变量</strong>，记为 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>。</p>
+<p>其中 <span class="arithmatex">\(\sigma&gt;0,|\mu|&lt;+\infty\)</span> 为常数，则称 <span class="arithmatex">\(X\)</span> 服从<strong>参数为</strong> <span class="arithmatex">\((\mu,\sigma)\)</span> <strong>的正态分布（Normal Distribution / Gauss Distribution）</strong>，或者称 <span class="arithmatex">\(X\)</span> 为<strong>正态变量</strong>，记为 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>。</p>
 <p>其对应的分布函数为：</p>
 <div class="arithmatex">\[
 F(x)=\int_{−\infty}^x\frac{1}{\sqrt{2π}\sigma}e^{−\frac{(t−μ)^2}{2\sigma^2}}dt
 \]</div>
 <p>在上面出现的式子中，<span class="arithmatex">\(\mu\)</span> 为<strong>位置参数</strong>，决定了分布图像的对称轴位置；<span class="arithmatex">\(\sigma\)</span> 为<strong>尺度参数</strong>，决定了形状，<span class="arithmatex">\(\sigma\)</span> 越小，图像越集中。</p>
-<p>特别的，当 <span class="arithmatex">\(\mu=0,\sigma=1\)</span> 时，如果记这时的正态变量为 <span class="arithmatex">\(Z\)</span>，即 <span class="arithmatex">\(Z∼N(0,1)\)</span> 则它服从<strong>标准正态分布(standard normal distribution)</strong>。则其<strong>密度函数</strong>为：<span class="arithmatex">\(\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{−\frac{x^2}{2}},|x|&lt;+\infty\)</span></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250101130352.png" /></p>
+<p>特别地，当 <span class="arithmatex">\(\mu=0,\sigma=1\)</span> 时，如果记这时的正态变量为 <span class="arithmatex">\(Z\)</span>，即 <span class="arithmatex">\(Z∼N(0,1)\)</span> 则它服从<strong>标准正态分布（Standard Normal Distribution）</strong>。则其<strong>密度函数</strong>为：<span class="arithmatex">\(\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{−\frac{x^2}{2}},|x|&lt;+\infty\)</span></p>
 <p>则对应的<strong>分布函数</strong>为 <span class="arithmatex">\(\Phi(x)=\int_{−\infty}^x\frac{1}{\sqrt{2\pi}}e^{−\frac{t^2}{2}}dt\)</span>，显然有 <span class="arithmatex">\(\Phi(x)+\Phi(−x)=1\)</span></p>
-<p>由于其无法计算，所以我们需要查<strong>表</strong>获得具体值，以下为标准正态分布表：</p>
+<p>由于大部分情况下其无法计算，所以我们需要查<strong>表</strong>获得具体值，以下为标准正态分布表：</p>
 <ul>
 <li><a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html">https://www.shuxuele.com/data/standard-normal-distribution-table.html</a></li>
 <li><a href="https://www.chip1stop.com/sp/knowledge/019_normal-distribution-table_zh">https://www.chip1stop.com/sp/knowledge/019_normal-distribution-table_zh</a></li>
 </ul>
 <hr />
-<p>而对于不是标准正态分布的正态分布，我们可以通过线性变换（标准化）来转换为标准正态分布：</p>
-<ul>
-<li>若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(P\{a&lt;X&lt;b\}=P\{\frac{a−\mu}{\sigma}&lt;\frac{X−\mu}{\sigma}&lt;\frac{b−\mu}{\sigma}\}=\Phi(\frac{b−\mu}{\sigma})−\Phi(\frac{a−\mu}{\sigma})\)</span></li>
-<li>特别的：若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(P\{|X−\mu|&lt;k\sigma\}=\Phi(k)−\Phi(−k)=2\Phi(k)−1\)</span></li>
-<li><span class="arithmatex">\(3\sigma\)</span> 法则</li>
-</ul>
-<hr />
 <p>有关<strong>正态分布</strong>的重要结论：</p>
-<p>若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(Y=aX+b∼N(a\mu+b,a^2\sigma^2)\)</span></p>
 <ul>
-<li><strong>标准化</strong>：特别的，若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(\frac{X−\mu}{\sigma}∼N(0,1)\)</span>；</li>
+<li>若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(Y=aX+b∼N(a\mu+b,a^2\sigma^2)\)</span><ul>
+<li><strong>标准化</strong>：特别地，若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(\frac{X−\mu}{\sigma}∼N(0,1)\)</span>；</li>
 <li>即正态分布的随机变量线性变换后正态性不变；</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\int_{-\infty}^{+\infty}e^{-\frac{x^2}{A}}dx=\sqrt{A\pi}(A&gt;0)\)</span>（可以根据正态分布 <span class="arithmatex">\(N(0,\frac{A}{2})\)</span> 推出）</li>
+</ul>
+<p>对于不是标准正态分布的正态分布，我们可以标准化来转换为标准正态分布：</p>
+<ul>
+<li>若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(P\{a&lt;X&lt;b\}=P\{\frac{a−\mu}{\sigma}&lt;\frac{X−\mu}{\sigma}&lt;\frac{b−\mu}{\sigma}\}=\Phi(\frac{b−\mu}{\sigma})−\Phi(\frac{a−\mu}{\sigma})\)</span><ul>
+<li>特别地，若 <span class="arithmatex">\(X∼N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(P\{|X−\mu|&lt;k\sigma\}=\Phi(k)−\Phi(−k)=2\Phi(k)−1\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(3\sigma\)</span> 法则</li>
 </ul>
 <hr />
 <h2 id="_14">随机变量函数的分布<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
@@ -5711,9 +5718,44 @@ F(x)=\int_{−\infty}^x\frac{1}{\sqrt{2π}\sigma}e^{−\frac{(t−μ)^2}{2\sigma
 <ul>
 <li><span class="arithmatex">\(X\)</span> 为连续型随机变量，且其<strong>密度函数</strong>为 <span class="arithmatex">\(f_X(x)\)</span>；</li>
 <li>随机变量 <span class="arithmatex">\(Y=g(X)\)</span>；</li>
-<li>函数 <span class="arithmatex">\(y=g(x)\)</span> 为一严格单调（增/减）函数，并且可微；</li>
+<li>函数 <span class="arithmatex">\(y=g(x)\)</span> 为一严格单调（增/减）函数</li>
+<li>函数 <span class="arithmatex">\(y=g(x)\)</span> 可微</li>
 </ul>
-<p>则记 <span class="arithmatex">\(y=g(x)\)</span> 的反函数为 <span class="arithmatex">\(x=h(y)\)</span>，得到 <span class="arithmatex">\(Y\)</span> 的密度函数为：<span class="arithmatex">\(f_Y(y)=\begin{cases}\begin{aligned}f_X(h(y))\times |h'(y)|,y\in D\\0,y\not\in D\end{aligned}\end{cases}\)</span>，其中 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(y=g(x)\)</span> 的值域。</p>
+<p>则记 <span class="arithmatex">\(y=g(x)\)</span> 的反函数为 <span class="arithmatex">\(x=h(y)\)</span>，得到 <span class="arithmatex">\(Y\)</span> 的密度函数为：<span class="arithmatex">\(f_Y(y)=\begin{cases}\begin{aligned}f_X(h(y))\times |h'(y)|,y\in D\\0,y\not\in D\end{aligned}\end{cases}\)</span>，其中 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(y=g(x)\)</span> 的值域</p>
+<hr />
+<p>一般情况下，当没有第三个条件时，常规方法如下：</p>
+<ul>
+<li>先找自变量 <span class="arithmatex">\(y\)</span> 的分段点<ul>
+<li>将 <span class="arithmatex">\(x\)</span> 的分段代入 <span class="arithmatex">\(y=g(x)\)</span> 得到 <span class="arithmatex">\(y\)</span> 的分段</li>
+<li>有时还需要求 <span class="arithmatex">\(y=g(x)\)</span> 的最值</li>
+</ul>
+</li>
+<li>再根据以上分段点，分区间求 <span class="arithmatex">\(F_Y(y)=P\{Y\leq y\}\stackrel{代入}{=}P\{g(x)\leq y\}=\int_{区间}f_X(x)dx\)</span></li>
+<li>求导，<span class="arithmatex">\(f_Y(y)=F_Y'(y)\)</span></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>设 <span class="arithmatex">\(X∼f_X(x)=\begin{cases}\frac{x}{8} &amp; 0&lt;x&lt;4\\0 &amp; 其他\end{cases}\)</span>，求 <span class="arithmatex">\(Y=2X+8\)</span> 的密度函数 <span class="arithmatex">\(f_Y(y)\)</span></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">常规方法</label><label for="__tabbed_1_2">特殊方法</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>先找自变量 <span class="arithmatex">\(y\)</span> 的分段点，<span class="arithmatex">\(y=8,16\)</span></p>
+<p>分区间：</p>
+<ul>
+<li>当 <span class="arithmatex">\(y&lt;8\)</span> 时，<span class="arithmatex">\(F_Y(y)=P\{Y\leq y\}=P\{2x+8\leq y\}=P\{x\leq\frac{y-8}{2}\}=\int_{-\infty}^{\frac{y-8}{2}}f_X(x)dx=0\)</span></li>
+<li>当 <span class="arithmatex">\(8\leq y&lt;16\)</span> 时，<span class="arithmatex">\(F_Y(y)=P\{Y\leq y\}=\int_{-\infty}^{\frac{y-8}{2}}f_X(x)dx=\int_{-\infty}^0 0dx+\int_0^{\frac{y-8}{2}}\frac{x}{8}dx=\frac{(y-8)^2}{64}\)</span></li>
+<li>当 <span class="arithmatex">\(y\geq 16\)</span> 时，<span class="arithmatex">\(F_Y(y)=P\{Y\leq y\}=\int_{-\infty}^{\frac{y-8}{2}}f_X(x)dx=\int_{-\infty}^0 0dx+\int_0^4\frac{x}{8}dx+\int_{4}^{\frac{y-8}{2}}f_X(x)dx=1\)</span></li>
+</ul>
+<p>综上 <span class="arithmatex">\(F_Y(y)=\begin{cases}0 &amp; y&lt;8\\\frac{(y-8)^2}{64} &amp; 8\leq y&lt;16\\1 &amp; y\geq 16\end{cases}\)</span></p>
+<p>求导得 <span class="arithmatex">\(f_Y(y)=F_Y'(y)=\begin{cases}\frac{1}{32}(y-8) &amp; 8\leq y&lt;16\\0 &amp; 其他\end{cases}\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(y=2x+8\)</span> 反函数为 <span class="arithmatex">\(x=\frac{y-8}{2}=h(y)\)</span></p>
+<p>用公式得 <span class="arithmatex">\(f_Y(y)=\begin{cases}f_X(h(y))|h'(y)|=\frac{y-8}{16}·\frac{1}{2}=\frac{y-8}{32} &amp; 8&lt;y&lt;16\\ 0 &amp; 其他\end{cases}\)</span></p>
+</div>
+</div>
+</div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5783,7 +5825,7 @@ F(x)=\int_{−\infty}^x\frac{1}{\sqrt{2π}\sigma}e^{−\frac{(t−μ)^2}{2\sigma
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年1月1日 12:51:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年1月1日 13:25:48</span>
   </span>
 
     
