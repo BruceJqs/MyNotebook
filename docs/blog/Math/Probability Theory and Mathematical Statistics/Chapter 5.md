@@ -12,7 +12,7 @@ comments: true
 
 ### 依概率收敛
 
-设 $\{Y_n,n\geq 1\}$ 为一**随机变量序列**，若对于 $\forall\epsilon>0$，均有 $\lim\limits_{n\rightarrow+\infty}P\{|Y_n−Y|\geq\epsilon\}=0$（或者 $\lim\limits_{n\rightarrow +\infty}P\{|Y_n−c|<\epsilon\}=1$），则称 $\{Y_n,n\geq 1\}$ **依概率收敛(Convergence in Probability)** 于 $Y$，记做 $Y_n\stackrel{P}{\rightarrow}Y,n\rightarrow+\infty$。
+设 $\{Y_n,n\geq 1\}$ 为一**随机变量序列**，若对于 $\forall\epsilon>0$，均有 $\lim\limits_{n\rightarrow+\infty}P\{|Y_n−Y|\geq\epsilon\}=0$（或者 $\lim\limits_{n\rightarrow +\infty}P\{|Y_n−c|<\epsilon\}=1$），则称 $\{Y_n,n\geq 1\}$ **依概率收敛（Convergence in Probability）** 于 $Y$，记做 $Y_n\stackrel{P}{\rightarrow}Y,n\rightarrow+\infty$。
 
 特别地，当 $Y=c$ 为一常数时，称 $\{Y_n,n\geq 1\}$ 依概率收敛于常数 $c$。
 
