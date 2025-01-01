@@ -6002,7 +6002,7 @@
 <h1 id="chapter-04">Chapter 04 : 随机变量的数字特征<a class="headerlink" href="#chapter-04" title="Permanent link">&para;</a></h1>
 <h2 id="_1">数学期望<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">离散型随机变量的数学期望<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>设离散型随机变量 <span class="arithmatex">\(X\)</span> 的概率分布率为 <span class="arithmatex">\(P\{X=x_i\}=p_i,i=1,2,..\)</span>.，若级数 <span class="arithmatex">\(\sum\limits_{i=1}^{+\infty}=|x_i|p_i&lt;+\infty\)</span>（绝对收敛），则称级数 <span class="arithmatex">\(\sum\limits_{i=1}^{+\infty}=|x_i|p_i\)</span> 为 <span class="arithmatex">\(X\)</span> 的数学期望（Mathematical Expectation）或均值（Mean），简称为期望，记 <span class="arithmatex">\(E(X)=\sum\limits_{i=1}^{+\infty}x_ip_i\)</span>。</p>
+<p>设离散型随机变量 <span class="arithmatex">\(X\)</span> 的概率分布率为 <span class="arithmatex">\(P\{X=x_i\}=p_i,i=1,2,..\)</span>.，若级数 <span class="arithmatex">\(\sum\limits_{i=1}^{+\infty}=|x_i|p_i&lt;+\infty\)</span>（绝对收敛），则称级数 <span class="arithmatex">\(\sum\limits_{i=1}^{+\infty}x_ip_i\)</span> 为 <span class="arithmatex">\(X\)</span> 的数学期望（Mathematical Expectation）或均值（Mean），简称为期望，记 <span class="arithmatex">\(E(X)=\sum\limits_{i=1}^{+\infty}x_ip_i\)</span>。</p>
 <p>如果 <span class="arithmatex">\(\sum\limits_{i=1}^{+\infty}=|x_i|p_i=+\infty\)</span> 则称随机变量 <span class="arithmatex">\(X\)</span> 的数学期望不存在。</p>
 <hr />
 <h4 id="0-1">0-1 分布的数学期望<a class="headerlink" href="#0-1" title="Permanent link">&para;</a></h4>
@@ -6184,7 +6184,7 @@ Var(X)=Var(\sigma Z+\mu)=\sigma^2Var(Z)=\sigma^2
 <ul>
 <li>若 <span class="arithmatex">\(C\)</span> 是常数，则 <span class="arithmatex">\(Var(C)=0\)</span> ；</li>
 <li>设 <span class="arithmatex">\(X\)</span> 是随机变量， <span class="arithmatex">\(C\)</span> 是常数，则 <span class="arithmatex">\(Var(C⋅X)=C^2⋅Var(X)\)</span>；</li>
-<li>设 <span class="arithmatex">\(X,Y\)</span> 是两个随机变量，则 <span class="arithmatex">\(Var(X\pm Y)=Var(X)+Var(Y)\pm 2E\{[X−E(X)][Y−E(Y)]\}=Var(X)+Var(Y)\pm 2Cov(X,Y)\)</span><ul>
+<li>设 <span class="arithmatex">\(X,Y\)</span> 是两个随机变量，则 <span class="arithmatex">\(Var(X\pm Y)=Var(X)+Var(Y)\pm 2E\{[X−E(X)][Y−E(Y)]\}=Var(X)+Var(Y)\pm 2[E(XY)-E(X)E(Y)]=Var(X)+Var(Y)\pm 2Cov(X,Y)\)</span><ul>
 <li><span class="arithmatex">\(Cov(X,Y)\)</span> 为协方差，后面会讲到</li>
 <li>更一般地，<span class="arithmatex">\(Var(\sum\limits_{i=1}^nX_i)=\sum\limits_{i=1}^nVar(X_i)+2\sum\limits_{1\leq i&lt;j\leq n}Cov(X_i,X_j)\)</span><ul>
 <li>特别地，如果 <span class="arithmatex">\(X,Y\)</span> 相互独立，则 <span class="arithmatex">\(Var(X±Y)=Var(X)+Var(Y)\)</span>；进一步地，如果<span class="arithmatex">\(X_i(i=1,2,...,n)\)</span> 彼此独立，则 <span class="arithmatex">\(Var(c_1X_1±c_2X_2±...±c_nX_n)=c_1^2Var(X_1)+c_2^2Var(X_2)+...+c_n^2Var(X_n)\)</span></li>
@@ -6204,14 +6204,14 @@ Var(X)=Var(\sigma Z+\mu)=\sigma^2Var(Z)=\sigma^2
 <hr />
 <h2 id="_21">标准化变量<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 的数学期望 <span class="arithmatex">\(E(X)=\mu\)</span>，方差 <span class="arithmatex">\(Var(X)=\sigma^2\not=0\)</span></p>
-<p>中心化：使随机变量 <span class="arithmatex">\(X\)</span> 的数学期望为0，则称随机变量 <span class="arithmatex">\(X−\mu\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>中心化变量</strong>。</p>
-<p>标准化：使随机变量 <span class="arithmatex">\(X\)</span> 的数学期望为0，方差为1，则称随机变量 <span class="arithmatex">\(\frac{X−\mu}{\sigma}\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>标准化变量</strong>。</p>
+<p>中心化：使随机变量 <span class="arithmatex">\(X\)</span> 的数学期望为 0，则称随机变量 <span class="arithmatex">\(X−\mu\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>中心化变量</strong>。</p>
+<p>标准化：使随机变量 <span class="arithmatex">\(X\)</span> 的数学期望为 0，方差为 1，则称随机变量 <span class="arithmatex">\(\frac{X−\mu}{\sigma}\)</span> 为 <span class="arithmatex">\(X\)</span> 的<strong>标准化变量</strong>。</p>
 <ul>
 <li>标准化变量的数学期望为 <span class="arithmatex">\(E(X^∗)=0\)</span>，方差为 <span class="arithmatex">\(Var(X^∗)=1\)</span>。</li>
 </ul>
 <hr />
 <h3 id="_22">变异系数<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
-<p><strong>变异系数</strong>(Coefficient of Variation)又叫“<strong>标准差率</strong>”，是衡量资料中各观测值变异程度的一个数字特征。它可以消除单位或平均数不同对两个或多个资料变异程度比较的影响。</p>
+<p><strong>变异系数</strong>（Coefficient of Variation）又叫“<strong>标准差率</strong>”，是衡量资料中各观测值变异程度的一个数字特征。它可以消除单位或平均数不同对两个或多个资料变异程度比较的影响。</p>
 <p>设随机变量 <span class="arithmatex">\(X\)</span> 具有数学期望 <span class="arithmatex">\(E(X)=\mu\)</span>，方差 <span class="arithmatex">\(Var(X)=\sigma^2\not=0\)</span>，则称 <span class="arithmatex">\(C_v=\frac{\sigma}{\mu}\)</span> 为 <span class="arithmatex">\(X\)</span> 的变异系数。</p>
 <hr />
 <h2 id="_23">协方差与相关系数<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
@@ -6303,7 +6303,7 @@ e(a_0,b_0)=Var(Y)-\frac{[Cov(X,Y)]^2}{Var(X)}=Var(Y)[1-\rho_{XY}^2]
 <hr />
 <h3 id="_28">二元正态变量性质<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
 <ul>
-<li>二元随机变量 <span class="arithmatex">\(X,Y\)</span> 服从二元正态分布 <span class="arithmatex">\(\Leftrightarrow X,Y\)</span> 的任意线性组合 <span class="arithmatex">\(aX+bY\)</span> 服从一元正态分布，其中 <span class="arithmatex">\(a,b\)</span> 均为不为 0 的参数，且 <span class="arithmatex">\(aX+bY~N(E(aX+bY),D(aX+bY))\)</span></li>
+<li>二元随机变量 <span class="arithmatex">\(X,Y\)</span> 服从二元正态分布 <span class="arithmatex">\(\Leftrightarrow X,Y\)</span> 的任意线性组合 <span class="arithmatex">\(aX+bY\)</span> 服从一元正态分布，其中 <span class="arithmatex">\(a,b\)</span> 均为不为 0 的参数，且 <span class="arithmatex">\(aX+bY∼N(E(aX+bY),D(aX+bY))\)</span></li>
 <li>正态变量的线性变换不变性：若 <span class="arithmatex">\(X,Y\)</span> 服从二元正态分布，设 <span class="arithmatex">\(Z_1,Z_2\)</span> 是 <span class="arithmatex">\(X,Y\)</span> 的线性函数，则 <span class="arithmatex">\(Z_1,Z_2\)</span> 也服从二元正态分布</li>
 </ul>
 <hr />
@@ -6321,7 +6321,7 @@ e(a_0,b_0)=Var(Y)-\frac{[Cov(X,Y)]^2}{Var(X)}=Var(Y)[1-\rho_{XY}^2]
 </ul>
 </li>
 <li><span class="arithmatex">\(X, Y\)</span> 的 <span class="arithmatex">\(k+l\)</span> 阶混合（原点）矩：<span class="arithmatex">\(E(X^kY^l)\)</span>；</li>
-<li>X, Y 的 <span class="arithmatex">\(k+l\)</span> 阶混合中心矩：<span class="arithmatex">\(E\{[X-E(X)]^k[Y-E(Y)]^l\}\)</span>；</li>
+<li><span class="arithmatex">\(X, Y\)</span> 的 <span class="arithmatex">\(k+l\)</span> 阶混合中心矩：<span class="arithmatex">\(E\{[X-E(X)]^k[Y-E(Y)]^l\}\)</span>；</li>
 </ul>
 <hr />
 <h3 id="_31">分位数<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
@@ -6438,7 +6438,7 @@ Cov(X_n,X_1) &amp; Cov(X_n,X_2) &amp; ... &amp; Var(X_n)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年1月1日 13:25:48</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年1月1日 21:30:36</span>
   </span>
 
     
