@@ -171,7 +171,7 @@ f(x)=\begin{cases}
 \end{cases}
 $$
 
-其中 $\lambda>0$，则称 $X$ 服从**参数为** $\lambda$ **的指数分布(exponential distribution)**，记为 $X∼E(\lambda)$
+其中 $\lambda>0$，则称 $X$ 服从**参数为** $\lambda$ **的指数分布（Exponential Distribution）**，记为 $X∼E(\lambda)$
 
 指数分布对应的分布函数为：
 
@@ -184,7 +184,7 @@ F(x)=\int_{−\infty}^xf(t)dt=\begin{cases}
 \end{cases}
 $$
 
-指数分布具有无记忆性，即 $P(X>s|X>t_0)=P(X>s−t_0)$。
+- 指数分布具有无记忆性，即 $P(X>s|X>t_0)=P(X>s−t_0)$
 ***
 #### 正态分布
 
@@ -194,7 +194,7 @@ $$
 f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{−\frac{(x−\mu)^2}{2\sigma^2}},|x|<+\infty
 $$
 
-其中 $\sigma>0,|\mu|<+\infty$ 为常数，则称 $X$ 服从**参数为** $(\mu,\sigma)$ **的正态分布(normal distribution / Gauss distribution)**，或者称 $X$ 为**正态变量**，记为 $X∼N(\mu,\sigma^2)$。
+其中 $\sigma>0,|\mu|<+\infty$ 为常数，则称 $X$ 服从**参数为** $(\mu,\sigma)$ **的正态分布（Normal Distribution / Gauss Distribution）**，或者称 $X$ 为**正态变量**，记为 $X∼N(\mu,\sigma^2)$。
 
 其对应的分布函数为：
 
@@ -204,27 +204,29 @@ $$
 
 在上面出现的式子中，$\mu$ 为**位置参数**，决定了分布图像的对称轴位置；$\sigma$ 为**尺度参数**，决定了形状，$\sigma$ 越小，图像越集中。
 
-特别的，当 $\mu=0,\sigma=1$ 时，如果记这时的正态变量为 $Z$，即 $Z∼N(0,1)$ 则它服从**标准正态分布(standard normal distribution)**。则其**密度函数**为：$\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{−\frac{x^2}{2}},|x|<+\infty$
+![](../../../assets/Pasted%20image%2020250101130352.png)
+
+特别地，当 $\mu=0,\sigma=1$ 时，如果记这时的正态变量为 $Z$，即 $Z∼N(0,1)$ 则它服从**标准正态分布（Standard Normal Distribution）**。则其**密度函数**为：$\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{−\frac{x^2}{2}},|x|<+\infty$
 
 则对应的**分布函数**为 $\Phi(x)=\int_{−\infty}^x\frac{1}{\sqrt{2\pi}}e^{−\frac{t^2}{2}}dt$，显然有 $\Phi(x)+\Phi(−x)=1$
 
-由于其无法计算，所以我们需要查**表**获得具体值，以下为标准正态分布表：
+由于大部分情况下其无法计算，所以我们需要查**表**获得具体值，以下为标准正态分布表：
 
 - [https://www.shuxuele.com/data/standard-normal-distribution-table.html](https://www.shuxuele.com/data/standard-normal-distribution-table.html)
 - [https://www.chip1stop.com/sp/knowledge/019_normal-distribution-table_zh](https://www.chip1stop.com/sp/knowledge/019_normal-distribution-table_zh)
 ***
-而对于不是标准正态分布的正态分布，我们可以通过线性变换（标准化）来转换为标准正态分布：
-
-- 若 $X∼N(\mu,\sigma^2)$，则 $P\{a<X<b\}=P\{\frac{a−\mu}{\sigma}<\frac{X−\mu}{\sigma}<\frac{b−\mu}{\sigma}\}=\Phi(\frac{b−\mu}{\sigma})−\Phi(\frac{a−\mu}{\sigma})$
-- 特别的：若 $X∼N(\mu,\sigma^2)$，则 $P\{|X−\mu|<k\sigma\}=\Phi(k)−\Phi(−k)=2\Phi(k)−1$
-- $3\sigma$ 法则
-***
 有关**正态分布**的重要结论：
 
-若 $X∼N(\mu,\sigma^2)$，则 $Y=aX+b∼N(a\mu+b,a^2\sigma^2)$
+- 若 $X∼N(\mu,\sigma^2)$，则 $Y=aX+b∼N(a\mu+b,a^2\sigma^2)$
+	- **标准化**：特别地，若 $X∼N(\mu,\sigma^2)$，则 $\frac{X−\mu}{\sigma}∼N(0,1)$；
+	- 即正态分布的随机变量线性变换后正态性不变；
+- $\int_{-\infty}^{+\infty}e^{-\frac{x^2}{A}}dx=\sqrt{A\pi}(A>0)$（可以根据正态分布 $N(0,\frac{A}{2})$ 推出）
 
-- **标准化**：特别的，若 $X∼N(\mu,\sigma^2)$，则 $\frac{X−\mu}{\sigma}∼N(0,1)$；
-- 即正态分布的随机变量线性变换后正态性不变；
+对于不是标准正态分布的正态分布，我们可以标准化来转换为标准正态分布：
+
+- 若 $X∼N(\mu,\sigma^2)$，则 $P\{a<X<b\}=P\{\frac{a−\mu}{\sigma}<\frac{X−\mu}{\sigma}<\frac{b−\mu}{\sigma}\}=\Phi(\frac{b−\mu}{\sigma})−\Phi(\frac{a−\mu}{\sigma})$
+	- 特别地，若 $X∼N(\mu,\sigma^2)$，则 $P\{|X−\mu|<k\sigma\}=\Phi(k)−\Phi(−k)=2\Phi(k)−1$
+- $3\sigma$ 法则
 ***
 ## 随机变量函数的分布
 
@@ -232,7 +234,39 @@ $$
 
 - $X$ 为连续型随机变量，且其**密度函数**为 $f_X(x)$；
 - 随机变量 $Y=g(X)$；
-- 函数 $y=g(x)$ 为一严格单调（增/减）函数，并且可微；
+- 函数 $y=g(x)$ 为一严格单调（增/减）函数
+- 函数 $y=g(x)$ 可微
 
-则记 $y=g(x)$ 的反函数为 $x=h(y)$，得到 $Y$ 的密度函数为：$f_Y(y)=\begin{cases}\begin{aligned}f_X(h(y))\times |h'(y)|,y\in D\\0,y\not\in D\end{aligned}\end{cases}$，其中 $D$ 为 $y=g(x)$ 的值域。
+则记 $y=g(x)$ 的反函数为 $x=h(y)$，得到 $Y$ 的密度函数为：$f_Y(y)=\begin{cases}\begin{aligned}f_X(h(y))\times |h'(y)|,y\in D\\0,y\not\in D\end{aligned}\end{cases}$，其中 $D$ 为 $y=g(x)$ 的值域
+***
+一般情况下，当没有第三个条件时，常规方法如下：
 
+- 先找自变量 $y$ 的分段点
+	- 将 $x$ 的分段代入 $y=g(x)$ 得到 $y$ 的分段
+	- 有时还需要求 $y=g(x)$ 的最值
+- 再根据以上分段点，分区间求 $F_Y(y)=P\{Y\leq y\}\stackrel{代入}{=}P\{g(x)\leq y\}=\int_{区间}f_X(x)dx$
+- 求导，$f_Y(y)=F_Y'(y)$
+
+!!! example "Example"
+
+	设 $X∼f_X(x)=\begin{cases}\frac{x}{8} & 0<x<4\\0 & 其他\end{cases}$，求 $Y=2X+8$ 的密度函数 $f_Y(y)$
+	
+	=== "常规方法"
+	
+		先找自变量 $y$ 的分段点，$y=8,16$
+		
+		分区间：
+		
+		- 当 $y<8$ 时，$F_Y(y)=P\{Y\leq y\}=P\{2x+8\leq y\}=P\{x\leq\frac{y-8}{2}\}=\int_{-\infty}^{\frac{y-8}{2}}f_X(x)dx=0$
+		- 当 $8\leq y<16$ 时，$F_Y(y)=P\{Y\leq y\}=\int_{-\infty}^{\frac{y-8}{2}}f_X(x)dx=\int_{-\infty}^0 0dx+\int_0^{\frac{y-8}{2}}\frac{x}{8}dx=\frac{(y-8)^2}{64}$
+		- 当 $y\geq 16$ 时，$F_Y(y)=P\{Y\leq y\}=\int_{-\infty}^{\frac{y-8}{2}}f_X(x)dx=\int_{-\infty}^0 0dx+\int_0^4\frac{x}{8}dx+\int_{4}^{\frac{y-8}{2}}f_X(x)dx=1$
+		
+		综上 $F_Y(y)=\begin{cases}0 & y<8\\\frac{(y-8)^2}{64} & 8\leq y<16\\1 & y\geq 16\end{cases}$
+		
+		求导得 $f_Y(y)=F_Y'(y)=\begin{cases}\frac{1}{32}(y-8) & 8\leq y<16\\0 & 其他\end{cases}$
+	
+	=== "特殊方法"
+	
+		$y=2x+8$ 反函数为 $x=\frac{y-8}{2}=h(y)$
+		
+		用公式得 $f_Y(y)=\begin{cases}f_X(h(y))|h'(y)|=\frac{y-8}{16}·\frac{1}{2}=\frac{y-8}{32} & 8<y<16\\ 0 & 其他\end{cases}$
