@@ -25,7 +25,7 @@ comments: true
 ***
 ### 离散型随机变量
 
-如果随机变量取有限个或可列个值，则此随机变量为**离散型随机变量**，而若其可能取值为 $\{x_i\}$，则称 $P\{X=x_k\}=p_k,k=1,2,...$ 为 $X$ 的**概率分布律(probability mass function)**，也可以用列表的方式表达。
+如果随机变量取有限个或可列个值，则此随机变量为**离散型随机变量**，而若其可能取值为 $\{x_i\}$，则称 $P\{X=x_k\}=p_k,k=1,2,...$ 为 $X$ 的**概率分布律（Probability Mass Function）**，也可以用列表的方式表达。
 
 因为样本空间 $S=\{X=x_1,X=x_2,...,X=x_n...\}$ 中各样本点两两不相容，所以：  
 $1=P(S)=\sum\limits_{i=1}^{+\infty}P(X=x_i)=\sum\limits_{i=1}^{+\infty}p_i$
@@ -42,13 +42,13 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 
 则称 $X$ 为服从**参数为** $p$ **的** 0−1 **分布**，也称为**两点分布**，并记为 $X∼B(1,p)$ 或者 $X∼0−1(p)$
 
-**定义伯努利(Bernoulli)试验**为：在 $n$ 次独立重复试验中，每次只有 $A$ 和 $\overline{A}$ 两种结果，且概率不变，则这一系列试验为伯努利试验。
+**定义伯努利（Bernoulli）试验**为：在 $n$ 次独立重复试验中，每次只有 $A$ 和 $\overline{A}$ 两种结果，且概率不变，则这一系列试验为伯努利试验。
 ***
 #### 二项分布
 
 若随机变量 $X$ 表示 $n$ **重伯努利实验中事件 $A$ 发生的次数**，其概率分布律为$P\{X=k\}=C_n^kp^k(1−p)^{n−k},k=0,1,2,...,n$
 
-则称 $X$ 为服从**参数为** $(n,p)$ **的二项分布(binomial distribution)**，并记为 $X∼B(n,p)$
+则称 $X$ 为服从**参数为** $(n,p)$ **的二项分布（Binomial Distribution）**，并记为 $X∼B(n,p)$
 
 根据二项式定理，二项分布有性质：$\sum\limits_{k=0}^nC_n^kp^k(1−p)^{n−k}=1$
 
@@ -58,9 +58,9 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 
 如果随机变量 $X$ 的概率分布律为 $P(X=k)=\frac{e^{−\lambda}\lambda^k}{k!},k=0,1,2,...$
 
-其中 $\lambda>0$，则称 $X$ 服从**参数为** $\lambda$ **的泊松分布(Poisson distribution)**，记做 $X∼P(\lambda)$
+其中 $\lambda>0$，则称 $X$ 服从**参数为** $\lambda$ **的泊松分布（Poisson distribution）**，记做 $X∼P(\lambda)$
 
-当 $n$ 足够大，$p$ 充分小(一般要求 $p<0.1$)，且 $np$ 保持适当大小时，**参数为** $(n,p)$ **的二项分布**可以**用泊松分布近似描述**，其中 $\lambda=np$，即 $C_n^kp^k(1−p)^{n−k}∼\frac{e^{−λ}λ^k}{k!}(n\rightarrow +\infty,p<\epsilon,\lambda=np)$
+当 $n$ 足够大，$p$ 充分小(一般要求 $n\geq 20,p\leq 0.1$)，且 $np$ 保持适当大小时，**参数为** $(n,p)$ **的二项分布**可以**用泊松分布近似描述**，其中 $\lambda=np$，即 $C_n^kp^k(1−p)^{n−k}∼\frac{e^{−λ}λ^k}{k!}(n\rightarrow +\infty,p<\epsilon,\lambda=np)$
 
 !!! Proof
 
@@ -74,23 +74,27 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 	当 $n$ 充分大，$\lambda$ 适当时，$\frac{n(n-1)...(n-k+1)}{n^k}\approx 1,(1-\frac{\lambda}{n})^k\approx 1,[(1-\frac{\lambda}{n})^{-\frac{n}{\lambda}}]^{-\lambda}\approx e^{-\lambda}$
 
 ***
-#### 超几何分布与几何分布
+#### 超几何分布
 
-如果随机变量 $X$ 的概率分布律为 $P\{X=k\}=\frac{C_a^kC_b^{n−k}}{C_{a+b}^n},k=l_1,l_1+1,...,l_2$
+如果随机变量 $X$ 的概率分布律为 $P\{X=k\}=\frac{C_a^kC_b^{n−k}}{C_{a+b}^n},k=l_1,l_1+1,...,l_2,l_1=\max\{0,n-b\},l_2=\min\{n,a\}$
 
-则称 $X$ 为服从**超几何分布(hypergeometric distribution)**，并记为 $X∼H(n,N,a)$
+则称 $X$ 为服从**超几何分布（Hypergeometric Distribution）**，并记为 $X∼H(n,a,N)$
 
 - 其意义为，如：$a$ 白球，$N-a$ 红球，取 $n$ 次得到 $X$ 个白球
+***
+#### 几何分布
 
 如果随机变量 $X$ 的概率分布律为 $P\{X=k\}=p(1−p)^{k−1},k=1,2,...$
 
-则称 $X$ 为服从**参数为** $p$ **的几何分布(geometric distribution)**。
+则称 $X$ 为服从**参数为** $p$ **的几何分布（Geometric Distribution）**，记为 $X∼G(p)$
+
+- 其意义为事件 $A$ 发生的概率为 $p$，则 $X$ 为第一次发生 $A$ 的时候，经历了多少次试验
 ***
 ### 连续型随机变量
 
 #### 分布函数
 
-**定义**：设 $X$ 为随机变量，$x$ 为任意实数，函数 $F(x)=P\{X\leq x\}$ 为随机变量 $X$ 的**概率分布函数**，简称为**分布函数(distribution function)**。（离散随机变量同样可以有分布函数）
+**定义**：设 $X$ 为随机变量，$x$ 为任意实数，函数 $F(x)=P\{X\leq x\}$ 为随机变量 $X$ 的**概率分布函数**，简称为**分布函数（Distribution Function）**。（离散随机变量同样可以有分布函数）
 
 则有结论：$P\{x_1<X\leq x_2\}=P\{X\leq x_2\}−P\{X\leq x_1\}=F(x_2)−F(x_1)$
 
@@ -102,6 +106,7 @@ $P\{X=k\}=p^k(1−p)^{1−k},k=0 或 1$
 - $0\leq F(x)\leq 1$ 且 $F(−\infty)=0$，$F(+\infty)=1$；
 - $F(x)$ 右连续，即 $F(x+0)=F(x)$；
 - $P(a<X\leq b)=F(b)−F(a)$；
+- $P\{X=a\}=P\{X\leq a\}-P\{X<a\}=F(a)-\lim\limits_{x\rightarrow a^-}P\{X\leq x\}=F(a)-F(a-0)$
 ***
 #### 密度函数
 
@@ -138,8 +143,8 @@ F(x)=\begin{cases}
 \frac{x−a}{b−a},a\leq x<b\\
 1,x\geq b
 \end{cases}
-$$​
-
+$$
+​
 ![](../../../assets/Pasted%20image%2020241010110340.png)
 ***
 #### 指数分布

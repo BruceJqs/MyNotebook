@@ -105,7 +105,8 @@ comments: true
 	
 	=== "差事件"
 	
-		- 事件 A 对事件 B 的差事件：$A - B = A\overline{B} = \{x|x\in A 且 x\not\in B\}$
+		- 事件 A 对事件 B 的差事件：$A - B = A - AB = A\overline{B} = \{x|x\in A 且 x\not\in B\}$
+			- 前一个等号是一个比较好用的结论
 	
 		![](../../../assets/Pasted image 20240912112118.png)
 	
@@ -156,7 +157,9 @@ comments: true
 	- $P(A\bigcup B) = P(A) + P(B) - P(AB)$，推广即容斥原理：$P(\bigcup\limits_{i=1}^n A_i)=\sum\limits_{i=1} ^n P(A_i)-\sum\limits_{1\leq i<j \leq n}P(A_iA_j)+\sum\limits_{1\leq i<j<k \leq n}P(A_iA_jA_k)+...+(-1)^{n-1}P(A_1A_2...A_n)$
 		- 推论：$P(A\bigcup B) \leq P(A) + P(B)$
 ***
-## 等可能概型（古典概型）
+## 三种常见概型
+
+### 等可能概型（古典概型）
 
 !!! Definition
 
@@ -169,7 +172,7 @@ comments: true
 	
 	$\Rightarrow P(A) = \frac{A所包含的样本点数}{S中的样本点数}$
 ***
-### 超几何分布
+#### 超几何分布
 
 !!! Example
 
@@ -183,7 +186,7 @@ comments: true
 	
 		注：当 $L>m$ 或 $L<0$ 时，记 $C_m^L = 0$
 ***
-### 抽签公平问题
+#### 抽签公平问题
 
 !!! Example
 
@@ -229,7 +232,7 @@ comments: true
 				
 
 ***
-### 生日问题
+#### 生日问题
 
 !!! Example
 
@@ -251,6 +254,22 @@ comments: true
 - 当 $n=64$ 时，$p=0.997$
 - 当 $n=100$ 时，$p=0.9999997$
 ***
+### 几何概型
+
+几何概型的特点：
+
+- 样本空间 $\Omega$ 与几何区域有关（线段、平面、立体）
+- 等可能性：向 $\Omega$ 的区域内任意投一点，落在区域内任何一点的可能性相等
+
+设任意事件 $A\subset\Omega$，则 $P(A)=\frac{A\text{ 的长度/面积/体积}}{\Omega\text{ 的长度/面积/体积}}$
+***
+### 伯努利概型
+
+- 伯努利试验：当试验 $E$ 只有两种可能的结果 $A$ 与 $\overline{A}$，则称试验 $E$ 为伯努利试验
+	- 如：抛一枚硬币、投一次篮球、射击一次
+- $n$ 重伯努利试验：把伯努利试验 $E$ 独立重复地进行 $n$ 次，则称之为 $n$ 重伯努利试验
+	- 如：抛 $n$ 枚硬币、投 $n$ 次篮球、射击 $n$ 次
+***
 ## 条件概率
 
 !!! Definition
@@ -268,6 +287,7 @@ comments: true
 	- 可列可加性：$A_1,A_2,...,A_k$ 两两互斥 $\Rightarrow P(\bigcup\limits_{i=1}^\infty A_i|A)=\sum\limits_{i=1}^\infty P(A_i|A)$
 	- $P(B|A)=1-P(\overline{B}|A)$
 	- $P(B\bigcup C|A)=P(B|A)+P(C|A)-P(BC|A)$
+	- $P(B-C|A)=P(B|A)-P(BC|A)$
 ***
 ### 乘法公式
 
@@ -344,6 +364,7 @@ comments: true
 设 $A,B$ 为两个随机事件，若有 $P(AB)=P(A)\times P(B)$，则 A,B 相互**独立(independent)** ，其实际意义是，事件 $A$ 的发生与事件 $B$ 的发生互不影响。
 
 - 若 $P(A)\not=0,P(B)\not=0$，$P(AB)=P(A)P(B)\Leftrightarrow P(B|A)=P(B)\Leftrightarrow P(A|B)=P(A)$
+- $A,B$ 相互独立 $\Leftrightarrow P(B|A)=P(B|\overline{A})=P(B)\Leftrightarrow P(B|A)+P(\overline{B}|\overline{A})=1$
 - $A,B$ 相互独立 $\Leftrightarrow\overline{A},B$ 相互独立 $\Leftrightarrow A,\overline{B}$ 相互独立 $\Leftrightarrow\overline{A},\overline{B}$ 相互独立
 
 !!! Proof 
@@ -359,6 +380,7 @@ $P(AB)=P(A)∗P(B),P(AC)=P(A)∗P(C),P(BC)=P(B)∗P(C)$ 都成立，则称事件
 如果**同时还**满足：$P(ABC)=P(A)P(B)P(C)$，则称事件 $A,B,C$ **相互独立**。
 
 - 显然，相互独立 $\Rightarrow$ 两两独立
+- 若 $A,B,C$ 相互独立，则 $A$ 与 $B$ 的和、差、积、逆与 $C$ 或 $\overline{C}$ 均独立
 
 更普遍地，定义 $\{A_i\}$ **相互独立**当且仅当 $\forall i_j,P(\prod\limits_{j=1}^kA_{i_j})=\prod\limits_{j=1}^kP(A_{i_j})$
 独立试验与重复试验：
