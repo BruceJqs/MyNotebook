@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Final.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 11.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Final"
+              "title": "Chapter 11"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Final.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 11.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Final"
+              "title": "Backlinks for Chapter 11"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Final.md",
+                "file": "docs/blog/Computer Science/ADS/Chapter 11.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Final"
+              "title": "Outgoing links from Chapter 11"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/Final.md"
+                "file": "docs/blog/Computer Science/ADS/Chapter 11.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Final"
+              "title": "Outline of Chapter 11"
             }
           },
           {
@@ -176,10 +176,15 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/ADS/Chapter 10.md",
+    "docs/blog/Computer Science/ADS/Chapter 9.md",
+    "docs/blog/Computer Science/ADS/Chapter 8.md",
+    "docs/blog/Computer Science/ADS/Chapter 7.md",
+    "docs/blog/Computer Science/ADS/Chapter 6.md",
+    "docs/blog/Computer Science/ADS/Final.md",
     "docs/assets/Pasted image 20250102112750.png",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/Computer Science/ADS/Chapter 5.md",
-    "docs/blog/Computer Science/ADS/Chapter 8.md",
     "docs/blog/Computer Science/ADS/Chapter 11.md",
     "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
@@ -198,12 +203,8 @@
     "docs/blog/Computer Science/Computer Organization/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Appendix.md",
     "docs/assets/Pasted image 20241230172153.png",
-    "docs/blog/Computer Science/ADS/Chapter 9.md",
-    "docs/blog/Computer Science/ADS/Chapter 7.md",
-    "docs/blog/Computer Science/ADS/Final.md",
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
-    "docs/blog/Computer Science/ADS/Chapter 2.md",
     "docs/assets/Pasted image 20241226115828.png",
     "docs/assets/Pasted image 20241226115801.png",
     "docs/assets/Pasted image 20241226115515.png",
@@ -211,7 +212,6 @@
     "docs/assets/Pasted image 20241226110631.png",
     "docs/assets/Pasted image 20241226105538.png",
     "docs/assets/Pasted image 20241225222905.png",
-    "docs/assets/Pasted image 20241225222808.png",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",

@@ -381,7 +381,7 @@ extra_javascript:
   # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js  #gitalk支持
   - https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js #忘了
 
-  - https://cdn.tonycrane.cc/utils/katex.min.js
+  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
   - javascripts/katex.js
   - javascripts/glightbox.min.js
 
@@ -390,7 +390,7 @@ extra_css:
   - stylesheets/link.css #友链配置
   - stylesheets/customize.css # 搜索圆角优化
 
-  - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - stylesheets/tasklist.css
