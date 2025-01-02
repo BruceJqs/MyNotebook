@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/index.md",
+                "file": "docs/blog/Computer Science/ADS/Final.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Final"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/index.md",
+                "file": "docs/blog/Computer Science/ADS/Final.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for Final"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/index.md",
+                "file": "docs/blog/Computer Science/ADS/Final.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from Final"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/index.md"
+                "file": "docs/blog/Computer Science/ADS/Final.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Final"
             }
           },
           {
@@ -176,6 +176,12 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20250102112750.png",
+    "docs/blog/Computer Science/ADS/Chapter 15.md",
+    "docs/blog/Computer Science/ADS/Chapter 5.md",
+    "docs/blog/Computer Science/ADS/Chapter 8.md",
+    "docs/blog/Computer Science/ADS/Chapter 11.md",
+    "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
@@ -198,12 +204,6 @@
     "docs/blog/Computer Science/ADS/Chapter 4.md",
     "docs/blog/Computer Science/ADS/Chapter 3.md",
     "docs/blog/Computer Science/ADS/Chapter 2.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 7.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 6.md",
-    "docs/blog/Computer Science/ADS/Chapter 13.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 4.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 5.md",
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
     "docs/assets/Pasted image 20241226115828.png",
     "docs/assets/Pasted image 20241226115801.png",
     "docs/assets/Pasted image 20241226115515.png",
