@@ -61,3 +61,14 @@ comments: true
 ??? note "Answer"
 
 	False. 
+***
+## Question 06
+
+![](../../../assets/Pasted%20image%2020250102121444.png)
+
+
+??? note "Answer"
+
+	C. A 选项举一个
+
+![[Pasted image 20250102143640.png]]

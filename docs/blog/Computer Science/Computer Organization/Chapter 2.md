@@ -670,7 +670,7 @@ RISC-V 的指令将每条指令都编码为 32 位的 Word，体现了设计原�
 	
 	// Inner loop
 	    addi x20, x20, -1     // j for2tst
-	    j for2tst             // go yo for2tst
+	    j for2tst             // go to for2tst
 	
 	// Outer loop
 	exit2: 
@@ -678,7 +678,7 @@ RISC-V 的指令将每条指令都编码为 32 位的 Word，体现了设计原�
 	    j for1tst             // go to for1tst
 	
 	// Restoring registers
-	exit:
+	exit1:
 	    ld   x19, 0(sp)       // restore x19 from stack
 	    ld   x20, 8(sp)       // restore x20 from stack
 	    ld   x21, 16(sp)      // restore x21 from stack
