@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/index.md",
+                "file": "docs/blog/Others/College Physical Experiments/Lab01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Lab01"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/index.md"
+                "file": "docs/blog/Others/College Physical Experiments/Lab01.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Lab01"
             }
           },
           {
@@ -176,8 +176,10 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
-    "docs/blog/Others/College Physical Experiments/Lab01.md",
+    "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
+    "docs/blog/Others/College Physical Experiments/assets",
     "docs/blog/Others/College Physical Experiments/index.md",
+    "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/about/link.md",
     "docs/blog/Others/College English Band IV/index.md",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
@@ -206,7 +208,6 @@
     "docs/blog/Computer Science/ADS/Chapter 9.md",
     "docs/blog/Computer Science/ADS/Chapter 8.md",
     "docs/blog/Computer Science/ADS/Chapter 7.md",
-    "docs/blog/Computer Science/ADS/Chapter 6.md",
     "docs/assets/Pasted image 20250102112750.png",
     "docs/assets/Pasted image 20250101130352.png",
     "docs/assets/Pasted image 20241230172153.png",
@@ -221,7 +222,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Knowledge",
-    "site/search/search_index.json",
     "未命名.canvas"
   ]
 }
