@@ -77,7 +77,7 @@ t.parentNode.insertBefore(e,t)}})();
     <div class="card"> 
     <img class="ava" src="http://47.96.29.144/img/avatar.jpg" /> 
      <div class="card-header"> 
-      <div> 
+      <div>
        <a href="http://47.96.29.144/" target="_blank">晚栀wingee~</a> 
       </div> 
       <div class="info">
@@ -115,6 +115,17 @@ t.parentNode.insertBefore(e,t)}})();
       </div> 
       <div class="info">
       xwgg の个人主页！
+      </div> 
+     </div> 
+    </div> 
+    <div class="card"> 
+    <img class="ava" src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F184e2b75-7423-4596-a8f3-d2664bbf3cfa%2F00414518-89d8-4a80-85c9-5acd615254bb%2F%25E8%25B5%25B0%25E9%25A9%25AC%25E5%25A3%2581%25E7%25BA%25B8.png?table=collection&id=1803170b-7f32-8189-9beb-000b8ea6e47c&t=1803170b-7f32-8189-9beb-000b8ea6e47c&width=800&cache=v2" /> 
+     <div class="card-header"> 
+      <div> 
+       <a href="https://www.aboatwithflow.top/" target="_blank">Aboat Withflow's Blog</a> 
+      </div> 
+      <div class="info">
+      jmgg の个人主页！
       </div> 
      </div> 
     </div>  
