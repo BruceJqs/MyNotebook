@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/Lab01.md",
+                "file": "docs/blog/Others/College Physical Experiments/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lab01"
+              "title": "index"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Others/College Physical Experiments/Lab01.md"
+                "file": "docs/blog/Others/College Physical Experiments/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Lab01"
+              "title": "Outline of index"
             }
           },
           {
@@ -176,10 +176,10 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
     "docs/blog/Others/College Physical Experiments/assets",
     "docs/blog/Others/College Physical Experiments/index.md",
-    "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/about/link.md",
     "docs/blog/Others/College English Band IV/index.md",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
@@ -221,7 +221,6 @@
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
-    "docs/blog/Research/Seedlab/Knowledge",
     "未命名.canvas"
   ]
 }
