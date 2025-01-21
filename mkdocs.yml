@@ -372,6 +372,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.pathconverter
   # - markdown.extensions.toc:
   #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   #     permalink: "\ue157"
