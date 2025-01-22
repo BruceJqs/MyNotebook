@@ -1,4 +1,19 @@
-# rasnd
+---
+hide:
+  #- navigation # 显示右
+  #- toc #显示左
+  - footer
+  - feedback
+comments: true
+--- 
+
+# Crypto｜rasnd
+
+## 做题感想
+
+其实前半部分很快就搞定了，后半部分还是靠 wsgg 的提醒解决的 www
+***
+## Writeup
 
 观察题给程序，flag 被分成两部分输出
 

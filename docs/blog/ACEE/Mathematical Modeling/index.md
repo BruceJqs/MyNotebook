@@ -10,7 +10,10 @@ comments: true
 # 数学建模｜Mathematical Modeling
 
 !!! 课程信息
+
 	授课老师：谈之奕
+	
+	谈神好，我坏 www
 
 ## Table of Contents
 

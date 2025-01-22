@@ -10,14 +10,19 @@ comments: true
 # 计算机组成｜Computer Organization
 
 !!! 课程信息
-	授课老师：赵莎
+
+	授课老师：赵莎（强推！授课非常详细认真 TAgg 给分也非常好 Lab 验收也比较松）
 	
 	教材：Computer Organization and Design - The Hardware / Software Interface (RISC-V Edition)
 
 !!! Abstract
-    参考笔记：https://xuan-insr.github.io/computer_organization/1_prelude/#__tabbed_1_1
+
+    参考笔记：
     
-    https://note.noughtq.top/hardware/co/ （上课太摆只能借鉴课 u 的笔记了 www）
+    - https://xuan-insr.github.io/computer_organization/1_prelude/#__tabbed_1_1-  
+    - https://note.noughtq.top/hardware/co/ （上课太摆只能借鉴课 u 的笔记了 www）
+    
+    嘴上说打死都不会多选硬件课的 Bruce 反倒硬件课比软件课好 hhh
 
 ## Table of Contents
 

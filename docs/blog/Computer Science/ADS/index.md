@@ -15,7 +15,13 @@ comments: true
 	教材：Introduction to Algorithms(3rd Edition), Algorithm Design, Data Structures and Algorithm Analysis in C
 
 !!! Abstract
+
     参考笔记：https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/
+    
+    这是第一门让我学的很想跳的课程……
+    
+	也是第一门让我真正感受到自己有多么蠢的课程……
+
 ## Table of Contents
 
 - [Chapter 01 : AVL trees, Splay Trees, and Amortized Analysis](Chapter%201/)
