@@ -12,6 +12,8 @@ comments: true
 ## 做题感想
 
 其实前半部分很快就搞定了，后半部分还是靠 wsgg 的提醒解决的 www
+
+又因为想囤 flag 被动态 flag 制裁了……（这个故事告诉我们不要囤 flag）
 ***
 ## Writeup
 

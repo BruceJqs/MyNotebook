@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/index.md",
+                "file": "docs/blog/CTF/2024.12国赛/rasnd.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "rasnd"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/ADS/index.md"
+                "file": "docs/blog/CTF/2024.12国赛/rasnd.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of rasnd"
             }
           },
           {
@@ -176,12 +176,13 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/CTF/2024.12国赛/index.md",
+    "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Computer Science/ADS/Final.md",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
-    "docs/blog/CTF/2024.12国赛/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
@@ -190,7 +191,6 @@
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Computer Science/Digital Design/index.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
