@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.12国赛/index.md",
+                "file": "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "终于凑够人了"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.12国赛/index.md"
+                "file": "docs/blog/CTF/2024.12国赛/终于凑够人了.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of 终于凑够人了"
             }
           },
           {
@@ -176,9 +176,9 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
-    "docs/blog/CTF/2024.10 ZJUCTF/index.md",
-    "docs/blog/CTF/2024.12国赛/index.md",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
+    "docs/blog/CTF/2024.12国赛/index.md",
+    "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.12国赛/fffffhash.md",

@@ -207,6 +207,9 @@ nav:
       - Crypto:
         - "Crypto｜ezxor": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md
         - "Crypto｜Shad0wTime": blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-2.md
+    - 2024.12 国赛初赛:
+      - blog/CTF/2024.12国赛/index.md
+      - "Crypto｜rasnd": blog/CTF/2024.12国赛/rasnd.md
   - Research:
     - Seedlab:
       - blog/Research/Seedlab/index.md
