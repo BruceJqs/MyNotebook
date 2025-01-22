@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
+                "file": "docs/blog/Computer Science/ADS/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "终于凑够人了"
+              "title": "index"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.12国赛/终于凑够人了.md"
+                "file": "docs/blog/Computer Science/ADS/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 终于凑够人了"
+              "title": "Outline of index"
             }
           },
           {
@@ -176,19 +176,21 @@
   },
   "active": "1e7dbafef6434e06",
   "lastOpenFiles": [
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
+    "docs/blog/Computer Science/ADS/Final.md",
+    "docs/blog/Computer Science/ADS/Chapter 15.md",
+    "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
     "docs/blog/CTF/2024.12国赛/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.12国赛/fffffhash.md",
-    "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Computer Science/Digital Design/index.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/Computer Science/ADS/Final.md",
     "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
@@ -205,8 +207,6 @@
     "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
-    "docs/blog/Others/TOEFL Reading/Lesson 2.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 2.md",
     "docs/assets/Pasted image 20250102143640.png",
     "docs/assets/Pasted image 20250102121444.png",
     "docs/assets/Pasted image 20250102112750.png",

@@ -10,9 +10,16 @@ comments: true
 # 概率论与数理统计｜Probability Theory and Mathematical Statistics
 
 !!! 课程信息
-	授课老师：郑志浩
+
+	授课老师：郑志浩（强推！上课非常仔细给分也还不错，就是平时作业有亿点多）
 	
 	教材：概率论与数理统计
+
+!!! Abstract
+
+	一门前半学期比高中还简单后半学期难度暴增听都听不懂的课程……
+	
+	好在是小测开黑（bushi）平时分拉满所以期末即使有点难也还好 hhh
 
 ## Table of Contents
 

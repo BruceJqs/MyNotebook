@@ -18,9 +18,9 @@ comments: true
 
     参考笔记：https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/
     
-    这是第一门让我学的很想跳的课程……
+    这是第一门让我学的很想跳的课程，也是第一门让我真正感受到自己有多么蠢的课程……
     
-	也是第一门让我真正感受到自己有多么蠢的课程……
+    本以为前半学期已经是噶人级别后半学期更是地狱（瞬间觉得前半学期学的非常简单 hhh）
 
 ## Table of Contents
 
