@@ -210,17 +210,17 @@ nav:
     - 2024.12 国赛初赛:
       - blog/CTF/2024.12国赛/index.md
       - "Crypto｜rasnd": blog/CTF/2024.12国赛/rasnd.md
-  - Research:
-    - Seedlab:
-      - blog/Research/Seedlab/index.md
-      - "配置问题及其解决方法": blog/Research/Seedlab/Questions.md
-      - Knowledge:
-        - Hardware:
-          - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md
-        - Network:
-          - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
-      - Basic-labs:
-        - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
+  # - Research:
+  #   - Seedlab:
+  #     - blog/Research/Seedlab/index.md
+  #     - "配置问题及其解决方法": blog/Research/Seedlab/Questions.md
+  #     - Knowledge:
+  #       - Hardware:
+  #         - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md
+  #       - Network:
+  #         - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
+  #     - Basic-labs:
+  #       - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:
   #   - 大模型: 
   #     - 《从零开始大模型开发与微调-基于PyTorch与ChatGLM》: blog/Internship/Learning AI Notes.md

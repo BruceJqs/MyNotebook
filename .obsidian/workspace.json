@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1e7dbafef6434e06",
+            "id": "5092916d9bbcaeb3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/2024.12国赛/rasnd.md",
-                "mode": "source",
+                "file": "Question E.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "rasnd"
+              "title": "Question E"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -139,10 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/2024.12国赛/rasnd.md"
+                "file": "Question E.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of rasnd"
+              "title": "Outline of Question E"
             }
           },
           {
@@ -174,15 +178,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1e7dbafef6434e06",
+  "active": "5092916d9bbcaeb3",
   "lastOpenFiles": [
+    "docs/blog/Others/College Physical Experiments/index.md",
+    "Question E.md",
+    "docs/index.md",
+    "docs/blog/CTF/index.md",
+    "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
+    "docs/blog/CTF/2024.12国赛/rasnd.md",
     "docs/blog/CTF/2024.12国赛/index.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Computer Science/ADS/Final.md",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
-    "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
-    "docs/blog/CTF/2024.12国赛/rasnd.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
@@ -191,7 +199,6 @@
     "docs/blog/Computer Science/FDS/index.md",
     "docs/blog/Computer Science/Digital Design/index.md",
     "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Others/College Physical Experiments/index.md",
     "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
     "docs/blog/Others/College Physical Experiments/assets",
@@ -204,9 +211,6 @@
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
     "docs/blog/Computer Science/Computer Organization/Homework 3.md",
     "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 4.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 2.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 3.md",
     "docs/assets/Pasted image 20250102143640.png",
     "docs/assets/Pasted image 20250102121444.png",
     "docs/assets/Pasted image 20250102112750.png",
