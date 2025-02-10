@@ -11,14 +11,10 @@
             "id": "5092916d9bbcaeb3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Question E.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Question E"
+              "title": "New tab"
             }
           }
         ]
@@ -140,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Question E.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Question E"
+              "title": "Outline"
             }
           },
           {
@@ -180,8 +175,8 @@
   },
   "active": "5092916d9bbcaeb3",
   "lastOpenFiles": [
-    "docs/blog/Others/College Physical Experiments/index.md",
     "Question E.md",
+    "docs/blog/Others/College Physical Experiments/index.md",
     "docs/index.md",
     "docs/blog/CTF/index.md",
     "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
