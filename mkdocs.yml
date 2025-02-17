@@ -112,6 +112,9 @@ nav:
     - 面向对象程序设计｜Object-Oriented Programming Using C++:
       - blog/Computer Science/OOP/index.md
       - "Chapter 01: Introduction to Object-Oriented Programming": blog/Computer Science/OOP/Chapter 1.md
+    - 密码学｜Cryptography:
+      - blog/Computer Science/Cryptography/index.md
+      - "Chapter 01: 数学基础": blog/Computer Science/Cryptography/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
