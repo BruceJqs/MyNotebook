@@ -109,6 +109,9 @@ nav:
     - 数据库系统｜Database System:
       - blog/Computer Science/Database/index.md
       - "Chapter 01: Introduction": blog/Computer Science/Database/Chapter 1.md
+    - 面向对象程序设计｜Object-Oriented Programming Using C++:
+      - blog/Computer Science/OOP/index.md
+      - "Chapter 01: Introduction to Object-Oriented Programming": blog/Computer Science/OOP/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
