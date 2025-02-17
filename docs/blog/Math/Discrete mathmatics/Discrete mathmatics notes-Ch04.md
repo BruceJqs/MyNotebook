@@ -141,7 +141,7 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 
 ### Inverse of a modulo m
 
-如果存在一个整数 $\overline{a}$，使得 $\overline{a}a\equiv 1(mod\space m)$，那么称整数 $\overline{a}$ 为 $a$ 模 $m$ 的<font color="red">逆（Inverse of $a$ modulo $m$）</font>
+如果存在一个整数 $\overline{a}$，使得 $\overline{a}a\equiv 1(mod\space m)$，那么称整数 $\overline{a}$ 为 $a$ 模 $m$ 的<font color="red">乘法逆元（Inverse of $a$ modulo $m$，简称逆）</font>
 
 定理：如果 $a$ 和 $m$ 为互素的整数且 $m>1$，则 $a$ 模 $m$ 的逆存在。更进一步地，这个模 $m$ 的逆是<font color="red">唯一的</font>。（即存在<font color="red">唯一小于 $m$ </font>的正整数 $\overline{a}$ 是 $a$ 模 $m$ 的逆，并且 $a$ 模 $m$ 的其他每个逆均和 $\overline{a}$ 模 $m$ 同余）
 
@@ -164,6 +164,7 @@ $a=p_1^{a_1}p_2^{a_2}...p_n^{a_n},b=p_1^{b_1}p_2^{b_2}...p_n^{b_n}$
 ### The Chinese Remainder Theorem
 
 <font color="red">中国剩余定理（The Chinese Remainder Theorem）</font>：令 $m_1,m_2,...,m_n$ 为大于 1 的两两互素的正整数，而 $a_1,a_2,...,a_n$ 是任意整数。则同余方程组
+
 $$
 \begin{cases}
 x\equiv a_1(mod\space m_1)\\
@@ -172,11 +173,13 @@ x\equiv a_2(mod\space m_2)\\
 x\equiv a_n(mod\space m_n)
 \end{cases}
 $$
+
 有唯一的模 $m=m_1m_2...m_n$ 的解（即存在一个满足 $0\leq x\leq m$ 的解 $x$，而所有其他的解均与此解模 $m$ 同余）
 
 ![image-20240409090913357](../../../assets/image-20240409090913357.png)
 
 **e.g. 求解同余方程组**
+
 $$
 \begin{cases}
 x\equiv 2(mod\space 3)\\
@@ -184,6 +187,7 @@ x\equiv 3(mod\space 5)\\
 x\equiv 2(mod\space 7)
 \end{cases}
 $$
+
 ![image-20240409091141991](../../../assets/image-20240409091141991.png)
 
 ### Back Substitution
@@ -191,6 +195,7 @@ $$
 回代方法是另一种求解同余方程组的方法。
 
 **e.g. 求解同余方程组**
+
 $$
 \begin{cases}
 x\equiv 1(mod\space 5)\\
@@ -198,6 +203,7 @@ x\equiv 2(mod\space 6)\\
 x\equiv 3(mod\space 7)
 \end{cases}
 $$
+
 ![image-20240409091434369](../../../assets/image-20240409091434369.png)
 
 ### Computer Arithmetic with Large Integers

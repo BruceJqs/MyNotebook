@@ -7,7 +7,7 @@ hide:
 comments: true
 --- 
 
-# Chapter 1 : Introduction
+# Chapter 01 : Introduction
 
 ## Database Systems
 
@@ -155,7 +155,7 @@ comments: true
 		```sql
 		select instructor.ID, department.building  
 		from instructor, department  
-		where instructor.dept_name = department.dept_name and           department.dept_name = ‘Physics’
+		where instructor.dept_name = department.dept_name and department.dept_name = ‘Physics’
 		```
 ***
 ### Database Access from Application Program
