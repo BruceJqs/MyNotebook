@@ -106,6 +106,9 @@ nav:
       - "Chapter 14: Parallel Algorithms": blog/Computer Science/ADS/Chapter 14.md
       - "Chapter 15: External Sorting": blog/Computer Science/ADS/Chapter 15.md
       - "Final Review": blog/Computer Science/ADS/Final.md
+    - 数据库系统｜Database System:
+      - blog/Computer Science/Database/index.md
+      - "Chapter 01: Introduction": blog/Computer Science/Database/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:

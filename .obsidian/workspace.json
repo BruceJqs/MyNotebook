@@ -11,10 +11,14 @@
             "id": "5092916d9bbcaeb3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/blog/Computer Science/Database/Chapter 1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Chapter 1"
             }
           }
         ]
@@ -136,12 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/blog/Computer Science/Database/Chapter 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Chapter 1"
             }
           },
           {
@@ -175,6 +180,22 @@
   },
   "active": "5092916d9bbcaeb3",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20250217110836.png",
+    "docs/assets/Pasted image 20250217110521.png",
+    "docs/blog/Computer Science/Database/index.md",
+    "docs/blog/Computer Science/Database/Chapter 1.md",
+    "docs/blog/Computer Science/ADS/Chapter 15.md",
+    "docs/blog/Computer Science/ADS/index.md",
+    "docs/blog/Computer Science/ADS/Chapter 11.md",
+    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
+    "docs/blog/Computer Science/Database",
+    "docs/blog/Research/Seedlab/Testing Scheme.md",
+    "docs/assets/Pasted image 20250213211112.png",
+    "docs/assets/Pasted image 20250213204819.png",
+    "docs/assets/Pasted image 20250213204800.png",
+    "docs/blog/Research/Seedlab/test-report.md",
+    "docs/blog/Research/Seedlab/Questions.md",
+    "评分标准及命题思路.md",
     "Question E.md",
     "docs/blog/Others/College Physical Experiments/index.md",
     "docs/index.md",
@@ -182,37 +203,22 @@
     "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
     "docs/blog/CTF/2024.12国赛/rasnd.md",
     "docs/blog/CTF/2024.12国赛/index.md",
-    "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
     "docs/blog/Computer Science/ADS/Final.md",
-    "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Misc/Misc-4.md",
     "docs/blog/CTF/2024.10 ZJUCTF/Crypto/Crypto-1.md",
     "docs/blog/CTF/2024.12国赛/fffffhash.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/blog/Computer Science/FDS/index.md",
-    "docs/blog/Computer Science/Digital Design/index.md",
-    "docs/blog/Computer Science/Computer Organization/index.md",
-    "docs/blog/Others/College Physical Experiments/Lab01.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
     "docs/blog/Others/College Physical Experiments/assets",
-    "docs/about/link.md",
-    "docs/blog/Others/College English Band IV/index.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 8.md",
     "docs/assets/Pasted image 20250106231252.png",
     "docs/assets/Pasted image 20250106231217.png",
     "docs/assets/Pasted image 20250106230423.png",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md",
-    "docs/blog/Computer Science/Computer Organization/Homework 3.md",
-    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
     "docs/assets/Pasted image 20250102143640.png",
     "docs/assets/Pasted image 20250102121444.png",
     "docs/assets/Pasted image 20250102112750.png",
-    "docs/assets/Pasted image 20250101130352.png",
-    "docs/assets/Pasted image 20241230172153.png",
-    "docs/assets/Pasted image 20241226115828.png",
-    "docs/assets/Pasted image 20241226115801.png",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",
     "docs/blog/CTF/2024.9 MoeCTF/Untitled",
@@ -220,7 +226,6 @@
     "docs/blog/Computer Science/Tech/Ubuntu",
     "docs/blog/Others/College Physical Experiments",
     "docs/blog/Research/Seedlab/Knowledge/Network",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "未命名.canvas"
   ]
 }
