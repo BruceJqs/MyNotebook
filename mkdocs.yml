@@ -109,12 +109,19 @@ nav:
     - 数据库系统｜Database System:
       - blog/Computer Science/Database/index.md
       - "Chapter 01: Introduction": blog/Computer Science/Database/Chapter 1.md
+      - "Homework 01": blog/Computer Science/Database/Homework 1.md
     - 面向对象程序设计｜Object-Oriented Programming Using C++:
       - blog/Computer Science/OOP/index.md
       - "Chapter 01: Introduction to Object-Oriented Programming": blog/Computer Science/OOP/Chapter 1.md
+    - 计算机体系结构｜Computer Architecture:
+      - blog/Computer Science/Computer Architecture/index.md
+      - "Chapter 01: Fundamentals of Computer Design": blog/Computer Science/Computer Architecture/Chapter 1.md
     - 密码学｜Cryptography:
       - blog/Computer Science/Cryptography/index.md
       - "Chapter 01: 数学基础": blog/Computer Science/Cryptography/Chapter 1.md
+    - 数值分析｜Numerical Analysis:
+      - blog/Computer Science/Numerical Analysis/index.md
+      - "Chapter 01: Mathematical Preliminaries": blog/Computer Science/Numerical Analysis/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:

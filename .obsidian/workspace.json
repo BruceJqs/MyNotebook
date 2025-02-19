@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
+                "file": "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Discrete mathmatics notes-Ch04"
+              "title": "Chapter 1"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
+                "file": "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Discrete mathmatics notes-Ch04"
+              "title": "Outline of Chapter 1"
             }
           },
           {
@@ -180,13 +180,24 @@
   },
   "active": "dbc7fcdba8de6ef4",
   "lastOpenFiles": [
-    "docs/blog/Computer Science/Cryptography/Chapter 1.md",
-    "docs/blog/Computer Science/Cryptography/index.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
-    "docs/blog/Computer Science/OOP/index.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 8.md",
+    "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
+    "docs/blog/Computer Science/Numerical Analysis/index.md",
     "docs/blog/Computer Science/OOP/Chapter 1.md",
+    "docs/blog/Computer Science/OOP/index.md",
+    "docs/blog/Computer Science/Cryptography/index.md",
+    "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
+    "docs/blog/Computer Science/Numerical Analysis",
+    "docs/blog/Computer Science/Cryptography/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Architecture/index.md",
     "docs/blog/Computer Science/Database/index.md",
+    "docs/blog/Computer Science/Database/Homework 1.md",
+    "docs/blog/Computer Science/Computer Architecture",
     "docs/blog/Computer Science/Database/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Organization/Homework 2.md",
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
     "docs/blog/Computer Science/Cryptography",
     "docs/assets/Pasted image 20250217184926.png",
     "docs/assets/Pasted image 20250217184806.png",
@@ -212,21 +223,10 @@
     "docs/blog/Research/Seedlab/Questions.md",
     "评分标准及命题思路.md",
     "Question E.md",
-    "docs/blog/Others/College Physical Experiments/index.md",
-    "docs/index.md",
-    "docs/blog/CTF/index.md",
-    "docs/blog/CTF/2024.12国赛/终于凑够人了.md",
-    "docs/blog/CTF/2024.12国赛/rasnd.md",
-    "docs/blog/CTF/2024.12国赛/index.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/index.md",
-    "docs/blog/Computer Science/ADS/Final.md",
-    "docs/blog/CTF/2024.10 ZJUCTF/index.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
     "docs/blog/Others/College Physical Experiments/assets",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
     "docs/blog/CTF/2024.12国赛",
-    "docs/blog/CTF/2024.9 MoeCTF/Untitled",
-    "docs/blog/Computer Science/Tech/Ubuntu/Figs",
     "未命名.canvas"
   ]
 }
