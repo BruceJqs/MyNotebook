@@ -60,7 +60,7 @@ comments: true
 - 数据访问便利性（Convenience in Accessing Data）
 - 数据完整性（Data Integrity）
 - 多用户并发控制（Concurrency Control for Multiple User）
-- 故障回复（Failure Recovery）
+- 故障恢复（Failure Recovery）
 - 安全控制（Security Control）
 ***
 ## View of Data

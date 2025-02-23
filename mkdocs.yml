@@ -180,6 +180,9 @@ nav:
       - "Homework 08": blog/ACEE/Mathematical Modeling/Homework 8.md
       - "Homework 09": blog/ACEE/Mathematical Modeling/Homework 9.md
       - "Homework 10": blog/ACEE/Mathematical Modeling/Homework 10.md
+    - 信息理论｜Information Theory:
+      - blog/ACEE/Information Theory/index.md
+      - "Chapter 01 : Introduction": blog/ACEE/Information Theory/Chapter 1.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 

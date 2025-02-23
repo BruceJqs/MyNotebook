@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1a2105cb0667f78d",
+        "id": "7d3d506a852bd25a",
         "type": "tabs",
         "children": [
           {
-            "id": "dbc7fcdba8de6ef4",
+            "id": "bb153e0b31fd93cf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
+                "file": "docs/blog/ACEE/Information Theory/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 1"
+              "title": "index"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 279.5
+    "width": 200
   },
   "right": {
     "id": "db8c2c75e178d5b7",
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
+                "file": "docs/blog/ACEE/Information Theory/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 1"
+              "title": "Outline of index"
             }
           },
           {
@@ -178,10 +178,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "dbc7fcdba8de6ef4",
+  "active": "bb153e0b31fd93cf",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Mathematical Modeling/Chapter 8.md",
+    "docs/blog/Computer Science/Computer Architecture/index.md",
+    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/blog/ACEE/Information Theory/Chapter 1.md",
+    "docs/assets/Pasted image 20250223202145.png",
+    "docs/blog/Computer Science/Database/Chapter 1.md",
+    "docs/blog/ACEE/Information Theory",
+    "Analysis.md",
+    "docs/assets/Pasted image 20250219221100.png",
+    "docs/assets/Pasted image 20250219221028.png",
     "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 8.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 10.md",
     "docs/blog/Computer Science/Numerical Analysis/index.md",
@@ -191,11 +200,9 @@
     "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
     "docs/blog/Computer Science/Numerical Analysis",
     "docs/blog/Computer Science/Cryptography/Chapter 1.md",
-    "docs/blog/Computer Science/Computer Architecture/index.md",
     "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/Database/Homework 1.md",
     "docs/blog/Computer Science/Computer Architecture",
-    "docs/blog/Computer Science/Database/Chapter 1.md",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
     "docs/blog/Computer Science/Cryptography",
@@ -210,23 +217,15 @@
     "docs/blog/Computer Science/OOP",
     "docs/assets/Pasted image 20250217132903.png",
     "docs/assets/Pasted image 20250217131610.png",
-    "docs/assets/Pasted image 20250217121329.png",
-    "docs/assets/Pasted image 20250217120946.png",
-    "docs/assets/Pasted image 20250217120914.png",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/Computer Science/ADS/index.md",
     "docs/blog/Computer Science/ADS/Chapter 11.md",
     "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Computer Science/Database",
     "docs/blog/Research/Seedlab/Testing Scheme.md",
-    "docs/blog/Research/Seedlab/test-report.md",
-    "docs/blog/Research/Seedlab/Questions.md",
-    "评分标准及命题思路.md",
-    "Question E.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
     "docs/blog/Others/College Physical Experiments/assets",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",
-    "docs/blog/CTF/2024.12国赛",
     "未命名.canvas"
   ]
 }
