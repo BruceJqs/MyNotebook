@@ -275,3 +275,50 @@ comments: true
 		
 			![](../../../assets/Pasted image 20250224180910.png)
 ***
+## Extended Relational-Algebra-Operations
+
+### Generalized Projection
+
+- 广义的投影运算允许在投影列表中使用算术表达式，即 $\prod_{F_1,F_2,...,F_n}(E)$
+- 其中 $E$ 是关系代数表达式，$F_i$ 是一个包含常数和 $E$ 的模式中的属性的**算术表达式**
+
+!!! example "Example"
+
+	给定关系 instructor(ID, name, dept_name, salary)，其中 salary 是年薪，获取相同的信息，但是年薪变为月薪
+	
+	- $\prod_{\text{ID, name, dept\_name, salary/12}}(\text{instructor})$
+***
+### Aggregate Functions and Operations
+
+- **聚合函数**会接受一组值，返回单个值，包括 avg（平均值）、min（最小值）、max（最大值）、sum（求和）、count（计数）
+- **聚合运算**的形式为$\text{ }_{G_1,G_2,...,G_n}\mathcal{G}_{F_1(A_1),F_2(A_2),...,F_n(A_n)}(E)$，其中 $E$ 是任意的关系代数表达式，$G_1,G_2,...,G_n​$ 为一组聚集在一起的属性（可以为空），$F_i$​ 为聚合函数，$A_i​$ 为属性名
+
+!!! example "Example"
+
+	![](../../../assets/Pasted image 20250224191803.png)
+
+聚合的结果**没有**名称，但是我们可以用重命名操作为结果赋予名称，方便起见，我们将重命名作为聚合运算的一部分，如：$\text{ }_{G_1,G_2,...,G_n}\mathcal{G}_{F_1(A_1),F_2(A_2),...,F_n(A_n)\text{ as new\_name}}(E)$
+***
+## Modification of the Database
+
+可通过删除（Deletion）、插入（Insertion）和更新（Updating）运算修改数据库的内容，这些运算都可以用赋值运算符表示
+***
+## Multiset Relational Algebra
+
+- 在纯关系代数中，我们要求结果是一个严格的集合，即没有任何重复项（例如在投影操作之后）
+- 多重集（Multiset） 关系代数会保留重复项，以匹配 SQL 语义
+	- SQL 重复保留最初是为了提高效率，但现在已成为一项功能
+- 多重集关系代数定义如下：
+	- 选择（Selection）：如果元组满足选择条件，则元组的重复项数与输入的重复项数一样多
+	- 投影（Projection）：每个元组对应一个输入的元组，即使它可能是重复的
+	- 叉积（Cross Product）：如果 $r$ 中有 $m$ 个重复元组 $t_1$ ，$s$ 中有 $n$ 个重复元组 $t_2$，则 $r\times s$ 中有 $m\times n$ 个重复元组 $t_1.t_2$ 
+	- 集合运算符
+		- 并：$m+n$ 个重复元组
+		- 交：$\min(m,n)$ 个重复元组
+		- 差：$\min(0,m–n)$  个重复元组
+***
+## SQL and Relational Algebra
+
+- `select A1, A2, ... An from r1, r2, ... rm where P` 和 $\prod_{A_1,...,A_n}(\sigma_P(r_1\times r_2\times ... \times r_m))$ 等价
+- `select A1, A2, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和$\text{ }_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)}\sigma_P(r_1\times r_2\times ... \times r_m))$ 等价
+- 更一般地说，`select` 子句中的非聚合属性可能是 `group by` 属性的子集，在这种情况下，`select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和 $\prod_{A_1,\text{sum}(A_3)}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))$

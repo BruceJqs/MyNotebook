@@ -16,3 +16,4 @@ comments: true
 ## Table of Contents
 
 - [Chapter 01 : 数学基础](Chapter%201/)
+- [Chapter 02 : 古典密码](Chapter%202/)
