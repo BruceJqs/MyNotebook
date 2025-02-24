@@ -6172,7 +6172,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Additional Operations</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Set Intersection</label><label for="__tabbed_2_2">Natural Join</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Set Intersection</label><label for="__tabbed_2_2">Natural Join</label><label for="__tabbed_2_3">Outer Join</label><label for="__tabbed_2_4">Semijoin</label><label for="__tabbed_2_5">Assignment</label><label for="__tabbed_2_6">Division</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -6192,16 +6192,77 @@
 <li>令 <span class="arithmatex">\(r,s\)</span> 的模式分别为 <span class="arithmatex">\(R,S\)</span>，那么自然连接（记为 <span class="arithmatex">\(r\Join s\)</span>）的结果为一个在模式 <span class="arithmatex">\(R\cup S\)</span> 上的关系，按照以下方法获得：<ul>
 <li>考虑分别来自 <span class="arithmatex">\(r,s\)</span> 的每一对元组 <span class="arithmatex">\(t_r,t_s\)</span></li>
 <li>如果 <span class="arithmatex">\(t_r,t_s\)</span> 在 <span class="arithmatex">\(R\cap S\)</span> 的每个属性上的取值相同，则将元组 <span class="arithmatex">\(t\)</span> 加入到结果中，其中 <span class="arithmatex">\(t\)</span> 有与 <span class="arithmatex">\(t_r\)</span>​ 在 <span class="arithmatex">\(r\)</span> 上，以及 <span class="arithmatex">\(t_s​\)</span> 在 <span class="arithmatex">\(s\)</span> 上相同的值</li>
-<li>简单来说，自然连接就是连接两个关系中同名属性值相等的元组，结果属性是二者属性集的并集</li>
+<li>简单来说，共同属性要有相同的值，才能在拼接后的结果中保留。类似对乘法的扩展，相当于先笛卡尔积再 select，最后 project</li>
 </ul>
 </li>
 <li>自然连接操作满足 <span class="arithmatex">\(r,s\)</span> 必须有共同属性（名称、域对应相同）</li>
-<li>扩展：<strong>Theta 连接</strong>，记作：<span class="arithmatex">\(r\Join_theta=\sigma_\theta(r\times s)\)</span>，其中 <span class="arithmatex">\(\theta\)</span> 是关于模式上属性的谓词</li>
+<li>自然连接操作具有结合律（Associative）和交换律（Commutative）</li>
+<li>扩展：<strong>Theta 连接（条件连接）</strong>，记作：<span class="arithmatex">\(r\Join_{\theta}=\sigma_{\theta}(r\times s)\)</span>，其中 <span class="arithmatex">\(\theta\)</span> 是关于模式上属性的谓词</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250224170631.png" /></p>
+<p>由这个例子我们可以看出，<font color="red"><span class="arithmatex">\(r\Join s = \prod_{r.A,r.B,r.C,r.D,s.E}(\sigma_{r.B=s.B\land r.D=s.D}(r\times s))\)</span></font></p>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>外连接</strong>是连接运算的扩展，用于避免信息的缺失 </li>
+<li>先计算连接，然后将来自一个关系中的，但没有与另一个关系有匹配的元组的元组加入到连接结果中</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250224173858.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250224173916.png" /></p>
+</div>
+<p>由上面的 Example 我们可以看出，外连接有三种形式，其中：</p>
+<ul>
+<li><span class="arithmatex">\(r\rtimes s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\)</span></li>
+<li><span class="arithmatex">\(r\ltimes s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))\)</span></li>
+<li><span class="arithmatex">\(r\)</span>⟗<span class="arithmatex">\(s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\cup({(\text{null,...,null})\}\times(s-\prod_s(r\Join s)))\)</span></li>
 </ul>
 </div>
+<div class="tabbed-block">
+<p>半连接（记作 <span class="arithmatex">\(r\ltimes_{\theta}s\)</span>）能实现保留 <span class="arithmatex">\(r\)</span> 中能与 <span class="arithmatex">\(s\)</span> 相连的元组，满足 <span class="arithmatex">\(r\ltimes_{\theta}s=\prod_R(r\Join_{\theta}s)\)</span></p>
+<p>!!! example "Example"</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  ![](../../../assets/Pasted image 20250224175100.png)
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>赋值运算符 <span class="arithmatex">\(\leftarrow\)</span> 提供了一种表达复杂查询的便捷方法<ul>
+<li>可以将查询写成一个顺序的程序，里面包含了一系列的赋值语句，随后跟上一个表达式，其值作为查询的结果</li>
+<li>赋值必须用于临时的关系变量</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>除法运算记作 <span class="arithmatex">\(r\div s\)</span>，给定关系 <span class="arithmatex">\(r(R)\)</span> 和 <span class="arithmatex">\(s(S)\)</span>，使得 <span class="arithmatex">\(S\subset R\)</span>，那么 <span class="arithmatex">\(r\div s\)</span> 是最大的关系 <span class="arithmatex">\(t(R-S)\)</span>，满足 <span class="arithmatex">\(t\times s\subseteq r\)</span></li>
+<li>我们可以将 <span class="arithmatex">\(r\div s\)</span> 写作：<ul>
+<li><span class="arithmatex">\(\text{temp1}\leftarrow\prod_{R-S}(r)\)</span></li>
+<li><span class="arithmatex">\(\text{temp2}\leftarrow\prod_{R-S}((\text{temp1}\times s)-\prod_{R-S,S}(r))\)</span></li>
+<li><span class="arithmatex">\(\text{result}=\text{temp1}-\text{temp2}\)</span></li>
+<li>解释：<ul>
+<li><span class="arithmatex">\(\prod_{R−S,S}(r)\)</span> 仅重排了 <span class="arithmatex">\(r\)</span> 的属性</li>
+<li><span class="arithmatex">\(\prod_{R−S}((\prod_{R−S}(r)\times s)−\prod_{R−S,S}(r))\)</span> 找出 <span class="arithmatex">\(\prod_{R−S}(r)\)</span> 的 <span class="arithmatex">\(t\)</span>，满足对于某些元组 <span class="arithmatex">\(u\in s,tu\not\in r\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>商来自于 <span class="arithmatex">\(\prod_{R−S}(r)\)</span>，并且其元组 <span class="arithmatex">\(t,s\)</span> 所有元组的拼接被 <span class="arithmatex">\(r\)</span> 覆盖</li>
+<li>该运算适用于带有 "for all" 字样的查询语句</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250224180910.png" /></p>
 </div>
 </div>
 </div>
+</div>
+</div>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6271,7 +6332,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 14:57:46</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 18:09:44</span>
   </span>
 
     
