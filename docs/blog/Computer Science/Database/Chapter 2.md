@@ -242,7 +242,7 @@ comments: true
 		
 		- $r\rtimes s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})$
 		- $r\ltimes s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))$
-		- $r$⟗$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\cup({(\text{null,...,null})\}\times(s-\prod_s(r\Join s)))$
+		- $r$⟗$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\cup(\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s)))$
 	
 	=== "Semijoin"
 	
