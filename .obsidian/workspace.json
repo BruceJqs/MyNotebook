@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/Computer Science/Database/Chapter 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/Computer Science/Database/Chapter 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 2"
             }
           },
           {
@@ -180,15 +180,29 @@
   },
   "active": "bb153e0b31fd93cf",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20250224115612.png",
+    "docs/assets/Pasted image 20250224115210.png",
+    "docs/assets/Pasted image 20250224114143.png",
+    "docs/assets/Pasted image 20250224113257.png",
+    "docs/assets/Pasted image 20250224112759.png",
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
+    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch02.md",
+    "docs/blog/Computer Science/Database/Chapter 2.md",
+    "docs/assets/Pasted image 20250224111249.png",
+    "docs/assets/Pasted image 20250224111143.png",
+    "docs/assets/Pasted image 20250224104253.png",
+    "docs/assets/Pasted image 20250224104115.png",
+    "docs/assets/Pasted image 20250224103015.png",
+    "docs/blog/Computer Science/Database/Homework 1.md",
+    "docs/blog/Computer Science/Database/Chapter 1.md",
+    "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
     "docs/blog/Computer Science/Computer Architecture/index.md",
+    "docs/blog/Computer Science/Database/index.md",
     "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/assets/Pasted image 20250223202145.png",
-    "docs/blog/Computer Science/Database/Chapter 1.md",
     "docs/blog/ACEE/Information Theory",
     "Analysis.md",
-    "docs/assets/Pasted image 20250219221100.png",
-    "docs/assets/Pasted image 20250219221028.png",
     "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 8.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 9.md",
@@ -197,32 +211,19 @@
     "docs/blog/Computer Science/OOP/Chapter 1.md",
     "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Computer Science/Cryptography/index.md",
-    "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
     "docs/blog/Computer Science/Numerical Analysis",
     "docs/blog/Computer Science/Cryptography/Chapter 1.md",
-    "docs/blog/Computer Science/Database/index.md",
-    "docs/blog/Computer Science/Database/Homework 1.md",
     "docs/blog/Computer Science/Computer Architecture",
     "docs/blog/Computer Science/Computer Organization/Homework 2.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch04.md",
     "docs/blog/Computer Science/Cryptography",
-    "docs/assets/Pasted image 20250217184926.png",
-    "docs/assets/Pasted image 20250217184806.png",
-    "docs/assets/Pasted image 20250217184741.png",
-    "docs/assets/Pasted image 20250217184630.png",
     "Untitled.canvas",
     "2025-02-17.md",
-    "docs/assets/Pasted image 20250217164448.png",
     "main.cpp",
     "docs/blog/Computer Science/OOP",
-    "docs/assets/Pasted image 20250217132903.png",
-    "docs/assets/Pasted image 20250217131610.png",
     "docs/blog/Computer Science/ADS/Chapter 15.md",
     "docs/blog/Computer Science/ADS/index.md",
-    "docs/blog/Computer Science/ADS/Chapter 11.md",
-    "docs/blog/Math/Probability Theory and Mathematical Statistics/Chapter 1.md",
     "docs/blog/Computer Science/Database",
-    "docs/blog/Research/Seedlab/Testing Scheme.md",
     "docs/blog/Others/College Physical Experiments/assets/lab01-非平衡电桥.pdf",
     "docs/blog/Others/College Physical Experiments/assets",
     "docs/blog/ACEE/Mathematical Modeling/Untitled",

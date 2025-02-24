@@ -73,6 +73,7 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 | <font color=red>F</font> | <font color=red>F</font> | <font color=red>T</font> |
 
 其他表达 p$\rightarrow$q 的方式：
+
 - **if p,then q** 
 - **p implies q**
 - **if p,q**
@@ -85,7 +86,7 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 - **q is necessary for p**
 - **q follows from p**
 - **a necessary condition for p is q**
-- **<font color=red>q unless $\neg$p</font>**
+- **<font color=red>q unless $\neg$ p</font>**
 
 ### Biconditional（if and only if）
 用 p$\leftrightarrow$q 表示当且仅当 p,q,当 p 和 q 相同时值为 T，真值表如下：
@@ -98,11 +99,13 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 |  F   |  F   |          T          |
 
 其他表达 p$\leftrightarrow$q 的方式：
+
 - **p is necessary and sufficient for q**
 - **if p then q and conversely（vice versa）**
 - **p iff q**
 
 ### Equivalent Propositions
+
 定义：当两个命题<font color=red>始终都有相同的真值</font>时，称为等价命题（Equivalent Propositions）。
 
 ### Precedence
@@ -117,6 +120,7 @@ e.g.2. Soup <font color=blue>or</font> salad comes with this entrée.<font color
 
 ## Applications of Propositional Logic
 ### Translating Sentences
+
 - 找出原子命题并使用命题变量表示
 - 确定适当的逻辑连词
 - 用逻辑表达式表达句子
@@ -139,40 +143,47 @@ e.g.对于下列命题：
 - “If the diagnostic message is stored in the buffer, then it is retransmitted.”
   
 令 *p:* “The diagnostic message is stored in the buffer.” 
+
 *q:* “The diagnostic message is retransmitted.”
-那么这一系列命题可以写为 p$\lor$q，p$\rightarrow$q，$\neg$p，当 p 为 F，q 为 T 时三个命题均为 T，所以这一系列命题是一致的。
-但加入命题“The diagnostic message is not retransmitted”，那么四个命题就不一致。
+
+那么这一系列命题可以写为 p$\lor$q，p$\rightarrow$q，$\neg$p，当 p 为 F，q 为 T 时三个命题均为 T，所以这一系列命题是一致的
+
+但加入命题“The diagnostic message is not retransmitted”，那么四个命题就不一致
 
 ### Logic Puzzles
 
 ## Propositional Equivalences
 ### Tautologies,Contradictions, and Contingencies
-恒真命题（Tautology）：始终为 T 的命题（例如 p$\lor$$\neg$p）
-恒假命题（Contradiction）：始终为 F 的命题（例如 p$\land$$\neg$p）
-偶然命题（Contingency）：真值不确定的命题
+
+- 恒真命题（Tautology）：始终为 T 的命题（例如 p$\lor$$\neg$p）
+- 恒假命题（Contradiction）：始终为 F 的命题（例如 p$\land$$\neg$p）
+- 偶然命题（Contingency）：真值不确定的命题
+
 ### Logically Equivalent
-定义：对于命题 p,q，如果<font color=blue>命题 p$\leftrightarrow$q 是一个恒真命题</font>，则称 p 和 q 是<font color=blue>等价的（Equivalent）</font>。
+
+定义：对于命题 p,q，如果<font color=blue>命题 p$\leftrightarrow$q 是一个恒真命题</font>，则称 p 和 q 是<font color=blue>等价的（Equivalent）</font>
+
 符号：<font color=red>p$\Leftrightarrow$q 或 p$\equiv$q</font>
 <font color=red>符号$\equiv$不是一个逻辑连词，命题 p$\equiv$q 不是一个复合命题</font>
 
 ### Key Logical Equivalences
-|              Name               |                         Equivalences                         |
-| :-----------------------------: | :----------------------------------------------------------: |
-|          Identity laws          |         $p \land T \equiv p$<br>$p \lor F \equiv p$          |
-|         Domination laws         |         $p \lor T  \equiv T$<br>$p \land F \equiv p$         |
-|         Idempotent laws         |         $p \lor p \equiv p$<br>$p \land p \equiv p$          |
-|       Double negation law       |                   $ \neg \neg p \equiv p$                    |
-| Commutative laws<br>（交换律）  | <font color=red>$p \lor q \equiv q \lor p$<br>$p \land q \equiv q \land p$</font> |
-| Associative laws<br>（结合律）  | <font color=red>$(p \lor q) \lor r \equiv p \lor (q \lor r)$<br>$(p \land q) \land r \equiv p \land (q \land r)$</font> |
+|            Name            |                                                                Equivalences                                                                |
+| :------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
+|       Identity laws        |                                                $p \land T \equiv p$<br>$p \lor F \equiv p$                                                 |
+|      Domination laws       |                                                $p \lor T  \equiv T$<br>$p \land F \equiv p$                                                |
+|      Idempotent laws       |                                                $p \lor p \equiv p$<br>$p \land p \equiv p$                                                 |
+|    Double negation law     |                                                           $\neg \neg p \equiv p$                                                           |
+| Commutative laws<br>（交换律）  |                             <font color=red>$p \lor q \equiv q \lor p$<br>$p \land q \equiv q \land p$</font>                              |
+| Associative laws<br>（结合律）  |          <font color=red>$(p \lor q) \lor r \equiv p \lor (q \lor r)$<br>$(p \land q) \land r \equiv p \land (q \land r)$</font>           |
 | Distributive laws<br>（分配律） | <font color=red>$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$<br>$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</font> |
-|        De Morgan's laws         | <font color=red>$\neg (p \land q) \equiv \neg p \lor \neg q$<br>$\neg (p \lor q) \equiv \neg p \land \neg q$</font> |
-|   Negation laws<br>（否定律）   |    $p \lor \neg p \equiv T$<br>$p \land \neg p \equiv F$     |
-|  Absorption laws<br>（吸收律）  | <font color=red>$p \lor (p \land q) \equiv p$<br>$p \land (p \lor q) \equiv p$</font> |
-|       Contrapositive law        |      $p \rightarrow q \equiv \neg q \rightarrow \neg p$      |
-|         Exportation law         | <font color=red>$(p \land q) \rightarrow r \equiv p \rightarrow (q \rightarrow r)$</font> |
-|          Absurdity law          | <font color=red>$(p \rightarrow q )\land (p \rightarrow \neg q) \equiv \neg p$</font> |
-|         Implication law         | <font color=red>$p \rightarrow q \equiv \neg p \lor q$</font> |
-|         Equivalence law         | <font color=red>$p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</font> |
+|      De Morgan's laws      |            <font color=red>$\neg (p \land q) \equiv \neg p \lor \neg q$<br>$\neg (p \lor q) \equiv \neg p \land \neg q$</font>             |
+|   Negation laws<br>（否定律）   |                                           $p \lor \neg p \equiv T$<br>$p \land \neg p \equiv F$                                            |
+|  Absorption laws<br>（吸收律）  |                           <font color=red>$p \lor (p \land q) \equiv p$<br>$p \land (p \lor q) \equiv p$</font>                            |
+|     Contrapositive law     |                                             $p \rightarrow q \equiv \neg q \rightarrow \neg p$                                             |
+|      Exportation law       |                         <font color=red>$(p \land q) \rightarrow r \equiv p \rightarrow (q \rightarrow r)$</font>                          |
+|       Absurdity law        |                           <font color=red>$(p \rightarrow q )\land (p \rightarrow \neg q) \equiv \neg p$</font>                            |
+|      Implication law       |                                       <font color=red>$p \rightarrow q \equiv \neg p \lor q$</font>                                        |
+|      Equivalence law       |                       <font color=red>$p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$</font>                        |
 
 补充：
 
