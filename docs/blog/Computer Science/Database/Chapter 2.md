@@ -68,6 +68,7 @@ comments: true
 		- e.g. 下面 time_slot_id 并不是关系 $r_2$ 的主键，所以这里不是外键约束
 		
 		![](../../../assets/Pasted%20image%2020250224104253.png)
+		
 ***
 ## Schema Diagrams
 
@@ -109,7 +110,7 @@ comments: true
 
 - 选择操作选择满足谓词的元组，记为 $\sigma_p(r)$，满足 $\sigma_p(r)=\{t|t\in r\text{ and } p(t)\}$
 	- 其中 $p$ 为选择谓词（Selection Predicate），它是一个关于命题演算的公式（用 $\land,\lor,\neg$ 等符号连接的项）
-	- 每个**项**的格式为：\<attribute\> op \<attribute\>/\<constant\>，其中 op 是比较运算符（$=,\not=,>,\geq,<,\leq$ 中的其中一种）
+	- 每个**项**的格式为：$<\text{attribute}> \text{op} <\text{attribute}>/<\text{constant}>$，其中 op 是比较运算符（$=,\not=,>,\geq,<,\leq$ 中的其中一种）
 
 !!! example "Example"
 
@@ -155,3 +156,30 @@ comments: true
 !!! example "Example"
 
 	![](../../../assets/Pasted image 20250224115612.png)
+
+!!! example "Composition of Operations"
+
+	=== "Example 1"
+	
+		查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id 和标题
+		
+		- 
+***
+### Rename
+
+- 重命名操作允许我们命名，从而引用关系代数表达式的结果，允许我们用多个名称来引用一个关系，记为 $\rho_X(E)$，返回在名称 $X$ 下的表达式 $E$
+	- 如果 $E$ 的元数为 $n$，那么 $\rho_X(A_1,A_2,...,A_n)(E)$ 返回在名称 $X$ 下的表达式 $E$，并且属性名改为 $A_1,A_2,...,A_n$
+
+!!! example "Example"
+
+	我们要在表格中寻找大学中薪资最高的记录
+	
+	首先，我们需要获得所有不是最大值的薪资（即存在其他老师的薪资比当前薪资大）：
+	
+	- $\prod_{\text{instructor.salary}}(\sigma_{\text{instructor.salary}<d.\text{salary}}(\text{instructor}\times\rho_d(\text{instructor})))$
+		- 这句话是因为任何不是最大值的薪水都会在笛卡尔积 select 后至少存在一个元组，这样投影之后仍会存在。但最大值就不会有元组存在
+	
+	然后我们用全集减掉就可以找到最大值：
+	
+	- $\prod_{\text{instructor}}−\prod{\text{instructor.salary}}(\sigma_{\text{instructor.salary}<d.\text{salary}}(\text{instructor}\times\rho_d(\text{instructor})))$
+***
