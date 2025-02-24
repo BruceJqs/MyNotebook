@@ -1555,6 +1555,8 @@
       
         
       
+        
+      
     
     
       
@@ -1919,6 +1921,28 @@
   
   <span class="md-ellipsis">
     Homework 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Homework%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 02
     
   </span>
   
@@ -6344,9 +6368,10 @@
 </div>
 <div class="tabbed-block">
 <p>半连接（记作 <span class="arithmatex">\(r\ltimes_{\theta}s\)</span>）能实现保留 <span class="arithmatex">\(r\)</span> 中能与 <span class="arithmatex">\(s\)</span> 相连的元组，满足 <span class="arithmatex">\(r\ltimes_{\theta}s=\prod_R(r\Join_{\theta}s)\)</span></p>
-<p>!!! example "Example"</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  ![](../../../assets/Pasted image 20250224175100.png)
-</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250224175100.png" /></p>
+</div>
 </div>
 <div class="tabbed-block">
 <ul>
@@ -6436,7 +6461,7 @@
 <ul>
 <li><code>select A1, A2, ... An from r1, r2, ... rm where P</code> 和 <span class="arithmatex">\(\prod_{A_1,...,A_n}(\sigma_P(r_1\times r_2\times ... \times r_m))\)</span> 等价</li>
 <li><code>select A1, A2, sum(A3) from r1, r2, ... rm where P group by A1, A2</code> 和<span class="arithmatex">\(\text{ }_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)}\sigma_P(r_1\times r_2\times ... \times r_m))\)</span> 等价</li>
-<li>更一般地说，<code>select</code> 子句中的非聚合属性可能是 <code>group by</code> 属性的子集，在这种情况下，<code>select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2</code> 和 <span class="arithmatex">\(\prod_{A_1,\text{sum}(A_3)}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))\)</span></li>
+<li>更一般地说，<code>select</code> 子句中的非聚合属性可能是 <code>group by</code> 属性的子集，在这种情况下，<code>select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2</code> 和 <span class="arithmatex">\(\prod_{A_1,\text{sum}(A_3)}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))\)</span> 等价</li>
 </ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -6507,7 +6532,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 19:40:03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 22:22:40</span>
   </span>
 
     

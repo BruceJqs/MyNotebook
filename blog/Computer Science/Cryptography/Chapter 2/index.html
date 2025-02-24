@@ -1540,6 +1540,8 @@
       
         
       
+        
+      
     
     
       
@@ -1638,6 +1640,28 @@
   
   <span class="md-ellipsis">
     Homework 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Database/Homework%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 02
     
   </span>
   
@@ -5504,6 +5528,65 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      单表密码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单表密码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      加法密码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      乘法密码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      仿射密码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      多表密码
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5537,6 +5620,38 @@
 
 
 <h1 id="chapter-02">Chapter 02 : 古典密码<a class="headerlink" href="#chapter-02" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>加密过程（Encryption）为明文经过密钥通过加密算法进行加密变为密文的过程</p>
+<p>解密过程（Decryption）为密文解密还原成明文的过程</p>
+</blockquote>
+<h2 id="_1">单表密码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>单表密码只使用一张密码字母表，且明文字母与密文字母有固定的对应关系，我们可以使用频率分析法可以解决单表密码</p>
+</blockquote>
+<h3 id="_2">加法密码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>典型例子：凯撒加密</p>
+<ul>
+<li>加密：<span class="arithmatex">\(c = (p-\)</span>'<span class="arithmatex">\(A\)</span>'<span class="arithmatex">\(+3)\text{ mod }26+\)</span>'<span class="arithmatex">\(A\)</span>'</li>
+<li>解密：<span class="arithmatex">\(p = (c-\)</span>'<span class="arithmatex">\(A\)</span>'<span class="arithmatex">\(-3)\text{ mod }26+\)</span>'<span class="arithmatex">\(A\)</span>' 或 <span class="arithmatex">\(p = (c-\)</span>'<span class="arithmatex">\(A\)</span>'<span class="arithmatex">\(+23)\text{ mod }26+\)</span>'<span class="arithmatex">\(A\)</span>'</li>
+</ul>
+<hr />
+<h3 id="_3">乘法密码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>加密：<span class="arithmatex">\(c = p\times k\text{ mod }n\)</span></li>
+<li>解密：<span class="arithmatex">\(p = c\times k^{-1}\text{ mod }n\)</span>，其中 <span class="arithmatex">\(k^{-1}\)</span> 为 <span class="arithmatex">\(k\)</span> 的乘法逆元</li>
+</ul>
+<hr />
+<h3 id="_4">仿射密码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>加密：<span class="arithmatex">\(c = (p\times k_1+k_2)\text{ mod }n\)</span></li>
+<li>解密：<span class="arithmatex">\(p = (c-k_2)\times k_1^{-1}\text{ mod }n\)</span></li>
+</ul>
+<hr />
+<h2 id="_5">多表密码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>多表密码是对每个明文字母采用不同的单表代换，即同一明文字母对应多个密文字母</p>
+</blockquote>
+<p>典型例子：<a href="https://en.wikipedia.org/wiki/Playfair_cipher">Playfair</a>、<a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenere</a>、<a href="https://en.wikipedia.org/wiki/Beaufort_cipher">Beaufort</a>、<a href="https://en.wikipedia.org/wiki/One-time_pad">Vernam</a>、<a href="https://en.wikipedia.org/wiki/Hill_cipher">Hill</a>、<a href="https://en.wikipedia.org/wiki/Enigma_machine">Enigma</a></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5606,7 +5721,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 19:40:03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 22:22:40</span>
   </span>
 
     
