@@ -161,9 +161,17 @@ comments: true
 
 	=== "Example 1"
 	
+		查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id
+		
+		- $\prod_{\text{instructor.name, course\_id}}(\sigma_{\text{dept\_name}=\text{“Physics”}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\text{instructor}\times\text{teaches})))$
+		- $\prod_{\text{instructor.name, course\_id}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\sigma_{\text{dept\_name}=\text{“Physics”}}(\text{instructor})\times\text{teaches}))$
+		- 上面这两句话是等价的，但第二条我们先进行了一次 select（关注括号的位置），条目少了更高效
+	
+	=== "Example 2"
+	
 		查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id 和标题
 		
-		- 
+		- $\prod_{\text{instructor.name, course.course\_id, course.title}}(\sigma_{\text{dept\_name}=\text{“Physics”}\land\text{instructor.ID}=\text{teaches.ID}\land\text{teaches.course\_id=course.course\_id}}(\text{instructor}\times\text{teaches}\times\text{course}))$
 ***
 ### Rename
 
@@ -183,3 +191,31 @@ comments: true
 	
 	- $\prod_{\text{instructor}}−\prod{\text{instructor.salary}}(\sigma_{\text{instructor.salary}<d.\text{salary}}(\text{instructor}\times\rho_d(\text{instructor})))$
 ***
+### Additional Operations
+
+- 交（Set Intersection）： $r\cap s$
+- 自然连接（Natural Join）： $r\bowtie s$
+- 赋值（Assignment）： $\leftarrow$
+- 外连接（Outer Join）： $r\rtimes s, r \ltimes s, r$⟗$s$
+- 除法（Division Operator）：$r\div s$
+
+!!! note "Additional Operations"
+
+	=== "Set Intersection"
+	
+		 - 交操作允许我们找到两个关系中共同的元组，记为 $r\cap s$，满足 $r\cap s=\{t|t\in r\text{ and }t\in s\}$
+			 - 和并操作同样地，交操作的两个关系必须是可兼容的
+			 - $r\cap s = r - (r - s)$
+		
+		!!! example "Example"
+		
+			![](../../../assets/Pasted%20image%2020250224140623.png)
+	
+	=== "Natural Join"
+	
+		- 令 $r,s$ 的模式分别为 $R,S$，那么自然连接（记为 $r\Join s$）的结果为一个在模式 $R\cup S$ 上的关系，按照以下方法获得：
+			- 考虑分别来自 $r,s$ 的每一对元组 $t_r,t_s$
+			- 如果 $t_r,t_s$ 在 $R\cap S$ 的每个属性上的取值相同，则将元组 $t$ 加入到结果中，其中 $t$ 有与 $t_r$​ 在 $r$ 上，以及 $t_s​$ 在 $s$ 上相同的值
+			- 简单来说，自然连接就是连接两个关系中同名属性值相等的元组，结果属性是二者属性集的并集
+		- 自然连接操作满足 $r,s$ 必须有共同属性（名称、域对应相同）
+		- 扩展：**Theta 连接**，记作：$r\Join_theta=\sigma_\theta(r\times s)$，其中 $\theta$ 是关于模式上属性的谓词
