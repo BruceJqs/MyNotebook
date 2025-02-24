@@ -246,9 +246,9 @@ comments: true
 	
 	=== "Semijoin"
 	
-		  半连接（记作 $r\ltimes_{\theta}s$）能实现保留 $r$ 中能与 $s$ 相连的元组，满足 $r\ltimes_{\theta}s=\prod_R(r\Join_{\theta}s)$
+		半连接（记作 $r\ltimes_{\theta}s$）能实现保留 $r$ 中能与 $s$ 相连的元组，满足 $r\ltimes_{\theta}s=\prod_R(r\Join_{\theta}s)$
 		  
-		  !!! example "Example"
+		!!! example "Example"
 		  
 			  ![](../../../assets/Pasted image 20250224175100.png)
 	
@@ -321,4 +321,4 @@ comments: true
 
 - `select A1, A2, ... An from r1, r2, ... rm where P` 和 $\prod_{A_1,...,A_n}(\sigma_P(r_1\times r_2\times ... \times r_m))$ 等价
 - `select A1, A2, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和$\text{ }_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)}\sigma_P(r_1\times r_2\times ... \times r_m))$ 等价
-- 更一般地说，`select` 子句中的非聚合属性可能是 `group by` 属性的子集，在这种情况下，`select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和 $\prod_{A_1,\text{sum}(A_3)}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))$
+- 更一般地说，`select` 子句中的非聚合属性可能是 `group by` 属性的子集，在这种情况下，`select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和 $\prod_{A_1,\text{sum}(A_3)}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))$ 等价
