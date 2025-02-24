@@ -209,13 +209,69 @@ comments: true
 		
 		!!! example "Example"
 		
-			![](../../../assets/Pasted%20image%2020250224140623.png)
+			![](../../../assets/Pasted image 20250224140623.png)
 	
 	=== "Natural Join"
 	
 		- 令 $r,s$ 的模式分别为 $R,S$，那么自然连接（记为 $r\Join s$）的结果为一个在模式 $R\cup S$ 上的关系，按照以下方法获得：
 			- 考虑分别来自 $r,s$ 的每一对元组 $t_r,t_s$
 			- 如果 $t_r,t_s$ 在 $R\cap S$ 的每个属性上的取值相同，则将元组 $t$ 加入到结果中，其中 $t$ 有与 $t_r$​ 在 $r$ 上，以及 $t_s​$ 在 $s$ 上相同的值
-			- 简单来说，自然连接就是连接两个关系中同名属性值相等的元组，结果属性是二者属性集的并集
+			- 简单来说，共同属性要有相同的值，才能在拼接后的结果中保留。类似对乘法的扩展，相当于先笛卡尔积再 select，最后 project
 		- 自然连接操作满足 $r,s$ 必须有共同属性（名称、域对应相同）
-		- 扩展：**Theta 连接**，记作：$r\Join_theta=\sigma_\theta(r\times s)$，其中 $\theta$ 是关于模式上属性的谓词
+		- 自然连接操作具有结合律（Associative）和交换律（Commutative）
+		- 扩展：**Theta 连接（条件连接）**，记作：$r\Join_{\theta}=\sigma_{\theta}(r\times s)$，其中 $\theta$ 是关于模式上属性的谓词
+		
+		!!! example "Example"
+		
+			![](../../../assets/Pasted image 20250224170631.png)
+			
+			由这个例子我们可以看出，<font color="red">$r\Join s = \prod_{r.A,r.B,r.C,r.D,s.E}(\sigma_{r.B=s.B\land r.D=s.D}(r\times s))$</font>
+	
+	=== "Outer Join"
+	
+		- **外连接**是连接运算的扩展，用于避免信息的缺失 
+		- 先计算连接，然后将来自一个关系中的，但没有与另一个关系有匹配的元组的元组加入到连接结果中
+		
+		!!! example "Example"
+		
+			![](../../../assets/Pasted image 20250224173858.png)
+			
+			![](../../../assets/Pasted image 20250224173916.png)
+		
+		由上面的 Example 我们可以看出，外连接有三种形式，其中：
+		
+		- $r\rtimes s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})$
+		- $r\ltimes s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))$
+		- $r$⟗$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\cup({(\text{null,...,null})\}\times(s-\prod_s(r\Join s)))$
+	
+	=== "Semijoin"
+	
+		  半连接（记作 $r\ltimes_{\theta}s$）能实现保留 $r$ 中能与 $s$ 相连的元组，满足 $r\ltimes_{\theta}s=\prod_R(r\Join_{\theta}s)$
+		  
+		  !!! example "Example"
+		  
+			  ![](../../../assets/Pasted image 20250224175100.png)
+	
+	=== "Assignment"
+	
+		- 赋值运算符 $\leftarrow$ 提供了一种表达复杂查询的便捷方法
+		    - 可以将查询写成一个顺序的程序，里面包含了一系列的赋值语句，随后跟上一个表达式，其值作为查询的结果
+		    - 赋值必须用于临时的关系变量
+	
+	=== "Division"
+	
+		- 除法运算记作 $r\div s$，给定关系 $r(R)$ 和 $s(S)$，使得 $S\subset R$，那么 $r\div s$ 是最大的关系 $t(R-S)$，满足 $t\times s\subseteq r$
+		- 我们可以将 $r\div s$ 写作：
+			- $\text{temp1}\leftarrow\prod_{R-S}(r)$
+			- $\text{temp2}\leftarrow\prod_{R-S}((\text{temp1}\times s)-\prod_{R-S,S}(r))$
+			- $\text{result}=\text{temp1}-\text{temp2}$
+			- 解释：
+			    - $\prod_{R−S,S}(r)$ 仅重排了 $r$ 的属性
+			    - $\prod_{R−S}((\prod_{R−S}(r)\times s)−\prod_{R−S,S}(r))$ 找出 $\prod_{R−S}(r)$ 的 $t$，满足对于某些元组 $u\in s,tu\not\in r$
+		- 商来自于 $\prod_{R−S}(r)$，并且其元组 $t,s$ 所有元组的拼接被 $r$ 覆盖
+		- 该运算适用于带有 "for all" 字样的查询语句
+		
+		!!! example "Example"
+		
+			![](../../../assets/Pasted image 20250224180910.png)
+***
