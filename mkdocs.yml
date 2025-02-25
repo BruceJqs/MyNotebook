@@ -121,6 +121,7 @@ nav:
     - 密码学｜Cryptography:
       - blog/Computer Science/Cryptography/index.md
       - "Chapter 01: 数学基础": blog/Computer Science/Cryptography/Chapter 1.md
+      - "Chapter 02: 古典密码": blog/Computer Science/Cryptography/Chapter 2.md
     - 数值分析｜Numerical Analysis:
       - blog/Computer Science/Numerical Analysis/index.md
       - "Chapter 01: Mathematical Preliminaries": blog/Computer Science/Numerical Analysis/Chapter 1.md
