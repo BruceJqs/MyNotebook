@@ -125,6 +125,7 @@ nav:
     - 数值分析｜Numerical Analysis:
       - blog/Computer Science/Numerical Analysis/index.md
       - "Chapter 01: Mathematical Preliminaries": blog/Computer Science/Numerical Analysis/Chapter 1.md
+      - "Chapter 02: Solutions of Equations in One Variable": blog/Computer Science/Numerical Analysis/Chapter 2.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
