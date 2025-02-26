@@ -412,6 +412,7 @@ $$
 $$
 \text{Cost of die}=\frac{\text{Cost of wafer}}{\text{Dies per wafer}\times\text{Die yield}}
 ​$$
+
 上述公式只计算了晶圆上晶片的最大数量，而我们更希望知道晶圆上好的晶片的数量，即晶片产出（Die Yield）：
 
 $$
