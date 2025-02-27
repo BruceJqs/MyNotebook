@@ -23,7 +23,7 @@ comments: true
 
 !!! note "Theorem"
 
-	假设 $f\in C[a,b]$ 且满足 $f(a)⋅f(b)<0$，那么二分法将产生一个序列 ${p_n}(n=1,2,…)$，用于逼近 $f$ 的一个零点 $p$，并满足 $|pn−p|\leq\frac{b−a}{2^n},n\geq 1$
+	假设 $f\in C[a,b]$ 且满足 $f(a)⋅f(b)<0$，那么二分法将产生一个序列 ${p_n}(n=1,2,…)$，用于逼近 $f$ 的一个零点 $p$，并满足 $|p_n−p|\leq\frac{b−a}{2^n},n\geq 1$
 	
 	??? note "Proof"
 	
