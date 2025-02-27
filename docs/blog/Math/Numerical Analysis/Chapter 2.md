@@ -122,7 +122,7 @@ $$
 		    - 根据均值定理（Mean Value Theorem），存在一个位于 $p,q$ 的数 $\xi$，满足 $g(p)−g(q)=g'(\xi)(p−q)$
 		    - 因为 $g(p)=p,g(q)=q$，所以可以得到 $(1−g'(\xi))(p−q)=0$，和已知条件矛盾，因此假设不成立，即“不动点是唯一的”结论成立
 		- “收敛”：即证明 $\lim\limits_{⁡n\rightarrow\infty}|p_n−p|=0$
-		    - 因为 $\forall x\in [a,b]$，$g(x)\in [a,b]$，所以 $\forall n\geq 0$，$p_n$ 都是有定义的
+			- 因为 $\forall x\in [a,b]$，$g(x)\in [a,b]$，所以 $\forall n\geq 0$，$p_n$ 都是有定义的
 		    - 因此：
 			    
 				$$
@@ -170,6 +170,8 @@ Step 7  Output(The method failed after N_max iterations);  /*unsuccessful*/
 	=== "Question"
 	
 		使用以下 $p_0=1.5$ 的等价不动点形式在 $[1,2]$ 中找到方程 $x^3+4x^2–10=0$ 的唯一根，哪一种方式是最好的？（根的准确值约为 $1.365230013$）
+		
+		![](../../../assets/Pasted image 20250228010444.png)
 	
 	=== "Answer"
 	
