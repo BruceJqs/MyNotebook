@@ -128,7 +128,7 @@
               </button>
             
             
-    本网站仍在努力<strong>建设开发中</strong>喵～如果觉得作者的文章对你有帮助，可以 Github 上给个 Star 嘛～
+    本网站仍在努力<strong>建设开发中</strong>喵～如果觉得作者的文章对你有帮助，可以 Github 上给个 <strong>Star</strong> 嘛🥺
   
           </div>
           
@@ -3009,6 +3009,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fixed-Point Iteration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton's Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -5672,6 +5687,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fixed-Point Iteration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton's Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -5725,7 +5755,7 @@
 <details class="note">
 <summary>Proof</summary>
 <p>当 <span class="arithmatex">\(n\geq 1\)</span> 时，有 <span class="arithmatex">\(b_n−a_n=\frac{1}{2^{n−1}}(b−a)\text{ and }p\in (a_n,b_n)\)</span> 成立。</p>
-<p>因为 <span class="arithmatex">\(n\geq 1\)</span> 时，有 <span class="arithmatex">\(p_n=\frac{1}{2}(a_n+b_n)\)</span>，所以 <span class="arithmatex">\(|pn−p|\leq\frac{1}{2}(b_n−a_n)=\frac{b−a}{2^n}\)</span> 成立</p>
+<p>因为 <span class="arithmatex">\(n\geq 1\)</span> 时，有 <span class="arithmatex">\(p_n=\frac{1}{2}(a_n+b_n)\)</span>，所以 <span class="arithmatex">\(|p_n−p|\leq\frac{1}{2}(b_n−a_n)=\frac{b−a}{2^n}\)</span> 成立</p>
 </details>
 </div>
 <p>在连续函数 <span class="arithmatex">\(f\)</span> 的区间 <span class="arithmatex">\([a,b]\)</span> 上寻找 <span class="arithmatex">\(f(x)=0\)</span> 的解，其中 <span class="arithmatex">\(f(a),f(b)\)</span> 符号相反</p>
@@ -5850,6 +5880,105 @@ p=\lim\limits_{n\rightarrow\infty}p_n=\lim\limits_{n\rightarrow\infty}g(p_{n-1})
 </ul>
 </details>
 </div>
+<div class="admonition note">
+<p class="admonition-title">推论</p>
+<p>如果 <span class="arithmatex">\(g\)</span> 满足不动点定理的假设，那么用 <span class="arithmatex">\(p_n​\)</span>（<span class="arithmatex">\(\forall n\geq 1\)</span>）近似表示 <span class="arithmatex">\(p\)</span> 所产生的误差边界为：</p>
+<div class="arithmatex">\[
+|p_n−p|\leq\frac{1}{1−k}|p_{n+1}−p_n|\text{ and }|p_n−p|\leq\frac{k^n}{1−k}|p_1−p_0|
+\]</div>
+<details class="note">
+<summary>Proof</summary>
+<ul>
+<li><span class="arithmatex">\(|p_{n+1}−p_n|\geq |p_n−p|−|p_{n+1}−p|\geq|p_n−p|−k|p_n−p|\)</span></li>
+<li><span class="arithmatex">\(|p_{n+1}−p_n|=|g(x_n)−g(x_{n−1})|=|g'(\xi_n)(p_n−p_{n−1})|\leq k|p_n−p_{n−1}|\leq ... \leq k^n|p_1−p_0|\)</span></li>
+</ul>
+</details>
+<p>这两个不等式，前者可以用来控制计算的精度，而后者说明了 <span class="arithmatex">\(k\)</span> 越小收敛速度越快</p>
+</div>
+<p>给定一个初始近似值 <span class="arithmatex">\(p_0\)</span>，找到 <span class="arithmatex">\(p=g(p)\)</span> 的一个解。</p>
+<ul>
+<li>输入：初始近似值 <span class="arithmatex">\(p_0​\)</span>；容忍值 TOL；最大迭代次数 <span class="arithmatex">\(N_{\max}\)</span></li>
+<li>输出：近似解 <span class="arithmatex">\(p\)</span> 或错误信息</li>
+</ul>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Fixed-Point Iteration.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">Step</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">Step</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N_max</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="mi">3-6</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="n">p_0</span><span class="p">);</span><span class="w">  </span><span class="cm">/*compute p_i*/</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">|</span><span class="n">p</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p_0</span><span class="o">|</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">TOL</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">Output</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w">  </span><span class="cm">/*successful*/</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="n">STOP</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">6</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">p_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">  </span><span class="cm">/*update p_0*/</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">Step</span><span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="n">Output</span><span class="p">(</span><span class="n">The</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">N_max</span><span class="w"> </span><span class="n">iterations</span><span class="p">);</span><span class="w">  </span><span class="cm">/*unsuccessful*/</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">例题</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Question</label><label for="__tabbed_3_2">Answer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>使用以下 <span class="arithmatex">\(p_0=1.5\)</span> 的等价不动点形式在 <span class="arithmatex">\([1,2]\)</span> 中找到方程 <span class="arithmatex">\(x^3+4x^2–10=0\)</span> 的唯一根，哪一种方式是最好的？（根的准确值约为 <span class="arithmatex">\(1.365230013\)</span>）</p>
+</div>
+<div class="tabbed-block">
+<p>如果无脑迭代的话，会得到以下结果：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250227133802.png" /></p>
+<p>可以看到 <span class="arithmatex">\(a,b\)</span> 不符合要求，而 <span class="arithmatex">\(c,d,e\)</span> 都可以迭代下去。<span class="arithmatex">\(a,b\)</span> 不符合的原因分别是一个不收敛，另一个出现对负数开根号的情况。但即使是可以迭代的 <span class="arithmatex">\(c,d,e\)</span>，也有一些小小的差别：</p>
+<ul>
+<li>c：在区间 <span class="arithmatex">\([1,1.5]\)</span> 时，<span class="arithmatex">\(k\approx 0.66\)</span></li>
+<li>d：<span class="arithmatex">\(k\approx 0.15\)</span></li>
+<li>e：<span class="arithmatex">\(k\)</span> 更小，表现最好</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="newtons-method">Newton's Method<a class="headerlink" href="#newtons-method" title="Permanent link">&para;</a></h3>
+<p>牛顿法的基本思想即使用泰勒展开（Taylor's Expansion）来线性化一个非线性的函数</p>
+<p>具体来说，令 <span class="arithmatex">\(p_0\in [a,b]\)</span> 为 <span class="arithmatex">\(p\)</span> 的一个近似值，满足 <span class="arithmatex">\(f'(p)\not=0\)</span>。考虑以下 <span class="arithmatex">\(f(x)\)</span> 关于 <span class="arithmatex">\(p_0\)</span> 的泰勒多项式：</p>
+<div class="arithmatex">\[
+f(x)=f(p_0)+f'(p_0)(x−p_0)+\frac{f''(\xi_x)}{2!}(x−p_0)^2\text{ where }\xi_x\text{ lies between }p_0\text{ and }x
+\]</div>
+<p>假设 <span class="arithmatex">\(|p−p_0|\)</span> 很小，那么 <span class="arithmatex">\((p−p_0)^2\)</span> 会更小，有：</p>
+<div class="arithmatex">\[
+0=f(p)\approx f(p_0)+f'(p_0)(p−p_0)\Rightarrow p\approx p_0−\frac{f(p_0)}{f'(p_0)}
+\]</div>
+<p>我们不难得到以下递推关系式：</p>
+<div class="arithmatex">\[
+p_n=p_{n−1}−\frac{f(p_{n−1})}{f'(p_{n−1})}\text{ for }n\geq 1
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Theorem</p>
+<p>令 <span class="arithmatex">\(f\in C^2[a,b]\)</span>（即函数具有二阶连续导数）。如果 <span class="arithmatex">\(p\in [a,b]\)</span> 满足 <span class="arithmatex">\(f(p)=0\)</span> 且 <span class="arithmatex">\(f'(p)\not=0\)</span>，那么存在一个 <span class="arithmatex">\(\delta&gt;0\)</span>，使得牛顿法产生一个序列 <span class="arithmatex">\(\{p_n\}(n=1,2,…)\)</span>，对任意近似值 <span class="arithmatex">\(p_0\in [p−\delta,p+\delta]\)</span>，该序列收敛于 <span class="arithmatex">\(p\)</span></p>
+<details class="note">
+<summary>Proof</summary>
+<p>牛顿法就是：<span class="arithmatex">\(p_n=g(p_{n−1}),n\geq 1\)</span>，满足 <span class="arithmatex">\(g(x)=x−\frac{f(x)}{f'(x)}\)</span>。我们需要回答以下问题：</p>
+<ul>
+<li><span class="arithmatex">\(g(x)\)</span> 是否在 <span class="arithmatex">\(p\)</span> 的邻近区域内连续<ul>
+<li>因为 <span class="arithmatex">\(f'(p)\not=0\)</span> 且连续，所以在 <span class="arithmatex">\(p\)</span> 的邻近区域内，<span class="arithmatex">\(f'(x)\not=0\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(g'(x)\)</span> 是否在 <span class="arithmatex">\(p\)</span> 的邻近区域内被 <span class="arithmatex">\(0&lt;k&lt;1\)</span> 约束<ul>
+<li>因为 <span class="arithmatex">\(g'(x)=\frac{f(x)f''(x)}{[f'(x)]^2}\)</span>，所以 <span class="arithmatex">\(g'(p)=0\)</span></li>
+<li>又因为 <span class="arithmatex">\(f''(x)\)</span> 连续，所以 <span class="arithmatex">\(g'(x)\)</span> 很小，且在 <span class="arithmatex">\(p\)</span> 的邻近区域内连续</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(g(x)\)</span> 是否将 <span class="arithmatex">\([p−\delta,p+\delta]\)</span> 映射到自身<ul>
+<li><span class="arithmatex">\(|g(x)−p|=|g(x)−g(p)|=|g'(\xi)||x−p|\leq k|x−p|&lt;|x−p|&lt;\delta\)</span></li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>牛顿法的收敛性取决于初始近似值的选择。如下图所示，如果选择不当的话，牛顿法就会失效：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250227213636.png" /></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5919,7 +6048,7 @@ p=\lim\limits_{n\rightarrow\infty}p_n=\lim\limits_{n\rightarrow\infty}g(p_{n-1})
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月27日 11:37:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月27日 21:37:07</span>
   </span>
 
     
