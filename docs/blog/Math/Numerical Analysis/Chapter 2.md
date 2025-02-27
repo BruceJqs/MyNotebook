@@ -183,7 +183,7 @@ Step 7  Output(The method failed after N_max iterations);  /*unsuccessful*/
 		- d：$k\approx 0.15$
 		- e：$k$ 更小，表现最好
 ***
-### Newton's Method
+## Newton's Method
 
 牛顿法的基本思想即使用泰勒展开（Taylor's Expansion）来线性化一个非线性的函数
 
