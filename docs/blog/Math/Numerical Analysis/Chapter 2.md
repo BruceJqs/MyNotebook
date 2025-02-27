@@ -29,7 +29,7 @@ comments: true
 	
 		当 $n\geq 1$ 时，有 $b_n−a_n=\frac{1}{2^{n−1}}(b−a)\text{ and }p\in (a_n,b_n)$ 成立。
 		
-		因为 $n\geq 1$ 时，有 $p_n=\frac{1}{2}(a_n+b_n)$，所以 $|pn−p|\leq\frac{1}{2}(b_n−a_n)=\frac{b−a}{2^n}$ 成立
+		因为 $n\geq 1$ 时，有 $p_n=\frac{1}{2}(a_n+b_n)$，所以 $|p_n−p|\leq\frac{1}{2}(b_n−a_n)=\frac{b−a}{2^n}$ 成立
 
 在连续函数 $f$ 的区间 $[a,b]$ 上寻找 $f(x)=0$ 的解，其中 $f(a),f(b)$ 符号相反
 
@@ -134,5 +134,97 @@ $$
 		        
 		    - 根据条件，$k∈(0,1)$，所以 $k^n\rightarrow 0$，因此 $\lim\limits_{n\rightarrow\infty}|p_n-p|=0$ 成立
 
+!!! note "推论"
+
+	如果 $g$ 满足不动点定理的假设，那么用 $p_n​$（$\forall n\geq 1$）近似表示 $p$ 所产生的误差边界为：
+	
+	$$
+	|p_n−p|\leq\frac{1}{1−k}|p_{n+1}−p_n|\text{ and }|p_n−p|\leq\frac{k^n}{1−k}|p_1−p_0|
+	$$
+	
+	??? note "Proof"
+	
+		- $|p_{n+1}−p_n|\geq |p_n−p|−|p_{n+1}−p|\geq|p_n−p|−k|p_n−p|$
+		- $|p_{n+1}−p_n|=|g(x_n)−g(x_{n−1})|=|g'(\xi_n)(p_n−p_{n−1})|\leq k|p_n−p_{n−1}|\leq ... \leq k^n|p_1−p_0|$
+	
+	这两个不等式，前者可以用来控制计算的精度，而后者说明了 $k$ 越小收敛速度越快
+
+给定一个初始近似值 $p_0$，找到 $p=g(p)$ 的一个解。
+
+- 输入：初始近似值 $p_0​$；容忍值 TOL；最大迭代次数 $N_{\max}$
+- 输出：近似解 $p$ 或错误信息
+
+```c title="Fixed-Point Iteration.c"
+Step 1  Set i = 1;
+Step 2  while (i <= N_max) do steps 3-6
+        Step 3  Set p = g(p_0);  /*compute p_i*/
+        Step 4  if |p - p_0| < TOL then Output(p);  /*successful*/
+            STOP;
+        Step 5  Set i++;
+        Step 6  Set p_0 = p;  /*update p_0*/
+Step 7  Output(The method failed after N_max iterations);  /*unsuccessful*/
+```
+
+!!! example "例题"
+
+	=== "Question"
+	
+		使用以下 $p_0=1.5$ 的等价不动点形式在 $[1,2]$ 中找到方程 $x^3+4x^2–10=0$ 的唯一根，哪一种方式是最好的？（根的准确值约为 $1.365230013$）
+	
+	=== "Answer"
+	
+		如果无脑迭代的话，会得到以下结果：
+		
+		![](../../../assets/Pasted image 20250227133802.png)
+		
+		可以看到 $a,b$ 不符合要求，而 $c,d,e$ 都可以迭代下去。$a,b$ 不符合的原因分别是一个不收敛，另一个出现对负数开根号的情况。但即使是可以迭代的 $c,d,e$，也有一些小小的差别：
+		
+		- c：在区间 $[1,1.5]$ 时，$k\approx 0.66$
+		- d：$k\approx 0.15$
+		- e：$k$ 更小，表现最好
+***
+### Newton's Method
+
+牛顿法的基本思想即使用泰勒展开（Taylor's Expansion）来线性化一个非线性的函数
+
+具体来说，令 $p_0\in [a,b]$ 为 $p$ 的一个近似值，满足 $f'(p)\not=0$。考虑以下 $f(x)$ 关于 $p_0$ 的泰勒多项式：
+
+$$
+f(x)=f(p_0)+f'(p_0)(x−p_0)+\frac{f''(\xi_x)}{2!}(x−p_0)^2\text{ where }\xi_x\text{ lies between }p_0\text{ and }x
+$$
+
+假设 $|p−p_0|$ 很小，那么 $(p−p_0)^2$ 会更小，有：
+
+$$
+0=f(p)\approx f(p_0)+f'(p_0)(p−p_0)\Rightarrow p\approx p_0−\frac{f(p_0)}{f'(p_0)}
+$$
+
+我们不难得到以下递推关系式：
+
+$$
+p_n=p_{n−1}−\frac{f(p_{n−1})}{f'(p_{n−1})}\text{ for }n\geq 1
+$$
+
+!!! note "Theorem"
+
+	令 $f\in C^2[a,b]$（即函数具有二阶连续导数）。如果 $p\in [a,b]$ 满足 $f(p)=0$ 且 $f'(p)\not=0$，那么存在一个 $\delta>0$，使得牛顿法产生一个序列 $\{p_n\}(n=1,2,…)$，对任意近似值 $p_0\in [p−\delta,p+\delta]$，该序列收敛于 $p$
+	
+	??? note "Proof"
+	
+		牛顿法就是：$p_n=g(p_{n−1}),n\geq 1$，满足 $g(x)=x−\frac{f(x)}{f'(x)}$。我们需要回答以下问题：
+		
+		- $g(x)$ 是否在 $p$ 的邻近区域内连续
+		    - 因为 $f'(p)\not=0$ 且连续，所以在 $p$ 的邻近区域内，$f'(x)\not=0$
+		- $g'(x)$ 是否在 $p$ 的邻近区域内被 $0<k<1$ 约束
+		    - 因为 $g'(x)=\frac{f(x)f''(x)}{[f'(x)]^2}$，所以 $g'(p)=0$
+		    - 又因为 $f''(x)$ 连续，所以 $g'(x)$ 很小，且在 $p$ 的邻近区域内连续
+		- $g(x)$ 是否将 $[p−\delta,p+\delta]$ 映射到自身
+			- $|g(x)−p|=|g(x)−g(p)|=|g'(\xi)||x−p|\leq k|x−p|<|x−p|<\delta$
+
+!!! warning "注意"
+
+	牛顿法的收敛性取决于初始近似值的选择。如下图所示，如果选择不当的话，牛顿法就会失效：
+	
+	![](../../../assets/Pasted image 20250227213636.png)
 
 
