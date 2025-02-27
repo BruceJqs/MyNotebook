@@ -118,14 +118,6 @@ nav:
     - 计算机体系结构｜Computer Architecture:
       - blog/Computer Science/Computer Architecture/index.md
       - "Chapter 01: Fundamentals of Computer Design": blog/Computer Science/Computer Architecture/Chapter 1.md
-    - 密码学｜Cryptography:
-      - blog/Computer Science/Cryptography/index.md
-      - "Chapter 01: 数学基础": blog/Computer Science/Cryptography/Chapter 1.md
-      - "Chapter 02: 古典密码": blog/Computer Science/Cryptography/Chapter 2.md
-    - 数值分析｜Numerical Analysis:
-      - blog/Computer Science/Numerical Analysis/index.md
-      - "Chapter 01: Mathematical Preliminaries": blog/Computer Science/Numerical Analysis/Chapter 1.md
-      - "Chapter 02: Solutions of Equations in One Variable": blog/Computer Science/Numerical Analysis/Chapter 2.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
@@ -161,6 +153,10 @@ nav:
       - "Chapter 06: 数理统计的基本概念": blog/Math/Probability Theory and Mathematical Statistics/Chapter 6.md
       - "Chapter 07: 参数估计": blog/Math/Probability Theory and Mathematical Statistics/Chapter 7.md
       - "Chapter 08: 假设检验": blog/Math/Probability Theory and Mathematical Statistics/Chapter 8.md
+    - 数值分析｜Numerical Analysis:
+      - blog/Math/Numerical Analysis/index.md
+      - "Chapter 01: Mathematical Preliminaries": blog/Math/Numerical Analysis/Chapter 1.md
+      - "Chapter 02: Solutions of Equations in One Variable": blog/Math/Numerical Analysis/Chapter 2.md
   - ACEE:
     - 数学建模｜Mathematical Modeling:
       - blog/ACEE/Mathematical Modeling/index.md
@@ -233,6 +229,10 @@ nav:
     - 2024.12 国赛初赛:
       - blog/CTF/2024.12国赛/index.md
       - "Crypto｜rasnd": blog/CTF/2024.12国赛/rasnd.md
+    - 密码学｜Cryptography:
+      - blog/CTF/Cryptography/index.md
+      - "Chapter 01: 数学基础": blog/CTF/Cryptography/Chapter 1.md
+      - "Chapter 02: 古典密码": blog/CTF/Cryptography/Chapter 2.md
   # - Research:
   #   - Seedlab:
   #     - blog/Research/Seedlab/index.md
