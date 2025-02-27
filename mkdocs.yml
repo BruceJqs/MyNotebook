@@ -157,6 +157,8 @@ nav:
       - blog/Math/Numerical Analysis/index.md
       - "Chapter 01: Mathematical Preliminaries": blog/Math/Numerical Analysis/Chapter 1.md
       - "Chapter 02: Solutions of Equations in One Variable": blog/Math/Numerical Analysis/Chapter 2.md
+      - "Homework 01": blog/Math/Numerical Analysis/Homework 1.md
+      - "Homework 02": blog/Math/Numerical Analysis/Homework 2.md
   - ACEE:
     - 数学建模｜Mathematical Modeling:
       - blog/ACEE/Mathematical Modeling/index.md
