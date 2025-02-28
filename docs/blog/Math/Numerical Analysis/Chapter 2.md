@@ -118,21 +118,21 @@ $$
 	
 		- “不动点”：令 $f(x)=g(x)−x$，因为 $a\leq g(x)\leq b$，所以 $f(a)=g(a)−a\geq 0$ 且 $f(b)=g(b)−b\leq 0$。由介值定理知，$f$ 一定有一个根，因此 $g$ 有一个不动点
 		- “唯一”：（用反证法证明）
-		    - 假设 $p,q$ 都是 $g$ 在区间 $[a,b]$ 上的两个不同的不动点
-		    - 根据均值定理（Mean Value Theorem），存在一个位于 $p,q$ 的数 $\xi$，满足 $g(p)−g(q)=g'(\xi)(p−q)$
-		    - 因为 $g(p)=p,g(q)=q$，所以可以得到 $(1−g'(\xi))(p−q)=0$，和已知条件矛盾，因此假设不成立，即“不动点是唯一的”结论成立
+			- 假设 $p,q$ 都是 $g$ 在区间 $[a,b]$ 上的两个不同的不动点
+			- 根据均值定理（Mean Value Theorem），存在一个位于 $p,q$ 的数 $\xi$，满足 $g(p)−g(q)=g'(\xi)(p−q)$
+			- 因为 $g(p)=p,g(q)=q$，所以可以得到 $(1−g'(\xi))(p−q)=0$，和已知条件矛盾，因此假设不成立，即“不动点是唯一的”结论成立
 		- “收敛”：即证明 $\lim\limits_{⁡n\rightarrow\infty}|p_n−p|=0$
 			- 因为 $\forall x\in [a,b]$，$g(x)\in [a,b]$，所以 $\forall n\geq 0$，$p_n$ 都是有定义的
-		    - 因此：
-			    
+			- 因此：
+				
 				$$
 				\begin{aligned}
-		        ∣p_n−p∣&=∣g(p_{n−1})−g(p)∣=∣g'(\xi)∣∣p_{n−1}−p∣\leq k∣p_{n−1}−p∣\\
-		        & \leq k^2∣p_{n−2}−p∣\leq...\leq k^n∣p_0−p∣
-		        \end{aligned}
-		        $$
-		        
-		    - 根据条件，$k∈(0,1)$，所以 $k^n\rightarrow 0$，因此 $\lim\limits_{n\rightarrow\infty}|p_n-p|=0$ 成立
+				∣p_n−p∣&=∣g(p_{n−1})−g(p)∣=∣g'(\xi)∣∣p_{n−1}−p∣\leq k∣p_{n−1}−p∣\\
+				& \leq k^2∣p_{n−2}−p∣\leq...\leq k^n∣p_0−p∣
+				\end{aligned}
+				$$
+				
+			- 根据条件，$k∈(0,1)$，所以 $k^n\rightarrow 0$，因此 $\lim\limits_{n\rightarrow\infty}|p_n-p|=0$ 成立
 
 !!! note "推论"
 

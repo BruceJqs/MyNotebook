@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 2"
             }
           },
           {
@@ -180,10 +180,10 @@
   },
   "active": "bb153e0b31fd93cf",
   "lastOpenFiles": [
+    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Homework 2.md",
     "docs/blog/Math/Numerical Analysis/Chapter 2.md",
     "docs/assets/Pasted image 20250228010444.png",
-    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/assets/Pasted image 20250227221821.png",
     "docs/assets/Pasted image 20250227221747.png",
     "docs/assets/Pasted image 20250227221659.png",
