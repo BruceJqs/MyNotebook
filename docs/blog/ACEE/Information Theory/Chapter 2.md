@@ -212,5 +212,16 @@ $$
 $$H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log p(x,y)$$
 
 表示随机变量 $X$ 和 $Y$ 联合发生后的不确定性。
+***
+### 条件熵
 
+在给定事件 $Y=y$ 的条件下，事件 $X$ 的条件熵为：
+
+$$H(X|Y=y)=-\sum_{x\in\mathcal{X}}p(x|y)\log p(x|y)$$
+
+!!! example "Example"
+
+	
+
+$H(X|y)$ 不一定比 $H(X)$ 小，可能随着 $y$ 的引入，系统更加混乱。
 
