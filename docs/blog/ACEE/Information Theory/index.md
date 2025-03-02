@@ -18,5 +18,5 @@ comments: true
 ## Table of Contents
 
 - [Chapter 01 : Introduction](Chapter%201/)
-- Part 01 : 信息的度量
+- Part 01 - 信息的度量
 	- [Chapter 02 : 随机变量的熵和互信息](Chapter%202/)

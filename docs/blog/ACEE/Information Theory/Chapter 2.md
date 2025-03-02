@@ -211,13 +211,46 @@ $$
 
 $$H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log p(x,y)$$
 
-表示随机变量 $X$ 和 $Y$ 联合发生后的不确定性。
+表示随机变量 $X$ 和 $Y$ 联合发生后的不确定性
+
+!!! note "链式法则"
+
+	$$
+	H(X,Y)=H(X)+H(Y|X)=H(Y)+H(X|Y)
+	$$
+	
+	随机变量 $X$ 和 $Y$ 联合发生后的不确定性等于随机变量 $X$ 的不确定性加上在给定 $X$ 的条件下随机变量 $Y$ 的不确定性。
+	
+	当 $X$ 和 $Y$ 统计独立时，$H(X,Y)=H(X)+H(Y)$
+	
+	- 在三元情况下，$H(X,Y,Z)=H(X)+H(Y,Z|X)=H(X)+H(Y|X)+H(Z|X,Y)$
+	
+	??? note "Proof"
+	
+		$$
+		\begin{aligned}
+		H(X,Y)&=E[I(X,Y)]=-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(x,y)\log p(x,y)\\
+		&=-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(x,y)\log p(x)-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(x,y)\log p(y|x)\\
+		&=H(X)+H(Y|X)
+		\end{aligned}
+		$$
+		
 ***
 ### 条件熵
 
 在给定事件 $Y=y$ 的条件下，事件 $X$ 的条件熵为：
 
-$$H(X|Y=y)=-\sum_{x\in\mathcal{X}}p(x|y)\log p(x|y)$$
+$$
+H(X|Y=y)=-\sum_{x\in\mathcal{X}}p(x|y)\log p(x|y)
+$$
+
+或者也可定义为：
+
+$$
+H(X|Y)=E\{H(X|y)\}=-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(x,y)\log p(x|y)
+$$
+
+- 从第二个定义我们可以看出，当 $X$ 和 $Y$ 统计独立时，$H(X|Y)=H(X)$
 
 !!! example "Example"
 
@@ -226,6 +259,16 @@ $$H(X|Y=y)=-\sum_{x\in\mathcal{X}}p(x|y)\log p(x|y)$$
 	设 $p(x=1)=0.5;p(x=0)=0.5;p(1|1)=0.75,p(0|1)=0.25$，则 $H(X|Y=1)<H(X)$
 	
 	$p(X=1)=0.25; p(X=0)=0.75; p(1|1)=0.5, p(0|1)=0.5$，则 $H(X|Y=1)>H(X)$
+***
+### 熵的性质
+
+对于随机变量 $X$ ，如果
+
+$$\mathbb{X}=\begin{pmatrix}x_1&x_2&\cdots&x_K\\p_1&p_2&\cdots&p_K\end{pmatrix}$$
+
+则有：
+
+$$H(X)\triangleq H_K({p_1,p_2,\cdots,p_K})\triangleq H_K(P)=-\sum_{k=1}^Kp_k\log p_k$$
 
 
 
