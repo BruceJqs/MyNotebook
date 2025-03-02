@@ -269,6 +269,115 @@ $$\mathbb{X}=\begin{pmatrix}x_1&x_2&\cdots&x_K\\p_1&p_2&\cdots&p_K\end{pmatrix}$
 则有：
 
 $$H(X)\triangleq H_K({p_1,p_2,\cdots,p_K})\triangleq H_K(P)=-\sum_{k=1}^Kp_k\log p_k$$
+- $H_K(P)$ 对概率矢量 $P$ 的分量是**对称的**，即 $H_K(P)$ 对 $p_1,p_2,\cdots,p_K$ 的排列是不变的——$p_1,p_2,\cdots,p_K$ 的排列不同，$H_K(P)$ 的值不变
+- **非负性**：$H(X)\geq 0$
+- **确定性**：$H(X)=0$ 当且仅当 $X$ 是**确定性**的随机变量，即 $X$ 的取值只有一个
+- **可扩展性**：$\lim\limits_{\epsilon\to 0}H_{K+1}(P_1,P_2,\cdots,P_K-\epsilon,\epsilon)=H_K(P_1,P_2,\cdots,P_K)$ —— 在增加一个概率接近于零的事件时，总熵几乎不变
+- **可加性**：$H(X_2)|_{X_2\in\mathcal{X}_2}=H(X_1)|_{X_1\in\mathcal{X}_1}+H(X_2|X_1)|_{X_2\in\mathcal{X}_2}^{X_1\in\mathcal{X}_1}$
+
+!!! note "可加性"
+
+	- $H(X_1)|_{X_1\in\mathcal{X}_1} = H(P(A), P(B))$
+	- $H(X_2)|_{X_2\in\mathcal{X}_2} = H(P(A)P_{A_1}, P(A)P_{A_2}, P(A)P_{A_3}, P(B)P_{B_1}, P(B)P_{B_2})$
+	- $H(X_2 | X_1)|_{X_2\in\mathcal{X}_2}^{X_1\in\mathcal{X}_1}=\sum\limits_{x_1\in\mathcal{X}_1}P(x_1)H(X_2|x_1)=P(A) H(P_{A_1}, P_{A_2}, P_{A_3}) + P(B) H(P_{B_1}, P_{B_2})$
+	
+	对变量 X 可以进行多步分层的观察，每一步都可从上一步的观察结果中得到更为细致的结果，变量 X 在最后的观察结果集合中的不确定性等于第一次观察结果的不确定性，加上其后每次观察结果在前一次观察结果已知的前提下的条件不确定性
+	
+	多元形式：
+	
+	$$
+    \begin{aligned}
+    H_M &= -\sum_{k=1}^K \sum_{j=1}^{m_k} p_k q_{jk} \log (p_k q_{jk}) \\
+    &= -\sum_{k=1}^K \sum_{j=1}^{m_k} p_k q_{jk} \log p_k - \sum_{k=1}^K \sum_{j=1}^{m_k} p_k q_{jk} \log q_{jk} \\
+    &= -\sum_{k=1}^K p_k \log p_k \sum_{j=1}^{m_k} q_{jk} - \sum_{k=1}^K p_k \sum_{j=1}^{m_k} q_{jk} \log q_{jk} \\
+    &= -\sum_{k=1}^K p_k \log p_k - \sum_{k=1}^K p_k \sum_{j=1}^{m_k} q_{jk} \log q_{jk} \\
+    &= H_K(p_1, p_2, \cdots, p_K) + \sum_{k=1}^K p_k H_{m_k}(q_{1k}, q_{2k}, \cdots, q_{m_k k})
+    \end{aligned}
+    $$
+    
+
+- **极值性**：$H_K(p_1,p_2,\cdots,p_k)\leq H_K(\frac1K,\frac1K,\cdots,\frac1K) =  \log K$，当且仅当 $X$ 是**均匀分布**时取等号。
+
+??? note "Proof"
+
+	$H_K(p_1,p_2,...,p_K)\leq -\sum\limits_{k=1}^Kp_k\log q_k$ 对任何概率矢量 $\pmb{q}$ 均成立。因为：
+	
+	$$
+	\begin{aligned}
+	H_K(p_1,p_2,...,p_K)+\sum\limits_{k=1}^Kp_k\log q_k&=\sum\limits_{k=1}^Kp_k\log\frac{q_k}{p_k}\\
+	&\leq\log e·\sum\limits_{k=1}^Kp_k(\frac{q_k}{p_k}-1)(\text{由}\ln x\leq x-1)\\
+	&=0(q_k=\frac{1}{K},k=1,2,...,K)
+	\end{aligned}
+	$$
+	
+
+- **条件熵小于等于熵**：$H(X|Y)\leq H(X)$——增加条件，减少不确定性。当且仅当 X 和 Y 独立时取等号
+
+??? note "Proof"
+
+	$$
+    \begin{aligned}
+    H(p_1,p_2,...,p_K)&\leq -\sum\limits_{k=1}^Kp_k\log q_k\\
+    H(X|Y) &= E \{H(X|y)\} = -\sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P(x, y) \log P(x|y) \\
+    &= -\sum_{y \in \mathcal{Y}} \omega(y) \left\{\sum_{x \in \mathcal{X}} P(x|y) \log P(x|y)\right\} \\
+    &\leq -\sum_{y \in \mathcal{Y}} \omega(y) \left\{\sum_{x \in \mathcal{X}} P(x|y) \log P(x)\right\} \\
+    &= -\sum_{x \in \mathcal{X}} \left\{\sum_{y \in \mathcal{Y}} P(x|y) w(y)\right\} \log P(x) \\
+    &= -\sum_{x \in \mathcal{X}} \left\{\sum_{y \in \mathcal{Y}} P(x,y)\right\} \log P(x) \\
+    &= -\sum_{x \in \mathcal{X}} P(x) \log P(x) \\
+    &= H(X)
+    \end{aligned}
+    $$
+	
+
+- **凸性**：$H(X)$是严格上凸函数， $H(\lambda \vec{P_1}+(1-\lambda)\vec{P_2})\geq \lambda H(\vec{P_1})+(1-\lambda)H(\vec{P_2}),\quad 0\leq \lambda\leq 1$
+
+!!! note "取极大值的充要条件"
+
+	Jensen不等式：
+	
+	$$
+	\begin{aligned}
+		&\text{令 } (\alpha_1, \alpha_2, \cdots, \alpha_L) \text{ 是凸集中的一组矢量，} f(\alpha) \text{ 是该凸集上的一个上凸函数，} \\
+		&(\theta_1, \theta_2, \cdots, \theta_L) \text{ 是一组概率分布，则有} \\
+		&\sum_{l=1}^L \theta_l f(\alpha_l) \leq f \left( \sum_{l=1}^L \theta_l \alpha_l \right)
+	\end{aligned}
+	$$
+
+	首先我们有
+	
+	![](../../../assets/Pasted image 20250302205411.png)
+	
+	!!! note "怎么理解？"
+		注意到，此时每个分量为非负。我们要找到极值，就是让这个函数在邻域内的值都比它小。
+		
+		如果 $\alpha_k$ 大于零，那么这个偏导数一定要为零，否则必定在这个方向或反方向上有增大的空间。-->如果我们增大或减小 $\alpha_k$，那么这个函数的值会增大。
+
+		如果 $\alpha_k$ 等于零，那么这个偏导数需要小于或等于零。如果大于零，必定在这个方向上有增大的空间。-->如果我们增大 $\alpha_k$，那么这个函数的值会增大。
+
+	把这个移作概率空间。除了要求非负，还要求和为1。所以我们用拉式乘子法，构造函数：
+
+	$$
+	L(P,\lambda)=H(P)+\lambda(1-\sum_{k=1}^Kp_k)
+	$$
+	
+	求偏导，有：
+
+        $$
+        \begin{cases}
+        \frac{\partial L}{\partial p_k}=\frac{\partial f(P)}{\partial p_k}-\lambda=0\\
+        \frac{\partial L}{\partial \lambda}=1-\sum\limits_{k=1}^Kp_k=0
+        \end{cases}
+        $$
+
+	根据前文的解释，我们有：
+
+	$$
+	\begin{cases}
+	\frac{\partial f(P)}{\partial p_k}=\lambda\qquad p_k > 0\\
+	\frac{\partial f(P)}{\partial p_k}\leq \lambda\qquad p_k = 0
+	\end{cases}
+	$$
+
 
 
 
