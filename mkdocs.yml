@@ -185,8 +185,8 @@ nav:
     - 信息理论｜Information Theory:
       - blog/ACEE/Information Theory/index.md
       - "Chapter 01: Introduction": blog/ACEE/Information Theory/Chapter 1.md
-#      - "Part 01 - 信息的度量":
-#        - "Chapter 02: 随机变量的熵和互信息": blog/ACEE/Information Theory/Chapter 2.md
+      - "Part 01 - 信息的度量":
+        - "Chapter 02: 随机变量的熵和互信息": blog/ACEE/Information Theory/Chapter 2.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
