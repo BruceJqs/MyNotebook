@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Testing Scheme.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Testing Scheme"
+              "title": "Chapter 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Testing Scheme.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Testing Scheme"
+              "title": "Outline of Chapter 2"
             }
           },
           {
@@ -164,7 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 273.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,8 +180,13 @@
   },
   "active": "61d88c6a14ed06e2",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/Questions.md",
+    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/blog/ACEE/Information Theory/Chapter 2.md",
+    "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/blog/Research/Seedlab/Testing Scheme.md",
+    "docs/blog/Research/Seedlab/test-report.md",
+    "docs/assets/Pasted image 20250228150627.png",
+    "docs/blog/Research/Seedlab/Questions.md",
     "docs/assets/Pasted image 20250228134442.png",
     "docs/assets/Pasted image 20250228134304.png",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
@@ -191,7 +196,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Basic-Labs/A01_transit_as.md",
     "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
-    "docs/blog/Research/Seedlab/test-report.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge",
     "docs/blog/Research/Seedlab/Basic-Labs",
@@ -208,7 +212,6 @@
     "docs/assets/Pasted image 20250227220401.png",
     "docs/blog/Math/Numerical Analysis/Homework 1.md",
     "docs/assets/Pasted image 20250227213636.png",
-    "docs/assets/Pasted image 20250227133802.png",
     "docs/blog/CTF/Cryptography/index.md",
     "docs/blog/CTF/Cryptography/Chapter 2.md",
     "docs/blog/CTF/Cryptography/Chapter 1.md",
@@ -221,8 +224,6 @@
     "docs/blog/Computer Science/Numerical Analysis/Homework 1.md",
     "docs/blog/Computer Science/Numerical Analysis/Untitled.md",
     "docs/blog/Computer Science/Numerical Analysis/index.md",
-    "docs/blog/Computer Science/Numerical Analysis/Chapter 1.md",
-    "docs/blog/Computer Science/Database/Chapter 1.md",
     "docs/blog/ACEE/Information Theory",
     "docs/blog/Computer Science/Numerical Analysis",
     "Untitled.canvas",

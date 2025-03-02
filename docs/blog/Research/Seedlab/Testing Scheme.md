@@ -55,6 +55,15 @@ test 内容为新 apt 源配置，红框已测试可以将 apt 源替换，在�
 		
 		![](../../../assets/Pasted%20image%2020250228134304.png)
 		
-		- 原因：Manjaro 22、Ubuntu 23.04、Fedora 38 以及其他的最新发行版中，正在使用 Python 包来实现此增强功能。这个更新是为了避免操作系统包管理器（如 pacman、yum、apt）和 pip 等特定于 Python 的包管理工具之间的冲突，这些冲突包括 Python 级 API 不兼容和文件所有权冲突。
+		- 原因：Manjaro 22、Ubuntu 23+.04、Fedora 38 以及其他的最新发行版中，正在使用 Python 包来实现此增强功能。这个更新是为了避免操作系统包管理器（如 pacman、yum、apt）和 pip 等特定于 Python 的包管理工具之间的冲突，这些冲突包括 Python 级 API 不兼容和文件所有权冲突。
 		- 目前采用方案：强行去掉这个提示 `sudo mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.bk`
+	- python 版本问题
+		- 24.04 默认安装 python3.12，对于仿真器的许多 example 有问题
+		- 解决方案：install.sh 修改重装 python（3.8？3.10？）
+
+## GETH 安装
+
+已知最新版本 v1.15.3，大概是改 git checkout，未测试（不知道怎么改）
+
+![](../../../assets/Pasted%20image%2020250228150627.png)
 

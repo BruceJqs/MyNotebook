@@ -7,7 +7,7 @@ hide:
 comments: true
 --- 
 
-# Chapter 1 Introduction
+# Chapter 1 : Introduction
 
 ## 信息与信息科学
 
