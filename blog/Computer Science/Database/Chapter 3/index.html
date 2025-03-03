@@ -6434,7 +6434,7 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <ul>
-<li>找到所有的老师的名字，他们的薪资比 Comp.. Sci. dept 中的某个老师的薪资高</li>
+<li>找到所有的老师的名字，他们的薪资比 Comp. Sci. dept 中的某个老师的薪资高</li>
 </ul>
 <div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
@@ -6445,6 +6445,33 @@
 </div>
 <hr />
 <h3 id="string-operations">String Operations<a class="headerlink" href="#string-operations" title="Permanent link">&para;</a></h3>
+<p>在字符串的比较中，SQL 包含了一种<strong>字符串匹配运算符</strong>（String-matching Operator）。我们可以使用<strong>通配符</strong>（Wildcards）来描述字符串的模式（Pattern），以实现模糊匹配（置于 <code>where</code> 子句中，且必须与 <code>like</code> 子句连用），包括：</p>
+<ul>
+<li><code>%</code>：匹配任意字符串（类似文件系统的 <code>*</code>）<ul>
+<li>e.g. <code>select name from instructor where name like '%dar%';</code> 找名字里面含有 <code>dar</code> 的字符串</li>
+</ul>
+</li>
+<li><code>_</code>：匹配任意单个字符（类似文件系统的 <code>?</code>）</li>
+</ul>
+<p>如果希望字符串模式中支持匹配这些通配符，需要加上 <code>\</code> 转义符，使其成为一般字符</p>
+<div class="admonition note">
+<p class="admonition-title">Example</p>
+<p>匹配字符串 <code>'100 %'</code> 但是 <code>%</code> 符号被我们作为了通配符，我们需要用到转义符 <code>\</code>，即将 <code>%</code> 作为正常字符匹配。 </p>
+<p><code>\</code> 也可以是一个基本符号，我们需要在后面写出 <code>escape</code> 表示其在这里作为转义符。类似地我们还可以将转义符定义为 <code>#</code></p>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">like</span><span class="w"> </span><span class="err">‘</span><span class="mi">100</span><span class="w"> </span><span class="err">\</span><span class="o">%</span><span class="s1">&#39; escape &#39;</span><span class="err">\</span><span class="s1">&#39; </span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="s1">like ‘100 \%&#39;</span><span class="w"> </span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">like</span><span class="w"> </span><span class="err">‘</span><span class="mi">100</span><span class="w"> </span><span class="o">#%</span><span class="s1">&#39; escape ‘#&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<p>SQL 还支持以下字符串操作：</p>
+<ul>
+<li><strong>拼接</strong>（Concatenation）：运算符为 <code>||</code></li>
+<li>大小写转换，有函数 <code>lower()</code>、<code>upper()</code></li>
+<li>获取字符串长度，提取子字符串，有函数 <code>len()</code>、<code>substr()</code></li>
+</ul>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6514,7 +6541,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 14:47:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 14:52:34</span>
   </span>
 
     
