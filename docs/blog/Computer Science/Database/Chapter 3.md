@@ -112,7 +112,32 @@ CREATE TABLE r(A1 D1, A2 D2, ..., An Dn,
 		
 		- 可以从上面的 `primary key` 中删除 `sec_id`，以确保学生不能在同一学期注册同一课程的两个 section
 
+如果引用的表中有条目被删除，可能会破坏完整性约束条件。有下面的方法：
 
+- `restrict`: 如果有条目是被引用的，那么不允许删除。
+- `cascade`: 引用的条目被删了之后，引用者也一并删除
+- `set null`: 引用者的指针设为 `null`.
+- `set default`
+
+如果引用的表中有更新，也有类似上面的四种方法。我们可以在 `create table` 中定义：
+
+- `on delete cascade |set null |restrict |set default`
+- `on update cascade |set null |restrict |set default`
+
+!!! example "Example"
+
+	```SQL
+	create table course (
+		course_id varchar(8) primary key,
+		title varchar(50),
+		dept_name varchar(20),
+		credits numeric(2,0),
+		foreign key (dept_name) references department (dept_name));
+	
+	foreign key (dept_name) references department
+		on delete cascade  |set null |restrict |set default
+		on update cascade |set null |restrict |set default,
+	```
 
 
 

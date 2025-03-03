@@ -354,32 +354,34 @@ $$
 		注意到，此时每个分量为非负。我们要找到极值，就是让这个函数在邻域内的值都比它小。
 		
 		如果 $\alpha_k$ 大于零，那么这个偏导数一定要为零，否则必定在这个方向或反方向上有增大的空间。-->如果我们增大或减小 $\alpha_k$，那么这个函数的值会增大。
-
+		
 		如果 $\alpha_k$ 等于零，那么这个偏导数需要小于或等于零。如果大于零，必定在这个方向上有增大的空间。-->如果我们增大 $\alpha_k$，那么这个函数的值会增大。
-
+		
 	把这个移作概率空间。除了要求非负，还要求和为1。所以我们用拉式乘子法，构造函数：
-
+	
 	$$
 	L(P,\lambda)=H(P)+\lambda(1-\sum_{k=1}^Kp_k)
 	$$
 	
 	求偏导，有：
-
-        $$
-        \begin{cases}
-        \frac{\partial L}{\partial p_k}=\frac{\partial f(P)}{\partial p_k}-\lambda=0\\
-        \frac{\partial L}{\partial \lambda}=1-\sum\limits_{k=1}^Kp_k=0
-        \end{cases}
-        $$
-
+	
+	$$
+	\begin{cases}
+	\frac{\partial L}{\partial p_k}=\frac{\partial f(P)}{\partial p_k}-\lambda=0\\
+	\frac{\partial L}{\partial \lambda}=1-\sum\limits_{k=1}^Kp_k=0
+	\end{cases}
+	$$
+	
 	根据前文的解释，我们有：
-
+	
 	$$
 	\begin{cases}
 	\frac{\partial f(P)}{\partial p_k}=\lambda\qquad p_k > 0\\
 	\frac{\partial f(P)}{\partial p_k}\leq \lambda\qquad p_k = 0
 	\end{cases}
 	$$
+	
+***
 
 
 
