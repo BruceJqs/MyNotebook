@@ -240,6 +240,7 @@ FROM instructor, teaches
 WHERE instructor.ID = teaches.ID;
 ```
 ***
+## Additional Basic Operations
 ### Natural Join
 
 - e.g. `select * from instructor natural join teaches;` 
@@ -287,8 +288,9 @@ WHERE instructor.ID = teaches.ID;
 在字符串的比较中，SQL 包含了一种**字符串匹配运算符**（String-matching Operator）。我们可以使用**通配符**（Wildcards）来描述字符串的模式（Pattern），以实现模糊匹配（置于 `where` 子句中，且必须与 `like` 子句连用），包括：
 
 - `%`：匹配任意字符串（类似文件系统的 `*`）
-	- e.g. `select name from instructor where name like '%dar%';` 找名字里面含有 `dar` 的字符串
+	- e.g. `'%dar%'` 匹配里面含有 `dar` 的字符串；`'dar%'` 匹配以 `dar` 开头的字符串
 - `_`：匹配任意单个字符（类似文件系统的 `?`）
+	- e.g. `_ _ _` 匹配长度为 3 的字符串；`_ _ _%` 匹配长度大于等于 3 的字符串
 
 如果希望字符串模式中支持匹配这些通配符，需要加上 `\` 转义符，使其成为一般字符
 
@@ -310,3 +312,241 @@ SQL 还支持以下字符串操作：
 - 大小写转换，有函数 `lower()`、`upper()`
 - 获取字符串长度，提取子字符串，有函数 `len()`、`substr()`
 ***
+### Ordering the Display of Tuples
+
+- 在 SQL 查询语句中，可以使用 `order by` 子句为查询结果排序
+- 使用关键字 `desc`、`asc` 分别指定降序和升序排序，默认使用升序
+	- e.g. `order by name desc`（可以排序字符串、数字类型）
+- 可以多关键字排序
+	- e.g. `order by name desc, salary asc`，先按照第一关键字排，如果第一关键字相同再按照第二关键字排
+***
+### The Limit Clause
+
+- limit 子句可用于限制 select 语句返回的行数
+- limit 子句接受一个或两个数字参数，这两个参数都必须是非负整数常量
+	- e.g. `limit offset, row_count`，`limit row_count == limit 0, row_count`
+
+!!! example "Example"
+
+	- 列出薪资排名前 3 的老师姓名
+	
+	```SQL
+	select name from instructor
+	order by salary desc
+	limit 3; // limit 0, 3
+	```
+***
+### Duplicates
+
+虽然在传统的关系理论中，不会出现重复数据，但是在实践中，有时我们需要重复的数据。因此，给定多重集关系 $r_1,r_2$，**多重集**（Multiset）的概念如下：
+
+- $\sigma_{\theta}(r_1)$：如果 $r_1$ 中有 $c_1$​ 份元组 $t_1$​ 个副本，且 $t_1$ 满足选择 $\sigma_{\theta}​$，那么结果就会包含这 $c_1$​ 个副本
+- $\prod_A(r)$：对于 $r_1$​ 中元组 $t_1$ 的每个副本，那么在 $\prod_A(r_1)$ 内存在一个元组 $\prod_A(t_1)$ 的副本，其中 $\prod_A(t_1)$ 表示单个元组 $t_1$ 的投影
+- $r_1\times r_2​$：如果在 $r_1$​ 有 $c_1$​ 个副本的元组 $t_1$​，在 $r_2$ 有 $c_2$​ 个副本的元组 $t_2​$，那么在 $r_1\times r_2$ 中就有 $c_1⋅c_2$ 个元组 $t_1t_2​$ 的副本
+***
+## Set Operations
+
+- SQL 支持关系代数中的集合运算符 $\cap,\cup,\overline{}$，分别用 `union`、`intersect`、`except` 表示
+- 使用这些运算符后会自动消除重复记录（因为集合不允许存在重复记录）
+- 如果想要保留重复记录，需要在集合运算关键字后加上 `all` 关键字，即 `union all`、`intersect all`、`except all`。假如有一个元组，在关系 $r, s$ 内分别出现了 $m, n$ 次，那么该元组在
+    - 关系 `r union all s` 中出现 $m + n$ 次
+    - 关系 `r intersect all s` 中出现 $\min(m, n)$ 次
+    - 关系 `r except all s` 中出现 $\max(0, m - n)$ 次
+***
+## Null Values
+
+- 元组的某些属性可能是空值，记作 null
+- null 表示未知值或不存在的值
+- 任何包含 null 的算术表达式的结果为 null
+- 任何包含 null 的比较结果为 unknown
+- SQL 的逻辑表达式的结果有 3 种：true、unknown、false
+    - OR
+        - (unknown or true) = true
+        - (unknown or false) = unknown
+        - (unknown or unknown) = unknown
+    - AND
+        - (unknown and true) = unknown
+        - (unknown and false) = false
+        - (unknown and unknown) = unknown
+    - NOT
+        - (not unknown) = unknown
+- 如果 `where` 子句的谓词的求解结果为 unknown，SQL 会看作 false
+- 使用谓词 `is null` 和 `is not null` 来检查空值
+    - 不能使用 `... = NULL` 比较，因为这样的比较结果恒为 null，没有任何意义
+- 如果谓词 P 的求解结果为 unknown，那么 `P is unknown` 的求解结果为 true
+- 除了 count($*$) 之外的聚合函数会忽略属性中存在 null 值的记录
+- 如果聚合函数的参数包含的记录均为空值，那么返回 null
+***
+## Aggregate Functions
+
+**聚合函数**（Aggregate Functions）一般作用在关系中的某列的一组值上，然后返回一个值。有以下几种聚合函数：
+
+- `avg(col)`：平均值
+- `min(col)`：最小值
+- `max(col)`：最大值
+- `sum(col)`：求和
+- `count(col)`：计数（值的个数）
+
+!!! example "Example"
+
+	=== "Example 01"
+	
+		- 找到 Comp. Sci. dept 老师的平均薪资
+		
+		```SQL
+		select avg(salary) from instructor
+		where dept_name = 'Comp. Sci.';
+		```
+	
+	=== "Example 02"
+	
+		- 还可以使用 `group by` 子句，将结果按照某一列分组
+			- 找到每一个部门的老师的平均薪资
+		
+		```SQL
+		select dept_name, avg(salary) from instructor
+		group by dept_name;
+		```
+		
+		![](../../../assets/Pasted image 20250303175913.png)
+		
+		- select / having 子句中聚合函数之外的属性必须出现在 group by 列表中
+
+聚合函数除了可以紧跟 `select` 之后（类似列名），也可以放在 `having` 子句之后，作为筛选条件（类似 `where` 子句），但是不能放在 `where` 子句内
+***
+### Having Clause
+
+- `having` 子句用于对分组后的结果进行筛选
+- `having` 子句中的谓词在分组形成之后应用，而 `where` 子句中的谓词在分组形成之前应用
+
+!!!  example "Example"
+
+	- 找到平均薪资大于 42000 的部门
+	
+	```SQL
+	select dept_name, avg(salary)
+	from instructor
+	group by dept_name
+	having avg(salary) > 42000;
+	```
+***
+### Null Values and Aggregates
+
+- 对于一个聚合函数来说（例如 `select sum(salary) from instructor`）
+	- 如果属性中有 null 值，那么会被忽略
+	- 如果所有的值都是 null，那么返回 null
+- 所有的聚合函数都会忽略 null 值，除了 `count(*)`，它会统计 null 值
+- 如果所有的值都是 null，那么 `count` 会返回 0，其他的聚合函数会返回 null
+***
+### Arithmetic Expression with Aggregate Functions
+
+!!! example "Example"
+
+	=== "Example 01"
+	
+		- 找到没有重名的部门
+		
+		```SQL
+		select dept_name
+		from student
+		group by dept_name
+		having count(distinct name) = count(id);
+		```
+	
+	=== "Example 02"
+	
+	
+		- 找到重名率小于 0.1% 的部门
+		
+		```SQL
+		select dept_name
+		from student
+		group by dept_name
+		having 1 - count(distinct name) / count(id) < 0.001;
+		```
+***
+综上所述，完整的查询语句格式为：
+
+```SQL
+select <[distince] c1, c2, ...> from <r1, ...>
+[where <condition>]
+[group by <c1, c2, ...> [having <condition2>]]
+[order by <c1 [desc][, c2[desc|asc], ...]>]
+```
+
+执行顺序为：`from` $\rightarrow$ `where` $\rightarrow$ `group by` $\rightarrow$ `having` $\rightarrow$ `select` $\rightarrow$ `order by`
+***
+## Nested Subqueries
+
+SQL 提供了一个嵌套子查询（Nested Subqueries）的机制。**子查询**（Subquery）是指嵌套在其他查询语句中的查询语句，语法大致为：
+
+```SQL
+select A1, A2, ..., An
+from r1, r2, ..., rm
+where P (select B1, B2, ..., Bn
+		from s1, s2, ..., sk
+		where Q);
+```
+
+- 子查询的常见用途有集合查询、集合比较和集合大小
+- 我们有一些与集合相关的字句：
+	- `SOME` 子句：
+	    - 格式：`C <comp> some r`，其中 `<comp>` 是比较运算符
+	    - 等价于：$\exists/t\in r(C<comp>r)$
+	    - `= some` $\equiv$ `in`，但`!= some` $\not\equiv$ `not in`
+	- `ALL` 子句：
+	    - 格式：`C <comp> ALL r`
+	    - 等价于：$\forall t\in r(C<comp>t)$
+	    - `!= ALL` $\equiv$ `not in`，但`= ALL` $\not\equiv$ `in`
+
+!!! example "Example"
+
+	=== "Set Membership"
+	
+		- 找到在 2009 秋和 2010 春上课的课程
+		
+		```SQL
+		select distinct course_id
+		from section
+		where semester = 'Fall' and year = 2009 and
+			course_id in (select course_id
+				from section
+				where semester = 'Spring' and year = 2010);
+		```
+		
+		- 找到在 2009 秋但不在 2010 春上课的课程
+		
+		```SQL
+		select distinct course_id
+		from section
+		where semester = 'Fall' and year = 2009 and
+			course_id not in (select course_id
+				from section
+				where semester = 'Spring' and year = 2010);
+		```
+	
+	
+	=== "Set Comparison"
+	
+		- 找到所有比至少一个在 Biology Department 的老师薪资高的老师
+		
+		```SQL
+		select distinct T.name
+		from instructor as T, instructor as S
+		where T.salary > S.salary and S.dept_name = 'Biology';
+		```
+		
+		- 我们也可以使用 `some` 来实现同样的功能
+		
+		```SQL
+		select name
+		from instructor
+		where salary > some (select salary
+			from instructor
+			where dept_name = 'Biology');
+		```
+***
+
+
+
+
