@@ -18,7 +18,7 @@
     
     
       
-        <title>Chapter 02 : - BruceJin's Notebook</title>
+        <title>Chapter 02 : STL Containers - BruceJin's Notebook</title>
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-02" class="md-skip">
+        <a href="#chapter-02-stl-containers" class="md-skip">
           跳转至
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 02 :
+              Chapter 02 : STL Containers
             
           </span>
         </div>
@@ -5723,6 +5723,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5755,7 +5790,232 @@
   
 
 
-<h1 id="chapter-02">Chapter 02 :<a class="headerlink" href="#chapter-02" title="Permanent link">&para;</a></h1>
+<h1 id="chapter-02-stl-containers">Chapter 02 : STL Containers<a class="headerlink" href="#chapter-02-stl-containers" title="Permanent link">&para;</a></h1>
+<p>C++ 的一大重要概念是<strong>容器对象</strong>（Collection Objects），它是能够存储其他任意数量对象的对象</p>
+<p>容器对象来自 <strong>STL</strong>（Standard Template Library，标准模板库），它是 ISO 标准下的 C++ 库的一部分，包含了各种数据结构和算法。</p>
+<ul>
+<li>使用 STL 的原因：<ul>
+<li>节省开发时间：有现成的数据结构</li>
+<li>代码可读性更强，STL 好比大家都知道的 C++ “黑话”</li>
+<li>鲁棒性</li>
+<li>可移植的代码</li>
+<li>可维护的代码</li>
+<li>容易使用</li>
+</ul>
+</li>
+<li>STL 的组成部分：容器（Containers）、算法（Algorithms）、迭代器（Iterator）</li>
+<li>STL 中最常用的三个数据结构：<ul>
+<li><code>map</code>（映射）：支持任意键值类型</li>
+<li><code>vector</code>（向量）：类似 C 数组，但是可以自动扩展</li>
+<li><code>list</code>（列表）：双向链表</li>
+</ul>
+</li>
+<li>STL 中的顺序容器（Sequential Containers）有 <code>vector</code>、<code>deque</code>（Dual-End Queue，双端队列）、<code>list</code>、<code>forward_list</code>（前向列表）、<code>array</code>、<code>string</code></li>
+</ul>
+<hr />
+<p>C++ 标准库（Standard Library）包括：</p>
+<ul>
+<li>Pair 类：万物皆可配对，比如 int/int，int/char 等等</li>
+<li>容器（Container）<ul>
+<li>向量：可扩展数组</li>
+<li>双端队列（Deque）：两端均可扩展的数组</li>
+<li>列表（Lists）：双向链表</li>
+<li>集合（Sets）和映射（Maps）</li>
+</ul>
+</li>
+<li>基本算法：排序、搜索等等</li>
+<li>在库内的所有标识符（Identifier）都在 <code>std</code> 名称空间内</li>
+</ul>
+<hr />
+<h2 id="vectors">Vectors<a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>vector</code> 是一种<strong>泛型类</strong>（Generic Class）。这种类需要指定两种类型，其中一个是容器自身的类型（这里是 <code>vector</code>），另一个是容器内元素的类型（上例中就是 <code>int</code>）</li>
+<li><code>vector</code> 的内部空间可按需扩大：当有更多项被放入时，它就会为这些项提供足够的空间</li>
+<li><code>vector</code> 会记录当前保存的项数，可以用 <code>size()</code> 方法读取</li>
+<li><code>vector</code> 内部项的顺序即为项的插入顺序，因此可按相同的顺序检索</li>
+<li>基本的运算：<ul>
+<li>构造函数（Constructors）：<ul>
+<li><code>vector&lt;Elem&gt; c;</code></li>
+<li><code>vector&lt;Elem&gt; c1(c2);</code></li>
+</ul>
+</li>
+<li>获取大小：<ul>
+<li><code>V.size()</code>：当前容器内项数</li>
+<li><code>V.empty()</code>：是否为空，相比 <code>.size()</code> 速度更快</li>
+<li><code>V.capacity()</code>：在当前分配的存储空间内最多可以存放的项数</li>
+</ul>
+</li>
+<li>迭代器：<ul>
+<li><code>I.begin()</code>：获取第一个位置</li>
+<li><code>I.end()</code>：获取最后一个位置</li>
+</ul>
+</li>
+<li>元素访问：<ul>
+<li><code>V.at(index)</code><ul>
+<li>该方法会进行边界检查，如果越界，编译器会抛出异常，更加安全</li>
+</ul>
+</li>
+<li><code>V[index]</code><ul>
+<li>注意：不能用这种方法修改元素！</li>
+<li>该方法不会做边界检查，如果越界的话，则行为不可预测，是未定义的行为（Undefined Behaviour），因此速度快，但不安全</li>
+</ul>
+</li>
+<li><code>V.front()</code>：第一项</li>
+<li><code>V.back()</code>：最后一项</li>
+</ul>
+</li>
+<li>添加 / 删除 / 查找：<ul>
+<li><code>V.push_back(e)</code></li>
+<li><code>V.pop_back()</code></li>
+<li><code>V.insert(pos, e)</code>，其中 <code>pos</code> 是迭代器变量</li>
+<li><code>V.clear()</code>：清空向量内所有元素</li>
+<li><code>find(first, last, item)</code>，其中 <code>first</code>、<code>last</code> 是迭代器变量，返回的是位于 <code>first</code> 和 <code>last</code> 之间的迭代器，如果没有找到的话则返回 <code>last</code></li>
+</ul>
+</li>
+<li>其他：<ul>
+<li>支持比较运算符 <code>== != &lt; &gt; &lt;= &gt;=</code></li>
+<li><code>V.swap(v2)</code>：交换</li>
+<li>更多请见 <a href="https://en.cppreference.com/w/cpp/container/vector">cppreference: vector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Example.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">evens</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">evens</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">evens</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">22</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">evens</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">evens</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">evens</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">evens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evens</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">evens</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="o">:</span><span class="w"> </span><span class="n">evens</span><span class="p">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>上例需要 <code>g++ Example.cpp -std=c++11</code> 改变标准编译</li>
+<li><code>push_back()</code> 表示在 vector 后插入一个元素</li>
+<li><code>insert(index, count, value)</code> 表示在 index 位置插入 count 个 value </li>
+<li>上例 11-13 行，14-16 行和 17-19 行是等价的，14-16 行采用了 vector 当中的迭代器，更加模板化</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250303135434.png" /></p>
+</div>
+<hr />
+<h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h2>
+<p>与向量类似：</p>
+<ul>
+<li>构造函数</li>
+<li>能使用比较运算符比较列表</li>
+<li>能够访问列表的首尾元素：<code>x.front()</code>、<code>x.back()</code></li>
+</ul>
+<p>列表相关的函数：</p>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">x</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">x</span><span class="p">.</span><span class="n">pop_back</span><span class="p">()</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">x</span><span class="p">.</span><span class="n">pop_front</span><span class="p">()</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">x</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span><span class="w"> </span><span class="n">pos2</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">x</span><span class="p">.</span><span class="n">count</span><span class="p">()</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">x</span><span class="p">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">x</span><span class="p">.</span><span class="n">resize</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<p>列表元素大小不确定，因此使用迭代器对列表遍历时，只能使用 <code>==</code> 或 <code>!=</code> 比较运算符</p>
+<ul>
+<li>C++ 无法为列表预留空间，所以列表没有 <code>capacity()</code> 函数</li>
+<li>更多请见 <a href="https://en.cppreference.com/w/cpp/container/list">cppreference : list</a></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">数据结构该如何选取？</p>
+<ul>
+<li>除非有别的理由，通常使用 <code>vector</code></li>
+<li><code>vector</code> 的排序速度很快</li>
+<li>如果程序里有很多小的元素，且对空间要求较高的话，不要使用 <code>list</code> 或 <code>forward_list</code></li>
+<li>如果程序要求对元素的随机访问，那么就用 <code>vector</code> 或 <code>deque</code><ul>
+<li><code>vector</code> 是动态分配的数组，而 <code>deque</code> 是一块块连接起来的（Linked-blocks）数组，因此后者的访问时间更长</li>
+</ul>
+</li>
+<li>如果程序需要在容器中间插入元素，那么使用 <code>list</code> 或 <code>forward_list</code></li>
+<li>如果程序仅需要再首尾两端插入元素，无需在中间插入元素，那么就用 <code>deque</code></li>
+</ul>
+</div>
+<hr />
+<h2 id="maps">Maps<a class="headerlink" href="#maps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>映射</strong>（Maps）是一种关联容器，用于存储由<strong>键</strong>（Keys）及其映射值构成的元素，以特定顺序排列</li>
+<li>键常用于排序或识别唯一的元素，映射值存储对应键的内容</li>
+<li>可用 <code>[]</code> 运算符，通过键来访问映射值<ul>
+<li>如果访问不存在的键，就会创建一个新的键</li>
+</ul>
+</li>
+<li>映射像二叉搜索树那样实现</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>```c++ title="Example.cpp</p>
+<h1 id="include">include<iostream><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
+<h1 id="include_1">include<map><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
+<p>using namespace std;</p>
+<p>int main()
+{
+    map<string, int> price;
+    price["apple"] = 3;
+    price["banana"] = 5;
+    price["orange"] = 1;</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>string item;
+int total = 0;
+while(cin &gt;&gt; item)
+    total += price[item];
+cout &lt;&lt; &quot;Total price: &quot; &lt;&lt; total &lt;&lt; endl;
+return 0;
+</code></pre></div></td></tr></table></div>
+<p>}
+```</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250303140553.png" /></p>
+<p>但是上例有一些问题，如果输入一些不存在的物品，会有这样的情况：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250303140918.png" /></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5825,7 +6085,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月24日 14:57:46</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 14:10:15</span>
   </span>
 
     

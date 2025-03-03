@@ -1732,6 +1732,66 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#drop-and-alter-table-constructs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drop and Alter Table Constructs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-query-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Query Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Query Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-select-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Select Clause
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-where-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Where Clause
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-from-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      The From Clause
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Join
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5864,6 +5924,66 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#drop-and-alter-table-constructs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drop and Alter Table Constructs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-query-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Query Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Query Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-select-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Select Clause
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-where-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Where Clause
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-from-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      The From Clause
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Join
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6078,10 +6198,155 @@
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">));</span>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">cascade</span><span class="w">  </span><span class="o">|</span><span class="k">set</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="k">restrict</span><span class="w"> </span><span class="o">|</span><span class="k">set</span><span class="w"> </span><span class="k">default</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">cascade</span><span class="w"> </span><span class="o">|</span><span class="k">set</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="k">restrict</span><span class="w"> </span><span class="o">|</span><span class="k">set</span><span class="w"> </span><span class="k">default</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">cascade</span><span class="w"> </span><span class="o">|</span><span class="k">set</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="k">restrict</span><span class="w"> </span><span class="o">|</span><span class="k">set</span><span class="w"> </span><span class="k">default</span><span class="p">,</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
+<hr />
+<h3 id="drop-and-alter-table-constructs">Drop and Alter Table Constructs<a class="headerlink" href="#drop-and-alter-table-constructs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>我们用 <code>drop table</code> 语句从 SQL 数据库中删除关系<ul>
+<li>e.g. <code>drop table student;</code></li>
+<li>另一种类似的方法是使用 <code>delete from student;</code>，该语句的结果是删除 student 内的所有元组，即清空关系 student 的内容，但不删除 student 本身；而前者会直接删掉 student 本身</li>
+</ul>
+</li>
+<li>我们用 <code>alter table</code> 已有关系中的属性<ul>
+<li>增加属性：<code>alter table r add A D;</code><ul>
+<li>其中 A 是要添加到关系 r 的属性的名称，D 是 A 的域</li>
+<li>关系中的所有元组都被分配为 null 作为新属性的值</li>
+<li>e.g. <code>alter table student add resume varchar(256);</code></li>
+</ul>
+</li>
+<li>删除属性：<code>alter table r drop A;</code><ul>
+<li>其中 A 是关系 r 的属性名称</li>
+<li>很多数据库系统不支持删除属性的操作，但是我们可以生成一个新的表，然后把除了要删的列以外的列搬移过去</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="basic-query-structure">Basic Query Structure<a class="headerlink" href="#basic-query-structure" title="Permanent link">&para;</a></h2>
+<p>一条典型的 SQL 查询语句格式为：</p>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">select</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">from</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">where</span><span class="w"> </span><span class="n">P</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><code>Ai</code> 表示属性，<code>Ri</code> 表示关系，<code>P</code> 是谓词</li>
+<li>查询结果也是一个关系</li>
+<li>查询语句的运算顺序为：<code>from</code>（笛卡尔积） -&gt; <code>where</code>（选择谓词） -&gt; <code>select</code>（指定属性）<ul>
+<li>SQL 的实际实现不会遵循上述方式，为了优化求解过程而仅生成满足 <code>where</code> 子句谓词的笛卡尔积的元素</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">SQL and Relational Algebra</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example 01</label><label for="__tabbed_2_2">Example 02</label><label for="__tabbed_2_3">Example 03</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>select A1, A2, ..., An from r1, r2, ..., rm where P</code> 和语句 <span class="arithmatex">\(\prod_{A_1,...,A_n}(\sigma_P(r_1\times r_2\times ...\times r_m))\)</span> 等价</p>
+</div>
+<div class="tabbed-block">
+<p><code>select A1, A2, sum(A3) from r1, r2, ..., rm where P group by A1, A2</code> 和语句<span class="arithmatex">\(\text{ }_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)}(\sigma_P(r_1\times r_2\times ...\times r_m))\)</span> 等价</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>更一般地说，select 子句中的非聚合属性可能是 group by 属性的子集，在这种情况下，<code>select A1, sum(A3) from r1, r2, ..., rm where P group by A1, A2</code> 和语句<span class="arithmatex">\(\prod_{A_1,\text{sumA3}}(\text{ }_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{as sumA3}}(\sigma_P(r_1\times r_2\times ...\times r_m))\)</span> 等价</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="the-select-clause">The Select Clause<a class="headerlink" href="#the-select-clause" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>select</code> 子句列出了查询结果中所需的属性<ul>
+<li>对应于关系代数中的投影运算</li>
+</ul>
+</li>
+<li>需要注意的是，SQL 语句不允许名称中出现 <code>-</code> 字符，请用 <code>_</code> 替代</li>
+<li>并且 SQL 对名称<strong>大小写不敏感</strong>（Case Insensitive），也就是说 SQL 将同一字符的大小写形式看作是同一个字符</li>
+<li>SQL 允许关系和查询结果中出现<strong>重复</strong>记录（Duplicates）（默认使用 <code>all</code> 关键字，因为消除重复记录太耗费时间了）。要想强制消除重复记录，可以在 <code>select</code> 后使用 <code>distinct</code> 关键字，即 <code>select distinct ...</code></li>
+<li>使用 <code>*</code> 表示选择所有属性，比如 <code>select * from r</code> 表示选择 <code>r</code> 中的所有属性</li>
+<li>SQL 允许查询语句中对常量或属性使用简单的算术表达式，包括加减乘除，对应关系代数的<strong>广义投影</strong>（Generalized Projection）<ul>
+<li>比如 <code>select ID, name, salary / 12 from instructor;</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="the-where-clause">The Where Clause<a class="headerlink" href="#the-where-clause" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>where</code> 从句指定结果必须要满足的条件，对应于关系代数的<strong>选择谓词</strong>（Selection Predicate）</li>
+<li>在 <code>where</code> 从句的比较表达式内，可以使用逻辑连接词 <code>and</code>、<code>or</code>、<code>not</code> 以及 <code>between</code>（用于指定范围）</li>
+<li>在 <code>where</code> 从句的比较表达式内，可以进行元组比较</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Example 01</label><label for="__tabbed_3_2">Example 02</label><label for="__tabbed_3_3">Example 03</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>找到 Comp. Sci. dept 中薪资大于 80000 的所有老师</li>
+</ul>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">80000</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>找到薪资在 $90,000 到 $100,000 之间（闭区间）的老师</li>
+</ul>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">where</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">90000</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>元组比较</li>
+</ul>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">course_id</span><span class="w">  </span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="p">,</span><span class="w"> </span><span class="n">teaches</span><span class="w">  </span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="n">instructor</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">teaches</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Biology</span><span class="err">’</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="the-from-clause">The From Clause<a class="headerlink" href="#the-from-clause" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>from</code> 从句列出包含在查询语句内的关系，对应于关系代数的<strong>笛卡尔积</strong>（Cartesian product）（如果指定多个关系的话）</li>
+<li>如果查询语句的多个关系中有相同的属性名，且都要在查询语句中用到，那么在属性名前需要加上关系名和点号作为前缀，比如：</li>
+</ul>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">course_id</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">instructor</span><span class="p">,</span><span class="w"> </span><span class="n">teaches</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">instructor</span><span class="p">.</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teaches</span><span class="p">.</span><span class="n">ID</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<hr />
+<h3 id="natural-join">Natural Join<a class="headerlink" href="#natural-join" title="Permanent link">&para;</a></h3>
+<ul>
+<li>e.g. <code>select * from instructor natural join teaches;</code> </li>
+<li><code>select name, course_id from instructor, teaches where instructor.ID = teaches.ID;</code> 和 <code>select name, course_id from instructor natural join teaches;</code> 是等价的</li>
+</ul>
+<blockquote>
+<p>具有相同名称的不相关属性会错误地等同起来</p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>course(course_id,title, dept_name,credits)</code>，<code>teaches(ID, course_id,sec_id,semester, year)</code>，<code>instructor(ID, name, dept_name,salary)</code> 三者的 department 含义各有不同，不能直接自然连接</p>
+<p>可以写成 <code>select name, title from (instructor natural join teaches）join course using(course_id);</code> 即规定连接的属性，对应于 σθ</p>
+</div>
+<p>Find students who takes courses across his/her department.<br />
+可写作</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6151,7 +6416,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 10:38:15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 14:10:15</span>
   </span>
 
     
