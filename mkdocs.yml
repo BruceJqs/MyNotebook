@@ -116,6 +116,7 @@ nav:
     - 面向对象程序设计｜Object-Oriented Programming Using C++:
       - blog/Computer Science/OOP/index.md
       - "Chapter 01: Introduction to Object-Oriented Programming": blog/Computer Science/OOP/Chapter 1.md
+      - "Chapter 02: STL Containers": blog/Computer Science/OOP/Chapter 2.md
     - 计算机体系结构｜Computer Architecture:
       - blog/Computer Science/Computer Architecture/index.md
       - "Chapter 01: Fundamentals of Computer Design": blog/Computer Science/Computer Architecture/Chapter 1.md

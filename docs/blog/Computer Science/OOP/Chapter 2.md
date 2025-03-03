@@ -152,30 +152,69 @@ x.resize()
 
 !!! example "Example"
 
-	```c++ title="Example.cpp
-	#include<iostream>
-	#include<map>
-	using namespace std;
+	=== "Example 01"
 	
-	int main()
-	{
-		map<string, int> price;
-		price["apple"] = 3;
-		price["banana"] = 5;
-		price["orange"] = 1;
+		```c++ title="Example01.cpp"
+		#include<iostream>
+		#include<map>
+		using namespace std;
+		
+		int main()
+		{
+			map<string, int> price;
+			price["apple"] = 3;
+			price["banana"] = 5;
+			price["orange"] = 1;
+		
+			string item;
+			int total = 0;
+			while(cin >> item)
+				total += price[item];
+			cout << "Total price: " << total << endl;
+			return 0;
+		}
+		```
+		
+		![](../../../assets/Pasted image 20250303140553.png)
+		
+		但是上例有一些问题，如果输入一些不存在的物品，会有这样的情况：
+		
+		![](../../../assets/Pasted image 20250303140918.png)
 	
-		string item;
-		int total = 0;
-		while(cin >> item)
-			total += price[item];
-		cout << "Total price: " << total << endl;
-		return 0;
-	}
-	```
+	=== "Example 02"
 	
-	![](../../../assets/Pasted image 20250303140553.png)
-	
-	但是上例有一些问题，如果输入一些不存在的物品，会有这样的情况：
-	
-	![](../../../assets/Pasted image 20250303140918.png)
+		```c++ title="Example02.cpp"
+		#include<iostream>
+		#include<map>
+		using namespace std;
+		
+		int main(){
+			map<string, int> price;
+			price["apple"] = 3;
+			price["banana"] = 5;
+			price["orange"] = 1;
+			
+			for(const auto& p: price)
+				cout << "(" << p.first << ", " << p.second << ")" << endl;
+			
+			string item;
+			int total = 0;
+			while(cin >> item){
+				if(price.contain(item) == false)
+					cout << "Item " <<  item << " not found" << endl;
+				else
+					total += price[item];
+			}
+			cout << "Total price: " << total << endl;
+			return 0;
+		}
+		```
+		
+		![](../../../assets/Pasted image 20250303143434.png)
+		
+		- 其中 contain 函数是 c++20 标准，需要用 `-std=c++20` 编译
+
+- 更多请见 [cppreference : map](https://en.cppreference.com/w/cpp/container/map)
+***
+## Stacks
 
