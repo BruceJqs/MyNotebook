@@ -1792,6 +1792,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-rename-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rename Operation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Operations
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6008,6 +6026,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-rename-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rename Operation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Operations
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6367,10 +6403,48 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><code>course(course_id,title, dept_name,credits)</code>，<code>teaches(ID, course_id,sec_id,semester, year)</code>，<code>instructor(ID, name, dept_name,salary)</code> 三者的 department 含义各有不同，不能直接自然连接</p>
-<p>可以写成 <code>select name, title from (instructor natural join teaches）join course using(course_id);</code> 即规定连接的属性，对应于 σθ</p>
+<p>可以写成 <code>select name, title from (instructor natural join teaches）join course using(course_id);</code> 即规定连接的属性，对应于 <span class="arithmatex">\(\sigma_{\theta}\)</span></p>
+<p>e.g. 找到跨部门上课的学生</p>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">id</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="n">student</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">takes</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="k">join</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">course_id</span><span class="p">)</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">dept_name</span>
+</span></code></pre></div></td></tr></table></div>
 </div>
-<p>Find students who takes courses across his/her department.<br />
-可写作</p>
+<hr />
+<h3 id="the-rename-operation">The Rename Operation<a class="headerlink" href="#the-rename-operation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>对于列名，可以使用 <code>as</code> 子句为查询结果中某（些）列修改列名<ul>
+<li>在 SQL Server 中，允许使用 <code>new-name = column-expression</code> 修改列名</li>
+</ul>
+</li>
+<li>其中 <code>as</code> 可以省略<ul>
+<li>e.g. <code>instructor as T</code> 和 <code>instructor T</code> 是等价的</li>
+</ul>
+</li>
+<li>对于关系名，可以在 <code>FROM</code> 子句中使用 <code>AS</code> 子句，为关系声明元组变量。这样做的好处是：<ul>
+<li>使关系名的表达更为简洁</li>
+<li>便于区分名称（可以为相同的关系赋予不同的名称，从而做到比较同一张表内的记录）</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li>找到所有的老师的名字，他们的薪资比 Comp.. Sci. dept 中的某个老师的薪资高</li>
+</ul>
+<div class="language-SQL highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">select</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">name</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="k">from</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">S</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="k">where</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Comp. Sci.&#39;</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<hr />
+<h3 id="string-operations">String Operations<a class="headerlink" href="#string-operations" title="Permanent link">&para;</a></h3>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6440,7 +6514,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 14:10:15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 14:47:28</span>
   </span>
 
     
