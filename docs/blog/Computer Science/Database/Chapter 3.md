@@ -274,7 +274,7 @@ WHERE instructor.ID = teaches.ID;
 
 !!! example "Example"
 
-	- 找到所有的老师的名字，他们的薪资比 Comp.. Sci. dept 中的某个老师的薪资高
+	- 找到所有的老师的名字，他们的薪资比 Comp. Sci. dept 中的某个老师的薪资高
 	
 	```SQL
 	select distinct T.name
@@ -284,4 +284,29 @@ WHERE instructor.ID = teaches.ID;
 ***
 ### String Operations
 
+在字符串的比较中，SQL 包含了一种**字符串匹配运算符**（String-matching Operator）。我们可以使用**通配符**（Wildcards）来描述字符串的模式（Pattern），以实现模糊匹配（置于 `where` 子句中，且必须与 `like` 子句连用），包括：
 
+- `%`：匹配任意字符串（类似文件系统的 `*`）
+	- e.g. `select name from instructor where name like '%dar%';` 找名字里面含有 `dar` 的字符串
+- `_`：匹配任意单个字符（类似文件系统的 `?`）
+
+如果希望字符串模式中支持匹配这些通配符，需要加上 `\` 转义符，使其成为一般字符
+
+!!! note "Example"
+
+	匹配字符串 `'100 %'` 但是 `%` 符号被我们作为了通配符，我们需要用到转义符 `\`，即将 `%` 作为正常字符匹配。 
+	
+	`\` 也可以是一个基本符号，我们需要在后面写出 `escape` 表示其在这里作为转义符。类似地我们还可以将转义符定义为 `#`
+	
+	```SQL
+	like ‘100 \%' escape '\' 
+	like ‘100 \%' 
+	like ‘100 #%' escape ‘#'
+	```
+
+SQL 还支持以下字符串操作：
+
+- **拼接**（Concatenation）：运算符为 `||`
+- 大小写转换，有函数 `lower()`、`upper()`
+- 获取字符串长度，提取子字符串，有函数 `len()`、`substr()`
+***
