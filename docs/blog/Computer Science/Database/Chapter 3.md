@@ -67,7 +67,7 @@ CREATE TABLE r(A1 D1, A2 D2, ..., An Dn,
         - 外键从关系 `r` 中参考而来
     - `not null`：不允许属性出现空值
 
-!!! example "Example"
+!!! example "Examples"
 
 	=== "Example 01"
 	
@@ -199,7 +199,7 @@ where P
 - 在 `where` 从句的比较表达式内，可以使用逻辑连接词 `and`、`or`、`not` 以及 `between`（用于指定范围）
 - 在 `where` 从句的比较表达式内，可以进行元组比较
 
-!!! example "Example"
+!!! example "Examples"
 
 	=== "Example 01"
 	
@@ -372,7 +372,7 @@ SQL 还支持以下字符串操作：
         - (not unknown) = unknown
 - 如果 `where` 子句的谓词的求解结果为 unknown，SQL 会看作 false
 - 使用谓词 `is null` 和 `is not null` 来检查空值
-    - 不能使用 `... = NULL` 比较，因为这样的比较结果恒为 null，没有任何意义
+    - 不能使用 `... = null` 比较，因为这样的比较结果恒为 null，没有任何意义
 - 如果谓词 P 的求解结果为 unknown，那么 `P is unknown` 的求解结果为 true
 - 除了 count($*$) 之外的聚合函数会忽略属性中存在 null 值的记录
 - 如果聚合函数的参数包含的记录均为空值，那么返回 null
@@ -387,7 +387,7 @@ SQL 还支持以下字符串操作：
 - `sum(col)`：求和
 - `count(col)`：计数（值的个数）
 
-!!! example "Example"
+!!! example "Examples"
 
 	=== "Example 01"
 	
@@ -419,7 +419,7 @@ SQL 还支持以下字符串操作：
 - `having` 子句用于对分组后的结果进行筛选
 - `having` 子句中的谓词在分组形成之后应用，而 `where` 子句中的谓词在分组形成之前应用
 
-!!!  example "Example"
+!!! example "Example"
 
 	- 找到平均薪资大于 42000 的部门
 	
@@ -440,7 +440,7 @@ SQL 还支持以下字符串操作：
 ***
 ### Arithmetic Expression with Aggregate Functions
 
-!!! example "Example"
+!!! example "Examples"
 
 	=== "Example 01"
 	
@@ -490,16 +490,16 @@ where P (select B1, B2, ..., Bn
 
 - 子查询的常见用途有集合查询、集合比较和集合大小
 - 我们有一些与集合相关的字句：
-	- `SOME` 子句：
+	- `some` 子句：
 	    - 格式：`C <comp> some r`，其中 `<comp>` 是比较运算符
 	    - 等价于：$\exists/t\in r(C<comp>r)$
 	    - `= some` $\equiv$ `in`，但`!= some` $\not\equiv$ `not in`
-	- `ALL` 子句：
-	    - 格式：`C <comp> ALL r`
+	- `all` 子句：
+	    - 格式：`C <comp> all r`
 	    - 等价于：$\forall t\in r(C<comp>t)$
-	    - `!= ALL` $\equiv$ `not in`，但`= ALL` $\not\equiv$ `in`
+	    - `!= all` $\equiv$ `not in`，但`= all` $\not\equiv$ `in`
 
-!!! example "Example"
+!!! example "Examples"
 
 	=== "Set Membership"
 	
@@ -546,7 +546,271 @@ where P (select B1, B2, ..., Bn
 			where dept_name = 'Biology');
 		```
 ***
+### Scalar Subquery
 
+> 标量（Scalar）子查询是在需要单个值时使用的子查询
+
+e.g. `select name from instructor where salary * 10 > (select budget from department where dept_name = instructor.dept_name);`
+
+- 如果子查询返回多个值，那么会报错 RuntimeError
+***
+### Test for Empty Relations
+
+- `exists` 构造器会在子查询返回结果非空时返回 true，否则返回 false。而 `not exists` 构造器的结果相反
+- `exists r` $\Leftrightarrow r\not=\phi$
+- `not exists r` $\Leftrightarrow r=\phi$
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		- 另一种查询“在 2009 秋和 2010 春都开课的课程”
+		
+		```SQL
+		select course_id
+		from section as S
+		where semester = 'Fall' and year = 2009 and
+			exists (select *
+				from section as T
+				where semester = 'Spring' and year = 2010 and
+					S.course_id = T.course_id);
+		```
+	
+	=== "Example 02"
+	
+		- 找到上过 Biology Department 所有课程的学生
+			- SQL 语句往往需要逆向考虑，即找到这样的学生，不存在他没选过的生物系的课。
+		
+		```SQL
+		select distinct S.ID, S.name
+		from student as S
+		where not exists ((select course_id
+						from course
+						where dept_name = 'Biology')
+						except
+						(select course_id
+						from takes as T
+						where S.ID = T.ID));
+		```
+***
+### Test for Absence of Duplicate Tuples
+
+`unique` 构造器用于检验子查询的结果是否存在重复的元组，若不存在重复元组则返回 true，否则返回 false，可作为 `where` 子句的判断条件。而 `not unique` 构造器的行为与之相反
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		- 找到在 2009 年最多开过一次的课程
+		
+		```SQL
+		select T.course_id
+		from course as T
+		where unique(select R.course_id
+					from section as R
+					where R.year = 2009 and R.course_id = T.course_id);
+		```
+	
+	=== "Example 02"
+	
+		- 找到在 2009 年开过 1 次的课程
+		
+		```SQL
+		select T.course_id
+		from course as T
+		where unique (select R.course_id
+					from section as R
+					where R.year = 2009 and R.course_id = T.course_id)
+			and exists (select R.course_id
+						from section as R
+						where R.year = 2009 and R.course_id = T.course_id);
+		```
+		
+		- 或者也可以有另一种写法
+		
+		```SQL
+		select T.course_id
+		from course as T
+		where unique (select R.course_id
+					from section as R
+					where R.year = 2009 and R.course_id = T.course_id)
+			and course_id in (select R.course_id
+							from section
+							where year = 2009);
+		```
+***
+## With Clause
+
+- with 子句提供了一种创建临时表的方法，该临时表的定义仅适用于出现 with 子句的查询。
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		- 找到最高预算的所有部门
+		
+		```SQL
+		with max_budget(value) as
+			(select max(budget)
+			from department)
+		select dept_name
+		from department, max_budget
+		where department.budget = max_budget.value;
+		```
+		
+		- 或者还有一种写法：
+		
+		```SQL
+		select dept_name
+		from department
+		where budget = (select max(budget) from department);
+		```
+	
+	=== "Example 02"
+	
+		- 找到所有部门总工资大于总工资平均值的所有部门
+		
+		```SQL
+		with dept_total(dept_name, value) as
+			(select dept_name, sum(salary)
+			from instructor
+			group by dept_name),
+			dept_total_avg(value) as
+			(select avg(value)
+			from dept_total)
+		select dept_name
+		from dept_total, dept_total_avg
+		where dept_total.value > dept_total_avg.value;
+		```
+***
+## Modification of the Database
+
+### Deletion
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		- 删除所有老师
+		
+		```SQL
+		delete from instructor;
+		```
+	
+	=== "Example 02"
+	
+		- 删除所有 Finance Department 的老师
+		
+		```SQL
+		delete from instructor
+		where dept_name = 'Finance';
+		```
+	
+	=== "Example 03"
+	
+		- 删除所有关系 instructor 中和部门地点位于 Watson building 的元组
+		
+		```SQL
+		delete from instructor
+		where dept_name in (select dept_name
+							from department
+							where building = 'Watson');
+		```
+	
+	=== "Example 04"
+	
+	
+		- 删除所有薪水小于平均薪水的老师
+		
+		```SQL
+		delete from instructor
+		where salary < (select avg(salary) from instructor);
+		```
+		
+		但是，这样的删除会导致每次删除元组，平均薪水都会发生变化，在 SQL 中的解决方法是：
+		
+		1. 先计算平均薪水然后找到所有需要删除的元组
+		2. 删除所有需要删除的元组（不需要再次计算平均薪水，重新看那些元组）
+***
+### Insertion
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		- 插入一个新元组到 course
+		
+		```SQL
+		insert into course
+			values ('CS-437', 'Database Systems', 'Comp. Sci.', 4);
+		```
+		
+		- 或者也可以写成
+		
+		```SQL
+		insert into course(course_id, title, dept_name, credits)
+			values ('CS-437', 'Database Systems', 'Comp. Sci.', 4);
+		```
+	
+	=== "Example 02"
+	
+		- 插入一个新元组到 student，tot_creds 设为 null
+		
+		```SQL
+		insert into student
+			values ('3003, 'Green', 'Finance', null);
+		```
+	
+	=== "Example 03"
+	
+		- 除了基本写法，我们还可以在 `insert` 后跟查询语句，把查询结果插入到表里去
+			- 添加所有老师到 student 关系中，tot_creds 设为 0
+		
+		```SQL
+		insert into student
+			select ID, name, dept_name, 0
+			from instructor;
+		```
+***
+### Updates
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		- 给薪资大于 $100000 的老师增加 3% 薪资，其他老师增加 5%
+		
+		```SQL
+		update instructor
+		set salary = salary * 1.03
+		where salary > 100000;
+		update instructor
+		set salary = salary * 1.05
+		where salary <= 100000;
+		```
+		
+		- 也可以使用 case 语句写成：
+		
+		```SQL
+		update instructor
+		set salary = case
+				when salary <= 100000 then salary * 1.05
+				else salary * 1.03
+			end;
+		```
+	
+	=== "Example 02"
+	
+		- 重新计算和更新所有学生的 tot_creds
+		
+		```SQL
+		update student S
+		set tot_creds = (select sum(credits)
+						from takes natural join course
+						where S.ID = takes.ID and
+							takes.grade is not null and
+							takes.grade <> 'F');
+		```
 
 
 
