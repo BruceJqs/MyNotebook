@@ -6317,12 +6317,16 @@ H(X|Y)=E\{H(X|y)\}=-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(
 <p>对于随机变量 <span class="arithmatex">\(X\)</span> ，如果</p>
 <div class="arithmatex">\[\mathbb{X}=\begin{pmatrix}x_1&amp;x_2&amp;\cdots&amp;x_K\\p_1&amp;p_2&amp;\cdots&amp;p_K\end{pmatrix}\]</div>
 <p>则有：</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(H(X)\triangleq H_K({p_1,p_2,\cdots,p_K})\triangleq H_K(P)=-\sum_{k=1}^Kp_k\log p_k\)</span>\)</span>
-- <span class="arithmatex">\(H_K(P)\)</span> 对概率矢量 <span class="arithmatex">\(P\)</span> 的分量是<strong>对称的</strong>，即 <span class="arithmatex">\(H_K(P)\)</span> 对 <span class="arithmatex">\(p_1,p_2,\cdots,p_K\)</span> 的排列是不变的——<span class="arithmatex">\(p_1,p_2,\cdots,p_K\)</span> 的排列不同，<span class="arithmatex">\(H_K(P)\)</span> 的值不变
-- <strong>非负性</strong>：<span class="arithmatex">\(H(X)\geq 0\)</span>
-- <strong>确定性</strong>：<span class="arithmatex">\(H(X)=0\)</span> 当且仅当 <span class="arithmatex">\(X\)</span> 是<strong>确定性</strong>的随机变量，即 <span class="arithmatex">\(X\)</span> 的取值只有一个
-- <strong>可扩展性</strong>：<span class="arithmatex">\(\lim\limits_{\epsilon\to 0}H_{K+1}(P_1,P_2,\cdots,P_K-\epsilon,\epsilon)=H_K(P_1,P_2,\cdots,P_K)\)</span> —— 在增加一个概率接近于零的事件时，总熵几乎不变
-- <strong>可加性</strong>：<span class="arithmatex">\(H(X_2)|_{X_2\in\mathcal{X}_2}=H(X_1)|_{X_1\in\mathcal{X}_1}+H(X_2|X_1)|_{X_2\in\mathcal{X}_2}^{X_1\in\mathcal{X}_1}\)</span></p>
+<div class="arithmatex">\[
+H(X)\triangleq H_K({p_1,p_2,\cdots,p_K})\triangleq H_K(P)=-\sum_{k=1}^Kp_k\log p_k
+\]</div>
+<ul>
+<li><span class="arithmatex">\(H_K(P)\)</span> 对概率矢量 <span class="arithmatex">\(P\)</span> 的分量是<strong>对称的</strong>，即 <span class="arithmatex">\(H_K(P)\)</span> 对 <span class="arithmatex">\(p_1,p_2,\cdots,p_K\)</span> 的排列是不变的——<span class="arithmatex">\(p_1,p_2,\cdots,p_K\)</span> 的排列不同，<span class="arithmatex">\(H_K(P)\)</span> 的值不变</li>
+<li><strong>非负性</strong>：<span class="arithmatex">\(H(X)\geq 0\)</span></li>
+<li><strong>确定性</strong>：<span class="arithmatex">\(H(X)=0\)</span> 当且仅当 <span class="arithmatex">\(X\)</span> 是<strong>确定性</strong>的随机变量，即 <span class="arithmatex">\(X\)</span> 的取值只有一个</li>
+<li><strong>可扩展性</strong>：<span class="arithmatex">\(\lim\limits_{\epsilon\to 0}H_{K+1}(P_1,P_2,\cdots,P_K-\epsilon,\epsilon)=H_K(P_1,P_2,\cdots,P_K)\)</span> —— 在增加一个概率接近于零的事件时，总熵几乎不变</li>
+<li><strong>可加性</strong>：<span class="arithmatex">\(H(X_2)|_{X_2\in\mathcal{X}_2}=H(X_1)|_{X_1\in\mathcal{X}_1}+H(X_2|X_1)|_{X_2\in\mathcal{X}_2}^{X_1\in\mathcal{X}_1}\)</span></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">可加性</p>
 <ul>
@@ -6489,7 +6493,7 @@ $$
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 10:18:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月3日 10:32:27</span>
   </span>
 
     
