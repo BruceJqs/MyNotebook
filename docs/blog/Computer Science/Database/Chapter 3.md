@@ -45,3 +45,74 @@ SQL 数据定义语言（Data Definition Language, DDL）指定以下的信息�
 - 时间、日期函数：
 	- `current_date()`，`current_time()`
 	- `year(x)`，`month(x)`，`day(x)`，`hour(x)`，`minute(x)`，`second(x)`
+***
+### Create Table Construct
+
+我们用 `create table` 命令来定义一个 SQL 关系：
+
+```SQL
+CREATE TABLE r(A1 D1, A2 D2, ..., An Dn,
+    (integrity constraints_1),
+    ...,
+    (integrity constraints_k));
+```
+
+- `r` 是关系的名称
+- `Ai` 是关系 `r` 的模式中的一个属性名，而 `Di` 是 属性 `Ai` 值域的数据类型
+- 可用的完整性约束有（SQL 会阻止不满足完整性约束的更新）：
+	- `primary key(A_1, A_2, ..., A_n)`
+        - 该属性声明主键后，该属性自动被规定为非空和唯一
+        - 虽然是可选的，但建议每个关系都要加一个主键
+	- `foreign key(A_m, ..., A_n) references r`
+        - 外键从关系 `r` 中参考而来
+    - `not null`：不允许属性出现空值
+
+!!! example "Example"
+
+	=== "Example 01"
+	
+		```SQL
+		create table instructor (
+			ID char(5),
+			name varchar(20) not null,
+			dept_name varchar(20),
+			salary numeric(8,2),
+			primary key (ID),
+			foreign key (dept_name) references department);
+		```
+	
+	=== "Example 02"
+	
+		- 如果不符合完整性约束条件，插入可能会失败。可以给一个缺省值，例如 `default 0`
+		
+		```SQL
+		create table student (
+			ID varchar(5),
+			name varchar(20) not null,
+			dept_name varchar(20),
+			tot_cred numeric(3,0) default 0,
+			primary key (ID),
+			foreign key (dept_name) references department));
+		```
+	
+	=== "Example 03"
+	
+		```SQL
+		create table takes (
+			ID varchar(5),
+			course_id varchar(8),
+			sec_id varchar(8),
+			semester varchar(6),
+			year numeric(4,0),
+			grade varchar(2),
+			primary key (ID, course_id, sec_id, semester, year),  
+			foreign key (ID) references student,
+			foreign key (course_id, sec_id, semester, year) references section);
+		```
+		
+		- 可以从上面的 `primary key` 中删除 `sec_id`，以确保学生不能在同一学期注册同一课程的两个 section
+
+
+
+
+
