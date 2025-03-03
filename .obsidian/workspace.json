@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 2.md",
+                "file": "docs/blog/Computer Science/Database/Chapter 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 2"
+              "title": "Chapter 3"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 2.md",
+                "file": "docs/blog/Computer Science/Database/Chapter 3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 2"
+              "title": "Outline of Chapter 3"
             }
           },
           {
@@ -160,12 +160,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 273.5,
-    "collapsed": true
+    "width": 273.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,14 +179,14 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "61d88c6a14ed06e2",
+  "active": "3d142c13a9deda6e",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/OOP/Chapter 2.md",
     "docs/assets/Pasted image 20250303143434.png",
     "docs/assets/Pasted image 20250303140918.png",
     "docs/assets/Pasted image 20250303140553.png",
     "docs/assets/Pasted image 20250303135434.png",
     "docs/blog/Computer Science/OOP/index.md",
-    "docs/blog/Computer Science/OOP/Chapter 2.md",
     "docs/blog/Computer Science/Database/Chapter 3.md",
     "docs/blog/Computer Science/Database/Homework 2.md",
     "docs/blog/ACEE/Information Theory/Chapter 2.md",
@@ -220,7 +219,6 @@
     "docs/blog/Math/Numerical Analysis/Homework 2.md",
     "docs/assets/Pasted image 20250228010444.png",
     "docs/assets/Pasted image 20250227221821.png",
-    "docs/assets/Pasted image 20250227221747.png",
     "docs/blog/Math/Numerical Analysis/Homework 1.md",
     "docs/blog/CTF/Cryptography/index.md",
     "docs/blog/CTF/Cryptography/Chapter 2.md",

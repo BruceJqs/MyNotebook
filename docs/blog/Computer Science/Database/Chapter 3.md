@@ -251,12 +251,37 @@ WHERE instructor.ID = teaches.ID;
 
 	`course(course_id,title, dept_name,credits)`，`teaches(ID, course_id,sec_id,semester, year)`，`instructor(ID, name, dept_name,salary)` 三者的 department 含义各有不同，不能直接自然连接
 	
-	可以写成 `select name, title from (instructor natural join teaches）join course using(course_id);` 即规定连接的属性，对应于 σθ
+	可以写成 `select name, title from (instructor natural join teaches）join course using(course_id);` 即规定连接的属性，对应于 $\sigma_{\theta}$
+	
+	e.g. 找到跨部门上课的学生
+	
+	```SQL
+	select distinct student.id
+	from (student natural join takes)
+	join course using (course_id)
+	where student.dept_name <> course.dept_name
+	```
+***
+### The Rename Operation
 
-Find students who takes courses across his/her department.  
-可写作
+- 对于列名，可以使用 `as` 子句为查询结果中某（些）列修改列名
+	- 在 SQL Server 中，允许使用 `new-name = column-expression` 修改列名
+- 其中 `as` 可以省略
+	- e.g. `instructor as T` 和 `instructor T` 是等价的
+- 对于关系名，可以在 `FROM` 子句中使用 `AS` 子句，为关系声明元组变量。这样做的好处是：
+	- 使关系名的表达更为简洁
+	- 便于区分名称（可以为相同的关系赋予不同的名称，从而做到比较同一张表内的记录）
 
+!!! example "Example"
 
-
+	- 找到所有的老师的名字，他们的薪资比 Comp.. Sci. dept 中的某个老师的薪资高
+	
+	```SQL
+	select distinct T.name
+	from instructor as T, instructor as S
+	where T.salary > S.salary and S.dept_name = 'Comp. Sci.';
+	```
+***
+### String Operations
 
 
