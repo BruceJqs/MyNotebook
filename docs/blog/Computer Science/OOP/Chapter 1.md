@@ -177,7 +177,7 @@ find (const string& str, int pos = 0);
 		str4.replace(str4.find(string_to_find), string_to_find.length(), "JinHua");
 		cout << "str4: " << str4 << endl;
 		
-		regex re("a|e|i|o|u");
+		regex re("a|e|i|o|u"); // 正则表达式匹配
 		string str5 = regex_replace(str4, re, "*");
 		cout << "str5: " << str5 << endl;
 		
