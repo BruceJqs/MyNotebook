@@ -450,11 +450,11 @@ $$
     - 平均修复时间（Mean Time to Repair, MTTR）
     - 平均故障间隔时间（Mean Time Between Failures, MTBF) = MTTF + MTTR
 - **模块可用性**（Module Availability）：对实现和中断两种状态交替的服务实现的衡量，计算公式为：
-		
-		$$
-		\text{Availability}=\frac{\text{MTTF}}{\text{MTTF}+\text{MTTR}}
-		$$
-		
+	
+	$$
+	\text{Availability}=\frac{\text{MTTF}}{\text{MTTF}+\text{MTTR}}
+	$$
+	
 
 ??? question "Error, Fault 和 Failure"
 
@@ -468,5 +468,90 @@ $$
 
 - 时间上：重复运算，观察是否仍然是错误的
 - 资源上：用其他部件替代故障的部件
+- 具体操作可以见[计组：RAID](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Appendix/#raid-redundant-arrays-of-inexpensive-disks)
 ***
+## Measuring Performance
+
+衡量计算机性能的指标有：
+
+- **执行时间**（Execution Time）
+    - 最直接的定义是使用挂钟（Wall-clock）时间 / 响应时间 / 耗时（Elapsed Time）：完成一项任务，包括存储器访问、内存访问、I/O 活动、操作系统开销等所需的时延
+    - 在多编程（Multiprogramming）中，还得考虑 CPU 时间：处理器计算所需时间，不包括等待 I/O 或运行其他程序的时间
+    - 评估系统性能的另一个方法是比较在某一工作量（Workload）（用户运行的程序和操作系统命令）下的执行时间
+- **吞吐量**（Throughput）
+	- 在给定一段时间内完成的工作量
+***
+### Benchmarks
+
+- **基准测试**（Benchmarks）：用于评估计算机性能的程序
+- **基准测试套件**（Benchmark Suite）：一组基准测试应用
+	- 其中一个最成功的标准基准测试套件是 [SPEC](https://www.spec.org/)（标准性能评估公司 , Standard Performance Evaluation Corporation）
+
+不同计算机类型的基准测试：
+
+- 台式机：
+    - 处理器密集型（Processor-intensive)/ 图形密集型（Graphics-intensive）基准测试
+    - 整数 / 浮点数基准测试
+- 服务器：
+    - 面向处理器吞吐量的基准测试
+    - SPECrate：用于测量请求级并行
+    - 关于 I/O：文件服务器基准测试（SPECSFS）、Java 服务器基准测试
+    - 事务处理 (TP) 基准测试：测量系统处理由数据库访问和更新构成的事务的能力
+        - 事务处理委员会 (Transaction Processing Council, TPC) 尝试建立现实且公正的 TP 基准测试
+***
+### Report Performance
+
+- 报告性能测量的指导原则应该是具备**可重复性**（Producibility）：列出其他实验者能够复现结果的一切条件
+***
+### Summarize Performance
+
+- 总结性能测试结果的简单方法是：比较在基准测试组件的各项程序中执行时间的算术 / 加权平均值
+- SPECRatio：参考计算机的执行时间 / 被测计算机的执行时间，有以下等式成立：
+
+$$
+\text{SPECRatio}=\frac{\frac{\text{Execution Time}_{\text{Reference}}}{\text{Execution Time}_A}}{\frac{\text{Execution Time}_{\text{Reference}}}{\text{Execution Time}_B}}=\frac{\text{Execution Time}_B}{\text{Execution Time}_A}=\frac{\text{Performance}_A}{\text{Performance}_B}
+$$
+
+- 由于 SPECRatio 是比率而非绝对执行时间，因此计算平均值时应采用几何平均值，即 $\text{Geometric mean}=\sqrt[n]{\prod\limits_{i=1}^n\text{sample}_i}$。使用几何平均值时确保两条重要的性质：
+    - （时间）比率的几何平均值 = 几何平均值的比率
+    - 几何平均值的比率 = 性能比率的集合平均值，因此与参考计算机的选择无关
+***
+## Quantitative Principles
+
+- 利用并行（Parallelism）
+- 利用局部性（Locality）：程序倾向于重复使用最近用过的数据和指令（一般来说一个程序会花 90%的时间在 10% 的代码上），可分为：
+	- **时间局部性**（Temporal Locality）：最近被访问过的项很有可能在不久之后会被再次访问
+	- **空间局部性**（Spatial Locality）：地址相邻的项被引用的时间比较相近
+- 专注于**一般情况**（Common Case）
+    - 有助于计算机在能耗、资源分配、性能、可靠性等方面的改善
+    - 通常而言，一般情况比不常见的情况更简单，执行速度更快
+- 阿姆达尔定律（Amdahl's Law）：通过使用某些更快的执行模式获得的性能提升会受制于快速模式在时间上的占比
+	- 通常用加速比（Speedup）来衡量性能提升量，公式为：
+	
+	$$
+	\begin{aligned}
+	\text{Speedup}&=\frac{\text{Performance for entire task using the enhancement when possible}}{\text{Performance for entire task without using the enhancement}}\\
+	&=\frac{\text{Execution Time for entire task without using the enhancement}}{\text{Execution Time for entire task using the enhancement when possible}}
+\end{aligned}
+	$$
+	
+	- 因此加速比取决于以下因素：
+	    - 被提升的部分在原来计算机中的计算时间占比
+	    - 使用增强模式后的提升量
+	- 执行时间的公式：
+	
+    $$
+	\text{Execution time}_\text{new}=\text{Execution time}_\text{old}\times((1−\text{Fraction}_\text{enhanced})+\frac{\text{Fraction}_\text{enhanced}}{\text{Speedup}_\text{enhanced}})
+	$$
+	
+	
+	- 总体加速比 = 执行时间之比
+	
+	$$
+	\text{Speedup}_\text{overall}=\frac{\text{Execution time}_\text{old}}{\text{Execution time}_\text{new}}=\frac{1}{(1−\text{Fraction}_\text{enhanced}+\frac{\text{Fraction}_\text{enhanced}}{\text{Speedup}_\text{enhanced}})}
+	$$
+	
+	- 推论：如果只改善任务的一小部分，那么对整个任务的提升至多不超过（1 - 该部分在整个任务的占比）的倒数​​
+- 处理器性能方程，具体见[计组](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%201/#cpu-time)
+
 
