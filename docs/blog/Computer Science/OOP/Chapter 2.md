@@ -144,7 +144,7 @@ x.resize()
 ***
 ## Maps
 
-- **映射**（Maps）是一种关联容器，用于存储由**键**（Keys）及其映射值构成的元素，以特定顺序排列
+- **映射**（Maps）是一种关联容器（类似 Python 中的字典），用于存储由**键**（Keys）及其映射值构成的元素，以特定顺序排列
 - 键常用于排序或识别唯一的元素，映射值存储对应键的内容
 - 可用 `[]` 运算符，通过键来访问映射值
     - 如果访问不存在的键，就会创建一个新的键
@@ -215,8 +215,68 @@ x.resize()
 		![](../../../assets/Pasted image 20250303143434.png)
 		
 		- 其中 contains 函数是 c++20 标准，需要用 `-std=c++20` 编译
+	
+	=== "Example 03"
+	
+		```c++ title="Example03.cpp"
+		#include<iostream>
+		#include<map>
+		#include<string>
+		using namespace std;
+		
+		int main(){
+		    map<string, int> word_map;
+		    for(const auto& w : {"we", "are", "not", "humans", "we", "are", "robots", "!!"})
+		        ++word_map[w];
+		    for(const auto& [word, count] : word_map)
+		        cout << count << " occurrences of word '" << word << "'\n";
+		    return 0;
+		}
+		```
+		
+		![](../../../assets/Pasted image 20250304201849.png)
 
 - 更多请见 [cppreference : map](https://en.cppreference.com/w/cpp/container/map)
 ***
 ## Stacks
 
+Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的模板（我猜是Vector）添加上一些属于 Stack 的特性（即 Adapter），最后封装成为了栈模块
+
+!!! example "Example"
+
+	```c++ title="Stack.cpp"
+	#include<iostream>
+	#include<stack>
+	#include<string>
+	using namespace std;
+	
+	bool is_balanced(string s){
+	    stack<char> st;
+	    for(char c : s){
+	        if(c == '(' || c == '{' || c == '[')
+	            st.push(c);
+	        else if(c == ')' || c == '}' || c == ']'){
+	            if(st.empty())
+	                return false;
+	
+	            char top = st.top();
+	            st.pop();
+	
+	            if((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '['))
+	                return false;
+	        }
+	    }
+	    return st.empty();
+	}
+	
+	int main(){
+	    string test1 = "a(b{c[d]e}f)g";
+	    string test2 = "x(y{z[)}}";
+	
+	    cout << "Test 1: " << (is_balanced(test1) ? "Balanced" : "Unbalanced") << endl;
+	    cout << "Test 2: " << (is_balanced(test2) ? "Balanced" : "Unbalanced") << endl;
+	    return 0;
+	}
+	```
+	
+	![](../../../assets/Pasted image 20250304202912.png)
