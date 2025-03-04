@@ -24,4 +24,4 @@ comments: true
 ## Table of Contents
 
 - [Chapter 01 : Fundamentals of Computer Design](Chapter%201/)
-- [Chapter 03: Memory Hierarchy Design](Chapter%203/)
+- [Chapter 03 : Memory Hierarchy Design](Chapter%203/)
