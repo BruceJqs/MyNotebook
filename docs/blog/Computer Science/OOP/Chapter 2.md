@@ -242,6 +242,8 @@ x.resize()
 
 Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的模板添加上一些属于 Stack 的特性（即 Adapter），最后封装成为了栈模块
 
+![](../../../assets/Pasted%20image%2020250304205153.png)
+
 !!! example "Example"
 
 	```c++ title="Stack.cpp"
@@ -360,6 +362,4 @@ Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的
 	...
 		c_stack<char, vector> st;//这里 vector 可以换成 list
 	```
-
-
-
+***
