@@ -2190,8 +2190,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cost-vs-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost v.s. Price
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependability
+    </span>
+  </a>
   
 </li>
       
@@ -6320,8 +6338,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cost-vs-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost v.s. Price
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependability
+    </span>
+  </a>
   
 </li>
       
@@ -6893,6 +6929,61 @@
 <div class="arithmatex">\[
 \text{Cost of integrated circuit}=\frac{\text{Cost of die} + \text{Cost of testing die} + \text{Cost of packaging and final test}}{\text{Final test yield}}
 ​\]</div>
+<hr />
+<h3 id="cost-vs-price">Cost v.s. Price<a class="headerlink" href="#cost-vs-price" title="Permanent link">&para;</a></h3>
+<ul>
+<li>成本（Cost）：制造产品所需的所有开支</li>
+<li>价格（Price）：消费者愿意为产品支付的金额</li>
+<li>Price = Cost + Margin<ul>
+<li>利润（Margin）：与单个项目无关的间接费用，即研发、营销、制造设备、税费等。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="dependability">Dependability<a class="headerlink" href="#dependability" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>可靠性是指所提供服务的质量，用于评判是否可以合理地依赖某项服务</p>
+</blockquote>
+<p>基础设施供应商提供服务水平协议（Service Level Agreements，SLA）或服务水平目标（Service Level Objectives，SLO）来保证他们的网络或电力服务是可靠的。因此我们可以用 SLA 来判断系统处于运行还是停机状态。可以将服务状态分为：</p>
+<ol>
+<li><strong>服务实现</strong>（Service Accomplishment）：按照 SLA 的说明提供服务</li>
+<li><strong>服务中断</strong>（Service Interruption）：提供的协议与 SLA 说明的不同</li>
+</ol>
+<p>状态 1 <span class="arithmatex">\(\rightarrow\)</span> 2 的转变称为<strong>故障</strong>（Failures），2 <span class="arithmatex">\(\rightarrow\)</span> 1 的转变称为<strong>恢复</strong>（Restorations）。量化这些转变时，可以得到以下衡量计算机<strong>可靠性</strong>（Dependability）的方法：</p>
+<ul>
+<li><strong>模块可靠性</strong>（Module Reliability）：从一个参考的初始时刻开始，对连续的服务实现的衡量<ul>
+<li>平均故障时间（Mean Time to Failure, MTTF）：它的倒数即为故障率，可用 FIT（Failure in Time）表示</li>
+<li>平均修复时间（Mean Time to Repair, MTTR）</li>
+<li>平均故障间隔时间（Mean Time Between Failures, MTBF) = MTTF + MTTR</li>
+</ul>
+</li>
+<li><strong>模块可用性</strong>（Module Availability）：对实现和中断两种状态交替的服务实现的衡量，计算公式为：<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$$
+\text{Availability}=\frac{\text{MTTF}}{\text{MTTF}+\text{MTTR}}
+$$
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<details class="question">
+<summary>Error, Fault 和 Failure</summary>
+<ul>
+<li>Failure 的产生是因为 Error 的出现（模块的瑕疵）</li>
+<li>
+<p>Error 出现的原因是因为 Fault</p>
+</li>
+<li>
+<p>当 Fault 发生时，它会产生一个或多个潜在的 Error，当它被激活时就会生效；</p>
+</li>
+<li>当 Error 实际影响交付的服务时，就会发生故障</li>
+</ul>
+</details>
+<p>解决故障的基本途径是利用<strong>冗余</strong>（Redundancy），包括：</p>
+<ul>
+<li>时间上：重复运算，观察是否仍然是错误的</li>
+<li>资源上：用其他部件替代故障的部件</li>
+</ul>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6962,7 +7053,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月26日 15:05:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月4日 14:18:57</span>
   </span>
 
     
