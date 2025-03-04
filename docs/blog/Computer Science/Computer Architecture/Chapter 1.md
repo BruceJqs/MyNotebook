@@ -426,3 +426,47 @@ $$
 $$
 \text{Cost of integrated circuit}=\frac{\text{Cost of die} + \text{Cost of testing die} + \text{Cost of packaging and final test}}{\text{Final test yield}}
 ​$$
+***
+### Cost v.s. Price
+
+- 成本（Cost）：制造产品所需的所有开支
+- 价格（Price）：消费者愿意为产品支付的金额
+- Price = Cost + Margin
+	- 利润（Margin）：与单个项目无关的间接费用，即研发、营销、制造设备、税费等。
+***
+## Dependability
+
+> 可靠性是指所提供服务的质量，用于评判是否可以合理地依赖某项服务
+
+基础设施供应商提供服务水平协议（Service Level Agreements，SLA）或服务水平目标（Service Level Objectives，SLO）来保证他们的网络或电力服务是可靠的。因此我们可以用 SLA 来判断系统处于运行还是停机状态。可以将服务状态分为：
+
+1. **服务实现**（Service Accomplishment）：按照 SLA 的说明提供服务
+2. **服务中断**（Service Interruption）：提供的协议与 SLA 说明的不同
+
+状态 1 $\rightarrow$ 2 的转变称为**故障**（Failures），2 $\rightarrow$ 1 的转变称为**恢复**（Restorations）。量化这些转变时，可以得到以下衡量计算机**可靠性**（Dependability）的方法：
+
+- **模块可靠性**（Module Reliability）：从一个参考的初始时刻开始，对连续的服务实现的衡量
+    - 平均故障时间（Mean Time to Failure, MTTF）：它的倒数即为故障率，可用 FIT（Failure in Time）表示
+    - 平均修复时间（Mean Time to Repair, MTTR）
+    - 平均故障间隔时间（Mean Time Between Failures, MTBF) = MTTF + MTTR
+- **模块可用性**（Module Availability）：对实现和中断两种状态交替的服务实现的衡量，计算公式为：
+		
+		$$
+		\text{Availability}=\frac{\text{MTTF}}{\text{MTTF}+\text{MTTR}}
+		$$
+		
+
+??? question "Error, Fault 和 Failure"
+
+	- Failure 的产生是因为 Error 的出现（模块的瑕疵）
+	- Error 出现的原因是因为 Fault
+	
+	- 当 Fault 发生时，它会产生一个或多个潜在的 Error，当它被激活时就会生效；
+	- 当 Error 实际影响交付的服务时，就会发生故障
+
+解决故障的基本途径是利用**冗余**（Redundancy），包括：
+
+- 时间上：重复运算，观察是否仍然是错误的
+- 资源上：用其他部件替代故障的部件
+***
+

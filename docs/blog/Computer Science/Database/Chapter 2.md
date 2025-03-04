@@ -189,7 +189,7 @@ comments: true
 	
 	然后我们用全集减掉就可以找到最大值：
 	
-	- $\prod_{\text{instructor}}−\prod{\text{instructor.salary}}(\sigma_{\text{instructor.salary}<d.\text{salary}}(\text{instructor}\times\rho_d(\text{instructor})))$
+	- $\prod_{\text{instructor}}−\prod_{\text{instructor.salary}}(\sigma_{\text{instructor.salary}<d.\text{salary}}(\text{instructor}\times\rho_d(\text{instructor})))$
 ***
 ### Additional Operations
 

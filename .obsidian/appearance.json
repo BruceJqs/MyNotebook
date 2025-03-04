@@ -1,0 +1,11 @@
+{
+  "cssTheme": "Blue Topaz",
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "color-Heading"
+  ],
+  "interfaceFontFamily": "Chalkboard",
+  "textFontFamily": "Chalkboard",
+  "baseFontSize": 17,
+  "monospaceFontFamily": "Chalkboard"
+}

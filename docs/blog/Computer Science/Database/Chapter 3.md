@@ -346,7 +346,7 @@ SQL 还支持以下字符串操作：
 ***
 ## Set Operations
 
-- SQL 支持关系代数中的集合运算符 $\cap,\cup,\overline{}$，分别用 `union`、`intersect`、`except` 表示
+- SQL 支持关系代数中的集合运算符 $\cap,\cup,\overline{ }$，分别用 `union`、`intersect`、`except` 表示
 - 使用这些运算符后会自动消除重复记录（因为集合不允许存在重复记录）
 - 如果想要保留重复记录，需要在集合运算关键字后加上 `all` 关键字，即 `union all`、`intersect all`、`except all`。假如有一个元组，在关系 $r, s$ 内分别出现了 $m, n$ 次，那么该元组在
     - 关系 `r union all s` 中出现 $m + n$ 次
@@ -564,7 +564,7 @@ e.g. `select name from instructor where salary * 10 > (select budget from depart
 
 	=== "Example 01"
 	
-		- 另一种查询“在 2009 秋和 2010 春都开课的课程”
+		- 另一种查询“在 2009 秋和 2010 春都开课的课程” 的写法
 		
 		```SQL
 		select course_id
@@ -579,7 +579,7 @@ e.g. `select name from instructor where salary * 10 > (select budget from depart
 	=== "Example 02"
 	
 		- 找到上过 Biology Department 所有课程的学生
-			- SQL 语句往往需要逆向考虑，即找到这样的学生，不存在他没选过的生物系的课。
+			- SQL 语句往往需要逆向考虑，即找到这样的学生，不存在他没选过的生物系的课
 		
 		```SQL
 		select distinct S.ID, S.name
@@ -811,6 +811,5 @@ e.g. `select name from instructor where salary * 10 > (select budget from depart
 							takes.grade is not null and
 							takes.grade <> 'F');
 		```
-
 
 
