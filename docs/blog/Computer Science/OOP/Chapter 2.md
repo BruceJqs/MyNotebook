@@ -202,7 +202,7 @@ x.resize()
 			string item;
 			int total = 0;
 			while(cin >> item){
-				if(price.contain(item) == false)
+				if(price.contains(item) == false)
 					cout << "Item " <<  item << " not found" << endl;
 				else
 					total += price[item];
@@ -214,7 +214,7 @@ x.resize()
 		
 		![](../../../assets/Pasted image 20250303143434.png)
 		
-		- 其中 contain 函数是 c++20 标准，需要用 `-std=c++20` 编译
+		- 其中 contains 函数是 c++20 标准，需要用 `-std=c++20` 编译
 
 - 更多请见 [cppreference : map](https://en.cppreference.com/w/cpp/container/map)
 ***
