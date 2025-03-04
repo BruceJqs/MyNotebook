@@ -130,6 +130,7 @@ x.resize()
 列表元素大小不确定，因此使用迭代器对列表遍历时，只能使用 `==` 或 `!=` 比较运算符
 
 - C++ 无法为列表预留空间，所以列表没有 `capacity()` 函数
+- 在 C++11 标准前 `.size() == 0` 判断为空需要线性的时间，但是 `.empty()` 时间则为常数
 - 更多请见 [cppreference : list](https://en.cppreference.com/w/cpp/container/list)
 
 !!! tip "数据结构该如何选取？"
@@ -181,7 +182,7 @@ x.resize()
 		
 		![](../../../assets/Pasted image 20250304200825.png)
 		
-		因此对于 map 里面没有的东西，我们需要注意！
+		因此对于 map 里面没有的东西，我们需要注意！很有可能会访问一些 map 没有的东西从而导致潜在的问题，需要用 count / contains 来解决（见 Example 02）
 	
 	=== "Example 02"
 	
@@ -363,3 +364,74 @@ Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的
 		c_stack<char, vector> st;//这里 vector 可以换成 list
 	```
 ***
+## Algorithms
+
+### Iterators
+
+- 声明：`list<int>::iterator li;`
+- 获取容器首部：
+    
+	```c++
+	list<int> L; 
+	li = L.begin();`
+	```
+    
+- 获取容器尾部：`li = L.end();`
+- 解引用（Dereference）：`*li = 10;`
+- 可作为函数参数
+- for-each 循环：迭代数组，向量或其他数据集中的元素，将当前元素值赋给在循环内部声明的迭代器变量
+	
+	```c++
+	for(type variable_name : array/bector_name) {
+	    loop statements
+	    ...
+	}
+	```
+	
+
+!!! example "Example"
+
+	```c++ title="iterator.cpp"
+	#include<iterator>
+	#include<vector>
+	#include<iostream>
+	#include<list>
+	using namespace std;
+	
+	int main(){
+	    vector<int> v {1,2,3,4,5};
+	    vector<int> u;
+	
+	    reverse(v.begin(), v.end());
+	    copy(v.begin(), v.end(), back_inserter(u));
+	    copy(u.begin(), u.end(), ostream_iterator<int>(cout, ", "));
+	    cout << endl;
+	
+	    list<int> l;
+	    copy(v.begin(), v.end(), front_inserter(l));
+	    copy(l.begin(), l.end(), ostream_iterator<int>(cout, ", "));
+	    cout << endl;
+	    return 0;
+	}
+	```
+	
+	![](../../../assets/Pasted image 20250304210451.png)
+***
+### Typedef
+
+有些类型名过于冗长，为编写代码带来了不便。此时可用 `typedef` 为类型名重新命名，以简化名称
+
+例如，原来的类型名为：
+
+```c++
+map<string, list<string>> phonebook;
+map<string, list<string>>::iterator finger;
+```
+
+我们可以用 `typedef` 简化为：
+
+```c++
+typedef map<string,list<string>> PB;
+PB phonebook;
+PB::iterator finger;
+```
