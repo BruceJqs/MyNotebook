@@ -2213,6 +2213,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#measuring-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summarize-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summarize Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantitative-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantitative Principles
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6361,6 +6412,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#measuring-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measuring Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summarize-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summarize Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantitative-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantitative Principles
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6957,12 +7059,11 @@
 <li>平均故障间隔时间（Mean Time Between Failures, MTBF) = MTTF + MTTR</li>
 </ul>
 </li>
-<li><strong>模块可用性</strong>（Module Availability）：对实现和中断两种状态交替的服务实现的衡量，计算公式为：<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$$
+<li>
+<p><strong>模块可用性</strong>（Module Availability）：对实现和中断两种状态交替的服务实现的衡量，计算公式为：</p>
+<div class="arithmatex">\[
 \text{Availability}=\frac{\text{MTTF}}{\text{MTTF}+\text{MTTR}}
-$$
-</code></pre></div></td></tr></table></div>
+\]</div>
 </li>
 </ul>
 <details class="question">
@@ -6982,8 +7083,119 @@ $$
 <ul>
 <li>时间上：重复运算，观察是否仍然是错误的</li>
 <li>资源上：用其他部件替代故障的部件</li>
+<li>具体操作可以见<a href="https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Appendix/#raid-redundant-arrays-of-inexpensive-disks">计组：RAID</a></li>
 </ul>
 <hr />
+<h2 id="measuring-performance">Measuring Performance<a class="headerlink" href="#measuring-performance" title="Permanent link">&para;</a></h2>
+<p>衡量计算机性能的指标有：</p>
+<ul>
+<li><strong>执行时间</strong>（Execution Time）<ul>
+<li>最直接的定义是使用挂钟（Wall-clock）时间 / 响应时间 / 耗时（Elapsed Time）：完成一项任务，包括存储器访问、内存访问、I/O 活动、操作系统开销等所需的时延</li>
+<li>在多编程（Multiprogramming）中，还得考虑 CPU 时间：处理器计算所需时间，不包括等待 I/O 或运行其他程序的时间</li>
+<li>评估系统性能的另一个方法是比较在某一工作量（Workload）（用户运行的程序和操作系统命令）下的执行时间</li>
+</ul>
+</li>
+<li><strong>吞吐量</strong>（Throughput）<ul>
+<li>在给定一段时间内完成的工作量</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>基准测试</strong>（Benchmarks）：用于评估计算机性能的程序</li>
+<li><strong>基准测试套件</strong>（Benchmark Suite）：一组基准测试应用<ul>
+<li>其中一个最成功的标准基准测试套件是 <a href="https://www.spec.org/">SPEC</a>（标准性能评估公司 , Standard Performance Evaluation Corporation）</li>
+</ul>
+</li>
+</ul>
+<p>不同计算机类型的基准测试：</p>
+<ul>
+<li>台式机：<ul>
+<li>处理器密集型（Processor-intensive)/ 图形密集型（Graphics-intensive）基准测试</li>
+<li>整数 / 浮点数基准测试</li>
+</ul>
+</li>
+<li>服务器：<ul>
+<li>面向处理器吞吐量的基准测试</li>
+<li>SPECrate：用于测量请求级并行</li>
+<li>关于 I/O：文件服务器基准测试（SPECSFS）、Java 服务器基准测试</li>
+<li>事务处理 (TP) 基准测试：测量系统处理由数据库访问和更新构成的事务的能力<ul>
+<li>事务处理委员会 (Transaction Processing Council, TPC) 尝试建立现实且公正的 TP 基准测试</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="report-performance">Report Performance<a class="headerlink" href="#report-performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>报告性能测量的指导原则应该是具备<strong>可重复性</strong>（Producibility）：列出其他实验者能够复现结果的一切条件</li>
+</ul>
+<hr />
+<h3 id="summarize-performance">Summarize Performance<a class="headerlink" href="#summarize-performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>总结性能测试结果的简单方法是：比较在基准测试组件的各项程序中执行时间的算术 / 加权平均值</li>
+<li>SPECRatio：参考计算机的执行时间 / 被测计算机的执行时间，有以下等式成立：</li>
+</ul>
+<div class="arithmatex">\[
+\text{SPECRatio}=\frac{\frac{\text{Execution Time}_{\text{Reference}}}{\text{Execution Time}_A}}{\frac{\text{Execution Time}_{\text{Reference}}}{\text{Execution Time}_B}}=\frac{\text{Execution Time}_B}{\text{Execution Time}_A}=\frac{\text{Performance}_A}{\text{Performance}_B}
+\]</div>
+<ul>
+<li>由于 SPECRatio 是比率而非绝对执行时间，因此计算平均值时应采用几何平均值，即 <span class="arithmatex">\(\text{Geometric mean}=\sqrt[n]{\prod\limits_{i=1}^n\text{sample}_i}\)</span>。使用几何平均值时确保两条重要的性质：<ul>
+<li>（时间）比率的几何平均值 = 几何平均值的比率</li>
+<li>几何平均值的比率 = 性能比率的集合平均值，因此与参考计算机的选择无关</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="quantitative-principles">Quantitative Principles<a class="headerlink" href="#quantitative-principles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>利用并行（Parallelism）</li>
+<li>利用局部性（Locality）：程序倾向于重复使用最近用过的数据和指令（一般来说一个程序会花 90%的时间在 10% 的代码上），可分为：<ul>
+<li><strong>时间局部性</strong>（Temporal Locality）：最近被访问过的项很有可能在不久之后会被再次访问</li>
+<li><strong>空间局部性</strong>（Spatial Locality）：地址相邻的项被引用的时间比较相近</li>
+</ul>
+</li>
+<li>专注于<strong>一般情况</strong>（Common Case）<ul>
+<li>有助于计算机在能耗、资源分配、性能、可靠性等方面的改善</li>
+<li>通常而言，一般情况比不常见的情况更简单，执行速度更快</li>
+</ul>
+</li>
+<li>
+<p>阿姆达尔定律（Amdahl's Law）：通过使用某些更快的执行模式获得的性能提升会受制于快速模式在时间上的占比</p>
+<ul>
+<li>通常用加速比（Speedup）来衡量性能提升量，公式为：</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Speedup}&amp;=\frac{\text{Performance for entire task using the enhancement when possible}}{\text{Performance for entire task without using the enhancement}}\\
+&amp;=\frac{\text{Execution Time for entire task without using the enhancement}}{\text{Execution Time for entire task using the enhancement when possible}}
+\end{aligned}
+\]</div>
+<ul>
+<li>因此加速比取决于以下因素：<ul>
+<li>被提升的部分在原来计算机中的计算时间占比</li>
+<li>使用增强模式后的提升量</li>
+</ul>
+</li>
+<li>执行时间的公式：</li>
+</ul>
+<div class="arithmatex">\[
+\text{Execution time}_\text{new}=\text{Execution time}_\text{old}\times((1−\text{Fraction}_\text{enhanced})+\frac{\text{Fraction}_\text{enhanced}}{\text{Speedup}_\text{enhanced}})
+\]</div>
+<ul>
+<li>总体加速比 = 执行时间之比</li>
+</ul>
+<div class="arithmatex">\[
+\text{Speedup}_\text{overall}=\frac{\text{Execution time}_\text{old}}{\text{Execution time}_\text{new}}=\frac{1}{(1−\text{Fraction}_\text{enhanced}+\frac{\text{Fraction}_\text{enhanced}}{\text{Speedup}_\text{enhanced}})}
+\]</div>
+<ul>
+<li>推论：如果只改善任务的一小部分，那么对整个任务的提升至多不超过（1 - 该部分在整个任务的占比）的倒数​​</li>
+<li>处理器性能方程，具体见<a href="https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%201/#cpu-time">计组</a></li>
+</ul>
+</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -7053,7 +7265,7 @@ $$
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月4日 14:18:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年3月4日 15:47:34</span>
   </span>
 
     
