@@ -346,3 +346,20 @@ Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的
 	结果仍然一样：
 	
 	![](../../../assets/Pasted image 20250304204048.png)
+	
+	或者会有人说，我不想以 vector 为基础转嫁，我要用 Lists，当然也可以，我们在定义 c_stack 的 Template 中多加一个参数，指定采用哪种类型的线性表即可：
+	
+	```c++
+	#include<deque>
+	#include<vector>
+	#include<list>
+	template<typename T, typename Container = std::deque<T>>
+		...
+	    Container c;
+	};
+	...
+		c_stack<char, vector> st;//这里 vector 可以换成 list
+	```
+
+
+
