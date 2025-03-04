@@ -120,6 +120,7 @@ nav:
     - 计算机体系结构｜Computer Architecture:
       - blog/Computer Science/Computer Architecture/index.md
       - "Chapter 01: Fundamentals of Computer Design": blog/Computer Science/Computer Architecture/Chapter 1.md
+      - "Chapter 03: Memory Hierarchy": blog/Computer Science/Computer Architecture/Chapter 3.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
