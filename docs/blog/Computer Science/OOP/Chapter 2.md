@@ -240,7 +240,7 @@ x.resize()
 ***
 ## Stacks
 
-Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的模板（我猜是Vector）添加上一些属于 Stack 的特性（即 Adapter），最后封装成为了栈模块
+Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的模板添加上一些属于 Stack 的特性（即 Adapter），最后封装成为了栈模块
 
 !!! example "Example"
 
@@ -280,3 +280,69 @@ Stack 在 STL 中体现出了 “Adapter” 的思想，即利用一些已有的
 	```
 	
 	![](../../../assets/Pasted image 20250304202912.png)
+
+??? question "为什么说 Stack 体现了 Adapter 的思想呢？"
+
+	事实上，Stack 就是在其他 STL 工具的基础上添加转嫁封装形成的一个个接口，我们也可以以 Vector 为基础构建一个 Stack（还是以上面的例子为例）
+	
+	```c++ title="Custom_Stack.cpp"
+	#include<iostream>
+	#include<string>
+	using namespace std;
+	
+	template<typename T>
+	class Stack{
+	public:// virtual 表示这是一个纯虚函数的接口, 子类继承它必须实现这些函数
+	    virtual ~Stack() default;// default 也可写成 {}
+	    virtual T& top() = 0;
+	    virtual bool empty() const = 0;
+	    virtual size_t size() const = 0;
+	    virtual void push(const T& value) = 0;
+	    virtual void pop() = 0;
+	};
+	
+	//Adapter
+	template<typename T>
+	class c_stack : public Stack<T>{
+	public:
+	    T& top() override{return c.back();}
+	    bool empty() const override{return c.empty();}
+	    size_t size() const override{return c.size();}
+	    void push(const T& value) override{c.push_back(value);}
+	    void pop() override{c.pop_back();}
+	private:
+	    vector<T> c;
+	};
+	
+	bool is_balanced(string s){
+	    c_stack<char> st;
+	    for(char c : s){
+	        if(c == '(' || c == '{' || c == '[')
+	            st.push(c);
+	        else if(c == ')' || c == '}' || c == ']'){
+	            if(st.empty())
+	                return false;
+	
+	            char top = st.top();
+	            st.pop();
+	
+	            if((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '['))
+	                return false;
+	        }
+	    }
+	    return st.empty();
+	}
+	
+	int main(){
+	    string test1 = "a(b{c[d]e}f)g";
+	    string test2 = "x(y{z[)}}";
+	
+	    cout << "Test 1: " << (is_balanced(test1) ? "Balanced" : "Unbalanced") << endl;
+	    cout << "Test 2: " << (is_balanced(test2) ? "Balanced" : "Unbalanced") << endl;
+	    return 0;
+	}
+	```
+	
+	结果仍然一样：
+	
+	![](../../../assets/Pasted image 20250304204048.png)
