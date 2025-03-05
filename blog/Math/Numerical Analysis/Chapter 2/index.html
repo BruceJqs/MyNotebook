@@ -3096,6 +3096,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#error-analysis-for-iterative-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Analysis for Iterative Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Analysis for Iterative Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-point-iteration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed-Point Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newtons-method_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton's Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accelerating-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accelerating Convergence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accelerating Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aitkens-delta2-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aitken's \(\Delta^2\) Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5887,6 +5944,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#error-analysis-for-iterative-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Analysis for Iterative Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Analysis for Iterative Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-point-iteration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed-Point Iteration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newtons-method_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Newton's Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accelerating-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accelerating Convergence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accelerating Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aitkens-delta2-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aitken's \(\Delta^2\) Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6163,6 +6277,95 @@ p_n=p_{n−1}−\frac{f(p_{n−1})}{f'(p_{n−1})}\text{ for }n\geq 1
 <p>牛顿法的收敛性取决于初始近似值的选择。如下图所示，如果选择不当的话，牛顿法就会失效：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250227213636.png" /></p>
 </div>
+<hr />
+<h2 id="error-analysis-for-iterative-methods">Error Analysis for Iterative Methods<a class="headerlink" href="#error-analysis-for-iterative-methods" title="Permanent link">&para;</a></h2>
+<p>假设 <span class="arithmatex">\(\{p_n\}_{n=0}^\infty\)</span> 收敛于 <span class="arithmatex">\(p\)</span>，其中对 <span class="arithmatex">\(\forall p_n \neq p\)</span>。如果存在正数 <span class="arithmatex">\(\lambda\)</span> 和 <span class="arithmatex">\(\alpha\)</span>，使得：</p>
+<div class="arithmatex">\[
+\lim_{n\to\infty}\frac{|p_{n+1}-p|}{|p_n-p|^\alpha} = \lambda
+\]</div>
+<p>则称 <span class="arithmatex">\(\{p_n\}_{n=0}^\infty\)</span> 是 <span class="arithmatex">\(\alpha\)</span> 阶收敛的（Converges to p of Order <span class="arithmatex">\(\alpha\)</span>），<span class="arithmatex">\(\lambda\)</span> 称为<strong>渐进误差常数</strong>（Asymptotic Error Constant）</p>
+<ul>
+<li><span class="arithmatex">\(\alpha\)</span> 值越大，收敛速度越快<ul>
+<li>如果 <span class="arithmatex">\(\alpha=1\)</span>，则该序列是<strong>线性收敛</strong>的（Linearly Convergent）</li>
+<li>如果 <span class="arithmatex">\(\alpha=2\)</span>，则该序列是<strong>二次收敛</strong>的（Quadratically Convergent）</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="fixed-point-iteration_1">Fixed-Point Iteration<a class="headerlink" href="#fixed-point-iteration_1" title="Permanent link">&para;</a></h3>
+<p>我们有不动点法的收敛阶和渐进误差常数：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+p_{n+1}-p = g(p_n)-g(p) = g'(\xi)(p_n-p) &amp;\Rightarrow \frac{|p_{n+1}-p|}{|p_n-p|} = |g'(\xi)|\\
+&amp;\Rightarrow \lim_{n\to\infty}\frac{|p_{n+1}-p|}{|p_n-p|} = \lim_{n\to\infty}|g'(\xi)| = |g'(p)|
+\end{aligned}
+\]</div>
+<p>因此，如果<span class="arithmatex">\(g'(p)\neq 0\)</span>，则不动点迭代法是线性收敛的，且渐进误差常数为<span class="arithmatex">\(|g'(p)|\)</span></p>
+<hr />
+<h3 id="newtons-method_1">Newton's Method<a class="headerlink" href="#newtons-method_1" title="Permanent link">&para;</a></h3>
+<p>由泰勒展开，我们有牛顿迭代法的收敛阶和渐进误差常数：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+0 &amp;= f(p) = f(p_n) + f'(p_n)(p-p_n) + \frac{f''(\xi)}{2}(p-p_n)^2\\
+&amp;\Rightarrow p =     p_n-\frac{f(p_n)}{f'(p_n)} - \frac{f''(\xi)}{2f'(p_n)}(p-p_n)^2\\
+&amp;\Rightarrow \lim_{n\to\infty}\frac{|p_{n+1}-p|}{|p_n-p|^2} = \lim_{n\to\infty}\frac{|f''(\xi)|}{2|f'(p_n)|} = \frac{|f''(p)|}{2|f'(p)|}
+\end{aligned}
+\]</div>
+<p>因此，牛顿迭代法是二次收敛的，且渐进误差常数为<span class="arithmatex">\(\frac{|f''(p)|}{2|f'(p)|}\)</span></p>
+<div class="admonition question">
+<p class="admonition-title">我们如何一般性地求出 <span class="arithmatex">\(\alpha\)</span> 和 <span class="arithmatex">\(\lambda\)</span> ？</p>
+<p>我们有如下定理：令 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(g(x)\)</span> 的不动点。如果存在一些常量 <span class="arithmatex">\(\alpha\geq 2\)</span>，使得 <span class="arithmatex">\(g\in C^\alpha[p−\delta,p+\delta]\)</span>，<font color="red"><span class="arithmatex">\(g'(p)=...=g^{(\alpha−1)}(p)=0\)</span></font> 且 <span class="arithmatex">\(g^{(\alpha)}(p)\not=0\)</span>。那么关于 <span class="arithmatex">\(p_n=g(p_{n−1}),n\geq 1\)</span> 的迭代是 <span class="arithmatex">\(α\)</span> 阶收敛的</p>
+<details class="note">
+<summary>Proof</summary>
+<div class="arithmatex">\[
+p_{n+1}=g(p_n))=\underbrace{g(p)}_{=p}+\frac{g'(p)}{1!}(p_n-p)+...+\underbrace{\frac{g^{(\alpha)}(\xi_n)}{\alpha!}}_{=\lambda(n\rightarrow\infty)}(p_n-p)^\alpha
+\]</div>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">如果根<strong>不是</strong>简单的，那么牛顿法的收敛阶数是多少？</p>
+<p>如果 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(f\)</span> 中的一个根，且重数（Multiplicity）为 <span class="arithmatex">\(m\)</span>，那么 <span class="arithmatex">\(f(x)=(x-p)^mq(x)\)</span> 且 <span class="arithmatex">\(q(p)\not=0\)</span></p>
+<p>根据牛顿法，<span class="arithmatex">\(p_n=g(p_{n-1})\text{ for }n\geq 1\text{ with }g(x)=x-\frac{f(x)}{f'(x)}\)</span>，得到：</p>
+<div class="arithmatex">\[
+\begin{align*}
+g'(x) &amp;= 1-\frac{f'(x)^2-f(x)f''(x)}{(f'(x))^2} = \frac{f(x)f''(x)}{(f'(x))^2} \\
+&amp;= \frac{(x-p)^mq(x)(m(m-1)(x-p)^{m-2}q(x)+2m(x-p)^{m-1}q'(x)+q''(x)(x-p)^m)}{(m(x-p)^{m-1}q(x)+q'(x)(x-p)^m)^2} \\
+&amp;= \frac{(x-p)^{2m-2}q(x)(m(m-1)q(x)+2m(x-p)q'(x)+q''(x)(x-p)^2)}{(x-p)^{2m-2}(mq(x)+q'(x)(x-p))^2} \\
+&amp;= \frac{q(x)(m(m-1)q(x)+2m(x-p)q'(x)+q''(x)(x-p)^2)}{(mq(x)+q'(x)(x-p))^2}
+\end{align*}
+\]</div>
+<p>所以 <span class="arithmatex">\(g'(p)=\frac{q(p)m(m-1)q(p)}{(mq(p))^2}=1-\frac{1}{m}&lt;1\)</span>，此时牛顿法收敛，但不是二次收敛</p>
+</div>
+<hr />
+<p>幸运的是，存在一种可以加快收敛速度的方法：将有重根的 <span class="arithmatex">\(f\)</span> 转换为等价的另一个有<strong>简单根</strong>的函数，在这个新的函数上使用牛顿法。具体来说，定义 <span class="arithmatex">\(\mu(x)=\frac{f(x)}{f'(x)}\)</span></p>
+<p>如果 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(f\)</span> 的 <span class="arithmatex">\(m\)</span> 重零点，<span class="arithmatex">\(f(x)=(x-p)^mq(x)\)</span>，则</p>
+<div class="arithmatex">\[\mu(x)=\frac{(x-p)^mq(x)}{m(x-p)^{m-1}q(x)+q'(x)(x-p)^m}=\frac{(x-p)q(x)}{mq(x)+q'(x)(x-p)}\]</div>
+<p>又因为 <span class="arithmatex">\(q(p)\neq 0\)</span>，且</p>
+<div class="arithmatex">\[\frac{q(p)}{mq(p)+q'(p)(p-p)}=\frac{1}{m}\neq 0\]</div>
+<p>所以 <span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(\mu(x)\)</span> 的单根，那么我们对 <span class="arithmatex">\(\mu\)</span> 应用牛顿迭代法，就有</p>
+<div class="arithmatex">\[
+\begin{align*}
+p_{n+1}=g(p_n) &amp;= p_n-\frac{\mu(p_n)}{\mu'(p_n)} \\
+&amp;= p_n-\frac{\frac{f(p_n)}{f'(p_n)}}{\frac{f'(p_n)f'(p_n)-f(p_n)f''(p_n)}{(f'(p_n))^2}} \\
+&amp;= p_n-\frac{f(p_n)f'(p_n)}{f'(p_n)^2-f(p_n)f''(p_n)} \\
+\end{align*}
+\]</div>
+<p>这就是让有多重根的牛顿法二次收敛的方法，但是其也有优劣：</p>
+<ul>
+<li>优点：二次收敛，收敛速度快</li>
+<li>缺点：<ul>
+<li>计算量大，因为需要计算 <span class="arithmatex">\(f'(x)\)</span> 和 <span class="arithmatex">\(f''(x)\)</span></li>
+<li>分母由两个接近于 0 的数相减，会引起严重的舍入误差</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="accelerating-convergence">Accelerating Convergence<a class="headerlink" href="#accelerating-convergence" title="Permanent link">&para;</a></h2>
+<h3 id="aitkens-delta2-process">Aitken's <span class="arithmatex">\(\Delta^2\)</span> Process<a class="headerlink" href="#aitkens-delta2-process" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Definition</p>
+<p>对于给定的序列，向前差分（Forward Difference）定义为 <span class="arithmatex">\(\Delta p_n = p_{n+1}-p_n\)</span>，对于更高的幂，我们有 <span class="arithmatex">\(\Delta^k p_n = \Delta(\Delta^{k-1}p_n)\)</span>，比如 <span class="arithmatex">\(\Delta^2 p_n = \Delta(\Delta p_n)= \Delta(p_{n+1}-p_n) = (p_{n+2}-p_{n+1}) -(p_{n+1}-p_n)\)</span></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6232,7 +6435,7 @@ p_n=p_{n−1}−\frac{f(p_{n−1})}{f'(p_{n−1})}\text{ for }n\geq 1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月28日 13:00:23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 11:03:38">2025年3月5日 11:03:38</span>
   </span>
 
     
@@ -6244,7 +6447,7 @@ p_n=p_{n−1}−\frac{f(p_{n−1})}{f'(p_{n−1})}\text{ for }n\geq 1
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月27日 11:37:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年2月27日 11:37:06">2025年2月27日 11:37:06</span>
   </span>
 
     
