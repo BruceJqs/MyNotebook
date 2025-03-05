@@ -84,6 +84,7 @@ comments: true
 	```
 	
 	- 假设分别经过齿轮 I，II，III，加密过程为 $B\Rightarrow K\Rightarrow L\Rightarrow V$
+
 - 反射板（Reflector）
 
 	```c
@@ -92,6 +93,7 @@ comments: true
 	```
 	
 	- 经过映射器后加密为 W
+
 - 逆向齿轮
 	- 反向查表（即从数组 rotor 查询字符，字符下标 `+ 'A'` 即为加密结果）
 	- 经过齿轮 III，II，I，解密过程为 $W\Rightarrow R\Rightarrow G\Rightarrow F$
@@ -102,26 +104,45 @@ comments: true
 
 !!! note "实际情况"
 
-	- 当按下 A 键时，齿轮的外部状态因为旋转（即 MessageKey + 1）会发生变化（请谨记，<font color="red">每个齿轮都是先旋转再进行接下来的加密操作</font>），假设 I 齿轮的 RingSetting 为 A，MessageKey 为 Z，那么按下 A 键时，MessageKey 变为 A，需要进行如下运算：
-	- 对于每一个齿轮都有两个状态：
+	=== "MessageKey"
+	
+		在实际情况下对于每一个齿轮都有两个状态：
+		
 		- 初始状态（RingSetting）：在齿轮转动时不会发生变化
 		- 外部状态（MessageKey）：随着每一次按键时都会发生变化
+		
+		当按下 A 键时，齿轮的外部状态因为旋转（即 MessageKey + 1）会发生变化（请谨记，<font color="red">每个齿轮都是先旋转再进行接下来的加密操作</font>），例如齿轮 I 的RingSetting = C, MessageKey = A，当按下 A 键时，MessageKey 变为 B，需要进行如下运算：
+		
+		```c
+		char c = 'A';
+		int delta = MessageKey - RingSetting;
+		c = ((c - 'A') + delta + 26) % 26 + 'A';
+		```
+		
+		这时候 A 被加密为 Z，查表过后为 J，我们还需要进行逆偏移运算：
+		
+		```c
+		c = ((c - 'A') - delta + 26) % 26 + 'A';
+		```
+		
+		这时候 J 变为了 K，其他所有的齿轮同理
 	
-	- 偏移运算：
+	=== "Stepping"
 	
-	```c
-	char c = 'A';
-	int delta = MessageKey - RingSetting;
-	c = ((c - 'A') + delta + 26) % 26 + 'A';
-	```
-	
-	- 逆偏移运算：
-	
-	```c
-	c = ((c - 'A') - delta + 26) % 26 + 'A';
-	```
-	
-	- 对于齿轮 I 来说加密过程为 $A\Rightarrow Z\Rightarrow J\Rightarrow K$
+		在实际情况下，并非每个齿轮是独立旋转的，在达到某个字母时，它会让下一个齿轮随之转动（有点像进位），当 rotor I、II、III、IV、V 为 Q、E、V、J、Z 时，若再键入字符，则下一个 rotor 会转动一格。（当然，这个 rotor 也会转动一格，分别变为 R、F、W、K、A，小白老师的记忆方法是 Royal Flag Wave Kings Above），5 个 rotor 的 QEVJZ 称为“**使进位字母**”，又敲键能使下一个 rotor 转动
+		
+		由 Enigma 的机械结构决定，中间的 rotor 有两种情况会转动: 
+		 
+		1. 右边的 rotor 在自身的“使进位字母”，又敲键，右边的使中间的转动  
+		2. 中间的 rotor 在自身的“使进位字母”，又敲键，中间的反常转动（不论右边在什么位置）（反常机制，只有中间的 rotor 具有）
+		
+		!!! example "Example"
+		
+			假定 III=1=A, II=4=D, I=17=Q
+			
+			现在 I 旋转，从 Q 变成 R，一定会带动 II 旋转: III = 1 = A, II = 5 = E, I = 18 = R  
+			
+			此时再旋转I的话，I 本来是不应该带动 II 转的（因为当前 I 不在 Q 这个位置），但是 II 还会立即再转，同时 II 正常带动 III 旋转: III = 2 = B, II = 6 = F, I = 19 = S
 
 
 
