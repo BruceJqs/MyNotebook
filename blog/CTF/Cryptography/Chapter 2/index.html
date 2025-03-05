@@ -6095,7 +6095,7 @@
 <li>对方在齿轮初始状态为 ABC 的情况下，输入 Z'J'U' 一定可以解密出 ZJU</li>
 </ul>
 </div>
-<p>Enigma 的加密过程要经过 5 个元件，我们假定明文为 A：</p>
+<p>理想情况下，Enigma 的加密过程要经过 5 个元件形成一个循环，我们假定明文为 A 经过以下步骤：</p>
 <ul>
 <li>
 <p>接线板（Plugboard）：Enigma 会指定一些字母对（常规为 10 对），这些字母对在加密和解密时会互换，我们这里假定 A 和 B 互换，C 和 D 互换，明文加密为 B</p>
@@ -6103,7 +6103,7 @@
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">plug</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="s">&quot;BADCEFGHIJKLMNOPQRSTUVWXYZ&quot;</span><span class="p">;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">            </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">              </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plug</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="sc">&#39;A&#39;</span><span class="p">];</span><span class="w"> </span><span class="c1">// e=&#39;B&#39;;</span>
 </span></code></pre></div></td></tr></table></div>
@@ -6111,54 +6111,69 @@
 <li>
 <p>齿轮（Rotor）1～3</p>
 <ul>
-<li>对于每一个齿轮都有两个状态：<ul>
+<li>查表，各齿轮的转换表为（一般 IV 和 V 不常用）：</li>
+</ul>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_1</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span><span class="p">;</span><span class="c1">//I</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_2</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span><span class="p">;</span><span class="c1">//II</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_3</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span><span class="p">;</span><span class="c1">//III</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_4</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;ESOVPZJAYQUIRHXLNFTGKDCMWB&quot;</span><span class="p">;</span><span class="c1">//IV</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_5</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;VZBRGITYUPSDNHLXAWMJQOFECK&quot;</span><span class="p">;</span><span class="c1">//V</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">                </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>假设分别经过齿轮 I，II，III，加密过程为 <span class="arithmatex">\(B\Rightarrow K\Rightarrow L\Rightarrow V\)</span></li>
+<li>反射板（Reflector）</li>
+</ul>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">reflector</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">                  </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>经过映射器后加密为 W</li>
+<li>逆向齿轮</li>
+<li>反向查表（即从数组 rotor 查询字符，字符下标 <code>+ 'A'</code> 即为加密结果）</li>
+<li>经过齿轮 III，II，I，解密过程为 <span class="arithmatex">\(W\Rightarrow R\Rightarrow G\Rightarrow F\)</span></li>
+<li>接线板</li>
+<li>通过接线板再次互换，根据我们的假设最终结果为 F</li>
+</ul>
+</li>
+</ul>
+<p>事实上，我们将 F 重新走一遍上面的流程，最终得到的结果一定是 A，这样就完成了加密和解密的过程</p>
+<div class="admonition note">
+<p class="admonition-title">实际情况</p>
+<ul>
+<li>当按下 A 键时，齿轮的外部状态因为旋转（即 MessageKey + 1）会发生变化（请谨记，<font color="red">每个齿轮都是先旋转再进行接下来的加密操作</font>），假设 I 齿轮的 RingSetting 为 A，MessageKey 为 Z，那么按下 A 键时，MessageKey 变为 A，需要进行如下运算：</li>
+<li>
+<p>对于每一个齿轮都有两个状态：</p>
+<ul>
 <li>初始状态（RingSetting）：在齿轮转动时不会发生变化</li>
 <li>外部状态（MessageKey）：随着每一次按键时都会发生变化</li>
 </ul>
 </li>
 <li>
-<p>当按下 A 键时，齿轮的外部状态会发生变化，假设 I 齿轮的 RingSetting 为 B，MessageKey 为 A，那么按下 A 键时，需要进行如下运算：</p>
-<ul>
-<li>偏移运算：</li>
+<p>偏移运算：</p>
+</li>
 </ul>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageKey</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">RingSetting</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
-</span></code></pre></div></td></tr></table></div>
-<ul>
-<li>查表，各齿轮的转换表为（一般 IV 和 V 不常用）：</li>
-</ul>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_1</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span><span class="p">;</span><span class="c1">//I</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_2</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span><span class="p">;</span><span class="c1">//II</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_3</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span><span class="p">;</span><span class="c1">//III</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_4</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;ESOVPZJAYQUIRHXLNFTGKDCMWB&quot;</span><span class="p">;</span><span class="c1">//IV</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kt">char</span><span class="w"> </span><span class="n">rotor_5</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;VZBRGITYUPSDNHLXAWMJQOFECK&quot;</span><span class="p">;</span><span class="c1">//V</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">               </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageKey</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">RingSetting</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>逆偏移运算：</li>
 </ul>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>对于齿轮 I 来说加密过程为 <span class="arithmatex">\(A\Rightarrow Z\Rightarrow J\Rightarrow K\)</span></p>
-</li>
-<li>映射器（Reflector）</li>
+<ul>
+<li>对于齿轮 I 来说加密过程为 <span class="arithmatex">\(A\Rightarrow Z\Rightarrow J\Rightarrow K\)</span></li>
 </ul>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">reflector</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span><span class="p">;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">               </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
-</span></code></pre></div></td></tr></table></div>
-</li>
-</ul>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6228,7 +6243,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 14:32:00">2025年3月5日 14:32:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 15:12:43">2025年3月5日 15:12:43</span>
   </span>
 
     
