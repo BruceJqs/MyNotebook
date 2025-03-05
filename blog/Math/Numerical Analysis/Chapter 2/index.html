@@ -3148,6 +3148,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#steffensens-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steffensen's Method
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5996,6 +6005,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#steffensens-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steffensen's Method
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6366,6 +6384,58 @@ p_{n+1}=g(p_n) &amp;= p_n-\frac{\mu(p_n)}{\mu'(p_n)} \\
 <p class="admonition-title">Definition</p>
 <p>对于给定的序列，向前差分（Forward Difference）定义为 <span class="arithmatex">\(\Delta p_n = p_{n+1}-p_n\)</span>，对于更高的幂，我们有 <span class="arithmatex">\(\Delta^k p_n = \Delta(\Delta^{k-1}p_n)\)</span>，比如 <span class="arithmatex">\(\Delta^2 p_n = \Delta(\Delta p_n)= \Delta(p_{n+1}-p_n) = (p_{n+2}-p_{n+1}) -(p_{n+1}-p_n)\)</span></p>
 </div>
+<p>假设 <span class="arithmatex">\(\{p_n\}_{n=0}^\infty\)</span> 是线性收敛的，其极限为 <span class="arithmatex">\(p\)</span>，为了便于构造比<span class="arithmatex">\(\{p_n\}_{n=0}^\infty\)</span>收敛更快的序列<span class="arithmatex">\(\{\hat{p}_n\}_{n=0}^\infty\)</span>，我们假设<span class="arithmatex">\(p_n-p, p_{n+1}-p, p_{n+2}-p\)</span>的符号一致，又假设<span class="arithmatex">\(n\)</span>足够大，有</p>
+<div class="arithmatex">\[
+\frac{p_{n+1}-p}{p_n-p} \approx \frac{p_{n+2}-p}{p_{n+1}-p}
+\]</div>
+<p>从而</p>
+<div class="arithmatex">\[
+p_{n+1}^2-2p_{n+1}p+p^2 \approx p_{n+2}p_n-(p_n+p_{n+2})p+p^2
+\]</div>
+<p>解出 <span class="arithmatex">\(p\)</span>，得到：</p>
+<div class="arithmatex">\[
+p \approx \frac{p_{n+2}p_{n}-p_{n+1}^2}{p_{n+2}-2p_{n+1}+p_n} \approx p_n - \frac{(p_{n+1}-p_n)^2}{p_{n+2}-2p_{n+1}+p_n}
+\]</div>
+<p>于是，我们可以构造序列<span class="arithmatex">\(\{\hat{p}_n\}_{n=0}^\infty\)</span>，其中</p>
+<div class="arithmatex">\[
+\hat{p}_n = p_n - \frac{(p_{n+1}-p_n)^2}{p_{n+2}-2p_{n+1}+p_n}=p_n -\frac{(\Delta p_n)^2}{\Delta^2 p_n}
+\]</div>
+<p>这样定义序列的方法就是 AITKEN<span class="arithmatex">\(\Delta^2\)</span> 法</p>
+<div class="admonition question">
+<p class="admonition-title">为什么这样的序列收敛更快？</p>
+<p>我们有如下定理：假设序列 <span class="arithmatex">\(\{p_n\}(n=1,2,...)\)</span> 线性收敛到 <span class="arithmatex">\(p\)</span>；且对于充分大的数 <span class="arithmatex">\(n\)</span>，有 <span class="arithmatex">\((p_{n+1}-p)(p_n-p)&gt;0\)</span>，则 <span class="arithmatex">\(\{\hat{p}_n\}(n=1,2,...)\)</span> 收敛到 <span class="arithmatex">\(p\)</span> 的速度快于 <span class="arithmatex">\(\{p_n\}(n=1,2,...)\)</span>，即：</p>
+<div class="arithmatex">\[
+\lim_{n\to\infty}\frac{\hat{p}_n-p}{p_n-p} = 0
+\]</div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">如何迭代？</p>
+<p>其实还是用序列本身的迭代法，不过在计算值的时候采取了AITKEN<span class="arithmatex">\(\Delta^2\)</span>法。</p>
+<p>构造按如下顺序：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+p_0, p_1 &amp;= g(p_0), p_2 = g(p_1)  \\
+\hat{p_0} &amp;= \{\Delta^2\}(p_0)\\
+p_3 &amp;= g(p_2) \\
+\hat{p_1} &amp;= \{\Delta^2\}(p_1)\\
+\vdots
+\end{aligned}
+\]</div>
+</div>
+<hr />
+<h3 id="steffensens-method">Steffensen's Method<a class="headerlink" href="#steffensens-method" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>若 <span class="arithmatex">\(g'(p)\not=1\)</span>，那么可以做到<strong>局部二次收敛</strong>。</p>
+</blockquote>
+<p>这个方法假设 <span class="arithmatex">\(\hat{p_0}\)</span> 比 <span class="arithmatex">\(p_2\)</span> 更好地逼近 <span class="arithmatex">\(p\)</span>，从而把上述过程第三行的不动点迭代应用到 <span class="arithmatex">\(\hat{p_0}\)</span> 上</p>
+<div class="arithmatex">\[
+\begin{aligned}
+p_0^{(0)}, p_1^{(0)} &amp;= g(p_0^{(0)}), p_2^{(0)} = g(p_2^{(0)})  \\
+p_0^{(1)} &amp;= \{\Delta^2\}(p_0^{(0)}),p_1^{(1)} = \{\Delta^2\}(p_0^{(1)}),p_2^{(1)} = \{\Delta^2\}(p_1^{(1)}) \\
+p_0^{(2)} &amp;= \{\Delta^2\}(p_0^{(1)}) \\
+&amp;\vdots
+\end{aligned}
+\]</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6435,7 +6505,7 @@ p_{n+1}=g(p_n) &amp;= p_n-\frac{\mu(p_n)}{\mu'(p_n)} \\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 11:03:38">2025年3月5日 11:03:38</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 11:19:44">2025年3月5日 11:19:44</span>
   </span>
 
     
