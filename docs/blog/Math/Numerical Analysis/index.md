@@ -17,6 +17,7 @@ comments: true
 
 - [Chapter 01 : Mathematical Preliminaries](Chapter%201/)
 - [Chapter 02 : Solutions of Equations in One Variable](Chapter%202/)
+- [Chapter 06 : Direct Methods for Solving Linear Systems](Chapter%206/)
 
 ## Homeworks
 

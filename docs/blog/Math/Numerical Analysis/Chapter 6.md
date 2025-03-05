@@ -7,4 +7,5 @@ hide:
 comments: true
 --- 
 
-# Chapter 03 :  
+# Chapter 06 :  Direct Methods for Solving Linear Systems
+

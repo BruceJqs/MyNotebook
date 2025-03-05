@@ -333,4 +333,72 @@ $$
 
 	对于给定的序列，向前差分（Forward Difference）定义为 $\Delta p_n = p_{n+1}-p_n$，对于更高的幂，我们有 $\Delta^k p_n = \Delta(\Delta^{k-1}p_n)$，比如 $\Delta^2 p_n = \Delta(\Delta p_n)= \Delta(p_{n+1}-p_n) = (p_{n+2}-p_{n+1}) -(p_{n+1}-p_n)$
 
+假设 $\{p_n\}_{n=0}^\infty$ 是线性收敛的，其极限为 $p$，为了便于构造比$\{p_n\}_{n=0}^\infty$收敛更快的序列$\{\hat{p}_n\}_{n=0}^\infty$，我们假设$p_n-p, p_{n+1}-p, p_{n+2}-p$的符号一致，又假设$n$足够大，有
+
+$$
+\frac{p_{n+1}-p}{p_n-p} \approx \frac{p_{n+2}-p}{p_{n+1}-p}
+$$
+
+从而
+
+$$
+p_{n+1}^2-2p_{n+1}p+p^2 \approx p_{n+2}p_n-(p_n+p_{n+2})p+p^2
+$$
+
+解出 $p$，得到：
+
+$$
+p \approx \frac{p_{n+2}p_{n}-p_{n+1}^2}{p_{n+2}-2p_{n+1}+p_n} \approx p_n - \frac{(p_{n+1}-p_n)^2}{p_{n+2}-2p_{n+1}+p_n}
+$$
+
+于是，我们可以构造序列$\{\hat{p}_n\}_{n=0}^\infty$，其中
+
+$$
+\hat{p}_n = p_n - \frac{(p_{n+1}-p_n)^2}{p_{n+2}-2p_{n+1}+p_n}=p_n -\frac{(\Delta p_n)^2}{\Delta^2 p_n}
+$$
+
+这样定义序列的方法就是 AITKEN$\Delta^2$ 法
+
+!!! question "为什么这样的序列收敛更快？"
+
+	我们有如下定理：假设序列 $\{p_n\}(n=1,2,...)$ 线性收敛到 $p$；且对于充分大的数 $n$，有 $(p_{n+1}-p)(p_n-p)>0$，则 $\{\hat{p}_n\}(n=1,2,...)$ 收敛到 $p$ 的速度快于 $\{p_n\}(n=1,2,...)$，即：
+	
+	$$
+	\lim_{n\to\infty}\frac{\hat{p}_n-p}{p_n-p} = 0
+	$$
+	
+
+!!! question "如何迭代？"
+
+	其实还是用序列本身的迭代法，不过在计算值的时候采取了AITKEN$\Delta^2$法。
+	
+    构造按如下顺序：
+	
+    $$
+    \begin{aligned}
+    p_0, p_1 &= g(p_0), p_2 = g(p_1)  \\
+    \hat{p_0} &= \{\Delta^2\}(p_0)\\
+    p_3 &= g(p_2) \\
+    \hat{p_1} &= \{\Delta^2\}(p_1)\\
+    \vdots
+    \end{aligned}
+    $$
+    
+*** 
+### Steffensen's Method
+
+> 若 $g'(p)\not=1$，那么可以做到**局部二次收敛**。
+
+这个方法假设 $\hat{p_0}$ 比 $p_2$ 更好地逼近 $p$，从而把上述过程第三行的不动点迭代应用到 $\hat{p_0}$ 上
+
+$$
+\begin{aligned}
+p_0^{(0)}, p_1^{(0)} &= g(p_0^{(0)}), p_2^{(0)} = g(p_2^{(0)})  \\
+p_0^{(1)} &= \{\Delta^2\}(p_0^{(0)}),p_1^{(1)} = \{\Delta^2\}(p_0^{(1)}),p_2^{(1)} = \{\Delta^2\}(p_1^{(1)}) \\
+p_0^{(2)} &= \{\Delta^2\}(p_0^{(1)}) \\
+&\vdots
+\end{aligned}
+$$
+
+
 
