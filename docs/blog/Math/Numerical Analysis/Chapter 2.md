@@ -228,5 +228,109 @@ $$
 	牛顿法的收敛性取决于初始近似值的选择。如下图所示，如果选择不当的话，牛顿法就会失效：
 	
 	![](../../../assets/Pasted image 20250227213636.png)
+***
+## Error Analysis for Iterative Methods
+
+假设 $\{p_n\}_{n=0}^\infty$ 收敛于 $p$，其中对 $\forall p_n \neq p$。如果存在正数 $\lambda$ 和 $\alpha$，使得：
+
+$$
+\lim_{n\to\infty}\frac{|p_{n+1}-p|}{|p_n-p|^\alpha} = \lambda
+$$
+
+则称 $\{p_n\}_{n=0}^\infty$ 是 $\alpha$ 阶收敛的（Converges to p of Order $\alpha$），$\lambda$ 称为**渐进误差常数**（Asymptotic Error Constant）
+
+- $\alpha$ 值越大，收敛速度越快
+	- 如果 $\alpha=1$，则该序列是**线性收敛**的（Linearly Convergent）
+	- 如果 $\alpha=2$，则该序列是**二次收敛**的（Quadratically Convergent）
+***
+### Fixed-Point Iteration
+
+我们有不动点法的收敛阶和渐进误差常数：
+
+$$
+\begin{aligned}
+p_{n+1}-p = g(p_n)-g(p) = g'(\xi)(p_n-p) &\Rightarrow \frac{|p_{n+1}-p|}{|p_n-p|} = |g'(\xi)|\\
+&\Rightarrow \lim_{n\to\infty}\frac{|p_{n+1}-p|}{|p_n-p|} = \lim_{n\to\infty}|g'(\xi)| = |g'(p)|
+\end{aligned}
+$$
+
+因此，如果$g'(p)\neq 0$，则不动点迭代法是线性收敛的，且渐进误差常数为$|g'(p)|$
+***
+### Newton's Method
+
+由泰勒展开，我们有牛顿迭代法的收敛阶和渐进误差常数：
+
+$$
+\begin{aligned}
+0 &= f(p) = f(p_n) + f'(p_n)(p-p_n) + \frac{f''(\xi)}{2}(p-p_n)^2\\
+&\Rightarrow p =     p_n-\frac{f(p_n)}{f'(p_n)} - \frac{f''(\xi)}{2f'(p_n)}(p-p_n)^2\\
+&\Rightarrow \lim_{n\to\infty}\frac{|p_{n+1}-p|}{|p_n-p|^2} = \lim_{n\to\infty}\frac{|f''(\xi)|}{2|f'(p_n)|} = \frac{|f''(p)|}{2|f'(p)|}
+\end{aligned}
+$$
+
+因此，牛顿迭代法是二次收敛的，且渐进误差常数为$\frac{|f''(p)|}{2|f'(p)|}$
+
+!!! question "我们如何一般性地求出 $\alpha$ 和 $\lambda$ ？"
+
+	我们有如下定理：令 $p$ 是 $g(x)$ 的不动点。如果存在一些常量 $\alpha\geq 2$，使得 $g\in C^\alpha[p−\delta,p+\delta]$，<font color="red">$g'(p)=...=g^{(\alpha−1)}(p)=0$</font> 且 $g^{(\alpha)}(p)\not=0$。那么关于 $p_n=g(p_{n−1}),n\geq 1$ 的迭代是 $α$ 阶收敛的
+	
+	??? note "Proof"
+	
+		$$
+		p_{n+1}=g(p_n))=\underbrace{g(p)}_{=p}+\frac{g'(p)}{1!}(p_n-p)+...+\underbrace{\frac{g^{(\alpha)}(\xi_n)}{\alpha!}}_{=\lambda(n\rightarrow\infty)}(p_n-p)^\alpha
+		$$
+		
+
+!!! question "如果根**不是**简单的，那么牛顿法的收敛阶数是多少？"
+
+	如果 $p$ 是 $f$ 中的一个根，且重数（Multiplicity）为 $m$，那么 $f(x)=(x-p)^mq(x)$ 且 $q(p)\not=0$
+	
+	根据牛顿法，$p_n=g(p_{n-1})\text{ for }n\geq 1\text{ with }g(x)=x-\frac{f(x)}{f'(x)}$，得到：
+	
+	$$
+	\begin{align*}
+	g'(x) &= 1-\frac{f'(x)^2-f(x)f''(x)}{(f'(x))^2} = \frac{f(x)f''(x)}{(f'(x))^2} \\
+	&= \frac{(x-p)^mq(x)(m(m-1)(x-p)^{m-2}q(x)+2m(x-p)^{m-1}q'(x)+q''(x)(x-p)^m)}{(m(x-p)^{m-1}q(x)+q'(x)(x-p)^m)^2} \\
+	&= \frac{(x-p)^{2m-2}q(x)(m(m-1)q(x)+2m(x-p)q'(x)+q''(x)(x-p)^2)}{(x-p)^{2m-2}(mq(x)+q'(x)(x-p))^2} \\
+	&= \frac{q(x)(m(m-1)q(x)+2m(x-p)q'(x)+q''(x)(x-p)^2)}{(mq(x)+q'(x)(x-p))^2}
+	\end{align*}
+	$$
+	
+	所以 $g'(p)=\frac{q(p)m(m-1)q(p)}{(mq(p))^2}=1-\frac{1}{m}<1$，此时牛顿法收敛，但不是二次收敛
+***
+幸运的是，存在一种可以加快收敛速度的方法：将有重根的 $f$ 转换为等价的另一个有**简单根**的函数，在这个新的函数上使用牛顿法。具体来说，定义 $\mu(x)=\frac{f(x)}{f'(x)}$
+
+如果 $p$ 是 $f$ 的 $m$ 重零点，$f(x)=(x-p)^mq(x)$，则
+
+$$\mu(x)=\frac{(x-p)^mq(x)}{m(x-p)^{m-1}q(x)+q'(x)(x-p)^m}=\frac{(x-p)q(x)}{mq(x)+q'(x)(x-p)}$$
+
+又因为 $q(p)\neq 0$，且
+
+$$\frac{q(p)}{mq(p)+q'(p)(p-p)}=\frac{1}{m}\neq 0$$
+
+所以 $p$ 是 $\mu(x)$ 的单根，那么我们对 $\mu$ 应用牛顿迭代法，就有
+
+$$
+\begin{align*}
+p_{n+1}=g(p_n) &= p_n-\frac{\mu(p_n)}{\mu'(p_n)} \\
+&= p_n-\frac{\frac{f(p_n)}{f'(p_n)}}{\frac{f'(p_n)f'(p_n)-f(p_n)f''(p_n)}{(f'(p_n))^2}} \\
+&= p_n-\frac{f(p_n)f'(p_n)}{f'(p_n)^2-f(p_n)f''(p_n)} \\
+\end{align*}
+$$
+
+这就是让有多重根的牛顿法二次收敛的方法，但是其也有优劣：
+
+- 优点：二次收敛，收敛速度快
+- 缺点：
+	- 计算量大，因为需要计算 $f'(x)$ 和 $f''(x)$
+	- 分母由两个接近于 0 的数相减，会引起严重的舍入误差
+***
+## Accelerating Convergence
+
+### Aitken's $\Delta^2$ Process
+
+!!! note "Definition"
+
+	对于给定的序列，向前差分（Forward Difference）定义为 $\Delta p_n = p_{n+1}-p_n$，对于更高的幂，我们有 $\Delta^k p_n = \Delta(\Delta^{k-1}p_n)$，比如 $\Delta^2 p_n = \Delta(\Delta p_n)= \Delta(p_{n+1}-p_n) = (p_{n+2}-p_{n+1}) -(p_{n+1}-p_n)$
 
 

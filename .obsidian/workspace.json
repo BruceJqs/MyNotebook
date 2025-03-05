@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 1.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 1"
+              "title": "Chapter 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 1.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 1"
+              "title": "Outline of Chapter 2"
             }
           },
           {
@@ -178,6 +178,11 @@
   },
   "active": "61d88c6a14ed06e2",
   "lastOpenFiles": [
+    "docs/blog/Math/Numerical Analysis/Chapter 3.md",
+    "docs/blog/CTF/Cryptography/Chapter 2.md",
+    "docs/assets/Pasted image 20250305100523.png",
+    "docs/blog/Math/Numerical Analysis/Chapter 2.md",
+    "docs/blog/Computer Science/OOP/Chapter 1.md",
     "docs/blog/Computer Science/OOP/Chapter 2.md",
     "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
     "docs/assets/Pasted image 20250304210451.png",
@@ -197,7 +202,6 @@
     "docs/blog/Computer Science/Database/Chapter 2.md",
     "docs/assets/Pasted image 20250303175913.png",
     "docs/assets/Pasted image 20250303143434.png",
-    "docs/assets/Pasted image 20250303140918.png",
     "docs/blog/ACEE/Information Theory/Chapter 2.md",
     "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 1.md",
@@ -217,9 +221,6 @@
     "docs/blog/Research/Seedlab/Basic-Labs",
     "docs/blog/Research/Seedlab",
     "docs/blog/Research",
-    "docs/blog/Math/Numerical Analysis/Chapter 2.md",
-    "docs/blog/Math/Numerical Analysis/index.md",
-    "docs/blog/Math/Numerical Analysis/Homework 2.md",
     "docs/blog/CTF/Cryptography",
     "docs/blog/Math/Numerical Analysis",
     "docs/blog/Computer Science/Numerical Analysis",

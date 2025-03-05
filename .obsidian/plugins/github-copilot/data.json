@@ -1,6 +1,6 @@
 {
   "nodePath": "/usr/local/bin/node",
-  "enabled": false,
+  "enabled": true,
   "hotkeys": {
     "accept": "Tab",
     "cancel": "Escape",
