@@ -53,13 +53,61 @@ comments: true
 
 > Enigma 是德国在二战时期使用的密码机，它由接线板、转子、反射器和键盘组成，使用了多表密码的原理
 
-!!! question "Enigma 是如何运作的？"
+!!! question "Enigma 的工作方式是怎么样的？"
 
 	- 发送方随机想出 3 个齿轮的外部状态（MessageKey），例如 ABC，以明文的形式把 ABC 发送给对方
 	- 再想出要用到密钥即真正用来加密的齿轮初始状态为 ZJU
 	- 在当前齿轮初始状态为 ABC 的情况下，在键盘上连续按下 ZJU 得到 ZJU 的密文，设为 Z'J'U' 发送给对方
 	- 对方在齿轮初始状态为 ABC 的情况下，输入 Z'J'U' 一定可以解密出 ZJU
 
+Enigma 的加密过程要经过 5 个元件，我们假定明文为 A：
+
+- 接线板（Plugboard）：Enigma 会指定一些字母对（常规为 10 对），这些字母对在加密和解密时会互换，我们这里假定 A 和 B 互换，C 和 D 互换，明文加密为 B
+
+	```c
+	char plug[27] ="BADCEFGHIJKLMNOPQRSTUVWXYZ";
+			    //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+	char c='A', e;
+	e = plug[c-'A']; // e='B';
+	```
+
+- 齿轮（Rotor）1～3
+	- 对于每一个齿轮都有两个状态：
+		- 初始状态（RingSetting）：在齿轮转动时不会发生变化
+		- 外部状态（MessageKey）：随着每一次按键时都会发生变化
+	- 当按下 A 键时，齿轮的外部状态会发生变化，假设 I 齿轮的 RingSetting 为 B，MessageKey 为 A，那么按下 A 键时，需要进行如下运算：
+		- 偏移运算：
+		
+		```c
+		char c = 'A';
+		int delta = MessageKey - RingSetting;
+		c = ((c - 'A') + delta + 26) % 26 + 'A';
+		```
+		
+		- 查表，各齿轮的转换表为（一般 IV 和 V 不常用）：
+		
+		```c
+		char rotor_1[27]="EKMFLGDQVZNTOWYHXUSPAIBRCJ";//I
+		char rotor_2[27]="AJDKSIRUXBLHWTMCQGZNPYFVOE";//II
+		char rotor_3[27]="BDFHJLCPRTXVZNYEIWGAKMUSQO";//III
+		char rotor_4[27]="ESOVPZJAYQUIRHXLNFTGKDCMWB";//IV
+		char rotor_5[27]="VZBRGITYUPSDNHLXAWMJQOFECK";//V
+					   //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		```
+		
+		- 逆偏移运算：
+		
+		```c
+		c = ((c - 'A') - delta + 26) % 26 + 'A';
+		```
+		
+	- 对于齿轮 I 来说加密过程为 $A\Rightarrow Z\Rightarrow J\Rightarrow K$
+- 映射器（Reflector）
+
+	```c
+	char reflector[27]="YRUHQSLDPXNGOKMIEBFZCWVJAT";
+				   //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+	```
 
 
 
