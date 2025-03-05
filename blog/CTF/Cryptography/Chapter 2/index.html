@@ -6127,18 +6127,26 @@
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>假设分别经过齿轮 I，II，III，加密过程为 <span class="arithmatex">\(B\Rightarrow K\Rightarrow L\Rightarrow V\)</span></li>
-<li>反射板（Reflector）</li>
 </ul>
+</li>
+<li>
+<p>反射板（Reflector）</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">reflector</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span><span class="p">;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">                  </span><span class="c1">//ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>经过映射器后加密为 W</li>
-<li>逆向齿轮</li>
+</ul>
+</li>
+<li>
+<p>逆向齿轮</p>
+<ul>
 <li>反向查表（即从数组 rotor 查询字符，字符下标 <code>+ 'A'</code> 即为加密结果）</li>
 <li>经过齿轮 III，II，I，解密过程为 <span class="arithmatex">\(W\Rightarrow R\Rightarrow G\Rightarrow F\)</span></li>
-<li>接线板</li>
+</ul>
+</li>
+<li>接线板<ul>
 <li>通过接线板再次互换，根据我们的假设最终结果为 F</li>
 </ul>
 </li>
@@ -6146,33 +6154,42 @@
 <p>事实上，我们将 F 重新走一遍上面的流程，最终得到的结果一定是 A，这样就完成了加密和解密的过程</p>
 <div class="admonition note">
 <p class="admonition-title">实际情况</p>
-<ul>
-<li>当按下 A 键时，齿轮的外部状态因为旋转（即 MessageKey + 1）会发生变化（请谨记，<font color="red">每个齿轮都是先旋转再进行接下来的加密操作</font>），假设 I 齿轮的 RingSetting 为 A，MessageKey 为 Z，那么按下 A 键时，MessageKey 变为 A，需要进行如下运算：</li>
-<li>
-<p>对于每一个齿轮都有两个状态：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MessageKey</label><label for="__tabbed_1_2">Stepping</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在实际情况下对于每一个齿轮都有两个状态：</p>
 <ul>
 <li>初始状态（RingSetting）：在齿轮转动时不会发生变化</li>
 <li>外部状态（MessageKey）：随着每一次按键时都会发生变化</li>
 </ul>
-</li>
-<li>
-<p>偏移运算：</p>
-</li>
-</ul>
+<p>当按下 A 键时，齿轮的外部状态因为旋转（即 MessageKey + 1）会发生变化（请谨记，<font color="red">每个齿轮都是先旋转再进行接下来的加密操作</font>），例如齿轮 I 的RingSetting = C, MessageKey = A，当按下 A 键时，MessageKey 变为 B，需要进行如下运算：</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageKey</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">RingSetting</span><span class="p">;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<ul>
-<li>逆偏移运算：</li>
-</ul>
+<p>这时候 A 被加密为 Z，查表过后为 J，我们还需要进行逆偏移运算：</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">26</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<ul>
-<li>对于齿轮 I 来说加密过程为 <span class="arithmatex">\(A\Rightarrow Z\Rightarrow J\Rightarrow K\)</span></li>
-</ul>
+<p>这时候 J 变为了 K，其他所有的齿轮同理</p>
+</div>
+<div class="tabbed-block">
+<p>在实际情况下，并非每个齿轮是独立旋转的，在达到某个字母时，它会让下一个齿轮随之转动（有点像进位），当 rotor I、II、III、IV、V 为 Q、E、V、J、Z 时，若再键入字符，则下一个 rotor 会转动一格。（当然，这个 rotor 也会转动一格，分别变为 R、F、W、K、A，小白老师的记忆方法是 Royal Flag Wave Kings Above），5 个 rotor 的 QEVJZ 称为“<strong>使进位字母</strong>”，又敲键能使下一个 rotor 转动</p>
+<p>由 Enigma 的机械结构决定，中间的 rotor 有两种情况会转动: </p>
+<ol>
+<li>右边的 rotor 在自身的“使进位字母”，又敲键，右边的使中间的转动  </li>
+<li>中间的 rotor 在自身的“使进位字母”，又敲键，中间的反常转动（不论右边在什么位置）（反常机制，只有中间的 rotor 具有）</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>假定 III=1=A, II=4=D, I=17=Q</p>
+<p>现在 I 旋转，从 Q 变成 R，一定会带动 II 旋转: III = 1 = A, II = 5 = E, I = 18 = R  </p>
+<p>此时再旋转I的话，I 本来是不应该带动 II 转的（因为当前 I 不在 Q 这个位置），但是 II 还会立即再转，同时 II 正常带动 III 旋转: III = 2 = B, II = 6 = F, I = 19 = S</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -6243,7 +6260,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 15:12:43">2025年3月5日 15:12:43</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 17:33:59">2025年3月5日 17:33:59</span>
   </span>
 
     
