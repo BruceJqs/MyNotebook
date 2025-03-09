@@ -138,11 +138,11 @@ comments: true
 		
 		!!! example "Example"
 		
-			假定 III=1=A, II=4=D, I=17=Q
+			假定 III = 1 = A, II = 4 = D, I = 17 = Q
 			
 			现在 I 旋转，从 Q 变成 R，一定会带动 II 旋转: III = 1 = A, II = 5 = E, I = 18 = R  
 			
-			此时再旋转I的话，I 本来是不应该带动 II 转的（因为当前 I 不在 Q 这个位置），但是 II 还会立即再转，同时 II 正常带动 III 旋转: III = 2 = B, II = 6 = F, I = 19 = S
+			此时再旋转 I 的话，I 本来是不应该带动 II 转的（因为当前 I 不在 Q 这个位置），但是 II 还会立即再转，同时 II 正常带动 III 旋转: III = 2 = B, II = 6 = F, I = 19 = S
 
 
 
