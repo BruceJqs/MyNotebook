@@ -1548,6 +1548,8 @@
       
         
       
+        
+      
     
     
       
@@ -1690,6 +1692,28 @@
   
   <span class="md-ellipsis">
     Homework 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Database/Homework%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 03
     
   </span>
   
@@ -2953,6 +2977,8 @@
       
         
       
+        
+      
     
     
       
@@ -3202,6 +3228,28 @@
   
   <span class="md-ellipsis">
     Homework 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Homework%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 03
     
   </span>
   
@@ -6084,19 +6132,19 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 <h4 id="elimination">Elimination<a class="headerlink" href="#elimination" title="Permanent link">&para;</a></h4>
 <p>在每个 <span class="arithmatex">\(i\)</span> 中，</p>
 <ul>
-<li><code>Step 5</code> 需要完成 <span class="arithmatex">\(n-i\)</span> 次除法，</li>
-<li><code>Step 6</code> 由 <span class="arithmatex">\(E_j-m_{ji}E_i\)</span> 代替方程 <span class="arithmatex">\(E_j\)</span> 的过程中，对每个 <span class="arithmatex">\(j\)</span> ，需要完成 <span class="arithmatex">\(n-i+1\)</span> 次乘法和 <span class="arithmatex">\(n-i+1\)</span> 次减法。所以共需要完成 <span class="arithmatex">\((n-i)(n-i+1)\)</span> 次乘法和 <span class="arithmatex">\((n-i)(n-i+1)\)</span> 次减法。</li>
+<li><code>Step 5</code> 需要完成 <span class="arithmatex">\(n-i\)</span> 次除法</li>
+<li><code>Step 6</code> 由 <span class="arithmatex">\(E_j-m_{ji}E_i\)</span> 代替方程 <span class="arithmatex">\(E_j\)</span> 的过程中，对每个 <span class="arithmatex">\(j\)</span> ，需要完成 <span class="arithmatex">\(n-i+1\)</span> 次乘法和 <span class="arithmatex">\(n-i+1\)</span> 次减法。所以共需要完成 <span class="arithmatex">\((n-i)(n-i+1)\)</span> 次乘法和 <span class="arithmatex">\((n-i)(n-i+1)\)</span> 次减法</li>
 </ul>
-<p>所以，消元过程共需要完成 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}((n-i)+(n-i)(n-i+1))\)</span> 次乘法/除法和 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}(n-i)(n-i+1)\)</span> 次加法/减法。</p>
-<p>即消元过程共需要完成 <span class="arithmatex">\(\frac{1}{3}n^3+\frac{1}{2}n^2-\frac{5}{6}n\)</span> 次乘法/除法和 <span class="arithmatex">\(\frac{1}{3}n^3-\frac{1}{3}n\)</span> 次加法/减法。</p>
+<p>所以，消元过程共需要完成 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}((n-i)+(n-i)(n-i+1))\)</span> 次乘法/除法和 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}(n-i)(n-i+1)\)</span> 次加法/减法</p>
+<p>即消元过程共需要完成 <span class="arithmatex">\(\frac{1}{3}n^3+\frac{1}{2}n^2-\frac{5}{6}n\)</span> 次乘法/除法和 <span class="arithmatex">\(\frac{1}{3}n^3-\frac{1}{3}n\)</span> 次加法/减法</p>
 <h4 id="backward-substitution">Backward Substitution<a class="headerlink" href="#backward-substitution" title="Permanent link">&para;</a></h4>
 <p><code>Step 8</code> 需要完成 <span class="arithmatex">\(1\)</span> 次除法。</p>
 <p>在每个 <span class="arithmatex">\(i\)</span> 中，</p>
 <ul>
-<li><code>Step 9</code> 需要完成 <span class="arithmatex">\(n-i\)</span> 次乘法和 <span class="arithmatex">\(n-i-1\)</span> 次加法（对每个相加项），然后是一次减法和一次除法。</li>
+<li><code>Step 9</code> 需要完成 <span class="arithmatex">\(n-i\)</span> 次乘法和 <span class="arithmatex">\(n-i-1\)</span> 次加法（对每个相加项），然后是一次减法和一次除法</li>
 </ul>
-<p>所以，回代过程共需要完成 <span class="arithmatex">\(1+\sum\limits_{i=1}^{n-1}((n-i)+1)\)</span> 次乘法/除法和 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}(n-i)\)</span> 次加法/减法。</p>
-<p>即回代过程共需要完成 <span class="arithmatex">\(\frac{1}{2}n^2+\frac{1}{2}n\)</span> 次乘法/除法和 <span class="arithmatex">\(\frac{1}{2}n^2-\frac{1}{2}n\)</span> 次加法/减法。</p>
+<p>所以，回代过程共需要完成 <span class="arithmatex">\(1+\sum\limits_{i=1}^{n-1}((n-i)+1)\)</span> 次乘法/除法和 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}(n-i)\)</span> 次加法/减法</p>
+<p>即回代过程共需要完成 <span class="arithmatex">\(\frac{1}{2}n^2+\frac{1}{2}n\)</span> 次乘法/除法和 <span class="arithmatex">\(\frac{1}{2}n^2-\frac{1}{2}n\)</span> 次加法/减法</p>
 <h4 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h4>
 <ul>
 <li>乘法/除法：<span class="arithmatex">\((\frac{1}{3}n^3+\frac{1}{2}n^2-\frac{5}{6}n)+(\frac{1}{2}n^2+\frac{1}{2}n)=\frac{1}{3}n^3+n^2-\frac{1}{3}n\)</span></li>
@@ -6174,7 +6222,7 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月5日 13:10:57">2025年3月5日 13:10:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月9日 19:01:48">2025年3月9日 19:01:48</span>
   </span>
 
     
