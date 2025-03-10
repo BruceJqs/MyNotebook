@@ -85,5 +85,100 @@ from student join takes on student.ID = takes.ID;
 	- 如果我们使用 `course natural full outer join prereq`，这将 course 和 prereq 的结果保存下来，没有信息的课程 CS-315 和 CS-437 结果设为 NULL：
 	
 	![](../../../assets/Pasted image 20250310103357.png)
+***
+## SQL Data Types and Schemas
+
+### User-Defined Types
+
+- SQL 支持两种形式的用户**定义数据类型**（User-Defined Data Types）：
+	- **区分类型**（Distinct Types）
+	- **结构化数据类型**（Structured Data Types）：复杂的数据类型，包括嵌套记录结构、数组、多重集
+- 不同的属性可能有相同的类型，但有时我们希望讲这些属性的类型区分开来，我们使用 `create type` 语句来定义用户定义数据类型中的区分类型
+	
+	```sql
+	create type Dollars as numeric(12, 2) final;
+	create type Pounds as numeric(12, 2) final;
+	```
+	
+	- 定义了 `Dollars` 这个类型后，我们就可以把它当作元类型使用：
+	
+	```sql
+	create table department  
+	(dept_name varchar (20),  
+	building varchar (15),  
+	budget Dollars);
+	```
+	
+	- 用户定义的这两个类型 `Dollars` 和 `Pounds`，虽然底层类型相同，但会被视为不同的类型。因此这两种类型不能直接进行运算，甚至不能与 `numeric` 类型运算，这时就需要用 `cast` 子句进行强制类型转换
+***
+### Domains
+
+- SQL 的 `domain` 关键字提供了与 `type` 类似的功能，用于为底层类型添加完整性约束：
+	
+	```sql
+	create domain person_name char(20) not null
+	```
+	
+	- 我们还可以使用 `check` 子句来添加额外的约束条件：
+	
+	```sql
+	create domain degree_level varchar(10)  
+	constraint degree_level_test  
+	check (value in (’Bachelors’, ’Masters’, ’Doctorate’));
+	```
+
+`type` 和 `domain` 之间的区别为：
+
+- 域可以有约束，并且可以使用域类型的默认值
+- 域并没有强制的类型要求。因此，只要底层类型是可兼容的，在某个域的值就可以被赋予另一个域类型的值
+***
+### Large-Object Types
+
+> 很多数据库系统需要存储包含大数据项的属性，比如照片、高分辨率的图像或视频等。因此 SQL 为字符数据（`CLOB`）和二进制数据（`BLOB`）提供了**大对象数据类型**（Large-Object Data Types）
+
+- BLOB：二进制大对象（Binary Large Object）——对象是未解释的二进制数据的大型集合（其解释由数据库系统之外的应用程序定义）
+	- 在 MySQL 中，BLOB 数据类型有：
+		- TinyBlob：0～255 字节
+		- Blob：0～64K 字节
+		- MediumBlob：0～16M 字节
+		- LargeBlob：0～4G 字节
+- CLOB：字符大对象（Character Large Object）——对象是大型字符数据的集合
+- 当查询返回大型对象时，将返回指针，而不是大型对象本身。
+***
+### Integrity Constraints
+
+- 完整性约束通过确保对数据库的授权更改不会导致数据一致性的丢失，来防止对数据库的意外损坏。对于一个关系来说，有以下几种：
+	- not null：定义键值不允许为空
+	- primary key
+	- unique
+		- `unique(A1, A2, ..., Am)` 指出属性 A1、A2、...Am 形成一个超级键（不一定是一个候选键）
+		- 候选键允许为 null（与主键不同）
+	- check(P)，其中 P 是一个谓词
+	
+	!!! example "Example"
+	
+		- 确保每个课程的学期为春夏秋冬其中之一
+		
+		```sql
+		create table section (
+		    course_id varchar (8),
+		    sec_id varchar (8),
+		    semester varchar (6),
+		    year numeric (4,0),
+		    building varchar (15),
+		    room_number varchar (7),
+		    time slot id varchar (4),
+		    primary key (course_id, sec_id, semester, year),
+		    check (semester in (’Fall’, ’Winter’, ’Spring’, ’Summer’))  
+		);
+		```
+	
+	- foreign key
+***
+
+
+
+
+
 
 
