@@ -20,6 +20,7 @@ comments: true
 - [Chapter 01 : Introduction](Chapter%201/)
 - [Chapter 02 : The Relational Model](Chapter%202/)
 - [Chapter 03 : Introduction to SQL](Chapter%203/)
+- [Chapter 04 : Intermediate SQL](Chapter%204/)
 
 ## Homeworks
 
