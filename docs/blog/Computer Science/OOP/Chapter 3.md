@@ -75,6 +75,20 @@ comments: true
 	
 	!!! example "Example"
 	
+		我们编写一个 Lec04.cpp 文件：
+		
+		```c++ title="Lec04.cpp"
+		#include<cstdlib>
+		#include<iostream>
+		using namespace std;
+		
+		extern int globalx = 10;
+		
+		int main(){
+		    cout << "globalx = " << globalx << endl;
+		    return 0;
+		}
+		```
 		
 
 
