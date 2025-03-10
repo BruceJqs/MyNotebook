@@ -296,9 +296,263 @@ create view <view-name> as <query-expression>;
     select dept_name, SUM(salary) from instructor
 	group by dept_name;
 	```
-	
-
 ***
+### Update of a View
+
+- 对一个 view 进行修改，相当于通过这个窗口对原表继续修改
+
+!!! example "Example"
+
+	- 我们有如下视图：
+	
+	```sql
+	create view faculty as
+	select ID, name, dept_name from instructor
+	```
+	
+	我们用 `insert into faculty values (’30765’, ’Green’, ’Music’);` 进行插入，插入后，原表也会有这条数据，对于其缺少的 `salary` 属性，我们设定为 `NULL`. 如果这个属性的约束是 `not NULL` 的，那么我们无法执行这次插入
+
+事实上，更新一个视图非常麻烦，如果创建的视图涉及到多个关系，并且还用 `where` 子句指定一些条件，那么插入语句很有可能无法满足 `where` 给出的条件而无法达到预期效果。
+
+综上，除了以下列出的有限情况，通常不允许对视图关系进行修改：
+
+- `from` 子句仅包含一个数据库关系
+- `select` 子句仅包含来自这个关系的属性名，并且不允许出现任何表达式、聚合函数或者 `distinct` 约束
+- 任何没有出现在 `select` 子句的属性会被设为 null，因此也不允许使用 `not null` 或 `primary key` 约束
+- 查询语句不能有 `group by` 或 `having` 子句
+
+我们称满足这些情况的视图是**可更新的**（Updatable）
+***
+### *Materialized Views
+
+有些数据库系统允许存储视图关系，且仍然确保视图保持更新的特点，这样的视图称为**实体化视图** （Materialized Views）
+
+- 由于结果被存储在数据库中，不需要重新计算，因此使用此类视图的查询语句的运行速度可能会更快，适用于需要快速响应的情景
+- 但如果实体化视图对应的关系发生改动，那么实体化视图中的内容就过时了，视图里的内容必须被更新
+
+!!! example "Example"
+
+	```sql
+	create materialized view departments_total_salary(dept_name, total_salary) as 
+		select dept_name, sum (salary) 
+		from instructor
+		group by dept_name;
+	
+	select dept_name  
+	from departments_total_salary  
+	where total_salary > (select avg(total_salary) from departments_total_salary);
+	```
+***
+### *View and Logical Data Independence
+
+!!! question "视图如何实现逻辑数据独立性？"
+
+	如果我们有关系 `S(a,b,c)` 被拆成了两个子关系 `S1(a,b)` 和 `S2(b,c)`，那么我们可以这么做：
+	
+	```sql
+	create table S1 ...;
+	create table S2 ...;
+	
+	insert into S1 select a,b from S;
+	insert into S2 select b,c from S;
+	
+	drop table S;
+	
+	create view S as select a, b, c from S1 natural join S2;
+	```
+	
+	这样之后，语句 `select * from S where...` 实际上是在做 `select * from S1 natural join S2 where ...` （系统会帮我们这样做，程序不用改，只是执行改变了）；语句 `insert into S values (1,2,3)` 实际上是在做 `insert into S1 values (1,2)` 和 `insert into S2 values (1,3)`
+***
+## Indexes
+
+- 在关系中，某个属性的**索引**（Index）是指一种能让数据库系统高效寻找具有特定属性值的元组的数据结构，无需遍历关系内的所有元组
+- 索引的实际实现方式为 B+ 树
+
+!!! example "Example"
+
+	- 我们有如下关系：
+	
+	```sql
+	create table student (
+	ID varchar (5),
+	name varchar (20) not null,
+	dept_name varchar (20),
+	tot_cred numeric (3,0) default 0,
+	primary key (ID));
+	```
+	
+	`select * from student where ID = ‘12345’` 在数据库内不同的物理实现有不同的查找方法
+	
+	如果没有定义索引，只能顺序查找。如果有索引，系统内会利用索引查找
+***
+## Transactions
+
+**事务**（Transaction）是一个查询 / 更新语句的序列。当 SQL 语句被执行的时候，我们就开启了一个事务。用以下 SQL 语句之一作为事务的结束：
+
+- `commit work`：**提交**（Commit）当前事务，也就是说，它让由事务实现的更新操作变为对数据库的永久修改。事务提交之后，新的事务就开始了
+    - 就是保存对被编辑文档的更改
+    - 在大多数数据库上默认每单个 SQL 语句都会自动提交
+	    - 如果需要让多条 SQL 语句构成一个事务的话，需要关闭这种对于单个 SQL 语句的**自动提交**（Automatic Commit）。关闭操作取决于具体的 SQL 实现，但大多数数据库支持 `set autocommit off` 命令
+	    - 更好的替代方法时将这些语句放在关键字 `begin atomic ... end` 之中，此时这些语句会被视为一个事务。但只有部分数据库支持这一语法；其他数据库可能用 `commit work` 或 `rollback work` 替代 `end` 语句
+    - 其中 `work` 是可省略的（Rollback 同理）
+- `rollback work`：**回滚**（Rollback）当前事务，也就是说，它撤销所有先前由事务内的 SQL 语句执行的更新。因此，数据库的状态就会恢复到事务的第一条语句被执行之前的状态
+    - 就是退出编辑会话，并且不保存更改
+    - 一旦事务被提交之后，该事务就无法被回滚
+
+!!! example "Example"
+
+	```sql
+	SET AUTOCOMMIT=0;
+	UPDATE account SET balance=balance -100 WHERE ano=‘1001’;
+	UPDATE account SET balance=balance+100 WHERE ano=‘1002’;
+	COMMIT;
+	
+	UPDATE account SET balance=balance -200 WHERE ano=‘1003’;
+	UPDATE account SET balance=balance+200 WHERE ano=‘1004’;
+	COMMIT;
+	
+	UPDATE account SET balance=balance+balance*2.5%;
+	COMMIT;
+	```
+***
+### ACID Properties
+
+事务是访问并可能更新各种数据项的程序执行单元。为了保持数据的完整性，数据库系统必须确保：
+
+- **原子性**（Atomicity）：事务的所有操作都正确反映在数据库中，或者没有正确反映
+- **一致性**（Consistency）：独立执行事务保持了数据库的一致性，即数据库从一个一致性状态转移到另一个一致性状态
+- **隔离性**（Isolation）：尽管多个事务可以并发执行，但每个事务必须不知道其他并发执行的事务。 中间事务结果必须对其他并发执行的事务隐藏
+	- 也就是说，对于每对交易 $T_i$ 和 $T_j$，在 $T_i$ 看来，要么 $T_j$ 在 $T_i$ 开始之前完成执行，要么 $T_j$ 在 $T_i$ 完成之后开始执行
+- **持久性**（Durability）：事务成功完成后，即使存在系统故障，它对数据库所做的更改也会保留。
+***
+## Authorization
+
+对**数据**的**授权**（Authorization）分为以下四类：
+
+- 读取数据的授权
+- 插入新数据的授权
+- 更新数据的授权
+- 删除数据的授权
+
+对数据库架构的授权分为以下五类：
+
+- 建立（Resources，在 MySQL 中为 Create）：允许创建新关系
+- 改动（Alteration）：允许在关系中添加或删除属性
+- 删除（Drop）：允许删除关系
+- 索引（Index）：允许创建和删除索引
+- 视图（在 MySQL 为 Create view）：允许创建视图
+***
+### Authorization Specification in SQL
+
+在 SQL 中，授予特权的语法为：
+
+```sql
+grant <privilige list>
+on <relation name or view name>
+to <user/role list>;
+```
+
+其中：
+
+- 特权表（Privilige List）可以包含以下特权中的一个或多个：`select`、`insert`、`update`、`delete`
+    - 如果要授予全部特权的话，可以用关键字 `all privileges` 表示
+    - `select` 特权允许用户读取关系中的元组
+    - `update` 特权允许用户更新关系。默认可以更新所有属性；如果仅允许用户更新部分属性的话，需要在 `update` 关键字后紧跟用圆括号包裹的属性列表
+    - `insert` 特权允许用户向关系插入元组。语法要求与 `update` 类似。但如果只允许用户插入部分属性，那么剩下那些不被允许插入的属性就会被设为 null 值
+    - `delete` 特权允许用户向关系删除元组
+- 用户 / 角色表（User / Role List）
+    - 用户名 `public` 指代全体用户，包括将来使用数据库系统的用户
+    - 默认情况下，用户无法向其他用户授予自己已有的特权
+
+!!! example "Example"
+
+	```sql
+	grant select on instructor to U1, U2, U3
+	grant select on department to public
+	grant update (budget) on department to U1,U2
+	grant all privileges on department to U1
+	```
+***
+### Revoking Authorization in SQL
+
+撤回特权的语法与授予特权的语法基本一致：
+
+```sql
+revoke <privilige list>
+on <relation name or view name>
+from <user/role list>;
+```
+
+- 如果不同的授权者两次向同一用户授予相同的权限，则用户在撤销后可能仍然保留该权限
+- 所有依赖于被撤销的权限的权限也将被撤销
+***
+### Roles
+
+> 如果只能按用户来授予特权的话，会带来一定的不便。因此 SQL 支持按**角色**（Roles）授予特权的功能，使得授予特权这件事变得更加方便灵活。所谓“角色”，可以类比 Linux 系统的用户组，每个用户可以同时有不同的角色，而每个角色对应不同的特权
+
+!!! example "Example"
+
+	```sql
+	create role instructor; 
+	grant select on takes to instructor; // 授予权限给角色
+	grant instructor to Amit; //将角色的权限授予给用户
+	
+	create role teaching_assistant; 
+	grant teaching_assistant to instructor; // 可以将角色的权限授予给其他角色，从而 instructor 继承了 teaching_assistant 的所有权限
+	```
+
+角色和用户、角色与角色之间是一个链式的关系：
+
+![](../../../assets/Pasted%20image%2020250310140106.png)
+
+```sql
+create role dean;
+grant instructor to dean;
+grant dean to Satoshi;
+```
+***
+### Authorization on Views
+
+- 创建视图的用户不一定享有对该视图的所有特权，比如没有被授予更新特权的用户创建了一个视图后，他之后就无法对该视图进行更新
+
+!!! example "Example"
+
+	```sql
+	create view geo_instructor as 
+	(select * from instructor where dept_name = ’Geology’);
+	
+	grant select on geo_instructor to geo_staff
+	```
+***
+### Other Authorization Features
+
+#### Reference
+
+SQL 的 `reference` 特权支持用户在创建关系时声明外键，语法上与 `update` 特权类似，比如：
+
+```sql
+grant references(dept_name) on department to Mariano;
+```
+
+这样的一个语句给予了用户 Mariano 使用外键 dept_name 来引用其他关系
+
+- 如果不作为权限，我们可以通过间接的外键约束和 cascade 删掉被引用的数据
+***
+#### Transfer of Privileges
+
+- `grant select on department to Amit with grant option;`：加上 `with grant option` 后，用户可以把获得的权限传递下去
+- `revoke select on department from Amit, Satoshi cascade;`：`cascade` 把该用户及其授予的权限全部收回，级联反应
+- `revoke select on department from Amit, Satoshi restrict;`：`restrict` 只收回该用户的权限
+- `revoke grant option for select on department from Amit;`：收回用户转授的权力
+
+特定授权在用户之间的传递关系可以用**授权图**（Authorization graph）来表示。当且仅当在授权图中有一条从根节点到用户的路径时，该用户才具备特定的授权
+
+![](../../../assets/Pasted%20image%2020250310141212.png)
+
+
+
+
+
 
 
 
