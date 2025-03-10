@@ -204,11 +204,98 @@ char& r = c; // A reference to a character
 
 - 用 `type& refname = name` 可以为名为 `name` 的变量起一个别名 `refname`
 	- 这里的 `r` 是 `c` 的别名，修改 `r` 也会修改 `c` 的值，即用 `r` 就是在用 `c`，用 `c` 就是在用 `r`
-- 在函数的参数表 / 成员函数中使用引用也可以写为 `type& refname`
-- 
+- 在函数的参数表 / 成员函数中使用引用也可以写为 `type& refname`，由函数调用者或者是类建立者来初始化
 
 !!! example "Example"
 
+	=== "In Definition"
 	
+		```c++
+		int x = 3;
+		int& y = x;
+		const int& z = x;
+		```
+	
+	=== "As a Function Argument"
+	
+	
+		```c++
+		void f(int& x)
+		f(y) // Initialized when function is called
+		```
+		
+		只有在函数被调用的时候 y 才会被“绑定”到 x 上
+		
+		- 需要注意的是，这里的函数调用是不能传递表达式的，例如 `f(y * 3)` 是不行的，因为 `y * 3` 是一个临时变量，无法被引用
+			- 从术语上来说，需要传递的是一个左值（L-value，可以简单理解为在赋值操作中可以放在等号左边的值），而 `y * 3` 是一个右值（R-value）
+
+- 引用并非是一个新的变量，而是一个已经存在的变量的别名，所以对一个引用的指针是不合法的，但是对一个指针的引用是合法的，也不存在一个引用的数组
+
+```c++
+int&* p; // Illegal
+void f(int*& p); // OK
+```
+***
+## Dynamic Memory Allocation
+
+在 C++ 中，我们可以使用 `new` 和 `delete` 来动态分配和释放内存
+
+```c++
+int *p = new int; // Allocate memory for an integer
+int stash = new Stash; // Allocate memory for a Stash object
+int *arr = new int[10]; // Allocate memory for an array of 10 integers
+
+delete p; // Release memory for an integer
+delete stash; // Release memory for a Stash object
+delete[] arr; // Release memory for an array of 10 integers
+```
+
+??? question "思考"
+
+	既然 `new` 和 `delete` 可以动态分配和释放内存，那么 `malloc` 和 `free` 呢？它们也可以动态分配和释放内存，那么它们之间有什么区别呢？
+	
+	事实上，`new` 和 `delete` 能使得对象的构造函数和析构函数得到正确的调用：
+	
+	```c++
+	#include<cstdlib>
+	#include<iostream>
+	using namespace std;
+	
+	struct Student{
+	    int id;
+	    Student(){
+	        id = 0;
+	        cout << "Student::Student()" << endl;
+	    }
+	    ~Student(){
+	        cout << "Student::~Student()" << endl;
+	    }
+	};
+	
+	int main(){
+	
+	    Student *ps1 = (Student*)malloc(sizeof(Student));
+	    cout << "ps1->id = " << ps1->id << endl;
+	    Student *ps2 = new Student;
+	    cout << "ps2->id = " << ps2->id << endl;
+	
+	    free(ps1);
+	    delete ps2;
+	    return 0;
+	}
+	```
+	
+	运行可以得到如下结果：
+	
+	![](../../../assets/Pasted image 20250310223353.png)
+	
+	看起来 ps1 也得到了正确的结果，但是事实上并非如此，我们加 O2 优化编译选项：
+	
+	![](../../../assets/Pasted image 20250310230455.png)
+	
+	很明显能看出，`new` 和 `delete` 能够正确调用对象的构造函数和析构函数，而 `malloc` 和 `free` 则不能（甚至是初始化也不行）
+***
+
+
 
 
