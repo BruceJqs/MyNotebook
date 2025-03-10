@@ -318,5 +318,69 @@ y = x; // ok, same thing
 const int z = y; // ok, const is safer
 ```
 
+- 常量的作用域和普通变量相同
+- 常量在 C++ 中默认为内部链接（Internal Linkage），即在编译器中只是符号表的一个记录，并不是一个真正的变量
+- 常量必须在定义时初始化，除非是 `extern` 声明的外部常量
+***
+### Pointers with Const
 
+```c++
+int a[] = {53, 54, 55};
 
+int * const p = a; // p is const
+*p = 20; // OK
+p++; // ERROR
+
+const int *p = a; // (*p) is const
+*p = 20; // ERROR
+p++; // OK
+```
+
+- `const int *p` 表示指针指向的内容是常量，指针本身是可以改变的
+- `int * const p` 表示指针本身是常量，指针指向的内容是可以改变的
+
+!!! example "Example"
+
+	```c++
+	int i;
+	const int ci = 10;
+	
+	int* ip;
+	const int* cip;
+	
+	ip = &i; // OK
+	ip = &ci; // ERROR
+	cip = &i; // OK
+	cip = &ci; // OK
+	
+	*ip = 54; // OK
+	*cip = 54; // ERROR
+	```
+	
+	其中 `ip = &ci` 是错误的，因为 `ip` 是一个普通的指针，而 `ci` 是一个常量，绑定之后不能通过指针修改常量的值
+
+- 对于 `char` 的字符数组来说，`char *s` 和 `const char *s` 是等价的，所以我们对于 `char *s` 定义的字符串也是不能修改的，如果需要修改，需要使用 `char s[]` 来定义
+	- 这是因为 `s[]` 定义在栈上，而 `*s` 定义在代码段中（是只读的，无法修改）
+
+!!! example "Example"
+
+	```c++
+	#include<cstdlib>
+	#include<iostream>
+	using namespace std;
+	
+	int main(){
+	    const char *s1 = "Hello, World!";
+	    char s2[] = "Hello, World!";
+	    
+	    cout << (void*)s1 << endl;
+	    cout << (void*)s2 << endl;
+	    cout << (void*)main << endl;
+	
+	    return 0;
+	}
+	```
+	
+	可以看到最终结果：
+	
+	![](../../../assets/Pasted%20image%2020250310233608.png)
