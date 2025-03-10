@@ -1763,6 +1763,105 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sql-data-types-and-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Data Types and Schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Data Types and Schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      User-Defined Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-object-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Large-Object Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrity-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrity Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrity Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referential-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referential Integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assertions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Views
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6013,6 +6112,105 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sql-data-types-and-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Data Types and Schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Data Types and Schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      User-Defined Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-object-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Large-Object Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrity-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrity Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integrity Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referential-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referential Integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assertions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Views
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Views">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Definition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6126,6 +6324,286 @@
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250310103357.png" /></p>
 </div>
+<hr />
+<h2 id="sql-data-types-and-schemas">SQL Data Types and Schemas<a class="headerlink" href="#sql-data-types-and-schemas" title="Permanent link">&para;</a></h2>
+<h3 id="user-defined-types">User-Defined Types<a class="headerlink" href="#user-defined-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SQL 支持两种形式的用户<strong>定义数据类型</strong>（User-Defined Data Types）：<ul>
+<li><strong>区分类型</strong>（Distinct Types）</li>
+<li><strong>结构化数据类型</strong>（Structured Data Types）：复杂的数据类型，包括嵌套记录结构、数组、多重集</li>
+</ul>
+</li>
+<li>
+<p>不同的属性可能有相同的类型，但有时我们希望讲这些属性的类型区分开来，我们使用 <code>create type</code> 语句来定义用户定义数据类型中的区分类型</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">create</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="n">Dollars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">numeric</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">create</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="n">Pounds</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">numeric</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>定义了 <code>Dollars</code> 这个类型后，我们就可以把它当作元类型使用：</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">department</span><span class="w">  </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">(</span><span class="n">dept_name</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="w">  </span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">building</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">15</span><span class="p">),</span><span class="w">  </span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">budget</span><span class="w"> </span><span class="n">Dollars</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>用户定义的这两个类型 <code>Dollars</code> 和 <code>Pounds</code>，虽然底层类型相同，但会被视为不同的类型。因此这两种类型不能直接进行运算，甚至不能与 <code>numeric</code> 类型运算，这时就需要用 <code>cast</code> 子句进行强制类型转换</li>
+</ul>
+<hr />
+<h3 id="domains">Domains<a class="headerlink" href="#domains" title="Permanent link">&para;</a></h3>
+</li>
+<li>
+<p>SQL 的 <code>domain</code> 关键字提供了与 <code>type</code> 类似的功能，用于为底层类型添加完整性约束：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">create</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="n">person_name</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>我们还可以使用 <code>check</code> 子句来添加额外的约束条件：</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">create</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="n">degree_level</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">constraint</span><span class="w"> </span><span class="n">degree_level_test</span><span class="w">  </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="err">’</span><span class="n">Bachelors</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Masters</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Doctorate</span><span class="err">’</span><span class="p">));</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<p><code>type</code> 和 <code>domain</code> 之间的区别为：</p>
+<ul>
+<li>域可以有约束，并且可以使用域类型的默认值</li>
+<li>域并没有强制的类型要求。因此，只要底层类型是可兼容的，在某个域的值就可以被赋予另一个域类型的值</li>
+</ul>
+<hr />
+<h3 id="large-object-types">Large-Object Types<a class="headerlink" href="#large-object-types" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>很多数据库系统需要存储包含大数据项的属性，比如照片、高分辨率的图像或视频等。因此 SQL 为字符数据（<code>CLOB</code>）和二进制数据（<code>BLOB</code>）提供了<strong>大对象数据类型</strong>（Large-Object Data Types）</p>
+</blockquote>
+<ul>
+<li>BLOB：二进制大对象（Binary Large Object）——对象是未解释的二进制数据的大型集合（其解释由数据库系统之外的应用程序定义）<ul>
+<li>在 MySQL 中，BLOB 数据类型有：<ul>
+<li>TinyBlob：0～255 字节</li>
+<li>Blob：0～64K 字节</li>
+<li>MediumBlob：0～16M 字节</li>
+<li>LargeBlob：0～4G 字节</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CLOB：字符大对象（Character Large Object）——对象是大型字符数据的集合</li>
+<li>当查询返回大型对象时，将返回指针，而不是大型对象本身。</li>
+</ul>
+<hr />
+<h2 id="integrity-constraints">Integrity Constraints<a class="headerlink" href="#integrity-constraints" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>完整性约束通过确保对数据库的授权更改不会导致数据一致性的丢失，来防止对数据库的意外损坏。对于一个关系来说，有以下几种：</p>
+<ul>
+<li>not null：定义键值不允许为空</li>
+<li>primary key</li>
+<li>unique<ul>
+<li><code>unique(A1, A2, ..., Am)</code> 指出属性 A1、A2、...Am 形成一个超级键（不一定是一个候选键）</li>
+<li>候选键允许为 null（与主键不同）</li>
+</ul>
+</li>
+<li>check(P)，其中 P 是一个谓词<ul>
+<li>也可以有复杂查询，但许多数据库不支持。e.g. <code>check ((course_id, sec_id, semester, year) in (select course_id, sec_id, semester, year from teaches))</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li>确保每个课程的学期为春夏秋冬其中之一</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="n">course_id</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="n">sec_id</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="n">semester</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="k">year</span><span class="w"> </span><span class="nb">numeric</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="n">building</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="n">room_number</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="k">time</span><span class="w"> </span><span class="n">slot</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">sec_id</span><span class="p">,</span><span class="w"> </span><span class="n">semester</span><span class="p">,</span><span class="w"> </span><span class="k">year</span><span class="p">),</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="k">check</span><span class="w"> </span><span class="p">(</span><span class="n">semester</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="err">’</span><span class="n">Fall</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Winter</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Spring</span><span class="err">’</span><span class="p">,</span><span class="w"> </span><span class="err">’</span><span class="n">Summer</span><span class="err">’</span><span class="p">))</span><span class="w">  </span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<ul>
+<li>foreign key</li>
+</ul>
+<hr />
+<h3 id="referential-integrity">Referential Integrity<a class="headerlink" href="#referential-integrity" title="Permanent link">&para;</a></h3>
+</li>
+<li>
+<p><strong>参照完整性</strong>（Referential Integrity）确保在给定属性集的一个关系中出现的值也出现在另一个关系中的特定属性集中</p>
+<ul>
+<li>例如，如果 “Biology” 是出现在关系 instructor 的某个元组中的部门名称，则 “Biology” 的关系 department 中存在一个元组</li>
+</ul>
+</li>
+<li>在 SQL 中，参照完整性约束由外键实现，语法为：<code>FOREIGN KEY (dept_name) REFERENCES department</code><ul>
+<li>设 A 为一组属性。 设 R 和 S 是包含属性 A 的两个关系，其中 A 是 S 的主键。如果 A 的任何值出现在 R 中，这些值也出现在 S 中，则称 A 是 R 的外键</li>
+</ul>
+</li>
+<li>
+<p>执行违反参照完整性约束的语句时会被拒绝。然而，对于在被参照关系上的更新和删除行为，如果违反约束，系统必须采取行动来改变参照关系的元组，以恢复约束。对于以下语句：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">dept_name</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">department</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">cascade</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">cascade</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<p>以删除操作为例，如果要删除 <code>department</code> 里的元组，那么就会违背参照完整性约束，不过系统不会拒绝这个操作，而是通过级联（Cascade）删除的方式删除在 <code>course</code> 中参照在 <code>department</code> 中被删除元组的元组。更新操作与之同理
+- 除了 <code>cascade</code> 关键字外，还可以设置 <code>set null</code> 或 <code>set default</code>，当违反约束时会触发这些操作</p>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">如何避免违反约束？</p>
+<p>例如，我们有如下关系：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="n">ID</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="n">mother</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="n">father</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">),</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">father</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">person</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">mother</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">person</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<p>我们想要避免违反约束地插入一个元组，可以：</p>
+<ul>
+<li>在插入 person 之前插入一个人的父亲和母亲</li>
+<li>或者一开始将 father 和 mother 设置为 null，在插入所有人员后更新（如果 father 和 mother 属性声明为不为空，则无法进行）</li>
+<li>或者将约束检查推迟到事务结束</li>
+</ul>
+</div>
+<hr />
+<h3 id="assertions">Assertions<a class="headerlink" href="#assertions" title="Permanent link">&para;</a></h3>
+<p><strong>断言</strong>（Assertion）是表达一种希望数据库一直满足的条件的一种谓词。创建断言的语法为：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">create</span><span class="w"> </span><span class="k">assertion</span><span class="w"> </span><span class="o">&lt;</span><span class="k">assertion</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="o">&lt;</span><span class="n">predicate</span><span class="o">&gt;</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li>验证一个学生获得的总学分，要等于获得的每门课的学分的总和</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">create</span><span class="w"> </span><span class="k">assertion</span><span class="w"> </span><span class="n">credits_earned_constraint</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">student</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">        </span><span class="k">where</span><span class="w"> </span><span class="n">tot_cred</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">            </span><span class="k">select</span><span class="w"> </span><span class="k">coalesce</span><span class="p">(</span><span class="k">sum</span><span class="p">(</span><span class="n">credits</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">            </span><span class="k">from</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">course</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">            </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">takes</span><span class="p">.</span><span class="n">ID</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;F&#39;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<p>因为 SQL 不提供一种 <code>for all X, P(X)</code> 的构造，因此只能用 <code>not exists X such that not P(X)</code> 这一等价形式表示</p>
+</div>
+<hr />
+<h2 id="views">Views<a class="headerlink" href="#views" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>视图提供了一种机制，用于从某些用户的视图中隐藏某些数据。例如，考虑一个人，他需要知道 instructor 的姓名和部门，但不需要知道薪水。 此人应该会看到一个关系，在 SQL 中可以通过：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>任何不属于概念模型但作为 “虚拟关系” 对用户可见的关系都称为视图</p>
+</li>
+<li>view 可以隐掉一些细节，或者加上一些统计数据。可以把 view 当作表进行查询<ul>
+<li>隐藏不必要的细节，简化用户视野</li>
+<li>方便查询书写</li>
+<li>有利于权限控制（如用户可以看到工资总和，但不能看到每个人的工资）</li>
+<li>有独立性，使得数据库应用具有较强的适应性</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="view-definition">View Definition<a class="headerlink" href="#view-definition" title="Permanent link">&para;</a></h3>
+<p>创建视图的语法为：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="o">&lt;</span><span class="k">view</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="o">&lt;</span><span class="n">query</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>其中 <code>&lt;query-expression&gt;</code> 是任意一个合法的 SQL 表达式</p>
+<ul>
+<li>定义视图后，视图名称可用于引用视图生成的虚拟关系，数据库系统只存储视图自身的定义，而不会存储查询表达式的求解结果<ul>
+<li>当视图关系出现在其他查询语句时就会被替换为被存储的查询表达式</li>
+</ul>
+</li>
+<li>
+<p>可以用视图定义其他视图，例如：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">physics_fall_2009</span><span class="w"> </span><span class="k">as</span><span class="w">  </span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">sec_id</span><span class="p">,</span><span class="w"> </span><span class="n">building</span><span class="p">,</span><span class="w"> </span><span class="n">room_number</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">course</span><span class="p">,</span><span class="w"> </span><span class="n">section</span><span class="w"> </span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">course_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">course_id</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">Physics</span><span class="err">’</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="n">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">Fall</span><span class="err">’</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">section</span><span class="p">.</span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="mi">2009</span><span class="err">’</span><span class="p">;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">physics_fall_2009_watson</span><span class="w"> </span><span class="k">as</span><span class="w"> </span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">course_id</span><span class="p">,</span><span class="w"> </span><span class="n">room_number</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">physics_fall_2009</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">building</span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">Watson</span><span class="err">’</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>虽然看起来与 <code>with</code> 子句很像，但 <code>with</code> 子句创建的只是临时的关系，而 <code>create view</code> 创建的视图可以在后面一直使用，直到被手动销毁或程序中止</p>
+</li>
+<li>
+<p>创建视图时还可以指定属性名：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">departments_total_salary</span><span class="p">(</span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">total_salary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="k">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">dept_name</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6195,7 +6673,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月10日 10:45:20">2025年3月10日 10:45:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月10日 11:57:09">2025年3月10日 11:57:09</span>
   </span>
 
     
