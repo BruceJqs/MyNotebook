@@ -294,6 +294,10 @@ delete[] arr; // Release memory for an array of 10 integers
 	![](../../../assets/Pasted image 20250310230455.png)
 	
 	很明显能看出，`new` 和 `delete` 能够正确调用对象的构造函数和析构函数，而 `malloc` 和 `free` 则不能（甚至是初始化也不行）
+
+从上面的思考来看，我们有：
+
+- 不要将 `malloc` & `free` 与 `new` & `delete` 混用
 ***
 
 
