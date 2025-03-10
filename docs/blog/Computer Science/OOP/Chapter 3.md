@@ -303,9 +303,20 @@ delete[] arr; // Release memory for an array of 10 integers
 	- 不要重复释放内存，否则会造成程序崩溃
 	- 当我们使用 `new` 分配单个对象时，使用 `delete`；当我们使用 `new[]` 分配数组时，使用 `delete[]`
 	- `delete` 一个空指针是安全的
-
 ***
+## Constant
 
+- 我们使用 `const` 来定义一个常量，它的值在程序运行时不能被修改
+
+```c++
+const int x = 123;
+x = 27; //Illegal!
+x++; //Illegal!
+
+int y = x; // ok, copy const to non-const
+y = x; // ok, same thing
+const int z = y; // ok, const is safer
+```
 
 
 
