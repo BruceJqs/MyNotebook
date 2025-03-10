@@ -250,7 +250,7 @@ delete stash; // Release memory for a Stash object
 delete[] arr; // Release memory for an array of 10 integers
 ```
 
-??? question "思考"
+!!! question "思考"
 
 	既然 `new` 和 `delete` 可以动态分配和释放内存，那么 `malloc` 和 `free` 呢？它们也可以动态分配和释放内存，那么它们之间有什么区别呢？
 	
@@ -295,11 +295,15 @@ delete[] arr; // Release memory for an array of 10 integers
 	
 	很明显能看出，`new` 和 `delete` 能够正确调用对象的构造函数和析构函数，而 `malloc` 和 `free` 则不能（甚至是初始化也不行）
 
-从上面的思考来看，我们有：
+!!! tips "Tips"
 
-- 不要将 `malloc` & `free` 与 `new` & `delete` 混用
-- 一定要记得释放动态分配的内存，否则会造成内存泄漏
-	- 一般情况下，程序结束时会自动释放内存，但是如果是长时间运行的程序（或者是一直无法结束的程序），那么内存将会无限制的增长，最后导致崩溃
+	- 不要将 `malloc` & `free` 与 `new` & `delete` 混用
+	- 一定要记得释放动态分配的内存，否则会造成内存泄漏
+		- 一般情况下，程序结束时会自动释放内存，但是如果是长时间运行的程序（或者是一直无法结束的程序），那么内存将会无限制的增长，最后导致崩溃
+	- 不要重复释放内存，否则会造成程序崩溃
+	- 当我们使用 `new` 分配单个对象时，使用 `delete`；当我们使用 `new[]` 分配数组时，使用 `delete[]`
+	- `delete` 一个空指针是安全的
+
 ***
 
 
