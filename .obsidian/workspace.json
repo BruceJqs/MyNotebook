@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 3.md",
+                "file": "docs/blog/Computer Science/Database/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3"
+              "title": "index"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 3.md",
+                "file": "docs/blog/Computer Science/Database/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 3"
+              "title": "Outline of index"
             }
           },
           {
@@ -178,6 +178,9 @@
   },
   "active": "619dd36446ae8e8b",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/Database/Homework 4.md",
+    "docs/blog/Computer Science/Database/Homework 3.md",
+    "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/assets/Pasted image 20250310233608.png",
     "docs/assets/Pasted image 20250310230455.png",
     "docs/assets/Pasted image 20250310223353.png",
@@ -190,7 +193,6 @@
     "docs/assets/Pasted image 20250310194209.png",
     "docs/blog/Computer Science/OOP/Chapter 1.md",
     "docs/blog/Computer Science/OOP/Chapter 2.md",
-    "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Computer Science/Database/Chapter 4.md",
     "docs/blog/Computer Science/Database/Chapter 3.md",
@@ -199,10 +201,8 @@
     "docs/blog/CTF/Cryptography/Chapter 1.md",
     "docs/blog/CTF/Cryptography/Chapter 2.md",
     "docs/blog/CTF/Cryptography/index.md",
-    "docs/assets/Pasted image 20250310141212.png",
     "docs/blog/Computer Science/Database/Homework 1.md",
     "docs/blog/Computer Science/Database/index.md",
-    "docs/blog/Computer Science/Database/Homework 3.md",
     "docs/blog/Math/Numerical Analysis/Homework 3.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Homework 2.md",
