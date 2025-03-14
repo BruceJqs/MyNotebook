@@ -3281,7 +3281,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pivoting-strategies" class="md-nav__link">
     <span class="md-ellipsis">
       Pivoting Strategies
@@ -3318,8 +3323,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#amount-of-computation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount of Computation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-factorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Factorization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-types-of-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Types of Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Types of Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strictly-diagonally-dominant-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strictly Diagonally Dominant Matrices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choleskis-method-for-positive-definite-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choleski's Method for Positive Definite Matrix
+    </span>
+  </a>
   
 </li>
         
@@ -6588,7 +6639,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pivoting-strategies" class="md-nav__link">
     <span class="md-ellipsis">
       Pivoting Strategies
@@ -6625,8 +6681,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#amount-of-computation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amount of Computation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-factorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Factorization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-types-of-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Types of Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Types of Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strictly-diagonally-dominant-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strictly Diagonally Dominant Matrices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choleskis-method-for-positive-definite-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choleski's Method for Positive Definite Matrix
+    </span>
+  </a>
   
 </li>
         
@@ -6752,11 +6854,11 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 <p>从这里我们可以得知，高斯消元法的算法复杂度为 <span class="arithmatex">\(O(N^3)\)</span></p>
 </div>
 <hr />
-<h3 id="pivoting-strategies">Pivoting Strategies<a class="headerlink" href="#pivoting-strategies" title="Permanent link">&para;</a></h3>
+<h2 id="pivoting-strategies">Pivoting Strategies<a class="headerlink" href="#pivoting-strategies" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>在上个算法中，我们观察到，如果与 <span class="arithmatex">\(a_{jk}^{(k)}\)</span> 相比，<span class="arithmatex">\(|a_{kk}^{(k)}|\)</span> 很小，那么乘数 <span class="arithmatex">\(m_{ik}^{(k)}=\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}\)</span> 就会很大，这样就会导致误差的积累。而且在代换时，<span class="arithmatex">\(x_{k}^{(k)}\)</span> 的值也会很大，这样就会导致误差的积累。所以我们需要选取一个合适的主元，使得误差的积累最小</p>
 </blockquote>
-<h4 id="partial-pivoting">Partial Pivoting<a class="headerlink" href="#partial-pivoting" title="Permanent link">&para;</a></h4>
+<h3 id="partial-pivoting">Partial Pivoting<a class="headerlink" href="#partial-pivoting" title="Permanent link">&para;</a></h3>
 <p>部分主元法（Partial Pivorting，或称最大列主元法，Maximal Column Pivoting）考虑选择一个比较大的元素作为主元，这样就可以减小误差的积累</p>
 <p>所以我们可以在每次迭代时，从第 <span class="arithmatex">\(k\)</span> 行开始，选取该列中绝对值最大的元素作为主元，然后再进行消元，用数学语言描述就是找到最小的 <span class="arithmatex">\(p\)</span>，使得 <span class="arithmatex">\(|a_{pk}^{(k)}|=\max\limits_{k\leq i\leq n}|a_{ik}^{(k)}|\)</span>，然后交换第 <span class="arithmatex">\(p\)</span> 行和第 <span class="arithmatex">\(k\)</span> 行</p>
 <div class="admonition example">
@@ -6774,7 +6876,7 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 </div>
 </div>
 <hr />
-<h4 id="scaled-partial-pivoting">Scaled Partial Pivoting<a class="headerlink" href="#scaled-partial-pivoting" title="Permanent link">&para;</a></h4>
+<h3 id="scaled-partial-pivoting">Scaled Partial Pivoting<a class="headerlink" href="#scaled-partial-pivoting" title="Permanent link">&para;</a></h3>
 <p>缩放部分主元法（Scaled Partial Pivoting，或称缩放列主元法，Scaled-Column Pivoting）通过比较"每一行的元素都除以该行的最大元素的绝对值"，然后通过这个结果进行部分主元选取策略，再对原方程组部分进行行交换，从而选取主元。</p>
 <ul>
 <li>第一步：计算每一行的比例因子 <span class="arithmatex">\(s_{i}=\max\limits_{1\leq j\leq n}|a_{ij}|\)</span></li>
@@ -6784,11 +6886,80 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 <p>为确保计算效率，比例因子只在初始过程中计算一次，在每次迭代过程中，比例因子也需要参与交换</p>
 </blockquote>
 <hr />
-<h4 id="complete-pivoting">Complete Pivoting<a class="headerlink" href="#complete-pivoting" title="Permanent link">&para;</a></h4>
+<h3 id="complete-pivoting">Complete Pivoting<a class="headerlink" href="#complete-pivoting" title="Permanent link">&para;</a></h3>
 <p>在缩放部分主元法中，比例因子只在初始过程中计算一次。如果考虑到过程被修改，使得每次作行变换的决定时，要确定新的比例因子，那么这样就是完全主元法</p>
 <p>完全主元法（Complete Pivoting，或称最大主元法，Maximal Element Pivoting）在每次迭代过程中，搜索所有的元素 <span class="arithmatex">\(a_{ij}(i,j=k,...,n)\)</span> 找到一个绝对值最大的元素作为主元，然后进行行列交换使其来到主元的位置上</p>
-<p>![[../../../assets/Pasted image 20250314211533.png]]</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250314211533.png" /></p>
 <hr />
+<h3 id="amount-of-computation_1">Amount of Computation<a class="headerlink" href="#amount-of-computation_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>部分主元法：需要 <span class="arithmatex">\(O(n^2)\)</span> 次额外的<strong>比较</strong></li>
+<li>缩放部分主元法：需要 <span class="arithmatex">\(O(n^2)\)</span> 次额外的<strong>比较</strong>，以及 <span class="arithmatex">\(O(n^2)\)</span> 次<strong>除法</strong><ul>
+<li>如果新的缩放因子在行交换的时候才被确定，那么缩放部分主元法需要 <span class="arithmatex">\(O(\frac{n^3}{3})\)</span> 次额外的<strong>比较</strong>，以及 <span class="arithmatex">\(O(n^2)\)</span> 次<strong>除法</strong></li>
+</ul>
+</li>
+<li>完全主元法：需要 <span class="arithmatex">\(O(\frac{n^3}{3})\)</span> 次额外的<strong>比较</strong></li>
+</ul>
+<hr />
+<h2 id="matrix-factorization">Matrix Factorization<a class="headerlink" href="#matrix-factorization" title="Permanent link">&para;</a></h2>
+<p>我们也可以用矩阵来表示高斯消元：</p>
+<ul>
+<li>第一步：<ul>
+<li><span class="arithmatex">\(m_{i1}=\frac{a_{i1}}{a_{11}}(a_{11}\not=0)\)</span></li>
+<li>令 <span class="arithmatex">\(L_1=\begin{pmatrix}1\\-m_{21} &amp; 1\\\vdots &amp; &amp; \ddots\\-m_{n1} &amp; &amp; &amp; 1\end{pmatrix}\)</span>，那么有 <span class="arithmatex">\(L_1\begin{bmatrix}\pmb{A} &amp; \vec{\pmb{b}}^{(1)}\end{bmatrix}=\begin{pmatrix}a_{11}^{(1)} &amp; \cdots &amp; a_{1n}^{(1)} &amp; b_1^{(1)}\\ &amp; &amp; \pmb{A}^{(2)} &amp; \vec{\pmb{b}}^{(2)}\end{pmatrix}\)</span></li>
+</ul>
+</li>
+<li>第 <span class="arithmatex">\(n-1\)</span> 步：<ul>
+<li><span class="arithmatex">\(L_{n-1}L_{n-2}...L_1\begin{bmatrix}\pmb{A} &amp; \vec{\pmb{b}}^{(1)}\end{bmatrix}=\begin{pmatrix}a_{11}^{(1)} &amp; a_{12}^{(1)} &amp; ... &amp; a_{1n}^{(1)} &amp; b_1^{(1)}\\ &amp; a_{22}^{(2)} &amp; ... &amp; a_{2n}^{(2)} &amp; b_2^{(2)}\\ &amp; &amp; ... &amp; \vdots &amp; \vdots\\ &amp; &amp; &amp; a_{nn}^{(n)} &amp; b_n^{(n)}\end{pmatrix}\)</span>，其中 <span class="arithmatex">\(L_k=\begin{pmatrix}1\\ &amp; \ddots\\ &amp; &amp; 1\\ &amp; &amp; -m_{k+1,k}\\ &amp; &amp; \vdots &amp; \ddots\\ &amp; &amp; -m_{n,k} &amp; &amp; 1\end{pmatrix}\)</span></li>
+</ul>
+</li>
+</ul>
+<p>我们不难得到 <span class="arithmatex">\(L_k^{-1}=\begin{pmatrix}1\\ &amp; \ddots\\ &amp; &amp; 1\\ &amp; &amp; m_{k+1,k}\\ &amp; &amp; \vdots &amp; \ddots\\ &amp; &amp; m_{n,k} &amp; &amp; 1\end{pmatrix}\)</span>，<span class="arithmatex">\(L_1^{-1}L_2^{-1}...L_{n-1}^{-1}=\begin{pmatrix}1\\ &amp; 1\\ &amp; m_{i,j} &amp; \ddots\\ &amp; &amp; &amp; 1\end{pmatrix}=L\)</span></p>
+<p>那我们令 <span class="arithmatex">\(U=\begin{pmatrix}a_{11}^{(1)} &amp; a_{12}^{(1)} &amp; ... &amp; a_{1n}^{(1)}\\ &amp; a_{22}^{(2)} &amp; ... &amp; a_{2n}^{(2)}\\ &amp; &amp; ... &amp; \vdots &amp; \vdots\\ &amp; &amp; &amp; a_{nn}^{(n)}\end{pmatrix}\)</span>，那么我们有 <span class="arithmatex">\(\pmb{A}=\pmb{L}\pmb{U}\)</span>，这便是矩阵的 LU 分解</p>
+<div class="admonition note">
+<p class="admonition-title">Theorem</p>
+<p>若高斯消元法能够在不使用行互换的基础上求解线性方程组 <span class="arithmatex">\(\pmb{A}\vec{x}=\vec{b}\)</span>，那么矩阵 <span class="arithmatex">\(A\)</span> 可以被因式分解为一个下三角矩阵 <span class="arithmatex">\(L\)</span> 和上三角矩阵 <span class="arithmatex">\(U\)</span> 的乘积</p>
+<p>如果 <span class="arithmatex">\(L\)</span> 是单位下三角矩阵，则这个分解是唯一的</p>
+<div class="admonition note">
+<p class="admonition-title">Proof</p>
+<p>用反证法。如果<span class="arithmatex">\(\mathbf{A}=\mathbf{L}_1\mathbf{U}_1=\mathbf{L}_2\mathbf{U}_2\)</span>，其中<span class="arithmatex">\(\mathbf{L}_1\)</span>和<span class="arithmatex">\(\mathbf{L}_2\)</span>是单位下三角矩阵，<span class="arithmatex">\(\mathbf{U}_1\)</span>和<span class="arithmatex">\(\mathbf{U}_2\)</span>是上三角矩阵。则有 <span class="arithmatex">\(\mathbf{U_1}\mathbf{U_2}^{-1}=\mathbf{L_1}^{-1}\mathbf{L_2}\)</span></p>
+<p>因为上三角阵的逆依然是上三角阵，下三角阵同理。所以等式左右分别为上三角阵和下三角阵。又因为<span class="arithmatex">\(\mathbf{L_1}^{-1}\mathbf{L_2}\)</span>的对角线上的元素均为<span class="arithmatex">\(1\)</span>，所以两式相等当且仅当 <span class="arithmatex">\(\mathbf{U_1}\mathbf{U_2}^{-1}=\mathbf{L_1}^{-1}\mathbf{L_2}=\mathbf{I}\)</span></p>
+<p>即 <span class="arithmatex">\(\mathbf{U_1}=\mathbf{U_2}\)</span>，<span class="arithmatex">\(\mathbf{L_1}=\mathbf{L_2}\)</span></p>
+<p>所以这个分解是唯一的</p>
+</div>
+<p>如果 <span class="arithmatex">\(U\)</span> 是单位下三角矩阵，那么这样的分解被称为 <strong>Crout 分解</strong>。Crout 分解能够通过对 <span class="arithmatex">\(A^T\)</span> LU 分解。也就是说，找到 <span class="arithmatex">\(A^T=LU\)</span>，那么 <span class="arithmatex">\(A=U^TL^T\)</span> 就是 <span class="arithmatex">\(A\)</span> 的 Crout 分解</p>
+</div>
+<hr />
+<h2 id="special-types-of-matrices">Special Types of Matrices<a class="headerlink" href="#special-types-of-matrices" title="Permanent link">&para;</a></h2>
+<h3 id="strictly-diagonally-dominant-matrices">Strictly Diagonally Dominant Matrices<a class="headerlink" href="#strictly-diagonally-dominant-matrices" title="Permanent link">&para;</a></h3>
+<p>如果对矩阵 <span class="arithmatex">\(\mathbf{A}\)</span> 的每一行，对角线上的元素的绝对值大于该行上其他元素的绝对值之和，即有 <span class="arithmatex">\(|a_{ii}|&gt;\sum\limits_{j=1,j\not=i}^n|a_{ij}|\)</span>，则称 <span class="arithmatex">\(\mathbf{A}\)</span> 为严格对角占优矩阵（Strictly Diagonally Dominant Matrix）</p>
+<p>定理：严格对角占优矩阵是非奇异的（即矩阵并非满秩）。而且，在此情况下，Gauss 消元法可用在形如 <span class="arithmatex">\(\mathbf{A}\vec{x}=\vec{b}\)</span> 的方程组中以得到唯一解，而且不需要进行行或列交换，并且对于舍入误差的增长而言计算是稳定的</p>
+<details class="note">
+<summary>Proof</summary>
+<ul>
+<li><span class="arithmatex">\(A\)</span> 是非奇异的——反证法证明</li>
+<li>高斯消元法无需行或列的交换——归纳法证明：通过高斯消元法得到的每一个矩阵 <span class="arithmatex">\(A^{(2)},A^{(3)},...,A^{(n)}\)</span> 都是严格对角占优的</li>
+</ul>
+</details>
+<hr />
+<h3 id="choleskis-method-for-positive-definite-matrix">Choleski's Method for Positive Definite Matrix<a class="headerlink" href="#choleskis-method-for-positive-definite-matrix" title="Permanent link">&para;</a></h3>
+<p>对于一个矩阵 <span class="arithmatex">\(A\)</span>，如果它是<strong>对称的</strong>，且 <span class="arithmatex">\(\forall\vec{\pmb{x}}\not=\pmb{0},\vec{\pmb{x}}^TA\vec{\pmb{x}}&gt;0\)</span> 成立，那么称该矩阵是正定（Positive Definite）矩阵</p>
+<ul>
+<li>需要注意的是，本课程的正定矩阵是指对称正定矩阵，与我们在线代学的不同</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Properties</p>
+<p>如果 <span class="arithmatex">\(\mathbf{A}\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 的正定矩阵，则：</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}\)</span>是非奇异的</li>
+<li><span class="arithmatex">\(a_{ii}&gt;0\)</span>，<span class="arithmatex">\(i=1,2,\cdots,n\)</span></li>
+<li><span class="arithmatex">\(\max\limits_{1\leq k,j\leq n}|a_{kj}|&lt;\max\limits_{1\leq i\leq n}|a_{ii}|\)</span>，其中 <span class="arithmatex">\(k\neq j\)</span></li>
+<li><span class="arithmatex">\((a_{ij})^2&lt;a_{ii}a_{jj}\)</span>，<span class="arithmatex">\(i\neq j\)</span></li>
+<li><span class="arithmatex">\(A\)</span> 的所有主子式都是正的</li>
+</ul>
+</div>
+<p>考虑正定矩阵 <span class="arithmatex">\(A\)</span> 的 <span class="arithmatex">\(LU\)</span> 分解，将其中的 <span class="arithmatex">\(U\)</span> 进一步分解为对角矩阵 <span class="arithmatex">\(D\)</span> 和单位上三角矩阵 <span class="arithmatex">\(\widetilde{U}\)</span>，如下图所示：</p>
+<p>![[docs/assets/Pasted image 20250314231055.png]]</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6858,7 +7029,7 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月14日 21:16:49">2025年3月14日 21:16:49</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月14日 23:11:24">2025年3月14日 23:11:24</span>
   </span>
 
     
