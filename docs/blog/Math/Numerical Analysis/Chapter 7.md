@@ -83,13 +83,13 @@ $\mathbf{A}\in\mathbf{R}^{n\times n}$的 Frobenius 范数是 $\mathbf{A}$ 的所
 
 !!! note "Proof for $\|\mathbf{A}\|_\infty=\max\limits_{1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|$"
 
-	1. 证明 $\|A\|_{\infty}=\max⁡\limits_{\|\vec{x}\|_{\infty}=1}\|A\vec{x}\|∞\leq\max⁡\limits_{1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|$
+	1. 证明 $\|A\|_{\infty}=\max\limits_{\|\vec{x}\|_{\infty}=1}\|A\vec{x}\|_{\infty}\leq\max\limits_{1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|$
     
     $$
 	\|A\vec{x}\|_{\infty}=\max\limits_{⁡1\leq i\leq n}|(A\vec{x})_i|=\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^na_{ij}x_j|\leq\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|⋅\max\limits_{1\leq i\leq n}|x_j|
 	$$
 	
-    2. 证明 $\|A\|_{\infty}=\max⁡\limits_{\|\vec{x}\|_{\infty}=1}\|A\vec{x}\|_{\infty}\geq\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|$
+    2. 证明 $\|A\|_{\infty}=\max\limits_{\|\vec{x}\|_{\infty}=1}\|A\vec{x}\|_{\infty}\geq\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|$
     
     - 令第 $p$ 行为最大行，即满足 $\sum\limits_{j=1}^n|a_{pj}|=\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|$
     - 取一个特殊的单位向量 $\vec{x}$ 使得 $x_j=\begin{cases}1,\text{if }a_{pj}\geq 0\\−1,\text{if }a_{pj}<0\end{cases}$
