@@ -3366,11 +3366,50 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#choleskis-method-for-positive-definite-matrix" class="md-nav__link">
+  <a href="#positive-definite-matrices" class="md-nav__link">
     <span class="md-ellipsis">
-      Choleski's Method for Positive Definite Matrix
+      Positive Definite Matrices
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Positive Definite Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choleskis-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choleski's Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tridiagonal-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tridiagonal Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tridiagonal Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crout-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crout Reduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6724,11 +6763,50 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#choleskis-method-for-positive-definite-matrix" class="md-nav__link">
+  <a href="#positive-definite-matrices" class="md-nav__link">
     <span class="md-ellipsis">
-      Choleski's Method for Positive Definite Matrix
+      Positive Definite Matrices
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Positive Definite Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choleskis-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choleski's Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tridiagonal-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tridiagonal Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tridiagonal Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crout-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crout Reduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6942,11 +7020,12 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 </ul>
 </details>
 <hr />
-<h3 id="choleskis-method-for-positive-definite-matrix">Choleski's Method for Positive Definite Matrix<a class="headerlink" href="#choleskis-method-for-positive-definite-matrix" title="Permanent link">&para;</a></h3>
+<h3 id="positive-definite-matrices">Positive Definite Matrices<a class="headerlink" href="#positive-definite-matrices" title="Permanent link">&para;</a></h3>
+<h4 id="choleskis-method">Choleski's Method<a class="headerlink" href="#choleskis-method" title="Permanent link">&para;</a></h4>
 <p>对于一个矩阵 <span class="arithmatex">\(A\)</span>，如果它是<strong>对称的</strong>，且 <span class="arithmatex">\(\forall\vec{\pmb{x}}\not=\pmb{0},\vec{\pmb{x}}^TA\vec{\pmb{x}}&gt;0\)</span> 成立，那么称该矩阵是正定（Positive Definite）矩阵</p>
-<ul>
-<li>需要注意的是，本课程的正定矩阵是指对称正定矩阵，与我们在线代学的不同</li>
-</ul>
+<blockquote>
+<p>需要注意的是，本课程的正定矩阵是指对称正定矩阵，与我们在线代学的不同</p>
+</blockquote>
 <div class="admonition note">
 <p class="admonition-title">Properties</p>
 <p>如果 <span class="arithmatex">\(\mathbf{A}\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 的正定矩阵，则：</p>
@@ -6958,8 +7037,112 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 <li><span class="arithmatex">\(A\)</span> 的所有主子式都是正的</li>
 </ul>
 </div>
-<p>考虑正定矩阵 <span class="arithmatex">\(A\)</span> 的 <span class="arithmatex">\(LU\)</span> 分解，将其中的 <span class="arithmatex">\(U\)</span> 进一步分解为对角矩阵 <span class="arithmatex">\(D\)</span> 和单位上三角矩阵 <span class="arithmatex">\(\widetilde{U}\)</span>，如下图所示：</p>
-<p>![[docs/assets/Pasted image 20250314231055.png]]</p>
+<hr />
+<p>考虑正定矩阵 <span class="arithmatex">\(\mathbf{A}\)</span> 的 <span class="arithmatex">\(\mathbf{LU}\)</span> 分解，将其中的 <span class="arithmatex">\(\mathbf{U}\)</span> 进一步分解为对角矩阵 <span class="arithmatex">\(\mathbf{D}\)</span> 和单位上三角矩阵 <span class="arithmatex">\(\widetilde{\mathbf{U}}\)</span>，如下图所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250314231055.png" /></p>
+<p>我们知道，<span class="arithmatex">\(\mathbf{A}\)</span> 是对称的，所以 <span class="arithmatex">\(\mathbf{A}=\mathbf{A}^T\)</span>，即 <span class="arithmatex">\(\mathbf{L}\mathbf{U}=\mathbf{L}\mathbf{D}\widetilde{\mathbf{U}}=\widetilde{\mathbf{U}}^T\mathbf{D}\mathbf{L}^T\)</span>，所以可以有 <span class="arithmatex">\(\mathbf{L}=\widetilde{\mathbf{U}}^T\)</span>，所以 <span class="arithmatex">\(\mathbf{A}=\mathbf{L}\mathbf{D}\mathbf{L}^T\)</span>。其中 <span class="arithmatex">\(\mathbf{L}\)</span> 是一个主对角线为 1 的下三角矩阵，<span class="arithmatex">\(\mathbf{D}\)</span> 是对角线元素为正值的对角矩阵</p>
+<p>令 <span class="arithmatex">\(\pmb{D}^{\frac{1}{2}}=\begin{pmatrix}\sqrt{u_{11}}\\ &amp; \sqrt{u_{22}}\\ &amp; &amp; \ddots\\ &amp; &amp; &amp; \sqrt{u_{nn}}\end{pmatrix}\)</span>，<span class="arithmatex">\(\widetilde{\pmb{L}}=\pmb{LD}^{\frac{1}{2}}\)</span></p>
+<p>不难看出 <span class="arithmatex">\(\widetilde{\pmb{L}}\)</span> 仍然是一个上三角矩阵，因此 <span class="arithmatex">\(\pmb{A}=\pmb{L}\widetilde{\pmb{L}}\)</span></p>
+<p>综上，若 <span class="arithmatex">\(\pmb{A}\)</span> 是正定矩阵，那么：</p>
+<ul>
+<li>当 <span class="arithmatex">\(\pmb{L}\)</span> 是一个单位下三角矩阵，并且 <span class="arithmatex">\(\pmb{D}\)</span> 是一个对角项均为正数的对角矩阵时，<span class="arithmatex">\(\pmb{A}\)</span> 可被分解为 <span class="arithmatex">\(\pmb{LDL}^T\)</span></li>
+<li>当 <span class="arithmatex">\(\pmb{L}\)</span> 是一个对角线上均为非零元素的下三角矩阵时，<span class="arithmatex">\(\pmb{A}\)</span> 可被分解为 <span class="arithmatex">\(\pmb{LL}^T\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Choleski's Method</p>
+<ul>
+<li>目标：将规模为 <span class="arithmatex">\(n\times n\)</span> 的对称的正定矩阵 <span class="arithmatex">\(\pmb{A}\)</span> 分解为 <span class="arithmatex">\(\pmb{LL}^T\)</span>，其中 <span class="arithmatex">\(\pmb{L}\)</span> 是下三角矩阵</li>
+<li>输入：<span class="arithmatex">\(n\)</span> 维矩阵 <span class="arithmatex">\(\pmb{A}\)</span>，其元素为 <span class="arithmatex">\(a_{ij},1\leq i,j\leq n\)</span></li>
+<li>输出：矩阵 <span class="arithmatex">\(\pmb{L}\)</span>，其元素为 <span class="arithmatex">\(l_{ij},1\leq j\leq i,1\leq i\leq n\)</span></li>
+</ul>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Choleski's Method</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Step</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">set</span><span class="w"> </span><span class="n">l_11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">a_11</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">Step</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">l_j1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_j1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">l_11</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">Step</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">Step</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="n">set</span><span class="w"> </span><span class="n">l_ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">a_ii</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">pow</span><span class="p">(</span><span class="n">l_ik</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="c1">// LDL^T is faster, but must be modified to solve Ax = b</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">Step</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">l_ji</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a_ji</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">l_jk</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">l_ik</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">l_ii</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">Step</span><span class="w"> </span><span class="mi">6</span><span class="w">  </span><span class="n">set</span><span class="w"> </span><span class="n">l_nn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">a_nn</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">pow</span><span class="p">(</span><span class="n">l_nk</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Step</span><span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="n">output</span><span class="w"> </span><span class="p">(</span><span class="n">l_ij</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">Stop</span><span class="p">.</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<hr />
+<h3 id="tridiagonal-matrices">Tridiagonal Matrices<a class="headerlink" href="#tridiagonal-matrices" title="Permanent link">&para;</a></h3>
+<p>三对角矩阵是指除了对角线和对角线上方和下方的第一条对角线外，其他元素均为 0 的矩阵，形式如下：</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; 0 &amp; \cdots &amp; \cdots &amp; 0\\
+a_{21} &amp; a_{22} &amp; a_{23} &amp; 0 &amp; \cdots &amp; 0\\
+0 &amp; a_{32} &amp; a_{33} &amp; a_{34} &amp; \cdots &amp; 0\\
+\vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \vdots\\
+\vdots &amp; \cdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; a_{n-1,n}\\
+0 &amp; \cdots &amp; \cdots &amp; 0 &amp; a_{n,n-1} &amp; a_{nn}
+\end{bmatrix}
+\]</div>
+<p>定理：假设 <span class="arithmatex">\(\mathbf{A}\)</span> 是三对角矩阵，对每个 <span class="arithmatex">\(i=2,3,...,n-1\)</span>，有 <span class="arithmatex">\(a_{i,i-1}a_{i,i+1}\neq 0\)</span>，如果<span class="arithmatex">\(|a_{11}|&gt;|a_{12}|\)</span>，<span class="arithmatex">\(|a_{ii}|&gt;|a_{i,i-1}|+|a_{i,i+1}|\)</span>，<span class="arithmatex">\(|a_{nn}|&gt;|a_{n,n-1}|\)</span>，则 <span class="arithmatex">\(\mathbf{A}\)</span> 是非奇异的，且在 Crout 分解中，<span class="arithmatex">\(l_{ii}\)</span> 的值都是非零的</p>
+<hr />
+<h4 id="crout-reduction">Crout Reduction<a class="headerlink" href="#crout-reduction" title="Permanent link">&para;</a></h4>
+<p>假设我们有一个这样的线性方程组：</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+b_1 &amp; c_1\\
+a_2 &amp; b_2 &amp; c_2\\
+&amp; \ddots &amp; \ddots &amp; \ddots\\
+&amp; &amp; a_{n-1} &amp; b_{n-1} &amp; c_{n-1}\\
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x
+\end{pmatrix}=\begin{pmatrix}
+f_1\\
+f_2\\
+\vdots\\
+f
+\end{pmatrix}
+\]</div>
+<p>我们有以下步骤：</p>
+<ol>
+<li>寻找矩阵 <span class="arithmatex">\(\pmb{A}\)</span> 的 Crout 分解</li>
+</ol>
+<div class="arithmatex">\[
+\pmb{A}=\begin{pmatrix}
+\alpha_1\\
+\gamma_2 &amp; \ddots\\
+&amp; \ddots &amp; \ddots\\
+&amp; &amp;\gamma_n &amp; \alpha_n
+\end{pmatrix}
+\]</div>
+<ul>
+<li>如果这里 <span class="arithmatex">\(\alpha_i=0\)</span>，那么这个过程是没法进行下去的，所以并不是所有的</li>
+</ul>
+<ol start="2">
+<li>求解 <span class="arithmatex">\(\pmb{L}\vec{y}=\vec{f}\Rightarrow y_1=\frac{f_1}{\alpha_1},y_i=\frac{(f_i−r_iy_{i−1})}{\alpha_i}(i=2,...,n)\)</span></li>
+<li>求解 <span class="arithmatex">\(\pmb{U}\vec{x}=\vec{y}\Rightarrow x_n=y_n,x_i=y_i−\beta_i x_{i+1}(i=n-1,...,1)\)</span></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Theorem</p>
+<p>如果 <span class="arithmatex">\(\pmb{A}\)</span> 是三对角线矩阵，且是对角线占优的，并满足 <span class="arithmatex">\(|b_1|&gt;|c_1|&gt;0,|b_n|&gt;|a_n|&gt;0,a_i\not=0,c_i\not=0\)</span> 那么 <span class="arithmatex">\(\pmb{A}\)</span> 是非奇异的，对应的线性方程组有解</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ul>
+<li>如果 <span class="arithmatex">\(\pmb{A}\)</span> 是严格对角占优的，那么没有必要让所有的 <span class="arithmatex">\(a_i,b_i,c_i\)</span>​ 都是非零的</li>
+<li>该方法是稳定的，因为所有从计算过程中获得的值会被约束在原有元素的范围内</li>
+<li>计算量为 <span class="arithmatex">\(O(n)\)</span></li>
+</ul>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -7029,7 +7212,7 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月14日 23:11:24">2025年3月14日 23:11:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月14日 23:57:31">2025年3月14日 23:57:31</span>
   </span>
 
     
