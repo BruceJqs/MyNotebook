@@ -108,11 +108,11 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 
     从这里我们可以得知，高斯消元法的算法复杂度为 $O(N^3)$
 ***
-### Pivoting Strategies
+## Pivoting Strategies
 
 > 在上个算法中，我们观察到，如果与 $a_{jk}^{(k)}$ 相比，$|a_{kk}^{(k)}|$ 很小，那么乘数 $m_{ik}^{(k)}=\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}$ 就会很大，这样就会导致误差的积累。而且在代换时，$x_{k}^{(k)}$ 的值也会很大，这样就会导致误差的积累。所以我们需要选取一个合适的主元，使得误差的积累最小
 
-#### Partial Pivoting
+### Partial Pivoting
 
 部分主元法（Partial Pivorting，或称最大列主元法，Maximal Column Pivoting）考虑选择一个比较大的元素作为主元，这样就可以减小误差的积累
 
@@ -130,7 +130,7 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 		
 		准确一点来说，我们需要让系数的分母尽量大，让分子尽量小，所以我们才需要找到最大的元素作为主元
 ***
-#### Scaled Partial Pivoting
+### Scaled Partial Pivoting
 
 缩放部分主元法（Scaled Partial Pivoting，或称缩放列主元法，Scaled-Column Pivoting）通过比较"每一行的元素都除以该行的最大元素的绝对值"，然后通过这个结果进行部分主元选取策略，再对原方程组部分进行行交换，从而选取主元。
 
@@ -139,14 +139,87 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 
 > 为确保计算效率，比例因子只在初始过程中计算一次，在每次迭代过程中，比例因子也需要参与交换
 ***
-#### Complete Pivoting
+### Complete Pivoting
 
 在缩放部分主元法中，比例因子只在初始过程中计算一次。如果考虑到过程被修改，使得每次作行变换的决定时，要确定新的比例因子，那么这样就是完全主元法
 
 完全主元法（Complete Pivoting，或称最大主元法，Maximal Element Pivoting）在每次迭代过程中，搜索所有的元素 $a_{ij}(i,j=k,...,n)$ 找到一个绝对值最大的元素作为主元，然后进行行列交换使其来到主元的位置上
 
-![[../../../assets/Pasted image 20250314211533.png]]
+![](../../../assets/Pasted%20image%2020250314211533.png)
 ***
+### Amount of Computation
+
+- 部分主元法：需要 $O(n^2)$ 次额外的**比较**
+- 缩放部分主元法：需要 $O(n^2)$ 次额外的**比较**，以及 $O(n^2)$ 次**除法**
+	- 如果新的缩放因子在行交换的时候才被确定，那么缩放部分主元法需要 $O(\frac{n^3}{3})$ 次额外的**比较**，以及 $O(n^2)$ 次**除法**
+- 完全主元法：需要 $O(\frac{n^3}{3})$ 次额外的**比较**
+***
+## Matrix Factorization
+
+我们也可以用矩阵来表示高斯消元：
+
+- 第一步：
+	- $m_{i1}=\frac{a_{i1}}{a_{11}}(a_{11}\not=0)$
+	- 令 $L_1=\begin{pmatrix}1\\-m_{21} & 1\\\vdots & & \ddots\\-m_{n1} & & & 1\end{pmatrix}$，那么有 $L_1\begin{bmatrix}\pmb{A} & \vec{\pmb{b}}^{(1)}\end{bmatrix}=\begin{pmatrix}a_{11}^{(1)} & \cdots & a_{1n}^{(1)} & b_1^{(1)}\\ & & \pmb{A}^{(2)} & \vec{\pmb{b}}^{(2)}\end{pmatrix}$
+- 第 $n-1$ 步：
+	- $L_{n-1}L_{n-2}...L_1\begin{bmatrix}\pmb{A} & \vec{\pmb{b}}^{(1)}\end{bmatrix}=\begin{pmatrix}a_{11}^{(1)} & a_{12}^{(1)} & ... & a_{1n}^{(1)} & b_1^{(1)}\\ & a_{22}^{(2)} & ... & a_{2n}^{(2)} & b_2^{(2)}\\ & & ... & \vdots & \vdots\\ & & & a_{nn}^{(n)} & b_n^{(n)}\end{pmatrix}$，其中 $L_k=\begin{pmatrix}1\\ & \ddots\\ & & 1\\ & & -m_{k+1,k}\\ & & \vdots & \ddots\\ & & -m_{n,k} & & 1\end{pmatrix}$
+
+我们不难得到 $L_k^{-1}=\begin{pmatrix}1\\ & \ddots\\ & & 1\\ & & m_{k+1,k}\\ & & \vdots & \ddots\\ & & m_{n,k} & & 1\end{pmatrix}$，$L_1^{-1}L_2^{-1}...L_{n-1}^{-1}=\begin{pmatrix}1\\ & 1\\ & m_{i,j} & \ddots\\ & & & 1\end{pmatrix}=L$
+
+那我们令 $U=\begin{pmatrix}a_{11}^{(1)} & a_{12}^{(1)} & ... & a_{1n}^{(1)}\\ & a_{22}^{(2)} & ... & a_{2n}^{(2)}\\ & & ... & \vdots & \vdots\\ & & & a_{nn}^{(n)}\end{pmatrix}$，那么我们有 $\pmb{A}=\pmb{L}\pmb{U}$，这便是矩阵的 LU 分解
+
+!!! note "Theorem"
+
+	若高斯消元法能够在不使用行互换的基础上求解线性方程组 $\pmb{A}\vec{x}=\vec{b}$，那么矩阵 $A$ 可以被因式分解为一个下三角矩阵 $L$ 和上三角矩阵 $U$ 的乘积
+	
+	如果 $L$ 是单位下三角矩阵，则这个分解是唯一的
+	
+	!!! note "Proof"
+	
+		用反证法。如果$\mathbf{A}=\mathbf{L}_1\mathbf{U}_1=\mathbf{L}_2\mathbf{U}_2$，其中$\mathbf{L}_1$和$\mathbf{L}_2$是单位下三角矩阵，$\mathbf{U}_1$和$\mathbf{U}_2$是上三角矩阵。则有 $\mathbf{U_1}\mathbf{U_2}^{-1}=\mathbf{L_1}^{-1}\mathbf{L_2}$
+		
+		因为上三角阵的逆依然是上三角阵，下三角阵同理。所以等式左右分别为上三角阵和下三角阵。又因为$\mathbf{L_1}^{-1}\mathbf{L_2}$的对角线上的元素均为$1$，所以两式相等当且仅当 $\mathbf{U_1}\mathbf{U_2}^{-1}=\mathbf{L_1}^{-1}\mathbf{L_2}=\mathbf{I}$
+		
+		即 $\mathbf{U_1}=\mathbf{U_2}$，$\mathbf{L_1}=\mathbf{L_2}$
+		
+		所以这个分解是唯一的
+	
+	如果 $U$ 是单位下三角矩阵，那么这样的分解被称为 **Crout 分解**。Crout 分解能够通过对 $A^T$ LU 分解。也就是说，找到 $A^T=LU$，那么 $A=U^TL^T$ 就是 $A$ 的 Crout 分解
+***
+## Special Types of Matrices
+
+### Strictly Diagonally Dominant Matrices
+
+如果对矩阵 $\mathbf{A}$ 的每一行，对角线上的元素的绝对值大于该行上其他元素的绝对值之和，即有 $|a_{ii}|>\sum\limits_{j=1,j\not=i}^n|a_{ij}|$，则称 $\mathbf{A}$ 为严格对角占优矩阵（Strictly Diagonally Dominant Matrix）
+
+定理：严格对角占优矩阵是非奇异的（即矩阵并非满秩）。而且，在此情况下，Gauss 消元法可用在形如 $\mathbf{A}\vec{x}=\vec{b}$ 的方程组中以得到唯一解，而且不需要进行行或列交换，并且对于舍入误差的增长而言计算是稳定的
+
+??? note "Proof"
+
+	- $A$ 是非奇异的——反证法证明
+	- 高斯消元法无需行或列的交换——归纳法证明：通过高斯消元法得到的每一个矩阵 $A^{(2)},A^{(3)},...,A^{(n)}$ 都是严格对角占优的
+***
+### Choleski's Method for Positive Definite Matrix
+
+对于一个矩阵 $A$，如果它是**对称的**，且 $\forall\vec{\pmb{x}}\not=\pmb{0},\vec{\pmb{x}}^TA\vec{\pmb{x}}>0$ 成立，那么称该矩阵是正定（Positive Definite）矩阵
+
+- 需要注意的是，本课程的正定矩阵是指对称正定矩阵，与我们在线代学的不同
+
+!!! note "Properties"
+
+	如果 $\mathbf{A}$ 是 $n\times n$ 的正定矩阵，则：
+	
+	- $\mathbf{A}$是非奇异的
+	- $a_{ii}>0$，$i=1,2,\cdots,n$
+	- $\max\limits_{1\leq k,j\leq n}|a_{kj}|<\max\limits_{1\leq i\leq n}|a_{ii}|$，其中 $k\neq j$
+	- $(a_{ij})^2<a_{ii}a_{jj}$，$i\neq j$
+	- $A$ 的所有主子式都是正的
+
+考虑正定矩阵 $A$ 的 $LU$ 分解，将其中的 $U$ 进一步分解为对角矩阵 $D$ 和单位上三角矩阵 $\widetilde{U}$，如下图所示：
+
+![[docs/assets/Pasted image 20250314231055.png]]
+
+
 
 
 
