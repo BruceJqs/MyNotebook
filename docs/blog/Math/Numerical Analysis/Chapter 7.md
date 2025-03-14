@@ -95,7 +95,7 @@ $\mathbf{A}\in\mathbf{R}^{n\times n}$的 Frobenius 范数是 $\mathbf{A}$ 的所
     - 取一个特殊的单位向量 $\vec{x}$ 使得 $x_j=\begin{cases}1,\text{if }a_{pj}\geq 0\\−1,\text{if }a_{pj}<0\end{cases}$
     
     $$
-    \|A\vec{x}\|_{\infty}=\max\limits_{⁡1\leq i\leq n}|\sum\limits_{j=1}^na_{ij}x_j|\geq\sum\limits_{j=1}^na_{pj}x_j|=|\sum\limits_{j=1}^n|a_{pj}||=\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|
+    \|A\vec{x}\|_{\infty}=\max\limits_{⁡1\leq i\leq n}|\sum\limits_{j=1}^na_{ij}x_j|\geq|\sum\limits_{j=1}^na_{pj}x_j|=|\sum\limits_{j=1}^n|a_{pj}||=\max\limits_{⁡1\leq i\leq n}\sum\limits_{j=1}^n|a_{ij}|
     $$
     
 ***
