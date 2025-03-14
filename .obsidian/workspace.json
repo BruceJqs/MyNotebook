@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BGP Basic"
+              "title": "Chapter 6"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 6.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of BGP Basic"
+              "title": "Outline of Chapter 6"
             }
           },
           {
@@ -178,9 +178,27 @@
   },
   "active": "619dd36446ae8e8b",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20250314211533.png",
+    "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
+    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
+    "docs/blog/Computer Science/Database/Chapter 3.md",
+    "docs/blog/Computer Science/Database/Homework 3.md",
+    "docs/blog/Computer Science/OOP/Chapter 1.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 6.md",
     "评分标准.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
+    "docs/assets/Pasted image 20250312105153.png",
+    "docs/assets/Pasted image 20250312105138.png",
+    "docs/assets/Pasted image 20250312105104.png",
+    "docs/assets/Pasted image 20250312104733.png",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
+    "docs/assets/Pasted image 20250312103934.png",
+    "docs/assets/Pasted image 20250312103846.png",
+    "docs/assets/Pasted image 20250312103743.png",
+    "docs/assets/Pasted image 20250312103340.png",
+    "docs/assets/Pasted image 20250312103014.png",
+    "docs/assets/Pasted image 20250312102126.png",
+    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
@@ -194,32 +212,14 @@
     "docs/blog/Research/Seedlab/Basic-Labs",
     "docs/blog/Research/Seedlab",
     "docs/blog/Research",
-    "docs/assets/Pasted image 20250312030455.png",
-    "docs/assets/Pasted image 20250312024805.png",
-    "docs/assets/Pasted image 20250312024233.png",
-    "docs/assets/Pasted image 20250312022948.png",
-    "docs/assets/Pasted image 20250312022839.png",
-    "docs/assets/Pasted image 20250312022728.png",
-    "docs/assets/Pasted image 20250312022637.png",
-    "docs/assets/Pasted image 20250312022521.png",
-    "docs/assets/Pasted image 20250312015613.png",
-    "docs/assets/Pasted image 20250312010438.png",
     "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/blog/Computer Science/Database/Homework 5.md",
     "docs/blog/Computer Science/Database/Homework 4.md",
     "docs/blog/Computer Science/Database/index.md",
-    "docs/blog/Computer Science/Database/Homework 3.md",
-    "docs/blog/Computer Science/OOP/Chapter 1.md",
     "docs/blog/Computer Science/OOP/Chapter 2.md",
     "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Computer Science/Database/Chapter 4.md",
-    "docs/blog/Computer Science/Database/Chapter 3.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 6.md",
     "docs/blog/CTF/Cryptography/Chapter 3.md",
-    "docs/blog/CTF/Cryptography/Chapter 1.md",
-    "docs/blog/CTF/Cryptography/Chapter 2.md",
-    "docs/blog/CTF/Cryptography/index.md",
-    "docs/blog/Computer Science/Database/Homework 1.md",
     "docs/blog/ACEE/Information Theory",
     "docs/blog/CTF/Cryptography",
     "docs/blog/Math/Numerical Analysis",
