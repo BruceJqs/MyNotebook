@@ -7,7 +7,7 @@ hide:
 comments: true
 --- 
 
-# Chapter 06 :  Direct Methods for Solving Linear Systems
+# Chapter 06 : Direct Methods for Solving Linear Systems
 
 ## Linear Systems of Equations
 

@@ -165,6 +165,7 @@ nav:
       - "Chapter 01: Mathematical Preliminaries": blog/Math/Numerical Analysis/Chapter 1.md
       - "Chapter 02: Solutions of Equations in One Variable": blog/Math/Numerical Analysis/Chapter 2.md
       - "Chapter 06: Direct Methods for Solving Linear Systems": blog/Math/Numerical Analysis/Chapter 6.md
+      - "Chapter 07: Iterative Techniques in Matrix Algebra": blog/Math/Numerical Analysis/Chapter 7.md
       - "Homework 01": blog/Math/Numerical Analysis/Homework 1.md
       - "Homework 02": blog/Math/Numerical Analysis/Homework 2.md
       - "Homework 03": blog/Math/Numerical Analysis/Homework 3.md
