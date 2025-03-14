@@ -8,5 +8,5 @@
     "downscalePercent": 100
   },
   "showLineNumber": false,
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "relative"
 }

@@ -199,11 +199,13 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 	- $A$ 是非奇异的——反证法证明
 	- 高斯消元法无需行或列的交换——归纳法证明：通过高斯消元法得到的每一个矩阵 $A^{(2)},A^{(3)},...,A^{(n)}$ 都是严格对角占优的
 ***
-### Choleski's Method for Positive Definite Matrix
+### Positive Definite Matrices
+
+#### Choleski's Method
 
 对于一个矩阵 $A$，如果它是**对称的**，且 $\forall\vec{\pmb{x}}\not=\pmb{0},\vec{\pmb{x}}^TA\vec{\pmb{x}}>0$ 成立，那么称该矩阵是正定（Positive Definite）矩阵
 
-- 需要注意的是，本课程的正定矩阵是指对称正定矩阵，与我们在线代学的不同
+> 需要注意的是，本课程的正定矩阵是指对称正定矩阵，与我们在线代学的不同
 
 !!! note "Properties"
 
@@ -214,10 +216,110 @@ b_{i}^{(t+1)}=b_{i}^{(t)}-m_{it}b_{t}^{(t)}
 	- $\max\limits_{1\leq k,j\leq n}|a_{kj}|<\max\limits_{1\leq i\leq n}|a_{ii}|$，其中 $k\neq j$
 	- $(a_{ij})^2<a_{ii}a_{jj}$，$i\neq j$
 	- $A$ 的所有主子式都是正的
+***
+考虑正定矩阵 $\mathbf{A}$ 的 $\mathbf{LU}$ 分解，将其中的 $\mathbf{U}$ 进一步分解为对角矩阵 $\mathbf{D}$ 和单位上三角矩阵 $\widetilde{\mathbf{U}}$，如下图所示：
 
-考虑正定矩阵 $A$ 的 $LU$ 分解，将其中的 $U$ 进一步分解为对角矩阵 $D$ 和单位上三角矩阵 $\widetilde{U}$，如下图所示：
+![](../../../assets/Pasted%20image%2020250314231055.png)
 
-![[docs/assets/Pasted image 20250314231055.png]]
+我们知道，$\mathbf{A}$ 是对称的，所以 $\mathbf{A}=\mathbf{A}^T$，即 $\mathbf{L}\mathbf{U}=\mathbf{L}\mathbf{D}\widetilde{\mathbf{U}}=\widetilde{\mathbf{U}}^T\mathbf{D}\mathbf{L}^T$，所以可以有 $\mathbf{L}=\widetilde{\mathbf{U}}^T$，所以 $\mathbf{A}=\mathbf{L}\mathbf{D}\mathbf{L}^T$。其中 $\mathbf{L}$ 是一个主对角线为 1 的下三角矩阵，$\mathbf{D}$ 是对角线元素为正值的对角矩阵
+
+令 $\pmb{D}^{\frac{1}{2}}=\begin{pmatrix}\sqrt{u_{11}}\\ & \sqrt{u_{22}}\\ & & \ddots\\ & & & \sqrt{u_{nn}}\end{pmatrix}$，$\widetilde{\pmb{L}}=\pmb{LD}^{\frac{1}{2}}$
+
+不难看出 $\widetilde{\pmb{L}}$ 仍然是一个上三角矩阵，因此 $\pmb{A}=\pmb{L}\widetilde{\pmb{L}}$
+
+综上，若 $\pmb{A}$ 是正定矩阵，那么：
+
+- 当 $\pmb{L}$ 是一个单位下三角矩阵，并且 $\pmb{D}$ 是一个对角项均为正数的对角矩阵时，$\pmb{A}$ 可被分解为 $\pmb{LDL}^T$
+- 当 $\pmb{L}$ 是一个对角线上均为非零元素的下三角矩阵时，$\pmb{A}$ 可被分解为 $\pmb{LL}^T$
+
+!!! note "Choleski's Method"
+
+	- 目标：将规模为 $n\times n$ 的对称的正定矩阵 $\pmb{A}$ 分解为 $\pmb{LL}^T$，其中 $\pmb{L}$ 是下三角矩阵
+	- 输入：$n$ 维矩阵 $\pmb{A}$，其元素为 $a_{ij},1\leq i,j\leq n$
+	- 输出：矩阵 $\pmb{L}$，其元素为 $l_{ij},1\leq j\leq i,1\leq i\leq n$
+	
+	```c title="Choleski's Method"
+	Step 1  set l_11 = sqrt(a_11);
+	Step 2  for j = 2, ..., n, set l_j1 = a_j1 / l_11;
+	Step 3  for i = 2, ..., n - 1 do steps 4 and 5
+	    Step 4  set l_ii = sqrt(a_ii - sum(pow(l_ik, 2), 1, i - 1))
+	    // LDL^T is faster, but must be modified to solve Ax = b
+	
+	    Step 5  for j = i + 1, ..., n, set l_ji = (a_ji - sum(l_jk * l_ik, 1, i - 1)) / l_ii;
+	Step 6  set l_nn = sqrt(a_nn - sum(pow(l_nk, 2), 1, n - 1))
+	Step 7  output (l_ij for j = 1, ..., i and i = 1, ..., n);
+	Stop.
+	```
+***
+### Tridiagonal Matrices
+
+三对角矩阵是指除了对角线和对角线上方和下方的第一条对角线外，其他元素均为 0 的矩阵，形式如下：
+
+$$
+\begin{bmatrix}
+a_{11} & a_{12} & 0 & \cdots & \cdots & 0\\
+a_{21} & a_{22} & a_{23} & 0 & \cdots & 0\\
+0 & a_{32} & a_{33} & a_{34} & \cdots & 0\\
+\vdots & \ddots & \ddots & \ddots & \ddots & \vdots\\
+\vdots & \cdots & \ddots & \ddots & \ddots & a_{n-1,n}\\
+0 & \cdots & \cdots & 0 & a_{n,n-1} & a_{nn}
+\end{bmatrix}
+$$
+
+定理：假设 $\mathbf{A}$ 是三对角矩阵，对每个 $i=2,3,...,n-1$，有 $a_{i,i-1}a_{i,i+1}\neq 0$，如果$|a_{11}|>|a_{12}|$，$|a_{ii}|>|a_{i,i-1}|+|a_{i,i+1}|$，$|a_{nn}|>|a_{n,n-1}|$，则 $\mathbf{A}$ 是非奇异的，且在 Crout 分解中，$l_{ii}$ 的值都是非零的
+***
+#### Crout Reduction
+
+假设我们有一个这样的线性方程组：
+
+$$
+\begin{pmatrix}
+b_1 & c_1\\
+a_2 & b_2 & c_2\\
+& \ddots & \ddots & \ddots\\
+& & a_{n-1} & b_{n-1} & c_{n-1}\\
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x
+\end{pmatrix}=\begin{pmatrix}
+f_1\\
+f_2\\
+\vdots\\
+f
+\end{pmatrix}
+$$
+
+我们有以下步骤：
+
+1. 寻找矩阵 $\pmb{A}$ 的 Crout 分解
+
+$$
+\pmb{A}=\begin{pmatrix}
+\alpha_1\\
+\gamma_2 & \ddots\\
+& \ddots & \ddots\\
+& &\gamma_n & \alpha_n
+\end{pmatrix}
+$$
+
+- 如果这里 $\alpha_i=0$，那么这个过程是没法进行下去的，所以并不是所有的
+
+2. 求解 $\pmb{L}\vec{y}=\vec{f}\Rightarrow y_1=\frac{f_1}{\alpha_1},y_i=\frac{(f_i−r_iy_{i−1})}{\alpha_i}(i=2,...,n)$
+3. 求解 $\pmb{U}\vec{x}=\vec{y}\Rightarrow x_n=y_n,x_i=y_i−\beta_i x_{i+1}(i=n-1,...,1)$
+
+!!! note "Theorem"
+
+	如果 $\pmb{A}$ 是三对角线矩阵，且是对角线占优的，并满足 $|b_1|>|c_1|>0,|b_n|>|a_n|>0,a_i\not=0,c_i\not=0$ 那么 $\pmb{A}$ 是非奇异的，对应的线性方程组有解
+
+!!! tip "Tips"
+
+	- 如果 $\pmb{A}$ 是严格对角占优的，那么没有必要让所有的 $a_i,b_i,c_i$​ 都是非零的
+	- 该方法是稳定的，因为所有从计算过程中获得的值会被约束在原有元素的范围内
+	- 计算量为 $O(n)$
+
 
 
 
