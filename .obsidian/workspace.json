@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 7.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 7"
+              "title": "Homework 4"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 7.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 4.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 7"
+              "title": "Outline of Homework 4"
             }
           },
           {
@@ -178,8 +178,15 @@
   },
   "active": "619dd36446ae8e8b",
   "lastOpenFiles": [
-    "docs/blog/Math/Numerical Analysis/Chapter 6.md",
+    "docs/assets/Pasted image 20250315011659.png",
+    "docs/assets/Pasted image 20250315011618.png",
+    "docs/assets/Pasted image 20250315011539.png",
+    "docs/assets/Pasted image 20250315011423.png",
+    "docs/assets/Pasted image 20250315011317.png",
+    "docs/blog/Math/Numerical Analysis/Homework 3.md",
+    "docs/blog/Math/Numerical Analysis/Homework 4.md",
     "docs/blog/Math/Numerical Analysis/Chapter 7.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 6.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/assets/Pasted image 20250314231055.png",
     "docs/assets/Pasted image 20250314212140.png",
@@ -194,11 +201,7 @@
     "docs/assets/Pasted image 20250312105153.png",
     "docs/assets/Pasted image 20250312105138.png",
     "docs/assets/Pasted image 20250312105104.png",
-    "docs/assets/Pasted image 20250312104733.png",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
-    "docs/assets/Pasted image 20250312103934.png",
-    "docs/assets/Pasted image 20250312103846.png",
-    "docs/assets/Pasted image 20250312103743.png",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Network",
@@ -217,9 +220,6 @@
     "docs/blog/Computer Science/Database/Homework 5.md",
     "docs/blog/Computer Science/Database/Homework 4.md",
     "docs/blog/Computer Science/Database/index.md",
-    "docs/blog/Computer Science/OOP/Chapter 2.md",
-    "docs/blog/Computer Science/OOP/index.md",
-    "docs/blog/Computer Science/Database/Chapter 4.md",
     "docs/blog/ACEE/Information Theory",
     "docs/blog/CTF/Cryptography",
     "docs/blog/Math/Numerical Analysis",
