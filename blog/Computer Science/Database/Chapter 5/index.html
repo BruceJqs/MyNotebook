@@ -11,21 +11,25 @@
       
       
       
+        <link rel="prev" href="../Chapter%204/">
       
       
-      <link rel="icon" href="../../assets/头像.jpg">
+        <link rel="next" href="../Homework%201/">
+      
+      
+      <link rel="icon" href="../../../../assets/头像.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
-        <title>利用Lighthouse测试网站性能 - BruceJin's Notebook</title>
+        <title>Chapter 05: Advanced SQL - BruceJin's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,11 +48,11 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/link.css">
+      <link rel="stylesheet" href="../../../../stylesheets/link.css">
     
-      <link rel="stylesheet" href="../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
@@ -56,21 +60,21 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
-      <link rel="stylesheet" href="../../stylesheets/tasklist.css">
+      <link rel="stylesheet" href="../../../../stylesheets/tasklist.css">
     
-      <link rel="stylesheet" href="../../stylesheets/card.css">
+      <link rel="stylesheet" href="../../../../stylesheets/card.css">
     
-      <link rel="stylesheet" href="../../stylesheets/flink.css">
+      <link rel="stylesheet" href="../../../../stylesheets/flink.css">
     
-      <link rel="stylesheet" href="../../stylesheets/glightbox.min.css">
+      <link rel="stylesheet" href="../../../../stylesheets/glightbox.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/changelog_extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/changelog_extra.css">
     
       <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -87,7 +91,7 @@
     
     
     
-    <link rel="stylesheet" href="../../assets/stylesheets/custom.00c04c01.min.css">
+    <link rel="stylesheet" href="../../../../assets/stylesheets/custom.00c04c01.min.css">
   
   </head>
   
@@ -106,6 +110,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#chapter-05-advanced-sql" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -134,9 +143,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="BruceJin&#39;s Notebook" class="md-header__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
+    <a href="../../../.." title="BruceJin&#39;s Notebook" class="md-header__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
       
-  <img src="../../assets/头像.jpg" alt="logo">
+  <img src="../../../../assets/头像.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -153,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              利用Lighthouse测试网站性能
+              Chapter 05: Advanced SQL
             
           </span>
         </div>
@@ -277,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -292,17 +301,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../blog/Computer%20Science/Digital%20Design/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Digital%20Design/" class="md-tabs__link">
           
   
     
@@ -331,7 +344,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/Math/Calculus/" class="md-tabs__link">
+        <a href="../../../Math/Calculus/" class="md-tabs__link">
           
   
     
@@ -360,7 +373,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/ACEE/Mathematical%20Modeling/" class="md-tabs__link">
+        <a href="../../../ACEE/Mathematical%20Modeling/" class="md-tabs__link">
           
   
     
@@ -383,7 +396,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/CTF/" class="md-tabs__link">
+        <a href="../../../CTF/" class="md-tabs__link">
           
   
     
@@ -409,7 +422,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/Research/Seedlab/" class="md-tabs__link">
+        <a href="../../../Research/Seedlab/" class="md-tabs__link">
           
   
     
@@ -438,7 +451,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/Others/College%20English%20Band%20IV/" class="md-tabs__link">
+        <a href="../../../Others/College%20English%20Band%20IV/" class="md-tabs__link">
           
   
     
@@ -461,7 +474,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../about/geren/" class="md-tabs__link">
+        <a href="../../../../about/geren/" class="md-tabs__link">
           
   
     
@@ -485,6 +498,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -496,9 +511,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="BruceJin&#39;s Notebook" class="md-nav__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
+    <a href="../../../.." title="BruceJin&#39;s Notebook" class="md-nav__button md-logo" aria-label="BruceJin's Notebook" data-md-component="logo">
       
-  <img src="../../assets/头像.jpg" alt="logo">
+  <img src="../../../../assets/头像.jpg" alt="logo">
 
     </a>
     BruceJin's Notebook
@@ -525,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,8 +558,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -567,17 +584,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -589,7 +609,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -624,7 +644,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/Digital%20Design/" class="md-nav__link ">
+            <a href="../../Digital%20Design/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -688,7 +708,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/FDS/" class="md-nav__link ">
+            <a href="../../FDS/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -722,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/FDS/FDS-Project1%20report/" class="md-nav__link">
+      <a href="../../FDS/FDS-Project1%20report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/FDS/FDS-Project2%20report/" class="md-nav__link">
+      <a href="../../FDS/FDS-Project2%20report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -766,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/FDS/FDS-Project3%20report/" class="md-nav__link">
+      <a href="../../FDS/FDS-Project3%20report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +857,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+            <a href="../../Computer%20Organization/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -871,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Chapter%201/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -893,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Chapter%203/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Chapter%202/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Chapter%204/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -959,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Chapter%205/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -981,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Appendix/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Appendix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1003,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Homework%203/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Homework%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1025,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Homework%202/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Homework%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1047,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Homework%204/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Homework%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1069,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Organization/Homework%205/" class="md-nav__link">
+      <a href="../../Computer%20Organization/Homework%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1152,7 +1172,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/ADS/" class="md-nav__link ">
+            <a href="../../ADS/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1186,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%201/" class="md-nav__link">
+      <a href="../../ADS/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1208,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%202/" class="md-nav__link">
+      <a href="../../ADS/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,7 +1250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%203/" class="md-nav__link">
+      <a href="../../ADS/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1252,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%204/" class="md-nav__link">
+      <a href="../../ADS/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1274,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%205/" class="md-nav__link">
+      <a href="../../ADS/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1296,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%206/" class="md-nav__link">
+      <a href="../../ADS/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1318,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%207/" class="md-nav__link">
+      <a href="../../ADS/Chapter%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%208/" class="md-nav__link">
+      <a href="../../ADS/Chapter%208/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1362,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%209/" class="md-nav__link">
+      <a href="../../ADS/Chapter%209/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1384,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%2010/" class="md-nav__link">
+      <a href="../../ADS/Chapter%2010/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1406,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%2011/" class="md-nav__link">
+      <a href="../../ADS/Chapter%2011/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1428,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%2012/" class="md-nav__link">
+      <a href="../../ADS/Chapter%2012/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1450,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%2013/" class="md-nav__link">
+      <a href="../../ADS/Chapter%2013/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%2014/" class="md-nav__link">
+      <a href="../../ADS/Chapter%2014/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1494,7 +1514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Chapter%2015/" class="md-nav__link">
+      <a href="../../ADS/Chapter%2015/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/ADS/Final/" class="md-nav__link">
+      <a href="../../ADS/Final/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1543,6 +1563,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1578,16 +1600,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/Database/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1605,7 +1627,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             数据库系统｜Database System
@@ -1621,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Chapter%201/" class="md-nav__link">
+      <a href="../Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1643,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Chapter%202/" class="md-nav__link">
+      <a href="../Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1665,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Chapter%203/" class="md-nav__link">
+      <a href="../Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1687,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Chapter%204/" class="md-nav__link">
+      <a href="../Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1706,10 +1728,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Chapter%205/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 05: Advanced SQL
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1719,6 +1762,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-sql-from-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing SQL from Programming Languages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing SQL from Programming Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jdbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDBC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JDBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepared-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepared Statement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Injection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1731,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Homework%201/" class="md-nav__link">
+      <a href="../Homework%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1753,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Homework%202/" class="md-nav__link">
+      <a href="../Homework%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1775,7 +1922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Homework%203/" class="md-nav__link">
+      <a href="../Homework%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Homework%204/" class="md-nav__link">
+      <a href="../Homework%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1819,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Database/Homework%205/" class="md-nav__link">
+      <a href="../Homework%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1876,7 +2023,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/OOP/" class="md-nav__link ">
+            <a href="../../OOP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1910,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/OOP/Chapter%201/" class="md-nav__link">
+      <a href="../../OOP/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/OOP/Chapter%202/" class="md-nav__link">
+      <a href="../../OOP/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1954,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/OOP/Chapter%203/" class="md-nav__link">
+      <a href="../../OOP/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2009,7 +2156,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/Computer%20Architecture/" class="md-nav__link ">
+            <a href="../../Computer%20Architecture/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2043,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Architecture/Chapter%201/" class="md-nav__link">
+      <a href="../../Computer%20Architecture/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2065,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Computer%20Architecture/Chapter%203/" class="md-nav__link">
+      <a href="../../Computer%20Architecture/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2120,7 +2267,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Computer%20Science/Tech/" class="md-nav__link ">
+            <a href="../../Tech/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2199,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Tech/CTF/CyberChef/CyberChef/" class="md-nav__link">
+      <a href="../../Tech/CTF/CyberChef/CyberChef/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Tech/CTF/BurpSuite%20Professional/BurpSuite%20Professional/" class="md-nav__link">
+      <a href="../../Tech/CTF/BurpSuite%20Professional/BurpSuite%20Professional/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2294,7 +2441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Computer%20Science/Tech/Iterm2/Iterm2/" class="md-nav__link">
+      <a href="../../Tech/Iterm2/Iterm2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2411,7 +2558,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Math/Calculus/" class="md-nav__link ">
+            <a href="../../../Math/Calculus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2469,7 +2616,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Math/Linear%20Algebra/" class="md-nav__link ">
+            <a href="../../../Math/Linear%20Algebra/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2549,7 +2696,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Math/Discrete%20mathmatics/" class="md-nav__link ">
+            <a href="../../../Math/Discrete%20mathmatics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2583,7 +2730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch01/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2605,7 +2752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch02/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2627,7 +2774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch03/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2649,7 +2796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch04/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2671,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch05/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2693,7 +2840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch06/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2715,7 +2862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch07/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2737,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch08/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2759,7 +2906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch09/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2781,7 +2928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch10/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2803,7 +2950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch11/" class="md-nav__link">
+      <a href="../../../Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2870,7 +3017,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/" class="md-nav__link ">
+            <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2904,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%201/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2926,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%202/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2948,7 +3095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%203/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2970,7 +3117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%204/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2992,7 +3139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%205/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3014,7 +3161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%206/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3036,7 +3183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%207/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3058,7 +3205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%208/" class="md-nav__link">
+      <a href="../../../Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%208/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3123,7 +3270,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Math/Numerical%20Analysis/" class="md-nav__link ">
+            <a href="../../../Math/Numerical%20Analysis/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3157,7 +3304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Chapter%201/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3179,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Chapter%202/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3201,7 +3348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Chapter%206/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3223,7 +3370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Chapter%207/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Chapter%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3245,7 +3392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Homework%201/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Homework%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3267,7 +3414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Homework%202/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Homework%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3289,7 +3436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Math/Numerical%20Analysis/Homework%203/" class="md-nav__link">
+      <a href="../../../Math/Numerical%20Analysis/Homework%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3432,7 +3579,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/ACEE/Mathematical%20Modeling/" class="md-nav__link ">
+            <a href="../../../ACEE/Mathematical%20Modeling/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3466,7 +3613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%201/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3488,7 +3635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%202/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3510,7 +3657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%203/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3532,7 +3679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%204/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3554,7 +3701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%205/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3576,7 +3723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%206/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3598,7 +3745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%207/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3620,7 +3767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%208/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%208/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3642,7 +3789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%209/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%209/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3664,7 +3811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Chapter%2010/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Chapter%2010/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3686,7 +3833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%201/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3708,7 +3855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%202/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3730,7 +3877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%203/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3752,7 +3899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%204/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3774,7 +3921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%205/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3796,7 +3943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%206/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3818,7 +3965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%207/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3840,7 +3987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%208/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%208/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3862,7 +4009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%209/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%209/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3884,7 +4031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Mathematical%20Modeling/Homework%2010/" class="md-nav__link">
+      <a href="../../../ACEE/Mathematical%20Modeling/Homework%2010/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3939,7 +4086,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/ACEE/Information%20Theory/" class="md-nav__link ">
+            <a href="../../../ACEE/Information%20Theory/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3973,7 +4120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Information%20Theory/Chapter%201/" class="md-nav__link">
+      <a href="../../../ACEE/Information%20Theory/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4038,7 +4185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/ACEE/Information%20Theory/Chapter%202/" class="md-nav__link">
+      <a href="../../../ACEE/Information%20Theory/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4114,7 +4261,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/CTF/" class="md-nav__link ">
+            <a href="../../../CTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4189,7 +4336,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/" class="md-nav__link ">
+            <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4223,7 +4370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab0%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab0%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4245,7 +4392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Crypto%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Crypto%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4267,7 +4414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Misc%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Misc%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4289,7 +4436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Pwn%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Pwn%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4311,7 +4458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Web%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Web%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4333,7 +4480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Rev%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab1-Rev%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4355,7 +4502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab2-Crypto%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab2-Crypto%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4377,7 +4524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab2-Misc%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab2-Misc%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4399,7 +4546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab3-Crypto%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab3-Crypto%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4421,7 +4568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab3-Misc%20Report/" class="md-nav__link">
+      <a href="../../../CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab3-Misc%20Report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4476,7 +4623,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/CTF/2024.9%20MoeCTF/" class="md-nav__link ">
+            <a href="../../../CTF/2024.9%20MoeCTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4569,7 +4716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-1/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4591,7 +4738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-2/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4613,7 +4760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-3/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4635,7 +4782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-4/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4657,7 +4804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-5/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4679,7 +4826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-6/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4701,7 +4848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-7/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4723,7 +4870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-8/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4745,7 +4892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Misc/Misc-9/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Misc/Misc-9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4832,7 +4979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-1/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4854,7 +5001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-2/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4876,7 +5023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-3/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4898,7 +5045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-4/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4920,7 +5067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-5/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4942,7 +5089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-6/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4964,7 +5111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-7/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4986,7 +5133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-8/" class="md-nav__link">
+      <a href="../../../CTF/2024.9%20MoeCTF/Crypto/Crypto-8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5049,7 +5196,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/CTF/2024.10%20ZJUCTF/" class="md-nav__link ">
+            <a href="../../../CTF/2024.10%20ZJUCTF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -5128,7 +5275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.10%20ZJUCTF/Misc/Misc-3/" class="md-nav__link">
+      <a href="../../../CTF/2024.10%20ZJUCTF/Misc/Misc-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5150,7 +5297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.10%20ZJUCTF/Misc/Misc-4/" class="md-nav__link">
+      <a href="../../../CTF/2024.10%20ZJUCTF/Misc/Misc-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5225,7 +5372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.10%20ZJUCTF/Crypto/Crypto-1/" class="md-nav__link">
+      <a href="../../../CTF/2024.10%20ZJUCTF/Crypto/Crypto-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5247,7 +5394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.10%20ZJUCTF/Crypto/Crypto-2/" class="md-nav__link">
+      <a href="../../../CTF/2024.10%20ZJUCTF/Crypto/Crypto-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5308,7 +5455,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/CTF/2024.12%E5%9B%BD%E8%B5%9B/" class="md-nav__link ">
+            <a href="../../../CTF/2024.12%E5%9B%BD%E8%B5%9B/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -5342,7 +5489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/2024.12%E5%9B%BD%E8%B5%9B/rasnd/" class="md-nav__link">
+      <a href="../../../CTF/2024.12%E5%9B%BD%E8%B5%9B/rasnd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5397,7 +5544,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/CTF/Cryptography/" class="md-nav__link ">
+            <a href="../../../CTF/Cryptography/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -5431,7 +5578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/Cryptography/Chapter%201/" class="md-nav__link">
+      <a href="../../../CTF/Cryptography/Chapter%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5453,7 +5600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/CTF/Cryptography/Chapter%202/" class="md-nav__link">
+      <a href="../../../CTF/Cryptography/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5560,7 +5707,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Research/Seedlab/" class="md-nav__link ">
+            <a href="../../../Research/Seedlab/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -5594,7 +5741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Research/Seedlab/Questions/" class="md-nav__link">
+      <a href="../../../Research/Seedlab/Questions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5704,7 +5851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Research/Seedlab/Knowledge/Hardware/Meltdown%20Attack/" class="md-nav__link">
+      <a href="../../../Research/Seedlab/Knowledge/Hardware/Meltdown%20Attack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5777,7 +5924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Research/Seedlab/Knowledge/Network/BGP%20Basic/" class="md-nav__link">
+      <a href="../../../Research/Seedlab/Knowledge/Network/BGP%20Basic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5858,7 +6005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Research/Seedlab/Basic-Labs/A00_simple_as/" class="md-nav__link">
+      <a href="../../../Research/Seedlab/Basic-Labs/A00_simple_as/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5971,7 +6118,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Others/College%20English%20Band%20IV/" class="md-nav__link ">
+            <a href="../../../Others/College%20English%20Band%20IV/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -6043,7 +6190,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Others/TOEFL%20Reading/" class="md-nav__link ">
+            <a href="../../../Others/TOEFL%20Reading/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -6077,7 +6224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%201/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%201/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6099,7 +6246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%202/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6121,7 +6268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%203/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6143,7 +6290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%204/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6165,7 +6312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%205/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6187,7 +6334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%206/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6209,7 +6356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/Others/TOEFL%20Reading/Lesson%207/" class="md-nav__link">
+      <a href="../../../Others/TOEFL%20Reading/Lesson%207/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6260,7 +6407,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/Others/College%20Physical%20Experiments/" class="md-nav__link ">
+            <a href="../../../Others/College%20Physical%20Experiments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -6349,7 +6496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/geren/" class="md-nav__link">
+      <a href="../../../../about/geren/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6378,7 +6525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/link/" class="md-nav__link">
+      <a href="../../../../about/link/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6408,6 +6555,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -6417,6 +6566,100 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-sql-from-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing SQL from Programming Languages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing SQL from Programming Languages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jdbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDBC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JDBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepared-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepared Statement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Injection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6429,20 +6672,12 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <a href="../../tag/#tag:技术分享" class="md-tag">技术分享</a>
-      
-    
-  </nav>
 
 
   
-    <a href="https://github.com/BruceJqs/MyNotebook/edit/master/docs/develop/lighthouse.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/BruceJqs/MyNotebook/edit/master/docs/blog/Computer Science/Database/Chapter 5.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -6451,19 +6686,295 @@
     
       
     
-    <a href="https://github.com/BruceJqs/MyNotebook/raw/master/docs/develop/lighthouse.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/BruceJqs/MyNotebook/raw/master/docs/blog/Computer Science/Database/Chapter 5.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>利用Lighthouse测试网站性能</h1>
-
-<p><img alt="img" src="https://cn.mcecy.com/image/20230113/3b9e713ce6d943055da05986fee1d329.png" /></p>
-<p>打开谷歌或者Edge浏览器，按F12，在右侧点"➕"找到Lighthouse,点击分析页面载即可  <br />
-<img alt="img" src="https://cn.mcecy.com/image/20230113/6cdd1a2bb7f691d4ef540a3ebc58a288.png" />
-<img alt="img" src="https://cn.mcecy.com/image/20230113/5c3e45c3e3ec1b07da5cf0046466b8b4.png" /></p>
+<h1 id="chapter-05-advanced-sql">Chapter 05 : Advanced SQL<a class="headerlink" href="#chapter-05-advanced-sql" title="Permanent link">&para;</a></h1>
+<h2 id="accessing-sql-from-programming-languages">Accessing SQL from Programming Languages<a class="headerlink" href="#accessing-sql-from-programming-languages" title="Permanent link">&para;</a></h2>
+<p>数据库程序员必须能够掌握通用编程语言，至少有两个原因：</p>
+<ul>
+<li>并非所有查询都可以用 SQL 表示，因为 SQL 不能提供通用语言的全部表达能力</li>
+<li>非声明性操作（比如打印报告、与用户交互或将查询结果发送到图形用户界面）不能在 SQL 中完成</li>
+</ul>
+<p>有两种方法可以从通用编程语言访问数据库：</p>
+<ul>
+<li>API（应用程序接口）——通用程序可以使用函数集合连接到数据库服务器并与之通信，程序可以在<strong>运行时</strong>（Runtime）用字符串<strong>构造</strong> SQL 查询，<strong>提交</strong>查询，并且将检索到的结果放到程序变量中（一次仅存一个元组）。动态 SQL 有以下标准：<ul>
+<li><strong>JDBC</strong>：Java 用于连接数据库的 API</li>
+<li><strong>ODBC</strong>：原来为 C 写的用于连接数据库的 API，现在也适用于 C++、C#、Ruby、Go、PHP、VB 等</li>
+</ul>
+</li>
+<li>嵌入式 SQL——提供程序与数据库服务器交互的方法<ul>
+<li>SQL 语句在编译时转换为函数调用</li>
+<li>在运行时，这些函数调用使用提供动态 SQL 工具的 API 连接到数据库</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="jdbc">JDBC<a class="headerlink" href="#jdbc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>JDBC 是一个 Java API，用于与支持 SQL 的数据库系统进行通信</li>
+<li>JDBC 支持用于查询和更新数据以及检索查询结果的各种功能</li>
+<li>JDBC 还支持元数据检索，例如查询数据库中存在的关系以及关系属性的名称和类型</li>
+</ul>
+<hr />
+<h4 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
+<p>JDBC一般与数据库通信的模型如下：</p>
+<ol>
+<li>打开连接</li>
+<li>创建 “Statement” 对象</li>
+<li>使用 Statement 对象执行查询以发送查询并获取结果</li>
+<li>用于处理错误的异常机制</li>
+</ol>
+<blockquote>
+<p>在下面的程序中，必须在开头处导入 <code>java.sql.*</code>，里面包含了 JDBC 提供的功能接口定义</p>
+</blockquote>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JDBC Example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">JDBCexample</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">dbid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">passwd</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">     </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">            </span><span class="s">&quot;jdbc:oracle:thin:@db.yale.edu:2000:univdb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">userid</span><span class="p">,</span><span class="w"> </span><span class="n">passwd</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="err">…</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">Actual</span><span class="w"> </span><span class="n">Work</span><span class="w"> </span><span class="err">…</span><span class="p">.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">stmt</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="n">conn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">sqle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;SQLException : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sqle</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Database Connection</label><label for="__tabbed_1_2">SQL Statements</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>在 Java 程序中访问数据库的第一步是建立与数据库的<strong>连接</strong>，连接好后才能执行 SQL 语句。具体来说，需要使用 <code>DriverManager</code> 类的 <code>getConnection()</code> 方法，它接收以下参数：</p>
+<ul>
+<li>数据库服务器相关信息，包括 URL/ 机器名、协议、端口号、数据库名<ul>
+<li>JDBC 并没有规定协议，协议取决于数据库实现</li>
+<li>JDBC 支持多种协议，比如 <code>jdbc:oracle:thin</code> 是 Oracle 支持的协议，而 <code>jdbc:mysql</code> 是 MySQL 支持的协议等</li>
+</ul>
+</li>
+<li>数据库用户名</li>
+<li>密码</li>
+<li>返回一个 <code>Connection</code> 对象，用于与数据库通信</li>
+</ul>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p>建立连接后，就要将 SQL 语句发送到数据库系统，然后在里面执行语句，在 Java 中通过 <code>Statement</code> 类的实例来做到这一点。<code>Statement</code> 对象并非 SQL 语句本身，而是一种让 Java 程序调用和<strong>传送</strong> SQL 语句到数据库相关的方法的对象</p>
+<p>而执行语句需要调用 <code>executeQuery()</code> 或 <code>executeUpdate()</code> 方法，它们分别对应<strong>查询语句</strong>和<strong>非查询语句</strong>（更新、插入、删除、创建等）的执行，并且后者会返回一个表示被插入 / 更新 / 删除的元组数（如果是创建语句的话则返回 0）</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Exceptions</label><label for="__tabbed_2_2">Resource Management</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>执行任何的 SQL 语句都有可能抛出异常，所以编程时需要记得用 <code>try {...} catch {...}</code> 语句块捕获异常</li>
+<li>异常可以分为 <code>SQLException</code>（与 SQL 相关的异常）和 <code>Exception</code>（一般的异常，与 Java 相关，比如空指针、数组越界等）</li>
+<li>如果可以的话，最好编写一个完整的异常处理函数，以应对各种异常</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>建立连接、创建语句以及其他 JDBC 对象都会占用系统资源，所以需要确保程序能够关闭上述这些资源，以免产生资源池耗尽导致的故障</li>
+<li>一种方法是显式调用关闭语句（比如 <code>conn.close()</code>、<code>stmt.close()</code> 分别关闭连接和语句），但一旦遇到异常，提前退出的话，这些关闭语句就来不及被调用，那么问题还是没解决</li>
+<li>更可靠的做法是使用 <strong>try-with-resources 构造块</strong>，就是在 <code>try</code> 关键字和语句块之间加上<strong>圆括号</strong>，里面包含连接、语句对象等资源，这样的话当离开 <code>try</code> 语句块时，这些资源会被自动关闭</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h4 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h4>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Update to Database</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="s">&quot;insert into instructor values(’77987’, ’Kim’, ’Physics’, 98000)&quot;</span><span class="p">);</span><span class="w">  </span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">sqle</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Could not insert tuple. &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sqle</span><span class="p">);</span><span class="w">  </span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<hr />
+<h4 id="query">Query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h4>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Execute Query and Fetch and Print Results</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">rset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="w">  </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">                        </span><span class="s">&quot;select dept_name, avg (salary)  </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="s">                        from instructor  </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="s">                        group by dept_name&quot;</span><span class="p">);</span><span class="w">  </span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rset</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rset</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;dept_name&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rset</span><span class="p">.</span><span class="na">getFloat</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span><span class="w">  </span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>使用 <code>executeQuery()</code> 方法执行查询后，检索得到的元组会放在一个 <code>ResultSet</code> 对象上，但一次只能取其中的一个元组。</li>
+<li>具体来说，该对象调用 <code>next()</code> 方法获取下一个元组（如果还有的话），返回值是一个布尔值，表明是否成功获取元组。</li>
+<li>另外，该对象提供了一些以 <code>get</code> 开头的方法来获取元组中具体属性的值，它们接收单个参数，可以是属性名（字符串），也可以是属性的位置（整数值从 1 开始）。常见的 <code>get</code> 方法有：<ul>
+<li><code>getString()</code>：可以检索任意 SQL 基本数据类型</li>
+<li><code>getFloat()</code>：仅限于获取浮点数</li>
+</ul>
+</li>
+</ul>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Getting Result Fields</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">rset</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="err">“</span><span class="n">dept_name</span><span class="err">”</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">rset</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<blockquote>
+<p>如果 dept_name 是 select result 的第一个参数，上面这两行语句是等价的</p>
+</blockquote>
+<p>对于 Null 值，可以使用 <code>wasNull()</code> 方法来检查是否获取到了 Null 值：</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Dealing With Null Values</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rset</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="err">“</span><span class="n">a</span><span class="err">”</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rset</span><span class="p">.</span><span class="na">wasNull</span><span class="p">())</span><span class="w"> </span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">Systems</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Got</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="n">value</span><span class="err">”</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<hr />
+<h4 id="prepared-statement">Prepared Statement<a class="headerlink" href="#prepared-statement" title="Permanent link">&para;</a></h4>
+<p>我们不必预先编写一条完整的 SQL 语句，而先创建一条<strong>预备语句</strong>（Prepared Statements），其中语句中出现的值用 <code>?</code> 替代（占位符），之后再将具体的值插入到对应的位置上。数据库系统会编译好这种预备语句。在执行这种语句的时候，数据库系统复用先前编译好的预备语句，然后将具体值应用到到语句中，构成一条完整的语句。</p>
+<ul>
+<li><code>Connection</code> 类的 <code>prepareStatement()</code> 方法用于设置预备语句，该方法返回的是一个 <code>PreparedStatement</code> 类的对象，该对象同样具有 <code>executeQuery()</code> 和 <code>executeUpdate()</code> 方法</li>
+<li>在 <code>prepareStatement()</code> 语句内的 SQL 语句具体值必须用 <code>?</code> 替代，之后可以用 <code>set</code> 开头的方法来设置具体值（比如 <code>setInt()</code>、<code>setString()</code>）。这类方法接收两个参数，第 1 个参数指明设置的是第几个 <code>?</code>（从 1 开始），第 2 个参数是具体值</li>
+</ul>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Prepared Statement Example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pStmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="s">&quot;INSERT INTO instructor VALUES(?, ?, ?, ?)&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;88877&quot;</span><span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Perry&quot;</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Finance&quot;</span><span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">125000</span><span class="p">);</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;88878&quot;</span><span class="p">);</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="n">pStmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>在上面的例子中执行了两条插入语句，其中第二条插入语句用 SQL 语法表示为：</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="ss">&quot;88878&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Perry&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Finance&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">125000</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>在获取用户输入并将其添加到查询时，请始终使用预备语句</li>
+</ul>
+<p>切勿通过连接作为输入获取的字符串来创建查询，例如：<code>insert into instructor values(’ " + ID + " ’, ’ " + name + " ’, " + " ’ " + dept name + " ’, " + salary + ");</code></p>
+<p>这时候，如果 name 字段为 <code>D’Souza</code>，那么查询就会变成：<code>insert into instructor values(’ 88879 ’, ’ D’Souza ’, ’ Finance ’, 125000);</code>，这会导致 SQL 语法错误</p>
+<ul>
+<li>事实上，这就是著名的 SQL 注入攻击，攻击者可以通过输入恶意字符串来执行任意 SQL 语句，比如删除表、插入数据等</li>
+</ul>
+</div>
+<hr />
+<h4 id="sql-injection">SQL Injection<a class="headerlink" href="#sql-injection" title="Permanent link">&para;</a></h4>
+<p>假如在 Java 程序中执行这样一条 SQL 语句：</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="s">&quot;SELECT * FROM instructor WHERE name = &#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>其中 <code>name</code> 是字符串变量</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>如果 <code>name = "X' OR 'Y' = 'Y"</code>，那么最终的语句就会变成：</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="s">&quot;SELECT * FROM instructor WHERE name = &#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;X&#39; OR &#39;Y&#39; = &#39;Y&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>整理得：</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="s">&quot;SELECT * FROM instructor WHERE name = &#39;X&#39; OR &#39;Y&#39; = &#39;Y&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>由于 <code>WHERE</code> 子句恒为 <code>true</code>，因此查询语句就能被执行，表里的全部内容都能被查到</p>
+<p>如果使用预备语句及其 <code>set</code> 方法时</p>
+</div>
+<hr />
+<h4 id="metadata-features">Metadata Features<a class="headerlink" href="#metadata-features" title="Permanent link">&para;</a></h4>
+<p>通常，Java 程序会在运行时，从数据库系统中获取数据声明</p>
+<p>用于存储执行查询语句的结果的 <code>ResultSet</code> 接口有一个方法 <code>getMetaData()</code>，它返回一个 <code>ResultSetMetaData</code> 类对象，里面包含结果集的<strong>元数据</strong>（Metadata）。而这个 <code>ResultSetMetaData</code> 对象也有一些寻找元数据信息的方法，比如结果的列数、具体列的名称和类型等等，这样我们就能获取数据声明（即模式，Schema）了</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>执行 Query 获取 ResultSet（重命名为 rs）之后：</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ResultSet Metadata</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">ResultSetMetaData</span><span class="w"> </span><span class="n">rsmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnTypeName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><code>getColumnCount()</code> 方法返回元数（Arity）（即列数）</li>
+<li><code>getColumnName()</code> 和 <code>getColumnTypeName()</code> 分别获取列名和数据类型名，它们都接收单个表示列位置的整型参数（从 1 开始）</li>
+</ul>
+</div>
+<p><code>Connection</code> 接口有一个方法 <code>getMetaData()</code>，它返回一个 <code>DatabaseMetaData</code> 对象。而 <code>DatabaseMetaData</code> 接口则提供了寻找数据库元数据的途径，提供了更为丰富的方法，比如返回产品名、版本号等等</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Database Metadata</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">DatabaseMetaData</span><span class="w"> </span><span class="n">dbmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbmd</span><span class="p">.</span><span class="na">getColumns</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;univdb&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;department&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&quot;</span><span class="p">);</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;COLUMN_NAME&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;TYPE_NAME&quot;</span><span class="p">));</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><code>getColumns()</code> 方法接收四个参数<ul>
+<li>目录名：<code>null</code> 表示忽略该值</li>
+<li>模式名</li>
+<li>表名</li>
+<li>列名：这里的 <code>%</code> 表示获取所有列</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><code>DatabaseMetaData</code> 还有其他方法：</p>
+<ul>
+<li><code>getTables()</code>：列出数据库中的所有表。前三个参数和 <code>getColumns()</code> 一致，最后一个参数用于限制符合条件的表，如果设为 <code>null</code> 则返回所有表（包括系统内部的表）</li>
+<li><code>getPrimaryKeys()</code>：获取主键</li>
+<li><code>getCrossReference()</code>：获取外键参照</li>
+</ul>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6533,7 +7044,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2024年9月2日 16:38:36">2024年9月2日 16:38:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 10:50:03">2025年3月17日 10:50:03</span>
   </span>
 
     
@@ -6545,7 +7056,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2024年9月2日 16:38:36">2024年9月2日 16:38:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 10:50:03">2025年3月17日 10:50:03</span>
   </span>
 
     
@@ -6554,6 +7065,38 @@
     
 
     <!-- Authors (git-committers plugin) -->
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a
+          href="https://github.com/BruceJqs"
+          class="md-author"
+          title="@BruceJqs"
+        >
+          
+          <img
+            src="https://avatars.githubusercontent.com/u/93069030?v=4&size=72"
+            alt="BruceJqs"
+          />
+        </a>
+      
+
+      <!-- More authors -->
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
@@ -6586,70 +7129,12 @@
 
 <!-- Determine whether to show feedback -->
 
+  
+    
+  
+
 
 <!-- Was this page helpful? -->
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        此页面有帮助吗？
-      </legend>
-      <div class="md-feedback__inner">
-
-        <!-- Feedback ratings -->
-        <div class="md-feedback__list">
-          
-            <button
-              class="md-feedback__icon md-icon"
-              type="submit"
-              title="This page was helpful"
-              data-md-value="1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
-            </button>
-          
-            <button
-              class="md-feedback__icon md-icon"
-              type="submit"
-              title="This page could be improved"
-              data-md-value="0"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
-            </button>
-          
-        </div>
-
-        <!-- Feedback rating notes (shown after submission) -->
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-
-              <!-- Determine title -->
-              
-                
-              
-
-              <!-- Replace {url} and {title} placeholders in note -->
-              谢谢你的反馈！
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-
-              <!-- Determine title -->
-              
-                
-              
-
-              <!-- Replace {url} and {title} placeholders in note -->
-              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
-            </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
 
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -6679,6 +7164,59 @@
 
 
 
+  <h2 id="__comments">评论</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="BruceJqs/MyNotebook"
+        data-repo-id="R_kgDOMrk4iQ"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOMrk4ic4CiLuY"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
                 
               </article>
             </div>
@@ -6700,6 +7238,63 @@
 
   <!-- Link to previous and/or next page -->
   
+    
+      
+        
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        hidden
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../Chapter%204/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: Chapter 04: Intermediate SQL"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Chapter 04: Intermediate SQL
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../Homework%201/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: Homework 01"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Homework 01
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
 
@@ -6767,13 +7362,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../../javascripts/extra.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js"></script>
       
@@ -6783,12 +7378,12 @@
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../../../../javascripts/katex.js"></script>
       
-        <script src="../../javascripts/glightbox.min.js"></script>
+        <script src="../../../../javascripts/glightbox.min.js"></script>
       
     
-    <script src="../../assets/javascripts/custom.9458f965.min.js"></script>
+    <script src="../../../../assets/javascripts/custom.9458f965.min.js"></script>
   
   </body>
 </html>
