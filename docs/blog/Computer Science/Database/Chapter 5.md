@@ -681,10 +681,10 @@ external name '/usr/avi/bin/dept_count';
 		referencing new row as nrow
 		referencing old row as orow
 		for each row 
-		when nrow.balance - orow.balance >=200000 or
-			orow.balance - nrow.balance >=50000
+		when nrow.balance - orow.balance >= 200000 or
+			orow.balance - nrow.balance >= 50000
 		begin
-			insert into account_log values (nrow.account-number, 
+			insert into account_log values (nrow.account - number, 
 									nrow.balance-orow.balance, current_time())
 		end
 		```
