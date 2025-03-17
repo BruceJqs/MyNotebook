@@ -691,7 +691,7 @@ external name '/usr/avi/bin/dept_count';
 	
 	=== "Example 02"
 	
-		- `time_slot_id 不是主键，因此我们无法创建从 section 到 timeslot 的外键约束，在删除操作中不会引起其他影响。但我们可以设计一个触发器，用来检查当前课程的 time_slot_id 是否在表内，在 section 和 timeslot 上使用触发器来实施完整性约束
+		- `time_slot_id` 不是主键，因此我们无法创建从 section 到 timeslot 的外键约束，在删除操作中不会引起其他影响。但我们可以设计一个触发器，用来检查当前课程的 time_slot_id 是否在表内，在 section 和 timeslot 上使用触发器来实施完整性约束
 		
 		```sql
 		create trigger timeslot_check1 after insert on section
