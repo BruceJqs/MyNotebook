@@ -2073,6 +2073,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      When not to Use Triggers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7107,6 +7122,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      When not to Use Triggers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7631,7 +7661,7 @@
 </ul>
 </li>
 <li>在某些语言（如 COBOL）中，分号被 END-EXEC 替换</li>
-<li>在 Java 中，嵌入使用 <code>#SQL { .... };</code></li>
+<li>在 Java 中，嵌入使用 <code>#SQL { .... };</code> ；在 C 中，使用 <code>EXEC SQL &lt;embedded SQL statement&gt;;</code></li>
 <li>在执行任何 SQL 语句之前，程序必须首先连接到数据库</li>
 <li>这是通过以下方式完成的： <ul>
 <li>使用密码的 EXEC-SQL 连接到服务器用户用户名;</li>
@@ -7992,7 +8022,19 @@
 <h2 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">&para;</a></h2>
 <p><strong>触发器</strong>（Trigger）是一种系统自动执行的语句，作为对数据库修改的“副作用”。要想定义一个触发器，需要：</p>
 <ul>
-<li>指定触发器何时执行——这点可以分解为检查触发器的<strong>事件</strong>（Event）</li>
+<li>指定触发器何时执行——这点可以分解为检查触发器的<strong>事件</strong>（Event）<ul>
+<li>可以是插入、删除或更新</li>
+<li>更新时的触发器可以限制为特定属性<ul>
+<li>e.g. <code>after update of takes on grade</code></li>
+</ul>
+</li>
+<li>可以引用更新之前和之后的属性值<ul>
+<li><code>referencing old row as</code>：可以用于删除和更新</li>
+<li><code>referencing new row as</code>：可以用于插入和更新</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>执行触发器需满足的<strong>条件</strong>（Condition）</li>
 <li>指定触发器需要执行的<strong>动作</strong>（Actions）</li>
 </ul>
@@ -8003,7 +8045,183 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example 01</label><label for="__tabbed_2_2">Example 02</label><label for="__tabbed_2_3">Example 03</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对于一个表格 <code>account_log(account, amount, datetime)</code></p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-29-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">account_trigger</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">balance</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nrow</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="k">referencing</span><span class="w"> </span><span class="k">old</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">orow</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span><span class="w"> </span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="k">when</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">orow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">200000</span><span class="w"> </span><span class="k">or</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">    </span><span class="n">orow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">50000</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="k">begin</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">    </span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">account_log</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="n">nrow</span><span class="p">.</span><span class="n">account</span><span class="o">-</span><span class="nb">number</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="w">                            </span><span class="n">nrow</span><span class="p">.</span><span class="n">balance</span><span class="o">-</span><span class="n">orow</span><span class="p">.</span><span class="n">balance</span><span class="p">,</span><span class="w"> </span><span class="k">current_time</span><span class="p">())</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10"></a><span class="k">end</span>
+</span></code></pre></div></td></tr></table></div>
 </div>
+<div class="tabbed-block">
+<ul>
+<li>`time_slot_id 不是主键，因此我们无法创建从 section 到 timeslot 的外键约束，在删除操作中不会引起其他影响。但我们可以设计一个触发器，用来检查当前课程的 time_slot_id 是否在表内，在 section 和 timeslot 上使用触发器来实施完整性约束</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-30-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-30-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-30-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-30-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-30-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-30-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">timeslot_check1</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">section</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nrow</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">nrow</span><span class="p">.</span><span class="n">time_slot_id</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">time_slot_id</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">time_slot</span><span class="w"> </span><span class="cm">/* time_slot_id not present in time_slot */</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="p">))</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="k">begin</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="w">    </span><span class="k">rollback</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="k">end</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><code>for each row</code> 子句能够显式迭代每一个被插入的行记录</li>
+<li><code>referencing new row as</code> 子句创建一个<strong>过渡变量</strong>（Transition Variable），用于临时存储被插入的行记录</li>
+<li><code>when</code> 语句指明了触发器的触发条件</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code>time_slot_id</code> 不是主键，所以当 time_slot_id 已经被删完了，但依然有课程在引用，就要 rollback</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-31-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-31-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-31-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-31-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-31-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-31-10">10</a></span>
+<span class="normal"><a href="#__codelineno-31-11">11</a></span>
+<span class="normal"><a href="#__codelineno-31-12">12</a></span>
+<span class="normal"><a href="#__codelineno-31-13">13</a></span>
+<span class="normal"><a href="#__codelineno-31-14">14</a></span>
+<span class="normal"><a href="#__codelineno-31-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">timeslot_check2</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">timeslot</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">old</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">orow</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">orow</span><span class="p">.</span><span class="n">time_slot_id</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">time_slot_id</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">        </span><span class="k">from</span><span class="w"> </span><span class="n">time_slot</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">    </span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">orow</span><span class="p">.</span><span class="n">time_slot_id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="n">time_slot_id</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="w">        </span><span class="k">from</span><span class="w"> </span><span class="n">section</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12"></a><span class="p">)</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="k">begin</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14"></a><span class="w">    </span><span class="k">rollback</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15"></a><span class="k">end</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>触发器可以在事件之前激活，这可以用作额外的约束</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Example 01</label><label for="__tabbed_3_2">Example 02</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>例如我们将空白的部分设置为 Null：</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span>
+<span class="normal"><a href="#__codelineno-32-4">4</a></span>
+<span class="normal"><a href="#__codelineno-32-5">5</a></span>
+<span class="normal"><a href="#__codelineno-32-6">6</a></span>
+<span class="normal"><a href="#__codelineno-32-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">setnull_trigger</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">takes</span><span class="w">  </span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nrow</span><span class="w">  </span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span><span class="w">  </span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">nrow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="w"> </span><span class="err">‘</span><span class="p">)</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="k">begin</span><span class="w"> </span><span class="k">atomic</span><span class="w">  </span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">    </span><span class="k">set</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="k">end</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>我们使用触发器来保持 <code>credits_earned</code> 的值，如果本来挂科，或者没有成绩，更新后不再挂科而且有成绩，就把学分加上去。</p>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-33-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-33-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-33-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-33-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-33-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-33-10">10</a></span>
+<span class="normal"><a href="#__codelineno-33-11">11</a></span>
+<span class="normal"><a href="#__codelineno-33-12">12</a></span>
+<span class="normal"><a href="#__codelineno-33-13">13</a></span>
+<span class="normal"><a href="#__codelineno-33-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">credits_earned</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">takes</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">grade</span><span class="w">  </span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="k">referencing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nrow</span><span class="w">  </span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="k">referencing</span><span class="w"> </span><span class="k">old</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">orow</span><span class="w">  </span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="k">when</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="err">’</span><span class="n">F</span><span class="err">’</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w">  </span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">orow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">’</span><span class="n">F</span><span class="err">’</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">orow</span><span class="p">.</span><span class="n">grade</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="k">begin</span><span class="w"> </span><span class="k">atomic</span><span class="w">  </span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">student</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9"></a><span class="w">    </span><span class="k">set</span><span class="w"> </span><span class="n">tot_cred</span><span class="o">=</span><span class="w"> </span><span class="n">tot_cred</span><span class="w"> </span><span class="o">+</span><span class="w">  </span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10"></a><span class="w">        </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">credits</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11"></a><span class="w">        </span><span class="k">from</span><span class="w"> </span><span class="n">course</span>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="w">        </span><span class="k">where</span><span class="w"> </span><span class="n">course</span><span class="p">.</span><span class="n">course_id</span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">course_id</span><span class="p">)</span>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13"></a><span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">student</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14"></a><span class="k">end</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<p>很多数据库系统还支持其他触发事件，比如用户登录数据库、系统关机、修改系统设置等。</p>
+<p>在上述例子中，可以看到触发器既可以在事件<strong>发生前</strong>执行，也可以在事件<strong>发生后</strong>执行。一般来说，前者作为一个额外的约束限制，不仅阻止非法行为引起的错误，还要采取补救措施，使语句变得合法。</p>
+<p>除了将触发器的动作一行行地应用到表中的每个行记录上，也可以将触发器一次性作用于满足 SQL 的所有行记录上，只要：</p>
+<ul>
+<li>将 <code>for each row</code> 改为 <code>for each statement</code></li>
+<li>并且使用 <code>referencing old table as</code> 和 <code>referencing new table as</code> 来创建过渡表</li>
+</ul>
+<p>我们还可以决定启用或禁用触发器，相关语法为：<code>alter trigger trigger_name disable</code></p>
+<ul>
+<li>有些数据库采用另一种语法：<code>disable trigger trigger_name</code>。</li>
+</ul>
+<p>此外，还可以删除触发器：<code>drop trigger trigger_name</code>。</p>
+<p>与函数 / 过程的语法类似，由于很多数据库系统在 SQL 相关标准建立前就广泛使用触发器了，因此几乎每个数据库系统都有自己的触发器语法，它们是互不兼容的</p>
+<hr />
+<h3 id="when-not-to-use-triggers">When not to Use Triggers<a class="headerlink" href="#when-not-to-use-triggers" title="Permanent link">&para;</a></h3>
+<p>实际上，很多看似能够用触发器解决的问题， SQL 标准早已为我们提供了更方便的方法来解决这些问题，所以在以下场景中，没有必要使用触发器：</p>
+<ul>
+<li>维护实体化视图：现在很多数据库系统都支持自动维护了，因此无需使用触发器手动维护</li>
+<li>维护数据库的拷贝：理由同上</li>
+<li>从备份拷贝上加载数据，或备份地点上复制数据库更新</li>
+</ul>
+<p>编写触发器的时候需小心，因为在运行时，一个触发器的错误可能会触发下一个触发器，最严重的情况下会出现无限的连锁反应。解决方案有：</p>
+<ul>
+<li>某些数据库系统规定了最大的触发器链长度，超过限制就会报错</li>
+<li>另外的数据库系统则会根据触发器是否尝试引用更新后导致自身首先被触发的关系来判断是否产生错误</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -8073,7 +8291,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 13:37:44">2025年3月17日 13:37:44</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 17:19:21">2025年3月17日 17:19:21</span>
   </span>
 
     
