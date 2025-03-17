@@ -124,6 +124,8 @@ public:
 ```
 
 这样就实现了对于成员变量的封装，只能通过成员函数来访问
+
+- 但是，仅仅靠 private 和 public 还是能让用户看到 struct 当中存在这些变量的，事实上还有一种 [Pimpl Technique](https://en.wikipedia.org/wiki/Pimpl) 可以实现更好的封装，隐藏 private 的成员，但是这里不做展开
 ***
 ## Objects
 
@@ -222,11 +224,87 @@ public:
 	
 	![](../../../assets/Pasted image 20250317141648.png)
 	
-	需要注意的是，最好将类的声明和定义分开（就像我们这里使用 Point.h 来声明，用 Point.cpp 来定义具体功能），这样可以更好的维护代码
+	- 需要注意的是，C++ 建议将类的声明和定义分开（就像我们这里使用 Point.h 来声明，用 Point.cpp 来定义具体功能），这样可以更好的维护代码
+		- .h 文件就像是作者和使用者之间的合约，讲述了所有的函数、类、变量等等的声明，而所有的定义都在 .cpp 文件中
+	
+	![](../../../assets/Pasted image 20250317190006.png)
 ***
 ## `::` Resolver
 
-在上面的例子中，我们使用了 `Point::` 来指定这个函数是属于 `Point` 这个类的，这个操作符叫做作用域解析运算符
+在上面的例子中，我们使用了 `Point::` 来指定这个函数是属于 `Point` 这个类的，这个操作符叫做作用域解析运算符，一般使用方法为 `Class::Function` 或 `Class::Attribute`，如果冒号前面没有类名，那么就是全局作用域
+***
+## Computation Unit
 
+- 在 C++ 中，一个 `.cpp` 文件就是一个编译单元（Computation Unit）
+	- 编译器会将 `.cpp` 文件编译成 `.obj` 文件
+- 链接器会讲所有的 `.obj` 文件链接成一个可执行文件
+- 如果要在多个 `.cpp` 文件共享信息，可以使用 `.h` 文件
+
+### `#include`
+
+- `#include` 指令会将 `.h` 文件的内容直接复制到 `.cpp` 文件中，一般来说有两种：
+	- `#include "xx.h"`，一般会在当前目录下寻找文件
+	- `#include <xx.h>`，一般会在特定的目录下（取决于编译环境）寻找文件
+- 以下是一个标准的头文件结构，里面的声明仅出现一次，这样可以避免头文件内容被多次包含，从而导致编译失败的问题
+
+```c++
+#ifndef HEADER_FLAG
+#define HEADER_FLAG
+// Type declaration here...
+#endif // HEADER_FLAG
+```
+
+!!! example "Example"
+
+	假设我们在上面的 "Point.h" 最上面加一行 `int globalx = 10;`，编译会出现以下情况：
+	
+	![](../../../assets/Pasted image 20250317191339.png)
+	
+	这是因为我们在 main.cpp 中 `#include "point.h"` 了一次，在 point.cpp 中又 `#include "point.h"` 了一次，所以编译器会认为 `globalx` 被定义了两次，所以会报错
+	
+	所以说我们在 .h 文件中一般只放声明（比如说 `extern int globalx;`），而在 .cpp 文件中放定义，这样可以避免这种情况的发生
+	
+	但是还有一种情况，如果我们还有一个 Line_segment.h 文件利用 point.h 实现线段（即在其中也要 `#include "point.h"`），那我们在 main.cpp 中如果同时使用这两个功能时，既要 `#include "point.h"` 又要 `#include "Line_segment.h"`，这样就会出现整个头文件被重复包含的情况
+	
+	为了更加保险，我们可以添加上面的头文件结构（称为 Safeguard），从而也避免这种情况的发生
+***
+## Build Automation Tools
+
+- 为了在工程中更好的管理代码，我们可以使用一些自动化工具来帮助我们编译代码
+	- 例如 `make`、`cmake` 等等
+	- `cmake` 并非是一个构造系统，而是一个构建系统生成器，可以根据不同的构造系统生成不同的构建文件
+
+!!! example "Example"
+
+	例如我们将上面的 Point 用 cmake 来管理
+	
+	在目录下创建一个 CMakeLists.txt 文件：
+	
+	```cmake
+	cmake_minimum_required(VERSION 2.8.9)
+	project(Point)
+	add_executable(Point main.cpp point.cpp)
+	```
+	
+	然后创建一个 build 文件夹，进入 build 文件夹：
+	
+	![](../../../assets/Pasted image 20250317193138.png)
+	
+	执行 `cmake ..`，根据外层目录的 CMakeLists.txt 文件生成 Makefile 文件：
+	
+	![](../../../assets/Pasted image 20250317200351.png)
+	
+	build 文件夹下会生成相关 `make` 文件：
+	
+	![](../../../assets/Pasted image 20250317200507.png)
+	
+	使用 `make` 命令编译即可生成：
+	
+	![](../../../assets/Pasted image 20250317200751.png)
+	
+	![](../../../assets/Pasted image 20250317200807.png)
+	
+	![](../../../assets/Pasted image 20250317200822.png)
+***
 
 
