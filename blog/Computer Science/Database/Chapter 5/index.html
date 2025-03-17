@@ -1852,8 +1852,86 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#transaction-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction Control
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlj" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLJ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ODBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actual-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actual Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odbc-prepared-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC Prepared Statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-odbc-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      More ODBC Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded SQL
+    </span>
+  </a>
   
 </li>
         
@@ -6649,8 +6727,86 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#transaction-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transaction Control
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlj" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQLJ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ODBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actual-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actual Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odbc-prepared-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ODBC Prepared Statements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-odbc-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      More ODBC Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded SQL
+    </span>
+  </a>
   
 </li>
         
@@ -6763,7 +6919,7 @@
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Database Connection</label><label for="__tabbed_1_2">SQL Statements</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Database Connection</label><label for="__tabbed_1_2">SQL Statements</label><label for="__tabbed_1_3">Exceptions</label><label for="__tabbed_1_4">Resource Management</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>在 Java 程序中访问数据库的第一步是建立与数据库的<strong>连接</strong>，连接好后才能执行 SQL 语句。具体来说，需要使用 <code>DriverManager</code> 类的 <code>getConnection()</code> 方法，它接收以下参数：</p>
@@ -6778,13 +6934,10 @@
 <li>返回一个 <code>Connection</code> 对象，用于与数据库通信</li>
 </ul>
 </div>
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p>建立连接后，就要将 SQL 语句发送到数据库系统，然后在里面执行语句，在 Java 中通过 <code>Statement</code> 类的实例来做到这一点。<code>Statement</code> 对象并非 SQL 语句本身，而是一种让 Java 程序调用和<strong>传送</strong> SQL 语句到数据库相关的方法的对象</p>
 <p>而执行语句需要调用 <code>executeQuery()</code> 或 <code>executeUpdate()</code> 方法，它们分别对应<strong>查询语句</strong>和<strong>非查询语句</strong>（更新、插入、删除、创建等）的执行，并且后者会返回一个表示被插入 / 更新 / 删除的元组数（如果是创建语句的话则返回 0）</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Exceptions</label><label for="__tabbed_2_2">Resource Management</label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
 <ul>
 <li>执行任何的 SQL 语句都有可能抛出异常，所以编程时需要记得用 <code>try {...} catch {...}</code> 语句块捕获异常</li>
@@ -6919,7 +7072,7 @@
 <div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="s">&quot;SELECT * FROM instructor WHERE name = &#39;X&#39; OR &#39;Y&#39; = &#39;Y&#39;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>由于 <code>WHERE</code> 子句恒为 <code>true</code>，因此查询语句就能被执行，表里的全部内容都能被查到</p>
-<p>如果使用预备语句及其 <code>set</code> 方法时</p>
+<p>如果使用预备语句及其 <code>set</code> 方法时，上述问题就不会发生了，因为所有输入的引号都会被转化为转义字符，不会破坏原字符串的结构。</p>
 </div>
 <hr />
 <h4 id="metadata-features">Metadata Features<a class="headerlink" href="#metadata-features" title="Permanent link">&para;</a></h4>
@@ -6974,6 +7127,237 @@
 <li><code>getPrimaryKeys()</code>：获取主键</li>
 <li><code>getCrossReference()</code>：获取外键参照</li>
 </ul>
+<hr />
+<h4 id="transaction-control">Transaction Control<a class="headerlink" href="#transaction-control" title="Permanent link">&para;</a></h4>
+<ul>
+<li>默认情况下，每个 SQL 语句都被视为自动提交的单独事务，这对于具有多个更新的事务来说是个比较麻烦的事情</li>
+<li>我们可以在 Connection 中关闭自动提交<ul>
+<li>conn.setAutoCommit(false); </li>
+</ul>
+</li>
+<li>然后，我们必须显式提交或回滚事务<ul>
+<li>conn.commit(); </li>
+<li>或 conn.rollback();</li>
+</ul>
+</li>
+<li>conn.setAutoCommit(true) 表示开启自动提交</li>
+</ul>
+<hr />
+<h3 id="sqlj">SQLJ<a class="headerlink" href="#sqlj" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>JDBC 有时过于动态，编译器无法很好地捕获错误</p>
+</blockquote>
+<p>在 Java 中，也提供了嵌入式的 SQL 语句，这种语句称为 SQLJ</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQLJ Example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="err">#</span><span class="n">sql</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="nf">deptInfoIter</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">avgSal</span><span class="p">);</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">deptInfoIter</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="err">#</span><span class="n">sql</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">select</span><span class="w"> </span><span class="n">dept_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg</span><span class="p">(</span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">avgSal</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">instructor</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">deptName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="p">.</span><span class="na">dept_name</span><span class="p">();</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">avgSal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="p">.</span><span class="na">avgSal</span><span class="p">();</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">deptName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">avgSal</span><span class="p">);</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="p">}</span><span class="w">  </span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="n">iter</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<hr />
+<h3 id="odbc">ODBC<a class="headerlink" href="#odbc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>开放数据库连接（Open Database Connectivity，ODBC）标准<ul>
+<li>应用程序与数据库服务器通信的标准</li>
+<li>当客户端程序发起 ODBC API 的调用时，库代码便与服务器通信，执行需要执行的动作，并返回结果</li>
+</ul>
+</li>
+<li>应用于 GUI、电子表格等应用程序</li>
+<li>ODBC 最初为 Basic 和 C 定义，可用于多种语言</li>
+<li>每个支持 ODBC 的数据库系统都提供了一个必须与客户端程序链接的“驱动程序”库</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317110348.png" /></p>
+<ul>
+<li>当客户端程序进行 ODBC API 调用时，库中的代码将与服务器通信以执行请求的作并获取结果</li>
+<li>ODBC 程序首先分配一个 SQL 环境，然后分配一个数据库连接处理器</li>
+<li>使用 SQLConnect() 打开数据库连接<ul>
+<li>SQLConnect 的参数：<ul>
+<li>连接处理器</li>
+<li>要连接的服务器</li>
+<li>用户标识符</li>
+<li>密码</li>
+</ul>
+</li>
+<li>还必须指定参数的类型：SQL_NTS，表示前一个参数是以 null 结尾的字符串</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="model_1">Model<a class="headerlink" href="#model_1" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ODBC Model</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">ODBCexample</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="n">RETCODE</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="n">HENV</span><span class="w"> </span><span class="n">env</span><span class="p">;</span><span class="w">     </span><span class="cm">/* environment */</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="n">HDBC</span><span class="w"> </span><span class="n">conn</span><span class="p">;</span><span class="w">     </span><span class="cm">/* database connection */</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="n">SQLAllocEnv</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">);</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span><span class="n">SQLAllocConnect</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="n">SQLConnect</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;db.yale.edu&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_NTS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;avi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_NTS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;avipassswd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_NTS</span><span class="p">);</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="p">{</span><span class="err">…</span><span class="w"> </span><span class="n">Do</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="n">work</span><span class="w"> </span><span class="err">…</span><span class="p">}</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">    </span><span class="n">SQLDisconnect</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">    </span><span class="n">SQLFreeConnect</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">    </span><span class="n">SQLFreeEnv</span><span class="p">(</span><span class="n">env</span><span class="p">);</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>程序使用 SQLExecDirect 向数据库发送 SQL 命令</li>
+<li>使用 SQLFetch() 获取结果元组</li>
+<li>SQLBindCol() 将 C 语言变量绑定到查询结果的属性<ul>
+<li>当获取 Tuples 时，其 attribute 值会自动存储在相应的 C 变量中</li>
+<li>SQLBindCol() 的参数：<ul>
+<li>ODBC stmt 变量，查询结果中的属性位置</li>
+<li>从 SQL 到 C 的类型转换</li>
+<li>变量的地址</li>
+<li>对于字符数组等可变长度类型，<ul>
+<li>变量的最大长度</li>
+<li>用于在获取元组时存储实际长度的位置</li>
+<li>注： Length 字段返回负值表示该字段为 null 值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="actual-work">Actual Work<a class="headerlink" href="#actual-work" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Actual Work</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">deptname</span><span class="p">[</span><span class="mi">80</span><span class="p">];</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="kt">float</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">lenOut1</span><span class="p">,</span><span class="w"> </span><span class="n">lenOut2</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">HSTMT</span><span class="w"> </span><span class="n">stmt</span><span class="p">;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sqlquery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT dept_name, SUM(salary)&quot;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">                  </span><span class="s">&quot;FROM instructor&quot;</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">                  </span><span class="s">&quot;GROUP BY dept_name&quot;</span><span class="p">;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="n">SQLAllocStmt</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">stmt</span><span class="p">);</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SQLExecDirect</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span><span class="w"> </span><span class="n">sqlquery</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_NTS</span><span class="p">);</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SQL_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">    </span><span class="n">SQLBindCol</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_C_CHAR</span><span class="p">,</span><span class="w"> </span><span class="n">deptname</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lenOut1</span><span class="p">);</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">    </span><span class="n">SQLBindCol</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_C_FLOAT</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lenOut2</span><span class="p">);</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">SQLFetch</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SQL_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; %s %g</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">deptname</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">);</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="p">}</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="n">SQLFreeStmt</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span><span class="w"> </span><span class="n">SQL_DROP</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<hr />
+<h4 id="odbc-prepared-statements">ODBC Prepared Statements<a class="headerlink" href="#odbc-prepared-statements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>预备语句<ul>
+<li>SQL 语句在数据库中已经编译好</li>
+<li>可以有占位符：例如 <code>insert into account values(?,?,?)</code></li>
+<li>使用占位符的实际值重复执行</li>
+</ul>
+</li>
+<li>使用 SQLPrepare() 准备预备语句<ul>
+<li><code>SQLPrepare(stmt, &lt;SQL String&gt;);</code></li>
+</ul>
+</li>
+<li>绑定参数<ul>
+<li><code>SQLBindParameter(stmt, &lt;parameter#&gt;, … type information and value omitted for simplicity..)</code></li>
+</ul>
+</li>
+<li>执行语句<ul>
+<li><code>retcode = SQLExecute(stmt);</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="more-odbc-features">More ODBC Features<a class="headerlink" href="#more-odbc-features" title="Permanent link">&para;</a></h4>
+<ul>
+<li>元数据功能：<ul>
+<li>查找数据库中的所有关系，并在数据库中查找查询结果或关系的列的名称和类型</li>
+</ul>
+</li>
+<li>默认情况下，每个 SQL 语句都被视为自动提交的单独事务<ul>
+<li>可以关闭连接上的自动提交<ul>
+<li>SQLSetConnectOption(conn, SQL_AUTOCOMMIT, 0)</li>
+</ul>
+</li>
+<li>事务必须由 SQLTransact(conn, SQL_COMMIT) 或 SQLTransact(conn, SQL_ROLLBACK)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="embedded-sql">Embedded SQL<a class="headerlink" href="#embedded-sql" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SQL 标准定义了 SQL 在各种编程语言（如 C、C++、Java、Fortran 和 PL/1）中的嵌入</li>
+<li>嵌入 SQL 查询的语言称为主机语言，主机语言中允许的 SQL 结构包括嵌入式 SQL</li>
+<li>这些语言的基本形式遵循在操作系统 R 将 SQL 嵌入到 PL/1 中的形式</li>
+<li>EXEC SQL 语句在主机语言中用于标识对预处理器的嵌入式 SQL 请求：<ul>
+<li><code>EXEC SQL &lt;嵌入式 SQL 语句&gt;;</code></li>
+<li>这样的语句因语言而异</li>
+</ul>
+</li>
+<li>在某些语言（如 COBOL）中，分号被 END-EXEC 替换</li>
+<li>在 Java 中，嵌入使用 <code>#SQL { .... };</code></li>
+<li>在执行任何 SQL 语句之前，程序必须首先连接到数据库</li>
+<li>这是通过以下方式完成的： <ul>
+<li>使用密码的 EXEC-SQL 连接到服务器用户用户名;</li>
+<li>此处，server 标识要建立连接的服务器</li>
+</ul>
+</li>
+<li>主机语言的变量可以在嵌入式 SQL 语句中使用<ul>
+<li>它们前面有冒号以区别于SQL变量（例如 <code>:credit_amount</code>）</li>
+</ul>
+</li>
+<li>如上所述使用的主机变量必须在 DECLARE 部分中声明，如下面所示。但是，用于声明变量的语法遵循通常的主机语言语法</li>
+</ul>
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Embedded SQL Example</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">EXEC</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="k">BEGIN</span><span class="w"> </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">SECTION</span><span class="p">;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="nb">int</span><span class="w"> </span><span class="n">account_number</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="nb">float</span><span class="w"> </span><span class="n">credit_amount</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="k">EXEC</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">SECTION</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
 <hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -7044,7 +7428,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 10:50:03">2025年3月17日 10:50:03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 11:39:58">2025年3月17日 11:39:58</span>
   </span>
 
     
