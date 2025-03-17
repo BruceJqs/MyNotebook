@@ -21,6 +21,7 @@ comments: true
 - [Chapter 02 : The Relational Model](Chapter%202/)
 - [Chapter 03 : Introduction to SQL](Chapter%203/)
 - [Chapter 04 : Intermediate SQL](Chapter%204/)
+- [Chapter 05 : Advanced SQL](Chapter%205/)
 
 ## Homeworks
 
@@ -28,5 +29,6 @@ comments: true
 - [Homework 02](Homework%202/)
 - [Homework 03](Homework%203/)
 - [Homework 04](Homework%204/)
+- [Homework 05](Homework%205/)
 
 
