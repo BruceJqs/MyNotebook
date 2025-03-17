@@ -75,9 +75,9 @@ public static void JDBCexample(String dbid, String userid, String passwd)
 	
 	=== "SQL Statements"
 	
-	建立连接后，就要将 SQL 语句发送到数据库系统，然后在里面执行语句，在 Java 中通过 `Statement` 类的实例来做到这一点。`Statement` 对象并非 SQL 语句本身，而是一种让 Java 程序调用和**传送** SQL 语句到数据库相关的方法的对象
-	
-	而执行语句需要调用 `executeQuery()` 或 `executeUpdate()` 方法，它们分别对应**查询语句**和**非查询语句**（更新、插入、删除、创建等）的执行，并且后者会返回一个表示被插入 / 更新 / 删除的元组数（如果是创建语句的话则返回 0）
+		建立连接后，就要将 SQL 语句发送到数据库系统，然后在里面执行语句，在 Java 中通过 `Statement` 类的实例来做到这一点。`Statement` 对象并非 SQL 语句本身，而是一种让 Java 程序调用和**传送** SQL 语句到数据库相关的方法的对象
+		
+		而执行语句需要调用 `executeQuery()` 或 `executeUpdate()` 方法，它们分别对应**查询语句**和**非查询语句**（更新、插入、删除、创建等）的执行，并且后者会返回一个表示被插入 / 更新 / 删除的元组数（如果是创建语句的话则返回 0）
 	
 	=== "Exceptions"
 	
@@ -200,7 +200,7 @@ INSERT INTO instructor VALUES("88878", "Perry", "Finance", 125000);
 	
 	由于 `WHERE` 子句恒为 `true`，因此查询语句就能被执行，表里的全部内容都能被查到
 	
-	如果使用预备语句及其 `set` 方法时
+	如果使用预备语句及其 `set` 方法时，上述问题就不会发生了，因为所有输入的引号都会被转化为转义字符，不会破坏原字符串的结构。
 ***
 #### Metadata Features
 
@@ -247,4 +247,158 @@ INSERT INTO instructor VALUES("88878", "Perry", "Finance", 125000);
 - `getTables()`：列出数据库中的所有表。前三个参数和 `getColumns()` 一致，最后一个参数用于限制符合条件的表，如果设为 `null` 则返回所有表（包括系统内部的表）
 - `getPrimaryKeys()`：获取主键
 - `getCrossReference()`：获取外键参照
+***
+#### Transaction Control
+
+- 默认情况下，每个 SQL 语句都被视为自动提交的单独事务，这对于具有多个更新的事务来说是个比较麻烦的事情
+- 我们可以在 Connection 中关闭自动提交
+	- conn.setAutoCommit(false); 
+- 然后，我们必须显式提交或回滚事务
+	- conn.commit(); 
+	- 或 conn.rollback();
+- conn.setAutoCommit(true) 表示开启自动提交
+***
+### SQLJ
+
+> JDBC 有时过于动态，编译器无法很好地捕获错误
+
+在 Java 中，也提供了嵌入式的 SQL 语句，这种语句称为 SQLJ
+
+!!! example "Example"
+
+	```java title="SQLJ Example"
+	#sql iterator deptInfoIter ( String dept name, int avgSal);
+	deptInfoIter iter = null;
+	#sql iter = { select dept_name, avg(salary) as avgSal from instructor group by dept name };
+	while (iter.next()) {
+		String deptName = iter.dept_name();
+		int avgSal = iter.avgSal();
+		System.out.println(deptName + " " + avgSal);
+		
+	}  
+	iter.close();
+	```
+***
+### ODBC
+
+- 开放数据库连接（Open Database Connectivity，ODBC）标准
+	- 应用程序与数据库服务器通信的标准
+	- 当客户端程序发起 ODBC API 的调用时，库代码便与服务器通信，执行需要执行的动作，并返回结果
+- 应用于 GUI、电子表格等应用程序
+- ODBC 最初为 Basic 和 C 定义，可用于多种语言
+- 每个支持 ODBC 的数据库系统都提供了一个必须与客户端程序链接的“驱动程序”库
+
+![](../../../assets/Pasted%20image%2020250317110348.png)
+
+- 当客户端程序进行 ODBC API 调用时，库中的代码将与服务器通信以执行请求的作并获取结果
+- ODBC 程序首先分配一个 SQL 环境，然后分配一个数据库连接处理器
+- 使用 SQLConnect() 打开数据库连接
+	- SQLConnect 的参数：
+		- 连接处理器
+		- 要连接的服务器
+		- 用户标识符
+		- 密码
+	- 还必须指定参数的类型：SQL_NTS，表示前一个参数是以 null 结尾的字符串
+***
+#### Model
+
+```c title="ODBC Model"
+int ODBCexample() {
+    RETCODE error;
+    HENV env;     /* environment */
+    HDBC conn;     /* database connection */
+
+    SQLAllocEnv(&env);
+    SQLAllocConnect(env, &conn);
+    SQLConnect(conn, "db.yale.edu", SQL_NTS, "avi", SQL_NTS, "avipassswd", SQL_NTS);
+    {… Do actual work …}
+    
+    SQLDisconnect(conn);
+    SQLFreeConnect(conn);
+    SQLFreeEnv(env);
+}
+```
+
+- 程序使用 SQLExecDirect 向数据库发送 SQL 命令
+- 使用 SQLFetch() 获取结果元组
+- SQLBindCol() 将 C 语言变量绑定到查询结果的属性
+	- 当获取 Tuples 时，其 attribute 值会自动存储在相应的 C 变量中
+	- SQLBindCol() 的参数：
+		- ODBC stmt 变量，查询结果中的属性位置
+		- 从 SQL 到 C 的类型转换
+		- 变量的地址
+		- 对于字符数组等可变长度类型，
+			- 变量的最大长度
+			- 用于在获取元组时存储实际长度的位置
+			- 注： Length 字段返回负值表示该字段为 null 值
+***
+#### Actual Work
+
+```c title="Actual Work"
+char deptname[80];
+float salary;
+int lenOut1, lenOut2;
+HSTMT stmt;
+
+char * sqlquery = "SELECT dept_name, SUM(salary)"
+				  "FROM instructor"
+				  "GROUP BY dept_name";
+SQLAllocStmt(conn, &stmt);
+error = SQLExecDirect(stmt, sqlquery, SQL_NTS);
+if (error == SQL_SUCCESS) {
+	SQLBindCol(stmt, 1, SQL_C_CHAR, deptname, 80, &lenOut1);
+	SQLBindCol(stmt, 2, SQL_C_FLOAT, &salary, 0, &lenOut2);
+	while (SQLFetch(stmt) == SQL_SUCCESS) {
+		printf(" %s %g\n", deptname, salary);
+	}
+}
+SQLFreeStmt(stmt, SQL_DROP);
+```
+***
+#### ODBC Prepared Statements
+
+- 预备语句
+	- SQL 语句在数据库中已经编译好
+	- 可以有占位符：例如 `insert into account values(?,?,?)`
+	- 使用占位符的实际值重复执行
+- 使用 SQLPrepare() 准备预备语句
+	- `SQLPrepare(stmt, <SQL String>);`
+- 绑定参数
+	- `SQLBindParameter(stmt, <parameter#>, … type information and value omitted for simplicity..)`
+- 执行语句
+	- `retcode = SQLExecute(stmt);`
+***
+#### More ODBC Features
+
+- 元数据功能：
+	- 查找数据库中的所有关系，并在数据库中查找查询结果或关系的列的名称和类型
+- 默认情况下，每个 SQL 语句都被视为自动提交的单独事务
+	- 可以关闭连接上的自动提交
+		- SQLSetConnectOption(conn, SQL_AUTOCOMMIT, 0)
+	- 事务必须由 SQLTransact(conn, SQL_COMMIT) 或 SQLTransact(conn, SQL_ROLLBACK)
+***
+### Embedded SQL
+
+- SQL 标准定义了 SQL 在各种编程语言（如 C、C++、Java、Fortran 和 PL/1）中的嵌入
+- 嵌入 SQL 查询的语言称为主机语言，主机语言中允许的 SQL 结构包括嵌入式 SQL
+- 这些语言的基本形式遵循在操作系统 R 将 SQL 嵌入到 PL/1 中的形式
+- EXEC SQL 语句在主机语言中用于标识对预处理器的嵌入式 SQL 请求：
+	- `EXEC SQL <嵌入式 SQL 语句>;`
+	- 这样的语句因语言而异
+- 在某些语言（如 COBOL）中，分号被 END-EXEC 替换
+- 在 Java 中，嵌入使用 `#SQL { .... };`
+- 在执行任何 SQL 语句之前，程序必须首先连接到数据库
+- 这是通过以下方式完成的： 
+	- 使用密码的 EXEC-SQL 连接到服务器用户用户名;
+	- 此处，server 标识要建立连接的服务器
+- 主机语言的变量可以在嵌入式 SQL 语句中使用
+	- 它们前面有冒号以区别于SQL变量（例如 `:credit_amount`）
+- 如上所述使用的主机变量必须在 DECLARE 部分中声明，如下面所示。但是，用于声明变量的语法遵循通常的主机语言语法
+
+```sql title="Embedded SQL Example"
+EXEC SQL BEGIN DECLARE SECTION;
+	int account_number;
+	float credit_amount;
+EXEC SQL END DECLARE SECTION;
+```
 ***
