@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -2102,6 +2102,39 @@
   <a href="#resolver" class="md-nav__link">
     <span class="md-ellipsis">
       :: Resolver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computation-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computation Unit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computation Unit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      #include
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-automation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Automation Tools
     </span>
   </a>
   
@@ -6635,6 +6668,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#computation-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computation Unit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computation Unit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      #include
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-automation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Automation Tools
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6842,6 +6908,9 @@
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="p">...</span>
 </span></code></pre></div></td></tr></table></div>
 <p>这样就实现了对于成员变量的封装，只能通过成员函数来访问</p>
+<ul>
+<li>但是，仅仅靠 private 和 public 还是能让用户看到 struct 当中存在这些变量的，事实上还有一种 <a href="https://en.wikipedia.org/wiki/Pimpl">Pimpl Technique</a> 可以实现更好的封装，隐藏 private 的成员，但是这里不做展开</li>
+</ul>
 <hr />
 <h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
 <p>何为“对象”？在面向对象编程语言当中，对象可以抽象成两个部分：属性（Attributes）和服务（Services）</p>
@@ -6969,11 +7038,84 @@
 </span></code></pre></div></td></tr></table></div>
 <p>同样也能实现原样的功能：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250317141648.png" /></p>
-<p>需要注意的是，最好将类的声明和定义分开（就像我们这里使用 Point.h 来声明，用 Point.cpp 来定义具体功能），这样可以更好的维护代码</p>
+<ul>
+<li>需要注意的是，C++ 建议将类的声明和定义分开（就像我们这里使用 Point.h 来声明，用 Point.cpp 来定义具体功能），这样可以更好的维护代码<ul>
+<li>.h 文件就像是作者和使用者之间的合约，讲述了所有的函数、类、变量等等的声明，而所有的定义都在 .cpp 文件中</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317190006.png" /></p>
 </div>
 <hr />
 <h2 id="resolver"><code>::</code> Resolver<a class="headerlink" href="#resolver" title="Permanent link">&para;</a></h2>
-<p>在上面的例子中，我们使用了 <code>Point::</code> 来指定这个函数是属于 <code>Point</code> 这个类的，这个操作符叫做作用域解析运算符</p>
+<p>在上面的例子中，我们使用了 <code>Point::</code> 来指定这个函数是属于 <code>Point</code> 这个类的，这个操作符叫做作用域解析运算符，一般使用方法为 <code>Class::Function</code> 或 <code>Class::Attribute</code>，如果冒号前面没有类名，那么就是全局作用域</p>
+<hr />
+<h2 id="computation-unit">Computation Unit<a class="headerlink" href="#computation-unit" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在 C++ 中，一个 <code>.cpp</code> 文件就是一个编译单元（Computation Unit）<ul>
+<li>编译器会将 <code>.cpp</code> 文件编译成 <code>.obj</code> 文件</li>
+</ul>
+</li>
+<li>链接器会讲所有的 <code>.obj</code> 文件链接成一个可执行文件</li>
+<li>如果要在多个 <code>.cpp</code> 文件共享信息，可以使用 <code>.h</code> 文件</li>
+</ul>
+<h3 id="include"><code>#include</code><a class="headerlink" href="#include" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>#include</code> 指令会将 <code>.h</code> 文件的内容直接复制到 <code>.cpp</code> 文件中，一般来说有两种：<ul>
+<li><code>#include "xx.h"</code>，一般会在当前目录下寻找文件</li>
+<li><code>#include &lt;xx.h&gt;</code>，一般会在特定的目录下（取决于编译环境）寻找文件</li>
+</ul>
+</li>
+<li>以下是一个标准的头文件结构，里面的声明仅出现一次，这样可以避免头文件内容被多次包含，从而导致编译失败的问题</li>
+</ul>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">#ifndef HEADER_FLAG</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="cp">#define HEADER_FLAG</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1">// Type declaration here...</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="cp">#endif </span><span class="c1">// HEADER_FLAG</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>假设我们在上面的 "Point.h" 最上面加一行 <code>int globalx = 10;</code>，编译会出现以下情况：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317191339.png" /></p>
+<p>这是因为我们在 main.cpp 中 <code>#include "point.h"</code> 了一次，在 point.cpp 中又 <code>#include "point.h"</code> 了一次，所以编译器会认为 <code>globalx</code> 被定义了两次，所以会报错</p>
+<p>所以说我们在 .h 文件中一般只放声明（比如说 <code>extern int globalx;</code>），而在 .cpp 文件中放定义，这样可以避免这种情况的发生</p>
+<p>但是还有一种情况，如果我们还有一个 Line_segment.h 文件利用 point.h 实现线段（即在其中也要 <code>#include "point.h"</code>），那我们在 main.cpp 中如果同时使用这两个功能时，既要 <code>#include "point.h"</code> 又要 <code>#include "Line_segment.h"</code>，这样就会出现整个头文件被重复包含的情况</p>
+<p>为了更加保险，我们可以添加上面的头文件结构（称为 Safeguard），从而也避免这种情况的发生</p>
+</div>
+<hr />
+<h2 id="build-automation-tools">Build Automation Tools<a class="headerlink" href="#build-automation-tools" title="Permanent link">&para;</a></h2>
+<ul>
+<li>为了在工程中更好的管理代码，我们可以使用一些自动化工具来帮助我们编译代码<ul>
+<li>例如 <code>make</code>、<code>cmake</code> 等等</li>
+<li><code>cmake</code> 并非是一个构造系统，而是一个构建系统生成器，可以根据不同的构造系统生成不同的构建文件</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>例如我们将上面的 Point 用 cmake 来管理</p>
+<p>在目录下创建一个 CMakeLists.txt 文件：</p>
+<div class="language-cmake highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CMake</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">2.8.9</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nb">project</span><span class="p">(</span><span class="s">Point</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">Point</span><span class="w"> </span><span class="s">main.cpp</span><span class="w"> </span><span class="s">point.cpp</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>然后创建一个 build 文件夹，进入 build 文件夹：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317193138.png" /></p>
+<p>执行 <code>cmake ..</code>，根据外层目录的 CMakeLists.txt 文件生成 Makefile 文件：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317200351.png" /></p>
+<p>build 文件夹下会生成相关 <code>make</code> 文件：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317200507.png" /></p>
+<p>使用 <code>make</code> 命令编译即可生成：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317200751.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317200807.png" /></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250317200822.png" /></p>
+</div>
+<hr />
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -7043,7 +7185,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 17:19:21">2025年3月17日 17:19:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月17日 20:20:14">2025年3月17日 20:20:14</span>
   </span>
 
     
