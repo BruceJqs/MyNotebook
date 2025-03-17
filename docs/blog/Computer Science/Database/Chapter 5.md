@@ -386,7 +386,7 @@ SQLFreeStmt(stmt, SQL_DROP);
 	- `EXEC SQL <嵌入式 SQL 语句>;`
 	- 这样的语句因语言而异
 - 在某些语言（如 COBOL）中，分号被 END-EXEC 替换
-- 在 Java 中，嵌入使用 `#SQL { .... };`
+- 在 Java 中，嵌入使用 `#SQL { .... };` ；在 C 中，使用 `EXEC SQL <embedded SQL statement>;`
 - 在执行任何 SQL 语句之前，程序必须首先连接到数据库
 - 这是通过以下方式完成的： 
 	- 使用密码的 EXEC-SQL 连接到服务器用户用户名;
@@ -656,6 +656,12 @@ external name '/usr/avi/bin/dept_count';
 **触发器**（Trigger）是一种系统自动执行的语句，作为对数据库修改的“副作用”。要想定义一个触发器，需要：
 
 - 指定触发器何时执行——这点可以分解为检查触发器的**事件**（Event）
+	- 可以是插入、删除或更新
+	- 更新时的触发器可以限制为特定属性
+		- e.g. `after update of takes on grade`
+	- 可以引用更新之前和之后的属性值
+		- `referencing old row as`：可以用于删除和更新
+		- `referencing new row as`：可以用于插入和更新
 - 执行触发器需满足的**条件**（Condition）
 - 指定触发器需要执行的**动作**（Actions）
 
@@ -666,6 +672,140 @@ external name '/usr/avi/bin/dept_count';
 
 !!! example "Example"
 
+	=== "Example 01"
 	
+		对于一个表格 `account_log(account, amount, datetime)`
+		
+		```sql
+		create trigger account_trigger after update of account on balance
+		referencing new row as nrow
+		referencing old row as orow
+		for each row 
+		when nrow.balance - orow.balance >=200000 or
+			orow.balance - nrow.balance >=50000
+		begin
+			insert into account_log values (nrow.account-number, 
+									nrow.balance-orow.balance, current_time())
+		end
+		```
+	
+	=== "Example 02"
+	
+		- `time_slot_id 不是主键，因此我们无法创建从 section 到 timeslot 的外键约束，在删除操作中不会引起其他影响。但我们可以设计一个触发器，用来检查当前课程的 time_slot_id 是否在表内，在 section 和 timeslot 上使用触发器来实施完整性约束
+		
+		```sql
+		create trigger timeslot_check1 after insert on section
+		referencing new row as nrow
+		for each row
+		when (nrow.time_slot_id not in (
+		    select time_slot_id
+		    from time_slot /* time_slot_id not present in time_slot */
+		))
+		begin
+		    rollback
+		end;
+		```
+		
+		- `for each row` 子句能够显式迭代每一个被插入的行记录
+		- `referencing new row as` 子句创建一个**过渡变量**（Transition Variable），用于临时存储被插入的行记录
+		- `when` 语句指明了触发器的触发条件
+	
+	=== "Example 03"
+	
+		- `time_slot_id` 不是主键，所以当 time_slot_id 已经被删完了，但依然有课程在引用，就要 rollback
+		
+		```sql
+		create trigger timeslot_check2 after delete on timeslot
+		referencing old row as orow
+		for each row
+		when (orow.time_slot_id not in (
+		        select time_slot_id
+		        from time_slot
+		    ) 
+		    and orow.time_slot_id in (
+		        select time_slot_id
+		        from section
+		    )
+		)
+		begin
+			rollback
+		end;
+		```
+
+- 触发器可以在事件之前激活，这可以用作额外的约束
+
+!!! example "Example"
+
+	=== "Example 01"
+	
+		例如我们将空白的部分设置为 Null：
+		
+		```sql
+		create trigger setnull_trigger before update of takes  
+		referencing new row as nrow  
+		for each row  
+		when (nrow.grade = ‘ ‘)
+		begin atomic  
+			set nrow.grade = null;  
+		end;
+		```
+	
+	=== "Example 02"
+	
+		我们使用触发器来保持 `credits_earned` 的值，如果本来挂科，或者没有成绩，更新后不再挂科而且有成绩，就把学分加上去。
+		
+		```sql
+		create trigger credits_earned after update of takes on grade  
+		referencing new row as nrow  
+		referencing old row as orow  
+		for each row
+		when nrow.grade <> ’F’ and nrow.grade is not null  
+		    and (orow.grade = ’F’ or orow.grade is null)  
+		begin atomic  
+			update student
+			set tot_cred= tot_cred +  
+				(select credits
+				from course
+				where course.course_id= nrow.course_id)
+			where student.id = nrow.id;  
+		end;
+		```
+
+很多数据库系统还支持其他触发事件，比如用户登录数据库、系统关机、修改系统设置等。
+
+在上述例子中，可以看到触发器既可以在事件**发生前**执行，也可以在事件**发生后**执行。一般来说，前者作为一个额外的约束限制，不仅阻止非法行为引起的错误，还要采取补救措施，使语句变得合法。
+
+除了将触发器的动作一行行地应用到表中的每个行记录上，也可以将触发器一次性作用于满足 SQL 的所有行记录上，只要：
+
+- 将 `for each row` 改为 `for each statement`
+- 并且使用 `referencing old table as` 和 `referencing new table as` 来创建过渡表
+
+我们还可以决定启用或禁用触发器，相关语法为：`alter trigger trigger_name disable`
+
+- 有些数据库采用另一种语法：`disable trigger trigger_name`。
+
+此外，还可以删除触发器：`drop trigger trigger_name`。
+
+与函数 / 过程的语法类似，由于很多数据库系统在 SQL 相关标准建立前就广泛使用触发器了，因此几乎每个数据库系统都有自己的触发器语法，它们是互不兼容的
+***
+### When not to Use Triggers
+
+实际上，很多看似能够用触发器解决的问题， SQL 标准早已为我们提供了更方便的方法来解决这些问题，所以在以下场景中，没有必要使用触发器：
+
+- 维护实体化视图：现在很多数据库系统都支持自动维护了，因此无需使用触发器手动维护
+- 维护数据库的拷贝：理由同上
+- 从备份拷贝上加载数据，或备份地点上复制数据库更新
+
+编写触发器的时候需小心，因为在运行时，一个触发器的错误可能会触发下一个触发器，最严重的情况下会出现无限的连锁反应。解决方案有：
+
+- 某些数据库系统规定了最大的触发器链长度，超过限制就会报错
+- 另外的数据库系统则会根据触发器是否尝试引用更新后导致自身首先被触发的关系来判断是否产生错误
+
+
+
+
+
+
+
 
 
