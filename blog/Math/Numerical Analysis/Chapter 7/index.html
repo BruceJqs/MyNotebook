@@ -3406,21 +3406,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Eigenvalues and Eigenvectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#convergence-of-matrix-sequences" class="md-nav__link">
-    <span class="md-ellipsis">
-      Convergence of Matrix Sequences
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3437,6 +3422,33 @@
   <a href="#jacobi-iterative-method" class="md-nav__link">
     <span class="md-ellipsis">
       Jacobi Iterative Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauss-seidel-iterative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gauss-Seidel Iterative Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-of-matrix-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence of Matrix Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relaxation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relaxation Methods
     </span>
   </a>
   
@@ -6756,21 +6768,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Eigenvalues and Eigenvectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#convergence-of-matrix-sequences" class="md-nav__link">
-    <span class="md-ellipsis">
-      Convergence of Matrix Sequences
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -6787,6 +6784,33 @@
   <a href="#jacobi-iterative-method" class="md-nav__link">
     <span class="md-ellipsis">
       Jacobi Iterative Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauss-seidel-iterative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gauss-Seidel Iterative Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-of-matrix-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence of Matrix Sequences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relaxation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relaxation Methods
     </span>
   </a>
   
@@ -6934,18 +6958,6 @@
 </div>
 </div>
 <hr />
-<h3 id="convergence-of-matrix-sequences">Convergence of Matrix Sequences<a class="headerlink" href="#convergence-of-matrix-sequences" title="Permanent link">&para;</a></h3>
-<p>当满足以下条件时，矩阵<span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span>是收敛的：</p>
-<div class="arithmatex">\[\lim_{k\rightarrow\infty}(\mathbf{A}^k)_{ij}=\mathbf{0}\]</div>
-<p>以下命题是等价的：</p>
-<ol>
-<li>矩阵 <span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span> 是收敛的</li>
-<li><span class="arithmatex">\(\rho(\mathbf{A})&lt;1\)</span></li>
-<li>对于某些自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0\)</span></li>
-<li>对于任意的自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0\)</span></li>
-<li>对于每一个 <span class="arithmatex">\(\mathbf{x}\in\mathbf{R}^n\)</span>，有<span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\mathbf{A}^k\mathbf{x}=\mathbf{0}\)</span></li>
-</ol>
-<hr />
 <h2 id="iterative-techniques-for-solving-linear-systems">Iterative Techniques for Solving Linear Systems<a class="headerlink" href="#iterative-techniques-for-solving-linear-systems" title="Permanent link">&para;</a></h2>
 <h3 id="jacobi-iterative-method">Jacobi Iterative Method<a class="headerlink" href="#jacobi-iterative-method" title="Permanent link">&para;</a></h3>
 <p>对于线性方程组 <span class="arithmatex">\(\mathbf{A}\pmb{x}=\pmb{b}\)</span>，如果我们有 <span class="arithmatex">\(a_{ii}\not=0\)</span>，可以解得：</p>
@@ -6989,6 +7001,166 @@ x_n=\frac{1}{a_{nn}}(-a_{n1}x_1-\cdots-a_{n,n-1}x_{n-1}+b_n)
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Step</span><span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="n">Output</span><span class="w"> </span><span class="p">(</span><span class="n">Maximum</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">iterations</span><span class="w"> </span><span class="n">exceeded</span><span class="p">);</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">STOP</span><span class="p">.</span><span class="w">    </span><span class="cm">/* unsuccessful */</span>
 </span></code></pre></div></td></tr></table></div>
+</div>
+<hr />
+<h3 id="gauss-seidel-iterative-method">Gauss-Seidel Iterative Method<a class="headerlink" href="#gauss-seidel-iterative-method" title="Permanent link">&para;</a></h3>
+<p>我们可以改进 Jacobi 迭代法，使得每次迭代时，都使用已经算出来的 <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> 的元素来计算 <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> 之后的元素，我们看线性方程组的解：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+x_2^{(k)}&amp;=\frac{1}{a_{22}}(\textcolor{red}{-a_{21}x_1^{(k)}}-a_{23}x_3^{(k-1)}-a_{24}x_4^{(k-1)}-\cdots-a_{2n}x_n^{(k-1)}+b_2)\\
+x_3^{(k)}&amp;=\frac{1}{a_{33}}(\textcolor{red}{-a_{31}x_1^{(k)}-a_{32}x_2^{(k)}}-a_{34}x_4^{(k-1)}-\cdots-a_{3n}x_n^{(k-1)}+b_3)\\
+\cdots\\
+x_n^{(k)}&amp;=\frac{1}{a_{nn}}(\textcolor{red}{-a_{n1}x_1^{(k)}-a_{n2}x_2^{(k)}-a_{n3}x_3^{(k)}\cdots-a_{n,n-1}x_{n-1}^{(k)}}+b_n)
+\end{aligned}
+\]</div>
+<p>也就是说，我们可以利用下面的公式来计算 <span class="arithmatex">\(x_i^{(k)}\)</span>：</p>
+<div class="arithmatex">\[
+x_i^{(k)}=\frac{-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{ij}x_j^{(k-1)}+b_i}{a_{ii}}
+\]</div>
+<p>结合之前 <span class="arithmatex">\(\mathbf{D}\)</span>，<span class="arithmatex">\(\mathbf{L}\)</span>，<span class="arithmatex">\(\mathbf{U}\)</span> 的定义，我们可以得到：</p>
+<div class="arithmatex">\[(\mathbf{D}-\mathbf{L})\mathbf{x}^{(k)}=\mathbf{U}\mathbf{x}^{(k-1)}+\mathbf{b}\]</div>
+<p>即：</p>
+<div class="arithmatex">\[\mathbf{x}^{(k)}=(\mathbf{D}-\mathbf{L})^{-1}\mathbf{U}\mathbf{x}^{(k-1)}+(\mathbf{D}-\mathbf{L})^{-1}\mathbf{b}\]</div>
+<p>引入符号 <span class="arithmatex">\(\mathbf{T}_{g}=(\mathbf{D}-\mathbf{L})^{-1}\mathbf{U}\)</span>，<span class="arithmatex">\(\mathbf{c}_{g}=(\mathbf{D}-\mathbf{L})^{-1}\mathbf{b}\)</span>，则 <span class="arithmatex">\(\mathbf{x}=\mathbf{T}_{g}\mathbf{x}^{(k-1)}+\mathbf{c}_{g}\)</span></p>
+<p>其中 <span class="arithmatex">\(\mathbf{T}_{g}\)</span> 被称为 Gauss-Seidel 迭代矩阵（Gauss-Seidel Iteration Matrix）</p>
+<hr />
+<h3 id="convergence-of-matrix-sequences">Convergence of Matrix Sequences<a class="headerlink" href="#convergence-of-matrix-sequences" title="Permanent link">&para;</a></h3>
+<p>当满足以下条件时，矩阵<span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span>是收敛的：</p>
+<div class="arithmatex">\[\lim_{k\rightarrow\infty}(\mathbf{A}^k)_{ij}=\mathbf{0}\]</div>
+<p>考虑我们上面得到的迭代式：<span class="arithmatex">\(\mathbf{x}^{(k)}=\mathbf{T}\mathbf{x}^{(k-1)}+\mathbf{c}\)</span></p>
+<p>我们可以得到：</p>
+<div class="arithmatex">\[
+\textcolor{red}{e^{(k)}}=\mathbf{x}^{(k)}-\mathbf{x}^*=\mathbf{T}(\mathbf{x}^{(k-1)}-\mathbf{x})=\textcolor{red}{\mathbf{T}e^{(k-1)}}
+\]</div>
+<p>根据上面的式子，我们有 <span class="arithmatex">\(\mathbf{e}^{(k)}=\mathbf{T}^k\mathbf{e}^{(0)}\)</span> ，因此：</p>
+<div class="arithmatex">\[
+\|e^{(k)}\|\leq\|\mathbf{T}\|·\|e^{(k-1)}\|\leq\cdots\leq\|\mathbf{T}\|^k\|e^{(0)}\|
+\]</div>
+<ul>
+<li>充分条件：<span class="arithmatex">\(\|\mathbf{T}\|&lt;1\Rightarrow\|\mathbf{T}\|^k\rightarrow 0\text{ as }k\rightarrow\infty\)</span></li>
+<li>必要条件：<span class="arithmatex">\(\pmb{e}^{(k)}\rightarrow\pmb{0}\text{ as }k\rightarrow\infty\Rightarrow\mathbf{T}^k\rightarrow\mathbf{O}\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Theorems</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Theorem 01</label><label for="__tabbed_1_2">Theorem 02</label><label for="__tabbed_1_3">Theorem 03</label><label for="__tabbed_1_4">Theorem 04</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>以下命题是等价的：</p>
+<ol>
+<li>矩阵 <span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span> 是收敛的</li>
+<li><span class="arithmatex">\(\rho(\mathbf{A})&lt;1\)</span></li>
+<li>对于某些自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0\)</span></li>
+<li>对于任意的自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0\)</span></li>
+<li>对于每一个 <span class="arithmatex">\(\mathbf{x}\in\mathbf{R}^n\)</span>，有<span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\mathbf{A}^k\mathbf{x}=\mathbf{0}\)</span></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(\forall\pmb{x}^{(0)}\in\mathbf{R}^n\)</span>，由 <span class="arithmatex">\(\mathbf{x}^{(k)}=\mathbf{T}\mathbf{x}^{(k-1)}+\mathbf{c}\)</span> 定义的序列 <span class="arithmatex">\(\{\pmb{x}^{(k)}\}_{k=0}^{\infty}\)</span>，当且仅当 <span class="arithmatex">\(\rho(\mathbf{T})&lt;1\)</span> 时，会收敛到 <span class="arithmatex">\(\pmb{x}=\mathbf{T}\pmb{x}+\pmb{c}\)</span> 的唯一解</p>
+<details class="note">
+<summary>Proof</summary>
+<p><span class="arithmatex">\(\Leftarrow\)</span>：</p>
+<p>设 <span class="arithmatex">\(\rho(\mathbf{T})&lt;1\)</span>，那么</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathbf{x}^{(k)}=&amp;\mathbf{Tx}^{(k-1)}+\mathbf{c}\\
+=&amp;\mathbf{T}(\mathbf{Tx}^{(k-2)}+\mathbf{c})+\mathbf{c}\\
+=&amp;\mathbf{T}^2\mathbf{x}^{(k-2)}+(\mathbf{T}+\mathbf{I})\mathbf{c}\\
+\vdots&amp;\\
+=&amp;\mathbf{T}^k\mathbf{x}^{(0)}+(\mathbf{T}^{k-1}+\mathbf{T}^{k-2}+\cdots+\mathbf{T}+\mathbf{I})\mathbf{c}\\
+\end{aligned}
+\]</div>
+<p>由于 <span class="arithmatex">\(\rho(\mathbf{T})&lt;1\)</span>，所以矩阵 <span class="arithmatex">\(\mathbf{T}\)</span> 是收敛的，且 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\mathbf{T}^k\mathbf{x}^{(0)}=\mathbf{0}\)</span></p>
+<p>由于 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}(\mathbf{T}^{k-1}+\mathbf{T}^{k-2}+\cdots+\mathbf{T}+\mathbf{I})\mathbf{c}=(\mathbf{I}-\mathbf{T})^{-1}\mathbf{c}\)</span>，所以 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\mathbf{x}^{(k)}=(\mathbf{I}-\mathbf{T})^{-1}\mathbf{c}=\mathbf{x}\)</span>，这里的 <span class="arithmatex">\(\mathbf{x}\)</span> 就是<span class="arithmatex">\(\mathbf{x}=\mathbf{Tx}+\mathbf{c}\)</span> 的唯一解</p>
+<p><span class="arithmatex">\(\Rightarrow\)</span>：</p>
+<p>设 <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=0}^\infty\)</span> 收敛到<span class="arithmatex">\(\mathbf{x}=\mathbf{Tx}+\mathbf{c}\)</span>的唯一解，取任意一个向量<span class="arithmatex">\(\mathbf{y}\in\mathbf{R}^n\)</span>，定义 <span class="arithmatex">\(\mathbf{x}^{(0)}=\mathbf{x}-\mathbf{y}\)</span>，那么</p>
+<div class="arithmatex">\[
+\mathbf{x}-\mathbf{x}^{(k)}=(\mathbf{Tx}+\mathbf{c})-(\mathbf{Tx}^{(k-1)}+\mathbf{c})=\mathbf{T}(\mathbf{x}-\mathbf{x}^{(k-1)})
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+\mathbf{x}-\mathbf{x}^{(k)}=\mathbf{T}^k(\mathbf{x}-\mathbf{x}^{(0)})=\mathbf{T}^k\mathbf{y}
+\]</div>
+<p>因此</p>
+<div class="arithmatex">\[
+\lim_{k\rightarrow\infty}\mathbf{T}^k\mathbf{y}=\lim_{k\rightarrow\infty}(\mathbf{x}-\mathbf{x}^{(k)})=\mathbf{0}
+\]</div>
+<p>由于 <span class="arithmatex">\(\mathbf{y}\)</span> 是任意的，根据矩阵的收敛性，<span class="arithmatex">\(\rho(\mathbf{T})&lt;1\)</span></p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果对任意自然矩阵范数 <span class="arithmatex">\(\|\mathbf{T}\|&lt;1\)</span>，<span class="arithmatex">\(\mathbf{c}\)</span> 是给定的向量，那么由<span class="arithmatex">\(\mathbf{x}^{(k+1)}=\mathbf{Tx}^{(k)}+\mathbf{c}\)</span> 定义的序列 <span class="arithmatex">\(\{\mathbf{x}^{(k)}\}_{k=0}^\infty\)</span> 收敛到 <span class="arithmatex">\(\mathbf{x}=\mathbf{Tx}+\mathbf{c}\)</span> 的唯一解，且有误差界：</p>
+<ul>
+<li><span class="arithmatex">\(\|\mathbf{x}-\mathbf{x}^{(k)}\|\leq\|\mathbf{T}\|^k\|\mathbf{x}^{(0)}-\mathbf{x}\|\)</span><ul>
+<li><span class="arithmatex">\(\|\mathbf{x}-\mathbf{x}^{(k)}\|\approx\rho(\mathbf{T})^k\|\mathbf{x}^{(0)}-\mathbf{x}\|\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\|\mathbf{x}-\mathbf{x}^{(k)}\|\leq\frac{\|\mathbf{T}\|^k}{1-\|\mathbf{T}\|}\|\mathbf{x}^{(1)}-\mathbf{x}^{(0)}\|\)</span></li>
+</ul>
+<p>通过第二个式子，我们可以根据我们要的精度算出迭代次数 <span class="arithmatex">\(k\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>如果 <span class="arithmatex">\(\mathbf{A}\)</span> 是一个严格对角占优矩阵，那么对于任意选择的初始近似解 <span class="arithmatex">\(x^{(0)}\)</span>，无论使用 Jacobi 方法还是 Gauss-Seidel 方法，都可以让序列 <span class="arithmatex">\(\{\pmb{x}^{(k)}\}_{k=0}^{\infty}\)</span>​ 收敛到 <span class="arithmatex">\(\mathbf{A}\pmb{x}=\pmb{b}\)</span> 的唯一解</p>
+<details class="note">
+<summary>Proof(Hint)</summary>
+<p>只需证明 <span class="arithmatex">\(\forall|\lambda|\geq 1\)</span>，有 <span class="arithmatex">\(|\lambda I−T|\not=0\)</span>。也就是说，<span class="arithmatex">\(\lambda\)</span> 不能称为对应迭代矩阵 <span class="arithmatex">\(T\)</span> 的特征值</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="relaxation-methods">Relaxation Methods<a class="headerlink" href="#relaxation-methods" title="Permanent link">&para;</a></h3>
+<p>我们从剩余向量的视角来看 Gauss-Seidel 迭代法：</p>
+<p>$$
+\begin{aligned}
+x_i<sup i-1="i-1">{(k)}&amp;=\frac{-\sum\limits_{j=1}</sup>x_j}a_{ij<sup>{(k)}-\sum\limits_{j=i+1}</sup>na_{ij}x_j^{(k-1)}+b_i}{a_{ii}} \
+&amp;=x_i<sup i-1="i-1">{(k-1)}+\frac{1}{a_{ii}}(b_i-\sum\limits_{j=1}</sup>x_j}a_{ij<sup>{(k)}-\sum\limits_{j=i}</sup>na_{ij}x_j^{(k-1)}) \
+&amp;=x_i<sup _k_="(k)">{(k-1)}+\frac{r_i</sup>
+\end{aligned}
+$$
+我们可以添加一个参数 }}{a_{ii}<span class="arithmatex">\(\omega\)</span>，使得</p>
+<div class="arithmatex">\[
+x_i^{(k)}=x_i^{(k-1)}+\omega\frac{r_i^{(k)}}{a_{ii}}
+\]</div>
+<p>这就是松弛法的基本思想，可以用来减少剩余向量的范数和加速收敛</p>
+<p>根据 <span class="arithmatex">\(\omega\)</span> 的取值，松弛法可以分为：</p>
+<ol>
+<li><span class="arithmatex">\(\omega&lt;1\)</span>：欠松弛法（Under-Relaxation Methods）；可使由 Gauss-Seidel 方法不能收敛的方程组收敛；</li>
+<li><span class="arithmatex">\(\omega=1\)</span>：退化为 Gauss-Seidel 迭代法；</li>
+<li><span class="arithmatex">\(\omega&gt;1\)</span>：超松弛法（Successive Over-Relaxation Methods, SOR）；可使收敛速度加快</li>
+</ol>
+<p>用矩阵形式可以表述为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+x_i^{(k)}&amp;=x_i^{(k-1)}+\omega\frac{r_i^{(k)}}{a_{ii}}\\
+&amp;=x_i^{(k-1)}+\frac{\omega}{a_{ii}}(b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i}^na_{ij}x_j^{(k-1)}) \\
+&amp;=(1-\omega)x_i^{(k-1)}+\frac{\omega}{a_{ii}}(b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{ij}x_j^{(k-1)}) \\
+\Rightarrow\mathbf{x}^{(k)}&amp;=(1-\omega)\mathbf{x}^{(k-1)}+\omega\mathbf{D}^{-1}(\mathbf{b}+\mathbf{L}\mathbf{x}^{(k)}+\mathbf{U}\mathbf{x}^{(k-1)}) \\
+(\mathbf{I}-\omega\mathbf{D}^{-1}\mathbf{L})\mathbf{x}^{(k)}&amp;=((1-\omega)\mathbf{I}+\omega\mathbf{D}^{-1}\mathbf{U})\mathbf{x}^{(k-1)}+\omega\mathbf{D}^{-1}\mathbf{b} \\
+\mathbf{x}^{(k)}&amp;=(\mathbf{I}-\omega\mathbf{D}^{-1}\mathbf{L})^{-1}((1-\omega)\mathbf{I}+\omega\mathbf{D}^{-1}\mathbf{U})\mathbf{x}^{(k-1)}+(\mathbf{I}-\omega\mathbf{D}^{-1}\mathbf{L})^{-1}\omega\mathbf{D}^{-1}\mathbf{b} \\
+\mathbf{x}^{(k)}&amp;=(\mathbf{D}-\omega\mathbf{L})^{-1}((1-\omega)\mathbf{D}+\omega\mathbf{U})\mathbf{x}^{(k-1)}+\omega(\mathbf{D}-\omega\mathbf{L})^{-1}\mathbf{b} \\
+\end{aligned}
+\]</div>
+<p>记 <span class="arithmatex">\(\mathbf{T}_{\omega}=(\mathbf{D}-\omega\mathbf{L})^{-1}((1-\omega)\mathbf{D}+\omega\mathbf{U})\)</span>，<span class="arithmatex">\(\mathbf{c}_{\omega}=\omega(\mathbf{D}-\omega\mathbf{L})^{-1}\mathbf{b}\)</span>，则 SOR 方法的迭代格式为<span class="arithmatex">\(\mathbf{x}^{(k)}=\mathbf{T}_{\omega}\mathbf{x}^{(k-1)}+\mathbf{c}_{\omega}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Theorems</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Theorem 01</label><label for="__tabbed_2_2">Theorem 02</label><label for="__tabbed_2_3">Theorem 03</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Kahan 定理：如果 <span class="arithmatex">\(a_{ii}\neq 0(i=1,2,\cdots,n)\)</span>，那么 <span class="arithmatex">\(\rho(\mathbf{T}_{\omega})\geq|\omega-1|\)</span>。这表明，SOR 方法当且仅当 <span class="arithmatex">\(\omega\in(0,2)\)</span> 时收敛</p>
+</div>
+<div class="tabbed-block">
+<p>Ostrowski-Reich 定理：如果 <span class="arithmatex">\(\mathbf{A}\)</span> 是一个正定矩阵，并且 <span class="arithmatex">\(\omega\in(0,2)\)</span>，那么 SOR 方法对于任意的初始近似向量 <span class="arithmatex">\(\mathbf{x}^{(0)}\in\mathbf{R}^n\)</span> 都收敛</p>
+</div>
+<div class="tabbed-block">
+<p>如果 <span class="arithmatex">\(\mathbf{A}\)</span> 是一个正定的三对角矩阵，那么 <span class="arithmatex">\(\rho(\mathbf{T}_{g})=[\rho(\mathbf{T}_{j})]^2&lt;1\)</span>，并且 SOR 方法的最佳 <span class="arithmatex">\(\omega\)</span> 选择是：</p>
+<div class="arithmatex">\[
+\omega_{\text{opt}}=\frac{2}{1+\sqrt{1-[\rho(\mathbf{T}_{j})]^2}}
+\]</div>
+<p>由此选择的 <span class="arithmatex">\(\omega\)</span>，有 <span class="arithmatex">\(\rho(\mathbf{T}_{\omega})=\omega-1\)</span></p>
+</div>
+</div>
+</div>
 </div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -7059,7 +7231,7 @@ x_n=\frac{1}{a_{nn}}(-a_{n1}x_1-\cdots-a_{n,n-1}x_{n-1}+b_n)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月19日 14:15:50">2025年3月19日 14:15:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月19日 15:21:33">2025年3月19日 15:21:33</span>
   </span>
 
     
