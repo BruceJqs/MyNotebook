@@ -118,20 +118,6 @@ $\mathbf{A}\in\mathbf{R}^{n\times n}$ 的谱半径定义为 $\rho(\mathbf{A})=\m
 		$$
 		
 ***
-### Convergence of Matrix Sequences
-
-当满足以下条件时，矩阵$\mathbf{A}\in\mathbf{R}^{n\times n}$是收敛的：
-
-$$\lim_{k\rightarrow\infty}(\mathbf{A}^k)_{ij}=\mathbf{0}$$
-
-以下命题是等价的：
-
-1. 矩阵 $\mathbf{A}\in\mathbf{R}^{n\times n}$ 是收敛的
-2. $\rho(\mathbf{A})<1$
-3. 对于某些自然范数 $\|\cdot\|$，有 $\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0$
-4. 对于任意的自然范数 $\|\cdot\|$，有 $\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0$
-5. 对于每一个 $\mathbf{x}\in\mathbf{R}^n$，有$\lim\limits_{k\rightarrow\infty}\mathbf{A}^k\mathbf{x}=\mathbf{0}$
-***
 ## Iterative Techniques for Solving Linear Systems
 
 ### Jacobi Iterative Method
@@ -176,6 +162,203 @@ $$
 	Step 7  Output (Maximum number of iterations exceeded);
 	        STOP.    /* unsuccessful */
 	```
+***
+### Gauss-Seidel Iterative Method
+
+我们可以改进 Jacobi 迭代法，使得每次迭代时，都使用已经算出来的 $\mathbf{x}^{(k)}$ 的元素来计算 $\mathbf{x}^{(k)}$ 之后的元素，我们看线性方程组的解：
+
+$$
+\begin{aligned}
+x_2^{(k)}&=\frac{1}{a_{22}}(\textcolor{red}{-a_{21}x_1^{(k)}}-a_{23}x_3^{(k-1)}-a_{24}x_4^{(k-1)}-\cdots-a_{2n}x_n^{(k-1)}+b_2)\\
+x_3^{(k)}&=\frac{1}{a_{33}}(\textcolor{red}{-a_{31}x_1^{(k)}-a_{32}x_2^{(k)}}-a_{34}x_4^{(k-1)}-\cdots-a_{3n}x_n^{(k-1)}+b_3)\\
+\cdots\\
+x_n^{(k)}&=\frac{1}{a_{nn}}(\textcolor{red}{-a_{n1}x_1^{(k)}-a_{n2}x_2^{(k)}-a_{n3}x_3^{(k)}\cdots-a_{n,n-1}x_{n-1}^{(k)}}+b_n)
+\end{aligned}
+$$
+
+也就是说，我们可以利用下面的公式来计算 $x_i^{(k)}$：
+
+$$
+x_i^{(k)}=\frac{-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{ij}x_j^{(k-1)}+b_i}{a_{ii}}
+$$
+
+结合之前 $\mathbf{D}$，$\mathbf{L}$，$\mathbf{U}$ 的定义，我们可以得到：
+
+$$(\mathbf{D}-\mathbf{L})\mathbf{x}^{(k)}=\mathbf{U}\mathbf{x}^{(k-1)}+\mathbf{b}$$
+
+即：
+
+$$\mathbf{x}^{(k)}=(\mathbf{D}-\mathbf{L})^{-1}\mathbf{U}\mathbf{x}^{(k-1)}+(\mathbf{D}-\mathbf{L})^{-1}\mathbf{b}$$
+
+引入符号 $\mathbf{T}_{g}=(\mathbf{D}-\mathbf{L})^{-1}\mathbf{U}$，$\mathbf{c}_{g}=(\mathbf{D}-\mathbf{L})^{-1}\mathbf{b}$，则 $\mathbf{x}=\mathbf{T}_{g}\mathbf{x}^{(k-1)}+\mathbf{c}_{g}$
+
+其中 $\mathbf{T}_{g}$ 被称为 Gauss-Seidel 迭代矩阵（Gauss-Seidel Iteration Matrix）
+***
+### Convergence of Matrix Sequences
+
+当满足以下条件时，矩阵$\mathbf{A}\in\mathbf{R}^{n\times n}$是收敛的：
+
+$$\lim_{k\rightarrow\infty}(\mathbf{A}^k)_{ij}=\mathbf{0}$$
+
+考虑我们上面得到的迭代式：$\mathbf{x}^{(k)}=\mathbf{T}\mathbf{x}^{(k-1)}+\mathbf{c}$
+
+我们可以得到：
+
+$$
+\textcolor{red}{e^{(k)}}=\mathbf{x}^{(k)}-\mathbf{x}^*=\mathbf{T}(\mathbf{x}^{(k-1)}-\mathbf{x})=\textcolor{red}{\mathbf{T}e^{(k-1)}}
+$$
+
+根据上面的式子，我们有 $\mathbf{e}^{(k)}=\mathbf{T}^k\mathbf{e}^{(0)}$ ，因此：
+
+$$
+\|e^{(k)}\|\leq\|\mathbf{T}\|·\|e^{(k-1)}\|\leq\cdots\leq\|\mathbf{T}\|^k\|e^{(0)}\|
+$$
+
+- 充分条件：$\|\mathbf{T}\|<1\Rightarrow\|\mathbf{T}\|^k\rightarrow 0\text{ as }k\rightarrow\infty$
+- 必要条件：$\pmb{e}^{(k)}\rightarrow\pmb{0}\text{ as }k\rightarrow\infty\Rightarrow\mathbf{T}^k\rightarrow\mathbf{O}$
+
+!!! note "Theorems"
+
+	=== "Theorem 01"
+	
+		以下命题是等价的：
+		
+		1. 矩阵 $\mathbf{A}\in\mathbf{R}^{n\times n}$ 是收敛的
+		2. $\rho(\mathbf{A})<1$
+		3. 对于某些自然范数 $\|\cdot\|$，有 $\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0$
+		4. 对于任意的自然范数 $\|\cdot\|$，有 $\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0$
+		5. 对于每一个 $\mathbf{x}\in\mathbf{R}^n$，有$\lim\limits_{k\rightarrow\infty}\mathbf{A}^k\mathbf{x}=\mathbf{0}$
+	
+	=== "Theorem 02"
+	
+		$\forall\pmb{x}^{(0)}\in\mathbf{R}^n$，由 $\mathbf{x}^{(k)}=\mathbf{T}\mathbf{x}^{(k-1)}+\mathbf{c}$ 定义的序列 $\{\pmb{x}^{(k)}\}_{k=0}^{\infty}$，当且仅当 $\rho(\mathbf{T})<1$ 时，会收敛到 $\pmb{x}=\mathbf{T}\pmb{x}+\pmb{c}$ 的唯一解
+		
+		??? note "Proof"
+		
+			$\Leftarrow$：
+	
+		    设 $\rho(\mathbf{T})<1$，那么
+			
+		    $$
+		    \begin{aligned}
+		    \mathbf{x}^{(k)}=&\mathbf{Tx}^{(k-1)}+\mathbf{c}\\
+		    =&\mathbf{T}(\mathbf{Tx}^{(k-2)}+\mathbf{c})+\mathbf{c}\\
+		    =&\mathbf{T}^2\mathbf{x}^{(k-2)}+(\mathbf{T}+\mathbf{I})\mathbf{c}\\
+		    \vdots&\\
+		    =&\mathbf{T}^k\mathbf{x}^{(0)}+(\mathbf{T}^{k-1}+\mathbf{T}^{k-2}+\cdots+\mathbf{T}+\mathbf{I})\mathbf{c}\\
+		    \end{aligned}
+		    $$
+			
+		    由于 $\rho(\mathbf{T})<1$，所以矩阵 $\mathbf{T}$ 是收敛的，且 $\lim\limits_{k\rightarrow\infty}\mathbf{T}^k\mathbf{x}^{(0)}=\mathbf{0}$
+		    
+		    由于 $\lim\limits_{k\rightarrow\infty}(\mathbf{T}^{k-1}+\mathbf{T}^{k-2}+\cdots+\mathbf{T}+\mathbf{I})\mathbf{c}=(\mathbf{I}-\mathbf{T})^{-1}\mathbf{c}$，所以 $\lim\limits_{k\rightarrow\infty}\mathbf{x}^{(k)}=(\mathbf{I}-\mathbf{T})^{-1}\mathbf{c}=\mathbf{x}$，这里的 $\mathbf{x}$ 就是$\mathbf{x}=\mathbf{Tx}+\mathbf{c}$ 的唯一解
+			
+		    $\Rightarrow$：
+			
+		    设 $\{\mathbf{x}^{(k)}\}_{k=0}^\infty$ 收敛到$\mathbf{x}=\mathbf{Tx}+\mathbf{c}$的唯一解，取任意一个向量$\mathbf{y}\in\mathbf{R}^n$，定义 $\mathbf{x}^{(0)}=\mathbf{x}-\mathbf{y}$，那么
+		    
+			$$
+			\mathbf{x}-\mathbf{x}^{(k)}=(\mathbf{Tx}+\mathbf{c})-(\mathbf{Tx}^{(k-1)}+\mathbf{c})=\mathbf{T}(\mathbf{x}-\mathbf{x}^{(k-1)})
+			$$
+			
+		    所以
+			
+		    $$
+		    \mathbf{x}-\mathbf{x}^{(k)}=\mathbf{T}^k(\mathbf{x}-\mathbf{x}^{(0)})=\mathbf{T}^k\mathbf{y}
+		    $$
+		
+		    因此
+			
+		    $$
+		    \lim_{k\rightarrow\infty}\mathbf{T}^k\mathbf{y}=\lim_{k\rightarrow\infty}(\mathbf{x}-\mathbf{x}^{(k)})=\mathbf{0}
+		    $$
+		
+		    由于 $\mathbf{y}$ 是任意的，根据矩阵的收敛性，$\rho(\mathbf{T})<1$
+	
+	=== "Theorem 03"
+	
+		如果对任意自然矩阵范数 $\|\mathbf{T}\|<1$，$\mathbf{c}$ 是给定的向量，那么由$\mathbf{x}^{(k+1)}=\mathbf{Tx}^{(k)}+\mathbf{c}$ 定义的序列 $\{\mathbf{x}^{(k)}\}_{k=0}^\infty$ 收敛到 $\mathbf{x}=\mathbf{Tx}+\mathbf{c}$ 的唯一解，且有误差界：
+
+		- $\|\mathbf{x}-\mathbf{x}^{(k)}\|\leq\|\mathbf{T}\|^k\|\mathbf{x}^{(0)}-\mathbf{x}\|$
+			- $\|\mathbf{x}-\mathbf{x}^{(k)}\|\approx\rho(\mathbf{T})^k\|\mathbf{x}^{(0)}-\mathbf{x}\|$
+		- $\|\mathbf{x}-\mathbf{x}^{(k)}\|\leq\frac{\|\mathbf{T}\|^k}{1-\|\mathbf{T}\|}\|\mathbf{x}^{(1)}-\mathbf{x}^{(0)}\|$
+		
+		通过第二个式子，我们可以根据我们要的精度算出迭代次数 $k$
+	
+	=== "Theorem 04"
+	
+		如果 $\mathbf{A}$ 是一个严格对角占优矩阵，那么对于任意选择的初始近似解 $x^{(0)}$，无论使用 Jacobi 方法还是 Gauss-Seidel 方法，都可以让序列 $\{\pmb{x}^{(k)}\}_{k=0}^{\infty}$​ 收敛到 $\mathbf{A}\pmb{x}=\pmb{b}$ 的唯一解
+		
+		??? note "Proof(Hint)"
+		
+			只需证明 $\forall|\lambda|\geq 1$，有 $|\lambda I−T|\not=0$。也就是说，$\lambda$ 不能称为对应迭代矩阵 $T$ 的特征值
+***
+### Relaxation Methods
+
+我们从剩余向量的视角来看 Gauss-Seidel 迭代法：
+
+$$
+\begin{aligned}
+x_i^{(k)}&=\frac{-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{ij}x_j^{(k-1)}+b_i}{a_{ii}} \\
+&=x_i^{(k-1)}+\frac{1}{a_{ii}}(b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i}^na_{ij}x_j^{(k-1)}) \\
+&=x_i^{(k-1)}+\frac{r_i^{(k)}}{a_{ii}}
+\end{aligned}
+$$
+我们可以添加一个参数 $\omega$，使得
+
+$$
+x_i^{(k)}=x_i^{(k-1)}+\omega\frac{r_i^{(k)}}{a_{ii}}
+$$
+
+这就是松弛法的基本思想，可以用来减少剩余向量的范数和加速收敛
+
+根据 $\omega$ 的取值，松弛法可以分为：
+
+1. $\omega<1$：欠松弛法（Under-Relaxation Methods）；可使由 Gauss-Seidel 方法不能收敛的方程组收敛；
+2. $\omega=1$：退化为 Gauss-Seidel 迭代法；
+3. $\omega>1$：超松弛法（Successive Over-Relaxation Methods, SOR）；可使收敛速度加快
+
+用矩阵形式可以表述为：
+
+$$
+\begin{aligned}
+x_i^{(k)}&=x_i^{(k-1)}+\omega\frac{r_i^{(k)}}{a_{ii}}\\
+&=x_i^{(k-1)}+\frac{\omega}{a_{ii}}(b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i}^na_{ij}x_j^{(k-1)}) \\
+&=(1-\omega)x_i^{(k-1)}+\frac{\omega}{a_{ii}}(b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{ij}x_j^{(k-1)}) \\
+\Rightarrow\mathbf{x}^{(k)}&=(1-\omega)\mathbf{x}^{(k-1)}+\omega\mathbf{D}^{-1}(\mathbf{b}+\mathbf{L}\mathbf{x}^{(k)}+\mathbf{U}\mathbf{x}^{(k-1)}) \\
+(\mathbf{I}-\omega\mathbf{D}^{-1}\mathbf{L})\mathbf{x}^{(k)}&=((1-\omega)\mathbf{I}+\omega\mathbf{D}^{-1}\mathbf{U})\mathbf{x}^{(k-1)}+\omega\mathbf{D}^{-1}\mathbf{b} \\
+\mathbf{x}^{(k)}&=(\mathbf{I}-\omega\mathbf{D}^{-1}\mathbf{L})^{-1}((1-\omega)\mathbf{I}+\omega\mathbf{D}^{-1}\mathbf{U})\mathbf{x}^{(k-1)}+(\mathbf{I}-\omega\mathbf{D}^{-1}\mathbf{L})^{-1}\omega\mathbf{D}^{-1}\mathbf{b} \\
+\mathbf{x}^{(k)}&=(\mathbf{D}-\omega\mathbf{L})^{-1}((1-\omega)\mathbf{D}+\omega\mathbf{U})\mathbf{x}^{(k-1)}+\omega(\mathbf{D}-\omega\mathbf{L})^{-1}\mathbf{b} \\
+\end{aligned}
+$$
+
+记 $\mathbf{T}_{\omega}=(\mathbf{D}-\omega\mathbf{L})^{-1}((1-\omega)\mathbf{D}+\omega\mathbf{U})$，$\mathbf{c}_{\omega}=\omega(\mathbf{D}-\omega\mathbf{L})^{-1}\mathbf{b}$，则 SOR 方法的迭代格式为$\mathbf{x}^{(k)}=\mathbf{T}_{\omega}\mathbf{x}^{(k-1)}+\mathbf{c}_{\omega}$
+
+!!! note "Theorems"
+
+	=== "Theorem 01"
+	
+		Kahan 定理：如果 $a_{ii}\neq 0(i=1,2,\cdots,n)$，那么 $\rho(\mathbf{T}_{\omega})\geq|\omega-1|$。这表明，SOR 方法当且仅当 $\omega\in(0,2)$ 时收敛
+	
+	=== "Theorem 02"
+	
+		Ostrowski-Reich 定理：如果 $\mathbf{A}$ 是一个正定矩阵，并且 $\omega\in(0,2)$，那么 SOR 方法对于任意的初始近似向量 $\mathbf{x}^{(0)}\in\mathbf{R}^n$ 都收敛
+	
+	=== "Theorem 03"
+	
+		如果 $\mathbf{A}$ 是一个正定的三对角矩阵，那么 $\rho(\mathbf{T}_{g})=[\rho(\mathbf{T}_{j})]^2<1$，并且 SOR 方法的最佳 $\omega$ 选择是：
+		
+		$$
+		\omega_{\text{opt}}=\frac{2}{1+\sqrt{1-[\rho(\mathbf{T}_{j})]^2}}
+		$$
+		
+		由此选择的 $\omega$，有 $\rho(\mathbf{T}_{\omega})=\omega-1$
+
+
+
+
+
+
 
 
 
