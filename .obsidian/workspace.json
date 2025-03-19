@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 7"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 7.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 7"
             }
           },
           {
@@ -178,17 +178,25 @@
   },
   "active": "619dd36446ae8e8b",
   "lastOpenFiles": [
-    "docs/blog/Math/Numerical Analysis/Homework 4.md",
+    "docs/assets/Pasted image 20250319112403.png",
+    "docs/assets/Pasted image 20250319112354.png",
+    "docs/assets/Pasted image 20250319112238.png",
+    "docs/blog/Research/Seedlab/Tutorial.md",
     "docs/blog/Math/Numerical Analysis/Chapter 7.md",
+    "docs/blog/Computer Science/Database/Chapter 5.md",
+    "docs/blog/Research/Seedlab/Testing Scheme.md",
+    "docs/blog/Research/Seedlab/test-report.md",
+    "docs/blog/Research/Seedlab/Questions.md",
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Computer Science/OOP/Chapter 4.md",
     "docs/blog/Math/Numerical Analysis/index.md",
+    "docs/blog/Math/Numerical Analysis/Homework 4.md",
     "docs/blog/Math/Numerical Analysis/Chapter 6.md",
     "docs/blog/Math/Numerical Analysis/Homework 3.md",
     "docs/blog/Computer Science/Database/Homework 6.md",
-    "docs/blog/Computer Science/Database/Chapter 5.md",
     "docs/assets/Pasted image 20250317205731.png",
     "docs/assets/Pasted image 20250317205620.png",
     "docs/blog/Computer Science/Database/Homework 5.md",
-    "docs/blog/Computer Science/OOP/Chapter 4.md",
     "docs/blog/CTF/Cryptography/Chapter 3.md",
     "docs/assets/Pasted image 20250317203259.png",
     "docs/blog/Computer Science/OOP/index.md",
@@ -198,8 +206,6 @@
     "docs/assets/Pasted image 20250317200751.png",
     "docs/assets/Pasted image 20250317200713.png",
     "docs/assets/Pasted image 20250317200507.png",
-    "docs/assets/Pasted image 20250317200351.png",
-    "docs/assets/Pasted image 20250317193138.png",
     "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/blog/Computer Science/Database/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
@@ -208,13 +214,8 @@
     "docs/blog/Computer Science/Database/Chapter 3.md",
     "docs/blog/Computer Science/Database/Homework 3.md",
     "docs/blog/Computer Science/OOP/Chapter 1.md",
-    "评分标准.md",
-    "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
-    "docs/blog/Research/Seedlab/Basic-Labs/A01_transit_as.md",
     "docs/blog/Research/Seedlab/Knowledge",
     "docs/blog/Research/Seedlab/Basic-Labs",
     "docs/blog/Research/Seedlab",
