@@ -3399,6 +3399,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigenvalues and Eigenvectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eigenvalues and Eigenvectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-of-matrix-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence of Matrix Sequences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-techniques-for-solving-linear-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative Techniques for Solving Linear Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Techniques for Solving Linear Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jacobi-iterative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jacobi Iterative Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6701,6 +6749,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigenvalues and Eigenvectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eigenvalues and Eigenvectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-of-matrix-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence of Matrix Sequences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-techniques-for-solving-linear-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative Techniques for Solving Linear Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Techniques for Solving Linear Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jacobi-iterative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jacobi Iterative Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6823,6 +6919,77 @@
 \]</div>
 </div>
 <hr />
+<h2 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span> 的谱半径定义为 <span class="arithmatex">\(\rho(\mathbf{A})=\max\limits_{1\leq i\leq n}|\lambda_i|\)</span>，其中 <span class="arithmatex">\(\lambda_i\)</span> 是<span class="arithmatex">\(\mathbf{A}\)</span>的特征值，这里的特征值可以是复数</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250319112403.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Theorem</p>
+<p>如果 <span class="arithmatex">\(A\)</span> 是一个 <span class="arithmatex">\(n\times n\)</span> 的矩阵，那么对于任意一个自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有<span class="arithmatex">\(\rho(\mathbf{A})\leq\|\mathbf{A}\|\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Proof</p>
+<p>对于 <span class="arithmatex">\(A\)</span> 的任何特征值 <span class="arithmatex">\(\lambda\)</span> 以及特征向量 <span class="arithmatex">\(\|\pmb{x}\|\)</span>，且 <span class="arithmatex">\(\|\pmb{x}\|=1\)</span>，有：</p>
+<div class="arithmatex">\[
+|\lambda|·\|\pmb{x}\|=\|\lambda\pmb{x}\|=\|\pmb{Ax}\|\leq\|\pmb{A}\|·\|\pmb{x}\|
+\]</div>
+</div>
+</div>
+<hr />
+<h3 id="convergence-of-matrix-sequences">Convergence of Matrix Sequences<a class="headerlink" href="#convergence-of-matrix-sequences" title="Permanent link">&para;</a></h3>
+<p>当满足以下条件时，矩阵<span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span>是收敛的：</p>
+<div class="arithmatex">\[\lim_{k\rightarrow\infty}(\mathbf{A}^k)_{ij}=\mathbf{0}\]</div>
+<p>以下命题是等价的：</p>
+<ol>
+<li>矩阵 <span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span> 是收敛的</li>
+<li><span class="arithmatex">\(\rho(\mathbf{A})&lt;1\)</span></li>
+<li>对于某些自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0\)</span></li>
+<li>对于任意的自然范数 <span class="arithmatex">\(\|\cdot\|\)</span>，有 <span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\|\mathbf{A}^k\|=0\)</span></li>
+<li>对于每一个 <span class="arithmatex">\(\mathbf{x}\in\mathbf{R}^n\)</span>，有<span class="arithmatex">\(\lim\limits_{k\rightarrow\infty}\mathbf{A}^k\mathbf{x}=\mathbf{0}\)</span></li>
+</ol>
+<hr />
+<h2 id="iterative-techniques-for-solving-linear-systems">Iterative Techniques for Solving Linear Systems<a class="headerlink" href="#iterative-techniques-for-solving-linear-systems" title="Permanent link">&para;</a></h2>
+<h3 id="jacobi-iterative-method">Jacobi Iterative Method<a class="headerlink" href="#jacobi-iterative-method" title="Permanent link">&para;</a></h3>
+<p>对于线性方程组 <span class="arithmatex">\(\mathbf{A}\pmb{x}=\pmb{b}\)</span>，如果我们有 <span class="arithmatex">\(a_{ii}\not=0\)</span>，可以解得：</p>
+<div class="arithmatex">\[
+\begin{cases}
+x_1=\frac{1}{a_{11}}(-a_{12}x_2-\cdots-a_{1n}x_n+b_1)\\
+x_2=\frac{1}{a_{22}}(-a_{21}x_1-\cdots-a_{2n}x_n+b_2)\\
+\cdots\\
+x_n=\frac{1}{a_{nn}}(-a_{n1}x_1-\cdots-a_{n,n-1}x_{n-1}+b_n)
+\end{cases}
+\]</div>
+<p>记矩阵 <span class="arithmatex">\(\mathbf{A}\in\mathbf{R}^{n\times n}\)</span> 的下三角部分为 <span class="arithmatex">\(-\mathbf{L}\)</span>，上三角部分为 <span class="arithmatex">\(-\mathbf{U}\)</span>，对角线部分为 <span class="arithmatex">\(\mathbf{D}\)</span>，即 <span class="arithmatex">\(\mathbf{A}=\mathbf{D}-\mathbf{L}-\mathbf{U}\)</span></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250319112354.png" /></p>
+<p>所以方程组 <span class="arithmatex">\(\mathbf{Ax}=\mathbf{b}\)</span> 可以写成 <span class="arithmatex">\(\mathbf{Dx}=(\mathbf{L}+\mathbf{U})\mathbf{x}+\mathbf{b}\)</span></p>
+<p>即 <span class="arithmatex">\(\mathbf{x}=\mathbf{D}^{-1}(\mathbf{L}+\mathbf{U})\mathbf{x}+\mathbf{D}^{-1}\mathbf{b}\)</span>，引入符号 <span class="arithmatex">\(\mathbf{T}_j=\mathbf{D}^{-1}(\mathbf{L}+\mathbf{U})\)</span>，<span class="arithmatex">\(\mathbf{c}_j=\mathbf{D}^{-1}\mathbf{b}\)</span>，则 <span class="arithmatex">\(\mathbf{x}=\mathbf{T}_j\mathbf{x}+\mathbf{c}_j\)</span></p>
+<p>对于第 <span class="arithmatex">\(k\)</span> 次高斯消元，我们有 <span class="arithmatex">\(\mathbf{x}^{(k+1)}=\mathbf{T}_j\mathbf{x}^{(k)}+\mathbf{c}_j\)</span>，其中 <span class="arithmatex">\(\mathbf{x}^{(0)}\)</span> 是初始猜测值，<span class="arithmatex">\(\mathbf{T}_j\)</span> 被称为 Jacobi 迭代矩阵（Jacobi Iteration Matrix）</p>
+<div class="admonition note">
+<p class="admonition-title">Jacobi Iterative Method</p>
+<p>对于给定的初始近似解 <span class="arithmatex">\(\pmb{x}^{(0)}\)</span>，求解 <span class="arithmatex">\(\mathbf{A}\pmb{x}=\pmb{b}\)</span></p>
+<ul>
+<li>输入：方程和未知数的个数 <span class="arithmatex">\(n\)</span>，矩阵元素 <span class="arithmatex">\(a[][]\)</span>，常数项 <span class="arithmatex">\(b[]\)</span>，初始近似解 <span class="arithmatex">\(X0[]\)</span>，容忍值 TOL，最大迭代次数 <span class="arithmatex">\(N_{\max}\)</span></li>
+<li>输出：近似解 <span class="arithmatex">\(X[]\)</span> 或错误信息</li>
+</ul>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Step</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">Step</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N_max</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="mi">3-6</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">n</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">                    </span><span class="n">Set</span><span class="w"> </span><span class="n">X_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">b_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">!=</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">a_ij</span><span class="w"> </span><span class="n">X0_j</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">a_ii</span><span class="p">;</span><span class="w">  </span><span class="cm">/* compute x_k */</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">X_0</span><span class="p">)</span><span class="n">_infty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;=</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">X_i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">X0_i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">TOL</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">Output</span><span class="p">(</span><span class="n">X</span><span class="p">[]);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">                </span><span class="n">STOP</span><span class="p">;</span><span class="w">   </span><span class="cm">/* successful */</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">n</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">X0</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">[];</span><span class="w">  </span><span class="c1">// update X0</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">6</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Step</span><span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="n">Output</span><span class="w"> </span><span class="p">(</span><span class="n">Maximum</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">iterations</span><span class="w"> </span><span class="n">exceeded</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">STOP</span><span class="p">.</span><span class="w">    </span><span class="cm">/* unsuccessful */</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6892,7 +7059,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月15日 01:04:56">2025年3月15日 01:04:56</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月19日 14:15:50">2025年3月19日 14:15:50</span>
   </span>
 
     

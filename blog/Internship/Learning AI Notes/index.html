@@ -7514,16 +7514,16 @@ y=Softmax(f(x))=Softmax(w_{ij}x_j+b)
 <p><img alt="" src="../../../assets/image-20240717125606885.png" /></p>
 <h3 id="_9">深度可分离卷积<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>普通卷积：一个卷积核处理 m 个输入通道的图片信息，卷积核个数为 n（即输出通道数为 n），则有 n 个处理结果（每个结果通道数为 m），最后 n 个卷积核的结果组成最终结果。</p>
-<p><img alt="请添加图片描述" src="../../../assets/e7145875df9748c594b66983b2c83b95.jpeg" /></p>
+<p><img alt="请添加图片描述" src="../../assets/e7145875df9748c594b66983b2c83b95.jpeg" /></p>
 <p>深度可分离卷积：分为深度卷积+逐点卷积</p>
 <ul>
 <li>深度卷积：一个卷积核处理一个通道的图片信息，m 个输入通道有 m 个卷积核，m 个处理结果。</li>
 </ul>
-<p><img alt="请添加图片描述" src="../../../assets/3f09a176a66548f2a16c207c593302a7.jpeg" /></p>
+<p><img alt="请添加图片描述" src="../../assets/3f09a176a66548f2a16c207c593302a7.jpeg" /></p>
 <ul>
 <li>逐点卷积：做卷积核大小为 1 的普通卷积。</li>
 </ul>
-<p><img alt="" src="../../../assets/417d4b609b624021a1e631582e2b1451.jpeg" /></p>
+<p><img alt="" src="../../assets/417d4b609b624021a1e631582e2b1451.jpeg" /></p>
 <p>深度可分离卷积可以有效减少待训练参数量。</p>
 <h3 id="_10">膨胀卷积<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>膨胀卷积又称空洞卷积，在卷积核中增加空洞，可以增加单位面积中计算的大小，从而扩大模型的计算视野。</p>
