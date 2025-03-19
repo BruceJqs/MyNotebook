@@ -7111,14 +7111,14 @@ x_i^{(k)}=\frac{-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{
 <hr />
 <h3 id="relaxation-methods">Relaxation Methods<a class="headerlink" href="#relaxation-methods" title="Permanent link">&para;</a></h3>
 <p>我们从剩余向量的视角来看 Gauss-Seidel 迭代法：</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{aligned}
-x_i<sup i-1="i-1">{(k)}&amp;=\frac{-\sum\limits_{j=1}</sup>x_j}a_{ij<sup>{(k)}-\sum\limits_{j=i+1}</sup>na_{ij}x_j^{(k-1)}+b_i}{a_{ii}} \
-&amp;=x_i<sup i-1="i-1">{(k-1)}+\frac{1}{a_{ii}}(b_i-\sum\limits_{j=1}</sup>x_j}a_{ij<sup>{(k)}-\sum\limits_{j=i}</sup>na_{ij}x_j^{(k-1)}) \
-&amp;=x_i<sup _k_="(k)">{(k-1)}+\frac{r_i</sup>
+x_i^{(k)}&amp;=\frac{-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_{ij}x_j^{(k-1)}+b_i}{a_{ii}} \\
+&amp;=x_i^{(k-1)}+\frac{1}{a_{ii}}(b_i-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i}^na_{ij}x_j^{(k-1)}) \\
+&amp;=x_i^{(k-1)}+\frac{r_i^{(k)}}{a_{ii}}
 \end{aligned}
-$$
-我们可以添加一个参数 }}{a_{ii}<span class="arithmatex">\(\omega\)</span>，使得</p>
+\]</div>
+<p>我们可以添加一个参数 <span class="arithmatex">\(\omega\)</span>，使得</p>
 <div class="arithmatex">\[
 x_i^{(k)}=x_i^{(k-1)}+\omega\frac{r_i^{(k)}}{a_{ii}}
 \]</div>
@@ -7231,7 +7231,7 @@ x_i^{(k)}&amp;=x_i^{(k-1)}+\omega\frac{r_i^{(k)}}{a_{ii}}\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月19日 15:21:33">2025年3月19日 15:21:33</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月19日 15:25:23">2025年3月19日 15:25:23</span>
   </span>
 
     
