@@ -304,6 +304,7 @@ x_i^{(k)}&=\frac{-\sum\limits_{j=1}^{i-1}a_{ij}x_j^{(k)}-\sum\limits_{j=i+1}^na_
 &=x_i^{(k-1)}+\frac{r_i^{(k)}}{a_{ii}}
 \end{aligned}
 $$
+
 我们可以添加一个参数 $\omega$，使得
 
 $$
