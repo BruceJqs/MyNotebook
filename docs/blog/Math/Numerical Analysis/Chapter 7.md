@@ -101,7 +101,7 @@ $\mathbf{A}\in\mathbf{R}^{n\times n}$的 Frobenius 范数是 $\mathbf{A}$ 的所
 ***
 ## Eigenvalues and Eigenvectors
 
-$\mathbf{A}\in\mathbf{R}^{n\times n}$ 的谱半径定义为 $\rho(\mathbf{A})=\max\limits_{1\leq i\leq n}|\lambda_i|$，其中 $\lambda_i$ 是$\mathbf{A}$的特征值，这里的特征值可以是复数
+$\mathbf{A}\in\mathbf{R}^{n\times n}$ 的谱半径定义为 $\rho(\mathbf{A})=\max\limits_{1\leq i\leq n}|\lambda_i|$，其中 $\lambda_i$ 是$\mathbf{A}$的特征值
 
 ![](../../../assets/Pasted%20image%2020250319112403.png)
 
