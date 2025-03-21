@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 5.md",
+                "file": "docs/blog/Math/Numerical Analysis/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homework 5"
+              "title": "index"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 5.md",
+                "file": "docs/blog/Math/Numerical Analysis/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Homework 5"
+              "title": "Outline of index"
             }
           },
           {
@@ -178,8 +178,8 @@
   },
   "active": "619dd36446ae8e8b",
   "lastOpenFiles": [
-    "docs/blog/Math/Numerical Analysis/Chapter 7.md",
     "docs/blog/Math/Numerical Analysis/Homework 5.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 7.md",
     "docs/assets/Pasted image 20250321110640.png",
     "docs/assets/Pasted image 20250321110607.png",
     "docs/assets/Pasted image 20250321110515.png",
