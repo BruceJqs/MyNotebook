@@ -115,20 +115,3 @@ hide:
   </div>
   <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#EEF3FE SIZE=1>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // 获取所有友链卡片
-    const friendLinks = document.querySelectorAll(".card");
-    const totalLinks = friendLinks.length -2;
-
-    // 更新友链统计信息
-    const statsElement = document.getElementById("friend-link-stats");
-    if (statsElement) {
-      statsElement.textContent = `共有友链 ${totalLinks} 个,欢迎交换友链！`;
-    }
-  });
-</script>
-<font  color= #999>
-<center><div id="friend-link-stats"></div></center></font>
-</div>
