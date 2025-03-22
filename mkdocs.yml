@@ -202,6 +202,7 @@ nav:
       - "Chapter 01: Introduction": blog/ACEE/Information Theory/Chapter 1.md
       - "Part 01：信息的度量":
         - "Chapter 02: 随机变量的熵和互信息": blog/ACEE/Information Theory/Chapter 2.md
+        - "Chapter 03: 连续随机变量的互信息和微分熵": blog/ACEE/Information Theory/Chapter 3.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
