@@ -331,6 +331,8 @@ extra:
 plugins:
   # - rss
   - search #搜索配置
+  - statistics:
+      words_per_minute: 200
   - git-committers:
       enabled: !ENV [CI, false]
       repository: BruceJqs/MyNotebook
@@ -408,7 +410,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       linenums: true # 显示行号
       line_spans: __span
       pygments_lang_class: true
-      auto_title: true # 显示编程语言名称
+      # auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

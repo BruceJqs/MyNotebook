@@ -336,28 +336,21 @@ $$
 
 !!! note "取极大值的充要条件"
 
-	Jensen不等式：
-	
-	$$
-	\begin{aligned}
-		&\text{令 } (\alpha_1, \alpha_2, \cdots, \alpha_L) \text{ 是凸集中的一组矢量，} f(\alpha) \text{ 是该凸集上的一个上凸函数，} \\
-		&(\theta_1, \theta_2, \cdots, \theta_L) \text{ 是一组概率分布，则有} \\
-		&\sum_{l=1}^L \theta_l f(\alpha_l) \leq f \left( \sum_{l=1}^L \theta_l \alpha_l \right)
-	\end{aligned}
-	$$
+	Jensen不等式：令 $(\alpha_1, \alpha_2, \cdots, \alpha_L)$ 是凸集中的一组矢量，$f(\alpha)$ 是该凸集上的一个上凸函数，$(\theta_1, \theta_2, \cdots, \theta_L)$ 是一组概率分布，则有：$\sum_{l=1}^L \theta_l f(\alpha_l) \leq f \left( \sum_{l=1}^L \theta_l \alpha_l \right)$
 
 	首先我们有
 	
 	![](../../../assets/Pasted image 20250302205411.png)
 	
 	!!! note "怎么理解？"
+	
 		注意到，此时每个分量为非负。我们要找到极值，就是让这个函数在邻域内的值都比它小。
 		
 		如果 $\alpha_k$ 大于零，那么这个偏导数一定要为零，否则必定在这个方向或反方向上有增大的空间。-->如果我们增大或减小 $\alpha_k$，那么这个函数的值会增大。
 		
 		如果 $\alpha_k$ 等于零，那么这个偏导数需要小于或等于零。如果大于零，必定在这个方向上有增大的空间。-->如果我们增大 $\alpha_k$，那么这个函数的值会增大。
 		
-	把这个移作概率空间。除了要求非负，还要求和为1。所以我们用拉式乘子法，构造函数：
+	把这个移作概率空间。除了要求非负，还要求和为1。所以我们用拉格朗日乘数法，构造函数：
 	
 	$$
 	L(P,\lambda)=H(P)+\lambda(1-\sum_{k=1}^Kp_k)
@@ -382,6 +375,49 @@ $$
 	$$
 	
 ***
+### 加权熵
+
+香农熵仅考虑事件发生的客观规律，无法描述主观意义上对事件判断的差别。为了解决这个问题，引入了加权熵的概念
+
+对于随机变量 $X$，定义加权熵为：
+
+$$
+\begin{aligned}
+\mathbf{X}&=\begin{pmatrix}x_1&x_2&\cdots&x_K\\w_1&w_2&\cdots&w_K\\p_1&p_2&\cdots&p_K\end{pmatrix}\\
+H_w(X)&=-\sum_{k=1}^Kw_kp_k\log p_k
+\end{aligned}
+$$
+
+这相当于给每个事件赋予了一个权重
+***
+### R$\acute{e}$nyi 熵
+
+$$
+H_{\alpha}(X)=\frac{1}{1-\alpha}\log\sum_{k=1}^Kp_k^{\alpha}
+$$
+
+当 $\alpha = 0$ 时，$H_{\alpha}(X)=\log K$；当 $\alpha\to 1$ 时，$H_{\alpha}(X)\to H(X)$
+***
+## 平均互信息
+
+对于两个事件 $\{X=x\},\{Y=y\}$ 之间相互提供的信息量定义为：
+
+$$
+I(x,y)=I(x)-I(x|y)=\log\frac{p(x|y)}{q(x)}
+$$
+
+其中 $I(x,y)$ 可正，可负，也可为 0
+
+随机变量 $\{(X,Y),\mathcal{X}\times\mathcal{Y},p(x,y)\}$ 相互提供的平均信息量称之为两者之间的平均互信息，简称互信息：
+
+$$
+I(X;Y)=E\{I(x;y)\}=\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log\frac{p(x|y)}{q(x)}
+$$
+***
+### 互信息的性质
+
+- 
+ 
 
 
 
