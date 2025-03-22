@@ -5,6 +5,7 @@ hide:
   - footer
   - feedback
 comments: false
+statistics: True
 ---                      
 
 <center><font  color= #518FC1 size=6 class="ml3">BruceJin's Notebook</font></center>
@@ -107,7 +108,7 @@ comments: false
 
 !!! info "站点统计"
     <center>
-    本站目前共 {{pages}} 页，累计 {{words}} 字！
+    本站目前共 {{pages}} 页，累计 {{words}} 字, {{codes}} 行代码！
     </center>
 
 [^Knowing-that-loving-you-has-no-ending]:错过黄昏晚霞，还有漫天星辰 
