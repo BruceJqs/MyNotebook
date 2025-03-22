@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 2.md",
+                "file": "docs/about/link.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Chapter 2"
+              "title": "link"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 2.md",
+                "file": "docs/about/link.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 2"
+              "title": "Outline of link"
             }
           },
           {
@@ -178,8 +178,8 @@
   },
   "active": "619dd36446ae8e8b",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/blog/ACEE/Information Theory/Chapter 2.md",
+    "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Homework 5.md",
     "docs/blog/Math/Numerical Analysis/Chapter 7.md",
