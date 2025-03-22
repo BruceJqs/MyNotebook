@@ -15,12 +15,14 @@ comments: true
 
 ## Table of Contents
 
+### Notes
+
 - [Chapter 01 : Mathematical Preliminaries](Chapter%201/)
 - [Chapter 02 : Solutions of Equations in One Variable](Chapter%202/)
 - [Chapter 06 : Direct Methods for Solving Linear Systems](Chapter%206/)
 - [Chapter 07 : Iterative Techniques in Matrix Algebra](Chapter%207/)
 
-## Homeworks
+### Homeworks
 
 - [Homework 01](Homework%201/)
 - [Homework 02](Homework%202/)
