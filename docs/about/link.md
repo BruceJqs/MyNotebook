@@ -110,19 +110,25 @@ hide:
       jmgg の个人主页！
       </div> 
      </div> 
-    </div>  
-      
-
+    </div>   
    </div> 
   </div>
-<!-- <div class="card">
-   <img class="ava" src="{avatarurl}" />
-   <div class="card-header">
-      <div>
-         <a href="{link}">{name}</a>
-      </div>
-      <div class="info">{description}</div>
-   </div>
-</div> -->   
+  <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#EEF3FE SIZE=1>
+</div>
 
-<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#608DBD SIZE=1>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 获取所有友链卡片
+    const friendLinks = document.querySelectorAll(".card");
+    const totalLinks = friendLinks.length -2;
+
+    // 更新友链统计信息
+    const statsElement = document.getElementById("friend-link-stats");
+    if (statsElement) {
+      statsElement.textContent = `共有友链 ${totalLinks} 个,欢迎交换友链！`;
+    }
+  });
+</script>
+<font  color= #999>
+<center><div id="friend-link-stats"></div></center></font>
+</div>
