@@ -6752,6 +6752,9 @@
 
 
 <h1 id="lab3-misc-report">Lab3-Misc Report<a class="headerlink" href="#lab3-misc-report" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1428 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 158 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 35 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+</div>
 <h2 id="challenge-1sqr-inject-analysis">Challenge 1：SQR Inject Analysis<a class="headerlink" href="#challenge-1sqr-inject-analysis" title="Permanent link">&para;</a></h2>
 <p>将下载的 sqltest.pcapng 用 wireshark 打开，查看 HTTP 请求：</p>
 <p><img alt="image-20240714190558696" src="../../../../assets/image-20240714190558696.png" /></p>
@@ -6760,7 +6763,7 @@
 <p>往下翻会发现跟 flag 字符 ASCII 值有关的语句：</p>
 <p><img alt="image-20240714191731700" src="../../../../assets/image-20240714191731700.png" /></p>
 <p>由上图我们从第 1 行到第 10 行可以看出攻击者最后把 flag 的 ASCII 码定位在了 102，即 flag 第一位为 f，我们执行命令行 <code>tshark -r sqltest.pcapng -Y "http.request" -T fields -e http.request.full_uri &gt; data.txt</code> 导出这些数据为 data.txt，并编写 python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -6792,7 +6795,7 @@
 <p>通过 wireshark 打开 dnscap.pcap，发现全是 DNS 协议，打开看其发起的查询：</p>
 <p><img alt="image-20240715124237630" src="../../../../assets/image-20240715124237630.png" /></p>
 <p>均为 xxx.skullsecloabs.org 格式，我们使用命令行 <code>tshark -r dnscap.pcap -T fields -e dns.qry.name &gt; data.txt</code>  并编写 python 程序如下：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
@@ -6818,7 +6821,7 @@
 <p><img alt="image-20240715215331086" src="../../../../assets/image-20240715215331086.png" /></p>
 <p>这其中前九个 Byte 的数据均为 dns 发送端接收端等相关数据，是我们所不需要的，我们需要的是这里的 Data。</p>
 <p>完善 python 代码：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -6908,7 +6911,7 @@
 <p>点击 Get new instance，可以看到合约地址：</p>
 <p><img alt="image-20240721131040204" src="../../../../assets/image-20240721131040204.png" /></p>
 <p>根据题目描述，我们需要连续 10 次猜对硬币的正反面。所给代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
@@ -6971,7 +6974,7 @@
 </span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>根据代码，我们可以看到 blockValue 是由前一个区块而决定的，但是我们无法知道前一个区块，所以我们可以在自己的内部创造一个合约，将结果送给合约即可，编写 solidity 代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
@@ -7052,7 +7055,7 @@
 <p>根据题意，这个关卡要求获得合约 Delegation 的所有权，我们先查看 Delegation 的 owner：</p>
 <p><img alt="image-20240721145916285" src="../../../../assets/image-20240721145916285.png" /></p>
 <p>因此我们需要将 contract.owner()更改成 player，所给代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
@@ -7119,7 +7122,7 @@
 <p><img alt="" src="../../../../assets/image-20240721150142117.png" /></p>
 <h3 id="vault">Vault<a class="headerlink" href="#vault" title="Permanent link">&para;</a></h3>
 <p>根据题意，这个关卡需要我们将合约中的 locked 变量改为 false，代码如下：</p>
-<div class="language-solidity highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Solidity</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="language-solidity highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
