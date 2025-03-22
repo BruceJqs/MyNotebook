@@ -416,9 +416,217 @@ $$
 ***
 ### 互信息的性质
 
-- 
- 
+- $I(X;Y)=I(Y;X)$
+- $I(X;Y)\geq 0$，当且仅当 $X$ 和 $Y$ 独立时取等号
 
+??? note "Proof"
 
+	$$
+	\begin{aligned}
+	I(X;Y) &= \sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log\frac{p(x|y)}{q(x)}\\
+	&= \sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log\frac{p(x,y)}{q(x)w(y)}\\
+	&\geq -\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)(\frac{q(x)w(y)}{p(x,y)}-1)=0
+	\end{aligned}
+	$$
+	
 
+- $I(X;Y)\leq H(X)$，等号成立的条件是 $X$ 是 $Y$ 的确定性函数；$I(X;Y)\leq H(Y)$，等号成立的条件是 $Y$ 是 $X$ 的确定性函数
+	- 事实上，$I(X;Y)=H(X)-H(X|Y)=H(Y)-H(Y|X)=H(X)+H(Y)-H(X,Y)$
+
+![](../../../assets/Pasted%20image%2020250322133834.png)
+***
+## 条件互信息
+
+事件的条件互信息：
+
+$$
+I(x;y|z)=\log\frac{p(x|y,z)}{q(x|z)}=\log\frac{p(x,y|z)}{q(x|z)\omega(y|z)}
+$$
+
+在概率空间 $\{(X,Y,Z),\mathcal{X}\times\mathcal{Y}\times\mathcal{Z},p(x,y,z)\}$ 中，在随机变量 $Z$ 已知的条件下变量 $X$ 与 $Y$ 相互提供的信息量为：
+
+$$
+I(X;Y|Z)=E[I(x;y|z)]=\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}\sum_{z\in\mathcal{Z}}p(x,y,z)\log\frac{p(x|y,z)}{q(x|z)}
+$$
+***
+## 联合互信息
+
+事件的联合互信息：
+
+$$
+I(x;y,z)=I(x)-I(x|y,z)=\log\frac{p(x|y,z)}{q(x)}=\log\frac{p(x,y,z)}{q(x)\omega(y,z)}
+$$
+
+在概率空间 $\{(X,Y,Z),\mathcal{X}\times\mathcal{Y}\times\mathcal{Z},p(x,y,z)\}$ 中，随机变量 $Y$ 和 $Z$ 共同提供给变量 $X$ 的信息量为：
+
+$$I(X;(Y,Z))=E[I(x;(y,z))]=\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}\sum_{z\in\mathcal{Z}}p(x,y,z)\log\frac{p(x|y,z)}{q(x)}=I(X;Z)+I(X;Y|Z)$$
+***
+## 相对熵（散度）
+
+定义在相同字符表 $\mathcal{X}$ 上的两个概率分布 $\{p(x)\}$ 和 $\{q(x)\}$ 之间的相对熵（散度），或称 Kullback-Leibler 距离，表示为：
+
+$$
+D(p//q)=\sum_{x\in\mathcal{X}}p(x)\log\frac{p(x)}{q(x)}=E_p\{\log\frac{p(x)}{q(x)}\}
+$$
+
+表示实际分布 $\{p(x)\}$ 与假定分布 $\{q(x)\}$ 之间的平均差距，因而也称鉴别熵
+
+![](../../../assets/Pasted%20image%2020250322135628.png)
+***
+### 相对熵的性质
+
+- $D(p//q)=\sum\limits_{x\in\mathcal{X}}p(x)\log\frac{p(x)}{q(x)}=-\sum\limits_{x\in\mathcal{X}}\log\frac{q(x)}{p(x)}\geq -\sum\limits_{x\in\mathcal{X}}(\frac{q(x)}{p(x)}-1)=0$
+- $D(p//q)\neq D(q//p)$
+- $I(X;Y)=\sum\limits_{x,y\in\mathcal{X}\times\mathcal{Y}}p(xy)\log\frac{p(xy)}{p(x)p(y)}=D(p(xy)//p(x)p(y))\geq 0$
+- $H(X)=-\sum\limits_{x\in\mathcal{X}}p(x)\log p(x)=-\sum\limits_{x\in\mathcal{X}}p(x)\log\frac{p(x)}{1/K}+\log K=H(U)-D(X//U)$
+	- 其中 $U$ 是均匀分布
+- 如果 $P_1,P_2$ 是独立分布，并且联合分布是 $P=P_1P_2$，如果 $Q_1,Q_2$ 是独立分布，并且联合分布是 $Q=Q_1Q_2$，那么 $D(P//Q)=D(P_1//Q_1)+D(P_2//Q_2)$
+***
+### 相对熵的应用
+
+假设数据通过未知分布 $p(x)$ 生成，我们想要对 $p(x)$ 进行建模，即使用参数分布 $q(x|\theta)$ 来近似该分布：
+
+$$
+\min_{\theta}D(p//q)=\frac{1}{N}\sum_{n=1}^N\log\frac{p(x_n)}{q(x_n|\theta)}
+$$
+***
+## 关于疑义度的 Fano 不等式
+
+定义在相同字符表 $\{0,1,...,K-1\}$ 上的两个随机变量 $X$ 和 $\hat{X}$，其中 $\hat{X}$ 是对 $X$ 的某种估计，估计错误概率定义为：
+
+$$
+P_e=\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}\text{Pr}\{X=k,\hat{X}=j\}
+$$
+
+则 $\hat{X}$ 已知条件下 $X$ 的疑义度 $H(X|\hat{X})$ 满足下述不等式：
+
+$$
+H(X|\hat{X})\leq H(P_E)+P_E\log(K-1)
+$$
+
+??? note "Proof"
+
+	=== "方法一"
+	
+		$$
+		\begin{aligned}
+		H(X|\hat{X})-H(P_E)-P_E\log(K-1) &= -\sum\limits_{k=0}^{K-1}\sum\limits_{j=0}^{K-1}p(k,j)\log p(k|j)+\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}p(k,j)\log P_E\\
+		&+\sum\limits_{k=0}^{K-1}p(k,k)\log(1-P_E)-\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}p(k,j)\log(K-1)\\
+		&=\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}p(k,j)\log\frac{P_E}{(K-1)p(k|j)}+\sum\limits_{k=0}^{K-1}p(k,k)\log\frac{1-P_E}{p(k|k)}\\
+		&\leq\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}p(k,j)[\frac{P_E}{(K-1)p(k|j)}-1]+\sum\limits_{k=0}^{K-1}p(k,k)[\frac{1-P_E}{p(k|k)}-1]\\
+		&=\frac{P_E}{K-1}\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}p(j)+(1-P_E)\sum\limits_{k=0}^{K-1}p(j)-\sum\limits_{k=0}^{K-1}\sum\limits_{j=0}^{K-1}p(k,j)=0
+		\end{aligned}
+		$$
+		
+	
+	=== "方法二"
+	
+		$$
+		\begin{aligned}
+		H(E,X|\hat{X})&=H(X|\hat{X})+H(E|X,\hat{X})=H(X|\hat{X})\\
+		H(E,X|\hat{X})&=H(E|\hat{X})+H(X|E,\hat{X})\\
+		H(E|\hat{X})&\leq H(E)=H(P_E)\\
+		H(X|E,\hat{X})&=P_EH(X|E=1,\hat{X})+(1-P_E)H(X|E=0,\hat{X})\\
+		&\leq P_E\log(K-1)
+		\end{aligned}
+		$$
+		
+	
+	=== "方法三"
+	
+		![](../../../assets/Pasted image 20250322142643.png)
+		
+		$$
+		\begin{aligned}
+		H(X|\hat{X})|_{X\in\mathcal{X}_2}&=H(X_1|\hat{X})|_{X_1\in\mathcal{X}_1}+H(X|X_1,\hat{X})|_{X\in\mathcal{X}_2}^{X_1\in\mathcal{X}_1}\\
+		&\leq H(P_E)+P_E\log(K-1)
+		\end{aligned}
+		$$
+		
+***
+### 物理意义
+
+- 已知 $\hat{X}$ 条件下，对 $X$ 还存在的不确定性 $H(X|\hat{X})$ 可分为两个部分。第一部分是估计 $\hat{X}$ 是否准确，这部分的不确定性为 $H(P_E)$；第二部分是如果估计是不准确的，这时 $X$ 可能取值有 $K-1$ 个，这部分的不确定性为 $P_E(K-1)$
+- Fano 不等式在证明香农信道编码定理之逆定理时是必须应用的
+***
+## 马尔可夫链
+
+### 定义
+
+![](../../../assets/Pasted%20image%2020250322143223.png)
+
+如果随机变量序列 $X_1,X_2,...,X_n$ 的联合概率分布可以写成如下形式：
+
+$$
+p(x_1,x_2,...,x_n)=p(x_1)p(x_2|x_1)...p(x_n|x_{n-1})
+$$
+
+则称这 $n$ 个随机变量构成马尔可夫链，记为 $X_1\rightarrow X_2\rightarrow ...\rightarrow X_n$
+
+马尔科夫过程是一类重要的随机过程，它的原始模型马尔可夫链，由俄国数学家 A.A. 马尔可夫于 1907 年提出。人们在实际中常遇到具有下述特性的随机过程：在已知它目前的状态（现在）的条件下，它未来的演变（将来）不依赖于它以往的演变（过去）。这种已知“现在”的条件下，“将来”与“过去”独立的特性称为马尔可夫性，具有这种性质的随机过程叫做马尔可夫过程
+
+![](../../../assets/Pasted%20image%2020250322143656.png)
+
+- $p(xyz)=p(x)p(y|x)p(z|y)\Leftrightarrow p(z|xy)=p(z|y)$
+	- 给定现在的状态，未来的状态与过去的状态无关
+- $p(xz|y)=\frac{p(xyz)}{p(y)}=\frac{p(x,y)p(z|y)}{p(y)}=p(x|y)p(z|y)\Leftrightarrow I(X;Z|Y)=0$
+
+??? note "Proof"
+
+	$$
+    \begin{aligned}
+    I(X;Z|Y)&=\sum_{x\in\mathcal{X}}\sum_{z\in\mathcal{Z}}\sum_{y\in\mathcal{Y}}p(x,y,z)\log\frac{p(x|y,z)}{q(x|y)}\\
+    &=\sum_{x\in\mathcal{X}}\sum_{z\in\mathcal{Z}}\sum_{y\in\mathcal{Y}}p(x,y,z)\log\frac{p(x,z|y)}{q(x|y)w(z|y)}\\&=0
+    \end{aligned}
+    $$
+    
+
+- $p(xyz)=p(x)p(y|x)p(z|y)=\frac{p(x)p(xy)p(yz)p(z)}{p(x)p(y)p(z)}=p(z)p(y|z)p(x|y)\Leftrightarrow Z\rightarrow Y\rightarrow X$
+***
+### 数据处理定理
+
+- 如果 $X\rightarrow Y\rightarrow Z$，则：
+	- $I(X;Y)\geq I(X;Z)$
+	- $I(X;Y)\geq I(X;Y|Z)$
+
+??? note "Proof"
+
+	- $I(X;YZ)=I(X;Y)+I(X;Z|Y)=I(X;Z)+I(X;Y|Z)$
+	
+	由于 $X\rightarrow Y\rightarrow Z\Rightarrow I(X;Z|Y)=0$，故：
+	
+	![](../../../assets/Pasted image 20250322145821.png)
+
+- 物理意义：增加数据处理的次数，不会使信息量增加
+***
+### 四变量马尔可夫链
+
+![](../../../assets/Pasted%20image%2020250322150605.png)
+
+定理：如果 $U\rightarrow X\rightarrow Y\rightarrow V$，则 $I(X;Y)\geq I(U;V)$
+
+证明：
+
+![](../../../assets/Pasted%20image%2020250322150730.png)
+***
+## 互信息的凸性
+
+$$
+\begin{aligned}
+I(X;Y)&=\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(xy)\log\frac{p(x|y)}{q(x)}\\
+&=\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}q(x)p(y|x)\log\frac{p(y|x)}{w(y)}\\
+&=\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}q(x)p(y|x)\log\frac{p(y|x)}{\sum\limits_{x\in\mathcal{X}}q(x)p(y|x)}\\
+&=I(\{q(x)\},\{p(y|x)\})
+\end{aligned}
+$$
+
+- 互信息 $I(X;Y)$ 是关于输入分布 $\{q(x)\}$ 和转移概率矩阵 $\{p(y|x)\}$ 的函数
+
+![](../../../assets/Pasted%20image%2020250322151458.png)
+
+- 定理一：当转移概率矩阵 $\{p(y|x)\}$ 给定时，互信息 $I(X;Y)=I(\{q(x)\})$ 是输入分布的上凸（凹，Concave）函数
+
+![](../../../assets/Pasted%20image%2020250322151716.png)
+
+- 定理二：当输入分布 $\{q(x)\}$ 给定时，互信息 $I(X;Y)=I(\{P(y|x)\}$ 是转移概率矩阵的下凸（凸，Convex）函数
 

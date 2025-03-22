@@ -20,3 +20,4 @@ comments: true
 - [Chapter 01 : Introduction](Chapter%201/)
 - Part 01 - 信息的度量
 	- [Chapter 02 : 随机变量的熵和互信息](Chapter%202/)
+	- [Chapter 03 : 连续随机变量的互信息和微分熵](Chapter%203/)

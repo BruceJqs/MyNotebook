@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2270e8c22818a35f",
+        "id": "acaf5eded1acfbd0",
         "type": "tabs",
         "children": [
           {
-            "id": "619dd36446ae8e8b",
+            "id": "cb74507cb2c82d09",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/about/link.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 3.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "link"
+              "title": "Chapter 3"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/about/link.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of link"
+              "title": "Outline of Chapter 3"
             }
           },
           {
@@ -176,21 +176,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "619dd36446ae8e8b",
+  "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
     "docs/blog/ACEE/Information Theory/Chapter 2.md",
+    "docs/blog/ACEE/Information Theory/Chapter 3.md",
+    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/assets/Pasted image 20250322151716.png",
+    "docs/assets/Pasted image 20250322151458.png",
+    "docs/assets/Pasted image 20250322150730.png",
+    "docs/assets/Pasted image 20250322150605.png",
+    "docs/assets/Pasted image 20250322145821.png",
+    "docs/assets/Pasted image 20250322143656.png",
+    "docs/assets/Pasted image 20250322143223.png",
+    "docs/assets/Pasted image 20250322142643.png",
+    "docs/assets/Pasted image 20250322135628.png",
+    "docs/assets/Pasted image 20250322133834.png",
+    "docs/about/link.md",
     "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Homework 5.md",
     "docs/blog/Math/Numerical Analysis/Chapter 7.md",
-    "docs/assets/Pasted image 20250321110640.png",
-    "docs/assets/Pasted image 20250321110607.png",
-    "docs/assets/Pasted image 20250321110515.png",
-    "docs/assets/Pasted image 20250321110456.png",
     "docs/blog/Math/Numerical Analysis/Homework 4.md",
-    "docs/assets/Pasted image 20250319112403.png",
-    "docs/assets/Pasted image 20250319112354.png",
-    "docs/assets/Pasted image 20250319112238.png",
     "docs/blog/Research/Seedlab/Tutorial.md",
     "docs/blog/Computer Science/Database/Chapter 5.md",
     "docs/blog/Research/Seedlab/Testing Scheme.md",
@@ -201,19 +207,13 @@
     "docs/blog/Math/Numerical Analysis/Chapter 6.md",
     "docs/blog/Math/Numerical Analysis/Homework 3.md",
     "docs/blog/Computer Science/Database/Homework 6.md",
-    "docs/assets/Pasted image 20250317205731.png",
-    "docs/assets/Pasted image 20250317205620.png",
     "docs/blog/Computer Science/Database/Homework 5.md",
     "docs/blog/CTF/Cryptography/Chapter 3.md",
-    "docs/assets/Pasted image 20250317203259.png",
     "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/blog/Computer Science/Database/Chapter 4.md",
     "docs/blog/ACEE/Mathematical Modeling/Chapter 2.md",
-    "docs/blog/ACEE/Information Theory/index.md",
-    "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
-    "docs/blog/Computer Science/Database/Chapter 3.md",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Knowledge",
