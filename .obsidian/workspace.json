@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Database/Chapter 6.md",
+                "file": "docs/blog/Computer Science/Database/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 6"
+              "title": "index"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Database/Chapter 6.md",
+                "file": "docs/blog/Computer Science/Database/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 6"
+              "title": "Outline of index"
             }
           },
           {
@@ -178,19 +178,20 @@
   },
   "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/Database/Homework 7.md",
+    "docs/assets/Pasted image 20250325013158.png",
+    "docs/assets/Pasted image 20250325011505.png",
+    "docs/assets/Pasted image 20250325010625.png",
+    "docs/assets/Pasted image 20250325010454.png",
+    "docs/assets/Pasted image 20250325010444.png",
+    "docs/assets/8971742834990_.pic copy.png",
+    "docs/assets/Pasted image 20250325005032.png",
+    "docs/assets/Pasted image 20250325005023.png",
+    "docs/blog/Computer Science/Database/Homework 6.md",
+    "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/assets/Pasted image 20250324234732.png",
     "docs/assets/Pasted image 20250324233409.png",
-    "docs/assets/Pasted image 20250324232509.png",
-    "docs/assets/Pasted image 20250324232422.png",
-    "docs/assets/Pasted image 20250324232222.png",
-    "docs/assets/Pasted image 20250324232032.png",
-    "docs/assets/Pasted image 20250324231945.png",
-    "docs/assets/Pasted image 20250324231856.png",
-    "docs/assets/Pasted image 20250324231752.png",
-    "docs/assets/Pasted image 20250324223306.png",
-    "docs/assets/Pasted image 20250324220316.png",
     "docs/blog/Computer Science/OOP/Chapter 4.md",
-    "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/Database/Chapter 5.md",
     "docs/blog/ACEE/Information Theory/Homework 1.md",
@@ -212,8 +213,6 @@
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Math/Numerical Analysis/Chapter 6.md",
-    "docs/blog/Math/Numerical Analysis/Homework 3.md",
-    "docs/blog/Computer Science/Database/Homework 6.md",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Knowledge",

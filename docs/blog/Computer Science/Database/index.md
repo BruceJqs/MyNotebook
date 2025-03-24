@@ -33,5 +33,6 @@ comments: true
 - [Homework 03](Homework%203/)
 - [Homework 04](Homework%204/)
 - [Homework 05](Homework%205/)
-
+- [Homework 06](Homework%206/)
+- [Homework 07](Homework%207/)
 
