@@ -78,16 +78,18 @@ nav:
       - Project 3: blog/Computer Science/FDS/FDS-Project3 report.md
     - 计算机组成｜Computer Organization:
       - blog/Computer Science/Computer Organization/index.md
-      - "Chapter 01: Computer abstractions and Technology": blog/Computer Science/Computer Organization/Chapter 1.md
-      - "Chapter 03: Arithmetic for Computers": blog/Computer Science/Computer Organization/Chapter 3.md
-      - "Chapter 02: Instructions : Language of the Machine": blog/Computer Science/Computer Organization/Chapter 2.md
-      - "Chapter 04: The Processors": blog/Computer Science/Computer Organization/Chapter 4.md
-      - "Chapter 05: Memory Hierarchy": blog/Computer Science/Computer Organization/Chapter 5.md
-      - "Appendix: Storage, Networks, and Other Peripherals": blog/Computer Science/Computer Organization/Appendix.md
-      - "Homework 03": blog/Computer Science/Computer Organization/Homework 3.md
-      - "Homework 02": blog/Computer Science/Computer Organization/Homework 2.md
-      - "Homework 04": blog/Computer Science/Computer Organization/Homework 4.md
-      - "Homework 05": blog/Computer Science/Computer Organization/Homework 5.md
+      - Notes:
+        - "Chapter 01: Computer abstractions and Technology": blog/Computer Science/Computer Organization/Chapter 1.md
+        - "Chapter 03: Arithmetic for Computers": blog/Computer Science/Computer Organization/Chapter 3.md
+        - "Chapter 02: Instructions : Language of the Machine": blog/Computer Science/Computer Organization/Chapter 2.md
+        - "Chapter 04: The Processors": blog/Computer Science/Computer Organization/Chapter 4.md
+        - "Chapter 05: Memory Hierarchy": blog/Computer Science/Computer Organization/Chapter 5.md
+        - "Appendix: Storage, Networks, and Other Peripherals": blog/Computer Science/Computer Organization/Appendix.md
+      - Homeworks:
+        - "Homework 03": blog/Computer Science/Computer Organization/Homework 3.md
+        - "Homework 02": blog/Computer Science/Computer Organization/Homework 2.md
+        - "Homework 04": blog/Computer Science/Computer Organization/Homework 4.md
+        - "Homework 05": blog/Computer Science/Computer Organization/Homework 5.md
     - 高级数据结构与算法分析｜Advanced Data Structure and Algorithm Analysis:
       - blog/Computer Science/ADS/index.md
       - "Chapter 01: AVL trees, Splay Trees, and Amortized Analysis": blog/Computer Science/ADS/Chapter 1.md
@@ -108,16 +110,19 @@ nav:
       - "Final Review": blog/Computer Science/ADS/Final.md
     - 数据库系统｜Database System:
       - blog/Computer Science/Database/index.md
-      - "Chapter 01: Introduction": blog/Computer Science/Database/Chapter 1.md
-      - "Chapter 02: The Relational Model": blog/Computer Science/Database/Chapter 2.md
-      - "Chapter 03: Introduction to SQL": blog/Computer Science/Database/Chapter 3.md
-      - "Chapter 04: Intermediate SQL": blog/Computer Science/Database/Chapter 4.md
-      - "Chapter 05: Advanced SQL": blog/Computer Science/Database/Chapter 5.md
-      - "Homework 01": blog/Computer Science/Database/Homework 1.md
-      - "Homework 02": blog/Computer Science/Database/Homework 2.md
-      - "Homework 03": blog/Computer Science/Database/Homework 3.md
-      - "Homework 04": blog/Computer Science/Database/Homework 4.md
-      - "Homework 05": blog/Computer Science/Database/Homework 5.md
+      - Notes:
+        - "Chapter 01: Introduction": blog/Computer Science/Database/Chapter 1.md
+        - "Chapter 02: The Relational Model": blog/Computer Science/Database/Chapter 2.md
+        - "Chapter 03: Introduction to SQL": blog/Computer Science/Database/Chapter 3.md
+        - "Chapter 04: Intermediate SQL": blog/Computer Science/Database/Chapter 4.md
+        - "Chapter 05: Advanced SQL": blog/Computer Science/Database/Chapter 5.md
+        - "Chapter 06: Entity-Relationship Model": blog/Computer Science/Database/Chapter 6.md
+      - Homeworks:
+        - "Homework 01": blog/Computer Science/Database/Homework 1.md
+        - "Homework 02": blog/Computer Science/Database/Homework 2.md
+        - "Homework 03": blog/Computer Science/Database/Homework 3.md
+        - "Homework 04": blog/Computer Science/Database/Homework 4.md
+        - "Homework 05": blog/Computer Science/Database/Homework 5.md
     - 面向对象程序设计｜Object-Oriented Programming Using C++:
       - blog/Computer Science/OOP/index.md
       - "Chapter 01: Introduction to Object-Oriented Programming": blog/Computer Science/OOP/Chapter 1.md
@@ -165,45 +170,51 @@ nav:
       - "Chapter 08: 假设检验": blog/Math/Probability Theory and Mathematical Statistics/Chapter 8.md
     - 数值分析｜Numerical Analysis:
       - blog/Math/Numerical Analysis/index.md
-      - "Chapter 01: Mathematical Preliminaries": blog/Math/Numerical Analysis/Chapter 1.md
-      - "Chapter 02: Solutions of Equations in One Variable": blog/Math/Numerical Analysis/Chapter 2.md
-      - "Chapter 06: Direct Methods for Solving Linear Systems": blog/Math/Numerical Analysis/Chapter 6.md
-      - "Chapter 07: Iterative Techniques in Matrix Algebra": blog/Math/Numerical Analysis/Chapter 7.md
-      - "Homework 01": blog/Math/Numerical Analysis/Homework 1.md
-      - "Homework 02": blog/Math/Numerical Analysis/Homework 2.md
-      - "Homework 03": blog/Math/Numerical Analysis/Homework 3.md
-      - "Homework 04": blog/Math/Numerical Analysis/Homework 4.md
-      - "Homework 05": blog/Math/Numerical Analysis/Homework 5.md
+      - Notes:
+        - "Chapter 01: Mathematical Preliminaries": blog/Math/Numerical Analysis/Chapter 1.md
+        - "Chapter 02: Solutions of Equations in One Variable": blog/Math/Numerical Analysis/Chapter 2.md
+        - "Chapter 06: Direct Methods for Solving Linear Systems": blog/Math/Numerical Analysis/Chapter 6.md
+        - "Chapter 07: Iterative Techniques in Matrix Algebra": blog/Math/Numerical Analysis/Chapter 7.md
+      - Homeworks:
+        - "Homework 01": blog/Math/Numerical Analysis/Homework 1.md
+        - "Homework 02": blog/Math/Numerical Analysis/Homework 2.md
+        - "Homework 03": blog/Math/Numerical Analysis/Homework 3.md
+        - "Homework 04": blog/Math/Numerical Analysis/Homework 4.md
+        - "Homework 05": blog/Math/Numerical Analysis/Homework 5.md
   - ACEE:
     - 数学建模｜Mathematical Modeling:
       - blog/ACEE/Mathematical Modeling/index.md
-      - "Chapter 01: 搜索引擎中的 PageRank 模型": blog/ACEE/Mathematical Modeling/Chapter 1.md
-      - "Chapter 02: 数学规划": blog/ACEE/Mathematical Modeling/Chapter 2.md
-      - "Chapter 03: 组合优化": blog/ACEE/Mathematical Modeling/Chapter 3.md
-      - "Chapter 04: 图论模型": blog/ACEE/Mathematical Modeling/Chapter 4.md
-      - "Chapter 05: 数论与组合模型": blog/ACEE/Mathematical Modeling/Chapter 5.md
-      - "Chapter 06: 随机模型": blog/ACEE/Mathematical Modeling/Chapter 6.md
-      - "Chapter 07: 秘书问题": blog/ACEE/Mathematical Modeling/Chapter 7.md
-      - "Chapter 08: 差分方程模型": blog/ACEE/Mathematical Modeling/Chapter 8.md
-      - "Chapter 09: 常微分方程模型": blog/ACEE/Mathematical Modeling/Chapter 9.md
-      - "Chapter 10: 博弈论模型": blog/ACEE/Mathematical Modeling/Chapter 10.md
-      - "Homework 01": blog/ACEE/Mathematical Modeling/Homework 1.md
-      - "Homework 02": blog/ACEE/Mathematical Modeling/Homework 2.md
-      - "Homework 03": blog/ACEE/Mathematical Modeling/Homework 3.md
-      - "Homework 04": blog/ACEE/Mathematical Modeling/Homework 4.md
-      - "Homework 05": blog/ACEE/Mathematical Modeling/Homework 5.md
-      - "Homework 06": blog/ACEE/Mathematical Modeling/Homework 6.md
-      - "Homework 07": blog/ACEE/Mathematical Modeling/Homework 7.md
-      - "Homework 08": blog/ACEE/Mathematical Modeling/Homework 8.md
-      - "Homework 09": blog/ACEE/Mathematical Modeling/Homework 9.md
-      - "Homework 10": blog/ACEE/Mathematical Modeling/Homework 10.md
+      - Notes:
+        - "Chapter 01: 搜索引擎中的 PageRank 模型": blog/ACEE/Mathematical Modeling/Chapter 1.md
+        - "Chapter 02: 数学规划": blog/ACEE/Mathematical Modeling/Chapter 2.md
+        - "Chapter 03: 组合优化": blog/ACEE/Mathematical Modeling/Chapter 3.md
+        - "Chapter 04: 图论模型": blog/ACEE/Mathematical Modeling/Chapter 4.md
+        - "Chapter 05: 数论与组合模型": blog/ACEE/Mathematical Modeling/Chapter 5.md
+        - "Chapter 06: 随机模型": blog/ACEE/Mathematical Modeling/Chapter 6.md
+        - "Chapter 07: 秘书问题": blog/ACEE/Mathematical Modeling/Chapter 7.md
+        - "Chapter 08: 差分方程模型": blog/ACEE/Mathematical Modeling/Chapter 8.md
+        - "Chapter 09: 常微分方程模型": blog/ACEE/Mathematical Modeling/Chapter 9.md
+        - "Chapter 10: 博弈论模型": blog/ACEE/Mathematical Modeling/Chapter 10.md
+      - Homeworks:
+        - "Homework 01": blog/ACEE/Mathematical Modeling/Homework 1.md
+        - "Homework 02": blog/ACEE/Mathematical Modeling/Homework 2.md
+        - "Homework 03": blog/ACEE/Mathematical Modeling/Homework 3.md
+        - "Homework 04": blog/ACEE/Mathematical Modeling/Homework 4.md
+        - "Homework 05": blog/ACEE/Mathematical Modeling/Homework 5.md
+        - "Homework 06": blog/ACEE/Mathematical Modeling/Homework 6.md
+        - "Homework 07": blog/ACEE/Mathematical Modeling/Homework 7.md
+        - "Homework 08": blog/ACEE/Mathematical Modeling/Homework 8.md
+        - "Homework 09": blog/ACEE/Mathematical Modeling/Homework 9.md
+        - "Homework 10": blog/ACEE/Mathematical Modeling/Homework 10.md
     - 信息理论｜Information Theory:
       - blog/ACEE/Information Theory/index.md
-      - "Chapter 01: Introduction": blog/ACEE/Information Theory/Chapter 1.md
-      - "Part 01：信息的度量":
-        - "Chapter 02: 随机变量的熵和互信息": blog/ACEE/Information Theory/Chapter 2.md
-        - "Chapter 03: 连续随机变量的互信息和微分熵": blog/ACEE/Information Theory/Chapter 3.md
-      - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
+      - Notes:
+        - "Chapter 01: Introduction": blog/ACEE/Information Theory/Chapter 1.md
+        - "Part 01：信息的度量":
+          - "Chapter 02: 随机变量的熵和互信息": blog/ACEE/Information Theory/Chapter 2.md
+          - "Chapter 03: 连续随机变量的互信息和微分熵": blog/ACEE/Information Theory/Chapter 3.md
+      - Homeworks:
+        - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
