@@ -357,4 +357,61 @@ public:
 	```
 	
 	- 事实上，有了默认构造函数，我们甚至可以直接使用 `Y y1[3]`，不需要再赋初值
+***
+## Destructor
+
+在对象的生命周期结束时，我们需要有机制来释放资源，这时候就需要析构函数（Destructor）
+
+- 析构函数名字和结构名字完全相同，前面加上 `~`，没有返回类型
+- 对象即将结束生命周期时，析构函数被调用
+- 析构函数没有参数
+***
+## Initialization List
+
+在构造函数中，我们可以使用初始化列表（Initialization List）来初始化成员变量，而不是在函数体中进行初始化
+
+!!! example "Example"
+
+	正常情况下，我们可以通过构造函数来进行初始化：
+	
+	```c++
+	#include <iostream>
+	using namespace std;
+	  
+	struct X{
+		int y;
+		X() {
+			y = 10;
+			cout << "X::X()" << endl;
+		}
+	};
+	  
+	int main(){
+		X x;
+		return 0;
+	}
+	```
+	
+	如果我们换一种写法，结果是一样的：
+	
+	```
+	#include <iostream>
+	using namespace std;
+	  
+	struct X{
+		int y;
+		X() : y(10){
+			// y = 10;
+			cout << "X::X()" << endl;
+		}
+	};
+	  
+	int main(){
+		X x;
+		return 0;
+	}
+	```
+	
+	![](../../../assets/Pasted%20image%2020250324134429.png)
+
 
