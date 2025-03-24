@@ -24,6 +24,7 @@ comments: true
 - [Chapter 03 : Introduction to SQL](Chapter%203/)
 - [Chapter 04 : Intermediate SQL](Chapter%204/)
 - [Chapter 05 : Advanced SQL](Chapter%205/)
+- [Chapter 06 : Entity-Relationship Model](Chapter%206/)
 
 ### Homeworks
 
