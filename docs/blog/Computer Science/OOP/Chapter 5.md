@@ -43,6 +43,7 @@ comments: true
 | private   | Yes    | No    | No  |
 | protected | Yes    | Yes   | No  |
 | public    | Yes    | Yes   | Yes |
+
 ***
 !!! example "Example"
 
