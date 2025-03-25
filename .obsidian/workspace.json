@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 5.md",
+                "file": "docs/blog/ACEE/Information Theory/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "index"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/Chapter 5.md",
+                "file": "docs/blog/ACEE/Information Theory/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of index"
             }
           },
           {
@@ -178,34 +178,33 @@
   },
   "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Information Theory/Chapter 4.md",
+    "docs/blog/ACEE/Information Theory/Chapter 3.md",
+    "docs/blog/ACEE/Information Theory/Homework 1.md",
+    "docs/assets/Pasted image 20250325203253.png",
+    "docs/assets/Pasted image 20250325203154.png",
+    "docs/assets/Pasted image 20250325203143.png",
+    "docs/assets/Pasted image 20250325203123.png",
+    "docs/blog/ACEE/Information Theory/Chapter 2.md",
+    "docs/blog/ACEE/Information Theory/Chapter 1.md",
+    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/blog/Computer Science/OOP/Chapter 5.md",
     "docs/assets/Pasted image 20250325140512.png",
     "docs/assets/Pasted image 20250325140352.png",
     "docs/blog/Computer Science/OOP/Chapter 4.md",
-    "docs/blog/Computer Science/OOP/Chapter 5.md",
     "docs/blog/Computer Science/OOP/index.md",
     "docs/assets/Pasted image 20250325130015.png",
     "docs/assets/Pasted image 20250325125835.png",
     "docs/assets/Pasted image 20250325124518.png",
     "docs/assets/Pasted image 20250325124444.png",
-    "docs/assets/Pasted image 20250325115608.png",
-    "docs/assets/Pasted image 20250325113924.png",
-    "docs/assets/Pasted image 20250325113540.png",
     "docs/blog/Computer Science/Database/Homework 7.md",
     "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Database/index.md",
-    "docs/assets/Pasted image 20250325013158.png",
-    "docs/assets/Pasted image 20250325011505.png",
     "docs/blog/Computer Science/Database/Homework 6.md",
     "docs/blog/Computer Science/Database/Chapter 5.md",
-    "docs/blog/ACEE/Information Theory/Homework 1.md",
-    "docs/blog/ACEE/Information Theory/Chapter 2.md",
-    "docs/blog/ACEE/Information Theory/Chapter 3.md",
-    "docs/blog/ACEE/Information Theory/Chapter 4.md",
-    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/about/link.md",
-    "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/blog/Math/Numerical Analysis/Homework 5.md",
     "docs/blog/Math/Numerical Analysis/Chapter 7.md",
     "docs/blog/Math/Numerical Analysis/Homework 4.md",

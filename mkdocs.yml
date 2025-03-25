@@ -216,6 +216,7 @@ nav:
         - "Part 01：信息的度量":
           - "Chapter 02: 随机变量的熵和互信息": blog/ACEE/Information Theory/Chapter 2.md
           - "Chapter 03: 连续随机变量的互信息和微分熵": blog/ACEE/Information Theory/Chapter 3.md
+          - "Chapter 04: 平稳离散信源的熵": blog/ACEE/Information Theory/Chapter 4.md
       - Homeworks:
         - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
   - CTF:

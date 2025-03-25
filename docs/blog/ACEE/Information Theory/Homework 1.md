@@ -236,7 +236,7 @@ $$
 \end{aligned}
 $$
 
-令导数为 0，底数为2，有 $\log\frac{1-\alpha}{\alpha}=H(X_2)-H(X_1)$，解得 $\alpha=\frac{1}{1+2^{H(X_2)-H(X_1)}}$
+令导数为 0，底数为 2，有 $\log\frac{1-\alpha}{\alpha}=H(X_2)-H(X_1)$，解得 $\alpha=\frac{1}{1+2^{H(X_2)-H(X_1)}}$
 
 $$
 \begin{aligned}
@@ -328,4 +328,21 @@ $$
 $\therefore H(V|X)=\frac{1}{2}H(V|X=1)+\frac{1}{2}H(V|X=-1)=\log2$
 
 $I(V;X)=H(V)-H(V|X)=0.5\log2$
+***
+## 2.23
+
+![](../../../assets/Pasted%20image%2020250325203123.png)
+
+![](../../../assets/Pasted%20image%2020250325203253.png)
+
+（a）
+
+
+***
+## 2.25
+
+![](../../../assets/Pasted%20image%2020250325203143.png)
+
+![](../../../assets/Pasted%20image%2020250325203154.png)
+
 
