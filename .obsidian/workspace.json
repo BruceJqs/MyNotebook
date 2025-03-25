@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Homework 1"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Homework 1"
             }
           },
           {
@@ -179,6 +179,7 @@
   "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
     "docs/blog/ACEE/Information Theory/Chapter 4.md",
+    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 3.md",
     "docs/blog/ACEE/Information Theory/Homework 1.md",
     "docs/assets/Pasted image 20250325203253.png",
@@ -187,7 +188,6 @@
     "docs/assets/Pasted image 20250325203123.png",
     "docs/blog/ACEE/Information Theory/Chapter 2.md",
     "docs/blog/ACEE/Information Theory/Chapter 1.md",
-    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/Computer Science/OOP/Chapter 5.md",
     "docs/assets/Pasted image 20250325140512.png",
     "docs/assets/Pasted image 20250325140352.png",

@@ -337,12 +337,102 @@ $I(V;X)=H(V)-H(V|X)=0.5\log2$
 
 （a）
 
+$$
+\begin{aligned}
+\mathbf{P}=\begin{bmatrix}
+1-p & \frac{p}{2} & \frac{p}{2}\\
+\frac{p}{2} & 1-p & \frac{p}{2}\\
+\frac{p}{2} & \frac{p}{2} & 1-p
+\end{bmatrix}\\
+\begin{cases}
+\mathbf{P}^T\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}=\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}\\
+p(0)+p(1)+p(2)=1
+\end{cases}
+\end{aligned}
+$$
 
+联立解得 $p(0)=p(1)=p(2)=\frac{1}{3}$
+
+（b）
+
+$$
+\begin{aligned}
+H_{\infty}&=H(X|S)\\
+&=\frac{1}{3}H(X|S=0)+\frac{1}{3}H(X|S=1)+\frac{1}{3}H(X|S=2)\\
+&=H(1-p,\frac{p}{2},\frac{p}{2})\\
+&=-(1-p)\log(1-p)-p\log\frac{p}{2}
+\end{aligned}
+$$
+
+（c）当信源无记忆时，概率分布等于平稳分布，即 $p=\frac{2}{3}$
+
+此时 $H(X)=\log 3$
+
+对 $H_{\infty}$ 求导可得 $H'_{\infty}=-(-\log(1-p)-1)-\log\frac{p}{2}-1=\log\frac{2(1-p)}{p}=0\Rightarrow p=\frac{2}{3}$
+
+即 $H_{\infty}\leq H(X)$
+
+（d）$p=\frac{2}{3}$ 时取最大值，$p=0$ 时 $H_{\infty}=0$，$p=1$ 时 $H_{\infty}=\log 2$
 ***
 ## 2.25
 
 ![](../../../assets/Pasted%20image%2020250325203143.png)
 
 ![](../../../assets/Pasted%20image%2020250325203154.png)
+
+（a）
+
+$$
+\begin{aligned}
+\begin{bmatrix}
+\mu_1\\
+\mu_2
+\end{bmatrix}
+=\begin{bmatrix}
+1-p_{01} & p_{01}\\
+p_{10} & 1-p_{10}
+\end{bmatrix}^T\begin{bmatrix}
+\mu_1\\
+\mu_2
+\end{bmatrix}
+\end{aligned}
+$$
+
+解得 $\mu_1=\frac{p_{10}}{p_{01}+p_{10}},\mu_2=\frac{p_{01}}{p_{01}+p_{10}}$
+
+$\therefore H_{\infty}=H(X|S)=\frac{p_{10}}{p_{01}+p_{10}}H(1-p_{01},p_{01})+\frac{p_{01}}{p_{01}+p_{10}}H(1-p_{10},p_{10})$
+
+（b）由对称性，当 $p_{01}=p_{10}=\frac{1}{2}$ 时熵最大
+
+（c）即取 $p_{01}=p,p_{10}=1$
+
+$H_{\infty}=H(X|S)=\frac{1}{1+p}H(1-p,p)+\frac{p}{1+p}H(0,1)=-\frac{1}{1+p}[(1-p)\log(1-p)+p\log p]$
+
+（d）求导得：
+
+$$
+\begin{aligned}
+H'_{\infty}&=-\frac{(1+p)(-\log(1-p)-1+\log p+1)-(1-p)\log(1-p)-p\log p}{(1+p)^2}\\
+&=-\frac{\log p-2\log(1-p)}{(1+p)^2}=0\\
+&\Rightarrow p=(1-p)^2\Rightarrow p=\frac{3-\sqrt{5}}{2}
+\end{aligned}
+$$
+
+（e）对于长度为 $t$ 的序列，若该序列结尾为 0，则前 $t-1$ 长度的序列末位可以为 0 / 1；若该序列结尾为 1，则前 $t-1$ 长度的序列末位只能为 0，则前 $t-2$ 长度的序列末位可以为 0 / 1，因此有递推式 $N(t)=N(t-1)+N(t-2),N(1)=2,N(2)=3$
+
+$\therefore N(t)=\frac{1}{\sqrt{5}}[(\frac{1+\sqrt{5}}{2})^{t+2}-(\frac{1-\sqrt{5}}{2})^{t+2}]$
+
+$H=\lim\limits_{t\rightarrow\infty}\frac{1}{t}\log N(t)=\log\frac{1+\sqrt{5}}{2}$
+
+
+
 
 
