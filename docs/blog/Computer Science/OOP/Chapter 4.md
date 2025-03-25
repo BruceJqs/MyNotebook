@@ -313,6 +313,7 @@ public:
 我们需要有机制，保证对象被创建时有合理的初值，如果没有赋初值，那么对象的状态就是不确定的，这时候就需要构造函数（Constructor）
 
 - 构造函数名字和结构名字完全相同，没有返回类型
+- 如果没有定义构造函数，编译器会自动生成一个默认构造函数，默认的构造函数没有任何参数
 - 本地变量被创建时，构造函数被调用
 
 !!! example "Example"
@@ -365,10 +366,87 @@ public:
 - 析构函数名字和结构名字完全相同，前面加上 `~`，没有返回类型
 - 对象即将结束生命周期时，析构函数被调用
 - 析构函数没有参数
+
+!!! note "RAII"
+
+	RAII（Resource Acquisition Is Initialization）是一种 C++ 编程技巧，将资源的生命周期与对象的生命周期绑定，通过在对象构造时获取资源，然后在对象析构时释放资源，从而保证资源被正确释放。
+	
+	!!! example "Examples"
+	
+	=== "Example 01"
+	
+		```c++
+		std::mutex m;
+		
+		void bad(){
+			m.lock();
+			if(!everything_ok())
+				return; // early return without mutex release
+			m.unlock();
+		}
+		
+		void good(){
+			std::lock_guard<std::mutex> lk(m);
+			if(!everything_ok())
+				return; // unlock
+		} // unlock
+		```
+		
+		- `std::lock_guard` 是一个 RAII 类，它在构造时获取锁，在析构时释放锁，这样就保证了锁的正确释放
+	
+	=== "Example 02"
+	
+		```c++
+		void foo(const std::string& message){
+			std::ofstream file("example.txt");
+			if(!everything_ok())
+				return; // file close
+			file << message << std::endl;
+		} // file close
+		```
+		
+		- 在构造时打开文件，在析构时关闭文件，这样就保证了文件的正确关闭
+	
+	=== "Example 03"
+	
+		```c++
+		void bar(){
+			std::unique_ptr<int[]> up(new int[10]);
+			if(!everything_ok())
+				return; // delete[]
+		} // delete[]
+		```
+		
+		- 在构造时分配内存，在析构时释放内存，这样就保证了内存的正确释放
 ***
 ## Initialization List
 
-在构造函数中，我们可以使用初始化列表（Initialization List）来初始化成员变量，而不是在函数体中进行初始化
+!!! tip "Aggregate Initialization"
+
+	```c++
+	int a[5] = {1, 2, 3, 4, 5};
+	int b[6] = {5};
+	int c[] = {1, 2, 3, 4}; // sizeof(c) / sizeof(*c)
+	
+	struct X{
+		int i;
+		float f;
+		char c;
+	};
+	X x1 = {1, 2.2, 'c'};
+	X x2[3] = {{1, 1.1, 'a'}, {2, 2.2, 'b'}};
+	
+	struct Y{
+		float f;
+		int i;
+		Y(int a);
+	};
+	Y y1[] = {Y(1), Y(2), Y(3)};
+	```
+
+事实上，在函数体当中的赋值并非真正意义上的初始化在构造函数中，我们可以使用初始化列表（Initialization List）来初始化成员变量，而不是在函数体中进行初始化
+
+- 需要注意的是，初始化的顺序并不是按照初始化列表当中的顺序，而是按照声明的顺序进行初始化
 
 !!! example "Example"
 
@@ -392,9 +470,9 @@ public:
 	}
 	```
 	
-	如果我们换一种写法，结果是一样的：
+	如果我们换成初始化列表的写法，结果是一样的：
 	
-	```
+	```c++
 	#include <iostream>
 	using namespace std;
 	  
@@ -414,4 +492,265 @@ public:
 	
 	![](../../../assets/Pasted%20image%2020250324134429.png)
 
+根据上面的 example，其实并不能看出两者有什么本质的区别，但是如果到了我们自定义的类型：
 
+!!! example "Example"
+
+	```c++
+	#include <iostream>
+	using namespace std;
+	
+	struct Y{
+	    int i;
+	    Y(int ii){
+	        i = ii;
+	        cout << "Y::Y(int)" << endl;
+	    }
+	};
+	    
+	struct X{
+	    Y y;
+	    X() : y(10){
+	        // y = 10;
+	        cout << "X::X()" << endl;
+	    }
+	};
+	    
+	int main(){
+	    X x;
+	    return 0;
+	}
+	```
+	
+	![](../../../assets/Pasted%20image%2020250325113540.png)
+	
+	如果我们换用上面第一种的写法，不采用初始化列表：
+	
+	```c++
+	#include <iostream>
+	using namespace std;
+	
+	struct Y{
+	    int i;
+	    Y(int ii){
+	        i = ii;
+	        cout << "Y::Y(int)" << endl;
+	    }
+	};
+	    
+	struct X{
+	    Y y;
+	    X(){
+	    // X() : y(10){
+	        y = 10;
+	        cout << "X::X()" << endl;
+	    }
+	};
+	    
+	int main(){
+	    X x;
+	    return 0;
+	}
+	```
+	
+	那么会出现以下情况：
+	
+	![](../../../assets/Pasted%20image%2020250325113924.png)
+	
+	报错说明 Y 没有默认构造函数，因为 `y = 10;` 这句话已经不是一个初始化了，而是一个赋值操作，真正的初始化是在初始化列表中进行的，如果没有初始化列表，编译器就会默认调用默认构造函数，但是这里没有默认构造函数，所以会报错，如果我们给 Y 加上默认构造函数，那么就不会报错：
+	
+	```c++
+	#include <iostream>
+	using namespace std;
+	
+	struct Y{
+	    int i;
+	    Y(int ii){
+	        i = ii;
+	        cout << "Y::Y(int)" << endl;
+	    }
+	    Y(){
+	        cout << "Y::Y()" << endl;
+	    }
+	};
+	    
+	struct X{
+	    Y y;
+	    X(){
+	    // X() : y(10){
+	        y = 10; // 其实还等价于 y = Y(10);
+	        cout << "X::X()" << endl;
+	    }
+	};
+	    
+	int main(){
+	    X x;
+	    return 0;
+	}
+	```
+	
+	![](../../../assets/Pasted%20image%2020250325115608.png)
+	
+	- 实际上，`y = 10;` 的操作是隐式地构造了一个 Y 对象，然后把这个对象复制给了 y，有关隐式和显式的问题会在后面讲到
+
+根据上面的例子我们能看到，对于初始化我们有两种方法，一种是显式的初始化列表（例如 `Student::Student(string s) : name(s) {}`，另一种是隐式的初始化列表+赋值（例如 `Student::Student(string s) { name = s; }`），但是由于后者还需要一个默认构造函数，因此，更推荐写初始化列表，可以避免一些可能存在的问题，也可以提高代码的可读性
+***
+## Local Variable
+
+- 在 C++ 中，我们可以在类的函数体中定义局部变量，这些变量只在函数体中有效
+- 如果局部变量和成员变量同名，那么局部变量会覆盖成员变量
+- 如果想要访问成员变量，可以使用 `this` 指针
+***
+## Field
+
+- 在 C++ 中，我们可以在类中定义成员变量，这些变量称为字段（Field）
+- 字段可以是任何类型，包括内置类型、自定义类型、指针等
+- 字段在对象的整个生命周期中都保存着对象的数据，即它们保存了对象的当前状态
+- 字段具有类作用域，在整个类中都可以访问
+***
+## Const Members
+
+- 如果一个成员函数不会修改对象的状态（或者我们希望它只是一个只读的函数），那么我们可以将其声明为 `const` 函数
+- `const` 函数不能修改对象的数据成员，也不能调用非 `const` 函数
+- `const` 函数可以被 `const` 对象调用
+- 如果我们有一个 `const` 字段，那么它只能在构造函数中初始化，不能在其他地方赋值
+
+!!! example "Example"
+
+	```c++
+	#include <iostream>
+	using namespace std;
+	
+	struct X{
+	    void foo(){
+	        cout << "This is X::foo()" << endl;
+	    }
+	    void foo() const{
+	        cout << "This is X::foo() const" << endl;
+	    }
+	};
+	    
+	int main(){
+	    X x;
+	    x.foo();
+	    return 0;
+	}
+	```
+	
+	这里得到的结果是：
+	
+	![](../../../assets/Pasted%20image%2020250325124444.png)
+	
+	如果我们在 main 函数中定义的 `x` 为 `const` 类型，那么会调用 `const` 函数：
+	
+	![](../../../assets/Pasted%20image%2020250325124518.png)
+***
+## Static Members
+
+- 在 C++ 中，我们可以使用 `static` 关键字来定义静态成员变量
+- 静态成员变量是类的所有对象共享的，即它们不是对象的一部分，而是整个类的一部分
+- 需要注意的是，静态成员变量必须在类外进行定义，而不能在类内进行定义
+- 静态成员函数只能访问静态成员变量，不能访问非静态成员变量
+
+```c++
+struct X{
+	static void f(); // declaration
+	static int n; // declaration
+};
+
+int X::n = 7; // definition
+
+void X::f(){ // definition
+	n = 1; // X::n is accessible
+}
+```
+
+!!! example "Example"
+
+	我们有以下代码：
+	
+	```c++
+	#include <iostream>
+	using namespace std;
+	
+	struct A{
+	    int data;
+	    A() { data = 0; }
+	    void setdata(int i) { data = i; }
+	    void print() { cout << data << endl; }
+	};
+	    
+	int main(){
+	    A a, b;
+	    a.setdata(20);
+	    a.print();
+	    b.print();
+	    return 0;
+	}
+	```
+	
+	结果显然，`a` 的 data 为 20，`b` 的 data 为 0：
+	
+	![](../../../assets/Pasted%20image%2020250325125835.png)
+	
+	但是如果我们将 data 定义为静态变量：
+	
+	```c++
+	#include <iostream>
+	using namespace std;
+	
+	struct A{
+	    static int data;
+	    A() { data = 0; } // 这里的 data = 0 已经没有作用了
+	    void setdata(int i) { data = i; }
+	    void print() { cout << data << endl; }
+	};
+	
+	int A::data = 0; // 必须要加上这句话
+	    
+	int main(){
+	    A a, b;
+	    a.setdata(20);
+	    a.print();
+	    b.print();
+	    return 0;
+	}
+	```
+	
+	最后会发现，`a` 和 `b` 的 data 都是 20：
+	
+	![](../../../assets/Pasted%20image%2020250325130015.png)
+	
+	这是因为静态变量是类的所有对象共享的，即它们不是对象的一部分，而是整个类的一部分，甚至，我们都可以用 `A::data` 来访问这个静态变量
+***
+## Inline
+
+- 在 C++ 中，我们可以使用 `inline` 关键字来定义内联函数
+- 内联函数是一种特殊的函数，编译器会在调用函数的地方直接展开函数体，而不是通过函数调用的方式
+
+比如，我们定义了一个简单的函数：
+
+```c++
+inline int f(int i){
+	return i * 2;
+}
+int main(){
+	int a = 4;
+	int b = f(a);
+	return 0;
+}
+```
+
+编译器会将这个函数展开，变成：
+
+```c++
+int main(){
+	int a = 4;
+	int b = a * 2; // a << 1
+	return 0;
+}
+```
+
+- 内联函数的优点是可以减少函数调用的开销，提高程序的运行效率，相比于宏定义，内联函数可以进行类型检查，而宏定义不能
+- 缺点是会增加代码的长度，因为函数体会被复制到调用函数的地方
+- 通常我们要求内联函数的主体放在头文件中

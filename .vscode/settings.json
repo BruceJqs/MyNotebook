@@ -5,6 +5,7 @@
         "*.dbclient-js": "javascript",
         "*.embeddedhtml": "html",
         "*.sage": "python",
-        "string": "cpp"
+        "string": "cpp",
+        "ostream": "cpp"
     }
 }
