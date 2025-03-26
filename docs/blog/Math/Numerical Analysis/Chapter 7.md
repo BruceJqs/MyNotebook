@@ -361,7 +361,7 @@ $$
 
 对于线性方程组 $\mathbf{Ax}=\mathbf{b}$ ，$\mathbf{A}$ 是非奇异的。如果 $\mathbf{A}$ 和 $\mathbf{b}$ 存在误差，那么解 $\mathbf{x}$ 也会存在误差
 
-#### Accurate $\mathbf{A}$，Erroneous $\mathbf{b}$ 
+#### Accurate $A$，Erroneous $b$ 
 
 即 $\mathbf{Ax}=\mathbf{b}$ 经过了扰动变为 $\mathbf{A(x+\delta x)}=\mathbf{b}+\delta\mathbf{b}$ 。所以有：
 
@@ -386,7 +386,7 @@ $$
 
 当 $K(\mathbf{A})$ 很大时，$\mathbf{A}$ 是病态的，当 $K(\mathbf{A})$ 接近于 $1$ 时，$\mathbf{A}$ 是良态的
 ***
-#### Erroneous $\mathbf{A}$，Accurate $\mathbf{b}$
+#### Erroneous $A$，Accurate $b$
 
 即 $\mathbf{Ax}=\mathbf{b}$ 经过了扰动变为 $\mathbf{(A+\delta A)(x+\delta x)}=\mathbf{b}$ 。所以有：
 
@@ -451,7 +451,7 @@ $$
 $$
 
 ***
-#### Erroneous $\mathbf{A}$，Erroneous $\mathbf{b}$
+#### Erroneous $A$，Erroneous $b$
 
 即 $\mathbf{Ax}=\mathbf{b}$ 经过了扰动变为 $\mathbf{(A+\delta A)(x+\delta x)}=\mathbf{b}+\delta\mathbf{b}$ 。所以有：
 
@@ -477,7 +477,7 @@ $$
 $$
 
 ***
-#### Properties of $K(\mathbf{A})$
+#### Properties of $K(A)$
 
 我们记非奇异矩阵 $A$ 相对于范数 $\|\cdot\|$ 的条件数为：
 
