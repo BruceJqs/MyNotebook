@@ -21,6 +21,7 @@ comments: true
 - [Chapter 02 : Solutions of Equations in One Variable](Chapter%202/)
 - [Chapter 06 : Direct Methods for Solving Linear Systems](Chapter%206/)
 - [Chapter 07 : Iterative Techniques in Matrix Algebra](Chapter%207/)
+- [Chapter 09 : Approximating Eigenvalues](Chapter%209/)
 
 ### Homeworks
 
