@@ -3698,10 +3698,43 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Original Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-of-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate of Convergence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-power-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Power Method
+    </span>
+  </a>
   
 </li>
       
@@ -7308,10 +7341,43 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The Original Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-of-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate of Convergence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-power-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse Power Method
+    </span>
+  </a>
   
 </li>
       
@@ -7351,11 +7417,113 @@
 
 <h1 id="chapter-09-approximating-eigenvalues">Chapter 09 : Approximating Eigenvalues<a class="headerlink" href="#chapter-09-approximating-eigenvalues" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 85 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1061 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 19 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
 </div>
 <h2 id="the-power-method">The Power Method<a class="headerlink" href="#the-power-method" title="Permanent link">&para;</a></h2>
 <h3 id="the-original-method">The Original Method<a class="headerlink" href="#the-original-method" title="Permanent link">&para;</a></h3>
 <p>假设：<span class="arithmatex">\(\mathbf{A}\)</span> 是一个 <span class="arithmatex">\(n\times n\)</span> 的矩阵，且恰有一个特征值 <span class="arithmatex">\(\lambda_1\)</span> 的绝对值最大，有 <span class="arithmatex">\(n\)</span> 个特征值 <span class="arithmatex">\(\lambda_1,\lambda_2,\cdots,\lambda_n\)</span>（<span class="arithmatex">\(|\lambda_1|&gt;|\lambda_2|\geq\cdots\geq|\lambda_n|\)</span>），对应为 <span class="arithmatex">\(n\)</span> 个线性独立的特征向量 <span class="arithmatex">\(\mathbf{v}_1,\mathbf{v}_2,\cdots,\mathbf{v}_n\)</span></p>
+<p>思路：从任意一个 <span class="arithmatex">\(\vec{x}^{(0)}\neq\vec{0}\)</span> 和 <span class="arithmatex">\((\vec{x}^{(0)},\vec{v_1})\neq\vec{0}\)</span> 出发</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\vec{x}^{(0)}&amp;=\sum\limits_{j=1}^n\beta_j\vec{v}_j,\beta_1\neq 0\\
+\vec{x}^{(1)}&amp;=\mathbf{A}\vec{x}^{(0)}=\sum\limits_{j=1}^n\beta_j\mathbf{A}\vec{v}_j=\sum\limits_{j=1}^n\beta_j\lambda_j\vec{v}_j\\
+\vec{x}^{(2)}&amp;=\mathbf{A}\vec{x}^{(1)}=\sum\limits_{j=1}^n\beta_j\mathbf{A}\vec{v}_j=\sum\limits_{j=1}^n\beta_j\lambda_j^2\vec{v}_j\\
+\cdots\\
+\vec{x}^{(k)}&amp;=\mathbf{A}\vec{x}^{(k-1)}=\sum\limits_{j=1}^n\beta_j\mathbf{A}\vec{v}_j=\sum\limits_{j=1}^n\beta_j\lambda_j^k\vec{v}_j=\lambda_1^k\sum\limits_{j=1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\vec{v}_j\\
+\therefore \lim\limits_{k\rightarrow\infty}\mathbf{A}^k\vec{x}&amp;=\lim\limits_{k\rightarrow\infty}\lambda_1^k\sum\limits_{j=1}^n\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\vec{v}_j=\lim\limits_{k\rightarrow\infty}\lambda_1^k\beta_1\vec{v}_1
+\end{aligned}
+\]</div>
+<p>如果 <span class="arithmatex">\(|\lambda_1|&lt;1\)</span>，则 <span class="arithmatex">\(\lim\limits_{k\to\infty}\mathbf{A}^k\mathbf{x}=0\)</span>，即 <span class="arithmatex">\(\mathbf{x}\)</span> 收敛到 <span class="arithmatex">\(\vec{0}\)</span>；如果 <span class="arithmatex">\(|\lambda_1|&gt;1\)</span>，则序列发散</p>
+<p>对足够大的 <span class="arithmatex">\(k\)</span>，<span class="arithmatex">\(\mathbf{x}^{(k)},\mathbf{x}^{(k-1)}\)</span> 可以近似地表示为：</p>
+<div class="arithmatex">\[
+\mathbf{x}^{(k)}\approx\beta_1\lambda_1^k\mathbf{v}_1, \quad\mathbf{x}^{(k-1)}\approx\beta_1\lambda_1^{k-1}\mathbf{v}_1\quad
+\Rightarrow\quad\frac{\mathbf{x}^{(k)}}{\mathbf{x}^{(k-1)}}\approx\lambda_1
+\]</div>
+<p>所以，我们可以通过迭代 <span class="arithmatex">\(\mathbf{x}^{(k)}=\mathbf{A}\mathbf{x}^{(k-1)}\)</span> 来逼近 <span class="arithmatex">\(\lambda_1\)</span></p>
+<hr />
+<h4 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h4>
+<p>实际计算时，为了避免计算过程中出现绝对值过大或过小的数参加运算，通常在每步迭代时，将向量“归一化”即用的按模最大的分量。</p>
+<p>我们需要对 <span class="arithmatex">\(\mathbf{x}^{(k)}\)</span> 进行归一化，使得 <span class="arithmatex">\(\|\mathbf{x}^{(k)}\|_\infty=1\)</span>，即</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathbf{u}^{(k-1)}=\frac{\mathbf{x}^{(k-1)}}{\|\mathbf{x}^{(k-1)}\|_\infty},\quad \mathbf{x}^{(k)}=\mathbf{A}\mathbf{u}^{(k-1)}\\
+\Rightarrow \mathbf{u}^{(k)}=\frac{\mathbf{x}^{(k)}}{\|\mathbf{x}^{(k)}\|_\infty},\quad \lambda_1\approx\frac{\mathbf{x}_{i}^{(k)}}{\mathbf{u}_{i}^{(k-1)}}=\|\mathbf{x}^{(k)}\|_\infty
+\end{aligned}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Pseudo Code</p>
+<p>从非零初始向量开始，近似求解规模为 <span class="arithmatex">\(n\times n\)</span> 的矩阵 <span class="arithmatex">\(A\)</span> 的主特征值及其特征向量</p>
+<ul>
+<li>输入：维度 <span class="arithmatex">\(n\)</span>，矩阵 <span class="arithmatex">\(a[][]\)</span>，初始向量 <span class="arithmatex">\(x0[]\)</span>，容忍值 TOL，最大迭代次数 <span class="arithmatex">\(N_{\max}\)</span></li>
+<li>输出：近似特征值 <span class="arithmatex">\(\lambda\)</span>，近似（规范化的）特征向量</li>
+</ul>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Step</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">Step</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="n">Find</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="n">index</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x0</span><span class="w"> </span><span class="o">||</span><span class="n">_infty</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">Step</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="n">Set</span><span class="w"> </span><span class="n">x0</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x0</span><span class="p">[]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x0</span><span class="p">[</span><span class="n">index</span><span class="p">];</span><span class="w">    </span><span class="cm">/* normalize x0 */</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">Step</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N_max</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="mi">5-11</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="n">x</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x0</span><span class="p">[];</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">6</span><span class="w">  </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="n">Find</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">||</span><span class="n">_infty</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">8</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">then</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">                    </span><span class="n">Output</span><span class="p">(</span><span class="s">&quot;A has the eigenvalue 0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">                    </span><span class="n">STOP</span><span class="p">.</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">                </span><span class="cm">/* the matrix is singular and user should try a new x0 */</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">9</span><span class="w">  </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="n">_infty</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">                </span><span class="n">x0</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">[]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w">      </span><span class="cm">/* computer u^k */</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">err</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">TOL</span><span class="p">)</span><span class="w"> </span><span class="n">then</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">                    </span><span class="n">Output</span><span class="p">(</span><span class="n">lambda</span><span class="p">,</span><span class="w"> </span><span class="n">x0</span><span class="p">[]);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">                    </span><span class="n">STOP</span><span class="p">.</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="n">Step</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="n">Step</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="n">Output</span><span class="p">(</span><span class="n">Maximum</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">iterations</span><span class="w"> </span><span class="n">exceeded</span><span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="n">STOP</span><span class="p">.</span><span class="w">    </span><span class="cm">/* unsucessful */</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ul>
+<li>对唯一的主特征值 <span class="arithmatex">\(\lambda_1\)</span>，如果其重数大于 1，则幂法仍然有效，因为：</li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{x}^{(k)}=\lambda_1^k[\sum\limits_{j=1}^r\beta_j\mathbf{v}_j+\sum\limits_{j=r+1}^n\beta_j(\frac{\lambda_j}{\lambda_1})^k\mathbf{v}_j]\approx\lambda_1^k(\sum\limits_{j=1}^r\beta_j\mathbf{v}_j))
+\]</div>
+<ul>
+<li>如果 <span class="arithmatex">\(\lambda_1=-\lambda_2\)</span>，则幂法失效</li>
+<li>因为我们无法确保对于任意的初始向量 <span class="arithmatex">\(\mathbf{x}^{(0)}\)</span>都有<span class="arithmatex">\(\beta_1\neq 0\)</span>，所以迭代的结果可能不是 <span class="arithmatex">\(\mathbf{v}_1\)</span>，而是满足 <span class="arithmatex">\((\mathbf{x}^{(0)},\mathbf{v}_m)\neq 0\)</span> 的第一个向量 <span class="arithmatex">\(\mathbf{v}_m\)</span>，相应地，得到的特征值为 <span class="arithmatex">\(\lambda_m\)</span> 。</li>
+<li>Aitken's <span class="arithmatex">\(\Delta^2\)</span> 法可以加速收敛</li>
+</ul>
+</div>
+<hr />
+<h3 id="rate-of-convergence">Rate of Convergence<a class="headerlink" href="#rate-of-convergence" title="Permanent link">&para;</a></h3>
+<p>因为 <span class="arithmatex">\(\mathbf{x}^{(k)}=\lambda_1^k\sum\limits_{j=1}\limits^n\beta_j(\frac{\lambda_j}{\lambda_1})^k\mathbf{v}_j\)</span>，假设 <span class="arithmatex">\(\lambda_1&gt;\lambda_2\geq\cdots\geq\lambda_n\)</span>，且 <span class="arithmatex">\(|\lambda_2|&gt;|\lambda_n|\)</span>，则我们的目标就是让 <span class="arithmatex">\(\frac{\lambda_2}{\lambda_1}\)</span> 尽可能小，这样收敛速度更快</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250326132312.png" /></p>
+<p>记 <span class="arithmatex">\(\mathbf{B}=\mathbf{A}-p\mathbf{I}\)</span>，其中 <span class="arithmatex">\(p=\frac{\lambda_2+\lambda_n}{2}\)</span>，那么有 <span class="arithmatex">\(|\lambda\mathbf{I}-A|=|\lambda\mathbf{I}-(\mathbf{B}+p\mathbf{I})|=|(\lambda-p)\mathbf{I}-\mathbf{B}|\)</span>，则 <span class="arithmatex">\(\mathbf{B}\)</span> 的特征值为 <span class="arithmatex">\(\lambda_1-p,\lambda_2-p,\cdots,\lambda_n-p\)</span>，因为 <span class="arithmatex">\(|\frac{\lambda_2-p}{\lambda_1-p}|&lt;|\frac{\lambda_2}{\lambda_1}|\)</span>，所以此时 <span class="arithmatex">\(\mathbf{B}\)</span> 的收敛速度更快</p>
+<hr />
+<h2 id="inverse-power-method">Inverse Power Method<a class="headerlink" href="#inverse-power-method" title="Permanent link">&para;</a></h2>
+<p>如果 <span class="arithmatex">\(\mathbf{A}\)</span> 有特征值 <span class="arithmatex">\(|\lambda_1|\geq|\lambda_2|\geq\cdots &gt;|\lambda_n|\)</span>，那么 <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> 有 <span class="arithmatex">\(|\frac{1}{\lambda_n}|&gt;| \frac{1}{\lambda_{n-1}}|\geq\cdots&gt;|\frac{1}{\lambda_1}|\)</span>，他们也对应着相同的特征向量</p>
+<p><span class="arithmatex">\(A^{-1}\)</span> 的主特征值 <span class="arithmatex">\(\Leftrightarrow\)</span> <span class="arithmatex">\(A\)</span> 的特征值中的最小值</p>
+<details class="question">
+<summary>我们如何在每一步当中计算 <span class="arithmatex">\(\vec{x}^{(k+1)}=\mathbf{A}^{-1}\hat{x}^{(k)}\)</span>？</summary>
+<p>我们可以通过分解 <span class="arithmatex">\(\mathbf{A}\)</span> 求解线性方程组 <span class="arithmatex">\(\mathbf{A}\vec{x}^{(k+1)}=\hat{x}^{(k)}\)</span> 来计算 <span class="arithmatex">\(\vec{x}^{(k+1)}\)</span></p>
+</details>
+<p>如果我们知道 <span class="arithmatex">\(A\)</span> 的一个特征值 <span class="arithmatex">\(\lambda_i\)</span> 最接近一个指定值 <span class="arithmatex">\(p\)</span>，那么对于任意的 <span class="arithmatex">\(j\neq i\)</span>，我们有 <span class="arithmatex">\(|\lambda_i−p|&lt;&lt;|\lambda_j−p|\)</span>。并且，如果存在 <span class="arithmatex">\((A−pI)^{−1}\)</span>，那么逆幂法能以更快的收敛速度寻找到 <span class="arithmatex">\((A−p)^{−1}\)</span> 的主特征值 <span class="arithmatex">\(\frac{1}{\lambda_i-p}\)</span></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -7425,7 +7593,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月26日 11:00:11">2025年3月26日 11:00:11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月26日 13:41:26">2025年3月26日 13:41:26</span>
   </span>
 
     
