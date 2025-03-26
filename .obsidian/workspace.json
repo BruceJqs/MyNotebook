@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 9.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 9"
+              "title": "Homework 6"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 9.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 6.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 9"
+              "title": "Outline of Homework 6"
             }
           },
           {
@@ -178,12 +178,16 @@
   },
   "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20250326132312.png",
-    "docs/blog/Math/Numerical Analysis/Chapter 7.md",
     "docs/blog/Math/Numerical Analysis/Chapter 9.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 7.md",
+    "docs/blog/Math/Numerical Analysis/Homework 6.md",
+    "docs/assets/Pasted image 20250326134902.png",
+    "docs/assets/Pasted image 20250326134832.png",
+    "docs/blog/Math/Numerical Analysis/index.md",
+    "docs/blog/Math/Numerical Analysis/Homework 5.md",
+    "docs/assets/Pasted image 20250326132312.png",
     "docs/blog/Math/Numerical Analysis/Chapter 2.md",
     "docs/blog/Math/Numerical Analysis/Chapter 6.md",
-    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/assets/Pasted image 20250326102437.png",
     "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
     "docs/blog/ACEE/Information Theory/Homework 1.md",
@@ -201,9 +205,6 @@
     "docs/assets/Pasted image 20250325140352.png",
     "docs/blog/Computer Science/OOP/Chapter 4.md",
     "docs/blog/Computer Science/OOP/index.md",
-    "docs/assets/Pasted image 20250325130015.png",
-    "docs/assets/Pasted image 20250325125835.png",
-    "docs/assets/Pasted image 20250325124518.png",
     "docs/blog/Computer Science/Database/Homework 7.md",
     "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Database/index.md",
@@ -211,9 +212,7 @@
     "docs/blog/Computer Science/Database/Chapter 5.md",
     "docs/blog/ACEE/Mathematical Modeling/index.md",
     "docs/about/link.md",
-    "docs/blog/Math/Numerical Analysis/Homework 5.md",
     "docs/blog/Math/Numerical Analysis/Homework 4.md",
-    "docs/blog/Research/Seedlab/Tutorial.md",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Knowledge",
