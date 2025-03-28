@@ -272,6 +272,10 @@ nav:
       - "Chapter 01: 数学基础": blog/CTF/Cryptography/Chapter 1.md
       - "Chapter 02: 古典密码": blog/CTF/Cryptography/Chapter 2.md
   - Research:
+    - "Reading Papers":
+      - blog/Research/Reading/index.md
+      - RAG:
+        - "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks": blog/Research/Reading/RAG/Note01.md
     - Seedlab:
       - blog/Research/Seedlab/index.md
       - Knowledge:
