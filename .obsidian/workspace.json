@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "A00_simple_as"
+              "title": "Chapter 1"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of A00_simple_as"
+              "title": "Outline of Chapter 1"
             }
           },
           {
@@ -178,11 +178,11 @@
   },
   "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
+    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/blog/Research/Reading/index.md",
     "docs/blog/Research/Reading/RAG/Note01.md",
     "docs/blog/Research/Reading/RAG",
     "docs/blog/Research/Seedlab/index.md",
-    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/assets/Pasted image 20250328232949.png",
     "docs/assets/Pasted image 20250328232936.png",
     "docs/assets/Pasted image 20250328232912.png",
