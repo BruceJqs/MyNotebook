@@ -105,16 +105,16 @@ comments: true
 **互信息**是衡量两个随机变量之间的相关性的重要指标，定义为：
 
 $$
-I(x_k;y_j)=I(x_k)-I(x_k|y_j)=-\log q(x_k)-\{-\log p(x_k,y_j)\}=\log\frac{p(x_k,y_j)}{q(x_k)\omega(y_j)}
+I(x_k;y_j)=I(x_k)-I(x_k|y_j)=-\log q(x_k)-\{-\log p(x_k|y_j)\}=\log\frac{p(x_k,y_j)}{q(x_k)\omega(y_j)}
 $$
 
 显然可以看出，互信息有对称性 $I(x_k;y_j)=I(y_j;x_k)$
 
 - 事件的互信息的本质：事件 $\{Y=y_j\}$ 发生后对事件 $\{X=x_k\}$ 不确定性的降低，大于 0 表示不确定性降低；小于 0 表示不确定性增加
 
-!!! example "Example"
+!!! example "Examples"
 
-	=== "Example"
+	=== "Example 01"
 	
 		- $x_k$：杭州下雨，$y_j$：上海下雨
 		- $I(x_k)$：杭州下雨需要的信息量，$I(x_k|y_j)$：上海下雨后杭州下雨需要的信息量
@@ -247,7 +247,10 @@ $$
 或者也可定义为：
 
 $$
-H(X|Y)=E\{H(X|y)\}=-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(x,y)\log p(x|y)
+\begin{aligned}
+H(X|Y)=E\{H(X|y)\}&=-\sum\limits_{y\in\mathcal{Y}}w(y)\sum\limits_{x\in\mathcal{X}}p(x|y)\log p(x|y)\\
+&=-\sum\limits_{x\in\mathcal{X}}\sum\limits_{y\in\mathcal{Y}}p(x,y)\log p(x|y)
+\end{aligned}
 $$
 
 - 从第二个定义我们可以看出，当 $X$ 和 $Y$ 统计独立时，$H(X|Y)=H(X)$
@@ -403,7 +406,7 @@ $$
 对于两个事件 $\{X=x\},\{Y=y\}$ 之间相互提供的信息量定义为：
 
 $$
-I(x,y)=I(x)-I(x|y)=\log\frac{p(x|y)}{q(x)}
+I(x;y)=I(x)-I(x|y)=\log\frac{p(x|y)}{q(x)}
 $$
 
 其中 $I(x,y)$ 可正，可负，也可为 0

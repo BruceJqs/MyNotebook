@@ -24,6 +24,8 @@ comments: true
 	- [Chapter 02 : 随机变量的熵和互信息](Chapter%202/)
 	- [Chapter 03 : 连续随机变量的互信息和微分熵](Chapter%203/)
 	- [Chapter 04 : 平稳离散信源的熵](Chapter%204/)
+- Part 02 - 信息的无损压缩
+	- [Chapter 05 : 等长编码](Chapter%205/)
 
 ### Homework
 
