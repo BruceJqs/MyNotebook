@@ -68,7 +68,7 @@ create function avg_salary(company_name varchar(20))
 		declare avg integer;
 		select avg(salary) into avg
 		from works
-		where company_name = company_name;
+		where works.company_name = company_name;
 		return avg;
 	end;
 	
