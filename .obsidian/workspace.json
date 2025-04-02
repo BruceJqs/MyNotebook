@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Homework 7"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 7.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Homework 7"
             }
           },
           {
@@ -178,14 +178,15 @@
   },
   "active": "cb74507cb2c82d09",
   "lastOpenFiles": [
+    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Chapter 3.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 9.md",
+    "docs/assets/Pasted image 20250402144825.png",
     "docs/blog/Math/Numerical Analysis/Homework 7.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 9.md",
     "docs/assets/Pasted image 20250402142141.png",
     "docs/assets/Pasted image 20250402142112.png",
     "docs/blog/Math/Numerical Analysis/Homework 6.md",
     "docs/assets/Pasted image 20250402141858.png",
-    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Database/Chapter 2.md",
@@ -205,7 +206,6 @@
     "docs/assets/Pasted image 20250331225352.png",
     "docs/assets/Pasted image 20250331225233.png",
     "docs/assets/Pasted image 20250331224543.png",
-    "docs/assets/Pasted image 20250331224430.png",
     "docs/blog/Computer Science/Database/Homework 7.md",
     "docs/blog/ACEE/Information Theory/Chapter 5.md",
     "docs/blog/ACEE/Information Theory/index.md",
