@@ -138,7 +138,7 @@ $$
 	
 	=== "例题 2"
 	
-		给定 $\sin\frac{⁡\pi}{6}=\fraC{1}{2},\sin\frac{⁡\pi}{4}=\frac{1}{\sqrt{2}},\sin\frac{⁡\pi}{3}=\frac{\sqrt{3}}{2}$。使用关于 $\sin ⁡x$ 的线性和二次拉格朗日多项式，计算 $\sin ⁡50\degree$ 并评估误差。（已知 $\sin ⁡50\degree=0.7660444...$）
+		给定 $\sin\frac{⁡\pi}{6}=\frac{1}{2},\sin\frac{⁡\pi}{4}=\frac{1}{\sqrt{2}},\sin\frac{⁡\pi}{3}=\frac{\sqrt{3}}{2}$。使用关于 $\sin ⁡x$ 的线性和二次拉格朗日多项式，计算 $\sin ⁡50°$ 并评估误差。（已知 $\sin ⁡50°=0.7660444...$）
 		
 		??? note "Answer"
 		
@@ -146,16 +146,16 @@ $$
 			  
 			  - 使用 $x_0=\frac{\pi}{6},x_1=\frac{\pi}{4}$
 				  - $P_1(x)=\frac{x−\frac{\pi}{4}}{\frac{\pi}{6}−\frac{\pi}{4}}\times\frac{1}{2}+\frac{x−\frac{\pi}{6}}{\frac{\pi}{4}−\frac{\pi}{6}}\times\frac{1}{\sqrt{2}}$
-				  - $\sin ⁡50\degree\approx P_1(\frac{5\pi}{18})\approx 0.77614$
+				  - $\sin ⁡50°\approx P_1(\frac{5\pi}{18})\approx 0.77614$
 				  - $f(x)=\sin ⁡x,f''(x)=−\sin\xi_x,\xi_x\in(\frac{pi}{6},\frac{\pi}{3}​$，且 $\frac{1}{2}<\sin⁡\xi_x<\frac{\sqrt{3}}{2}$
 				  - $R_1(x)=\frac{f''(\xi_x)}{2!}(x−\frac{\pi}{6})(x−\frac{\pi}{4})$，得到 $−0.01319<R_1(\frac{5\pi}{18})<−0.00762$，因此外推误差 $\approx −0.01001$
 			  - 使用 $x_1=\frac{\pi}{4},x_2=\frac{\pi}{3}$
-				  - 计算得到 $\sin ⁡50\degree\approx 0.76008,0.00538<\widetilde{R_1}(\frac{5\pi}{18})<0.00660$，因此插值误差 $\approx 0.00596$
+				  - 计算得到 $\sin ⁡50°\approx 0.76008,0.00538<\widetilde{R_1}(\frac{5\pi}{18})<0.00660$，因此插值误差 $\approx 0.00596$
 			
 			再使用 $x_0,x_1,x_2$​ 计算二次插值
 		    
 		    - $P_2(x)=\frac{(x−\frac{\pi}{4})(x-\frac{\pi}{3})}{(\frac{\pi}{6}−\frac{\pi}{4})(\frac{\pi}{6}-\frac{\pi}{2})}\times\frac{1}{2}+\frac{(x−\frac{\pi}{6})(x-\frac{\pi}{3})}{(\frac{\pi}{4}−\frac{\pi}{6})(\frac{\pi}{4}−\frac{\pi}{3})}\times\frac{1}{\sqrt{2}}+\frac{(x−\frac{\pi}{6})(x−\frac{\pi}{4})}{(\frac{\pi}{3}−\frac{\pi}{6})(\frac{\pi}{3}−\frac{\pi}{4})}\times\frac{\sqrt{3}}{2}​​$
-		    - $\sin 50\degree\approx P_2(\frac{5\pi}{18})\approx 0.76543$
+		    - $\sin 50°\approx P_2(\frac{5\pi}{18})\approx 0.76543$
 		    - $R_2(x)=−\frac{\cos\xi_x}{3!}(x−\frac{\pi}{6})(x−\frac{\pi}{4})(x−\frac{\pi}{3}),\frac{1}{2}<\cos\xi_x<\frac{\sqrt{3}}{2}$
 		    - $0.00044<R_2(\frac{5\pi}{18})<0.00077$，所以二次插值的误差 $\approx 0.00061$
 		    
@@ -180,8 +180,6 @@ $$P(x)=\frac{(x-x_j)P_{0,1,...,j-1,j+1,...,k}(x)-(x-x_i)P_{0,1,...,i-1,i+1,...,k
 分子上的第一个多项式在 $x_i$ 处等于 $f(x_i)$，而第二个多项式在 $x_i$ 处为0，所以 $P(x_i)=f(x_i)$。同理 $P(x_j)=f(x_j)$
 
 所以 $P(x)$ 在 $x_0,x_1,\cdots,x_k$ 上与 $f(x)$ 相同，因为 $P(x)$ 是 $k$ 次多项式，所以 $P(x)=P_{0,1,\cdots,k}(x)$
-
-
 
 
 
