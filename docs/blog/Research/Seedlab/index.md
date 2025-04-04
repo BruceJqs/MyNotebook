@@ -25,9 +25,11 @@ comments: true
 ### Basic Knowledge
 - Hardware
 	- [Meltdown Attack](Knowledge/Hardware/Meltdown%20Attack/)
-	- [Spectre Attack](Knowledge/Hardware/Spectre%20Attack/)
 - Network
 	- [BGP and Attacks](Knowledge/Network/BGP%20Basic/)
+	- [DNS Remote-Kaminsky DNS Attack](Knowledge/Network/Kaminsky/)
+- Reports
+	- [DNS Remote](Knowledge/Reports/DNS%20Remote/)
 ***
 ### Emulator Labs
 

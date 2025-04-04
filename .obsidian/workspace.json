@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "acaf5eded1acfbd0",
+        "id": "c4768040647a344a",
         "type": "tabs",
         "children": [
           {
-            "id": "cb74507cb2c82d09",
+            "id": "a7c38be0482fa336",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 7.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homework 7"
+              "title": "DNS Remote"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 7.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Homework 7"
+              "title": "Outline of DNS Remote"
             }
           },
           {
@@ -176,17 +176,33 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cb74507cb2c82d09",
+  "active": "a7c38be0482fa336",
   "lastOpenFiles": [
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
+    "Knowledge/Network/Kaminsky.md",
+    "Knowledge/Network",
+    "Knowledge",
+    "docs/assets/Pasted image 20250404210921.png",
+    "docs/assets/Pasted image 20250404210557.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+    "docs/assets/Pasted image 20250404205149.png",
+    "docs/assets/Pasted image 20250404194722.png",
+    "docs/assets/Pasted image 20250404193811.png",
+    "docs/assets/Pasted image 20250404192531.png",
+    "docs/assets/Pasted image 20250404163534.png",
+    "docs/assets/Pasted image 20250404163217.png",
+    "docs/assets/Pasted image 20250404162822.png",
+    "docs/assets/Pasted image 20250404162623.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports",
+    "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
+    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
+    "docs/blog/Research/Reading/index.md",
+    "docs/blog/Math/Numerical Analysis/Homework 7.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Chapter 3.md",
-    "docs/assets/Pasted image 20250402144825.png",
-    "docs/blog/Math/Numerical Analysis/Homework 7.md",
     "docs/blog/Math/Numerical Analysis/Chapter 9.md",
-    "docs/assets/Pasted image 20250402142141.png",
-    "docs/assets/Pasted image 20250402142112.png",
     "docs/blog/Math/Numerical Analysis/Homework 6.md",
-    "docs/assets/Pasted image 20250402141858.png",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Database/Chapter 2.md",
@@ -197,22 +213,10 @@
     "docs/blog/Computer Science/Database/12306.md",
     "docs/blog/Computer Science/Database/Chapter 5.md",
     "docs/blog/Computer Science/Database/Chapter 4.md",
-    "docs/assets/12306.png",
     "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Computer Science/OOP/Chapter 6.md",
     "docs/blog/Computer Science/OOP/Chapter 5.md",
-    "docs/assets/Pasted image 20250331225949.png",
-    "docs/assets/Pasted image 20250331225744.png",
-    "docs/assets/Pasted image 20250331225352.png",
-    "docs/assets/Pasted image 20250331225233.png",
-    "docs/assets/Pasted image 20250331224543.png",
     "docs/blog/Computer Science/Database/Homework 7.md",
-    "docs/blog/ACEE/Information Theory/Chapter 5.md",
-    "docs/blog/ACEE/Information Theory/index.md",
-    "docs/blog/ACEE/Information Theory/Chapter 4.md",
-    "docs/blog/ACEE/Information Theory/Chapter 2.md",
-    "docs/blog/ACEE/Information Theory/Chapter 1.md",
-    "docs/blog/Research/Seedlab/Basic-Labs/A00_simple_as.md",
     "docs/blog/Research/Reading/RAG",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
@@ -220,9 +224,6 @@
     "docs/blog/Research/Seedlab/Basic-Labs",
     "docs/blog/Research/Seedlab",
     "docs/blog/Research",
-    "docs/blog/ACEE/Information Theory",
-    "docs/blog/CTF/Cryptography",
-    "docs/blog/Math/Numerical Analysis",
     "Untitled.canvas",
     "未命名.canvas"
   ]
