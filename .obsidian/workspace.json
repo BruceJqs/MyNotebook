@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DNS Remote"
+              "title": "Chapter 5"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 5.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of DNS Remote"
+              "title": "Outline of Chapter 5"
             }
           },
           {
@@ -178,22 +178,30 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Information Theory/Chapter 6.md",
+    "docs/blog/ACEE/Information Theory/Chapter 5.md",
+    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
+    "docs/assets/Pasted image 20250406003036.png",
+    "docs/assets/Pasted image 20250406002000.png",
+    "docs/assets/Pasted image 20250406001752.png",
+    "docs/assets/Pasted image 20250405235711.png",
+    "docs/assets/Pasted image 20250405235438.png",
+    "docs/assets/Pasted image 20250405235130.png",
+    "docs/assets/Pasted image 20250405234849.png",
+    "docs/assets/Pasted image 20250405234721.png",
+    "docs/assets/Pasted image 20250405221033.png",
+    "docs/assets/Pasted image 20250405220847.png",
+    "Untitled 1.canvas",
+    "2025-04-05.md",
+    "Untitled.canvas",
+    "docs/blog/Computer Science/Computer Organization/Chapter 5.md",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
     "Knowledge/Network/Kaminsky.md",
     "Knowledge/Network",
     "Knowledge",
-    "docs/assets/Pasted image 20250404210921.png",
-    "docs/assets/Pasted image 20250404210557.png",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
-    "docs/assets/Pasted image 20250404205149.png",
-    "docs/assets/Pasted image 20250404194722.png",
-    "docs/assets/Pasted image 20250404193811.png",
-    "docs/assets/Pasted image 20250404192531.png",
-    "docs/assets/Pasted image 20250404163534.png",
-    "docs/assets/Pasted image 20250404163217.png",
-    "docs/assets/Pasted image 20250404162822.png",
-    "docs/assets/Pasted image 20250404162623.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
@@ -211,12 +219,6 @@
     "docs/blog/Computer Science/Computer Architecture/index.md",
     "docs/blog/Computer Science/Database/Homework 5.md",
     "docs/blog/Computer Science/Database/12306.md",
-    "docs/blog/Computer Science/Database/Chapter 5.md",
-    "docs/blog/Computer Science/Database/Chapter 4.md",
-    "docs/blog/Computer Science/OOP/index.md",
-    "docs/blog/Computer Science/OOP/Chapter 6.md",
-    "docs/blog/Computer Science/OOP/Chapter 5.md",
-    "docs/blog/Computer Science/Database/Homework 7.md",
     "docs/blog/Research/Reading/RAG",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
@@ -224,7 +226,6 @@
     "docs/blog/Research/Seedlab/Basic-Labs",
     "docs/blog/Research/Seedlab",
     "docs/blog/Research",
-    "Untitled.canvas",
     "未命名.canvas"
   ]
 }

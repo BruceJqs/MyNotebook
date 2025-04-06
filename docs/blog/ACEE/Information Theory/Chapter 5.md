@@ -120,6 +120,90 @@ $$
 
 $$
 \begin{aligned}
-
+E(I_L)&=E\{\frac{1}{L}\sum\limits_{l=1}^LI(u_l)\}=E(I(U))=H(U)\\
+D(I_L)&=D\{\frac{1}{L}\sum\limits_{l=1}^LI(u_l)\}=\frac{1}{L^2}\sum\limits_{l=1}^LD(I(u^L))=\frac{1}{L}D(I(U))\stackrel{\Delta}{=}\frac{\sigma_1^2}{L}\\
 \end{aligned}
 $$
+
+由切比雪夫不等式，对任意随机变量 $\xi$ 和 $\epsilon$：
+
+$$
+P\{|\xi-E(\xi)|>\epsilon\}\leq \frac{Var(\xi)}{\epsilon^2}
+$$
+
+则有：
+
+$$
+P\{|I_L-H(U)|>\epsilon\}\leq \frac{\sigma_1^2}{L\epsilon^2}
+$$
+
+给定 $\epsilon$，当 L 充分大时，$\frac{\sigma_1^2}{L\epsilon^2}\leq\epsilon$，所以有 $P\{|I_L-H(U)|>\epsilon\}\leq\epsilon$ 或 $P\{|I_L-H(U)|<\epsilon\}\geq 1-\epsilon$
+***
+### 典型列
+
+令 $H(U)$ 为一个离散无记忆信源 $\text{DMS}\{U,p(·)\}$ 的熵，$\epsilon$ 为任意正数
+
+$$
+A_{\epsilon}^{(L)}(U)=\{\pmb{u}^L:|-\frac{1}{L}\log p(\pmb{u}^L)-H(U)|<\epsilon\}
+$$
+
+为给定 DMS 输出长度为 L 的 $\epsilon$ 典型列集合，简称典型列集，其中 $\pmb{u}^L\in U^L$
+
+典型列性质：
+
+- 当 L 足够大时：
+
+$$
+\begin{aligned}
+Pr(\pmb{u}^L\in A_{\epsilon}^{(L)}(U))&\geq 1-\epsilon\\
+Pr(A_{\epsilon}^{(L)}(U)) &= \sum\limits_{\pmb{u}^L\in A_{\epsilon}^{(L)}(U)}p(\pmb{u}^L)=\sum\limits_{\pmb{u}^L\in U^L}p(\pmb{u}^L)I(\pmb{u}^L\in A_{\epsilon}^{(L)}(U))\\
+&=E\{I(\pmb{u}^L\in A_{\epsilon}^{(L)}(U))\}=Pr(\pmb{u}^L\in A_{\epsilon}^{(L)}(U))>1-\epsilon\\
+\end{aligned}
+$$
+
+- 如果 $\pmb{u}^L\in A_{\epsilon}^{(L)}(U)$，则有 $2^{-L(H(U)+\epsilon)}\leq p(\pmb{u}^L)\leq 2^{-L(H(U)-\epsilon)}$
+- $(1-\epsilon)2^{L(H(U)-\epsilon)}\leq |A_{\epsilon}^{(L)}(U)|\leq (1+\epsilon)2^{L(H(U)+\epsilon)}$
+
+??? note "Proof"
+
+	$$
+	\begin{aligned}
+	1&=\sum\limits_{\pmb{u}^L\in U^L}p(\pmb{u}^L)\geq \sum\limits_{\pmb{u}^L\in A_{\epsilon}^{(L)}(U)}p(\pmb{u}^L)\\
+	&\geq \sum\limits_{\pmb{u}^L\in A_{\epsilon}^{(L)}(U)}2^{-L(H(U)+\epsilon)}=|A_{\epsilon}^{(L)}(U)|2^{-L(H(U)+\epsilon)}\\
+	&\therefore |A_{\epsilon}^{(L)}(U)|\leq 2^{L(H(U)+\epsilon)}\\
+	1-\epsilon&\leq \sum\limits_{\pmb{u}^L\in A_{\epsilon}^{(L)}(U)}p(\pmb{u}^L)\\
+	&\leq \sum\limits_{\pmb{u}^L\in A_{\epsilon}^{(L)}(U)}2^{-L(H(U)-\epsilon)}=|A_{\epsilon}^{(L)}(U)|2^{-L(H(U)-\epsilon)}\\
+	&\therefore |A_{\epsilon}^{(L)}(U)|\geq (1-\epsilon)2^{L(H(U)-\epsilon)}\\
+	\end{aligned}
+	$$
+	
+
+离散无记忆源的输出序列分为两类：
+
+- $A_{\epsilon}^{(L)}(U)$：典型列集合，高概率集
+- $\overline{A_{\epsilon}^{(L)}(U)}$：非典型列集合，低概率集
+
+!!! tip "Tips"
+
+	- 个别非典型列出现的概率不一定比典型列出现概率小
+		- e.g. $p_0 = p > 0.5, p_1 = 1 − p < 0.5$ 全 0 序列的自信息为 $−L\log p\neq H(U)$，因此不是典型列，但是全 0 序列出现的概率为 $p^L > p^{Lp}(1 − p)^{L(1−P)}$；全 1 序列也不是典型列，但是全 1 序列出现的概率小于典型列出现概率
+	- 非典型列的数目不一定比典型列的数目小
+		- e.g. $p=0.25,H(U)=0.81$，当 $L=100$ 时，$|A_{\epsilon}^{(L)}(U)|=2^{81}$，仅占所有序列的 $2^{-19}$
+***
+### 香农编码定理证明
+
+由于典型列的个数 $|A_{\epsilon}^{(L)}(U)|\leq 2^{L(H(U)+\epsilon)}$，所以当 $N\geq\frac{L(H(U)+\epsilon)}{\log D}$ 时，可以对所有的典型列进行编码，而对所有的非典型列用统一的一个序列(比如全 D 序列)编码, 当接收端收到全 D 序列时，声称译码错误
+
+$$
+p_e=p\{\pmb{\hat{u}}^L\neq\pmb{u}^L\}=p\{\pmb{u}^L\not\in A_{\epsilon}^{(L)}(U)\}<\epsilon
+$$
+
+香农编码定理的逆定理：
+
+当 $N<\frac{L(H(U)-\epsilon)}{\log D}$ 时，记 $D^N=2^{L(H(U)-\epsilon-\epsilon_1)}$，则每个典型列找到编码序列的概率为:
+
+$$
+\frac{D^N}{A_{\epsilon}^{(L)}(U)}\leq\frac{2^{L(H(U)-\epsilon-\epsilon_1)}}{(1-\epsilon)2^{L(H(U)-\epsilon)}}=\frac{2^{-L\epsilon_1}}{(1-\epsilon)}\stackrel{L\rightarrow\infty}{\rightarrow}0
+$$
+
+

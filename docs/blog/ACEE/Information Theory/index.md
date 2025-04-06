@@ -26,6 +26,7 @@ comments: true
 	- [Chapter 04 : 平稳离散信源的熵](Chapter%204/)
 - Part 02 - 信息的无损压缩
 	- [Chapter 05 : 等长编码](Chapter%205/)
+	- [Chapter 06 : 不等长编码](Chapter%206/)
 
 ### Homework
 

