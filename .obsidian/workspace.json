@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 5.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Chapter 6"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 5.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 6.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Chapter 6"
             }
           },
           {
@@ -178,7 +178,14 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20250406113042.png",
+    "docs/assets/Pasted image 20250406112821.png",
+    "docs/assets/Pasted image 20250406111806.png",
+    "docs/assets/Pasted image 20250406111755.png",
+    "docs/blog/ACEE/Information Theory/Chapter 4.md",
     "docs/blog/ACEE/Information Theory/Chapter 6.md",
+    "docs/assets/Pasted image 20250406111308.png",
+    "docs/assets/Pasted image 20250406110438.png",
     "docs/blog/ACEE/Information Theory/Chapter 5.md",
     "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
@@ -187,11 +194,6 @@
     "docs/assets/Pasted image 20250406001752.png",
     "docs/assets/Pasted image 20250405235711.png",
     "docs/assets/Pasted image 20250405235438.png",
-    "docs/assets/Pasted image 20250405235130.png",
-    "docs/assets/Pasted image 20250405234849.png",
-    "docs/assets/Pasted image 20250405234721.png",
-    "docs/assets/Pasted image 20250405221033.png",
-    "docs/assets/Pasted image 20250405220847.png",
     "Untitled 1.canvas",
     "2025-04-05.md",
     "Untitled.canvas",
@@ -217,8 +219,6 @@
     "docs/blog/Computer Science/Database/Homework 6.md",
     "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/Computer Architecture/index.md",
-    "docs/blog/Computer Science/Database/Homework 5.md",
-    "docs/blog/Computer Science/Database/12306.md",
     "docs/blog/Research/Reading/RAG",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
