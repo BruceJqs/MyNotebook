@@ -23,6 +23,12 @@ comments: true
 
 ## Table of Contents
 
+### Notes
+
 - [Chapter 01 : Fundamentals of Computer Design](Chapter%201/)
 - [Chapter 02 : Memory Hierarchy Design](Chapter%202/)
 - [Chapter 03 : Instruction-Level Parallelism (ILP)](Chapter%203/)
+
+### Homeworks
+
+- [Homework 01](Homework%201/)
