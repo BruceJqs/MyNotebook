@@ -24,4 +24,5 @@ comments: true
 ## Table of Contents
 
 - [Chapter 01 : Fundamentals of Computer Design](Chapter%201/)
-- [Chapter 03 : Memory Hierarchy Design](Chapter%203/)
+- [Chapter 02 : Memory Hierarchy Design](Chapter%202/)
+- [Chapter 03 : Instruction-Level Parallelism (ILP)](Chapter%203/)
