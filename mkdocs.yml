@@ -117,6 +117,7 @@ nav:
         - "Chapter 04: Intermediate SQL": blog/Computer Science/Database/Chapter 4.md
         - "Chapter 05: Advanced SQL": blog/Computer Science/Database/Chapter 5.md
         - "Chapter 06: Entity-Relationship Model": blog/Computer Science/Database/Chapter 6.md
+        - "Chapter 07: Relational Database Design": blog/Computer Science/Database/Chapter 7.md
       - Homeworks:
         - "Homework 01": blog/Computer Science/Database/Homework 1.md
         - "Homework 02": blog/Computer Science/Database/Homework 2.md
