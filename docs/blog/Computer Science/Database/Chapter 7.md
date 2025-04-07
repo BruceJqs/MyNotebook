@@ -23,7 +23,7 @@ comments: true
 	
 	这导致了数据冗余和重复的问题（因为 ID 和 dept_name 同样都能决定 building 和 budget，而 dept_name 并非主键），这样合并而成的关系是不好的，因为重复信息有可能会造成冲突不一致的问题
 	
-	简单总结来说，非代表键（Candidate Key）最好不要能决定其他属性
+	简单总结来说，非候选键（Candidate Key）最好不要能决定其他属性
 
 一个不好的关系模式有如下特征：
 
@@ -233,7 +233,67 @@ comments: true
 
 当然，可能分解一次还是会出现不遵守 BCNF 的模式，那就对其再次分解，直到结果都遵循 BCNF 为止
 
+我们使用如下思路来计算 BCNF：
 
+![](../../../assets/Pasted%20image%2020250407133225.png)
 
+- 其中每一个 $R_i$ 都是遵守 BCNF 的，且分解均为无损分解
+
+!!! example "Example"
+
+	对于关系 $R=\{A,B,C,D\}$ 有函数依赖集 $F=\{A\rightarrow B,B\rightarrow CD\}$
+	
+	（a）列出所有关系的候选键
+	
+	（b）将关系分解为一些 BCNF 关系的集合，且分解为无损分解
+	
+	??? note "Answer"
+	
+		![](../../../assets/Pasted%20image%2020250407134537.png)
+		
+		（a）由图可得候选键为 $A$
+		
+		（b）分解为 $R_1=\{B,C,D\},R_2=\{A,B\},F_1=\{B\rightarrow CD\},F_2=\{A\rightarrow B\}$
+***
+#### Dependency Preservation
+
+令 $F$ 为模式 $R$ 的一个函数依赖集合，$R_1,R_2,\cdots,R_n$​ 为 $R$ 的一个分解，那么针对 $R_i$ 的 $F$ 的**限制**（Restriction）$F_i$​ 是一个来自 $F^+$ 的集合，但仅包含 $R_i$ 中出现的属性。检查这些限制集合 $F_1,F_2,\cdots,F_n$ 相比检查 $F$ 会更高效。令 $F'=F_1\cup F_2\cup\cdots\cup F_n$，通常来说 $F'\neq F$，但即便确实如此，也很有可能满足 $F'^+=F^+$，那么此时在 $F$ 中的每个依赖都被 $F'$ 逻辑蕴含，所以验证 $F'$ 就相当于验证 $F$ 了。我们称具备这种性质的分解为**依赖保留分解**（Dependency-Preserving Decomposition）
+
+!!! example "Example"
+
+	我们有 $R=\{A,B,C\},F=\{A\rightarrow B,B\rightarrow C\}$，主键为 A
+	
+	显然 $R$ 是不符合 BCNF 的，我们分解 $R_1=\{A,B\},R_2=\{B,C\}$，$F_1=\{A\rightarrow B\},F_2=\{B\rightarrow C\}$，此时 $R_1$ 和 $R_2$ 都符合 BCNF 且分解为无损分解，又因为 $(F_1\cup F_2)^+=F^+$，所以该分解是依赖保留分解
+	
+	但如果我们换一种分解方式 $R_1=\{A,B\},R_2=\{A,C\}$，$F_1=\{A\rightarrow B\},F_2=\{A\rightarrow C\}$，此时 $R_1$ 和 $R_2$ 都符合 BCNF 且分解为无损分解，但 $(F_1\cup F_2)^+\neq F^+$，所以该分解不是依赖保留分解
+
+我们可以使用如下思路来检验依赖保留：
+
+![](../../../assets/Pasted%20image%2020250407143154.png)
+
+- 值得注意的是，我们并不总是能够获得保留依赖关系的 BCNF 分解
+***
+### Third Normal Form
+
+关于函数依赖集合 $F$ 的关系 $R$，对于所有的在 $F^+$ 的函数依赖 $\alpha\rightarrow\beta$，其中 $\alpha\subseteq R,\beta\subseteq R$，至少满足以下条件之一时，称 $R$ 遵循**第三范式**（Third Normal Form，以下简称 **3NF**）：
+
+- $\alpha\rightarrow\beta$ 是一个平凡的函数依赖
+- $\alpha$ 是模式 $R$ 的超键
+- 在 $\beta−\alpha$ 内的每个属性 $A$ 是 $R$ 的（可能是不同的）候选键的一个成员
+
+可以看到，3NF 的前两个条件和 BCNF 相同，只是新增了第 3 个条件，可以让那些左侧不是超键的非平凡函数依赖也有机会符合这个范式。这个更为松弛的条件使得 3NF 能够确保模式分解时仍然保留了原有的依赖。
+
+对比 BCNF，3NF 的优劣有：
+
+- 优点：可以让关系模式在不牺牲无损或依赖保留的情况下遵循 3NF
+- 缺点：可能会带来 null 值，说明存在信息重复的问题
+
+对 3NF 下的依赖保留分解算法如下：
+
+![](../../../assets/Pasted%20image%2020250407144959.png)
+
+借助该算法，我们还可以重新设计 BCNF 分解算法：首先使用 3NF 算法，然后对于分解中不是 BCNF 的模式再次使用 BCNF 算法，如果得到的结果没能保留依赖，那就回退到 3NF 的设计
+
+3NF 算法得到的结果是不唯一的，因为一个函数依赖集合里面可能包含多个正则覆盖。而且该算法可能会分解那些已经遵守 3NF 的关系，但它能够保证分解的结果还是遵守 3NF 的
 
 
