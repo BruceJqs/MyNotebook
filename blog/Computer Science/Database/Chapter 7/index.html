@@ -2156,6 +2156,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Boyce-Codd Normal Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency Preservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-normal-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third Normal Form
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -8370,6 +8394,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Boyce-Codd Normal Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency Preservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-normal-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third Normal Form
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -8413,7 +8461,7 @@
 
 <h1 id="chapter-07-relational-database-design">Chapter 07 : Relational Database Design<a class="headerlink" href="#chapter-07-relational-database-design" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2582 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 7 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 13 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3499 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 11 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 17 分钟</p>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
@@ -8423,7 +8471,7 @@
 <p>如果我们想合并 instructor 和 department 呢？我们会得到如下信息：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250407100807.png" /></p>
 <p>这导致了数据冗余和重复的问题（因为 ID 和 dept_name 同样都能决定 building 和 budget，而 dept_name 并非主键），这样合并而成的关系是不好的，因为重复信息有可能会造成冲突不一致的问题</p>
-<p>简单总结来说，非代表键（Candidate Key）最好不要能决定其他属性</p>
+<p>简单总结来说，非候选键（Candidate Key）最好不要能决定其他属性</p>
 </div>
 <p>一个不好的关系模式有如下特征：</p>
 <ul>
@@ -8631,6 +8679,55 @@ F\Leftrightarrow\{&amp;A\rightarrow ABC, B\rightarrow BC, C\rightarrow C, AB\rig
 <li><span class="arithmatex">\((R−(\beta−\alpha))\)</span></li>
 </ul>
 <p>当然，可能分解一次还是会出现不遵守 BCNF 的模式，那就对其再次分解，直到结果都遵循 BCNF 为止</p>
+<p>我们使用如下思路来计算 BCNF：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250407133225.png" /></p>
+<ul>
+<li>其中每一个 <span class="arithmatex">\(R_i\)</span> 都是遵守 BCNF 的，且分解均为无损分解</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>对于关系 <span class="arithmatex">\(R=\{A,B,C,D\}\)</span> 有函数依赖集 <span class="arithmatex">\(F=\{A\rightarrow B,B\rightarrow CD\}\)</span></p>
+<p>（a）列出所有关系的候选键</p>
+<p>（b）将关系分解为一些 BCNF 关系的集合，且分解为无损分解</p>
+<details class="note">
+<summary>Answer</summary>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250407134537.png" /></p>
+<p>（a）由图可得候选键为 <span class="arithmatex">\(A\)</span></p>
+<p>（b）分解为 <span class="arithmatex">\(R_1=\{B,C,D\},R_2=\{A,B\},F_1=\{B\rightarrow CD\},F_2=\{A\rightarrow B\}\)</span></p>
+</details>
+</div>
+<hr />
+<h4 id="dependency-preservation">Dependency Preservation<a class="headerlink" href="#dependency-preservation" title="Permanent link">&para;</a></h4>
+<p>令 <span class="arithmatex">\(F\)</span> 为模式 <span class="arithmatex">\(R\)</span> 的一个函数依赖集合，<span class="arithmatex">\(R_1,R_2,\cdots,R_n\)</span>​ 为 <span class="arithmatex">\(R\)</span> 的一个分解，那么针对 <span class="arithmatex">\(R_i\)</span> 的 <span class="arithmatex">\(F\)</span> 的<strong>限制</strong>（Restriction）<span class="arithmatex">\(F_i\)</span>​ 是一个来自 <span class="arithmatex">\(F^+\)</span> 的集合，但仅包含 <span class="arithmatex">\(R_i\)</span> 中出现的属性。检查这些限制集合 <span class="arithmatex">\(F_1,F_2,\cdots,F_n\)</span> 相比检查 <span class="arithmatex">\(F\)</span> 会更高效。令 <span class="arithmatex">\(F'=F_1\cup F_2\cup\cdots\cup F_n\)</span>，通常来说 <span class="arithmatex">\(F'\neq F\)</span>，但即便确实如此，也很有可能满足 <span class="arithmatex">\(F'^+=F^+\)</span>，那么此时在 <span class="arithmatex">\(F\)</span> 中的每个依赖都被 <span class="arithmatex">\(F'\)</span> 逻辑蕴含，所以验证 <span class="arithmatex">\(F'\)</span> 就相当于验证 <span class="arithmatex">\(F\)</span> 了。我们称具备这种性质的分解为<strong>依赖保留分解</strong>（Dependency-Preserving Decomposition）</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>我们有 <span class="arithmatex">\(R=\{A,B,C\},F=\{A\rightarrow B,B\rightarrow C\}\)</span>，主键为 A</p>
+<p>显然 <span class="arithmatex">\(R\)</span> 是不符合 BCNF 的，我们分解 <span class="arithmatex">\(R_1=\{A,B\},R_2=\{B,C\}\)</span>，<span class="arithmatex">\(F_1=\{A\rightarrow B\},F_2=\{B\rightarrow C\}\)</span>，此时 <span class="arithmatex">\(R_1\)</span> 和 <span class="arithmatex">\(R_2\)</span> 都符合 BCNF 且分解为无损分解，又因为 <span class="arithmatex">\((F_1\cup F_2)^+=F^+\)</span>，所以该分解是依赖保留分解</p>
+<p>但如果我们换一种分解方式 <span class="arithmatex">\(R_1=\{A,B\},R_2=\{A,C\}\)</span>，<span class="arithmatex">\(F_1=\{A\rightarrow B\},F_2=\{A\rightarrow C\}\)</span>，此时 <span class="arithmatex">\(R_1\)</span> 和 <span class="arithmatex">\(R_2\)</span> 都符合 BCNF 且分解为无损分解，但 <span class="arithmatex">\((F_1\cup F_2)^+\neq F^+\)</span>，所以该分解不是依赖保留分解</p>
+</div>
+<p>我们可以使用如下思路来检验依赖保留：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250407143154.png" /></p>
+<ul>
+<li>值得注意的是，我们并不总是能够获得保留依赖关系的 BCNF 分解</li>
+</ul>
+<hr />
+<h3 id="third-normal-form">Third Normal Form<a class="headerlink" href="#third-normal-form" title="Permanent link">&para;</a></h3>
+<p>关于函数依赖集合 <span class="arithmatex">\(F\)</span> 的关系 <span class="arithmatex">\(R\)</span>，对于所有的在 <span class="arithmatex">\(F^+\)</span> 的函数依赖 <span class="arithmatex">\(\alpha\rightarrow\beta\)</span>，其中 <span class="arithmatex">\(\alpha\subseteq R,\beta\subseteq R\)</span>，至少满足以下条件之一时，称 <span class="arithmatex">\(R\)</span> 遵循<strong>第三范式</strong>（Third Normal Form，以下简称 <strong>3NF</strong>）：</p>
+<ul>
+<li><span class="arithmatex">\(\alpha\rightarrow\beta\)</span> 是一个平凡的函数依赖</li>
+<li><span class="arithmatex">\(\alpha\)</span> 是模式 <span class="arithmatex">\(R\)</span> 的超键</li>
+<li>在 <span class="arithmatex">\(\beta−\alpha\)</span> 内的每个属性 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(R\)</span> 的（可能是不同的）候选键的一个成员</li>
+</ul>
+<p>可以看到，3NF 的前两个条件和 BCNF 相同，只是新增了第 3 个条件，可以让那些左侧不是超键的非平凡函数依赖也有机会符合这个范式。这个更为松弛的条件使得 3NF 能够确保模式分解时仍然保留了原有的依赖。</p>
+<p>对比 BCNF，3NF 的优劣有：</p>
+<ul>
+<li>优点：可以让关系模式在不牺牲无损或依赖保留的情况下遵循 3NF</li>
+<li>缺点：可能会带来 null 值，说明存在信息重复的问题</li>
+</ul>
+<p>对 3NF 下的依赖保留分解算法如下：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250407144959.png" /></p>
+<p>借助该算法，我们还可以重新设计 BCNF 分解算法：首先使用 3NF 算法，然后对于分解中不是 BCNF 的模式再次使用 BCNF 算法，如果得到的结果没能保留依赖，那就回退到 3NF 的设计</p>
+<p>3NF 算法得到的结果是不唯一的，因为一个函数依赖集合里面可能包含多个正则覆盖。而且该算法可能会分解那些已经遵守 3NF 的关系，但它能够保证分解的结果还是遵守 3NF 的</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -8700,7 +8797,7 @@ F\Leftrightarrow\{&amp;A\rightarrow ABC, B\rightarrow BC, C\rightarrow C, AB\rig
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月7日 13:17:41">2025年4月7日 13:17:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月7日 14:51:23">2025年4月7日 14:51:23</span>
   </span>
 
     
