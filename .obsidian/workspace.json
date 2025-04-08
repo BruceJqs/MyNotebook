@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/Database/index.md",
+                "file": "docs/blog/CTF/Cryptography/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 4"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/Database/index.md",
+                "file": "docs/blog/CTF/Cryptography/Chapter 4.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 4"
             }
           },
           {
@@ -178,6 +178,11 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
+    "docs/blog/CTF/Cryptography/index.md",
+    "docs/blog/CTF/Cryptography/Chapter 4.md",
+    "docs/blog/CTF/Cryptography/Chapter 3.md",
+    "docs/blog/CTF/Cryptography/Chapter 2.md",
+    "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/Database/Homework 8.md",
     "docs/blog/Computer Science/Database/Chapter 7.md",
     "docs/blog/Computer Science/Database/Homework 7.md",
@@ -192,7 +197,6 @@
     "docs/assets/Pasted image 20250407101918.png",
     "docs/assets/Pasted image 20250407101758.png",
     "docs/assets/Pasted image 20250407100807.png",
-    "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Computer Architecture/index.md",
     "docs/blog/Computer Science/Computer Architecture/Homework 1.md",
@@ -215,10 +219,6 @@
     "Knowledge",
     "docs/blog/Research/Seedlab/Knowledge/Reports",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
-    "docs/blog/Research/Reading/index.md",
-    "docs/blog/Math/Numerical Analysis/Homework 7.md",
-    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Research/Reading/RAG",
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",

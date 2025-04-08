@@ -283,6 +283,7 @@ nav:
       - blog/CTF/Cryptography/index.md
       - "Chapter 01: 数学基础": blog/CTF/Cryptography/Chapter 1.md
       - "Chapter 02: 古典密码": blog/CTF/Cryptography/Chapter 2.md
+      - "Chapter 03: Hash 函数": blog/CTF/Cryptography/Chapter 3.md
   - Research:
     - "Reading Papers":
       - blog/Research/Reading/index.md
