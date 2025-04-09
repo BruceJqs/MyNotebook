@@ -291,7 +291,102 @@ $$
 	$$
 	
 	中间这个矩阵显然是一个单位矩阵
+
+我们有：
+
+$$
+\require{empheq}
+\begin{empheq}[left=\empheqlbrace]{align}
+f(x) &= f(x_0)+(x-x_0)f[x,x_0] && \tag{1} \\
+f[x,x_0] &= f[x_0,x_1]+(x-x_1)f[x,x_0,x_1] \tag{2} \\
+&\cdots\\
+f[x,x_0,\cdots,x_{n-1}] &= f[x_0,x_1,\cdots,x_n]+(x-x_n)f[x,x_0,x_1,\cdots,x_n] \tag{n-1}
+\end{empheq}
+$$
+
+将 $(1)+(x-x_0)\times(2)+\cdots+(x-x_0)\cdots(x-x_{n-1})\times (n-1)$ 可得：
+
+$$
+\begin{aligned}
+f(x)&=\textcolor{red}{f(x_0)+f[x_0,x_1](x-x_0)+f[x_0,x_1,x_2](x-x_0)(x-x_1)+\cdots}\\
+&\textcolor{red}{+f[x_0,\cdots,x_n](x-x_0)\cdots(x-x_{n-1})}\\
+&\textcolor{blue}{+f[x_0,x_1,\cdots,x_n](x-x_0)\cdots(x-x_{n-1})(x-x_n)}\\
+\end{aligned}
+$$
+
+其中红色部分为我们要求的 $N_n(x)$，蓝色部分为余项 $R_n(x)$
+
+!!! note "Note"
+
+	- 因为第 $n$ 个插值多项式是唯一的，所以 $N_n(x)\equiv P_n(x)$
+	- 它们必须有相同的截断误差，即：
+	
+	$$
+	\begin{aligned}
+	&f[x,x_0,\cdots,x_n]\omega_{n+1}(x)=\frac{f^{(n+1)}(\xi_x)}{(n+1)!}\omega_{n+1}(x)\\
+	\Rightarrow&f[x_0,\cdots,x_k]=\frac{f^{(k)}(\xi)}{k!},\xi\in(x_{\min},x_{\max})\\
+	\end{aligned}
+	$$
+	
+	- 这个过程跟 Neville's Method 类似：
+	
+	$$
+	\begin{aligned}
+	f(x_0)\\
+	f(x_1) && f[x_0,x_1]\\
+	f(x_2) && f[x_1,x_2] && f[x_0,x_1,x_2]\\
+	\cdots && \cdots && \cdots\\
+	f(x_{n-1}) && \cdots\\
+	f(x_n) && f[x_{n-1},x_n] && f[x_{n-2},x_{n-1},x_n] && \cdots && f[x_0,\cdots,x_n]\\
+	f(x_{n+1}) && f[x_{n},x_{n+1}] && f[x_{n-1},x_{n+1}] && \cdots &&f[x_1,\cdots,x_n,x_{n+1}] && f[x_0,\cdots,x_{n+1}]
+	\end{aligned}
+	$$
+	
 ***
+### Formulae with Equal Spacing
+
+如果每个点都连续等步长排列，记步长为 $h$，令 $x_i=x_0+ih(i=0,1,\cdots,n)$，则
+
+引入**向前差分（Forward Difference）**记号：
+
+$$\begin{aligned}
+\Delta f_i&=f_{i+1}-f_i\\
+\Delta^2 f_i&=\Delta f_{i+1}-\Delta f_i\\
+\cdots\\
+\Delta^kf_i&=\Delta(\Delta^{k-1}f_i)=\Delta^{k-1} f_{i+1}-\Delta^{k-1} f_i
+\end{aligned}$$
+
+引入**向后差分（Backward Difference）**记号：
+
+$$\begin{aligned}
+\nabla f_i&=f_i-f_{i-1}\\
+\nabla^2 f_i&=\nabla f_i-\nabla f_{i-1}\\
+\cdots\\
+\nabla^k f_i&=\nabla^{k-1} f_i-\nabla^{k-1} f_{i-1}\\
+\end{aligned}$$
+
+引入**中心差分（Central Difference）**记号：
+
+$$
+\delta^k f_i = \delta^{k-1}f_{i+\frac{1}{2}}-\delta^{k-1}f_{i-\frac{1}{2}}
+$$
+
+其中 $f_{i\pm\frac{1}{2}}=f(x_i\pm\frac{h}{2})$
+
+!!! note "Some Import Properties"
+
+	- 线性：$\Delta(a·f(x)+b·g(x))=a\Delta f+b\Delta g$
+	- 如果 $f(x)$ 是一个 $m$ 阶多项式，那么 $\Delta^kf(x)(0\leq k\leq m)$ 是一个 $m−k$ 阶多项式且 $\Delta^kf(x)=0(k>m)$
+	- 差值还能从以下函数得到：
+		- $\Delta^n f_k=\sum\limits_{j=0}^n(-1)^jC_n^jf_{n+k-j}$
+		- $\nabla^n f_k=\sum\limits_{j=0}^n(-1)^{n-j}C_n^jf_{k+j-n}$
+	- 反之亦然：$f_{n+k}=\sum\limits_{j=0}^nC_n^j\Delta^j f_k$
+	- $f[x_0,\cdots,x_k]=\frac{\Delta^k f_0}{k!h^k},f[x_n,x_{n-1},\cdots,x_{n-k}]=\frac{\nabla^k f_n}{k!h^k}$，从 $R_n$ 可以得到：$f^{(k)}(\xi)=\frac{\Delta^k f_0}{h^k}$
+***
+### Newton's Formulae
+
+- 牛顿向前差分公式：
+
 
 
 
