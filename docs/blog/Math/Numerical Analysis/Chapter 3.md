@@ -440,8 +440,262 @@ $$
 	
 	如果 $a=x_0<x_1<\cdots<x_n=b,f\in C^{2n}[a,b]$，那么 $R_n(x)=\frac{f^{(2n+2)}(\xi_x)}{(2n+2)!}[\prod_{i=0}^n(x-x_i)]^2$
 
+!!! example "Example"
 
+	给定 $x_i=i+1,i=0,1,2,3,4,5$，那么下面哪个是 $\hat{h_2}(x)$？
+	
+	![](../../../assets/Pasted%20image%2020250409190255.png)
+	
+	??? note "Answer"
+	
+		根据上面的求解过程我们可以得到除了 $x_2=3$ 所有根的重数均为 2，且 $\hat{h_2}'(x_2)=1$
+		
+		由图得知右边这个图符合条件
+***
+## Cubic Spline Interpolation
 
+!!! example "Example"
 
+	考虑关于函数 $f(x)=\frac{1}{1+x^2}$ 在点 $x_i=-5+\frac{10}{n}i(i=0,\cdots,n)$ 的拉格朗日多项式 $P_n(x)$
+	
+	![](../../../assets/Pasted%20image%2020250409192142.png)
+	
+	可以看到 $P_n(x)\not\rightarrow f(x)$，这说明我们需要找其他方法来拟合函数
+	
+	!!! warning "不好的尝试"
+	
+		=== "分段线性插值"
+		
+			分段线性插值（Piecewise Linear Interpolation）是指在每个子区间 $[x_i,x_{i+1}]$ 上，通过线性多项式近似表示 $f(x)$，即：
+			
+			$$
+			f(x)\approx P_1(x)=\frac{x-x_{i+1}}{x_i-x_{i+1}}y_i+\frac{x-x_i}{x_{i+1}-x_i}y_{i+1}\text{ for } x\in [x_i,x_{i+1}]
+			$$
+			
+			令 $h=\max|x_{i+1}-x_i|$，那么 $P_1^h(x)\stackrel{\text{uniform}}{\rightarrow},h\rightarrow 0$
+			
+			但是，这样的方法逼近的函数并不光滑，所以我们希望用更高次的多项式来逼近 $f$
+			
+			![](../../../assets/Pasted%20image%2020250409194231.png)
+		
+		=== "Hermite 分段多项式"
+		
+			给定 $x_0,\cdots,x_n;y_0,\cdots,y_n;y_0',\cdots,y_n'$，在区间 $[x_i,x_{i+1}]$ 的两个端点上构造一个关于 $y,y'$ 的 3 阶 Hermite 多项式
+			
+			但是这样的逼近是光滑的，但是为了将该多项式应用于一般插值，需要知道所有的 $f'$ 的值，这是不现实的
+***
+### Cubic Spline
 
+给定在 $[a,b]$ 上的 $n+1$ 个点 $x_0,x_1,\cdots,x_n$，$a=x_0<x_1<\cdots<x_n=b$，以及 $f$。三次样条插值是一个函数 $S(x)$，满足以下条件：
 
+1. $S(x)$ 在每个子区间 $[x_i,x_{i+1}]$ 上是一个三次多项式，记作 $S_i(x)$，$i=0,1,\cdots,n-1$
+2. $S(x_i)=f(x_i)$，$i=0,1,\cdots,n$
+3. $S_{i+1}(x_{i+1})=S_i(x_{i+1})$，$i=0,1,\cdots,n-2$
+4. $S'_{i+1}(x_{i+1})=S'_i(x_{i+1})$，$i=0,1,\cdots,n-2$
+5. $S''_{i+1}(x_{i+1})=S''_i(x_{i+1})$，$i=0,1,\cdots,n-2$
+6. 下列的边界条件之一成立：
+    1. $S''(x_0)=S''(x_n)=0$，称为**自由或自然边界（Free or Natural Boundary）**
+    2. $S'(x_0)=f'(x_0)$，$S'(x_n)=f'(x_n)$，称为**固支边界（Clamped Boundary）**
+***
+### Method of Bending Moment
+
+记 $h_j=x_j-x_{j-1}$，在 $x\in[x_{j-1},x_j]$ 上，$S(x)=S_j(x)$，$S'(x)=S'_j(x)$，$S''(x)=S''_j(x)$。
+
+因为 $S(x)$ 是一个三次多项式，所以 $S''_j(x)$ 是一个一次多项式，由端点值决定，假设 $S''_j(x_{j-1})=M_{j-1}$，$S''_j(x_j)=M_j$。那么对于 $x\in[x_{j-1},x_j]$，有
+
+$$S''_j(x)=M_{j-1}\frac{x_j-x}{h_j}+M_j\frac{x-x_{j-1}}{h_j}$$
+
+积分得到
+
+$$S'_j(x)=-M_{j-1}\frac{(x_j-x)^2}{2h_j}+M_j\frac{(x-x_{j-1})^2}{2h_j}+A_j$$
+
+再积分得到
+
+$$S_j(x)=M_{j-1}\frac{(x_j-x)^3}{6h_j}+M_j\frac{(x-x_{j-1})^3}{6h_j}+A_jx+B_j$$
+
+$A_j$ 和 $B_j$ 是常数，可以通过 $S_j(x_{j-1})=y_{j-1}$ 和 $S_j(x_j)=y_{j}$ 得到。
+
+$$\begin{aligned}
+\begin{cases}
+S_j(x_{j-1})=y_{j-1}\\
+S_j(x_j)=y_{j}
+\end{cases}
+&\Rightarrow
+\begin{cases}
+M_{j-1}\frac{h_j^2}{6}+A_jx_{j-1}+B_j=y_{j-1}\\
+M_j\frac{h_j^2}{6}+A_jx_j+B_j=y_{j}
+\end{cases}\\
+&\Rightarrow
+\begin{cases}
+A_j=\frac{y_j-y_{j-1}}{h_j}-\frac{M_j-M_{j-1}}{6}h_j\\
+B_j=\frac{y_{j-1}x_j-y_jx_{j-1}}{h_j}-\frac{M_{j-1}x_j-M_jx_{j-1}}{6}h_j
+\end{cases}\\
+\end{aligned}$$
+
+所以
+
+$$
+\begin{aligned}
+A_jx+B_j&=\frac{y_j-y_{j-1}}{h_j}x+\frac{y_{j-1}x_j-y_jx_{j-1}}{h_j}-\frac{M_j-M_{j-1}}{6}h_jx-\frac{M_{j-1}x_j-M_jx_{j-1}}{6}h_j\\
+&=(y_{j-1}-\frac{M_{j-1}}{6}h_j^2)\frac{x_j-x}{h_j}+(y_j-\frac{M_j}{6}h_j^2)\frac{x-x_{j-1}}{h_j}
+\end{aligned}
+$$
+
+所以，我们的目的就是求出 $M_j$，$j=0,1,\cdots,n$。
+
+因为 $S'$ 是连续的，所以
+
+在 $[x_{j-1},x_j]$ 上，$S'_j(x)=-M_{j-1}\frac{(x_j-x)^2}{2h_j}+M_j\frac{(x-x_{j-1})^2}{2h_j}+f[x_{j-1},x_j]-\frac{M_j-M_{j-1}}{6}h_j$
+
+在 $[x_j,x_{j+1}]$ 上，$S'_{j+1}(x)=-M_{j}\frac{(x_{j+1}-x)^2}{2h_{j+1}}+M_{j+1}\frac{(x-x_{j})^2}{2h_{j+1}}+f[x_j,x_{j+1}]-\frac{M_{j+1}-M_{j}}{6}h_{j+1}$
+
+有 $S'_{j+1}(x_j)=S'_j(x_j)$，所以我们可以得到 $M_{j-1}, M_j, M_{j+1}$ 之间的关系：
+
+记 $\lambda_j=\frac{h_{j+1}}{h_j+h_{j+1}}$，$\mu_j=\frac{h_{j}}{h_j+h_{j+1}}$，$g_j=\frac{6}{h_j+h_{j+1}}(f[x_j,x_{j+1}]-f[x_{j-1},x_j])$，则
+
+$$
+\mu_jM_{j-1}+2M_j+\lambda_jM_{j+1}=g_j
+$$
+
+其中 $j=1,2,\cdots,n-1$。
+
+$$
+\begin{bmatrix}
+\mu_1 & 2 & \lambda_1 &  & & \\
+& \mu_2 & 2 & \lambda_2 &  & \\
+& & \ddots & \ddots & \ddots & \\
+& & & \mu_{n-1} & 2 & \lambda_{n-1} \\
+\end{bmatrix}
+\begin{bmatrix}
+M_0\\
+M_1\\
+\vdots\\
+M_n\\
+\end{bmatrix}=
+\begin{bmatrix}
+g_1\\
+g_2\\
+\vdots\\
+g_{n-1}\\
+\end{bmatrix}
+$$
+
+我们有 $n+1$ 个未知数，$n-1$ 个方程 $\rightarrow$ 由边界条件增加两个方程
+***
+##### Clamped boundary
+
+此时我们知道 $S'(x_0)=f'(x_0)$，$S'(x_n)=f'(x_n)$，所以
+
+在 $[x_0,x_1]$ 上，$S'_1(x)=-M_0\frac{(x_1-x)^2}{2h_1}+M_1\frac{(x-x_0)^2}{2h_1}+f[x_0,x_1]-\frac{M_1-M_0}{6}h_1$
+
+在 $[x_{n-1},x_n]$ 上，$S'_n(x)=-M_{n-1}\frac{(x_n-x)^2}{2h_n}+M_n\frac{(x-x_{n-1})^2}{2h_n}+f[x_{n-1},x_n]-\frac{M_n-M_{n-1}}{6}h_n$
+
+所以我们额外有两个方程：
+
+$$
+\begin{cases}
+f'(x_0)=-M_0\frac{h_1}{2}+f[x_0,x_1]-\frac{M_1-M_0}{6}h_1\\
+f'(x_n)=M_{n }\frac{h_n}{2}+f[x_{n-1},x_n]-\frac{M_n-M_{n-1}}{6}h_n
+\end{cases}
+\Rightarrow
+\begin{cases}
+2M_0+M_1=\frac{6}{h_1}(f[x_0,x_1]-f'(x_0))\triangleq g_0\\
+M_{n-1}+2M_n=\frac{6}{h_n}(f'(x_n)-f[x_{n-1},x_n]) \triangleq g_n
+\end{cases}
+$$
+
+所以我们可以得到
+
+$$
+\begin{bmatrix}
+2 & 1 &  & & &\\
+\mu_1 & 2 & \lambda_1 &  & &\\
+& \ddots & \ddots & \ddots & &\\
+& & \mu_{n-1} & 2 & \lambda_{n-1} &\\
+& &   & 1  & 2
+\end{bmatrix}
+\begin{bmatrix}
+M_0\\
+M_1\\
+\vdots\\
+M_n\\
+\end{bmatrix}=
+\begin{bmatrix}
+g_0\\
+g_1\\
+\vdots\\
+g_n
+\end{bmatrix}
+$$
+***
+##### Natural boundary
+
+根据之前的假设 $M_0=S''(x_0)=y''_0$，$M_n=S''(x_n)=y''_n$，则
+
+$$ \lambda_0 = 0, g_0 = 2y''_0, \mu_n = 0, g_n = 2y''_n $$
+
+当 $S''(x_0)=S''(x_n)=0$，我们称之为**自由边界（Free Boundary）**，此时 $g_0=g_n=0$。
+
+$$
+\begin{bmatrix}
+2 & 0 & 0 & & &\\
+\mu_1 & 2 & \lambda_1 &   \\
+ & \ddots & \ddots & \ddots & \\
+ & & \mu_{n-1} & 2 & \lambda_{n-1} \\
+ & &   0& 0  & 2
+\end{bmatrix}_{(n+1)\times (n+1)}
+\begin{bmatrix}
+M_0\\
+M_1\\
+\vdots\\
+M_{n-1}\\
+M_n\\
+\end{bmatrix}_{(n+1)\times 1}=
+\begin{bmatrix}
+g_0\\
+g_1\\
+\vdots\\
+g_{n-1}\\
+g_n
+\end{bmatrix}_{(n+1)\times 1}
+$$
+
+自由边界的情况下，有 $S''(x_0)=S''(x_n)=0$。
+****
+##### Periodic boundary
+
+如果 $f$ 是周期函数，即 $y_n=y_0$​ 且 $S'(a^+)=S'(b^−)\Rightarrow M_0=M_n$
+
+$$
+\begin{bmatrix}
+2 & \lambda_1 & & & \mu_1\\
+\mu_2 & 2 & \lambda_2 &   \\
+ & \ddots & \ddots & \ddots & \\
+ & & \mu_{n-1} & 2 & \lambda_{n-1} \\
+\lambda_n & &  & \mu_n  & 2
+\end{bmatrix}_{n\times n}
+\begin{bmatrix}
+M_1\\
+\vdots\\
+M_{n-1}\\
+M_n\\
+\end{bmatrix}_{n\times 1}=
+\begin{bmatrix}
+g_1\\
+\vdots\\
+g_{n-1}\\
+g_n
+\end{bmatrix}_{n\times 1}
+$$
+
+!!! note "Note"
+
+	- 只要系数矩阵是严格对角占优的，那么三次样条能通过边界被唯一确定
+	- 如果 $f\in C[a,b]$ 且 $\frac{\max⁡ h_i}{\min ⁡h_i}\leq C<\infty$，那么当 $h_i\rightarrow 0$ 时，$S(x)\stackrel{\text{uniform}}{\rightarrow}f(x)$。也就是说，在保证不增加样条阶数的情况下，可通过增加节点个数来提升近似精度
+	
+	执行三次样条插值法的步骤如下：
+	
+	1. 计算 $\mu_j,\lambda_j,g_j$
+	2. 求解 $M_j$
+	3. 找到包含 $x$ 的子区间，即找到相应的 $j$
+	4. 通过 $S_j(x)$ 得到 $f(x)$ 的近似值
