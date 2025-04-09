@@ -182,7 +182,116 @@ $$P(x)=\frac{(x-x_j)P_{0,1,...,j-1,j+1,...,k}(x)-(x-x_i)P_{0,1,...,i-1,i+1,...,k
 分子上的第一个多项式在 $x_i$ 处等于 $f(x_i)$，而第二个多项式在 $x_i$ 处为0，所以 $P(x_i)=f(x_i)$。同理 $P(x_j)=f(x_j)$
 
 所以 $P(x)$ 在 $x_0,x_1,\cdots,x_k$ 上与 $f(x)$ 相同，因为 $P(x)$ 是 $k$ 次多项式，所以 $P(x)=P_{0,1,\cdots,k}(x)$
+***
+## Divided Differences
 
+- 第一差商（Divided Difference）：$f[x_i,x_j]=\frac{f(x_j)-f(x_i)}{x_j-x_i}(i\neq j,x_i\neq x_j)$
+- 第二差商：$f[x_i,x_j,x_k]=\frac{f[x_i,x_j]-f[x_j,x_k]}{x_i-x_k}(i\neq k)$
+- 第 $k+1$ 差商：$f[x_0,x_1,\cdots,x_{k+1}]=\frac{f[\textcolor{red}{x_0},x_1,\cdots,x_{k}]-f[x_1,x_2,\cdots,\textcolor{red}{x_{k+1}}]}{\textcolor{red}{x_0-x_{k+1}}}=\frac{f[x_0,x_1,\cdots,\textcolor{red}{x_{k}}]-f[x_0,x_1,\cdots,x_{k-1},\textcolor{red}{x_{k+1}}]}{\textcolor{red}{x_k-x_{k+1}}}$
+
+事实上，$f[x_0,\cdots,x_k]=\sum\limits_{i=0}^kf(x_i)\omega_{k+1}'(x_i)$，其中 $\omega_{k+1}(x)=\prod_{i=0}^k(x−x_i),\omega_{k+1}'(x_i)=\prod_{j=0,j\neq i}^k(x_i−x_j)$。这个公式的要点在于：$f[x_0,\cdots,x_k]$ 的值和 $x_0,\cdots,x_k$ 的顺序无关
+***
+### Newton Interpolation
+
+> 牛顿插值法是拉格朗日插值法的推广，希望能在不断增加精度的情况下，增加多项式的次数，同时还不改变前面已经计算好的低次多项式，即 $f(x)\approx P^{(0)}(x)+P^{(1)}(x)+\cdots$，其中 $P^{(i)}(x)$ 是 $i$ 次多项式
+
+### Simple Idea
+
+给定 $x_0,x_1,\cdots,x_n$：
+
+- 首先满足 $x_0$：$f(x)\approx f_0,f_0=f(x_0)$
+- 然后满足 $x_1,f_1=f(x_1)$：$f(x)\approx f_0+\alpha_1(x-x_0),\alpha_1=\frac{f_1-f_0}{x_1-x_0}$
+- 更多的点：$f(x)\approx f_0+\alpha_1(x-x_0)+\alpha_2(x-x_0)(x-x_1)+\cdots$
+
+从另一个角度来看，牛顿插值法更像是一个渐进的线性估计（很像递归）：
+
+$$
+\begin{aligned}
+f(x)&=f(x_0)+(x-x_0)f^{(1)}(\xi_1)\\
+&=f(x_0)+(x-x_0)(\frac{f(x_1)-f(x_0)}{x_1-x_0}+(x-x_1)f^{(2)}(\xi_2))\\
+&=\cdots
+\end{aligned}
+$$
+
+***
+### The Pattern and Coefficients
+
+根据上面的想法我们有：
+
+$$
+f(x)=\sum\limits_{i=0}^n\alpha_i\prod\limits_{j=0}^{j<i}(x-x_j)=\sum\limits_{i=0}^n\alpha_iN^{(i)}(x)
+$$
+
+或者可以写为：
+
+$$
+\begin{pmatrix}
+f_0\\
+f_1\\
+\vdots\\
+f_n
+\end{pmatrix}=\begin{pmatrix}
+N^{(0)}(x_0) & N^{(1)}(x_0) & \cdots & N^{(n)}(x_0)\\
+N^{(0)}(x_1) & N^{(1)}(x_1) & \cdots & N^{(n)}(x_1)\\
+\vdots & \vdots & \ddots & \vdots\\
+N^{(0)}(x_n) & N^{(1)}(x_n) & \cdots & N^{(n)}(x_n)
+\end{pmatrix}\begin{pmatrix}
+\alpha_0\\
+\alpha_1\\
+\vdots\\
+\alpha_n
+\end{pmatrix}
+$$
+
+其中 $N^{(i)}(x_k)=\begin{cases}0 & k<i\\\prod\limits_{j=0}^{j<i}(x_k-x_j) & k\geq i\end{cases},N^{(0)}=1$
+
+因此事实上中间那个大矩阵可以写为：
+
+$$
+\begin{pmatrix}
+1 & 0 & \cdots & 0\\
+1 & (x_1-x_0) & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+1 & (x_n-x_0) & \cdots & \prod\limits_{j=0}^{j<n}(x_n-x_j)
+\end{pmatrix}
+$$
+
+这显然是一个下三角矩阵！它的逆矩阵也很特殊：
+
+$$
+\begin{pmatrix}
+1 & 0 & \cdots & 0\\
+\frac{1}{x_0-x_1} & \frac{1}{x_1-x_0} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+\frac{1}{\omega'_{n+1}(x_0)} & \frac{1}{\omega'_{n+1}(x_1)} & \cdots & \frac{1}{\omega'_{n+1}(x_n)}
+\end{pmatrix}
+$$
+
+!!! note "Lagrange Interpolation"
+
+	如果我们把拉格朗日插值法也写成矩阵的形式：
+	
+	$$
+	\begin{pmatrix}
+	f_0\\
+	f_1\\
+	\vdots\\
+	f_n
+	\end{pmatrix}=\begin{pmatrix}
+	L^{(0)}(x_0) & L^{(1)}(x_0) & \cdots & L^{(n)}(x_0)\\
+	L^{(0)}(x_1) & L^{(1)}(x_1) & \cdots & L^{(n)}(x_1)\\
+	\vdots & \vdots & \ddots & \vdots\\
+	L^{(0)}(x_n) & L^{(1)}(x_n) & \cdots & L^{(n)}(x_n)
+	\end{pmatrix}\begin{pmatrix}
+	\alpha_0\\
+	\alpha_1\\
+	\vdots\\
+	\alpha_n
+	\end{pmatrix}
+	$$
+	
+	中间这个矩阵显然是一个单位矩阵
+***
 
 
 

@@ -9,3 +9,7 @@ comments: true
 
 # Chapter 04 : 分组密码工作模式与流密码
 
+## 分组密码工作模式
+
+### ECB
+
