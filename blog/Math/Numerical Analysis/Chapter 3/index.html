@@ -4172,6 +4172,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hermite-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hermite Interpolation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8385,6 +8394,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hermite-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hermite Interpolation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8421,7 +8439,7 @@
 
 <h1 id="chapter-03-interpolation-and-polynomial-approximation">Chapter 03 : Interpolation and Polynomial Approximation<a class="headerlink" href="#chapter-03-interpolation-and-polynomial-approximation" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1109 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1992 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
@@ -8745,8 +8763,66 @@ f(x_{n+1}) &amp;&amp; f[x_{n},x_{n+1}] &amp;&amp; f[x_{n-1},x_{n+1}] &amp;&amp; 
 <hr />
 <h3 id="newtons-formulae">Newton's Formulae<a class="headerlink" href="#newtons-formulae" title="Permanent link">&para;</a></h3>
 <ul>
-<li>牛顿向前差分公式：</li>
+<li>牛顿向前差分公式：令 <span class="arithmatex">\(x=x_0+th\)</span>，则 <span class="arithmatex">\(N_n(x)=N_n(x_0+th)=\sum\limits_{k=0}^nC_t^k\Delta^kf(x_0),R_n(x)=\frac{f^{(n+1)(\xi)}}{n+1!}t(t-1))\cdots(t-n)h^{n+1},\xi\in(x_0,x_n)\)</span></li>
+<li>牛顿向后差分公式：颠倒点的顺序，即计算 <span class="arithmatex">\(N_n(x)=f(x_n)+f[x_n,x_{n-1}](x-x_n)+\cdots+f[x_n,\cdots,x_0](x-x_n)\cdots(x-x_1)\)</span>，令 <span class="arithmatex">\(x=x_n+th\)</span>，那么 <span class="arithmatex">\(N_n(x)=N_n(x_n+th)=\sum\limits_{k=0}^n(-1)^kC_{-t}^k\nabla^kf(x_n)\)</span></li>
 </ul>
+<hr />
+<h2 id="hermite-interpolation">Hermite Interpolation<a class="headerlink" href="#hermite-interpolation" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Hermite 插值法的目标是找到一个密切多项式（Osculating Polynomial）<span class="arithmatex">\(P(x)\)</span>，使得 <span class="arithmatex">\(\forall i=0,1,\cdots,n,P(x_i)=f(x_i),P'(x_i)=f'(x_i),…,P^{(m_i)}(x_i)=f^{(m_i)}(x_i)\)</span></p>
+</blockquote>
+<ul>
+<li>给定 <span class="arithmatex">\(N\)</span> 个条件（即 <span class="arithmatex">\(N\)</span> 个方程），<span class="arithmatex">\(N-1\)</span> 次多项式就能够确定下来</li>
+<li>与 <span class="arithmatex">\(f\)</span> 以及所有在一个点 <span class="arithmatex">\(x_0\)</span> 上的 <span class="arithmatex">\(\leq m_0\)</span> 阶的导数吻合的密切多项式就是一个泰勒多项式：</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+P(x)&amp;=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(m_0)}(x_0)}{m_0!}(x-x_0)^{m_0}+\frac{f^{(m_0+1)}(\xi)}{(m_0+1)!}(x-x_0)^{(m_0+1)}\\
+&amp;=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(m_0)}(x_0)}{m_0!}(x-x_0)^{m_0}+R(x)
+\end{aligned}
+\]</div>
+<ul>
+<li>当 <span class="arithmatex">\(\forall i=0,1,\cdots,n,m_i=1\)</span> 时，此时的多项式为<strong>埃尔米特多项式</strong>（Hermite Polynomials）</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>假设 <span class="arithmatex">\(x_0\neq x_1\neq x_2​\)</span>。给定 <span class="arithmatex">\(f(x_0),f(x_1),f(x_2)\)</span> 和 <span class="arithmatex">\(f'(x_1)\)</span>，寻找多项式 <span class="arithmatex">\(P(x)\)</span>，满足 <span class="arithmatex">\(P(x_i)=f(x_i),i=0,1,2\)</span>，且 <span class="arithmatex">\(P'(x1)=f'(x1)\)</span>。并分析误差</p>
+<details class="note">
+<summary>Answer</summary>
+<p>首先，<span class="arithmatex">\(P(x)\)</span> 的阶必须 <span class="arithmatex">\(\leq 3\)</span></p>
+<p>与拉格朗日多项式类似，我们待定埃尔米特多项式：<span class="arithmatex">\(P_3(x)=\sum\limits_{i=0}^2 f(x_i)h_i(x)+f'(x_1)\hat{h_1}(x)\)</span></p>
+<p>其中 <span class="arithmatex">\(h_i(x_j)=\delta_{ij},h_i'(x_1)=0,\hat{h_1}(x_i)=0,\hat{h_1}'(x_1)=1\)</span></p>
+<ul>
+<li><span class="arithmatex">\(h_0(x)\)</span>：有根 <span class="arithmatex">\(x_1,x_2\)</span>，且 <span class="arithmatex">\(h_0'(x_1)=0\Rightarrow x_1\)</span> 是一个重根<ul>
+<li><span class="arithmatex">\(\begin{cases}h_0(x)=C_0(x-x_1)^2(x-x_2)\\h_0(x_0)=1\Rightarrow C_0\end{cases} \Rightarrow h_0(x)=\frac{(x-x_1)^2(x-x_2)}{(x_0-x_1)^2(x_0-x_2)}\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(h_2(x)\)</span>：与 <span class="arithmatex">\(h_0(x)\)</span> 类似</li>
+<li><span class="arithmatex">\(\hat{h_1}(x)\)</span>：有根 <span class="arithmatex">\(x_0,x_2\Rightarrow h_1(x)=(Ax+B)(x-x_0)(x-x_2)\)</span>。<span class="arithmatex">\(A,B\)</span> 可通过 <span class="arithmatex">\(h_1(x_1)=0\)</span> 和 <span class="arithmatex">\(h_1'(x_1)=0\)</span> 求解</li>
+<li><span class="arithmatex">\(\hat{h_1}(x)\)</span>：有根 <span class="arithmatex">\(x_0,x_1,x_2\Rightarrow\hat{h_1}(x)=C_1(x-x_0)(x-x_1)(x-x_2)\)</span>。<span class="arithmatex">\(h_1(x_1)=1\Rightarrow C_1\)</span> 能被求解</li>
+</ul>
+<p>和拉格朗日误差分析相似，<span class="arithmatex">\(R_3(x)=f(x)-P_3(x)=K(x)(x-x_0)(x-x_1)^2(x-x_2)\Rightarrow K(x)=\frac{f^{(4)}(\xi_x)}{4!}\)</span></p>
+</details>
+</div>
+<p>一般情况下，给定 <span class="arithmatex">\(x_0,\cdots,x_n;y_0,\cdots,y_n\)</span> 以及 <span class="arithmatex">\(y_0',\cdots,y_n'\)</span>，有且仅有唯一的埃尔米特多项式 <span class="arithmatex">\(H_{2n+1}(x)\)</span> 满足对于所有的 <span class="arithmatex">\(i,H_{2n+1}(x_i)=y_i\)</span> 且 <span class="arithmatex">\(H_{2n+1}'(x_i)=y_i'\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">求解过程</p>
+<p>令 <span class="arithmatex">\(H_{2n+1}(x)=\sum\limits_{i=0}^ny_ih_i(x)+\sum\limits_{i=0}^ny_i'\hat{h_i}(x)\)</span>，其中 <span class="arithmatex">\(h_i(x_j)=\delta_{ij},h_i'(x_j)=0,\hat{h_i}(x_j)=0,\hat{h_i}'(x_j)=\delta_{ij}\)</span></p>
+<ul>
+<li><span class="arithmatex">\(h_i(x)\)</span>：<ul>
+<li><span class="arithmatex">\(x_0,\cdots,\hat{x_i},\cdots,x_n\)</span> 是重数为 2 的根 <span class="arithmatex">\(\Rightarrow h_i(x)=(A_ix+B_i)L_{n,i}^2(x)\)</span></li>
+<li><span class="arithmatex">\(A_i,B_i\)</span> 能通过 <span class="arithmatex">\(h_i(x_i)=1,h_i'(x_i)=0\)</span> 求解</li>
+<li><span class="arithmatex">\(h_i(x)=[1-2L_{n,i}'(x_i)(x-x_i)L_{n,i}^2(x)]\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\hat{h_i}(x)\)</span>：<ul>
+<li>除了 <span class="arithmatex">\(x_i\)</span> 外，所有的根 <span class="arithmatex">\(x_0,\cdots,x_n\)</span> 的重数均为 2，得到：</li>
+<li><span class="arithmatex">\(\begin{cases}\hat{h_i}(x)=C_i(x-x_i)L_{n,i}^2(x)\\\hat{h_i}'(x_i)=1\Rightarrow C_i=1\end{cases} \Rightarrow\hat{h_i}(x)=(x-x_i)L_{n,i}^2(x)\)</span></li>
+</ul>
+</li>
+</ul>
+<p>如果 <span class="arithmatex">\(a=x_0&lt;x_1&lt;\cdots&lt;x_n=b,f\in C^{2n}[a,b]\)</span>，那么 <span class="arithmatex">\(R_n(x)=\frac{f^{(2n+2)}(\xi_x)}{(2n+2)!}[\prod_{i=0}^n(x-x_i)]^2\)</span></p>
+</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -8816,7 +8892,7 @@ f(x_{n+1}) &amp;&amp; f[x_{n},x_{n+1}] &amp;&amp; f[x_{n-1},x_{n+1}] &amp;&amp; 
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月9日 11:35:07">2025年4月9日 11:35:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月9日 18:52:18">2025年4月9日 18:52:18</span>
   </span>
 
     
