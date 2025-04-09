@@ -385,8 +385,60 @@ $$
 ***
 ### Newton's Formulae
 
-- 牛顿向前差分公式：
+- 牛顿向前差分公式：令 $x=x_0+th$，则 $N_n(x)=N_n(x_0+th)=\sum\limits_{k=0}^nC_t^k\Delta^kf(x_0),R_n(x)=\frac{f^{(n+1)(\xi)}}{n+1!}t(t-1))\cdots(t-n)h^{n+1},\xi\in(x_0,x_n)$
+- 牛顿向后差分公式：颠倒点的顺序，即计算 $N_n(x)=f(x_n)+f[x_n,x_{n-1}](x-x_n)+\cdots+f[x_n,\cdots,x_0](x-x_n)\cdots(x-x_1)$，令 $x=x_n+th$，那么 $N_n(x)=N_n(x_n+th)=\sum\limits_{k=0}^n(-1)^kC_{-t}^k\nabla^kf(x_n)$
+***
+## Hermite Interpolation
 
+> Hermite 插值法的目标是找到一个密切多项式（Osculating Polynomial）$P(x)$，使得 $\forall i=0,1,\cdots,n,P(x_i)=f(x_i),P'(x_i)=f'(x_i),…,P^{(m_i)}(x_i)=f^{(m_i)}(x_i)$
+
+- 给定 $N$ 个条件（即 $N$ 个方程），$N-1$ 次多项式就能够确定下来
+- 与 $f$ 以及所有在一个点 $x_0$ 上的 $\leq m_0$ 阶的导数吻合的密切多项式就是一个泰勒多项式：
+
+$$
+\begin{aligned}
+P(x)&=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(m_0)}(x_0)}{m_0!}(x-x_0)^{m_0}+\frac{f^{(m_0+1)}(\xi)}{(m_0+1)!}(x-x_0)^{(m_0+1)}\\
+&=f(x_0)+f'(x_0)(x-x_0)+\cdots+\frac{f^{(m_0)}(x_0)}{m_0!}(x-x_0)^{m_0}+R(x)
+\end{aligned}
+$$
+
+- 当 $\forall i=0,1,\cdots,n,m_i=1$ 时，此时的多项式为**埃尔米特多项式**（Hermite Polynomials）
+
+!!! example "Example"
+
+	假设 $x_0\neq x_1\neq x_2​$。给定 $f(x_0),f(x_1),f(x_2)$ 和 $f'(x_1)$，寻找多项式 $P(x)$，满足 $P(x_i)=f(x_i),i=0,1,2$，且 $P'(x1)=f'(x1)$。并分析误差
+	
+	??? note "Answer"
+	
+		首先，$P(x)$ 的阶必须 $\leq 3$
+		
+		与拉格朗日多项式类似，我们待定埃尔米特多项式：$P_3(x)=\sum\limits_{i=0}^2 f(x_i)h_i(x)+f'(x_1)\hat{h_1}(x)$
+		
+		其中 $h_i(x_j)=\delta_{ij},h_i'(x_1)=0,\hat{h_1}(x_i)=0,\hat{h_1}'(x_1)=1$
+		
+		- $h_0(x)$：有根 $x_1,x_2$，且 $h_0'(x_1)=0\Rightarrow x_1$ 是一个重根
+			- $\begin{cases}h_0(x)=C_0(x-x_1)^2(x-x_2)\\h_0(x_0)=1\Rightarrow C_0\end{cases} \Rightarrow h_0(x)=\frac{(x-x_1)^2(x-x_2)}{(x_0-x_1)^2(x_0-x_2)}$
+		- $h_2(x)$：与 $h_0(x)$ 类似
+		- $\hat{h_1}(x)$：有根 $x_0,x_2\Rightarrow h_1(x)=(Ax+B)(x-x_0)(x-x_2)$。$A,B$ 可通过 $h_1(x_1)=0$ 和 $h_1'(x_1)=0$ 求解
+		- $\hat{h_1}(x)$：有根 $x_0,x_1,x_2\Rightarrow\hat{h_1}(x)=C_1(x-x_0)(x-x_1)(x-x_2)$。$h_1(x_1)=1\Rightarrow C_1$ 能被求解
+		
+		和拉格朗日误差分析相似，$R_3(x)=f(x)-P_3(x)=K(x)(x-x_0)(x-x_1)^2(x-x_2)\Rightarrow K(x)=\frac{f^{(4)}(\xi_x)}{4!}$
+
+一般情况下，给定 $x_0,\cdots,x_n;y_0,\cdots,y_n$ 以及 $y_0',\cdots,y_n'$，有且仅有唯一的埃尔米特多项式 $H_{2n+1}(x)$ 满足对于所有的 $i,H_{2n+1}(x_i)=y_i$ 且 $H_{2n+1}'(x_i)=y_i'$
+
+!!! note "求解过程"
+
+	令 $H_{2n+1}(x)=\sum\limits_{i=0}^ny_ih_i(x)+\sum\limits_{i=0}^ny_i'\hat{h_i}(x)$，其中 $h_i(x_j)=\delta_{ij},h_i'(x_j)=0,\hat{h_i}(x_j)=0,\hat{h_i}'(x_j)=\delta_{ij}$
+	
+	- $h_i(x)$：
+		- $x_0,\cdots,\hat{x_i},\cdots,x_n$ 是重数为 2 的根 $\Rightarrow h_i(x)=(A_ix+B_i)L_{n,i}^2(x)$
+		- $A_i,B_i$ 能通过 $h_i(x_i)=1,h_i'(x_i)=0$ 求解
+		- $h_i(x)=[1-2L_{n,i}'(x_i)(x-x_i)L_{n,i}^2(x)]$
+	- $\hat{h_i}(x)$：
+		- 除了 $x_i$ 外，所有的根 $x_0,\cdots,x_n$ 的重数均为 2，得到：
+		- $\begin{cases}\hat{h_i}(x)=C_i(x-x_i)L_{n,i}^2(x)\\\hat{h_i}'(x_i)=1\Rightarrow C_i=1\end{cases} \Rightarrow\hat{h_i}(x)=(x-x_i)L_{n,i}^2(x)$
+	
+	如果 $a=x_0<x_1<\cdots<x_n=b,f\in C^{2n}[a,b]$，那么 $R_n(x)=\frac{f^{(2n+2)}(\xi_x)}{(2n+2)!}[\prod_{i=0}^n(x-x_i)]^2$
 
 
 
