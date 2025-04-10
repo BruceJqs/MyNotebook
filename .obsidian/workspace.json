@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "DNS Remote"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of DNS Remote"
             }
           },
           {
@@ -178,10 +178,16 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
+    "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+    "docs/assets/Pasted image 20250410180732.png",
+    "docs/assets/Pasted image 20250410180638.png",
+    "docs/assets/Pasted image 20250410180441.png",
+    "docs/assets/Pasted image 20250410180348.png",
+    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Homework 8.md",
     "docs/develop/Markdown/markdown.md",
     "docs/blog/Math/Numerical Analysis/Chapter 3.md",
-    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/assets/Pasted image 20250409205649.png",
     "docs/assets/Pasted image 20250409205632.png",
     "docs/assets/Pasted image 20250409205550.png",
@@ -191,10 +197,6 @@
     "docs/blog/Math/Numerical Analysis/Chapter 9.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/assets/Pasted image 20250409194231.png",
-    "docs/assets/Pasted image 20250409192142.png",
-    "docs/assets/Pasted image 20250409190255.png",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
-    "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
     "docs/blog/CTF/Cryptography/Chapter 4.md",
     "docs/blog/CTF/Cryptography/index.md",
     "docs/blog/CTF/Cryptography/Chapter 3.md",
@@ -203,9 +205,7 @@
     "docs/blog/Computer Science/Database/Homework 8.md",
     "docs/blog/Computer Science/Database/Chapter 7.md",
     "docs/blog/Computer Science/Database/Homework 7.md",
-    "docs/assets/Pasted image 20250407144959.png",
     "docs/blog/Computer Science/OOP/Chapter 6.md",
-    "docs/assets/Pasted image 20250407143154.png",
     "docs/blog/Computer Science/Database/Chapter 6.md",
     "docs/blog/Computer Science/Computer Architecture/index.md",
     "docs/blog/Computer Science/Computer Architecture/Homework 1.md",
@@ -213,7 +213,6 @@
     "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
     "docs/blog/Computer Science/Computer Architecture/Chapter 2.md",
     "docs/blog/ACEE/Information Theory/Chapter 6.md",
-    "docs/blog/ACEE/Information Theory/Chapter 4.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Knowledge/Network",

