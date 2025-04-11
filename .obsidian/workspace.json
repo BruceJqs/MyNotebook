@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+                "file": "docs/blog/CTF/Cryptography/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DNS Remote"
+              "title": "Chapter 4"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+                "file": "docs/blog/CTF/Cryptography/Chapter 4.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of DNS Remote"
+              "title": "Outline of Chapter 4"
             }
           },
           {
@@ -178,8 +178,16 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
+    "docs/blog/CTF/Cryptography/Chapter 5.md",
+    "docs/blog/CTF/Cryptography/index.md",
+    "docs/blog/CTF/Cryptography/Chapter 4.md",
+    "docs/assets/Pasted image 20250411204706.png",
+    "docs/assets/Pasted image 20250411151717.png",
+    "docs/assets/Pasted image 20250411004957.png",
+    "docs/assets/Pasted image 20250411004232.png",
+    "docs/assets/Pasted image 20250411003628.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
+    "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
     "docs/assets/Pasted image 20250410180732.png",
     "docs/assets/Pasted image 20250410180638.png",
     "docs/assets/Pasted image 20250410180441.png",
@@ -189,16 +197,9 @@
     "docs/develop/Markdown/markdown.md",
     "docs/blog/Math/Numerical Analysis/Chapter 3.md",
     "docs/assets/Pasted image 20250409205649.png",
-    "docs/assets/Pasted image 20250409205632.png",
-    "docs/assets/Pasted image 20250409205550.png",
-    "docs/assets/Pasted image 20250409205505.png",
-    "docs/assets/Pasted image 20250409205445.png",
     "docs/blog/Math/Numerical Analysis/Homework 7.md",
     "docs/blog/Math/Numerical Analysis/Chapter 9.md",
     "docs/blog/Research/Seedlab/Questions.md",
-    "docs/assets/Pasted image 20250409194231.png",
-    "docs/blog/CTF/Cryptography/Chapter 4.md",
-    "docs/blog/CTF/Cryptography/index.md",
     "docs/blog/CTF/Cryptography/Chapter 3.md",
     "docs/blog/CTF/Cryptography/Chapter 2.md",
     "docs/blog/Computer Science/Database/index.md",
