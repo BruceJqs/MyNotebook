@@ -286,6 +286,7 @@ nav:
       - "Chapter 02: 古典密码": blog/CTF/Cryptography/Chapter 2.md
       - "Chapter 03: Hash 函数": blog/CTF/Cryptography/Chapter 3.md
       - "Chapter 04: 分组密码工作模式与流密码": blog/CTF/Cryptography/Chapter 4.md
+      - "Chapter 05: DES 算法和 AES 算法": blog/CTF/Cryptography/Chapter 5.md
   - Research:
     - "Reading Papers":
       - blog/Research/Reading/index.md
