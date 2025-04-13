@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/Cryptography/index.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 6.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Chapter 6"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/Cryptography/index.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 6.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Chapter 6"
             }
           },
           {
@@ -178,19 +178,20 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
-    "docs/blog/CTF/Cryptography/Chapter 5.md",
-    "docs/assets/Pasted image 20250412163348.png",
-    "docs/assets/Pasted image 20250412161839.png",
-    "docs/assets/Pasted image 20250412161823.png",
-    "docs/assets/Pasted image 20250412161424.png",
-    "docs/assets/Pasted image 20250412161345.png",
-    "docs/assets/Pasted image 20250412161209.png",
-    "docs/assets/Pasted image 20250412150929.png",
-    "docs/assets/Pasted image 20250412150725.png",
-    "docs/assets/Pasted image 20250412150205.png",
-    "docs/blog/CTF/Cryptography/Chapter 4.md",
+    "docs/assets/Pasted image 20250413142851.png",
+    "docs/assets/Pasted image 20250413113346.png",
+    "docs/assets/Pasted image 20250413113216.png",
+    "docs/assets/Pasted image 20250413113124.png",
+    "docs/assets/Pasted image 20250413113019.png",
+    "docs/assets/Pasted image 20250413111142.png",
+    "docs/assets/Pasted image 20250413110547.png",
+    "docs/assets/Pasted image 20250413105359.png",
+    "docs/assets/Pasted image 20250413103521.png",
+    "docs/assets/Pasted image 20250413102356.png",
+    "docs/assets/Pasted image 20250413102252.png",
     "docs/blog/CTF/Cryptography/index.md",
-    "docs/assets/Pasted image 20250411204706.png",
+    "docs/blog/CTF/Cryptography/Chapter 5.md",
+    "docs/blog/CTF/Cryptography/Chapter 4.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
     "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
     "docs/blog/Math/Numerical Analysis/index.md",
