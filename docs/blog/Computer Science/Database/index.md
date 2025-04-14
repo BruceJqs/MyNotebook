@@ -26,6 +26,8 @@ comments: true
 - [Chapter 05 : Advanced SQL](Chapter%205/)
 - [Chapter 06 : Entity-Relationship Model](Chapter%206/)
 - [Chapter 07 : Relational Database Design](Chapter%207/)
+- [Chapter 08 : Physical Storage Systems](Chapter%208/)
+- [Chapter 09 : Data Storage Structures](Chapter%209/)
 
 ### Homeworks
 
