@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/Cryptography/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Architecture/Homework 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Homework 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/Cryptography/Chapter 5.md",
+                "file": "docs/blog/Computer Science/Computer Architecture/Homework 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Homework 2"
             }
           },
           {
@@ -178,42 +178,41 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
-    "docs/assets/Pasted image 20250414190204.png",
+    "docs/blog/Computer Science/Computer Architecture/Homework 1.md",
+    "docs/blog/Computer Science/Computer Architecture/Homework 2.md",
+    "docs/assets/Pasted image 20250415163456.png",
+    "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
+    "docs/assets/Pasted image 20250415155144.png",
+    "docs/assets/Pasted image 20250415142315.png",
+    "docs/assets/Pasted image 20250415142259.png",
+    "docs/assets/Pasted image 20250415141926.png",
+    "docs/assets/Pasted image 20250415141851.png",
+    "docs/assets/Pasted image 20250415134452.png",
+    "docs/assets/Pasted image 20250415133310.png",
+    "docs/blog/Computer Science/Computer Architecture/Chapter 2.md",
+    "docs/assets/Pasted image 20250415132250.png",
+    "docs/assets/Pasted image 20250415132238.png",
+    "docs/blog/Computer Science/Computer Architecture/index.md",
+    "docs/blog/CTF/Cryptography/Chapter 5.md",
     "docs/blog/Computer Science/Database/Homework 9.md",
     "docs/blog/Computer Science/Database/Homework 8.md",
     "docs/blog/Computer Science/OOP/Chapter 7.md",
-    "docs/assets/Pasted image 20250414143559.png",
-    "docs/assets/Pasted image 20250414143019.png",
-    "docs/assets/Pasted image 20250414141249.png",
-    "docs/assets/Pasted image 20250414135953.png",
-    "docs/assets/Pasted image 20250414135451.png",
-    "docs/assets/Pasted image 20250414135401.png",
-    "docs/assets/Pasted image 20250414135033.png",
-    "docs/assets/Pasted image 20250414134104.png",
     "docs/blog/Computer Science/OOP/Chapter 6.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Sniffing Spoofing.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Computer Science/Database/Chapter 9.md",
     "docs/blog/Computer Science/Database/Chapter 8.md",
-    "docs/assets/Pasted image 20250414122044.png",
-    "docs/assets/Pasted image 20250414120054.png",
     "docs/blog/Computer Science/Database/index.md",
     "docs/blog/Computer Science/Database/Chapter 7.md",
     "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
     "docs/blog/Research/Seedlab/勘误.md",
     "docs/blog/ACEE/Information Theory/Chapter 6.md",
     "docs/blog/CTF/Cryptography/index.md",
-    "docs/blog/CTF/Cryptography/Chapter 5.md",
     "docs/blog/CTF/Cryptography/Chapter 4.md",
     "docs/blog/Research/Seedlab/Knowledge/Network/Kaminsky.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Homework 8.md",
-    "docs/develop/Markdown/markdown.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 3.md",
-    "docs/blog/Math/Numerical Analysis/Homework 7.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 9.md",
-    "docs/blog/Research/Seedlab/Questions.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Knowledge/Network",
