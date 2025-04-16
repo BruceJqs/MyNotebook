@@ -23,6 +23,7 @@ comments: true
 - [Chapter 07 : Iterative Techniques in Matrix Algebra](Chapter%207/)
 - [Chapter 09 : Approximating Eigenvalues](Chapter%209/)
 - [Chapter 03 : Interpolation and Polynomial Approximation](Chapter@203/)
+- [Chapter 08: Approximation Theory](Chapter%208/)
 
 ### Homeworks
 
