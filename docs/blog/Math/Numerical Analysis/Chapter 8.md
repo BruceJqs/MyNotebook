@@ -101,7 +101,7 @@ $$
 	
 	=== "法 1"
 	
-		我们用 $P(x)=\frac{x}{ax+b}$ 来近似，即寻找 $a,b$，使得 $E_2(a,b)=\sum\limits_{i=1}^m(\frac{xi}{ax_i+b}−y_i)^2$ 最小化
+		我们用 $P(x)=\frac{x}{ax+b}$ 来近似，即寻找 $a,b$，使得 $E_2(a,b)=\sum\limits_{i=1}^m(\frac{x_i}{ax_i+b}−y_i)^2$ 最小化
 		
 		**线性化**（Linearization）：令 $Y=\frac{1}{y},X=\frac{1}{x}$​，那么 $Y\approx a+bX$ 就是一个线性问题了
 		
