@@ -29,6 +29,7 @@ comments: true
 	- [BGP and Attacks](Knowledge/Network/BGP%20Basic/)
 	- [DNS Remote-Kaminsky DNS Attack](Knowledge/Network/Kaminsky/)
 - Reports
+	- [Sniffing Spoofing](Knowledge/Reports/Sniffing%20Spoofing/)
 	- [DNS Remote](Knowledge/Reports/DNS%20Remote/)
 ***
 ### Emulator Labs
