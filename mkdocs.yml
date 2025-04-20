@@ -237,6 +237,8 @@ nav:
         - "Part 02：信息的无损压缩":
           - "Chapter 05: 等长编码": blog/ACEE/Information Theory/Chapter 5.md
           - "Chapter 06: 不等长编码": blog/ACEE/Information Theory/Chapter 6.md
+        - "Part 03：信息的传输":
+          - "Chapter 07: 信道模型": blog/ACEE/Information Theory/Chapter 7.md
       - Homeworks:
         - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
   - CTF:

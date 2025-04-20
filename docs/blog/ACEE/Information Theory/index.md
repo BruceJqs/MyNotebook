@@ -27,6 +27,8 @@ comments: true
 - Part 02 - 信息的无损压缩
 	- [Chapter 05 : 等长编码](Chapter%205/)
 	- [Chapter 06 : 不等长编码](Chapter%206/)
+- Part 03 - 信息的传输
+	- [Chapter 07 : 信道模型](Chapter%207/)
 
 ### Homework
 
