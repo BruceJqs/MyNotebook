@@ -140,6 +140,7 @@ nav:
       - "Chapter 05: Composition and Inheritance": blog/Computer Science/OOP/Chapter 5.md
       - "Chapter 06: Polymorphism": blog/Computer Science/OOP/Chapter 6.md
       - "Chapter 07: Copy Constructor": blog/Computer Science/OOP/Chapter 7.md
+      - "Chapter 08: Operator Overloading": blog/Computer Science/OOP/Chapter 8.md
     - 计算机体系结构｜Computer Architecture:
       - blog/Computer Science/Computer Architecture/index.md
       - Notes:
