@@ -28,6 +28,7 @@ comments: true
 - [Chapter 07 : Relational Database Design](Chapter%207/)
 - [Chapter 08 : Physical Storage Systems](Chapter%208/)
 - [Chapter 09 : Data Storage Structures](Chapter%209/)
+- [Chapter 10 : Indexing](Chapter%2010/)
 
 ### Homeworks
 
@@ -39,4 +40,5 @@ comments: true
 - [Homework 06](Homework%206/)
 - [Homework 07](Homework%207/)
 - [Homework 08](Homework%208/)
+- [Homework 09](Homework%209/)
 

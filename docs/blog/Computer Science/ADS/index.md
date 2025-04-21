@@ -33,7 +33,7 @@ comments: true
 - [Chapter 07 : Divide and Conquer](Chapter%207/)
 - [Chapter 08 : Dynamic Programming](Chapter%208/)
 - [Chapter 09 : Greedy Algorithms](Chapter%209/)
-- [Chapter 10 : NP Completeness](Chapter%2010)
+- [Chapter 10 : NP Completeness](Chapter%2010.md)
 - [Chapter 11 : Approximation](Chapter%2011/)
 - [Chapter 12 : Local Search](Chapter%2012/)
 - [Chapter 13 : Randomized Algorithm](Chapter%2013/)
