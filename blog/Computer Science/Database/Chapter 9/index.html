@@ -14,7 +14,7 @@
         <link rel="prev" href="../Chapter%208/">
       
       
-        <link rel="next" href="../Homework%201/">
+        <link rel="next" href="../Chapter%2010/">
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
@@ -1816,6 +1816,8 @@
       
         
       
+        
+      
     
     
     
@@ -2190,12 +2192,59 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Database Buffer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-oriented-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column-Oriented Storage
+    </span>
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter%2010/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 10: Indexing
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2217,6 +2266,8 @@
   
     
     
+      
+        
       
         
       
@@ -2442,6 +2493,29 @@
   
   <span class="md-ellipsis">
     Homework 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Homework%209/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homework 09
     
   </span>
   
@@ -8686,6 +8760,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Database Buffer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffer-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buffer Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-oriented-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column-Oriented Storage
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -8724,7 +8822,7 @@
 
 <h1 id="chapter-09-data-storage-structures">Chapter 09 : Data Storage Structures<a class="headerlink" href="#chapter-09-data-storage-structures" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3813 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 2 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 19 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4908 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 2 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 16 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 25 分钟</p>
 </div>
 <h2 id="file-organization">File Organization<a class="headerlink" href="#file-organization" title="Permanent link">&para;</a></h2>
 <ul>
@@ -8884,6 +8982,40 @@
 <hr />
 <h2 id="database-buffer">Database Buffer<a class="headerlink" href="#database-buffer" title="Permanent link">&para;</a></h2>
 <p>因为访问硬盘内的数据会比在内存访问慢很多，因此数据库系统的一大目标是最小化硬盘和内存之间的数据块传输次数。一种方法是让主存保存尽可能多的数据块，但显然无法让主存保存所有的数据块，因此我们需要管理主存中的可用空间，而<strong>缓冲区</strong>（Buffer）就是主存中用于存储硬盘块拷贝的部分空间，而缓冲区的空间分配则由<strong>缓冲区管理器</strong>（Buffer Manager）负责</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250421101021.png" /></p>
+<hr />
+<h3 id="buffer-manager">Buffer Manager<a class="headerlink" href="#buffer-manager" title="Permanent link">&para;</a></h3>
+<p>当数据库系统内的程序需要来自硬盘的数据块时，就会向缓冲区管理器发起请求。</p>
+<ul>
+<li>如果缓冲区里已经有数据块了，那么缓冲区管理器就会将这个块在主存中的地址发送给请求者</li>
+<li>如果没有的话，缓冲区管理器首先在缓冲区上为这个块分配空间。如有必要会扔掉一些已有的块，但如果这些即将被扔掉的块相比上次从硬盘中写到主存时有过修改的话，就要将这些块先写回到硬盘中。然后缓冲区管理器从硬盘中将所需的块读到主存中，并将主存地址发送给请求者</li>
+</ul>
+<p>替换策略的目标是最小化对硬盘的访问。在操作系统中，我们会假设最近被引用的数据块可能在将来不久后会被再次引用。因此，如果要替换某个数据块的话，那就替换最久没有被引用的数据块，这种方法称为<strong>最近最少使用</strong>（Least Recently Used, LRU），这点也在计组中也有涉及</p>
+<hr />
+<h2 id="column-oriented-storage">Column-Oriented Storage<a class="headerlink" href="#column-oriented-storage" title="Permanent link">&para;</a></h2>
+<p>通常数据库系统会将元组中的所有属性放在一条记录里，这样的存储布局称为<strong>面向行的存储</strong>（Row-Oriented Storage）。相对应的也有<strong>面向列的存储</strong>（Column-Oriented Storage），它的做法是单独存储关系中的每个属性，一组连续元组的某个属性值被放在文件中的连续位置上，如下所示：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250421102948.png" /></p>
+<p>在最简单的面向列的存储形式中，每个属性被存在单独的文件中，并且通过压缩文件来减小文件大小</p>
+<p>这种面向列的存储适用于数据分析查询——需要处理关系中的多个行，但通常只访问部分属性。推荐理由如下：</p>
+<ul>
+<li>减小 I/O 次数：如果是面向行的存储的话，就需要从硬盘中获取不相干的属性；而面向列的存储只会获取要用到的属性，这会降低 I/O 次数，从而降低了执行查询的开销。</li>
+<li>提升了 CPU 高速缓存的性能：当查询处理器获取特定属性的内容时，由于现代 CPU 的架构，会将多个连续字节（称为一个高速缓存行）从内存拿到 CPU 的高速缓存上。面向列的存储能充分利用这个特点。</li>
+<li>提升压缩能力：压缩能够显著降低从硬盘中检索数据的时间，这通常是查询中最花时间的操作。对于面向列的存储，存储的是相同类型的值，这能够有效提升压缩的效率。</li>
+<li>向量处理：很多现代 CPU 架构支持向量处理，即允许 CPU 对数组中的一些元素进行并行运算。按列存储的方式能够利用到向量处理的优势，比如比较一个属性和一个常量，聚合运算等等。</li>
+</ul>
+<p>面向列的存储也有以下缺点，这使得它尤其没法用在事务处理上：</p>
+<ul>
+<li>元组重构的成本：从一组单独的列中重构一个元组的成本是很高的，可能会抵消掉面向列的存储带来的好处</li>
+<li>元组删除和更新的成本：删除或更新一个被压缩的元组需要重写所有被压缩在一起的元组序列，所以成本很高</li>
+<li>解压的成本：从压缩形式中获取数据时需要解压。对于最简单的压缩形式，解压要求读取从文件开头读取所有数据，但很多记录实际上是不需要的</li>
+</ul>
+<p>ORC 和 Parquet 是在很多大数据处理应用中用到的列文件表示。其中 ORC 会将占据几百 MB 的元组序列划分为一种称为<strong>条</strong>（Stripe）的列表示，而一个 ORC 文件会包含多个这样的条，下图为 ORC 文件格式的一些细节：</p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250421102938.png" /></p>
+<ul>
+<li>每个条包含了一个索引数据、行数据和条尾，ORC 文件还有一个文件尾</li>
+<li>行数据包含了各个列的压缩后的序列值</li>
+<li>索引数据用于快速访问所需的元组</li>
+</ul>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -8953,7 +9085,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月14日 13:52:28">2025年4月14日 13:52:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月21日 12:06:08">2025年4月21日 12:06:08</span>
   </span>
 
     
@@ -9185,16 +9317,16 @@
         
           
           <a
-            href="../Homework%201/"
+            href="../Chapter%2010/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Homework 01"
+            aria-label="下一页: Chapter 10: Indexing"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Homework 01
+                Chapter 10: Indexing
               </div>
             </div>
             <div class="md-footer__button md-icon">
