@@ -24,6 +24,7 @@ comments: true
 - [Chapter 09 : Approximating Eigenvalues](Chapter%209/)
 - [Chapter 03 : Interpolation and Polynomial Approximation](Chapter@203/)
 - [Chapter 08: Approximation Theory](Chapter%208/)
+- [Chapter 04 : Numerical Differentiation and Integration](Chapter%204/)
 
 ### Homeworks
 

@@ -13,9 +13,9 @@ comments: true
 
 > Construct a B+-tree for the following set of key values: 
 >
->$$
- (2, 3, 5, 7, 11, 17, 19, 23, 29, 31)
- $$
+$$
+(2, 3, 5, 7, 11, 17, 19, 23, 29, 31)
+$$
 >
 > Assume that the tree is initially empty and values are added in ascending order. Construct B+-trees for the case where the number of pointers that will fit in one node is as follows: 
 > 
@@ -74,5 +74,5 @@ comments: true
 
 缺点：
 
-- 读取新能下降
+- 读取性能下降
 - 内存开销增加

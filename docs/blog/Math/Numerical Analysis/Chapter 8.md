@@ -266,4 +266,154 @@ $$
 
 ![](../../../assets/Pasted%20image%2020250416145553.png)
 
+****
+## Chebyshev Polynomials and Economization of Power Series
 
+一般的最小二乘近似问题是要找到一个广义多项式 $P(x)$，使得 $E=(P−y,P−y)=\|P−y\|^2$ 最小化
+
+现在的目标是最小化 $\|P−y\|_{\infty}$​，我们称之为**极小化极大问题**（Minimax Problem）
+***
+### Targets
+
+#### Target 1
+
+目标 1.0：找到 $n$ 阶多项式 $P_n(x)$ 使得 $\|P_n−f\|_{\infty}$ 最小化
+
+定义：如果 $P(x_0)−f(x_0)=\pm\|P−f\|_{\infty}$，那么此时 $x_0$ 被称为（$\pm$）**偏差点**（Deviation Point）
+
+从任意地方构造出多项式并不容易，但我们能够检验多项式的一些特征：
+
+- 如果 $f\in C[a,b]$ 且 $f$ **不是**一个 $n$ 阶多项式，那么存在一个唯一的多项式 $P_n(x)$，使得 $\|P_n−f\|_{\infty}​$ 最小化
+- $P_n(x)$ 存在，且必须同时有正负偏差点
+- **切比雪夫定理**（Chebyshev Theorem）：$P_n(x)$ 最小化 $\|P_n−f\|_{\infty}\Leftrightarrow P_n(x)$ 至少有 $n+2$ 个关于 $f$ 的正负偏差点。也就是说，存在一组点 $a\leq t_1<\cdots<t_{n+2}\leq b$ 使得 $P_n(t_k)−f(t_k)=\pm(−1)^k\|P_n−f\|_{\infty}$​。集合 $\{t_k\}$ 被称为**切比雪夫交替序列**（Chebyshev Alternating Sequence）
+
+![](../../../assets/Pasted%20image%2020250423101625.png)
+
+其中 $P_n(x)$ 被称为 $f(x)$ 的插值多项式（Interpolating Polynomial），由上图我们可以发现，$P_n(x)-f(x)$ 有至少 $n+1$ 个根
+***
+#### Target 2
+
+目标 2.0：找到插值点 $\{x_0,\cdots,x_n\}$ 使得 $P_n(x)$ 最小化余项 $|P_n(x)−f(x)|=|R_n(x)|=|\frac{f^{(n+1)}(\xi)}{(n+1)!}\prod\limits_{i=0}^n(x−x_i)|$
+
+对此，我们也可以进一步得到下一个目标 2.1：我们需要找到 $\{x_1,\cdots,x_n\}$ 使得 $\|w_n\|_{\infty}$ 在 $[-1,1]$ 上最小，其中 $w_n(x)=\prod\limits_{i=1}^n(x-x_i)$
+
+注意到 $w_n(x)=x^n-P_{n-1}(x)$，那么整个问题就可以进一步简化成目标 3.0
+***
+#### Target 3
+
+目标 3.0：找到一个多项式 $P_{n-1}(x)$ 使得 $\|x^n-P_{n-1}(x)\|_{\infty}$ 在 $[-1,1]$ 最小化
+
+根据切比雪夫定理，我们知道 $P_{n−1}(x)$ 相对于 $x^n$ 有 $n+1$ 个偏差点，也就是说 $w_n(x)$ 在 $n+1$ 个点上交替获得最大值和最小值
+***
+### Chebyshev Polynomials
+
+为了实现上面的目标，我们先想到三角函数。$cos(n\theta)$ 在 $[-1,1]$ 上有 $n+1$ 个交替的最大值和最小值，但是 $cos(n\theta)$ 并不是多项式，又由于 $cos(n\theta)$ 可以表示为 $\sum\limits_{k=0}^{n} a_k (\cos\theta)^k$，这就是我们想要的多项式形式
+
+令 $x=\cos\theta$，则 $x \in [-1,1]$，所以我们可以把 $cos(n\theta)$ 写成 $T_n(x)$ 的形式，$T_n(x)=\cos(n\theta)=\cos(n\cdot\arccos x)$ 称为**切比雪夫多项式（Chebyshev Polynomial）**
+
+切比雪夫多项式有如下性质：
+
+- $T_n​(x)$ 在 $t_k=\cos⁡(\frac{k}{n}\pi)(k=0,1,\cdots,n)$ 情况下，在最大值 1 和最小值 -1 之间交替变换，也就是说 $T_n(t_k)=(−1)^k\|T_n(x)\|_{\infty}$
+- $T_n​(x)$ 有 $n$ 个根 $x_k=\cos⁡(\frac{2k−1}{2n}\pi)(k=1,\cdots,n)$
+- 切比雪夫多项式有递推公式：
+	
+	$$
+	\begin{aligned}
+	T_{0}(x)&=1\\
+	T_{1}(x)&=x\\
+	T_{n}(x)&=2 x T_{n-1}(x)-T_{n-2}(x), \quad n=2,3, \cdots
+	\end{aligned}
+	$$
+	
+	- 由递推公式我们可以得到最高阶项的系数为 $2^{n-1}$
+- 在 $[-1,1]$ 上，$T_0(x), T_1(x), \cdots, T_n(x)$ 关于权重函数 $\frac{1}{\sqrt{1-x^2}}$ 正交，即：
+	
+	$$
+	(T_n,T_m)=\int_{-1}^1\frac{T_n(x)T_m(x)}{\sqrt{1-x^2}}dx=\begin{cases}
+	0 & n\neq m\\
+	\frac{\pi}{2} & n=m\neq 0\\
+	\pi & n=m=0
+	\end{cases}
+	$$
+	
+***
+### Back to Targets
+
+#### Target 3
+
+我们回到之前我们设下的目标，对于目标 3.0 来说，可以把 $w_n$ 写成 $T_n(x)$ 的形式：
+
+$$
+w_{n}(x)=x^{n}-P_{n-1}(x)=\frac{T_{n}(x)}{2^{n-1}}
+$$
+***
+#### Target 2
+
+对于目标 2.1 来说，也将 $w_n$ 写成 $T_n(x)$ 的形式：
+
+$$
+\min_{w_n\in \tilde\Pi_n} \|w_{n}\|_{\infty}=\big\|\frac{T_{n}(x)}{2^{n-1}}\big\|_{\infty}=\frac{1}{2^{n-1}}
+$$
+
+我们称 $\tilde{\Pi_n}$ 为 n 阶的**首一切比雪夫多项式（The Monic Chebyshev Polynomial）**，其中我们所取的插值点 $\{x_1,\cdots,x_n\}$ 是 $T_n(x)$ 的 $n$ 个根
+
+对于目标 2.0 来说，取 $T_{n+1}(x)$ 上的 $n+1$ 个根作为插值点 $\{x_0,\cdots,x_n\}$，然后关于 $f(x)$ 的插值多项式 $P_n(x)$ 假设绝对误差的最小上界为 $\frac{M}{2^n(n+1)!}$
+
+!!! example "Example"
+
+	找到在 $[0,1]$ 上关于 $f(x)=e^x$ 的最佳近似多项式，使得绝对误差不超过 $0.5\times 10^{−4}$
+	
+	??? note "Answer"
+	
+		首先我们要确定 $n$：
+		
+		- 改写变量 $x=\frac{a+b}{2}+\frac{b-a}{2}t=\frac{1}{2}(t+1)$
+		- 那么 $|R_n|\leq\frac{e}{(n+1)!}\times\frac{1}{2^{2n+1}}<\frac{1}{2}\times 10^{-4}$，解得 $n=4$
+		
+		接着我们找到 $T_5(t)$ 的根：$t_0=\frac{\cos⁡\pi}{10},\frac{\cos ⁡3\pi}{10},\frac{\cos⁡ 5\pi}{10},\frac{\cos ⁡7\pi}{10},\frac{\cos⁡ 9\pi}{10}$
+		
+		最后对变量做一点改变，得到：
+		
+		$$
+		\begin{aligned}
+		x_0&=\frac{1}{2}(\frac{\cos⁡\pi}{10}+1)\approx 0.98\\
+		x_1&=\frac{1}{2}(\frac{\cos⁡3\pi}{10}+1)\approx 0.79\\
+		x_2&=\frac{1}{2}(\frac{\cos⁡5\pi}{10}+1)\approx 0.50\\
+		x_3&=\frac{1}{2}(\frac{\cos⁡7\pi}{10}+1)\approx 0.21\\
+		x_4&=\frac{1}{2}(\frac{\cos⁡9\pi}{10}+1)\approx 0.02\\
+		\end{aligned}
+		$$
+		
+		最后使用插值点 $x_0,x_1,x_2,x_3,x_4$ 计算 $L_4(x)$
+***
+### Economization of Power Series
+
+目标：给定 $P_n(x)\approx f(x)$，幂级数**经济化**（Economization）的目标是在确保精度损失最小的情况下，降低多项式的次数
+
+考虑一个任意的 $n$ 阶多项式 $P_n(x)=a_nx^n+a_{n−1}x^{n−1}+\cdots+a_1x+a_0$​，对应的多项式 $P_{n−1}(x)$ 通过移除 $n$ 阶多项式 $Q_n(x)$（$x^n$ 项的系数为 $a_n​$）得到。那么：
+
+$$
+\begin{aligned}
+\max _{x \in[-1,1]}\left|f(x)-P_{n-1}(x)\right| &\leq \max _{x \in[-1,1]}\left|f(x)-P_{n}(x)\right|+\max _{x \in[-1,1]}\left|Q_{n}(x)\right|+\max _{x \in[-1,1]}\left|P_{n}(x)-P_{n-1}(x)-Q_{n}(x)\right|\\
+&\leq \max _{x \in[-1,1]}\left|f(x)-P_{n}(x)\right|+\max _{x \in[-1,1]}\left|Q_{n}(x)\right|
+\end{aligned}
+$$
+
+其中 $Q_n(x)$ 能够反映精度的损失，为了使得精确度的损失最小， $Q_n(x)$ 必须为 $a_n \cdot \frac{T_n(x)}{2^{n-1}}$
+
+!!! example "Example"
+
+	已知 $f(x)=e^x$ 在 $[−1,1]$ 上的 4 阶泰勒多项式为 $P4=1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}$​。它的截断误差的上界为 $|R_4(x)|\leq\frac{e}{5!}|x^5\approx 0.023$。请将这个近似多项式的次数降至 2
+	
+	??? note "Answer"
+	
+		$$
+		\begin{aligned}
+		T_4&=8x^4-8x^2+1\Rightarrow Q_4=\frac{1}{24}\times\frac{1}{2^3}T_4(x)=\frac{1}{24}(x^4-x^2+\frac{1}{8})\\
+		P_3&=P_4-Q_4=\frac{1}{6}x^3+\frac{13}{24}x^2+x+\frac{191}{192}\\
+		T_3&=4x^3-3x\Rightarrow Q_3=\frac{1}{6}\times\frac{1}{2^2}T_3(x)=\frac{1}{6}(x^3-\frac{3}{4}x)\\
+		P_2&=P_3-Q_3=\frac{13}{24}x^2+\frac{9}{8}x+\frac{191}{192}\quad \|e^x-P_2(x)\|\approx 0.057
+		\end{aligned}
+		$$
+		
+		如果我们单纯取 $P_2(x)=1+x+\frac{x^2}{2}$，那么误差为 $\frac{e}{3!}\approx 0.45$
