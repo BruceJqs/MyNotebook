@@ -315,6 +315,7 @@ nav:
           - "DNS Remote-Kaminsky Attack": blog/Research/Seedlab/Knowledge/Network/Kaminsky.md
         - Reports:
           - "Sniffing Spoofing": blog/Research/Seedlab/Knowledge/Reports/Sniffing Spoofing.md
+          - "ARP Attack": blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md
           - "DNS Remote": blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
