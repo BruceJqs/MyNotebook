@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Homework 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Homework 2"
             }
           },
           {
@@ -178,6 +178,7 @@
   },
   "active": "a7c38be0482fa336",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Homework 2.md",
     "docs/assets/Pasted image 20250426232408.png",
     "docs/assets/Pasted image 20250426213457.png",
@@ -211,7 +212,6 @@
     "docs/blog/Computer Science/OOP/Chapter 7.md",
     "docs/blog/Computer Science/Database/Chapter 10.md",
     "docs/blog/Computer Science/Database/Chapter 9.md",
-    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 7.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
