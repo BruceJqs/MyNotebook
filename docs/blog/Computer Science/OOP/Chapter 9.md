@@ -93,3 +93,78 @@ foo<float>(); // type T is float
     - 可能会定义类的无限集合
     - 另一种重用方法
 - 典型用法：容器类，比如 `stack<int>`、`list<Person&>`、`queue<Job>`
+
+模板能用于多个类型，比如：
+
+```c++
+template< class Key, class Value>
+class HashTable {
+    const Value& lookup(const Key&) const;
+    void install(const Key&, const Value&);
+    ...
+};
+```
+
+- 模板嵌套：本质上得到的是一个新类型
+    - 举例：`Vector< Vector< double *> > // note space > >`
+- 类型参数可以很复杂
+    - 举例：`Vector< int (*)(Vector<double>&, int)>`
+
+模板参数还可以是一个常量表达式，或者是无类型的参数
+
+- 默认参数：
+
+```c++
+template <class T, int bounds = 100>
+class FixedVector {
+public:
+    FixedVector();
+    // ...
+    T& operator[](int);
+private:
+    T elements[bounds]; // fixed size array!
+};
+```
+
+- 无类型参数：
+	
+	```c++
+	template <class T, int bounds>
+	T& FixedVector<T,bounds>::operator[]( int i ) {
+	    return elements[i]; // no error checking
+	}
+	
+	// Usage
+	FixedVector<int, 50> v1;
+	FixedVector<int, 10*5> v2;
+	FixedVector<int> v3; // uses default
+	```
+	
+	- 嵌入 size 并不常用
+	- 能够让代码更快
+	- 但使用起来更复杂
+	- 可能导致（甚至更多的）代码膨胀
+
+模板和继承：
+
+- 模板能够继承自非模板类
+
+```c++
+template <class A>
+class Derived : public Base { ...
+```
+
+- 模板能够继承自模板类
+
+```c++
+template <class A>
+class Derived : public List<A> { ...
+```
+
+- 非模板类可继承自模板类
+
+```c++
+class SupervisorGroup : public
+List<Employee*> { ...
+```
+

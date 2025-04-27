@@ -23,3 +23,6 @@ comments: true
 - [Chapter 04 : Class](Chapter%204/)
 - [Chapter 05 : Composition & Inheritance](Chapter%205/)
 - [Chapter 06 : Polymorphism](Chapter%206/)
+- [Chapter 07 : Copy Constructor](Chapter%207/)
+- [Chapter 08 : Operator Overloading](Chapter%208/)
+- [Chapter 09 : Templates](Chapter%209/)
