@@ -21,4 +21,21 @@ comments: true
 
 > Suppose that a B+-tree index on (dept_name, building) is available on relation department. What would be the best way to handle the following selection?
 > 
-> $\sigma_{\text{building}}$
+> $\sigma_{(\text{building}<\text{Watson})\land(\text{budget}<55000)\land(\text{dept\_name}=\text{Music})}(\text{department})$
+> 
+> branch(<u>branch name</u>, branch_city, assets)
+> 
+> customer(<u>customer_name</u>, customer_street, customer_city)
+> 
+> loan(<u>loan_number</u>, branch name, amount)
+> 
+> borrower(<u>customer_name</u>, <u>loan number</u>)
+> 
+> account(<u>account_number</u>, branch_name, balance)
+> 
+> depositor(<u>customer_name</u>, <u>account_number</u>)
+
+- 首先利用 B+ 树索引查找 `dept_name = 'Music'` 的记录
+- 再利用索引查找 `building < 'Watson'` 的记录
+- 检索对应的数据记录
+- 最后对检索到的数据记录进行 `budget < 55000` 的过滤

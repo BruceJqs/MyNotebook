@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/index.md",
+                "file": "docs/blog/Computer Science/Database/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Computer Science/OOP/index.md",
+                "file": "docs/blog/Computer Science/Database/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -178,6 +178,13 @@
   },
   "active": "2092d7b08fd444e5",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/Database/Homework 12.md",
+    "docs/blog/Computer Science/Database/Homework 3.md",
+    "docs/blog/Computer Science/Database/Homework 2.md",
+    "docs/blog/Computer Science/Database/Homework 1.md",
+    "docs/blog/Computer Science/Database/Homework 11.md",
+    "docs/blog/Math/Numerical Analysis/Homework 10.md",
+    "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Computer Science/OOP/Chapter 10.md",
     "docs/blog/Math/Numerical Analysis/Chapter 4.md",
@@ -185,11 +192,8 @@
     "docs/blog/Math/Numerical Analysis/Chapter 8.md",
     "docs/blog/Math/Numerical Analysis/Chapter 9.md",
     "docs/blog/Math/Numerical Analysis/Homework 9.md",
-    "docs/blog/Math/Numerical Analysis/Homework 10.md",
     "docs/assets/Pasted image 20250430110723.png",
     "docs/blog/Computer Science/Database/Chapter 12.md",
-    "docs/blog/Computer Science/Database/Homework 12.md",
-    "docs/blog/Computer Science/Database/Homework 11.md",
     "docs/blog/Computer Science/Database/index.md",
     "docs/assets/Pasted image 20250428221919.png",
     "docs/blog/Computer Science/Database/Homework 6.md",
@@ -201,7 +205,6 @@
     "docs/assets/Pasted image 20250428192732.png",
     "docs/blog/Computer Science/OOP/Chapter 2.md",
     "docs/blog/Computer Science/OOP/Chapter 9.md",
-    "docs/blog/Computer Science/OOP/index.md",
     "docs/blog/Computer Science/Database/Homework 7.md",
     "docs/blog/Computer Science/Database/Homework 8.md",
     "docs/blog/Computer Science/Database/Homework 9.md",
@@ -211,9 +214,6 @@
     "docs/blog/Computer Science/Database/Chapter 2.md",
     "docs/blog/Computer Science/Database/Chapter 11.md",
     "docs/blog/Computer Science/Database/Chapter 10.md",
-    "docs/blog/Computer Science/OOP/Chapter 7.md",
-    "docs/blog/Computer Science/OOP/Chapter 8.md",
-    "docs/blog/Math/Discrete mathmatics/Discrete mathmatics notes-Ch01.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Knowledge/Network",
