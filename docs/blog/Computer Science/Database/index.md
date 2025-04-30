@@ -30,6 +30,7 @@ comments: true
 - [Chapter 09 : Data Storage Structures](Chapter%209/)
 - [Chapter 10 : Indexing](Chapter%2010/)
 - [Chapter 11 : Query Processing](Chapter%2011/)
+- [Chapter 12 : Query Optimization](Chapter%2012/)
 
 ### Homeworks
 
