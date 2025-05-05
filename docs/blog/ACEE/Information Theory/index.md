@@ -29,6 +29,7 @@ comments: true
 	- [Chapter 06 : 不等长编码](Chapter%206/)
 - Part 03 - 信息的传输
 	- [Chapter 07 : 信道模型](Chapter%207/)
+	- [Chapter 08 : 离散无记忆信道的容量定理](Chapter%208/)
 
 ### Homework
 

@@ -197,6 +197,72 @@ $$
 ## 信道的组合
 
 ![](../../../assets/Pasted%20image%2020250420111312.png)
-
+***
 ### 平行信道（积信道）
 
+![](../../../assets/Pasted%20image%2020250505100408.png)
+
+$$
+\begin{aligned}
+p(jj'|kk')&=p_1(j|k)p_2(j'|k')\\
+I(X_1X_2;Y_1Y_2)&=H(Y_1Y_2)-H(Y_1Y_2|X_1X_2)\\
+&\leq H(Y_1)+H(Y_2)-H(Y_1|X_1)-H(Y_2|X_2)\\
+&=I(X_1;Y_1)+I(X_2;Y_2)\\
+\end{aligned}
+$$
+
+等号成立的条件是各个子信道分别独立
+***
+### 开关信道（和信道）
+
+![](../../../assets/Pasted%20image%2020250505101103.png)
+
+$$
+\begin{aligned}
+p(j|k)=\begin{cases}
+p_1(j|k) & k\in\mathcal{X}_1,j\in\mathcal{Y}_1\\
+p_2(j|k) & k\in\mathcal{X}_2,j\in\mathcal{Y}_2\\
+0 & \text{otherwise}
+\end{cases}\quad&,Q_k=\begin{cases}
+P_AQ_k^1 & k\in\mathcal{X}_1\\
+P_BQ_k^2 & k\in\mathcal{X}_2
+\end{cases}\\
+I(X;Y)=P_AI(X_1;Y_1)&+P_BI(X_2;Y_2)+H(P_A,P_B)\\
+C=\max\limits_{\{P_A,Q_k^1,Q_k^2\}}I(X;Y)&=\max\limits_{P_A}\{P_AC_1+P_BC_2+H(P_A,P_B)\}\\
+&=\max\limits_{P_A}\{P_AC_1+P_BC_2-P_A\log P_A-P_B\log P_B\}\\
+\frac{\partial C}{\partial P_A}&=C_1-\log P_A-1=\lambda\\
+\therefore P_A=2^{C_1-\lambda}&,P_B=2^{C_2-\lambda}\\
+C=(C_12^{C_1-\lambda}+C_2^{C_2-\lambda}&-(C_1-\lambda)2^{C_1-\lambda}-C_2^{C_2-\lambda})=\lambda(2^{C_1-\lambda}+2^{C_2-\lambda})=\lambda\\
+\therefore C=\log[2^{C_1}+2^{C_2}]&,P_A=2^{C_1-C},P_B=2^{C_2-C}\\
+\end{aligned}
+$$
+***
+### 级联信道
+
+![](../../../assets/Pasted%20image%2020250505104829.png)
+
+$$
+\begin{aligned}
+I(X;Y)\geq I(X;Z)\\
+I(Y;Z)\geq I(X;Z)\\
+C\leq\min\{C_1,C_2\}\\
+\end{aligned}
+$$
+
+!!! example "两个信道的组合"
+
+	=== "Example 01"
+	
+		![](../../../assets/Pasted%20image%2020250505105054.png)
+	
+	=== "Example 02"
+	
+		![](../../../assets/Pasted%20image%2020250505105113.png)
+	
+	=== "Example 03"
+	
+		![](../../../assets/Pasted%20image%2020250505105132.png)
+	
+	=== "Example 04"
+	
+		![](../../../assets/Pasted%20image%2020250505105151.png)

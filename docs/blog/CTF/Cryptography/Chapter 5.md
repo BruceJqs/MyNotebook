@@ -101,3 +101,4 @@ AES（Advanced Encryption Standard）是一种对称密钥加密算法，明文�
 #### 有限域 $GF(2^8)$
 
 1. 对于 $F[x]$ 中的每个不可约多项式 $p(x)$，可以构造一个域 $F[x]_{p(x)}$ 
+2. 
