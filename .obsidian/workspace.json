@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/index.md",
+                "file": "docs/blog/Math/Numerical Analysis/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -178,6 +178,11 @@
   },
   "active": "2092d7b08fd444e5",
   "lastOpenFiles": [
+    "docs/blog/Math/Numerical Analysis/Chapter 5.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 4.md",
+    "docs/blog/Math/Numerical Analysis/index.md",
+    "docs/assets/Pasted image 20250507103732.png",
+    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 8.md",
     "docs/assets/Pasted image 20250505155607.png",
     "docs/assets/Pasted image 20250505153456.png",
@@ -189,9 +194,7 @@
     "docs/assets/Pasted image 20250505144358.png",
     "docs/assets/Pasted image 20250505112110.png",
     "docs/assets/Pasted image 20250505111108.png",
-    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 6.md",
-    "docs/assets/Pasted image 20250505105151.png",
     "docs/blog/CTF/Cryptography/Chapter 5.md",
     "docs/blog/Computer Science/Database/Homework 12.md",
     "docs/blog/Computer Science/Database/index.md",
@@ -201,9 +204,7 @@
     "docs/blog/Computer Science/Database/Homework 11.md",
     "docs/blog/Math/Numerical Analysis/Homework 10.md",
     "docs/blog/Computer Science/OOP/index.md",
-    "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Computer Science/OOP/Chapter 10.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 4.md",
     "docs/blog/Math/Numerical Analysis/Chapter 8.md",
     "docs/blog/Math/Numerical Analysis/Chapter 9.md",
     "docs/blog/Math/Numerical Analysis/Homework 9.md",

@@ -25,6 +25,7 @@ comments: true
 - [Chapter 03 : Interpolation and Polynomial Approximation](Chapter@203/)
 - [Chapter 08: Approximation Theory](Chapter%208/)
 - [Chapter 04 : Numerical Differentiation and Integration](Chapter%204/)
+- [Chapter 05 : Initial-Value Problems for Ordinary Differential Equations](Chapter%205/)
 
 ### Homeworks
 

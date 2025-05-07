@@ -300,3 +300,121 @@ $$
 	\end{aligned}
 	$$
 	
+***
+## Adaptive Quadrature Method
+
+> 自适应积分方法的主要思想就是预测函数变化的大小，使步长适应变化的需求，而不是我们之前所提到的将步长不断二分，在误差比较大的地方使用更小的步长，在误差比较小的地方使用更大的步长，减少一些计算量
+
+!!! question "误差大小该如何定量判断？"
+
+	一种简单的方法是对于总误差为 $\epsilon$ 的积分 $\int_a^bf(x)dx$，长度为 $h$ 的步长，如果当前步长求得的误差大于 $h\frac{\epsilon}{b-a}$，那么称其误差比较大，需要减小步长
+
+!!! example "Example"
+
+	用自适应的辛普森法则来计算 $\epsilon(f,a,b)\approx\int_a^bf(x)dx-S(a,b)=\frac{h^5}{90}f^{(4)}(\xi)$，其中 $S(a,b)=\frac{h}{3}[f(a)+4f(a+h)+f(b)],h=\frac{b-a}{2},\xi\in [a,b]$
+	
+	![](../../../assets/Pasted%20image%2020250507103732.png)
+	
+	我们有：
+	
+	$$
+	\begin{aligned}
+	\int_a^{\frac{a+b}{2}}f(x)dx=S(a,\frac{a+b}{2})&+\frac{(\frac{h}{2})^5}{90}f^{(4)}(\xi_1)\\
+	\int_{\frac{a+b}{2}}^bf(x)dx=S(\frac{a+b}{2},b)&+\frac{(\frac{h}{2})^5}{90}f^{(4)}(\xi_2)\\
+	\therefore\int_a^bf(x)dx=S(a,\frac{a+b}{2})&+S(\frac{a+b}{2},b)+\frac{1}{16}\times\frac{h^5}{90}f^{(4)}(\eta)\\
+	|\int_a^bf(x)dx-S(a,\frac{a+b}{2})-S(\frac{a+b}{2},b)|&\approx\frac{1}{15}|S(a,b)-S(a,\frac{a+b}{2})-S(\frac{a+b}{2},b)|\\
+	&<\epsilon
+	\end{aligned}
+	$$
+	
+	可以看到，$S(a,\frac{a+b}{2})+S(\frac{a+b}{2},b)$ 逼近 $\int_a^b f(x)\mathrm{d}x$ 的效果比 $S(a,\frac{a+b}{2})+S(\frac{a+b}{2},b)$ 逼近 $S(a,b)$ 好 15 倍
+***
+## Gaussian Quadrature
+
+目标：构造一个公式 $\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)$，对于 $n+1$ 个点而言精度为 $2n+1$
+
+思路：确定 $2n+2$ 个未知量 $x_0,\cdots,x_n; A_0,\cdots,A_n$，使得公式在 $f(x)=1,x,x^2,\cdots,x^{2n+1}$ 上都是精确的。点 $x_0,\cdots,x_n$ 被称为**高斯点**（Gaussian Points），这个方法被称为**高斯求积**（Gaussian Quadrature）
+
+!!! example "Example"
+
+	使用 $n=1$ 的高斯求积来估计 $\int_0^1\sqrt{x}f(x)dx$
+	
+	??? note "Answer"
+	
+		精度为3，需满足 $f(x)=1,x,x^2,x^3$。
+		
+	    设 $\int_{-1}^1 \sqrt{x}f(x)\mathrm{d}x \approx A_0f(x_0)+A_1f(x_1)$，则
+		
+	    $$
+	    \begin{cases}
+	    \int_{-1}^1 \sqrt{x}\mathrm{d}x = \frac{2}{3} = A_0+A_1 \\
+	    \int_{-1}^1 \sqrt{x}x\mathrm{d}x = \frac{2}{5} = A_0x_0+A_1x_1 \\
+	    \int_{-1}^1 \sqrt{x}x^2\mathrm{d}x = \frac{2}{7} = A_0x_0^2+A_1x_1^2 \\
+	    \int_{-1}^1 \sqrt{x}x^3\mathrm{d}x = \frac{2}{9} = A_0x_0^3+A_1x_1^3 \\
+	    \end{cases}
+	    $$
+	    
+	    解得 $x_0\approx 0.8212,x_1\approx 0.2899, A_0\approx0.3891, A_1\approx 0.2776$
+
+但是，求解非线性方程组是很困难的，所以我们采用另一种方法，我们有如下定理：
+
+!!! note "Theorem"
+
+	当且仅当 $W(x)=\prod_{k=0}^n(x−x_k)$ 与所有阶数不超过 $n$ 的多项式正交时，$x_0,\cdots,x_n$​ 是**高斯点**
+	
+	??? note "Proof"
+	
+	- 若 $x_0,\cdots,x_n$ 是高斯点，则公式 $\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)$ 的精度至少为 $2n+1$。那么对于任意多项式 $P_m(x)(m\leq n)$，$P_m(x)W(x)$ 的阶数不超过 $2n+1$。因此上述公式对于 $P_m(x)W(x)$ 而言是精确的，也就是说：
+    
+    $$
+    \int_a^bw(x)P_m(x)W(x)dx=\sum\limits_{k=0}^nA_kP_m(x_k)W(x_k)=0
+    $$
+    
+    
+	- 要证明 $x_0,\cdots,x_n$ 是高斯点，我们需要证明公式对任意多项式 $P_m(x)(m\leq 2n+1)$ 是精确的。令 $P_m(x)=W(x)q(x)+r(x)$，那么 $\int_a^nw(x)P_m(x)dx=\int_a^nw(x) W(x)q(x)dx+\int_a^nw(x)r(x)dx=\sum\limits_{k=0}^nA_kr(x_k)=\sum\limits_{k=0}^nA_kP_m(x_k)$
+
+根据定理我们就是要找到一个正交多项式，它的零点就是我们要找的节点，正交多项式的集合 $\{\varphi_0,\varphi_1,\cdots,\varphi_n,\cdots\}$ 是线性独立的，且 $\varphi_{n+1}$​ 和任何多项式 $P_m(x)(m\leq n)$ 正交。所以，如果我们拿 $\varphi_{n+1}​$ 作为 $W(x)$，那么 $\varphi_{n+1}$​ 的根就是高斯点了
+
+!!! example "Example"
+
+	回到我们上面的这个例子，我们就是要找到一个二阶多项式，其与小于二次的多项式的内积为 0
+	
+	我们构造正交多项式 $\varphi_2$，令 $\varphi_0(x)=1,\varphi_1(x)=x+a,\varphi_2(x)=x^2+bx+c$，那么我们有：
+	
+	- $(\varphi_0,\varphi_1)=0\Rightarrow\int_0^1\sqrt{x}(x+a)dx=0\Rightarrow a=-\frac{3}{5}$
+	- $(\varphi_0,\varphi_2)=0\Rightarrow\int_0^1\sqrt{x}(x^2+bx+c)dx=0,(\varphi_1,\varphi_2)=0\Rightarrow\int_0^1\sqrt{x}(x-\frac{3}{5})(x^2+bx+c)dx=0$，解得 $b=-\frac{10}{9},c=\frac{5}{21}$
+	
+	所以最后 $\varphi_2(x)=x^2-\frac{10}{9}x+\frac{5}{21}$，我们可以求出它的根 $x_{0,1}=\frac{\frac{10}{9}\pm\sqrt{(\frac{10}{9})^2-\frac{20}{21}}}{2}
+	
+	因为这个公式必须在 $f(x)=1,x$ 上是精确的，所以我们能比较容易地求解 $A_0​,A_1$​ 的线性方程组
+	
+	结果和我们之前得到的是一样的：$x_0\approx 0.8212,x_1\approx 0.2899, A_0\approx0.3891, A_1\approx 0.2776$
+	
+	我们使用上面的结果来估计 $\int_0^1\sqrt{x}e^xdx$：$\int_0^1 \sqrt{x} f(x) dx \approx A_0 e^{x_0} + A_1 e^{x_1} = 0.3891 \times e^{0.8212} + 0.2776 \times e^{0.2899} \approx 1.2555$
+	
+	如果我们使用上面的结果来估计 $\int_0^1 \sqrt{x} (2x-1) dx$，得到的结果为 $\frac{2}{15}$，是精确的
+
+一些特殊的正交多项式：
+
+- **勒让德多项式**（Legendre Polynomials）：定义在 $[−1,1]$ 上且 $w(x)\equiv 1$
+
+$$
+\begin{aligned}
+P_k(x)&=\frac{1}{2^kk!}\frac{d^k}{dk}(x^2−1)^k\\
+(P_k,P_l)&=\begin{cases}
+0 & k\neq l\\
+\frac{2}{2k+1} & k=l
+\end{cases}
+\end{aligned}
+$$
+
+其中 $P_0=1,P_1=x,(k+1)P_{k+1}=(2k+1)xP_k-kP_{k-1}$，我们称使用 $P_{n+1}$​ 的根的公式称为高斯-勒让德求积公式
+
+- **切比雪夫多项式**（Chebyshev Polynomials）：定义在 $[−1,1]$ 上且 $w(x)=\frac{1}{\sqrt{1-x^2}}$
+
+$$
+T_k(x)=\cos(k\arccos(x))
+$$
+
+$T_{n+1}$ 的根为 $x_k=\cos(\frac{2k+1}{2n+2}\pi),k=0,1,\cdots,n$，公式 $\int_{-1}^1\frac{1}{\sqrt{1-x^2}}f(x)dx=\sum\limits_{k=0}^nA_kf(x_k)$ 被称为高斯-切比雪夫求积公式
+
