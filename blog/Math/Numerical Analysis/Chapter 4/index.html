@@ -14,7 +14,7 @@
         <link rel="prev" href="../Chapter%208/">
       
       
-        <link rel="next" href="../Homework%201/">
+        <link rel="next" href="../Chapter%205/">
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
@@ -4169,6 +4169,8 @@
       
         
       
+        
+      
     
     
     
@@ -4540,10 +4542,51 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adaptive-quadrature-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Quadrature Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussian-quadrature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Quadrature
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter%205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 05: Initial-Value Problems for Ordinary Differential Equations
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -9074,6 +9117,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adaptive-quadrature-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Quadrature Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussian-quadrature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Quadrature
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -9110,7 +9171,7 @@
 
 <h1 id="chapter-04-numerical-differentiation-and-integration">Chapter 04 : Numerical Differentiation and Integration<a class="headerlink" href="#chapter-04-numerical-differentiation-and-integration" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1642 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2547 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 13 分钟</p>
 </div>
 <h2 id="numerical-differentiation">Numerical Differentiation<a class="headerlink" href="#numerical-differentiation" title="Permanent link">&para;</a></h2>
 <p>目标：对于给定的 <span class="arithmatex">\(x_0\)</span>，近似计算 <span class="arithmatex">\(f'(x_0)\)</span>（即<strong>数值微分</strong>，Numerical Differentiation）</p>
@@ -9367,6 +9428,106 @@ T_2(h)&amp;=\frac{2^2T_1(\frac{h}{2})-T_1(h)}{2^2-1}=I+\gamma_1h^3+\gamma_2h^4+\
 \end{aligned}
 \]</div>
 </details>
+<hr />
+<h2 id="adaptive-quadrature-method">Adaptive Quadrature Method<a class="headerlink" href="#adaptive-quadrature-method" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>自适应积分方法的主要思想就是预测函数变化的大小，使步长适应变化的需求，而不是我们之前所提到的将步长不断二分，在误差比较大的地方使用更小的步长，在误差比较小的地方使用更大的步长，减少一些计算量</p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">误差大小该如何定量判断？</p>
+<p>一种简单的方法是对于总误差为 <span class="arithmatex">\(\epsilon\)</span> 的积分 <span class="arithmatex">\(\int_a^bf(x)dx\)</span>，长度为 <span class="arithmatex">\(h\)</span> 的步长，如果当前步长求得的误差大于 <span class="arithmatex">\(h\frac{\epsilon}{b-a}\)</span>，那么称其误差比较大，需要减小步长</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>用自适应的辛普森法则来计算 <span class="arithmatex">\(\epsilon(f,a,b)\approx\int_a^bf(x)dx-S(a,b)=\frac{h^5}{90}f^{(4)}(\xi)\)</span>，其中 <span class="arithmatex">\(S(a,b)=\frac{h}{3}[f(a)+4f(a+h)+f(b)],h=\frac{b-a}{2},\xi\in [a,b]\)</span></p>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250507103732.png" /></p>
+<p>我们有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\int_a^{\frac{a+b}{2}}f(x)dx=S(a,\frac{a+b}{2})&amp;+\frac{(\frac{h}{2})^5}{90}f^{(4)}(\xi_1)\\
+\int_{\frac{a+b}{2}}^bf(x)dx=S(\frac{a+b}{2},b)&amp;+\frac{(\frac{h}{2})^5}{90}f^{(4)}(\xi_2)\\
+\therefore\int_a^bf(x)dx=S(a,\frac{a+b}{2})&amp;+S(\frac{a+b}{2},b)+\frac{1}{16}\times\frac{h^5}{90}f^{(4)}(\eta)\\
+|\int_a^bf(x)dx-S(a,\frac{a+b}{2})-S(\frac{a+b}{2},b)|&amp;\approx\frac{1}{15}|S(a,b)-S(a,\frac{a+b}{2})-S(\frac{a+b}{2},b)|\\
+&amp;&lt;\epsilon
+\end{aligned}
+\]</div>
+<p>可以看到，<span class="arithmatex">\(S(a,\frac{a+b}{2})+S(\frac{a+b}{2},b)\)</span> 逼近 <span class="arithmatex">\(\int_a^b f(x)\mathrm{d}x\)</span> 的效果比 <span class="arithmatex">\(S(a,\frac{a+b}{2})+S(\frac{a+b}{2},b)\)</span> 逼近 <span class="arithmatex">\(S(a,b)\)</span> 好 15 倍</p>
+</div>
+<hr />
+<h2 id="gaussian-quadrature">Gaussian Quadrature<a class="headerlink" href="#gaussian-quadrature" title="Permanent link">&para;</a></h2>
+<p>目标：构造一个公式 <span class="arithmatex">\(\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)\)</span>，对于 <span class="arithmatex">\(n+1\)</span> 个点而言精度为 <span class="arithmatex">\(2n+1\)</span></p>
+<p>思路：确定 <span class="arithmatex">\(2n+2\)</span> 个未知量 <span class="arithmatex">\(x_0,\cdots,x_n; A_0,\cdots,A_n\)</span>，使得公式在 <span class="arithmatex">\(f(x)=1,x,x^2,\cdots,x^{2n+1}\)</span> 上都是精确的。点 <span class="arithmatex">\(x_0,\cdots,x_n\)</span> 被称为<strong>高斯点</strong>（Gaussian Points），这个方法被称为<strong>高斯求积</strong>（Gaussian Quadrature）</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>使用 <span class="arithmatex">\(n=1\)</span> 的高斯求积来估计 <span class="arithmatex">\(\int_0^1\sqrt{x}f(x)dx\)</span></p>
+<details class="note">
+<summary>Answer</summary>
+<p>精度为3，需满足 <span class="arithmatex">\(f(x)=1,x,x^2,x^3\)</span>。</p>
+<p>设 <span class="arithmatex">\(\int_{-1}^1 \sqrt{x}f(x)\mathrm{d}x \approx A_0f(x_0)+A_1f(x_1)\)</span>，则</p>
+<div class="arithmatex">\[
+\begin{cases}
+\int_{-1}^1 \sqrt{x}\mathrm{d}x = \frac{2}{3} = A_0+A_1 \\
+\int_{-1}^1 \sqrt{x}x\mathrm{d}x = \frac{2}{5} = A_0x_0+A_1x_1 \\
+\int_{-1}^1 \sqrt{x}x^2\mathrm{d}x = \frac{2}{7} = A_0x_0^2+A_1x_1^2 \\
+\int_{-1}^1 \sqrt{x}x^3\mathrm{d}x = \frac{2}{9} = A_0x_0^3+A_1x_1^3 \\
+\end{cases}
+\]</div>
+<p>解得 <span class="arithmatex">\(x_0\approx 0.8212,x_1\approx 0.2899, A_0\approx0.3891, A_1\approx 0.2776\)</span></p>
+</details>
+</div>
+<p>但是，求解非线性方程组是很困难的，所以我们采用另一种方法，我们有如下定理：</p>
+<div class="admonition note">
+<p class="admonition-title">Theorem</p>
+<p>当且仅当 <span class="arithmatex">\(W(x)=\prod_{k=0}^n(x−x_k)\)</span> 与所有阶数不超过 <span class="arithmatex">\(n\)</span> 的多项式正交时，<span class="arithmatex">\(x_0,\cdots,x_n\)</span>​ 是<strong>高斯点</strong></p>
+<details class="note">
+<summary>Proof</summary>
+</details>
+<ul>
+<li>若 <span class="arithmatex">\(x_0,\cdots,x_n\)</span> 是高斯点，则公式 <span class="arithmatex">\(\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)\)</span> 的精度至少为 <span class="arithmatex">\(2n+1\)</span>。那么对于任意多项式 <span class="arithmatex">\(P_m(x)(m\leq n)\)</span>，<span class="arithmatex">\(P_m(x)W(x)\)</span> 的阶数不超过 <span class="arithmatex">\(2n+1\)</span>。因此上述公式对于 <span class="arithmatex">\(P_m(x)W(x)\)</span> 而言是精确的，也就是说：</li>
+</ul>
+<div class="arithmatex">\[
+\int_a^bw(x)P_m(x)W(x)dx=\sum\limits_{k=0}^nA_kP_m(x_k)W(x_k)=0
+\]</div>
+<ul>
+<li>要证明 <span class="arithmatex">\(x_0,\cdots,x_n\)</span> 是高斯点，我们需要证明公式对任意多项式 <span class="arithmatex">\(P_m(x)(m\leq 2n+1)\)</span> 是精确的。令 <span class="arithmatex">\(P_m(x)=W(x)q(x)+r(x)\)</span>，那么 <span class="arithmatex">\(\int_a^nw(x)P_m(x)dx=\int_a^nw(x) W(x)q(x)dx+\int_a^nw(x)r(x)dx=\sum\limits_{k=0}^nA_kr(x_k)=\sum\limits_{k=0}^nA_kP_m(x_k)\)</span></li>
+</ul>
+</div>
+<p>根据定理我们就是要找到一个正交多项式，它的零点就是我们要找的节点，正交多项式的集合 <span class="arithmatex">\(\{\varphi_0,\varphi_1,\cdots,\varphi_n,\cdots\}\)</span> 是线性独立的，且 <span class="arithmatex">\(\varphi_{n+1}\)</span>​ 和任何多项式 <span class="arithmatex">\(P_m(x)(m\leq n)\)</span> 正交。所以，如果我们拿 <span class="arithmatex">\(\varphi_{n+1}​\)</span> 作为 <span class="arithmatex">\(W(x)\)</span>，那么 <span class="arithmatex">\(\varphi_{n+1}\)</span>​ 的根就是高斯点了</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>回到我们上面的这个例子，我们就是要找到一个二阶多项式，其与小于二次的多项式的内积为 0</p>
+<p>我们构造正交多项式 <span class="arithmatex">\(\varphi_2\)</span>，令 <span class="arithmatex">\(\varphi_0(x)=1,\varphi_1(x)=x+a,\varphi_2(x)=x^2+bx+c\)</span>，那么我们有：</p>
+<ul>
+<li><span class="arithmatex">\((\varphi_0,\varphi_1)=0\Rightarrow\int_0^1\sqrt{x}(x+a)dx=0\Rightarrow a=-\frac{3}{5}\)</span></li>
+<li><span class="arithmatex">\((\varphi_0,\varphi_2)=0\Rightarrow\int_0^1\sqrt{x}(x^2+bx+c)dx=0,(\varphi_1,\varphi_2)=0\Rightarrow\int_0^1\sqrt{x}(x-\frac{3}{5})(x^2+bx+c)dx=0\)</span>，解得 <span class="arithmatex">\(b=-\frac{10}{9},c=\frac{5}{21}\)</span></li>
+</ul>
+<p>所以最后 <span class="arithmatex">\(\varphi_2(x)=x^2-\frac{10}{9}x+\frac{5}{21}\)</span>，我们可以求出它的根 $x_{0,1}=\frac{\frac{10}{9}\pm\sqrt{(\frac{10}{9})^2-\frac{20}{21}}}{2}</p>
+<p>因为这个公式必须在 <span class="arithmatex">\(f(x)=1,x\)</span> 上是精确的，所以我们能比较容易地求解 <span class="arithmatex">\(A_0​,A_1\)</span>​ 的线性方程组</p>
+<p>结果和我们之前得到的是一样的：<span class="arithmatex">\(x_0\approx 0.8212,x_1\approx 0.2899, A_0\approx0.3891, A_1\approx 0.2776\)</span></p>
+<p>我们使用上面的结果来估计 <span class="arithmatex">\(\int_0^1\sqrt{x}e^xdx\)</span>：<span class="arithmatex">\(\int_0^1 \sqrt{x} f(x) dx \approx A_0 e^{x_0} + A_1 e^{x_1} = 0.3891 \times e^{0.8212} + 0.2776 \times e^{0.2899} \approx 1.2555\)</span></p>
+<p>如果我们使用上面的结果来估计 <span class="arithmatex">\(\int_0^1 \sqrt{x} (2x-1) dx\)</span>，得到的结果为 <span class="arithmatex">\(\frac{2}{15}\)</span>，是精确的</p>
+</div>
+<p>一些特殊的正交多项式：</p>
+<ul>
+<li><strong>勒让德多项式</strong>（Legendre Polynomials）：定义在 <span class="arithmatex">\([−1,1]\)</span> 上且 <span class="arithmatex">\(w(x)\equiv 1\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+P_k(x)&amp;=\frac{1}{2^kk!}\frac{d^k}{dk}(x^2−1)^k\\
+(P_k,P_l)&amp;=\begin{cases}
+0 &amp; k\neq l\\
+\frac{2}{2k+1} &amp; k=l
+\end{cases}
+\end{aligned}
+\]</div>
+<p>其中 <span class="arithmatex">\(P_0=1,P_1=x,(k+1)P_{k+1}=(2k+1)xP_k-kP_{k-1}\)</span>，我们称使用 <span class="arithmatex">\(P_{n+1}\)</span>​ 的根的公式称为高斯-勒让德求积公式</p>
+<ul>
+<li><strong>切比雪夫多项式</strong>（Chebyshev Polynomials）：定义在 <span class="arithmatex">\([−1,1]\)</span> 上且 <span class="arithmatex">\(w(x)=\frac{1}{\sqrt{1-x^2}}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+T_k(x)=\cos(k\arccos(x))
+\]</div>
+<p><span class="arithmatex">\(T_{n+1}\)</span> 的根为 <span class="arithmatex">\(x_k=\cos(\frac{2k+1}{2n+2}\pi),k=0,1,\cdots,n\)</span>，公式 <span class="arithmatex">\(\int_{-1}^1\frac{1}{\sqrt{1-x^2}}f(x)dx=\sum\limits_{k=0}^nA_kf(x_k)\)</span> 被称为高斯-切比雪夫求积公式</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -9436,7 +9597,7 @@ T_2(h)&amp;=\frac{2^2T_1(\frac{h}{2})-T_1(h)}{2^2-1}=I+\gamma_1h^3+\gamma_2h^4+\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月30日 15:11:37">2025年4月30日 15:11:37</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月7日 13:41:05">2025年5月7日 13:41:05</span>
   </span>
 
     
@@ -9636,16 +9797,16 @@ T_2(h)&amp;=\frac{2^2T_1(\frac{h}{2})-T_1(h)}{2^2-1}=I+\gamma_1h^3+\gamma_2h^4+\
         
           
           <a
-            href="../Homework%201/"
+            href="../Chapter%205/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Homework 01"
+            aria-label="下一页: Chapter 05: Initial-Value Problems for Ordinary Differential Equations"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Homework 01
+                Chapter 05: Initial-Value Problems for Ordinary Differential Equations
               </div>
             </div>
             <div class="md-footer__button md-icon">
