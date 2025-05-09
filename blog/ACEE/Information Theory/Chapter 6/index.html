@@ -9402,7 +9402,7 @@
 <div class="arithmatex">\[
 \begin{aligned}
 H(U)-\overline{n}\log D&amp;=-\sum\limits_{k=1}^K(p_k\log p_k+p_kn_k\log D)\\
-&amp;=-\sum\limits_{k=1}^Kp_k\log\frac{D^{-n_k}}{p_k}\leq -\sum\limits_{k=1}^Kp_k(\frac{D^{-n_k}}{p_k}-1)\\
+&amp;=\sum\limits_{k=1}^Kp_k\log\frac{D^{-n_k}}{p_k}\leq \sum\limits_{k=1}^Kp_k(\frac{D^{-n_k}}{p_k}-1)\\
 &amp;=\sum\limits_{k=1}^KD^{-n_k}-1\leq 0\\
 \end{aligned}
 \]</div>
@@ -9563,7 +9563,7 @@ H(U)&amp;\leq\overline{n}=\sum\limits_{k=1}^Kl_kp_k=\sum\limits_{k=1}^K\lceil\lo
 \overline{L}&amp;\leq\sum\limits_{k=0}^nC_n^kp^k(1-p)^{n-k}(k\log\frac{1}{p}+(n-k)\log\frac{1}{1-p}+1)\\
 &amp;=\log\frac{1}{p}·(1-p)^n\sum\limits_{k=0}^nC_n^kk(\frac{p}{1-p})^k+\log\frac{1}{1-p}·p^n\sum\limits_{k=0}^nC_n^kk(\frac{1-p}{p})^{n-k}+1\\
 &amp;=n\log\frac{1}{p}·(1-p)^n\frac{p}{1-p}(\frac{p}{1-p}+1)^{n-1}+n\log\frac{1}{1-p}·p^n\frac{1-p}{p}(\frac{1-p}{p}+1)^{n-1}+1\\
-&amp;=H(U)+1
+&amp;=nH(U)+1
 \end{aligned}
 \]</div>
 <p>其中第二个等号的原理是：</p>
@@ -9685,7 +9685,7 @@ H_{\infty}(U)=\sum\limits_{s}q(s)H(U|s)=H(U|S)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月20日 11:35:35">2025年4月20日 11:35:35</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月9日 20:11:49">2025年5月9日 20:11:49</span>
   </span>
 
     
