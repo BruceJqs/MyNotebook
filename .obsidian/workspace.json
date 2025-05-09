@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 5.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Homework 2"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 5.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Homework 2"
             }
           },
           {
@@ -178,6 +178,8 @@
   },
   "active": "2092d7b08fd444e5",
   "lastOpenFiles": [
+    "docs/blog/ACEE/Information Theory/Chapter 6.md",
+    "docs/blog/ACEE/Information Theory/Chapter 5.md",
     "docs/blog/ACEE/Information Theory/Chapter 3.md",
     "docs/blog/ACEE/Information Theory/Chapter 4.md",
     "docs/blog/Math/Numerical Analysis/index.md",
@@ -196,7 +198,6 @@
     "docs/assets/Pasted image 20250505144358.png",
     "docs/assets/Pasted image 20250505112110.png",
     "docs/assets/Pasted image 20250505111108.png",
-    "docs/blog/ACEE/Information Theory/Chapter 6.md",
     "docs/blog/CTF/Cryptography/Chapter 5.md",
     "docs/blog/Computer Science/Database/Homework 12.md",
     "docs/blog/Computer Science/Database/index.md",
@@ -213,7 +214,6 @@
     "docs/blog/Computer Science/Database/Chapter 12.md",
     "docs/blog/Computer Science/Database/Homework 6.md",
     "docs/blog/Computer Science/OOP/Chapter 2.md",
-    "docs/blog/Computer Science/OOP/Chapter 9.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Knowledge/Network",

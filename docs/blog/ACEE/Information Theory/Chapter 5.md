@@ -63,7 +63,7 @@ comments: true
 
 !!! question "问题"
 
-	码字长度与熵的关系：$N\geq\frac{L\log K}{\log D},H(U)\leq\log K$
+	码字长度与熵的关系：$N\geq\frac{L\log K}{\log D},H(U)\leq\log K$（由熵的极值性）
 	
 	有没有可能 $N=\frac{LH(U)}{\log D}$？
 

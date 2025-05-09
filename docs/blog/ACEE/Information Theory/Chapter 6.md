@@ -119,7 +119,7 @@ comments: true
 	$$
 	\begin{aligned}
 	H(U)-\overline{n}\log D&=-\sum\limits_{k=1}^K(p_k\log p_k+p_kn_k\log D)\\
-	&=-\sum\limits_{k=1}^Kp_k\log\frac{D^{-n_k}}{p_k}\leq -\sum\limits_{k=1}^Kp_k(\frac{D^{-n_k}}{p_k}-1)\\
+	&=\sum\limits_{k=1}^Kp_k\log\frac{D^{-n_k}}{p_k}\leq \sum\limits_{k=1}^Kp_k(\frac{D^{-n_k}}{p_k}-1)\\
 	&=\sum\limits_{k=1}^KD^{-n_k}-1\leq 0\\
 	\end{aligned}
 	$$
@@ -307,7 +307,7 @@ $$
 	\overline{L}&\leq\sum\limits_{k=0}^nC_n^kp^k(1-p)^{n-k}(k\log\frac{1}{p}+(n-k)\log\frac{1}{1-p}+1)\\
 	&=\log\frac{1}{p}·(1-p)^n\sum\limits_{k=0}^nC_n^kk(\frac{p}{1-p})^k+\log\frac{1}{1-p}·p^n\sum\limits_{k=0}^nC_n^kk(\frac{1-p}{p})^{n-k}+1\\
 	&=n\log\frac{1}{p}·(1-p)^n\frac{p}{1-p}(\frac{p}{1-p}+1)^{n-1}+n\log\frac{1}{1-p}·p^n\frac{1-p}{p}(\frac{1-p}{p}+1)^{n-1}+1\\
-	&=H(U)+1
+	&=nH(U)+1
 	\end{aligned}
 	$$
 	
