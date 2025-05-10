@@ -30,6 +30,7 @@ comments: true
 - Part 03 - 信息的传输
 	- [Chapter 07 : 信道模型](Chapter%207/)
 	- [Chapter 08 : 离散无记忆信道的容量定理](Chapter%208/)
+	- [Chapter 09 : 离散无记忆信道的编码定理](Chapter%209/)
 
 ### Homework
 

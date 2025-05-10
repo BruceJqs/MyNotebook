@@ -252,6 +252,7 @@ nav:
         - "Part 03：信息的传输":
           - "Chapter 07: 信道模型": blog/ACEE/Information Theory/Chapter 7.md
           - "Chapter 08: 离散无记忆信道的容量定理": blog/ACEE/Information Theory/Chapter 8.md
+          - "Chapter 09: 离散无记忆信道的编码原理": blog/ACEE/Information Theory/Chapter 9.md
       - Homeworks:
         - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
         - "Homework 02": blog/ACEE/Information Theory/Homework 2.md
