@@ -31,6 +31,8 @@ comments: true
 - [Chapter 10 : Indexing](Chapter%2010/)
 - [Chapter 11 : Query Processing](Chapter%2011/)
 - [Chapter 12 : Query Optimization](Chapter%2012/)
+- [Chapter 13 : Transactions](Chapter%2013/)
+- [Chapter 14 : Concurrency Control](Chapter%2014/)
 
 ### Homeworks
 
