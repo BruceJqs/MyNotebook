@@ -26,3 +26,4 @@ comments: true
 - [Chapter 07 : Copy Constructor](Chapter%207/)
 - [Chapter 08 : Operator Overloading](Chapter%208/)
 - [Chapter 09 : Templates](Chapter%209/)
+- [Chapter 10 : Exceptions](Chapter%2010/)
