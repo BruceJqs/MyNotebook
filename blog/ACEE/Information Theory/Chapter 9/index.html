@@ -1813,6 +1813,8 @@
       
         
       
+        
+      
     
     
     
@@ -2113,6 +2115,29 @@
   
   <span class="md-ellipsis">
     Chapter 12: Query Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Database/Chapter%2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13: Transactions
     
   </span>
   
@@ -5979,15 +6004,6 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      二元对称信道
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
       离散无记忆信道的编码
     </span>
   </a>
@@ -5996,7 +6012,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       直观说明
     </span>
@@ -6004,8 +6020,50 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      证明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="证明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      联合典型列
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      二元对称信道
+    </span>
+  </a>
   
 </li>
       
@@ -8940,15 +8998,6 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      二元对称信道
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
       离散无记忆信道的编码
     </span>
   </a>
@@ -8957,7 +9006,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       直观说明
     </span>
@@ -8965,8 +9014,50 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      证明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="证明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      联合典型列
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      二元对称信道
+    </span>
+  </a>
   
 </li>
       
@@ -9006,7 +9097,7 @@
 
 <h1 id="chapter-9">Chapter 9 : 离散无记忆信道的编码定理<a class="headerlink" href="#chapter-9" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 200 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1589 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 4 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
 <h2 id="_1">复制信道<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250510104449.png" /></p>
@@ -9018,7 +9109,75 @@ C&amp;=\max\limits_{\{Q_k\}}I(X;Y)=\max\limits_{\{Q_k\}}H(Y)-1\\
 \end{aligned}
 \]</div>
 <hr />
-<h2 id="_2">二元对称信道<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">离散无记忆信道的编码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250510105103.png" /></p>
+<p><span class="arithmatex">\(W=\{1,2,\cdots,M\}\)</span></p>
+<p>编码速率（传信率）：<span class="arithmatex">\(R=\frac{\log M}{n}\)</span></p>
+<p>香农信道编码定理：如果信息传输速率 <span class="arithmatex">\(R\)</span> 小于信道容量 <span class="arithmatex">\(C\)</span>，则总存在一种编码方法，使信息在该信道上无错误地可靠传输</p>
+<p>所有低于信道容量 <span class="arithmatex">\(C\)</span> 的速率 <span class="arithmatex">\(R\)</span> 均是可达的，即当 <span class="arithmatex">\(R&lt;C\)</span> 时，总存在一系列码 <span class="arithmatex">\((2^{nR},n)\)</span>，当 <span class="arithmatex">\(n\rightarrow\infty\)</span> 时，最大误码概率 <span class="arithmatex">\(\lambda^{(n)}\rightarrow 0\)</span>，即可以任意小</p>
+<p>逆定理：具有 <span class="arithmatex">\(\lambda^{(n)}\rightarrow 0\)</span> 的任何 <span class="arithmatex">\((2^{nR},n)\)</span> 码必有 <span class="arithmatex">\(R\leq C\)</span></p>
+<p>码率可达区 <span class="arithmatex">\(\Leftrightarrow\)</span> 容量区內界，容量区內界如果与容量区外界相等，则为容量区</p>
+<hr />
+<h3 id="_3">直观说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250510175452.png" /></p>
+<p><span class="arithmatex">\(M\approx\frac{2^{nH(Y)}}{2^{nH(Y|X)}}=2^{nI(X;Y)},R=\frac{\log M}{n}\approx I(X;Y)\leq C\)</span></p>
+<hr />
+<h3 id="_4">基本定义<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>离散无记忆信道 <span class="arithmatex">\(\{\mathcal{X},p(y|x),\mathcal{Y}\}\)</span> 上的一个 <span class="arithmatex">\((M,n)\)</span> 码由如下组成：<ol>
+<li>一个与 <span class="arithmatex">\(M\)</span> 个消息相对应的标号集合 <span class="arithmatex">\(W=\{1,2,\cdots,M\}\)</span></li>
+<li>一个编码器，把消息 <span class="arithmatex">\(w\in\mathcal{W}\)</span> 映射成码字 <span class="arithmatex">\(x^n\in\mathcal{X}^n\)</span>，所得到的码字为 <span class="arithmatex">\(X^n(1),X^n(2),\cdots,X^n(M)\)</span>；一个码的全体码字构成码书</li>
+<li>一个译码器 <span class="arithmatex">\(g_1:\mathcal{Y}^n\rightarrow\mathcal{W}\)</span>：对应于确定的译码法则， 帮助接收者根据接收到的序列 <span class="arithmatex">\(Y_n\)</span> 来确定发送消息是什么</li>
+</ol>
+</li>
+<li>发送第 <span class="arithmatex">\(i\)</span> 个消息所发生的错误概率定义为 <span class="arithmatex">\(\lambda_i=P\{g(Y^n)\neq i|X^n=x^n(i)\}\)</span>，最大错误概率定义为 <span class="arithmatex">\(\lambda^{(n)}=\max\limits_{i\in\{1,2,\cdots,M\}}\lambda_i\)</span>，平均错误概率定义为 <span class="arithmatex">\(P_e^{(n)}=\frac{1}{M}\sum\limits_{i=1}^M\lambda_i\)</span>，编码速率定义为 <span class="arithmatex">\(R=\frac{\log M}{n}\)</span> 比特/传输</li>
+<li>如果存在一系列 <span class="arithmatex">\((2^{nR},n)\)</span> 码，当 <span class="arithmatex">\(n\rightarrow\infty\)</span> 时，最大错误概率 <span class="arithmatex">\(\lambda^{(n)}\rightarrow 0\)</span>，则称 <span class="arithmatex">\(R\)</span> 是可达的</li>
+</ul>
+<hr />
+<h3 id="_5">证明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>证明思想：</p>
+<ol>
+<li>所谓可靠通信是指错误概率可以任意小，但并非为零</li>
+<li>信道上不是仅传输一个符号，而是传输一串很长的符号序列。由于多次使用信道，可以利用概率论中的大数定理</li>
+<li>计算在一类随机选择的码书上的平均错误概率，平均错误概率与最大错误概率具有一样的意义</li>
+</ol>
+<p>如果 <span class="arithmatex">\((2^{nR},n)\)</span> 码的平均错误概率 <span class="arithmatex">\(\lambda^{(n)}&lt;\epsilon\)</span>，则至少有一半的码字其最大错误概率小于 <span class="arithmatex">\(2\epsilon\)</span>，意味着 <span class="arithmatex">\((2^{nR}−1, n)\)</span> 码的最大错误概率 <span class="arithmatex">\(\lambda(n)&lt;2\epsilon\rightarrow 0\)</span>，则码率 <span class="arithmatex">\(\frac{nR-1}{n}=R-\frac{1}{n}\)</span> 是可达的</p>
+<hr />
+<h4 id="_6">联合典型列<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>相对于联合分布 <span class="arithmatex">\(p(x,y)\)</span> 的联合典型列集合 <span class="arithmatex">\(A_{\epsilon}^{(n)}\)</span> 是指具有下列性质的序列对 <span class="arithmatex">\((x^n,y^n)\)</span> 的集合：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+A_{\epsilon}^{(n)}=\{(x^n,y^n)\in\mathcal{X}^n\times\mathcal{Y}^n:\\
+\big|-\frac{1}{n}\log p(x^n)-H(X)\big|&lt;\epsilon\\
+\big|-\frac{1}{n}\log p(y^n)-H(Y)\big|&lt;\epsilon\\
+\big|-\frac{1}{n}\log p(x^n,y^n)-H(XY)\big|&lt;\epsilon\}
+\end{aligned}
+\]</div>
+<p>设 <span class="arithmatex">\(A_{\epsilon}^{(n)}\)</span> 是与 <span class="arithmatex">\(p(x,y)\)</span> 对应的联合典型列集合，若联合序列 <span class="arithmatex">\((X^n,Y^n)\)</span> 的每一个符号对 <span class="arithmatex">\((x_i,y_i)\)</span> 均是 按照联合分布 <span class="arithmatex">\(p(x,y)\)</span> 独立选取，即 <span class="arithmatex">\((X^n,Y^n)∼p(x^n,y^n)\)</span>，则：</p>
+<ul>
+<li><span class="arithmatex">\(Pr((X^n,Y^n)\in A_{\epsilon}^{(n)})\rightarrow 1\)</span></li>
+<li><span class="arithmatex">\((1-\epsilon)2^{n(H(XY)-\epsilon)}\leq\big|A_{\epsilon}^{(n)}\big|\leq 2^{n(H(XY)+\epsilon)}\)</span></li>
+<li>随机选择 <span class="arithmatex">\(y^n\)</span>，约有 <span class="arithmatex">\(2^{-nI(X;Y)}\)</span> 的概率与 <span class="arithmatex">\(x^n\)</span> 构成联合典型</li>
+<li>如果联合序列 <span class="arithmatex">\((\tilde{Y^n},\tilde{Y^n})∼p(x^n)p(y^n)\)</span>，即 <span class="arithmatex">\(\tilde{X^n}\)</span> 和 <span class="arithmatex">\(\tilde{Y^n}\)</span> 分别按照 <span class="arithmatex">\(p(x,y)\)</span> 的边缘分布 <span class="arithmatex">\(p(x)\)</span> 和 <span class="arithmatex">\(p(y)\)</span> 来独立选取，则 <span class="arithmatex">\((1-\epsilon)2^{-n(I(X;Y)+3\epsilon)}\leq Pr\big((\tilde{X^n},\tilde{Y^n})\big)\leq 2^{-n(I(X;Y)-3\epsilon)}\)</span></li>
+</ul>
+<details class="note">
+<summary>Proof</summary>
+<p><span class="arithmatex">\((\tilde{Y^n},\tilde{Y^n})\)</span> 与 <span class="arithmatex">\((X^n,Y^n)\)</span> 有相同的边缘分布 <span class="arithmatex">\(p(x^n)\)</span> 和 <span class="arithmatex">\(p(y^n)\)</span>，故：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+Pr\big((\tilde{X^n},\tilde{Y^n})\in A_{\epsilon}^{(n)}\big)&amp;=\sum\limits_{A_{\epsilon}^{(n)}}p(x^n)p(y^n)\\
+&amp;\leq|A_{\epsilon}^{(n)}|2^{-n(H(X)-\epsilon)}2^{-n(H(Y)-\epsilon)}\\
+&amp;\leq2^{n(H(XY)+\epsilon)}2^{-n(H(X)-\epsilon)}2^{-n(H(Y)-\epsilon)}\\
+&amp;=2^{-n(I(X;Y)-3\epsilon)}\\
+Pr\big((\tilde{X^n},\tilde{Y^n})\in A_{\epsilon}^{(n)}\big)&amp;=\sum\limits_{A_{\epsilon}^{(n)}}p(x^n)p(y^n)\\
+&amp;\geq |A_{\epsilon}^{(n)}|2^{-n(H(X)+\epsilon)}2^{-n(H(Y)+\epsilon)}\\
+&amp;\geq(1-\epsilon)2^{n(H(XY)-\epsilon)}2^{-n(H(X)-\epsilon)}2^{-n(H(Y)-\epsilon)}\\
+&amp;=(1-\epsilon)2^{-n(I(X;Y)+3\epsilon)}\\
+\end{aligned}
+\]</div>
+</details>
+<hr />
+<h2 id="_7">二元对称信道<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250510104818.png" /></p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -9027,16 +9186,42 @@ I(X;Y)&amp;=H(Y)-H(Y|X)=H(Y)-\sum\limits_{x}p(x)H(Y|X=x)\\
 &amp;=H(Y)-H(p)\leq 1-H(p)
 \end{aligned}
 \]</div>
+<p>码书矩阵：</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+x_1(1) &amp; x_2(1) &amp; \cdots &amp; x_n(1)\\
+x_1(2) &amp; x_2(2) &amp; \cdots &amp; x_n(2)\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+x_1(2^{nR}) &amp; x_2(2^{nR}) &amp; \cdots &amp; x_n(2^{nR})
+\end{bmatrix}
+\]</div>
+<p>译码方法：如果接收到的 <span class="arithmatex">\(y^n\)</span> 与某个码字 <span class="arithmatex">\(x_n(i)\)</span> 的 Hamming 距离小于 <span class="arithmatex">\(r=n(p+\epsilon_2)\)</span> 时，就宣称发送的是第 <span class="arithmatex">\(i\)</span> 个码字，其中<span class="arithmatex">\(\epsilon_2\)</span> 是任意小数，且满足 <span class="arithmatex">\(p+\epsilon_2&lt;0.5\)</span></p>
+<p>译码错误：<span class="arithmatex">\(y^n\)</span> 与 <span class="arithmatex">\(x^n(i)\)</span> 的 Hamming 距离大于 <span class="arithmatex">\(r=n(p+\epsilon_2)\)</span>，或者 <span class="arithmatex">\(y^n\)</span> 与其它 <span class="arithmatex">\(x^n(j)\)</span> 的 Hamming 距离小于 <span class="arithmatex">\(r=n(p+\epsilon_2)\)</span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(E)&amp;=\sum\limits_{\mathcal{L}}P(\mathcal{L})P_e^n(\mathcal{L})\\
+P_e^n(\mathcal{L})&amp;=\frac{1}{2^{nR}}\sum\limits_{i=1}^{2^{nR}}\lambda_i(\mathcal{L})\\
+\therefore P(E)&amp;=\frac{1}{2^{nR}}\sum\limits_{i=1}^{2^{nR}}\sum\limits_{\mathcal{L}}P(\mathcal{L})\lambda_i(\mathcal{L})\\
+&amp;=\sum\limits_{\mathcal{L}}P(\mathcal{L})\lambda_1(\mathcal{L})\stackrel{\Delta}{=}P(E|i=1)
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(P(E|i=1)=P\{\overline{E_1}\cup E_2\cup\cdots\cup E_{2^{nR}}\}=P(\overline{E_1})+\sum\limits_{i=2}^{2^{nR}}E_i\)</span></p>
+<ul>
+<li>不妨令 <span class="arithmatex">\(i=1\)</span> 为全 0 序列，则 <span class="arithmatex">\(P(\overline{E_1})\)</span> 表示输出序列中 <span class="arithmatex">\(1\)</span> 的个数超过 <span class="arithmatex">\(np\)</span> 的概率，根据切比雪夫不等式，该概率可以任意小，即 <span class="arithmatex">\(P(\overline{E_1})&lt;\frac{\epsilon}{2}\)</span></li>
+<li>
+<p>发送其它序列时，输出序列有 <span class="arithmatex">\(2^n\)</span> 个，但只有 <span class="arithmatex">\(\sum\limits_{t=0}^r C_n^t\)</span> 个落在半径为 <span class="arithmatex">\(r\)</span> 的 Hamming 球内</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(E_1)&amp;&lt;\frac{\epsilon}{2}+(2^{nR}-1)\frac{1}{2^n}\sum\limits_{t=0}^rC_n^t\\
+&amp;=\frac{\epsilon}{2}+(2^{nR}-1)\frac{1}{2^n}\sum\limits_{t=0}^{n\lambda}C_n^t,\lambda&lt;\frac{1}{2}\\
+&amp;=\frac{\epsilon}{2}+2^{nR}2^{-n[1-H(\lambda)]}=\frac{\epsilon}{2}+2^{n(R-C)}\\
+r&amp;=n\lambda=n(p+\epsilon_2)\\
+1&amp;\geq\sum\limits_{t=0}^{n\lambda}C_n^t\lambda^t(1-\lambda)^{n-t}\geq\sum\limits_{t=0}^{n\lambda}C_n^t\lambda^{n\lambda}(1-\lambda)^{n-n\lambda}=\sum\limits_{t=0}^{n\lambda}C_n^t2^{-nH(\lambda)}
+\end{aligned}
+\]</div>
+</li>
+</ul>
 <hr />
-<h2 id="_3">离散无记忆信道的编码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020250510105103.png" /></p>
-<p><span class="arithmatex">\(W=\{1,2,\cdots,M\}\)</span></p>
-<p>编码速率（传信率）：<span class="arithmatex">\(R=\frac{\log M}{n}\)</span></p>
-<p>香农信道编码定理：如果信息传输速率 <span class="arithmatex">\(R\)</span> 小于信道容量 <span class="arithmatex">\(C\)</span>，则总存在一种编码方法，使信息在该信道上无错误地可靠传输</p>
-<hr />
-<h3 id="_4">直观说明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../../../../assets/Pasted%20image%2020250510175452.png" /></p>
-<p><span class="arithmatex">\(M\approx\frac{2^{nH(Y)}}{2^{nH(Y|X)}}=2^{nI(X;Y)},R=\frac{\log M}{n}\approx I(X;Y)\leq C\)</span></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -9106,7 +9291,7 @@ I(X;Y)&amp;=H(Y)-H(Y|X)=H(Y)-\sum\limits_{x}p(x)H(Y|X=x)\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月10日 17:58:02">2025年5月10日 17:58:02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月12日 20:22:12">2025年5月12日 20:22:12</span>
   </span>
 
     
