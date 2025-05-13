@@ -16,6 +16,7 @@ comments: true
 	![](../../../../../assets/Pasted%20image%2020250513172909.png)
 	
 	> 这是因为 `sysctls` 块通常用于设置容器全局的内核参数，而像 `eth0` 这样的接口是在容器启动并连接到网络之后才确定的。Docker 为了更精确地控制网络接口相关的参数，要求这类配置通过特定的驱动选项来传递
+	> 
 	> —— Gemini 2.5 Pro
 	
 	因此我们要对 docker-compose.yml 进行如下修改：
@@ -34,8 +35,8 @@ comments: true
 			ipv4_address: 10.9.0.111 
 	command: bash -c "
 		 # 在容器启动后尝试设置 eth0 的参数 
-		 sysctl -w net.ipv4.conf.eth0.send_redirects=0 && 
-		 ip route add 192.168.60.0/24 via 10.9.0.11 
+		 sysctl -w net.ipv4.conf.eth0.send_redirects=0
+		 && ip route add 192.168.60.0/24 via 10.9.0.11 
 		 && tail -f /dev/null 
 		 "
 	```
