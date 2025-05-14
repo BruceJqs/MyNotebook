@@ -364,14 +364,14 @@ $$
 	
 	??? note "Proof"
 	
-	- 若 $x_0,\cdots,x_n$ 是高斯点，则公式 $\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)$ 的精度至少为 $2n+1$。那么对于任意多项式 $P_m(x)(m\leq n)$，$P_m(x)W(x)$ 的阶数不超过 $2n+1$。因此上述公式对于 $P_m(x)W(x)$ 而言是精确的，也就是说：
-    
-    $$
-    \int_a^bw(x)P_m(x)W(x)dx=\sum\limits_{k=0}^nA_kP_m(x_k)W(x_k)=0
-    $$
-    
-    
-	- 要证明 $x_0,\cdots,x_n$ 是高斯点，我们需要证明公式对任意多项式 $P_m(x)(m\leq 2n+1)$ 是精确的。令 $P_m(x)=W(x)q(x)+r(x)$，那么 $\int_a^nw(x)P_m(x)dx=\int_a^nw(x) W(x)q(x)dx+\int_a^nw(x)r(x)dx=\sum\limits_{k=0}^nA_kr(x_k)=\sum\limits_{k=0}^nA_kP_m(x_k)$
+		- 若 $x_0,\cdots,x_n$ 是高斯点，则公式 $\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)$ 的精度至少为 $2n+1$。那么对于任意多项式 $P_m(x)(m\leq n)$，$P_m(x)W(x)$ 的阶数不超过 $2n+1$。因此上述公式对于 $P_m(x)W(x)$ 而言是精确的，也就是说：
+	    
+	    $$
+	    \int_a^bw(x)P_m(x)W(x)dx=\sum\limits_{k=0}^nA_kP_m(x_k)W(x_k)=0
+	    $$
+	    
+	    
+		- 要证明 $x_0,\cdots,x_n$ 是高斯点，我们需要证明公式对任意多项式 $P_m(x)(m\leq 2n+1)$ 是精确的。令 $P_m(x)=W(x)q(x)+r(x)$，那么 $\int_a^nw(x)P_m(x)dx=\int_a^nw(x) W(x)q(x)dx+\int_a^nw(x)r(x)dx=\sum\limits_{k=0}^nA_kr(x_k)=\sum\limits_{k=0}^nA_kP_m(x_k)$
 
 根据定理我们就是要找到一个正交多项式，它的零点就是我们要找的节点，正交多项式的集合 $\{\varphi_0,\varphi_1,\cdots,\varphi_n,\cdots\}$ 是线性独立的，且 $\varphi_{n+1}$​ 和任何多项式 $P_m(x)(m\leq n)$ 正交。所以，如果我们拿 $\varphi_{n+1}​$ 作为 $W(x)$，那么 $\varphi_{n+1}$​ 的根就是高斯点了
 
