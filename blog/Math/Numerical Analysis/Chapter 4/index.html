@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/头像.jpg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -9606,7 +9606,6 @@ T_2(h)&amp;=\frac{2^2T_1(\frac{h}{2})-T_1(h)}{2^2-1}=I+\gamma_1h^3+\gamma_2h^4+\
 <p>当且仅当 <span class="arithmatex">\(W(x)=\prod_{k=0}^n(x−x_k)\)</span> 与所有阶数不超过 <span class="arithmatex">\(n\)</span> 的多项式正交时，<span class="arithmatex">\(x_0,\cdots,x_n\)</span>​ 是<strong>高斯点</strong></p>
 <details class="note">
 <summary>Proof</summary>
-</details>
 <ul>
 <li>若 <span class="arithmatex">\(x_0,\cdots,x_n\)</span> 是高斯点，则公式 <span class="arithmatex">\(\int_a^bw(x)f(x)dx\approx\sum\limits_{k=0}^nA_kf(x_k)\)</span> 的精度至少为 <span class="arithmatex">\(2n+1\)</span>。那么对于任意多项式 <span class="arithmatex">\(P_m(x)(m\leq n)\)</span>，<span class="arithmatex">\(P_m(x)W(x)\)</span> 的阶数不超过 <span class="arithmatex">\(2n+1\)</span>。因此上述公式对于 <span class="arithmatex">\(P_m(x)W(x)\)</span> 而言是精确的，也就是说：</li>
 </ul>
@@ -9616,6 +9615,7 @@ T_2(h)&amp;=\frac{2^2T_1(\frac{h}{2})-T_1(h)}{2^2-1}=I+\gamma_1h^3+\gamma_2h^4+\
 <ul>
 <li>要证明 <span class="arithmatex">\(x_0,\cdots,x_n\)</span> 是高斯点，我们需要证明公式对任意多项式 <span class="arithmatex">\(P_m(x)(m\leq 2n+1)\)</span> 是精确的。令 <span class="arithmatex">\(P_m(x)=W(x)q(x)+r(x)\)</span>，那么 <span class="arithmatex">\(\int_a^nw(x)P_m(x)dx=\int_a^nw(x) W(x)q(x)dx+\int_a^nw(x)r(x)dx=\sum\limits_{k=0}^nA_kr(x_k)=\sum\limits_{k=0}^nA_kP_m(x_k)\)</span></li>
 </ul>
+</details>
 </div>
 <p>根据定理我们就是要找到一个正交多项式，它的零点就是我们要找的节点，正交多项式的集合 <span class="arithmatex">\(\{\varphi_0,\varphi_1,\cdots,\varphi_n,\cdots\}\)</span> 是线性独立的，且 <span class="arithmatex">\(\varphi_{n+1}\)</span>​ 和任何多项式 <span class="arithmatex">\(P_m(x)(m\leq n)\)</span> 正交。所以，如果我们拿 <span class="arithmatex">\(\varphi_{n+1}​\)</span> 作为 <span class="arithmatex">\(W(x)\)</span>，那么 <span class="arithmatex">\(\varphi_{n+1}\)</span>​ 的根就是高斯点了</p>
 <div class="admonition example">
@@ -9722,7 +9722,7 @@ T_k(x)=\cos(k\arccos(x))
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月7日 13:41:05">2025年5月7日 13:41:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月14日 17:01:47">2025年5月14日 17:01:47</span>
   </span>
 
     
