@@ -310,4 +310,319 @@ $$
 		![](../../../assets/Pasted%20image%2020250514165753.png)
 	
 	- 因为 Runge-Kutta 法是基于泰勒展开式的，所以 $y$ 不得不足够平滑，以获取在高阶方法下的更高的精度。通常低阶方法相比高阶方法会采用更小的步幅
+***
+## Multistep Methods
+
+思路：使用 $y,y'$ 在多个网格点（Mesh Points）上的线性组合，以得到更好的近似值 $y(t_{i+1})$
+
+$$
+w_{i+1}=\textcolor{red}{a_{m-1}}w_i+\textcolor{red}{a_{m-2}}w_{i-1}+\cdots+\textcolor{red}{a_0}w_{i-m+1}+h[\textcolor{red}{b_m}f_{i+1}+\textcolor{red}{b_{m-1}}f_i+\cdots+\textcolor{red}{b_0}f_{i-m+1}]
+$$
+
+具体方法：从积分中获取。在 $[t_i,t_{i+1}]$ 上对 $y'(t)=f(t,y)$ 进行积分，得到：
+
+$$
+y(t_{i+1})=y(t_i)+\int_{t_i}^{t_{i+1}}f(t,y(t))dt
+$$
+
+关键是**近似计算积分**。不同的近似方法会得到不同的差分方程
+***
+### Adams-Bashforth Explicit m-step Technique
+
+使用牛顿后向差分公式，在 $(t_i, f_i), (t_{i-1}, f_{i-1}), \dots, (t_{i+1-m}, f_{i+1-m})$ 上对 $f$ 进行插值，并得到 $P_{m-1}(t)$。或者令 $t = t_i + sh, s \in [0, 1]$，我们有： 
+
+$$
+\int_{t_i}^{t_{i+1}} f(t, y(t)) dt = h \int_0^1 P_{m-1}(t_i + sh) ds + h \int_0^1 (t_i + sh) ds
+$$
+
+最后得到显式公式: $w_{i+1} = w_i + h \int_0^1 P_{m-1}(t_i + sh) ds$
+
+对于多步法来说，其局部截断误差为： 
+
+$$
+\tau_{i+1}(h) = \frac{y_{i+1} - (a_{m-1}y_i + \dots + a_0y_{i+1-m})}{h} - [b_m f_{i+1} + \dots + b_0 f_{i+1-m}]
+$$
+
+其中 $i = m-1, m, \dots, n-1$
+
+!!! example "Example"
+
+	请求出 Adams-Bashforth 2 步显式法
+	
+	??? note "Answer"
+	
+		使用牛顿后向差分公式，在 $(t_i, f_i), (t_{i-1}, f_{i-1})$ 上对 $f$ 插值：
+		
+		$$
+		P_1(t_i+sh) = f_i + s \nabla f_i = f_i + s(f_i - f_{i-1})
+		$$
+		
+		 得到 $w_{i+1} = w_i + h \int_0^1 [f_i + s(f_i - f_{i-1})]ds = w_i + \frac{h}{2}(3f_i - f_{i-1})$ 
+		 
+		 局部截断误差为： 
+		 
+		 $$
+		 \begin{aligned}
+		 \tau_{i+1} &= \frac{y(t_{i+1}) - w_{i+1}}{h} = \int_0^1 R_1(t_i+sh)ds\\
+		 &= \int_0^1 \frac{d^2f(\xi_i, t(\xi_i))}{dt^2} \frac{1}{2!} sh(s+1)hds = \frac{5}{12}h^2y'''(\tilde{\xi_i}) 
+		 \end{aligned}
+		 $$
+		 
+
+!!! tip "Tip"
+
+	一般来说，对于 $\tau = A_m h^m y^{(m+1)}(\xi_i)$，$A_m$ 和系数 $f_i, f_{i-1}, f_{i+1-m}$ 能从表格中找到：
+	
+	|$m$|$f_i$|$f_{i-1}$|$f_{i-2}$|$f_{i-3}$|
+	|:-:|:-:|:-:|:-:|:-:|
+	|$1$|$1$|$-$|$-$|$-$|
+	|$2$|$\frac{3}{2}$|$-\frac{1}{2}$|$-$|$-$|
+	|$3$|$\frac{23}{12}$|$-\frac{4}{3}$|$\frac{5}{12}$|$-$|
+	|$4$|$\frac{55}{24}$|$-\frac{59}{24}$|$\frac{37}{24}$|$-\frac{3}{8}$|
+
+- Adams-Bashforth 4 步显式法： $w_{i+1} = w_i + \frac{5}{24}(55f_i - 59f_{i-1} + 37f_{i-2} - 9f_{i-3})$
+***
+### Adams-Moulton Implicit m-step Technique
+
+使用牛顿向前差分公式，在 $(t_{i+1}, f_{i+1}), (t_i, f_i), \dots, (t_{i+1-m}, f_{i+1-m})$ 上对 $f$ 进行插值，并得到 $P_m(t)$。 类似的，我们可以得到一组 $\tau_{i+1} = B_m h^{m+1} y^{(m+2)}(\xi_i)$ 的隐式公式
+
+![](../../../assets/Pasted%20image%2020250521103029.png)
+
+- Adams-Moulton 3 步隐式法： $w_{i+1} = w_i + \frac{h}{24}(9f_{i+1} + 19f_i - 5f_{i-1} + f_{i-2})$
+***
+### Adams Predictor-Corrector System
+
+1. 用 Runge-Kutta 法计算前 $m$ 个初始值
+2. 用 Adams-Bashforth 显式法进行预测
+3. 用 Adams-Moulton 隐式法进行纠正
+
+- 对于上述步骤用到的三个公式，它们的局部截断误差的阶数必须相同。
+- 最受欢迎的系统是将 4 阶 Adams-Bashforth 法作为预测器，将 1 次迭代下的 Adams-Moulton 法作为纠正器，而起始值通过 4 阶 Runge-Kutta 法获得
+***
+### Derive from Taylor Expansion
+
+$$
+w_{i+1}=\textcolor{red}{a_{m-1}}w_i+\textcolor{red}{a_{m-2}}w_{i-1}+\cdots+\textcolor{red}{a_0}w_{i-m+1}+h[\textcolor{red}{b_m}f_{i+1}+\textcolor{red}{b_{m-1}}f_i+\cdots+\textcolor{red}{b_0}f_{i+1-m}]
+$$
+
+思路：扩展在关于 $t_i$ 的泰勒级数里的 $y_{i-1}, \dots, y_{i+1-m}$ 和 $f_{i+1}, f_{i-1}, \dots, f_{i+1-m}$，并让 $h^k$ 的系数相等，以获得 $a_0, \dots, a_{m-1}$ 和 $b_0, \dots, b_m$
+
+!!! example "Example"
+
+	请求出形如以下形式的 4 阶公式：
+	
+	$$
+	w_{i+1}=a_2w_i+a_1w_{i-1}+a_0w_{i-2}+h[b_3f_i+b_2f_{i-1}+b_1f_{i-2}+b_0f_{i-3}]
+	$$
+	
+	??? note "Answer"
+	
+		在 $t_i$ 处扩展 $y_{i-1}, y_{i-2}, f_i, f_{i-1}, f_{i-2}, f_i, 3$ 和 $y(t_{i+1})$ 
+		
+		假设 $w_i = y_i$ 的情况下，$\tau_{i+1} = \frac{y_{i+1} - w_{i+1}}{h} = O(h^4)$ 
+		
+		$$
+		\begin{aligned}
+		y_{i-1} &= y_i - hy_i' + \frac{h^2}{2}y_i'' - \frac{h^3}{6}y_i''' + \frac{h^4}{24}y_i^{(4)} + O(h^5)\\
+		y_{i-2} &= y_i - 2hy_i' + \frac{2h^2}{1}y_i'' - \frac{h^3}{3}y_i''' + \frac{2h^4}{3}y_i^{(4)} + O(h^5)\\
+		f_{i-1} &= y_i' - hy_i'' + \frac{h^2}{2}y_i''' - \frac{h^3}{6}y_i^{(4)} + O(h^4)\\
+		f_{i-2} &= y_i' - 2hy_i'' + \frac{2h^2}{1}y_i''' - \frac{4}{3}h^3y_i^{(4)} + O(h^4)\\
+		f_{i-3} &= y_i' - 3hy_i'' + \frac{9}{2}h^2y_i''' - \frac{9}{2}h^3y_i^{(4)} + O(h^4)
+		\end{aligned}
+		$$
+		
+		 $y(t_{i+1}) = y_i + hy_i' + \frac{1}{2}h^2y_i'' + \frac{1}{6}h^3y_i''' + \frac{1}{24}h^4y_i^{(4)} + O(h^5)$ 有 5 个方程，7 个未知量
+		 
+		- 令 $a_0 = a_1 = 0 \rightarrow$ Adams-Bashforth 显式法 
+		- 用 $f_{i+1}$ 替换 $f_i$, $f_{i-1}$. 并令 $a_0 = a_1 = 0 \rightarrow$ Adams-Bashforth 隐式法 
+		- 用 $w_{i-3}$ 替换 $f_{i-3}$，我们能得到另一组阶数为 4 的方法，包括了显式 Milne 法： 
+			
+			$$
+			w_{i+1} = w_{i-3} + \frac{4h}{3}(2f_i - f_{i-1} + 2f_{i-2})
+			$$
+			
+			- 其截断误差为 $\frac{14}{45}h^4y^{(5)}(\xi_i), \xi_i \in (t_{i-3}, t_{i+1})$ 
+		
+		- 令 $a_0 = 0, a_1 = 1 \rightarrow$ Simpson 隐式法
+		
+			$$
+			w_{i+1} = w_{i-1} + \frac{h}{3}(f_{i+1} + 4f_i + f_{i-1})
+			$$
+			
+			- 其截断误差为 $-\frac{h^4}{90}y^{(5)}(\xi_i), \xi_i \in (t_{i-1}, t_{i+1})$
+***
+## Higher-Order Equations and Systems of Differential Equations
+
+### $m$-th Order System of 1st-order IVP
+
+$$
+\begin{cases}
+u_1'(t) = f_1(t, u_1(t), \dots, u_m(t)) \\ 
+\vdots \\
+u_m'(t) = f_m(t, u_1(t), \dots, u_m(t)) 
+\end{cases}
+$$
+
+初始条件为：$u_1(a) = \alpha_1, u_2(a) = \alpha_2, \dots, u_m(a) = \alpha_m$
+
+令 $\mathbf{y} = \begin{bmatrix} u_1 \\ \vdots \\ u_m \end{bmatrix}, \mathbf{f} = \begin{bmatrix} f_1 \\ \vdots \\ f_m \end{bmatrix}, \mathbf{\alpha} = \begin{bmatrix} \alpha_1 \\ \vdots \\ \alpha_m \end{bmatrix}$，可以得到：
+
+$$
+\begin{cases}
+\mathbf{y}'(t) = \mathbf{f}(t, \mathbf{y}) \\
+\mathbf{y}(a) = \mathbf{\alpha}
+\end{cases}
+$$
+
+
+***
+### Higher-order Differential Equation
+
+$$
+\begin{cases}
+y^{(m)}(t) = f(t, y, y', \dots, y^{(m-1)}) \quad a\leq t\leq b\\
+y(a) = \alpha_1, y'(a) = \alpha_2, \dots, y^{(m-1)}(a) = \alpha_m
+\end{cases}
+$$
+
+思路：将高阶的微分方程归约到一个 1 阶的微分方程组
+
+令 $u_1(t)=y(t),u_2(t)=y'(t),...,u_m(t)=y^{(m-1)}(t)$，得到：
+
+$$
+\begin{cases}
+u_1'=y'=u_2\\
+u_2'=y''=u_3\\
+\vdots \\
+u_{m-1}'=y^{(m-1)}=u_m\\
+u_m'=y^{(m)}=f(x,u_1,u_2,\dots,u_m)
+\end{cases}
+$$
+
+初始条件为 $u_1(a) = \alpha_1, u_2(a) = \alpha_2, \dots, u_m(a) = \alpha_m$
+
+!!! example "Example"
+
+	使用欧拉法求解以下 IVP ($h=0.1$)：
+	
+	$$
+	\begin{aligned}
+	y'' - 2y' + y &= te^t - 1.5t + 1 \quad \text{for } 0 \le t \le 0.2\\
+	y(0) &= 0, y'(0) = -0.5
+	\end{aligned}
+	$$
+	 
+	令 $u_1(t) = y(t), u_2(t) = y'(t)$，得到：
+	 
+	$$ 
+	\begin{cases}
+	u_1'(t) = u_2(t) \\ 
+	u_2'(t) = te^t - 1.5t + 1 - u_1(t) + 2u_2(t) 
+	\end{cases} 
+	$$
+	 
+	初始条件为 $u_1(0) = 0, u_2(0) = -0.5$ 
+	  
+	根据：
+	  
+	  $$
+	  \begin{aligned}
+	  w_{i+1} &= w_i + h[\frac{1}{2}K_1 + \frac{1}{2}K_2]\\
+	  K_1 &= f(t_i, w_i)\\
+	  K_2 &= f(t_i + h, w_i + hK_1)
+	  \end{aligned}
+	  $$
+	  
+	计算可得：
+	  
+	$$
+	\begin{aligned}
+	\vec{K}_1(0) &= \vec{f}(0, \vec{u}(0)) = \begin{pmatrix} 
+	-0.5 \\ 
+	0.0 
+	\end{pmatrix}\\
+	\vec{K}_2(0) &= \vec{f}(0.1, \begin{pmatrix}
+	-0.05 \\
+	-0.5 
+	\end{pmatrix}) = \begin{pmatrix}
+	-0.5 \\
+	0.0105
+	\end{pmatrix}\\
+	\vec{K}_1(0.1) &= \vec{f}(0.1, \vec{u}(0.1)) = \begin{pmatrix} 
+	-0.4995 \\
+	 0.0115
+	\end{pmatrix}\\
+	\vec{K}_2(0.1) &= \vec{f}(0.2, \begin{pmatrix}
+	-0.1000 \\
+	-0.4984
+	\end{pmatrix}) = \begin{pmatrix}
+	-0.4984 \\
+	0.0475
+	\end{pmatrix}
+	\end{aligned}
+	$$
+	
+	$$
+	\begin{aligned}
+	\vec{u}(0.1) &= \vec{u}(0) + 0.05(\vec{K}_1(0) + \vec{K}_2(0)) = \begin{pmatrix}
+	-0.0500 \\
+	-0.4995
+	\end{pmatrix}\\
+	\vec{u}(0.2) &= \vec{u}(0.1) + 0.05(\vec{K}_1(0.1) + \vec{K}_2(0.1)) = \begin{pmatrix}
+	-0.0999 \\
+	-0.4966
+	\end{pmatrix}
+	\end{aligned}
+	$$
+	
+	- 精确解为: $y(t) = \frac{t^3e^t}{6} - te^t + 2e^t - 1.5t - 2$ 
+***
+## Stability
+
+当局部截断误差为 $\tau_i(h)$ 的一步微分方程法满足下面的条件时，我们认为它和近似得到的微分方程是一致的（Consistent）：
+
+$$
+\lim_{h \to 0} \max_{1 \le i \le n} |\tau_i(h)| = 0
+$$
+
+对于多步法，还要求对于 $i=1, 2, \dots, m-1$，有 $\lim\limits_{h \to 0} |w_i - y_i| = 0$
+
+当满足下面的条件时，我们认为一步微分方程法关于近似得到的微分方程收敛（Convergent）: 
+
+$$
+\lim_{h \to 0} \max_{1 \le i \le n} |w_i - y_i| = 0
+$$
+
+将某个方法用在一个简单的**检验方程**（Test Equation）上： $y' = \lambda y, y(0) = \alpha$，其中 $\text{Re}(\lambda) < 0$。假设摄入误差仅在初始点被引入。如果这个初始误差在特定步幅 $h$ 上被缩小的话，那么该方法关于 $H = \lambda h$ 是**绝对稳定**的（Absolutely Stable）。所有 $H$ 构成的集合称为**绝对稳定性区域**（The Region of Absolute Stability）。 当 $A$ 的绝对稳定性区域大于 $B$ 时，称法 $A$ 比法 $B$ 更稳定
+
+!!! example "Example"
+
+	![](../../../assets/Pasted%20image%2020250521112745.png)
+
+!!! example "Examples"
+
+	=== "Example 01"
+	
+		考虑欧拉显式法 $w_{i+1} = w_i + h f_i$
+		
+		![](../../../assets/Pasted%20image%2020250521113220.png)
+		
+		$w_{i+1} = w_i + h \lambda w_i = \alpha(1 + H)^{i+1}$
+		
+		$\alpha^* = \alpha + \epsilon \Rightarrow w_{i+1}^* = \alpha^*(1 + H)^{i+1} \Rightarrow \epsilon_{i+1} = w_{i+1}^* - w_{i+1} = (1 + H)^{i+1} \epsilon$
+		
+		因此要保证误差减小，必须满足 $|1 + H| < 1$
+	
+	=== "Example 02"
+	
+		考虑欧拉隐式法 $w_{i+1} = w_i + h f_{i+1}$
+		
+		![](../../../assets/Pasted%20image%2020250521113358.png)
+		
+		$w_{i+1} = \left(\frac{1}{1-H}\right) w_i \Rightarrow \epsilon_{i+1} = \left(\frac{1}{1-H}\right)^{i+1} \epsilon$
+		
+		因此要保证误差减小，必须满足 $\left|\frac{1}{1-H}\right| < 1$
+		
+		- 它是无条件稳定的（Unconditionally Stable）
+
 
