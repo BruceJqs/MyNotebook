@@ -621,8 +621,84 @@ $$
 		
 		$w_{i+1} = \left(\frac{1}{1-H}\right) w_i \Rightarrow \epsilon_{i+1} = \left(\frac{1}{1-H}\right)^{i+1} \epsilon$
 		
-		因此要保证误差减小，必须满足 $\left|\frac{1}{1-H}\right| < 1$
+		因此要保证误差减小，必须满足 $\left|\frac{1}{1-H}\right| > 1$
 		
 		- 它是无条件稳定的（Unconditionally Stable）
+	
+	=== "Example 03"
+	
+		考虑 2 阶 Runge-Kutta 隐式法:
+		
+		$$
+		\begin{cases}
+		w_{i+1} = w_i + h K_1 \\
+		K_1 = f(t_i + \frac{h}{2}, w_i + \frac{h}{2} K_1)
+		\end{cases}
+		$$
+		
+		可以得到 $K_1 = \frac{\lambda w_i}{1 - \frac{\lambda h}{2}} \Rightarrow w_{i+1} = \left(\frac{2 + H}{2 - H}\right) w_i \Rightarrow \left|\frac{2 + H}{2 - H}\right| < 1$
+		
+		- 它是无条件稳定的（Unconditionally Stable）
+	
+	=== "Example 04"
+	
+		考虑 4 阶 Runge-Kutta 显式法:
+		
+		$$
+		\begin{cases}
+		w_{i+1} = w_i + \frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4) \\
+		K_1 = f(t_i, w_i) \\
+		K_2 = f(t_i + \frac{h}{2}, w_i + \frac{h}{2} K_1) \\
+		K_3 = f(t_i + \frac{h}{2}, w_i + \frac{h}{2} K_2) \\
+		K_4 = f(t_i + h, w_i + h K_3)
+		\end{cases}
+		$$
+		
+		$$
+		\begin{align*}
+		K_1 &= \lambda w_i \\
+		K_2 &= \lambda w_i (1 + \frac{H}{2}) \\
+		K_3 &= \lambda w_i (1 + \frac{H}{2} + \frac{H^2}{4}) \\
+		K_4 &= \lambda w_i (1 + H + \frac{H^2}{2} + \frac{H^3}{4}) \\
+		w_{i+1} &= w_i (1 + H + \frac{H^2}{2} + \frac{H^3}{6} + \frac{H^4}{24}) 
+		\end{align*}
+		$$
+		
+		![](../../../assets/Pasted%20image%2020250528105516.png)
+		
+	
+	=== "Example 05"
+	
+		考虑以下 IVP 组：
+		
+		$$
+		\begin{cases}
+		u'_1 = 9 u_1 + 24 u_2 + 5 \cos t - \frac{1}{3} \sin t, \quad u_1(0) = \frac{4}{3} \\
+		u'_2 = -24 u_1 - 51 u_2 - 9 \cos t + \frac{1}{3} \sin t, \quad u_2(0) = \frac{2}{3}
+		\end{cases}
+		$$
+		
+		如何选择步幅 $h$, 以保证应用欧拉显式法之后的稳定性？
+		
+		??? note "Answer"
+		
+			唯一解为：
+			
+			$$
+			\begin{cases}
+			u_1(t) = 2e^{-3t} - e^{-39t} + \frac{1}{3} \cos t \\
+			u_2(t) = -e^{-3t} + 2e^{-39t} - \frac{1}{3} \cos t
+			\end{cases}
+			$$
+			
+			矩阵 $\begin{bmatrix} 9 & 24 \\ -24 & 51 \end{bmatrix}$ 的特征值为 $\lambda_1 = -3$, $\lambda_2 = -39$
+			
+			$$
+			-2 < \lambda h < 0 \Rightarrow h < \frac{2}{39} \approx 0.051
+			$$
+
+
+
+
 
 

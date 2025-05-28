@@ -53,7 +53,7 @@ $M\approx\frac{2^{nH(Y)}}{2^{nH(Y|X)}}=2^{nI(X;Y)},R=\frac{\log M}{n}\approx I(X
 - 发送第 $i$ 个消息所发生的错误概率定义为 $\lambda_i=P\{g(Y^n)\neq i|X^n=x^n(i)\}$，最大错误概率定义为 $\lambda^{(n)}=\max\limits_{i\in\{1,2,\cdots,M\}}\lambda_i$，平均错误概率定义为 $P_e^{(n)}=\frac{1}{M}\sum\limits_{i=1}^M\lambda_i$，编码速率定义为 $R=\frac{\log M}{n}$ 比特/传输
 - 如果存在一系列 $(2^{nR},n)$ 码，当 $n\rightarrow\infty$ 时，最大错误概率 $\lambda^{(n)}\rightarrow 0$，则称 $R$ 是可达的
 ***
-### 证明
+### 证明思想
 
 证明思想：
 
@@ -99,7 +99,62 @@ $$
 	&=(1-\epsilon)2^{-n(I(X;Y)+3\epsilon)}\\
 	\end{aligned}
 	$$
+***
+#### 证明
 
+码书矩阵:
+
+$$
+\begin{bmatrix}
+x_1(1) & x_2(1) & \dots & x_n(1) \\
+x_1(2) & x_2(2) & \dots & x_n(2) \\
+\vdots & \vdots & \ddots & \vdots \\
+x_1(2^{nR}) & x_2(2^{nR}) & \dots & x_n(2^{nR})
+\end{bmatrix}
+$$
+
+码书随机产生，均匀分布
+
+译码方法: 如果接收到的 $y^n$ 与某个码字 $x^n(\hat{w})$ 是联合典型的，即 $(x^n(\hat{w}), y^n) \in A_\epsilon^{(n)}$，就宣称发送的是第 $\hat{w}$ 个码字
+
+译码错误: 
+
+1. 译码错误事件: $\hat{w} \ne w$
+2. 不可译事件: 不存在任何 $x^n(\hat{w})$，使 $(x^n(\hat{w}), y^n) \in A_\epsilon^{(n)}$
+
+$$
+\begin{aligned}
+P(E) &= \sum_{\mathcal{L}} P(\mathcal{L}) P_e^n(\mathcal{L})\\
+P_e^n(\mathcal{L}) &= \frac{1}{2^{nR}} \sum_{w=1}^{2^{nR}} \lambda_w(\mathcal{L})\\
+P(E) &= \frac{1}{2^{nR}} \sum_{w=1}^{2^{nR}} \sum_{\mathcal{L}} P(\mathcal{L}) \lambda_w(\mathcal{L})\\
+&= \sum_{\mathcal{L}} P(\mathcal{L}) \lambda_1(\mathcal{L}) \triangleq P(E|w=1)
+\end{aligned}
+$$
+
+$P(E|w=1) = P\{\bar{E}_1 \cup E_2 \cup \dots \cup E_{2^{nR}}\} = P(\bar{E}_1) + \sum\limits_{i=2}^{2^{nR}} E_i$
+
+1) 根据联合典型性质： $P(\overline{E_1}) \le \epsilon$
+2) 由于 $x^n(i)$ 与 $x^n(1)$ 独立无关，意味着 $y^n$ 与 $x^n(i)$ 独立，因此，$P(E_i) \le 2^{-n(I(X;Y)-3\epsilon)}$
+
+$P(E|w = 1) \le \epsilon + 2^{-n(I(X;Y)-R-3\epsilon)}$
+
+当 $R < I(X;Y) - 3\epsilon$ 时，对于充分大的 $n$，有 $P(E|w = 1) \le 2\epsilon$
+
+!!! note "逆定理证明"
+
+	逆定理：具有 $\lambda^{(n)} \to 0$ 的任何 $(2^{nR}, n)$ 码必有 $R \le C$
+	
+	$$
+	\begin{aligned}
+	nR = H(W) &= H(W|\hat{W}) + I(W;\hat{W})\\
+	&\le H(W|\hat{W}) + I(X^n;Y^n) \to \text{数据处理定理}\\
+	&\le H(P_e^{(n)}) + P_e^{(n)} \cdot nR + I(X^n;Y^n) \to \text{Fano不等式}\\
+	&\le 1 + P_e^{(n)} \cdot nR + nC\\
+	R &\le P_e^{(n)}R + \frac{1}{n} + C
+	\end{aligned}
+	$$
+	
+	$P_e^{(n)} \ge 1 - \frac{C}{R} - \frac{1}{nR}$, 当 $R > C$, 则 $P_e^{(n)}$ 一定大于 0!
 ***
 ## 二元对称信道
 
@@ -153,6 +208,38 @@ $P(E|i=1)=P\{\overline{E_1}\cup E_2\cup\cdots\cup E_{2^{nR}}\}=P(\overline{E_1})
 	$$
 	
 ***
+## 具有理想反馈的 DMC 的容量
+
+![](../../../assets/Pasted%20image%2020250525101907.png)
+
+- 反馈不能增加离散无记忆信道的容量，即 $C_{FB}=C=\max\limits_{p(x)}I(X;Y)$
+
+!!! note "证明"
+
+	显然 $C_{FB} \ge C$
+	
+	$$
+	\begin{aligned}
+	nR = H(W) &= H(W|Y^n) + I(W;Y^n)\\
+	&\le H(W|\hat{W}) + I(W;Y^n)\\
+	&\le 1 + P_e^{(n)} \cdot nR + I(W;Y^n)\\
+	I(W;Y^n) &= H(Y^n) - H(Y^n|W)\\
+	&= H(Y^n) - \sum_{i=1}^n H(Y_i|Y^{i-1}, W)\\
+	&= H(Y^n) - \sum_{i=1}^n H(Y_i|Y^{i-1}, W, X_i)\\
+	&= H(Y^n) - \sum_{i=1}^n H(Y_i|X_i) \le nC \implies C_{FB} \le C
+	\end{aligned}
+	$$
+	
+
+- 反馈不能提高离散无记忆信道的容量，但对于离散有记忆信道来说，反馈可以增加信道容量
+- 虽然反馈不能提高 DMC 的容量，但是利用反馈可以较简单地实现性能好的编码，比如可以用码长较短的信道编码就可以达到很低的误码率
+***
+## 信源信道分离编码和联合编码
+
+![](../../../assets/Pasted%20image%2020250525103403.png)
+
+
+
 
 
 
