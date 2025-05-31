@@ -33,6 +33,7 @@ comments: true
 - [Chapter 12 : Query Optimization](Chapter%2012/)
 - [Chapter 13 : Transactions](Chapter%2013/)
 - [Chapter 14 : Concurrency Control](Chapter%2014/)
+- [Chapter 15 : Recovery System](Chapter%2015/)
 
 ### Homeworks
 
