@@ -19,7 +19,7 @@ comments: true
 
 	wxh 的上课 PPT 和风格真是一言难尽...（尤其是他上完课不发 PPT）
 	
-	因此笔记参考了 cwz、cr 等老师的 PPT 结合而成……
+	因此笔记参考了 cwz、cr 等老师的 PPT 以及曾经计组的课 u [NoughtQ 的笔记](https://note.noughtq.top/system/ca/) 结合而成……
 
 ## Table of Contents
 
