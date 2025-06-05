@@ -19,7 +19,7 @@ comments: true
 
 - $A_1,A_2,...,A_n$ 为属性（Attributes）
 - $R=(A_1,A_2,...,A_n)$ 是一个关系模式（Relation Schema）
-	- e.g. $\text{instructor} = (\text{ID}, \text{name}, \text{dept\_name}, \text{salary})$
+	- e.g. $\text{instructor} = (\text{ID}, \text{name}, \text{dept_name}, \text{salary})$
 - 基于关系模式 $R$ 所定义的关系实例（Relation Instance）$r$ 记为 $r(R)$
 - 关系上的当前值（即关系实例）会在表格中具体指明
 - 关系 $r$ 当中的元素 $t$ 被称为元组（Tuple），它在表格中以行展示
