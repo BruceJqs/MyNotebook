@@ -9734,7 +9734,7 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <ul>
-<li>数据库模式：<span class="arithmatex">\(\text{instructor}(\text{ID}, \text{name}, \text{dept\_name}, \text{salary})\)</span></li>
+<li>数据库模式：<span class="arithmatex">\(\text{instructor}(\text{ID}, \text{name}, \text{dept_name}, \text{salary})\)</span></li>
 <li>数据库实例：</li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250224103015.png" /></p>
@@ -9890,15 +9890,15 @@
 <div class="tabbed-block">
 <p>查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id</p>
 <ul>
-<li><span class="arithmatex">\(\prod_{\text{instructor.name, course\_id}}(\sigma_{\text{dept\_name}=\text{“Physics”}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\text{instructor}\times\text{teaches})))\)</span></li>
-<li><span class="arithmatex">\(\prod_{\text{instructor.name, course\_id}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\sigma_{\text{dept\_name}=\text{“Physics”}}(\text{instructor})\times\text{teaches}))\)</span></li>
+<li><span class="arithmatex">\(\prod_{\text{instructor.name, course_id}}(\sigma_{\text{dept_name}=\text{“Physics”}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\text{instructor}\times\text{teaches})))\)</span></li>
+<li><span class="arithmatex">\(\prod_{\text{instructor.name, course_id}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\sigma_{\text{dept_name}=\text{“Physics”}}(\text{instructor})\times\text{teaches}))\)</span></li>
 <li>上面这两句话是等价的，但第二条我们先进行了一次 select（关注括号的位置），条目少了更高效</li>
 </ul>
 </div>
 <div class="tabbed-block">
 <p>查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id 和标题</p>
 <ul>
-<li><span class="arithmatex">\(\prod_{\text{instructor.name, course.course\_id, course.title}}(\sigma_{\text{dept\_name}=\text{“Physics”}\land\text{instructor.ID}=\text{teaches.ID}\land\text{teaches.course\_id=course.course\_id}}(\text{instructor}\times\text{teaches}\times\text{course}))\)</span></li>
+<li><span class="arithmatex">\(\prod_{\text{instructor.name, course.course_id, course.title}}(\sigma_{\text{dept_name}=\text{“Physics”}\land\text{instructor.ID}=\text{teaches.ID}\land\text{teaches.course_id=course.course_id}}(\text{instructor}\times\text{teaches}\times\text{course}))\)</span></li>
 </ul>
 </div>
 </div>
@@ -10040,7 +10040,7 @@
 <p class="admonition-title">Example</p>
 <p>给定关系 instructor(ID, name, dept_name, salary)，其中 salary 是年薪，获取相同的信息，但是年薪变为月薪</p>
 <ul>
-<li><span class="arithmatex">\(\prod_{\text{ID, name, dept\_name, salary/12}}(\text{instructor})\)</span></li>
+<li><span class="arithmatex">\(\prod_{\text{ID, name, dept_name, salary/12}}(\text{instructor})\)</span></li>
 </ul>
 </div>
 <hr />
@@ -10053,7 +10053,7 @@
 <p class="admonition-title">Example</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250224191803.png" /></p>
 </div>
-<p>聚合的结果<strong>没有</strong>名称，但是我们可以用重命名操作为结果赋予名称，方便起见，我们将重命名作为聚合运算的一部分，如：<span class="arithmatex">\(\text{ }_{G_1,G_2,...,G_n}\mathcal{G}_{F_1(A_1),F_2(A_2),...,F_n(A_n)\text{ as new\_name}}(E)\)</span></p>
+<p>聚合的结果<strong>没有</strong>名称，但是我们可以用重命名操作为结果赋予名称，方便起见，我们将重命名作为聚合运算的一部分，如：<span class="arithmatex">\(\text{ }_{G_1,G_2,...,G_n}\mathcal{G}_{F_1(A_1),F_2(A_2),...,F_n(A_n)\text{ as new_name}}(E)\)</span></p>
 <hr />
 <h2 id="modification-of-the-database">Modification of the Database<a class="headerlink" href="#modification-of-the-database" title="Permanent link">&para;</a></h2>
 <p>可通过删除（Deletion）、插入（Insertion）和更新（Updating）运算修改数据库的内容，这些运算都可以用赋值运算符表示</p>
@@ -10154,7 +10154,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月5日 21:18:37 CST">2025年6月5日 21:18:37</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月5日 21:31:29 CST">2025年6月5日 21:31:29</span>
   </span>
 
     
