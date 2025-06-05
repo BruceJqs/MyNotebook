@@ -42,7 +42,7 @@ comments: true
 
 !!! example "Example"
 
-	- 数据库模式：$\text{instructor}(\text{ID}, \text{name}, \text{dept\_name}, \text{salary})$
+	- 数据库模式：$\text{instructor}(\text{ID}, \text{name}, \text{dept_name}, \text{salary})$
 	- 数据库实例：
 	
 	![](../../../assets/Pasted image 20250224103015.png)
@@ -163,15 +163,15 @@ comments: true
 	
 		查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id
 		
-		- $\prod_{\text{instructor.name, course\_id}}(\sigma_{\text{dept\_name}=\text{“Physics”}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\text{instructor}\times\text{teaches})))$
-		- $\prod_{\text{instructor.name, course\_id}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\sigma_{\text{dept\_name}=\text{“Physics”}}(\text{instructor})\times\text{teaches}))$
+		- $\prod_{\text{instructor.name, course_id}}(\sigma_{\text{dept_name}=\text{“Physics”}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\text{instructor}\times\text{teaches})))$
+		- $\prod_{\text{instructor.name, course_id}}(\sigma_{\text{instructor.ID}=\text{teaches.ID}}(\sigma_{\text{dept_name}=\text{“Physics”}}(\text{instructor})\times\text{teaches}))$
 		- 上面这两句话是等价的，但第二条我们先进行了一次 select（关注括号的位置），条目少了更高效
 	
 	=== "Example 2"
 	
 		查找物理系中所有教师的姓名，以及他们教授的所有课程的 course_id 和标题
 		
-		- $\prod_{\text{instructor.name, course.course\_id, course.title}}(\sigma_{\text{dept\_name}=\text{“Physics”}\land\text{instructor.ID}=\text{teaches.ID}\land\text{teaches.course\_id=course.course\_id}}(\text{instructor}\times\text{teaches}\times\text{course}))$
+		- $\prod_{\text{instructor.name, course.course_id, course.title}}(\sigma_{\text{dept_name}=\text{“Physics”}\land\text{instructor.ID}=\text{teaches.ID}\land\text{teaches.course_id=course.course_id}}(\text{instructor}\times\text{teaches}\times\text{course}))$
 ***
 ### Rename
 
@@ -286,7 +286,7 @@ comments: true
 
 	给定关系 instructor(ID, name, dept_name, salary)，其中 salary 是年薪，获取相同的信息，但是年薪变为月薪
 	
-	- $\prod_{\text{ID, name, dept\_name, salary/12}}(\text{instructor})$
+	- $\prod_{\text{ID, name, dept_name, salary/12}}(\text{instructor})$
 ***
 ### Aggregate Functions and Operations
 
@@ -297,7 +297,7 @@ comments: true
 
 	![](../../../assets/Pasted image 20250224191803.png)
 
-聚合的结果**没有**名称，但是我们可以用重命名操作为结果赋予名称，方便起见，我们将重命名作为聚合运算的一部分，如：$\text{ }_{G_1,G_2,...,G_n}\mathcal{G}_{F_1(A_1),F_2(A_2),...,F_n(A_n)\text{ as new\_name}}(E)$
+聚合的结果**没有**名称，但是我们可以用重命名操作为结果赋予名称，方便起见，我们将重命名作为聚合运算的一部分，如：$\text{ }_{G_1,G_2,...,G_n}\mathcal{G}_{F_1(A_1),F_2(A_2),...,F_n(A_n)\text{ as new_name}}(E)$
 ***
 ## Modification of the Database
 
