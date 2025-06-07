@@ -63,7 +63,7 @@ comments: true
 		
 		![](../../../assets/Pasted%20image%2020250224104115.png)
 	
-	- 参照完整性（Referential Integrity）约束要求引用关系 $r_1$ 中任何元组的指定属性 $A$ 中出现的值也出现在引用关系 $r_2$ 中至少一个元组的指定属性 $B$ 中
+	- 参照完整性（Referential Integrity）约束要求引用关系 $r_1$ 中任何元组的指定属性 $A$ 中出现的值也出现在被引用关系 $r_2$ 中至少一个元组的指定属性 $B$ 中
 		- 类似于外键限制，但不局限于主键
 		- e.g. 下面 time_slot_id 并不是关系 $r_2$ 的主键，所以这里不是外键约束
 		
@@ -196,8 +196,9 @@ comments: true
 - 交（Set Intersection）： $r\cap s$
 - 自然连接（Natural Join）： $r\bowtie s$
 - 赋值（Assignment）： $\leftarrow$
-- 外连接（Outer Join）： $r\rtimes s, r \ltimes s, r$⟗$s$
+- 外连接（Outer Join）： $r$⟕$s, r$⟖$s, r$⟗$s$
 - 除法（Division Operator）：$r\div s$
+- 半连接（Semijoin）： $r\ltimes_{\theta}s$
 
 !!! note "Additional Operations"
 
@@ -219,7 +220,7 @@ comments: true
 			- 简单来说，共同属性要有相同的值，才能在拼接后的结果中保留。类似对乘法的扩展，相当于先笛卡尔积再 select，最后 project
 		- 自然连接操作满足 $r,s$ 必须有共同属性（名称、域对应相同）
 		- 自然连接操作具有结合律（Associative）和交换律（Commutative）
-		- 扩展：**Theta 连接（条件连接）**，记作：$r\Join_{\theta}=\sigma_{\theta}(r\times s)$，其中 $\theta$ 是关于模式上属性的谓词
+		- 扩展：**Theta 连接（条件连接）**，记作：$r\Join_{\theta}s=\sigma_{\theta}(r\times s)$，其中 $\theta$ 是关于模式上属性的谓词
 		
 		!!! example "Example"
 		
@@ -240,8 +241,8 @@ comments: true
 		
 		由上面的 Example 我们可以看出，外连接有三种形式，其中：
 		
-		- $r\rtimes s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})$
-		- $r\ltimes s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))$
+		- $r$⟖$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})$
+		- $r$⟕$s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))$
 		- $r$⟗$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\cup(\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s)))$
 	
 	=== "Semijoin"
@@ -321,4 +322,4 @@ comments: true
 
 - `select A1, A2, ... An from r1, r2, ... rm where P` 和 $\prod_{A_1,...,A_n}(\sigma_P(r_1\times r_2\times ... \times r_m))$ 等价
 - `select A1, A2, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和$\text{ }_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)}\sigma_P(r_1\times r_2\times ... \times r_m))$ 等价
-- 更一般地说，`select` 子句中的非聚合属性可能是 `group by` 属性的子集，在这种情况下，`select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和 $\prod_{A_1,\text{sum}(A_3)}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))$ 等价
+- 更一般地说，`select` 子句中的非聚合属性可能是 `group by` 属性的子集，在这种情况下，`select A1, sum(A3) from r1, r2, ... rm where P group by A1, A2` 和 $\prod_{A_1,\text{sumA3}}(\text{}_{A_1,A_2}\mathcal{G}_{\text{sum}(A_3)\text{ as sumA3}}\sigma_P(r_1\times r_2\times ... \times r_m)))$ 等价

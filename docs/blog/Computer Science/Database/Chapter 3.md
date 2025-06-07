@@ -346,7 +346,7 @@ SQL 还支持以下字符串操作：
 ***
 ## Set Operations
 
-- SQL 支持关系代数中的集合运算符 $\cap,\cup,\overline{ }$，分别用 `union`、`intersect`、`except` 表示
+- SQL 支持关系代数中的集合运算符 $\cup,\cap,-$，分别用 `union`、`intersect`、`except` 表示
 - 使用这些运算符后会自动消除重复记录（因为集合不允许存在重复记录）
 - 如果想要保留重复记录，需要在集合运算关键字后加上 `all` 关键字，即 `union all`、`intersect all`、`except all`。假如有一个元组，在关系 $r, s$ 内分别出现了 $m, n$ 次，那么该元组在
     - 关系 `r union all s` 中出现 $m + n$ 次
@@ -468,10 +468,10 @@ SQL 还支持以下字符串操作：
 综上所述，完整的查询语句格式为：
 
 ```SQL
-select <[distince] c1, c2, ...> from <r1, ...>
+select <[distinct] c1, c2, ...> from <r1, ...>
 [where <condition>]
 [group by <c1, c2, ...> [having <condition2>]]
-[order by <c1 [desc][, c2[desc|asc], ...]>]
+[order by <c1 [desc|asc], c2[desc|asc], ...>]
 ```
 
 执行顺序为：`from` $\rightarrow$ `where` $\rightarrow$ `group by` $\rightarrow$ `having` $\rightarrow$ `select` $\rightarrow$ `order by`
@@ -492,7 +492,7 @@ where P (select B1, B2, ..., Bn
 - 我们有一些与集合相关的字句：
 	- `some` 子句：
 	    - 格式：`C <comp> some r`，其中 `<comp>` 是比较运算符
-	    - 等价于：$\exists/t\in r(C<comp>r)$
+	    - 等价于：$\exists t\in r(C<comp>t)$
 	    - `= some` $\equiv$ `in`，但`!= some` $\not\equiv$ `not in`
 	- `all` 子句：
 	    - 格式：`C <comp> all r`
@@ -588,10 +588,12 @@ e.g. `select name from instructor where salary * 10 > (select budget from depart
 						from course
 						where dept_name = 'Biology')
 						except
-						(select course_id
+						(select T.course_id
 						from takes as T
 						where S.ID = T.ID));
 		```
+		
+		这么写是因为 $X-Y=\phi\Leftrightarrow X\subseteq Y$
 ***
 ### Test for Absence of Duplicate Tuples
 

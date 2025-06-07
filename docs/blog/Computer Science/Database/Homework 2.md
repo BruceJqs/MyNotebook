@@ -29,9 +29,9 @@ comments: true
 > 
 > depositor(ID, account_number)
 
-(a) $\prod_{\text{branch\_name}}(\sigma_{\text{branch\_city}=\text{“Chicago”}}(\text{branch}))$
+(a) $\prod_{\text{branch_name}}(\sigma_{\text{branch_city}=\text{“Chicago”}}(\text{branch}))$
 
-(b) $\prod_{ID}(\text{borrower}\Join\sigma_{\text{loan.branch\_name}=\text{“Downtown”}}(\text{loan}))$
+(b) $\prod_{ID}(\text{borrower}\Join\sigma_{\text{loan.branch_name}=\text{“Downtown”}}(\text{loan}))$
 ***
 ## 2.12
 
@@ -45,7 +45,7 @@ comments: true
 
 branch(<u>branch_name</u>, branch_city, assets)
 
-customer(ID, <u>customer_name</u>, customer_street, customer_city)
+customer(<u>ID</u>, customer_name, customer_street, customer_city)
 
 loan(<u>loan_number</u>, branch_name, amount)
 
@@ -67,7 +67,8 @@ depositor(<u>ID, account_number</u>)
 
 > Construct a schema diagram for the bank database of Figure 2.18.
 
-![](../../../assets/Pasted%20image%2020250224231105.png)
+![](../../../assets/Pasted%20image%2020250606153613.png)
+
 ***
 ## 2.15
 
@@ -79,11 +80,11 @@ depositor(<u>ID, account_number</u>)
 > 
 > c. Find the ID of each depositor who has an account with a balance greater than $6000 at the "Uptown" branch
 
-(a) $\prod_{\text{loan\_number}}(\sigma_{\text{amount}>10000}(\text{loan}))$
+(a) $\prod_{\text{loan_number}}(\sigma_{\text{amount}>10000}(\text{loan}))$
 
 (b) $\prod_{ID}(\sigma_{\text{balance}>6000}(\text{account}\Join\text{depositor}))$
 
-(c) $\prod_{ID}(\sigma_{\text{balance}>6000\land\text{branch\_name}=\text{“Uptown”}}(\text{account}\Join\text{depositor}))$
+(c) $\prod_{ID}(\sigma_{\text{balance}>6000\land\text{branch_name}=\text{“Uptown”}}(\text{account}\Join\text{depositor}))$
 
 
 
