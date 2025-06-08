@@ -36,7 +36,7 @@ comments: true
 ***
 ### Design Alternatives
 
-- 在设计数据库架构时，我们必须确保避免两个主要陷阱：
+- 在设计数据库模式时，我们必须确保避免两个主要陷阱：
 	- 冗余：糟糕的设计可能会导致重复的信息
 		- 信息的冗余表示可能会导致各种信息副本之间的数据不一致
 	- 不完整：糟糕的设计可能会使企业的某些方面难以或无法建模
@@ -153,7 +153,7 @@ comments: true
 - 二元关系集的映射基数约束表示另一个实体可以通过关系集关联到的实体数
 - 在描述二元关系集时最有用
 - 对于二元关系集，映射基数必须是一对一、一对多、多对一、多对多类型之一
-- 我们通过在关系集和实体集之间绘制一条有向线 （$\rightarrow$） 来表示“一”，或这绘制一条无向线（—） 来表示“多”
+- 我们通过在关系集和实体集之间绘制一条有向线 （$\rightarrow$） 来表示“一”，或绘制一条无向线（—） 来表示“多”
 
 !!! example "Example"
 
@@ -268,14 +268,14 @@ comments: true
 ***
 ## Reduction to Relational Schemas
 
-- 实体集和关系集可以统一表示为表示数据库内容的关系架构
-- 符合 E-R 图的数据库可以由架构集合表示
-- 对于每个实体集和关系集，都有一个唯一的架构，该架构分配有相应实体集或关系集的名称
-- 每个架构都有许多列（通常对应于属性），这些列具有唯一的名称
+- 实体集和关系集可以统一表示为表示数据库内容的关系模式
+- 符合 E-R 图的数据库可以由模式集合表示
+- 对于每个实体集和关系集，都有一个唯一的模式，该模式分配有相应实体集或关系集的名称
+- 每个模式都有许多列（通常对应于属性），这些列具有唯一的名称
 ***
 ### Representing Entity Sets with Simple Attributes
 
-- 强实体集将简化为具有相同属性的架构
+- 强实体集将简化为具有相同属性的模式
 - 弱实体集将变成一个表，该表包含标识强实体集的主键列
 	- 表的主键是弱实体集的分辨符与标识强实体集的主键的并集
 
@@ -283,7 +283,7 @@ comments: true
 ***
 ### Representing Relationship Sets
 
-一个多对多关系集表示为一个架构，其中包含两个参与实体集的主键的属性，以及关系集的任何描述性属性
+一个多对多关系集表示为一个模式，其中包含两个参与实体集的主键的属性，以及关系集的任何描述性属性
 
 - e.g. 对于一个关系集 advisor 的模式：advisor=(<u>s_id,i_id</u>)
 
@@ -309,7 +309,7 @@ comments: true
 	- 就像在 C 语言里定义一个结构。但是关系数据库里每个属性都必须是简单数据类型，就必须把这些复合属性铺平
 	- e.g. 给定的实体集 instructor，其复合属性名称为组件属性 first_name, last_name 与实体集对应的模式具有两个属性 name_first_name 和 name_last_name
 	- 如果没有歧义，则省略前缀
-	- 忽略多值属性，扩展 instructor 模式为：`instructor(ID, first_name, middle_initial,  last_name, street_number, street_name, apt_number, city, state, zip_code,     date_of_birth, age)`
+	- 忽略多值属性，扩展 instructor 模式为：`instructor(ID, first_name, middle_initial,  last_name, street_number, street_name, apt_number, city, state, zip_code, date_of_birth, age)`
 - 实体 E 的多值属性 M 由单独的模式 EM 表示
 	- 模式 EM 具有对应于 E 的主键的属性和对应于多值属性 M 的属性
 		- e.g. instructor 的多值属性 phone_number 由模式 inst_phone 表示：`inst_phone(ID, phone_number)`

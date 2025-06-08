@@ -34,8 +34,8 @@ create table works(
 	ID integer,
 	company_name varchar(20),
 	salary integer,
-	primary key (ID, company_name),
-	foreign key (ID) references employee(ID)
+	primary key (ID),
+	foreign key (ID) references employee(ID),
 	foreign key (company_name) references company(company_name)
 );
 

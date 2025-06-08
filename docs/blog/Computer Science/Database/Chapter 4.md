@@ -72,7 +72,7 @@ from student join takes on student.ID = takes.ID;
 	
 	![](../../../assets/Pasted image 20250310102938.png)
 	
-	可以发现课程 CS-315 对应的 prereq 不存在，以及 CS-437 的课程信息不存在
+	可以发现课程 CS-315 对应的 prereq 不存在，以及 CS-347 的课程信息不存在
 	
 	- 如果我们使用 `course natural left outer join prereq`，这将 prereq 的结果保存下来，没有信息的课程 CS-315 结果设为 NULL：
 	
@@ -234,7 +234,7 @@ create assertion <assertion-name> check <predicate>;
 	    not exists (
 	        select ID from student
 	        where tot_cred <> (
-	            select coalesce(sum(credits), 0)
+	            select sum(credits)
 	            from takes natural join course
 	            where student.ID = takes.ID and grade is not null and grade <> 'F'
 	        )

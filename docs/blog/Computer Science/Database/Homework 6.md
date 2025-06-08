@@ -63,9 +63,9 @@ where nrow.account_number = depositor.account_number;
 
 ```sql
 create function avg_salary(company_name varchar(20))
-	returns integer
+	returns real
 	begin
-		declare avg integer;
+		declare avg real;
 		select avg(salary) into avg
 		from works
 		where works.company_name = company_name;
