@@ -32,7 +32,7 @@ comments: true
 	- 寻道次数 / 平均寻道时间
 	- 读取块数 / 平均读取块时间
 	- 写入块数 / 平均写入块时间
-	- 写入块的时间比读入块的时间更大，因为需要在写入数据之后读一遍为了确保写入正确
+		- 写入块的时间比读入块的时间更大，因为需要在写入数据之后读一遍为了确保写入正确
 - 在估计查询求值计划的成本时，我们用**块传输个数**（Number of Blocks Transfers）和**磁盘寻道次数**（Number of Seeks）这两个因素来衡量。我们用 $t_T,t_S$​ 分别表示传输一个数据块的平均时间和平均块访问时间（磁盘寻道时间 + 旋转时延）。所以，假如某个运算需要传输 $b$ 个数据块和 $S$ 次磁盘寻道，那么所需时间为 $b\times t_T+S\times t_S$
 	- 其中 $t_S$ 和 $t_T$ 取决于数据存储的位置
 - 有几种算法可以通过使用额外的缓冲区空间来减少磁盘 IO
@@ -109,15 +109,15 @@ comments: true
         - 有些 Run 可能在某一趟中既不被读取也不被写入，在这里我们忽略这个特殊情况
     - 总的块传输次数为：$b_R(2\lceil\log⁡_{\lfloor\frac{M}{b_b}−1\rfloor}(\frac{b_r}{M})\rceil+1)$
 - 再计算磁盘寻道成本：
-    - Run 生成时需要为每个趟进行读和写的操作
+    - Run 生成时需要为每个趟进行读和写的操作，共计 $2\lceil\frac{b_r}{M}\rceil$ 次寻道
     - 每趟合并需要分别大约 $\lceil\frac{b_r}{b_b}\rceil$ 次用于读取和写入数据的寻道，即共计 $2\lceil\frac{b_r}{b_b}\rceil$ 次寻道（除了最后一趟）
-    - 总的寻道数为：$2\lceil\frac{b_r}{M}\rceil+\lceil\frac{b_r}{b_b}\rceil(2\lceil\log_{\lfloor\frac{M}{b_b}−1\rfloor}(\frac{b_r}{M})\rceil+1)$
+    - 总的寻道数为：$2\lceil\frac{b_r}{M}\rceil+\lceil\frac{b_r}{b_b}\rceil(2\lceil\log_{\lfloor\frac{M}{b_b}−1\rfloor}(\frac{b_r}{M})\rceil-1)$
 ***
 ## Join Operation
 
 ### Nested-Loop Join
 
-**嵌套循环连接**（Nested-Loop Join）的算法（计算 Theta 连接 $r\Join\theta_s$）如下所示：
+**嵌套循环连接**（Nested-Loop Join）的算法（计算 Theta 连接 $r\Join_\theta s$）如下所示：
 
 ![](../../../assets/Pasted%20image%2020250427111154.png)
 
@@ -213,14 +213,14 @@ comments: true
 
 假如不用递归划分的话，
 
-- 对两个关系 $r,s$ 的划分需要一次读和一次写操作，因此共计 $2(b_r+b_s)$ 次块传输。而构建和探测阶段需要读取每个划分一次，因此需要另外 $b_r+b_s​$ 次块传输。而划分所占据的块数可能略多于 $b_r+b_s$，因此会出现一些内容仅部分占满的数据块。对于每个关系，访问这样的数据块至多会带来 $2n_h$​ 的开销。因而总的块传输为 $3(b_r+b_s)+2n_h$ 次，其中 $4n_h$​ 通常比前一项小很多，可以忽略不计
+- 对两个关系 $r,s$ 的划分需要一次读和一次写操作，因此共计 $2(b_r+b_s)$ 次块传输。而构建和探测阶段需要读取每个划分一次，因此需要另外 $b_r+b_s​$ 次块传输。而划分所占据的块数可能略多于 $b_r+b_s$，因此会出现一些内容仅部分占满的数据块。对于每个关系，访问这样的数据块至多会带来 $2n_h$​ 的开销。因而总的块传输为 $3(b_r+b_s)+4n_h$ 次，其中 $4n_h$​ 通常比前一项小很多，可以忽略不计
 - 假如为输入和输出缓冲区分配了 $b_b$​ 个块，那么划分需要 $2(\lceil\frac{b_r}{b_b}\rceil+\lceil\frac{b_s}{b_b}\rceil)$ 次寻道。而在构建和探测阶段中，对于每个关系的 $n_h$ 个划分，各仅需一次寻道。因此总计 $2(\lceil\frac{b_r}{b_b}\rceil+\lceil\frac{b_s}{b_b}\rceil)+2n_h$​ 次寻道
 
 但假如用到递归划分的话，
 
 - 每一趟划分会将划分的数量减少到原来的 $\lceil\frac{M}{b_b}−1\rceil$，且预计趟数为 $\lceil\log⁡\lfloor\frac{M}{b_b}−1\rfloor\frac{b_s}{M}\rceil$
-- 在每一趟中，$s$ 中的每个块都要被读和写一次，因此在划分 $s$ 时的块传输次数为 $2b_s\lceil\log⁡\lfloor\frac{M}{b_b}−1\rfloor\frac{b_s}{M}\rceil$。划分 $r$ 时所需的块传输次数和划分 $s$ 时的基本一致，因此总的块传输次数为：$2(b_r+b_s)\lceil\log⁡\lfloor\frac{M}{b_b}−1\rfloor\frac{b_s}{M}\rceil+b_r+b_s$。
-- 我们忽略在构建和探测阶段需要的少量寻道，总的寻道次数为 $2(\lceil\frac{b_r}{b_b}\rceil+\lceil\frac{b_s}{b_b}\rceil)\lceil\log⁡\lfloor\frac{M}{b_b}−1\rfloor\frac{b_s}{M}\rceil$
+- 在每一趟中，$s$ 中的每个块都要被读和写一次，因此在划分 $s$ 时的块传输次数为 $2b_s\lceil\log⁡_{\lfloor\frac{M}{b_b}−1\rfloor}\frac{b_s}{M}\rceil$。划分 $r$ 时所需的块传输次数和划分 $s$ 时的基本一致，因此总的块传输次数为：$2(b_r+b_s)\lceil\log⁡_{\lfloor\frac{M}{b_b}−1}\rfloor\frac{b_s}{M}\rceil+b_r+b_s$。
+- 我们忽略在构建和探测阶段需要的少量寻道，总的寻道次数为 $2(\lceil\frac{b_r}{b_b}\rceil+\lceil\frac{b_s}{b_b}\rceil)\lceil\log⁡_{\lfloor\frac{M}{b_b}−1\rfloor}\frac{b_s}{M}\rceil$
 
 如果主存容量足够大，可以放得下整个构建输入的话，那么 $n_h=0$，无需对关系进行划分。此时仅需 $b_r+b_s$ 次块传输和 2 次寻道
 ***
@@ -271,7 +271,7 @@ comments: true
     - 计算 $r⟕_{\theta}s$ 时可以先算 $r\Join_{\theta}s$，将结果临时存放在关系 $q_1$​ 内；然后计算 $r−\prod_R(q_1)$ 获取那些没有参与到 Theta 连接的 $r$ 的元组，对这些元组用 null 值填充后加入到 $q_1$​ 中，得到最终结果
     - 由于 $r⟖_{\theta}s$ 等价于 $s⟕_{\theta}r$，所以计算步骤同上，不再赘述
 - 修改原有的连接算法
-    - 将嵌套循环连接算法进行扩展，用来计算左外连接：对于外层关系中没有和任何内层关系中的元组匹配的元组，用 null 值对其填充后将其写入到输出中。然而该方法很难扩展到全外连接
+    - 将嵌套循环连接算法进行扩展，用来计算左外连接：对于外层关系中没有和任何内层关系中的元组匹配的元组，用 null 值对其填充后将其写入到输出中。
     - 可以通过扩展合并连接和哈希连接来计算外连接
         - 在合并连接算法中，实现外连接所需的成本和实现对应的一般连接的成本基本一致，唯一的区别是结果的规模不同
 ***

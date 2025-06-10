@@ -148,11 +148,11 @@ comments: true
 ***
 ### Selection Size Estimation
 
-对于单条件选择来看，有三种情况：
+对于单条件选择来看，有两种情况：
 
 - $\sigma_{A=V}(r)$
 	- $n_r/V(A,r)$：满足选择条件要求的记录数量
-	- 主要属性的相等条件：估计大小为 1（？）
+	- 若 A 为键：大小为 1
 - $\sigma_{A\leq V}(r)$
 	- 记 $c$ 为符合条件的元组数量
 	- 如果 $\min(A,r)$ 和 $\max(A,r)$ 存在：
@@ -172,7 +172,7 @@ comments: true
 
 - 笛卡尔积 $r\times s$ 包含 $n_r\times n_s$ 个元组，每个元组占据 $s_r+s_s$ 字节
 - 如果 $R\cap S=\phi$，那么 $r\Join s$ 和 $r\times s$ 相同
-- 如果 $R\cap S$ 是 $R$ 的一个键，那么 $s$ 的一个元组最多会跟 $r$ 的一个元组连接
+- 如果 $R\cap S$ 是 $R$ 的一个主键，那么 $s$ 的一个元组最多会跟 $r$ 的一个元组连接
 	- 因此，$\text{The Number of Tuples in }r\Join s\leq n_s$
 	
 	![](../../../assets/Pasted%20image%2020250428192732.png)
@@ -190,7 +190,7 @@ comments: true
 - 集合操作：
 	- 对于交和并在同一关系的选择操作，可以通过等价规则将其转化为单一条件的选择操作的大小估计，例如 $\sigma_{\theta_1}(r)\cup\sigma_{\theta_2}(r)$ 可以被重写为 $\sigma_{\theta_1\lor\theta_2}(r)$
 	- 对于在不同关系的选择操作：
-		- $r\cup s$ 的估计大小为 $r$ 的大小和 $s$ 的大小
+		- $r\cup s$ 的估计大小为 $r$ 的大小与 $s$ 的大小之和
 		- $r\cap s$ 的估计大小为 $r$ 和 $s$ 的大小的最小值
 		- $r-s$ 的估计大小为 $r$ 的大小
 		- 所有的估计大小可能并不准确，但是至少提供了大小的上界
@@ -204,7 +204,7 @@ comments: true
 
 - ​若 A 取特定值​：$V(A, \sigma_{\theta}(r)) = 1$
 - ​若 A 取指定集合中的某个值：$V(A, \sigma_{\theta}(r)) =$ 指定值的数量
-- ​若选择条件 θ 是 A op v 形式（如比较操作符）：估计 $V(A, \sigma_{\theta}(r)) = V(A, r) \times s$，其中 s 是选择条件的选择率
+- ​若选择条件 $\theta$ 是 A op v 形式（如比较操作符）：估计 $V(A, \sigma_{\theta}(r)) = V(A, r) \times s$，其中 s 是选择条件的选择率
 - ​其他所有情况，使用近似估计：$V(A, \sigma_{\theta}(r)) = \min(V(A, r),n_{\sigma_{\theta}(r)})$
 	- 更准确的估计可以通过概率论获得，但这种估计通常效果良好
 - 对投影的不同值的估计较为简单，它们在 $\prod_A(r)$ 中与在 $r$ 中是相同的

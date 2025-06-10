@@ -241,8 +241,8 @@ comments: true
 		
 		由上面的 Example 我们可以看出，外连接有三种形式，其中：
 		
-		- $r$⟖$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})$
-		- $r$⟕$s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))$
+		- $r$⟕$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})$
+		- $r$⟖$s = (r\Join s)\cup\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s))$
 		- $r$⟗$s = (r\Join s)\cup(r-\prod_R(r\Join s)\times\{(\text{null,...,null})\})\cup(\{(\text{null,...,null})\}\times(s-\prod_s(r\Join s)))$
 	
 	=== "Semijoin"

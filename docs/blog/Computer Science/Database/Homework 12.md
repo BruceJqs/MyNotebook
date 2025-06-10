@@ -21,7 +21,7 @@ comments: true
 
 > Suppose that a B+-tree index on (dept_name, building) is available on relation department. What would be the best way to handle the following selection?
 > 
-> $\sigma_{(\text{building}<\text{Watson})\land(\text{budget}<55000)\land(\text{dept\_name}=\text{Music})}(\text{department})$
+> $\sigma_{(\text{building}<\text{Watson})\land(\text{budget}<55000)\land(\text{dept_name}=\text{Music})}(\text{department})$
 > 
 > branch(<u>branch name</u>, branch_city, assets)
 > 

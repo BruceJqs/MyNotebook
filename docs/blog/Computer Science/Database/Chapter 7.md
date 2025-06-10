@@ -122,7 +122,7 @@ comments: true
 ***
 #### Closure of Attribute Sets
 
-给定一组属性 $a$，将 $F$ 下的 $a$ 的闭包（用 $a^+$ 表示）定义为由 $F$ 下的 $a$ 在函数下确定的属性集
+给定一组属性 $\alpha$，将 $F$ 下的 $\alpha$ 的闭包（用 $\alpha^+$ 表示）定义为由 $F$ 下的 $\alpha$ 在函数下确定的属性集
 
 例如，如果 $F=\{A\rightarrow B,B\rightarrow C,C\rightarrow D\}$，那么 $A^+=ABCD,B^+=BCD,C^+=C$
 
@@ -153,7 +153,7 @@ comments: true
 
 	我们有 $R=\{A,B,C\},F=\{A\rightarrow B,B\rightarrow C\}$
 	
-	计算闭包：$A^+=ABC,B^+=BC,C^+=C,(AB)^+=ABC,(AC)^+=ABC,(BC)^+=ABC,(ABC)^+=ABC$
+	计算闭包：$A^+=ABC,B^+=BC,C^+=C,(AB)^+=ABC,(AC)^+=ABC,(BC)^+=BC,(ABC)^+=ABC$
 	
 	$$
 	\begin{aligned}
@@ -174,7 +174,7 @@ comments: true
 
 函数依赖集当中可能会有冗余的一些依赖关系，可以从其他依赖关系推出来，例如在 $\{A\rightarrow B,B\rightarrow C,A\rightarrow C\}$ 中 $A\rightarrow C$ 就是冗余的；也有可能某些依赖关系还可以进行进一步简化，例如在 $\{A\rightarrow B,B\rightarrow C,A\rightarrow CD\}$ 中 $A\rightarrow CD$ 可以简化为 $A\rightarrow D$
 
-我们定义 $F$ 的正则覆盖（Canonical Cover）为 $F$ 的“最小”功能依赖关系集，没有冗余的依赖关系或依赖关系的冗余部分
+我们定义 $F$ 的正则覆盖（Canonical Cover）为 $F$ 的“最小”函数依赖关系集，没有冗余的依赖关系或依赖关系的冗余部分
 
 规范化来说，$F$ 的正则覆盖是一组依赖关系 $F_c$，满足：
 

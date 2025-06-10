@@ -94,9 +94,7 @@ comments: true
 ### Undo and Redo Operations
 
 - 撤销（Undo）日志记录 $<T_i, X, V_1, V_2>$ 将旧值 $V_1$ 写入 $X$
-- 重做（Redo）**日志记录 $<T_i, X, V_1, V_2>$ 将**新值** $V_2$ 写入 $X$
-
-事务的撤销和重做（Undo and Redo of Transactions）
+- 重做（Redo）日志记录 $<T_i, X, V_1, V_2>$ 将新值 $V_2$ 写入 $X$
 
 - undo($T_i$) 将 $T_i$ 更新的所有数据项的值恢复为其旧值，从 $T_i$ 的最后一条日志记录开始向后处理
     - 每次数据项 X 恢复为其旧值 V 时，都会写出一条特殊的日志记录 $<T_i, X, V>$ — 补偿日志（Compensation Log）
@@ -318,15 +316,14 @@ comments: true
 	        * 在操作回滚结束时，不记录 **operation-end** 记录，而是生成一个记录 $<T_i, O_j, \text{operation-abort}>$
 	    * 跳过 $T_i$ 的所有先前日志记录，直到找到记录 $<T_i, O_j, \text{operation-begin}>$
 	3. 如果找到仅重做记录，则忽略它
-	4. 如果找到 $<T_i, O_j, \text{operation-abort}>$ 记录：
-	   H 跳过 $T_i$ 之前的所有日志记录，直到找到 $<T_i, O_j, \text{operation-begin}>$ 记录。
+	4. 如果找到 $<T_i, O_j, \text{operation-abort}>$ 记录：跳过 $T_i$ 之前的所有日志记录，直到找到 $<T_i, O_j, \text{operation-begin}>$ 记录
 	5. 当找到 $<T_i, \text{start}>$ 记录时停止扫描
 	6. 向日志中添加一条 $<T_i, \text{abort}>$ 记录
 
 一些注意事项：
 
-- 只有当数据库在事务回滚时崩溃，才会发生上述情况 3 和 4
-- 像情况 4 那样跳过日志记录对于防止同一操作的多次回滚非常重要
+- 只有当数据库在事务回滚时崩溃，才会发生上述情况 c 和 d
+- 像情况 d 那样跳过日志记录对于防止同一操作的多次回滚非常重要
 
 !!! example "Example"
 

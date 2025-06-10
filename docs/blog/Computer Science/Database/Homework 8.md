@@ -50,21 +50,25 @@ $$
 > Show that the decomposition in Exercise 7.1 is not a dependency-preserving 
 > decomposition.
 
+考虑函数依赖 $CD\rightarrow E$（因为 $CDE$ 没有同时出现在一个模式当中）
+
 对于 $R_1$ 来说，令 $\text{result}=CD,\text{result}\cup((\text{result}\cap R_1)_F^+\cap R_1)=\{C,D\}$
 
-对于 $R_2$ 来说，令 $E\notin\text{result}=CD,\text{result}\cup((\text{result}\cap R_2)_F^+\cap R_1)=\{C,D\}$
+对于 $R_2$ 来说，令 $\text{result}=CD,\text{result}\cup((\text{result}\cap R_2)_F^+\cap R_2)=\{C,D\}$
 
-所以这个分解不是依赖保持分解
+所以 $CD\rightarrow E$ 在 $R_1,R_2$ 中都不满足，因此这个分解不是依赖保持分解
 ***
 ## 7.21
 
 > Give a lossless decomposition into BCNF of schema $R$ of Exercise 7.1. 
 
-首先 E 为超键，那么选 $CD\rightarrow E$
+首先根据 7.1 的结果可以得知 R 的超键有 CD、A 和 E
 
-对于 $\{A,B,C,D\}$ 来说 A/CD 是超键，选 $B\rightarrow D$
+看 F 当中只有 $B\rightarrow D$ 不满足 BCNF，因此分解 R 为 $\{B,D\},\{A,B,C,E\}$
 
-分解为 $\{C,D,E\},\{B,D\},\{A,B,C\}$
+然后看 $\{A,B,C,E\}$ 的超键为 E，函数依赖中 $A\rightarrow BC$ 不满足 BCNF，因此分解为 $\{A,B,C\},\{A,E\}$
+
+最终分解为 $\{A,E\},\{B,D\},\{A,B,C\}$
 ***
 ## 7.22
 

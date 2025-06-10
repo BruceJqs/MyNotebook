@@ -25,7 +25,7 @@ WHERE T.assets > S.assets AND S.branch_city = "Brooklyn"
 > 
  ![](../../../assets/Pasted%20image%2020250427220509.png)
 
-$\prod_{T.\text{branch\_name}}((\prod_{\text{branch\_name,assets}}(\rho_T(\text{branch})))\Join_{T.\text{assets}>S.\text{assets}}(\prod_{\text{assets}}(\sigma_{\text{branch\_city}=\text{Brooklyn}}(\rho_S(\text{branch})))))$
+$\prod_{T.\text{branch_name}}((\prod_{\text{branch_name,assets}}(\rho_T(\text{branch})))\Join_{T.\text{assets}>S.\text{assets}}(\prod_{\text{assets}}(\sigma_{\text{branch_city}=\text{Brooklyn}}(\rho_S(\text{branch})))))$
 
 这个表达式以尽可能少的数据量进行 Theta 连接，通过将连接右侧的操作数限制为仅包含 Brooklyn 的分支来实现。 这将减少连接的结果集的大小，从而提高查询效率。 
 ***
@@ -62,10 +62,10 @@ $$
 
 （c）如果 $r_1$ 和 $r_2$ 没有排序好，且 $b_b=1$，那么有：
 
-- $T\_\text{Sort}(r_i)=b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil+1)$
-- $S\_\text{Sort}(r_i)=2\lceil\frac{b_{r_i}}{M}\rceil+b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil-1)$
+- $T_\text{Sort}(r_i)=b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil+1)$
+- $S_\text{Sort}(r_i)=2\lceil\frac{b_{r_i}}{M}\rceil+b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil-1)$
 
-我们需要 $T\_\text{Sort}(r_1)+T\_\text{Sort}(r_2)+b_{r_1}+b_{r_2}$ 次块转移和 $S\_\text{Sort}(r_1)+S\_\text{Sort}(r_2)$ 次寻道
+我们需要 $T_\text{Sort}(r_1)+T_\text{Sort}(r_2)+b_{r_1}+b_{r_2}$ 次块转移和 $S_\text{Sort}(r_1)+S_\text{Sort}(r_2)$ 次寻道
 
 如果 $r_1$ 和 $r_2$ 已经排序好，且 $b_b=1$，那么需要 $b_{r_1}+b_{r_2}$ 次块转移和 $b_{r_1}+b_{r_2}$ 次寻道
 
