@@ -9941,7 +9941,7 @@
 
 <h1 id="chapter-15-recovery-system">Chapter 15 : Recovery System<a class="headerlink" href="#chapter-15-recovery-system" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 6005 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 14 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 30 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 5991 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 14 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 30 分钟</p>
 </div>
 <h2 id="failure-classification">Failure Classification<a class="headerlink" href="#failure-classification" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250526100643.png" /></p>
@@ -10051,11 +10051,12 @@
 <h3 id="undo-and-redo-operations">Undo and Redo Operations<a class="headerlink" href="#undo-and-redo-operations" title="Permanent link">&para;</a></h3>
 <ul>
 <li>撤销（Undo）日志记录 <span class="arithmatex">\(&lt;T_i, X, V_1, V_2&gt;\)</span> 将旧值 <span class="arithmatex">\(V_1\)</span> 写入 <span class="arithmatex">\(X\)</span></li>
-<li>重做（Redo）<strong>日志记录 <span class="arithmatex">\(&lt;T_i, X, V_1, V_2&gt;\)</span> 将</strong>新值** <span class="arithmatex">\(V_2\)</span> 写入 <span class="arithmatex">\(X\)</span></li>
-</ul>
-<p>事务的撤销和重做（Undo and Redo of Transactions）</p>
+<li>
+<p>重做（Redo）日志记录 <span class="arithmatex">\(&lt;T_i, X, V_1, V_2&gt;\)</span> 将新值 <span class="arithmatex">\(V_2\)</span> 写入 <span class="arithmatex">\(X\)</span></p>
+</li>
+<li>
+<p>undo(<span class="arithmatex">\(T_i\)</span>) 将 <span class="arithmatex">\(T_i\)</span> 更新的所有数据项的值恢复为其旧值，从 <span class="arithmatex">\(T_i\)</span> 的最后一条日志记录开始向后处理</p>
 <ul>
-<li>undo(<span class="arithmatex">\(T_i\)</span>) 将 <span class="arithmatex">\(T_i\)</span> 更新的所有数据项的值恢复为其旧值，从 <span class="arithmatex">\(T_i\)</span> 的最后一条日志记录开始向后处理<ul>
 <li>每次数据项 X 恢复为其旧值 V 时，都会写出一条特殊的日志记录 <span class="arithmatex">\(&lt;T_i, X, V&gt;\)</span> — 补偿日志（Compensation Log）</li>
 <li>当事务的撤销完成时，会写出一条日志记录 <span class="arithmatex">\(&lt;T_i, \text{abort}&gt;\)</span></li>
 </ul>
@@ -10305,8 +10306,7 @@
 </ul>
 </li>
 <li>如果找到仅重做记录，则忽略它</li>
-<li>如果找到 <span class="arithmatex">\(&lt;T_i, O_j, \text{operation-abort}&gt;\)</span> 记录：
-   H 跳过 <span class="arithmatex">\(T_i\)</span> 之前的所有日志记录，直到找到 <span class="arithmatex">\(&lt;T_i, O_j, \text{operation-begin}&gt;\)</span> 记录。</li>
+<li>如果找到 <span class="arithmatex">\(&lt;T_i, O_j, \text{operation-abort}&gt;\)</span> 记录：跳过 <span class="arithmatex">\(T_i\)</span> 之前的所有日志记录，直到找到 <span class="arithmatex">\(&lt;T_i, O_j, \text{operation-begin}&gt;\)</span> 记录</li>
 <li>当找到 <span class="arithmatex">\(&lt;T_i, \text{start}&gt;\)</span> 记录时停止扫描</li>
 <li>向日志中添加一条 <span class="arithmatex">\(&lt;T_i, \text{abort}&gt;\)</span> 记录</li>
 </ol>
@@ -10314,8 +10314,8 @@
 </ul>
 <p>一些注意事项：</p>
 <ul>
-<li>只有当数据库在事务回滚时崩溃，才会发生上述情况 3 和 4</li>
-<li>像情况 4 那样跳过日志记录对于防止同一操作的多次回滚非常重要</li>
+<li>只有当数据库在事务回滚时崩溃，才会发生上述情况 c 和 d</li>
+<li>像情况 d 那样跳过日志记录对于防止同一操作的多次回滚非常重要</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -10648,7 +10648,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年5月31日 13:58:45 CST">2025年5月31日 13:58:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月10日 17:06:55 CST">2025年6月10日 17:06:55</span>
   </span>
 
     

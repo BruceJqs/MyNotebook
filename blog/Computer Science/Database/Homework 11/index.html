@@ -9297,7 +9297,7 @@ following SQL query: </p>
 Justify your choice. </p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250427220509.png" /></p>
 </blockquote>
-<p><span class="arithmatex">\(\prod_{T.\text{branch\_name}}((\prod_{\text{branch\_name,assets}}(\rho_T(\text{branch})))\Join_{T.\text{assets}&gt;S.\text{assets}}(\prod_{\text{assets}}(\sigma_{\text{branch\_city}=\text{Brooklyn}}(\rho_S(\text{branch})))))\)</span></p>
+<p><span class="arithmatex">\(\prod_{T.\text{branch_name}}((\prod_{\text{branch_name,assets}}(\rho_T(\text{branch})))\Join_{T.\text{assets}&gt;S.\text{assets}}(\prod_{\text{assets}}(\sigma_{\text{branch_city}=\text{Brooklyn}}(\rho_S(\text{branch})))))\)</span></p>
 <p>这个表达式以尽可能少的数据量进行 Theta 连接，通过将连接右侧的操作数限制为仅包含 Brooklyn 的分支来实现。 这将减少连接的结果集的大小，从而提高查询效率。 </p>
 <hr />
 <h2 id="153">15.3<a class="headerlink" href="#153" title="Permanent link">&para;</a></h2>
@@ -9325,10 +9325,10 @@ for <span class="arithmatex">\(r_1 \bowtie r_2\)</span>: </p>
 <p>对 <span class="arithmatex">\(r_2\)</span> 需要 <span class="arithmatex">\(\lceil\frac{b_{r_2}}{M-2}\rceil*b_{r_1}+b_{r_2}\)</span> 次块转移和 <span class="arithmatex">\(2*\lceil\frac{b_{r_2}}{M-2}\rceil\)</span> 次寻道</p>
 <p>（c）如果 <span class="arithmatex">\(r_1\)</span> 和 <span class="arithmatex">\(r_2\)</span> 没有排序好，且 <span class="arithmatex">\(b_b=1\)</span>，那么有：</p>
 <ul>
-<li><span class="arithmatex">\(T\_\text{Sort}(r_i)=b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil+1)\)</span></li>
-<li><span class="arithmatex">\(S\_\text{Sort}(r_i)=2\lceil\frac{b_{r_i}}{M}\rceil+b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil-1)\)</span></li>
+<li><span class="arithmatex">\(T_\text{Sort}(r_i)=b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil+1)\)</span></li>
+<li><span class="arithmatex">\(S_\text{Sort}(r_i)=2\lceil\frac{b_{r_i}}{M}\rceil+b_{r_i}(2\lceil\log_{M-1}\frac{b_{r_i}}{M}\rceil-1)\)</span></li>
 </ul>
-<p>我们需要 <span class="arithmatex">\(T\_\text{Sort}(r_1)+T\_\text{Sort}(r_2)+b_{r_1}+b_{r_2}\)</span> 次块转移和 <span class="arithmatex">\(S\_\text{Sort}(r_1)+S\_\text{Sort}(r_2)\)</span> 次寻道</p>
+<p>我们需要 <span class="arithmatex">\(T_\text{Sort}(r_1)+T_\text{Sort}(r_2)+b_{r_1}+b_{r_2}\)</span> 次块转移和 <span class="arithmatex">\(S_\text{Sort}(r_1)+S_\text{Sort}(r_2)\)</span> 次寻道</p>
 <p>如果 <span class="arithmatex">\(r_1\)</span> 和 <span class="arithmatex">\(r_2\)</span> 已经排序好，且 <span class="arithmatex">\(b_b=1\)</span>，那么需要 <span class="arithmatex">\(b_{r_1}+b_{r_2}\)</span> 次块转移和 <span class="arithmatex">\(b_{r_1}+b_{r_2}\)</span> 次寻道</p>
 <p>（d）如果 <span class="arithmatex">\(r_1\)</span> 作为探测输入，<span class="arithmatex">\(r_2\)</span> 作为构建输入，如果使用递归划分，需要 <span class="arithmatex">\(2(b_{r_1}+b_{r_2})\lceil\log_{M-1}\frac{b_{r_2}}{M}\rceil+b_{r_1}+b_{r_2}\)</span> 次磁盘访问和 <span class="arithmatex">\(2(b_{r_1}+b_{r_2})\lceil\log_{M-1}\frac{b_{r_2}}{M}\rceil\)</span> 次寻道</p>
 <p>如果不使用递归划分，那么需要 <span class="arithmatex">\(3(b_{r_1}+b_{r_2})=6900\)</span> 次磁盘访问和 <span class="arithmatex">\(2(b_{r_1}+b_{r_2})=4600\)</span> 次寻道</p>
@@ -9403,7 +9403,7 @@ for <span class="arithmatex">\(r_1 \bowtie r_2\)</span>: </p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月28日 11:53:25 CST">2025年4月28日 11:53:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月10日 17:06:55 CST">2025年6月10日 17:06:55</span>
   </span>
 
     

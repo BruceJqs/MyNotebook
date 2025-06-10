@@ -9654,7 +9654,7 @@
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250407120726.png" /></p>
 <hr />
 <h4 id="closure-of-attribute-sets">Closure of Attribute Sets<a class="headerlink" href="#closure-of-attribute-sets" title="Permanent link">&para;</a></h4>
-<p>给定一组属性 <span class="arithmatex">\(a\)</span>，将 <span class="arithmatex">\(F\)</span> 下的 <span class="arithmatex">\(a\)</span> 的闭包（用 <span class="arithmatex">\(a^+\)</span> 表示）定义为由 <span class="arithmatex">\(F\)</span> 下的 <span class="arithmatex">\(a\)</span> 在函数下确定的属性集</p>
+<p>给定一组属性 <span class="arithmatex">\(\alpha\)</span>，将 <span class="arithmatex">\(F\)</span> 下的 <span class="arithmatex">\(\alpha\)</span> 的闭包（用 <span class="arithmatex">\(\alpha^+\)</span> 表示）定义为由 <span class="arithmatex">\(F\)</span> 下的 <span class="arithmatex">\(\alpha\)</span> 在函数下确定的属性集</p>
 <p>例如，如果 <span class="arithmatex">\(F=\{A\rightarrow B,B\rightarrow C,C\rightarrow D\}\)</span>，那么 <span class="arithmatex">\(A^+=ABCD,B^+=BCD,C^+=C\)</span></p>
 <p>我们可以用如下思路来计算 <span class="arithmatex">\(\alpha\)</span> 的闭包：</p>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250407120645.png" /></p>
@@ -9680,7 +9680,7 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>我们有 <span class="arithmatex">\(R=\{A,B,C\},F=\{A\rightarrow B,B\rightarrow C\}\)</span></p>
-<p>计算闭包：<span class="arithmatex">\(A^+=ABC,B^+=BC,C^+=C,(AB)^+=ABC,(AC)^+=ABC,(BC)^+=ABC,(ABC)^+=ABC\)</span></p>
+<p>计算闭包：<span class="arithmatex">\(A^+=ABC,B^+=BC,C^+=C,(AB)^+=ABC,(AC)^+=ABC,(BC)^+=BC,(ABC)^+=ABC\)</span></p>
 <div class="arithmatex">\[
 \begin{aligned}
 F\Leftrightarrow\{&amp;A\rightarrow ABC, B\rightarrow BC, C\rightarrow C, AB\rightarrow ABC, AC\rightarrow ABC, BC\rightarrow BC, ABC\rightarrow ABC\}\\
@@ -9698,7 +9698,7 @@ F\Leftrightarrow\{&amp;A\rightarrow ABC, B\rightarrow BC, C\rightarrow C, AB\rig
 <hr />
 <h3 id="canonical-cover">Canonical Cover<a class="headerlink" href="#canonical-cover" title="Permanent link">&para;</a></h3>
 <p>函数依赖集当中可能会有冗余的一些依赖关系，可以从其他依赖关系推出来，例如在 <span class="arithmatex">\(\{A\rightarrow B,B\rightarrow C,A\rightarrow C\}\)</span> 中 <span class="arithmatex">\(A\rightarrow C\)</span> 就是冗余的；也有可能某些依赖关系还可以进行进一步简化，例如在 <span class="arithmatex">\(\{A\rightarrow B,B\rightarrow C,A\rightarrow CD\}\)</span> 中 <span class="arithmatex">\(A\rightarrow CD\)</span> 可以简化为 <span class="arithmatex">\(A\rightarrow D\)</span></p>
-<p>我们定义 <span class="arithmatex">\(F\)</span> 的正则覆盖（Canonical Cover）为 <span class="arithmatex">\(F\)</span> 的“最小”功能依赖关系集，没有冗余的依赖关系或依赖关系的冗余部分</p>
+<p>我们定义 <span class="arithmatex">\(F\)</span> 的正则覆盖（Canonical Cover）为 <span class="arithmatex">\(F\)</span> 的“最小”函数依赖关系集，没有冗余的依赖关系或依赖关系的冗余部分</p>
 <p>规范化来说，<span class="arithmatex">\(F\)</span> 的正则覆盖是一组依赖关系 <span class="arithmatex">\(F_c\)</span>，满足：</p>
 <ul>
 <li><span class="arithmatex">\(F\)</span> 逻辑蕴含 <span class="arithmatex">\(F_c\)</span> 中的所有依赖项</li>
@@ -9875,7 +9875,7 @@ F\Leftrightarrow\{&amp;A\rightarrow ABC, B\rightarrow BC, C\rightarrow C, AB\rig
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月7日 14:51:23 CST">2025年4月7日 14:51:23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月10日 17:06:55 CST">2025年6月10日 17:06:55</span>
   </span>
 
     

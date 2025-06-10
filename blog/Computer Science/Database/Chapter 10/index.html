@@ -9669,7 +9669,7 @@
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">select</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">instructor</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">where</span><span class="w"> </span><span class="n">dept_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Finance&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80000</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
-<p>我们创建复合搜索键 <span class="arithmatex">\((\text{dept\_name},\text{salary})\)</span>，并在其基础上建立起有序索引（比如 B+ 树索引），从而实现高效的查找</p>
+<p>我们创建复合搜索键 <span class="arithmatex">\((\text{dept_name},\text{salary})\)</span>，并在其基础上建立起有序索引（比如 B+ 树索引），从而实现高效的查找</p>
 <p>实际上，上述复合搜索键还适用一个为相等条件，一个为范围条件的查询，以及单属性的查询，比如：</p>
 <div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -9702,7 +9702,7 @@
 <p>但拷贝树需要不小的成本，我们有如下办法：</p>
 <ul>
 <li>使用多级树，其中树 <span class="arithmatex">\(L_{i+1}\)</span>​ 的最大容量是 <span class="arithmatex">\(L_i\)</span> 的 <span class="arithmatex">\(k\)</span> 倍，因此每个记录之多被写入 <span class="arithmatex">\(k\)</span> 次。级数和 <span class="arithmatex">\(\log_⁡k(I/M)\)</span> 成正比，其中 <span class="arithmatex">\(I\)</span> 是总项数，<span class="arithmatex">\(M\)</span> 是 <span class="arithmatex">\(L_0\)</span>​ 的项数</li>
-<li>除了 <span class="arithmatex">\(L_0\)</span>​ 外，每级树都有至多 <span class="arithmatex">\(b\)</span> 棵树（原来只有 1 棵树），这种变体称为<strong>按步合并索引</strong>（Stepped-Merge Index），它能够显著降低插入成本，但增加了查询成本</li>
+<li>除了 <span class="arithmatex">\(L_0\)</span>​ 外，每级树都有至多 <span class="arithmatex">\(k\)</span> 棵树（原来只有 1 棵树），这种变体称为<strong>按步合并索引</strong>（Stepped-Merge Index），它能够显著降低插入成本，但增加了查询成本</li>
 </ul>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250421120037.png" /></p>
 </li>
@@ -9814,7 +9814,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月21日 12:06:08 CST">2025年4月21日 12:06:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月10日 17:06:55 CST">2025年6月10日 17:06:55</span>
   </span>
 
     
