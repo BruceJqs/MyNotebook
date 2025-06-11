@@ -268,6 +268,8 @@ nav:
       - Homeworks:
         - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
         - "Homework 02": blog/ACEE/Information Theory/Homework 2.md
+    - 人工智能前沿｜AI Frontiers:
+      - blog/ACEE/AI/Final Review.md
   - CTF:
     - blog/CTF/index.md
     - 2023-2024 暑短学期: 
