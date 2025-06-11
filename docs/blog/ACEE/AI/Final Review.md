@@ -51,6 +51,7 @@ comments: true
 | 平方损失函数        | $\text{Loss}(y_i,f(x_i))=(y_i-f(x_i))^2$                                     |
 | 绝对损失函数        | $\text{Loss}(y_i,f(x_i))=\|y_i-f(x_i)\|$                                     |
 | 对数损失函数/对数似然函数 | $\text{Loss}(y_i,P(y_i\|x_i))=-\log P((y_i\|x_i))$                           |
+
 ***
 ### 经验风险与期望风险
 
