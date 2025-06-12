@@ -9463,16 +9463,109 @@
 
 <h1 id="homework-03">Homework 03<a class="headerlink" href="#homework-03" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 32 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 829 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <h2 id="41">4.1<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../../../assets/Pasted%20image%2020250612135709.png" /></p>
 <p>（a）信道概率转移矩阵为 <span class="arithmatex">\(P=\begin{pmatrix}1-\epsilon-\delta &amp; \delta &amp; \epsilon\\\epsilon &amp; \delta &amp; 1-\epsilon-\delta\end{pmatrix}\)</span></p>
+<p>该信道为准对称信道，取 <span class="arithmatex">\(P(X=0)=P(X=1)=0.5\)</span> 时达到信道容量，此时：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+P(Y=0)&amp;=0.5-0.5\delta\\
+P(Y=1)&amp;=\delta\\
+P(Y=2)&amp;=0.5-0.5\delta
+\end{aligned}
+\]</div>
+<p>信道容量为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+C&amp;=I(X=0;Y)=I(X=1;Y)\\
+&amp;=\sum\limits_{j=0}^2p(j|0)\log\frac{p(j|0)}{p(j)}\\
+&amp;=(1-\epsilon-\delta)\log\frac{1-\epsilon-\delta}{0.5-0.5\delta}+\delta\log\frac{\delta}{\delta}+\epsilon\log\frac{\epsilon}{0.5-0.5\delta}\\
+&amp;=(1-\epsilon-\delta)\log(1-\epsilon-\delta)+\epsilon\log\epsilon-(1-\delta)\log(0.5-0.5\delta)
+\end{aligned}
+\]</div>
+<p>（b）信道概率转移矩阵为 <span class="arithmatex">\(P=\begin{pmatrix}1 &amp; 0 &amp; 0\\0.5 &amp; 0.25 &amp; 0.25\\0 &amp; 0.5 &amp; 0.5\end{pmatrix}\)</span></p>
+<p>当 <span class="arithmatex">\(P(X=0)=P(X=2)=0.5,P(X=1)=0\)</span> 时，<span class="arithmatex">\(P(Y=0)=0.5,P(Y=1)=P(Y=2)=0.25\)</span>，有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+I(X=0;Y)&amp;=\sum\limits_{j=0}^2 p(j|0)\log\frac{p(j|0)}{p(j)}=1\\
+I(X=2;Y)&amp;=\sum\limits_{j=0}^2 p(j|2)\log\frac{p(j|2)}{p(j)}=1\\
+I(X=1;Y)&amp;=0\leq 1
+\end{aligned}
+\]</div>
+<p>因此信道容量 <span class="arithmatex">\(C=1\)</span></p>
+<p>（c）信道概率转移矩阵为 <span class="arithmatex">\(P=\begin{pmatrix}1-\epsilon &amp; \epsilon &amp; 0\\0 &amp; 1-\epsilon &amp; \epsilon\\\epsilon &amp; 0 &amp; 1-\epsilon\end{pmatrix}\)</span></p>
+<p>这是一个对称信道，因此当输入为均匀分布时达到信道容量，<span class="arithmatex">\(C=(1-\epsilon)\log 3(1-\epsilon)+\epsilon\log 3\epsilon=\log 3+\epsilon\log\epsilon+(1-\epsilon)\log(1-\epsilon)\)</span></p>
+<p>（d）信道概率转移矩阵为 <span class="arithmatex">\(P=\begin{pmatrix}\frac{3}{4} &amp; \frac{1}{4} &amp; 0\\\frac{1}{3} &amp; \frac{1}{3} &amp; \frac{1}{3}\\0 &amp; \frac{1}{4} &amp; \frac{3}{4}\end{pmatrix}\)</span></p>
+<p>当 <span class="arithmatex">\(P(X=0)=P(X=2)=0.5,P(X=1)=0\)</span> 时，<span class="arithmatex">\(P(Y=1)=\frac{1}{4},P(Y=0)=P(Y=2)=\frac{3}{8}\)</span>，有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+I(X=0;Y)&amp;=\sum\limits_{j=0}^2 p(j|0)\log\frac{p(j|0)}{p(j)}=\frac{3}{4}\\
+I(X=2;Y)&amp;=\sum\limits_{j=0}^2 p(j|2)\log\frac{p(j|2)}{p(j)}=\frac{3}{4}\\
+I(X=1;Y)&amp;=\sum\limits_{j=0}^2 p(j|1)\log\frac{p(j|1)}{p(j)}=\frac{2}{3}\log\frac{8}{9}+\frac{1}{3}\log\frac{4}{3}\leq\frac{3}{4}
+\end{aligned}
+\]</div>
+<p>因此信道容量 <span class="arithmatex">\(C=\frac{3}{4}\)</span></p>
+<p>（e）信道概率转移矩阵为 <span class="arithmatex">\(P=\begin{pmatrix}\frac{1}{3} &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3}\\0 &amp; \frac{1}{3} &amp; \frac{1}{3} &amp; \frac{1}{3}\\\frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}\end{pmatrix}\)</span></p>
+<p>这是一个准对称信道，取 <span class="arithmatex">\(P(X=0)=P(X=1)=P(X=2)=\frac{1}{3}\)</span> 时达到信道容量，此时 <span class="arithmatex">\(P(Y=0)=P(Y=1)=P(Y=2)=\frac{2}{9},P(Y=3)=\frac{1}{3}\)</span></p>
+<p>信道容量为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+C=I(X=0;Y)=I(X=1;Y)=I(X=2;Y)&amp;=\sum\limits_{j=0}^3 p(j|0)\log\frac{p(j|0)}{p(j)}\\
+&amp;=2\times\frac{1}{3}\log\frac{3}{2}=\frac{2}{3}\log\frac{3}{2}
+\end{aligned}
+\]</div>
+<p>（f）信道概率转移矩阵为 <span class="arithmatex">\(P=\begin{pmatrix}1-\epsilon &amp; \epsilon\\\delta &amp; 1-\delta\end{pmatrix}\)</span></p>
+<p>转移矩阵可逆，设 <span class="arithmatex">\(P(X=0)=p,P(X=1)=1-p,0&lt;p&lt;1,\alpha=\begin{bmatrix}-H(\epsilon)\\-H(\delta)\end{bmatrix}\)</span></p>
+<p>解方程 <span class="arithmatex">\(P\beta=\alpha\)</span>，得到 <span class="arithmatex">\(\beta=\begin{bmatrix}\frac{\epsilon H(\delta)-(1-\delta)H(\epsilon)}{1-\epsilon-\delta}\\\frac{\delta H(\epsilon)-(1-\epsilon)H(\delta)}{1-\epsilon-\delta}\end{bmatrix}\)</span></p>
+<div class="arithmatex">\[
+\therefore C=\log[2^{\frac{\epsilon H(\delta)-(1-\delta)H(\epsilon)}{1-\epsilon-\delta}}+2^{\frac{\delta H(\epsilon)-(1-\epsilon)H(\delta)}{1-\epsilon-\delta}}]
+\]</div>
 <hr />
 <h2 id="42">4.2<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250612165206.png" /></p>
+<p>信道可视为一个无噪信道 <span class="arithmatex">\(C_1\)</span> 和一个二元对称信道 <span class="arithmatex">\(C_2\)</span> 的和信道</p>
+<p>有 <span class="arithmatex">\(C_1=0,C_2=1-H(\epsilon)\)</span>,则总信道为 <span class="arithmatex">\(C=\log[1+2^{1-H(\epsilon)}]\)</span></p>
+<hr />
 <h2 id="49">4.9<a class="headerlink" href="#49" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250612165832.png" /></p>
+<p>该信道是对称信道，取 <span class="arithmatex">\(P(X=0)=P(X=1)=P(X=2)=P(X=3)=\frac{1}{4}\)</span></p>
+<p>信道容量为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+C&amp;=I(X=0;Y)=I(X=1;Y)=I(X=2;Y)=I(X=3;Y)\\
+&amp;=\sum\limits_{j=0}^3 p(j|0)\log\frac{p(j|0)}{p(j)}\\
+&amp;=2-H(p)
+\end{aligned}
+\]</div>
+<hr />
 <h2 id="413">4.13<a class="headerlink" href="#413" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250612170148.png" />
+（a） <span class="arithmatex">\(C=\max\limits_{f(x)}I(X;Y)=\max\limits_{f(x)}[H(Y)-H(Y|X)]\)</span></p>
+<p>因为 <span class="arithmatex">\(Y=(X+Z)\text{ mod }2\pi\)</span>，当 <span class="arithmatex">\(X\)</span> 确定时 <span class="arithmatex">\(H(Y|X)\)</span> 仅由噪声 <span class="arithmatex">\(Z\)</span> 确定，即 <span class="arithmatex">\(H(Y|X)=H(Z\text{ mod }2\pi)\)</span></p>
+<p>对于 <span class="arithmatex">\(H(Y)\)</span> 来说，当 <span class="arithmatex">\(Y\)</span> 为均匀分布时最大， <span class="arithmatex">\(H(Y)_{\max}=\log 2\pi\)</span></p>
+<p>当 <span class="arithmatex">\(a&gt;\pi\)</span> 时，噪声是均匀的，因此 <span class="arithmatex">\(H(Y|X)=\log 2\pi,C=0\)</span></p>
+<p>（b）当 <span class="arithmatex">\(a\leq\pi\)</span> 时，噪声也是均匀的，因此 <span class="arithmatex">\(H(Y|X)=\log 2a,C=\log(\frac{\pi}{a})\)</span></p>
+<hr />
 <h2 id="414">4.14<a class="headerlink" href="#414" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../../../../assets/Pasted%20image%2020250612170535.png" /></p>
+<p>传输每比特的平均能量为 <span class="arithmatex">\(\epsilon_b=\frac{P}{R}\)</span></p>
+<p>由容量公式可得 <span class="arithmatex">\(\eta=\frac{R}{W}=\log(1+\frac{\epsilon_bR}{N_0W})\)</span></p>
+<p>所以在频谱效率为 <span class="arithmatex">\(\eta\)</span> 时，<span class="arithmatex">\(\epsilon_b^*(\eta)=\frac{N_0}{\eta}(2^{\eta}-1)\)</span></p>
+<p>由于是 <span class="arithmatex">\(\eta\)</span> 的严格单调增函数，所以传输 1 比特的最小能量为 <span class="arithmatex">\(\epsilon_b^*(0)=\lim\limits_{R\rightarrow 0}\epsilon_b^*(\eta)=N_0\ln 2=0.693N_0\)</span></p>
+<p>设用 <span class="arithmatex">\(T_b\)</span> 时间传送 1 bit 信息，由 Shannon 公式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+C_{T_b}=T_b\cdot W\log(1+\frac{P}{N_0W})=1\\
+\Rightarrow T_bW=\frac{1}{\log(1+\frac{P}{N_0W})}
+\end{aligned}
+\]</div>
+<p>要求 <span class="arithmatex">\(\frac{P}{N_0W}&gt;4000\)</span>，那么有 <span class="arithmatex">\(\epsilon_b=PT_b&gt;4000N_0WT_b=\frac{4000N_0}{\log(1+\frac{P}{N_0W})}\)</span></p>
+<p>因此：</p>
+<div class="arithmatex">\[
+\frac{\epsilon_b}{\epsilon_{\min}}\geq\frac{4000N_0}{0.693N_0\times\log 4001}=482
+\]</div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -9542,7 +9635,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月12日 14:10:55 CST">2025年6月12日 14:10:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月12日 18:41:18 CST">2025年6月12日 18:41:18</span>
   </span>
 
     
