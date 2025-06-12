@@ -31,10 +31,12 @@ comments: true
 	- [Chapter 07 : 信道模型](Chapter%207/)
 	- [Chapter 08 : 离散无记忆信道的容量定理](Chapter%208/)
 	- [Chapter 09 : 离散无记忆信道的编码定理](Chapter%209/)
-- Part 04 - 信息的有损压缩
-	- 
+	- [Chapter 10 : 加性高斯噪声（AWGN）信道](Chapter%2010/)
+
+Part 04 不考就懒得记了……
 
 ### Homework
 
 - [Homework 01](Homework%201/)
 - [Homework 02](Homework%202/)
+- [Homework 03](Homework%203/)

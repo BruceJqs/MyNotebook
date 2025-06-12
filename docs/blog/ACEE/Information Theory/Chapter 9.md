@@ -238,6 +238,43 @@ $P(E|i=1)=P\{\overline{E_1}\cup E_2\cup\cdots\cup E_{2^{nR}}\}=P(\overline{E_1})
 
 ![](../../../assets/Pasted%20image%2020250525103403.png)
 
+- 信源、信道分离编码：$H(W)<R_s<R_c<C\Rightarrow P_e^{(n)}\rightarrow 0$
+- 信源、信道联合编码：在有限集上取值的信源 $\mathcal{V}$ 的熵速率为 $H(\mathcal{V})$，若 $H(\mathcal{V})<C$，则存在一个信源信道联合编码，使得 $P_e^{(n)}\rightarrow 0$；反之，若 $H(\mathcal{V})>C$，则不可能以任意小的错误概率传送信源
+
+!!! note "信源信道联合编码定理的证明"
+
+	=== "正定理"
+	
+		$H(\mathcal{V})<C\Rightarrow\exists\epsilon,H(\mathcal{V})+\epsilon<C$
+		
+		该源的典型列集合 $|A_{\epsilon}^{(n)}|<2^{n(H(\mathcal)+\epsilon)}<2^{nC}$
+		
+		所以可用不大于 $2^{nC}$ 个不同的码字表达典型列集合
+		
+		此时编码速率小于信道容量，故该码率可达
+		
+		对非典型列不予编码，由此引起的差错不多于 $\epsilon$
+	
+	=== "逆定理"
+	
+		反之，设信源信道联合编码为 $V^n\rightarrow X^n\rightarrow Y^n\rightarrow\hat{V}^n$
+		
+		则 $H(V^n|\hat{V}^n)\leq 1+p_e^{(n)}\log|\mathcal{V}^n|=1+np_e^{(n)}\log|\mathcal{V}|$
+		
+		$$
+		\begin{aligned}
+		H(\mathcal{V})&\leq\frac{H(V_1V_2\cdots V_n)}{n}=\frac{H(V^n)}{n}=\frac{1}{n}H(V^n|\hat{V}^n)+\frac{1}{n}I(V^n;\hat{V}^n)\\
+		&\leq\frac{1}{n}(1+np_e^{(n)}\log|\mathcal{V}|)+\frac{1}{n}I(X^n;Y^n)\\
+		&\leq\frac{1}{n}+p_e^{(n)}\log|\mathcal{V}|+C
+		\end{aligned}
+		$$
+		
+		若要求 $P_e^{(n)}\rightarrow 0$，则 $H(\mathcal{V})<C$
+
+- 只要 $H < C$，总可以找到可行的信源信道联合编码；也可以分别构造最优的信源编码和信道编码，使信息传输可达
+- 信源信道联合编码不能使得可行速率极限增加，但可以简化编码
+
+
 
 
 

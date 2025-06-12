@@ -265,9 +265,11 @@ nav:
           - "Chapter 07: 信道模型": blog/ACEE/Information Theory/Chapter 7.md
           - "Chapter 08: 离散无记忆信道的容量定理": blog/ACEE/Information Theory/Chapter 8.md
           - "Chapter 09: 离散无记忆信道的编码原理": blog/ACEE/Information Theory/Chapter 9.md
+          - "Chapter 10: 加性高斯噪声（AWGN）信道": blog/ACEE/Information Theory/Chapter 10.md
       - Homeworks:
         - "Homework 01": blog/ACEE/Information Theory/Homework 1.md
         - "Homework 02": blog/ACEE/Information Theory/Homework 2.md
+        - "Homework 03": blog/ACEE/Information Theory/Homework 3.md
     - 人工智能前沿｜AI Frontiers:
       - blog/ACEE/AI/Final Review.md
   - CTF:
