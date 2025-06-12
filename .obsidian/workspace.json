@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 7.md",
+                "file": "docs/blog/ACEE/Information Theory/Chapter 10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 7"
+              "title": "Chapter 10"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 10.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 10"
+              "title": "Homework 3"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 10.md",
+                "file": "docs/blog/ACEE/Information Theory/Homework 3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 10"
+              "title": "Outline of Homework 3"
             }
           },
           {
@@ -193,24 +193,24 @@
   },
   "active": "840939fa2f4ffc3a",
   "lastOpenFiles": [
-    "docs/blog/ACEE/Information Theory/index.md",
+    "docs/blog/ACEE/Information Theory/Chapter 10.md",
     "docs/blog/ACEE/Information Theory/Homework 3.md",
     "docs/blog/ACEE/Information Theory/Chapter 7.md",
+    "docs/assets/Pasted image 20250612170535.png",
+    "docs/assets/Pasted image 20250612170148.png",
+    "docs/assets/Pasted image 20250612165832.png",
+    "docs/assets/Pasted image 20250612165206.png",
+    "docs/blog/ACEE/Information Theory/index.md",
     "docs/blog/ACEE/Information Theory/Chapter 8.md",
     "docs/assets/Pasted image 20250612135709.png",
     "docs/blog/ACEE/Information Theory/Homework 2.md",
-    "docs/blog/ACEE/Information Theory/Chapter 10.md",
     "docs/assets/Pasted image 20250612133547.png",
     "docs/assets/Pasted image 20250612123201.png",
     "docs/assets/Pasted image 20250612112451.png",
     "docs/assets/Pasted image 20250612111503.png",
     "docs/assets/Pasted image 20250612110121.png",
-    "docs/assets/Pasted image 20250612105930.png",
     "docs/blog/ACEE/Information Theory/Chapter 9.md",
     "docs/blog/ACEE/AI/Final Review.md",
-    "docs/assets/Pasted image 20250611202822.png",
-    "docs/assets/Pasted image 20250611201653.png",
-    "docs/assets/Pasted image 20250611191814.png",
     "docs/blog/ACEE/Information Theory/Chapter 1.md",
     "docs/blog/Computer Science/Database/Chapter 15.md",
     "docs/blog/ACEE/AI",
@@ -229,7 +229,6 @@
     "docs/blog/Computer Science/Database/Homework 8.md",
     "docs/blog/Computer Science/Database/Chapter 7.md",
     "docs/blog/Computer Science/Database/Homework 6.md",
-    "docs/blog/Computer Science/Database/Homework 5.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Knowledge/Network",
