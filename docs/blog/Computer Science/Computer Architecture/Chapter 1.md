@@ -187,7 +187,7 @@ $$
 	- 利用数据级并行
 	- 每个处理器都有数据存储器，但是只有一个指令存储器和一个控制处理器
 - 多指令流单数据流（Multiple Instruction Stream, Single Data Stream, MISD）
-	- 难以利用数据级并行，商业上该类型的处理器
+	- 难以利用数据级并行
 - 多指令流多数据流（Multiple Instruction Stream, Multiple Data Stream, MIMD）
 	- 每个处理器获取自己的指令并对自己的数据进行操作
 	- 利用任务级并行

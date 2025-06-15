@@ -30,7 +30,7 @@ comments: true
 
 如果一个平稳信源发出长度为 $n$ 的序列 $X_1X_2...X_n$，令 $n$ 维矢量 $\pmb{X}=\{X_1,X_2,...,X_n\}$，则 $H(\pmb{X})=H(X_1,X_2,...X_n)=-\sum p(x_1,x_2,...,x_n)\log p(x_1,x_2,...,x_n)$，$H(\pmb{X})$ 随 $n$ 增长而增长，趋向无穷大
 
-- 平均每符号熵：$H_N(\pmb{X})\stackrel{\Delta}{=} \frac{1}{N}H(\pmb{X})=\frac{1}{N}(X_1X_2...X_N)$
+- 平均每符号熵：$H_N(\pmb{X})\stackrel{\Delta}{=} \frac{1}{N}H(\pmb{X})=\frac{1}{N}H(X_1X_2...X_N)$
 - 熵速率：$H_{\infty}(\pmb{X})=\lim\limits_{N\rightarrow\infty}H_N(\pmb{X})$
 - 平均条件熵：$H(X_N|X_{N-1}X_{N-2}...X_1)$
 
@@ -108,7 +108,7 @@ comments: true
 $$
 \begin{aligned}
 H_{\infty}(\pmb{X})&=\lim\limits_{N\rightarrow\infty}H_N(\pmb{X})=\lim\limits_{N\rightarrow\infty}H(X_N|X_{N-1}X_{N-2}...X_1)\\
-H_{\infty}(\pmb{X})&\leq H(X_N|X_{N-1}X_{N-2}...X_1)\leq ...\leq H(X_2|X_1)\leq H(X_2)\leq K\\
+H_{\infty}(\pmb{X})&\leq H(X_N|X_{N-1}X_{N-2}...X_1)\leq ...\leq H(X_2|X_1)\leq H(X_2)\leq\log K\\
 \end{aligned}
 $$
 

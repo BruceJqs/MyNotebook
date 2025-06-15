@@ -186,11 +186,11 @@ $$
 \begin{aligned}
 H(Y,Z|X)&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j,z_k|x_i)\\
 &=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)p(z_k|x_i,y_j)\\
-&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)+\sum_{i,j,k}p(x_i,y_j,z_k)\log p(z_k|x_i,y_j)\\
-&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)+\sum_{i,j,k}p(x_i,y_j)p(z_k|x_i,y_j)\log p(z_k|x_i,y_j)\\
-&\leq-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)+\sum_{i,j,k}p(x_i,y_j)p(z_k|x_i,y_j)\log p(z_k|x_i)\\
-&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)+\sum_{i,j,k}p(x_i,y_j,z_k)\log p(z_k|x_i)\\
-&=-\sum_{i,j}p(x_i,y_j)\log p(y_j|x_i)+\sum_{i,k}p(x_i,z_k)\log p(z_k|x_i)\\
+&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(z_k|x_i,y_j)\\
+&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)-\sum_{i,j,k}p(x_i,y_j)p(z_k|x_i,y_j)\log p(z_k|x_i,y_j)\\
+&\leq-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)-\sum_{i,j,k}p(x_i,y_j)p(z_k|x_i,y_j)\log p(z_k|x_i)\\
+&=-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(y_j|x_i)-\sum_{i,j,k}p(x_i,y_j,z_k)\log p(z_k|x_i)\\
+&=-\sum_{i,j}p(x_i,y_j)\log p(y_j|x_i)-\sum_{i,k}p(x_i,z_k)\log p(z_k|x_i)\\
 &=H(Y|X)+H(Z|X)
 \end{aligned}
 $$

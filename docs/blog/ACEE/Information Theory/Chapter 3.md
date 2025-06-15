@@ -105,7 +105,7 @@ $$
 	\begin{aligned}
 	J(p(x))&\stackrel{\Delta}{=}H_C(X)-\lambda\int_{-M}^Mp(x)dx\\
 	&=-\int_{-M}^Mp(x)\ln p(x)dx-\lambda\int_{-M}^Mp(x)dx\\
-	&=-\int_{-M}^Mp(x)\ln (e^{-\lambda}p(x))dx\\
+	&=-\int_{-M}^Mp(x)\ln (e^{\lambda}p(x))dx\\
 	&\leq-\int_{-M}^Mp(x)(\frac{1}{e^{\lambda}p(x)}-1)dx\\
 	&=\frac{2M}{e^{\lambda}}-1
 	\end{aligned}

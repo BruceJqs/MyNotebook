@@ -251,18 +251,18 @@ $$
 
 !!! example "两个信道的组合"
 
-	=== "Example 01"
+	假设我们有如下两个信道：
 	
 		![](../../../assets/Pasted%20image%2020250505105054.png)
 	
-	=== "Example 02"
+	=== "积信道"
 	
 		![](../../../assets/Pasted%20image%2020250505105113.png)
 	
-	=== "Example 03"
+	=== "和信道"
 	
 		![](../../../assets/Pasted%20image%2020250505105132.png)
 	
-	=== "Example 04"
+	=== "级联信道"
 	
 		![](../../../assets/Pasted%20image%2020250505105151.png)

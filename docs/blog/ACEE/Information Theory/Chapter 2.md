@@ -498,7 +498,7 @@ $$
 定义在相同字符表 $\{0,1,...,K-1\}$ 上的两个随机变量 $X$ 和 $\hat{X}$，其中 $\hat{X}$ 是对 $X$ 的某种估计，估计错误概率定义为：
 
 $$
-P_e=\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}\text{Pr}\{X=k,\hat{X}=j\}
+P_E=\sum\limits_{k=0}^{K-1}\sum\limits_{j=0,j\neq k}^{K-1}\text{Pr}\{X=k,\hat{X}=j\}
 $$
 
 则 $\hat{X}$ 已知条件下 $X$ 的疑义度 $H(X|\hat{X})$ 满足下述不等式：

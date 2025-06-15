@@ -330,7 +330,7 @@ $$
 		
 		=== "Answer 3"
 		
-			- 每条指令平均内存停顿时间为 $(1.5\times\frac{40}{1000})\times 10+(1.5\times\frac{20}{1000}\times 200=6.6$ 个时钟周期
+			- 每条指令平均内存停顿时间为 $(1.5\times\frac{40}{1000})\times 10+(1.5\times\frac{20}{1000}\times 200)=6.6$ 个时钟周期
 ***
 #### Prioritize Read Misses Over Writes
 
