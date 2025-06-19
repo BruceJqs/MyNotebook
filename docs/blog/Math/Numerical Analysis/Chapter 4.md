@@ -322,8 +322,7 @@ $$
 	\int_a^{\frac{a+b}{2}}f(x)dx=S(a,\frac{a+b}{2})&+\frac{(\frac{h}{2})^5}{90}f^{(4)}(\xi_1)\\
 	\int_{\frac{a+b}{2}}^bf(x)dx=S(\frac{a+b}{2},b)&+\frac{(\frac{h}{2})^5}{90}f^{(4)}(\xi_2)\\
 	\therefore\int_a^bf(x)dx=S(a,\frac{a+b}{2})&+S(\frac{a+b}{2},b)+\frac{1}{16}\times\frac{h^5}{90}f^{(4)}(\eta)\\
-	|\int_a^bf(x)dx-S(a,\frac{a+b}{2})-S(\frac{a+b}{2},b)|&\approx\frac{1}{15}|S(a,b)-S(a,\frac{a+b}{2})-S(\frac{a+b}{2},b)|\\
-	&<\epsilon
+	|\int_a^bf(x)dx-S(a,\frac{a+b}{2})&-S(\frac{a+b}{2},b)|\\\approx\frac{1}{15}|S(a,b)-S(a,\frac{a+b}{2})&-S(\frac{a+b}{2},b)|<\epsilon
 	\end{aligned}
 	$$
 	

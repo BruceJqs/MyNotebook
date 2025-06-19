@@ -251,8 +251,9 @@ $$
 		$$
 		\begin{aligned}
 		\varphi_0(x)&=1 \Rightarrow a_0=\frac{(\varphi_0,y)}{(\varphi_0,\varphi_0)}=\frac{29}{2} \quad B_1=\frac{(x\varphi_0,\varphi_0)}{(\varphi_0,\varphi_0)}=\frac{5}{2}\\
-		\varphi_1(x)&=x-B_1=x-\frac{5}{2}\Rightarrow a_1=\frac{(\varphi_1,y)}{(\varphi_1,\varphi_1)}=\frac{37}{5} \quad B_2=\frac{(x\varphi_1,\varphi_1)}{(\varphi_1,\varphi_1)}=\frac{5}{2} \quad C_2=\frac{(x\varphi_1,\varphi_0)}{(\varphi_0,\varphi_0)}=\frac{5}{4}\\
-		\varphi_2(x)&=(x-B_2)\varphi_1(x)-C_2\varphi_0(x)=(x-\frac{5}{2})(x-\frac{5}{2})-\frac{5}{4}=x^2-5x+5 \quad a_2=\frac{(\varphi_2,y)}{(\varphi_2,\varphi_2)}=\frac{1}{2}\\
+		\varphi_1(x)&=x-B_1=x-\frac{5}{2}\Rightarrow a_1=\frac{(\varphi_1,y)}{(\varphi_1,\varphi_1)}=\frac{37}{5} \\ B_2&=\frac{(x\varphi_1,\varphi_1)}{(\varphi_1,\varphi_1)}=\frac{5}{2} \quad C_2=\frac{(x\varphi_1,\varphi_0)}{(\varphi_0,\varphi_0)}=\frac{5}{4}\\
+		\varphi_2(x)&=(x-B_2)\varphi_1(x)-C_2\varphi_0(x)=(x-\frac{5}{2})(x-\frac{5}{2})-\frac{5}{4}=x^2-5x+5 \\
+		a_2&=\frac{(\varphi_2,y)}{(\varphi_2,\varphi_2)}=\frac{1}{2}\\
 		\end{aligned}
 		$$
 		
@@ -394,7 +395,7 @@ $$
 
 $$
 \begin{aligned}
-\max _{x \in[-1,1]}\left|f(x)-P_{n-1}(x)\right| &\leq \max _{x \in[-1,1]}\left|f(x)-P_{n}(x)\right|+\max _{x \in[-1,1]}\left|Q_{n}(x)\right|+\max _{x \in[-1,1]}\left|P_{n}(x)-P_{n-1}(x)-Q_{n}(x)\right|\\
+\max _{x \in[-1,1]}\left|f(x)-P_{n-1}(x)\right| &\leq \max _{x \in[-1,1]}\left|f(x)-P_{n}(x)\right|+\max _{x \in[-1,1]}\left|Q_{n}(x)\right|\\&+\max _{x \in[-1,1]}\left|P_{n}(x)-P_{n-1}(x)-Q_{n}(x)\right|\\
 &\leq \max _{x \in[-1,1]}\left|f(x)-P_{n}(x)\right|+\max _{x \in[-1,1]}\left|Q_{n}(x)\right|
 \end{aligned}
 $$

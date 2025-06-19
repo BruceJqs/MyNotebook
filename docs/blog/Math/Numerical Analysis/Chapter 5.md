@@ -121,7 +121,10 @@ $$
 ### Higher Order Taylor Methods
 
 $$
-y_{i+1}=y_i+hf(t_i,y_i)+\frac{h^2}2f^{\prime}(t_i,y_i)+\cdots+\frac{h^n}{n!}f^{(n-1)}(t_i,y_i)+\frac{h^{n+1}}{(n+1)!}f^{(n)}(\xi_i,y(\xi_i))
+\begin{aligned}
+y_{i+1}=y_i&+hf(t_i,y_i)+\frac{h^2}2f^{\prime}(t_i,y_i)+\cdots+\frac{h^n}{n!}f^{(n-1)}(t_i,y_i)\\
+&+\frac{h^{n+1}}{(n+1)!}f^{(n)}(\xi_i,y(\xi_i))
+\end{aligned}
 $$
 
 $n$ 阶的 Taylor 法：
@@ -316,7 +319,10 @@ $$
 思路：使用 $y,y'$ 在多个网格点（Mesh Points）上的线性组合，以得到更好的近似值 $y(t_{i+1})$
 
 $$
-w_{i+1}=\textcolor{red}{a_{m-1}}w_i+\textcolor{red}{a_{m-2}}w_{i-1}+\cdots+\textcolor{red}{a_0}w_{i-m+1}+h[\textcolor{red}{b_m}f_{i+1}+\textcolor{red}{b_{m-1}}f_i+\cdots+\textcolor{red}{b_0}f_{i-m+1}]
+\begin{aligned}
+w_{i+1}=\textcolor{red}{a_{m-1}}w_i+\textcolor{red}{a_{m-2}}w_{i-1}+\cdots+\textcolor{red}{a_0}w_{i-m+1}\\
++h[\textcolor{red}{b_m}f_{i+1}+\textcolor{red}{b_{m-1}}f_i+\cdots+\textcolor{red}{b_0}f_{i-m+1}]
+\end{aligned}
 $$
 
 具体方法：从积分中获取。在 $[t_i,t_{i+1}]$ 上对 $y'(t)=f(t,y)$ 进行积分，得到：
@@ -402,7 +408,10 @@ $$
 ### Derive from Taylor Expansion
 
 $$
-w_{i+1}=\textcolor{red}{a_{m-1}}w_i+\textcolor{red}{a_{m-2}}w_{i-1}+\cdots+\textcolor{red}{a_0}w_{i-m+1}+h[\textcolor{red}{b_m}f_{i+1}+\textcolor{red}{b_{m-1}}f_i+\cdots+\textcolor{red}{b_0}f_{i+1-m}]
+\begin{aligned}
+w_{i+1}=\textcolor{red}{a_{m-1}}w_i+\textcolor{red}{a_{m-2}}w_{i-1}+\cdots+\textcolor{red}{a_0}w_{i-m+1}\\
++h[\textcolor{red}{b_m}f_{i+1}+\textcolor{red}{b_{m-1}}f_i+\cdots+\textcolor{red}{b_0}f_{i+1-m}]
+\end{aligned}
 $$
 
 思路：扩展在关于 $t_i$ 的泰勒级数里的 $y_{i-1}, \dots, y_{i+1-m}$ 和 $f_{i+1}, f_{i-1}, \dots, f_{i+1-m}$，并让 $h^k$ 的系数相等，以获得 $a_0, \dots, a_{m-1}$ 和 $b_0, \dots, b_m$

@@ -332,13 +332,13 @@ $$
 	
 	$$
 	\begin{aligned}
-	f(x_0)\\
-	f(x_1) && f[x_0,x_1]\\
-	f(x_2) && f[x_1,x_2] && f[x_0,x_1,x_2]\\
-	\cdots && \cdots && \cdots\\
-	f(x_{n-1}) && \cdots\\
-	f(x_n) && f[x_{n-1},x_n] && f[x_{n-2},x_{n-1},x_n] && \cdots && f[x_0,\cdots,x_n]\\
-	f(x_{n+1}) && f[x_{n},x_{n+1}] && f[x_{n-1},x_{n+1}] && \cdots &&f[x_1,\cdots,x_n,x_{n+1}] && f[x_0,\cdots,x_{n+1}]
+	&f(x_0)\\
+	&f(x_1) \quad f[x_0,x_1]\\
+	&f(x_2) \quad f[x_1,x_2] \quad f[x_0,x_1,x_2]\\
+	&\cdots\\
+	&f(x_{n-1}) \quad \cdots\\
+	&f(x_n) \quad f[x_{n-1},x_n] \quad f[x_{n-2},x_{n-1},x_n] \quad \cdots \quad f[x_0,\cdots,x_n]\\
+	&f(x_{n+1}) \quad f[x_{n},x_{n+1}] \quad f[x_{n-1},x_{n+1}] \quad \cdots \quad f[x_1,\cdots,x_n,x_{n+1}] \quad f[x_0,\cdots,x_{n+1}]
 	\end{aligned}
 	$$
 	
@@ -593,15 +593,17 @@ $$
 所以我们额外有两个方程：
 
 $$
+\begin{aligned}
 \begin{cases}
 f'(x_0)=-M_0\frac{h_1}{2}+f[x_0,x_1]-\frac{M_1-M_0}{6}h_1\\
 f'(x_n)=M_{n }\frac{h_n}{2}+f[x_{n-1},x_n]-\frac{M_n-M_{n-1}}{6}h_n
-\end{cases}
+\end{cases}\\
 \Rightarrow
 \begin{cases}
 2M_0+M_1=\frac{6}{h_1}(f[x_0,x_1]-f'(x_0))\triangleq g_0\\
 M_{n-1}+2M_n=\frac{6}{h_n}(f'(x_n)-f[x_{n-1},x_n]) \triangleq g_n
 \end{cases}
+\end{aligned}
 $$
 
 所以我们可以得到
