@@ -363,16 +363,16 @@ $$
 		P_1(t_i+sh) = f_i + s \nabla f_i = f_i + s(f_i - f_{i-1})
 		$$
 		
-		 得到 $w_{i+1} = w_i + h \int_0^1 [f_i + s(f_i - f_{i-1})]ds = w_i + \frac{h}{2}(3f_i - f_{i-1})$ 
+		得到 $w_{i+1} = w_i + h \int_0^1 [f_i + s(f_i - f_{i-1})]ds = w_i + \frac{h}{2}(3f_i - f_{i-1})$ 
 		 
-		 局部截断误差为： 
+		局部截断误差为： 
 		 
-		 $$
-		 \begin{aligned}
-		 \tau_{i+1} &= \frac{y(t_{i+1}) - w_{i+1}}{h} = \int_0^1 R_1(t_i+sh)ds\\
-		 &= \int_0^1 \frac{d^2f(\xi_i, t(\xi_i))}{dt^2} \frac{1}{2!} sh(s+1)hds = \frac{5}{12}h^2y'''(\tilde{\xi_i}) 
-		 \end{aligned}
-		 $$
+		$$
+		\begin{aligned}
+		\tau_{i+1} &= \frac{y(t_{i+1}) - w_{i+1}}{h} = \int_0^1 R_1(t_i+sh)ds\\
+		&= \int_0^1 \frac{d^2f(\xi_i, t(\xi_i))}{dt^2} \frac{1}{2!} sh(s+1)hds = \frac{5}{12}h^2y'''(\tilde{\xi_i}) 
+		\end{aligned}
+		$$
 		 
 
 !!! tip "Tip"
@@ -534,13 +534,13 @@ $$
 	  
 	根据：
 	  
-	  $$
-	  \begin{aligned}
-	  w_{i+1} &= w_i + h[\frac{1}{2}K_1 + \frac{1}{2}K_2]\\
-	  K_1 &= f(t_i, w_i)\\
-	  K_2 &= f(t_i + h, w_i + hK_1)
-	  \end{aligned}
-	  $$
+	$$
+	\begin{aligned}
+	w_{i+1} &= w_i + h[\frac{1}{2}K_1 + \frac{1}{2}K_2]\\
+	K_1 &= f(t_i, w_i)\\
+	K_2 &= f(t_i + h, w_i + hK_1)
+	\end{aligned}
+	$$
 	  
 	计算可得：
 	  

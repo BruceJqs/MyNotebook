@@ -27,7 +27,7 @@ comments: true
 - [Chapter 04 : Numerical Differentiation and Integration](Chapter%204/)
 - [Chapter 05 : Initial-Value Problems for Ordinary Differential Equations](Chapter%205/)
 
-### Homeworks
+### Homeworks & Quizs
 
 - [Homework 01](Homework%201/)
 - [Homework 02](Homework%202/)
@@ -39,3 +39,8 @@ comments: true
 - [Homework 08](Homework%208/)
 - [Homework 09](Homework%209/)
 - [Homework 10](Homework%2010/)
+- [Homework 11](Homework%2011/)
+- [Homework 12](Homework%2012/)
+- [Homework 13](Homework%2013/)
+- [Homework 14](Homework%2014/)
+- [Quiz](Quiz/)

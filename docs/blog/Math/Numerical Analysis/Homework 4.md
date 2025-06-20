@@ -13,6 +13,10 @@ comments: true
 
 ![](../../../assets/Pasted%20image%2020250315011317.png)
 
+![](../../../assets/Pasted%20image%2020250620113138.png)
+
+![](../../../assets/Pasted%20image%2020250620113154.png)
+
 （a）乘/除法：
 
 - Step 2 : $n-1$

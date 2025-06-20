@@ -383,11 +383,11 @@ $$
 	- $(\varphi_0,\varphi_1)=0\Rightarrow\int_0^1\sqrt{x}(x+a)dx=0\Rightarrow a=-\frac{3}{5}$
 	- $(\varphi_0,\varphi_2)=0\Rightarrow\int_0^1\sqrt{x}(x^2+bx+c)dx=0,(\varphi_1,\varphi_2)=0\Rightarrow\int_0^1\sqrt{x}(x-\frac{3}{5})(x^2+bx+c)dx=0$，解得 $b=-\frac{10}{9},c=\frac{5}{21}$
 	
-	所以最后 $\varphi_2(x)=x^2-\frac{10}{9}x+\frac{5}{21}$，我们可以求出它的根 $x_{0,1}=\frac{\frac{10}{9}\pm\sqrt{(\frac{10}{9})^2-\frac{20}{21}}}{2}
+	所以最后 $\varphi_2(x)=x^2-\frac{10}{9}x+\frac{5}{21}$，我们可以求出它的根 $x_{0,1}=\frac{\frac{10}{9}\pm\sqrt{(\frac{10}{9})^2-\frac{20}{21}}}{2}$
 	
 	因为这个公式必须在 $f(x)=1,x$ 上是精确的，所以我们能比较容易地求解 $A_0​,A_1$​ 的线性方程组
 	
-	结果和我们之前得到的是一样的：$x_0\approx 0.8212,x_1\approx 0.2899, A_0\approx0.3891, A_1\approx 0.2776$
+	结果和我们之前得到的是一样的：$x_0\approx 0.8212,x_1\approx 0.2899, A_0\approx 0.3891, A_1\approx 0.2776$
 	
 	我们使用上面的结果来估计 $\int_0^1\sqrt{x}e^xdx$：$\int_0^1 \sqrt{x} f(x) dx \approx A_0 e^{x_0} + A_1 e^{x_1} = 0.3891 \times e^{0.8212} + 0.2776 \times e^{0.2899} \approx 1.2555$
 	

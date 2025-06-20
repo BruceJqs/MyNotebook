@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/ACEE/Information Theory/Chapter 3.md",
+                "file": "docs/blog/Math/Numerical Analysis/Chapter 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3"
+              "title": "Chapter 5"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 5.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 5"
+              "title": "Homework 14"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 5.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 14.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5"
+              "title": "Outline of Homework 14"
             }
           },
           {
@@ -193,42 +193,41 @@
   },
   "active": "840939fa2f4ffc3a",
   "lastOpenFiles": [
+    "docs/blog/Math/Numerical Analysis/Homework 13.md",
+    "docs/blog/Math/Numerical Analysis/Homework 12.md",
+    "docs/blog/Math/Numerical Analysis/Homework 11.md",
+    "docs/blog/Math/Numerical Analysis/Homework 10.md",
+    "docs/blog/Math/Numerical Analysis/Homework 9.md",
+    "docs/blog/Math/Numerical Analysis/Homework 8.md",
+    "docs/blog/Math/Numerical Analysis/Homework 7.md",
+    "docs/blog/Math/Numerical Analysis/Homework 6.md",
+    "docs/blog/Math/Numerical Analysis/Homework 5.md",
+    "docs/blog/Math/Numerical Analysis/Homework 4.md",
+    "docs/assets/Pasted image 20250620113154.png",
+    "docs/assets/Pasted image 20250620113138.png",
+    "docs/blog/Math/Numerical Analysis/Homework 3.md",
+    "docs/blog/Math/Numerical Analysis/Homework 2.md",
+    "docs/blog/Math/Numerical Analysis/Homework 1.md",
+    "docs/blog/Math/Numerical Analysis/Chapter 5.md",
+    "docs/blog/Math/Numerical Analysis/index.md",
+    "docs/blog/Math/Numerical Analysis/Quiz.md",
+    "docs/assets/Pasted image 20250620103846.png",
+    "docs/assets/Pasted image 20250620102453.png",
+    "docs/assets/Pasted image 20250619225221.png",
+    "docs/assets/Pasted image 20250619222942.png",
+    "docs/assets/Pasted image 20250619220442.png",
+    "docs/assets/Pasted image 20250619220432.png",
+    "docs/assets/Pasted image 20250619220340.png",
+    "docs/blog/Math/Numerical Analysis/Homework 14.md",
+    "docs/blog/ACEE/AI/Final Review.md",
+    "docs/assets/Pasted image 20250619220228.png",
+    "docs/blog/ACEE/Information Theory/Chapter 3.md",
     "docs/blog/Math/Numerical Analysis/Chapter 4.md",
     "docs/blog/Math/Numerical Analysis/Chapter 8.md",
     "docs/blog/Math/Numerical Analysis/Chapter 3.md",
     "docs/blog/Math/Numerical Analysis/Chapter 7.md",
     "docs/blog/Math/Numerical Analysis/Chapter 1.md",
     "docs/blog/Computer Science/Database/Chapter 1.md",
-    "docs/blog/ACEE/AI/Final Review.md",
-    "docs/blog/ACEE/Information Theory/Chapter 2.md",
-    "docs/blog/ACEE/Information Theory/Final Review.md",
-    "docs/blog/ACEE/Information Theory/Chapter 3.md",
-    "docs/blog/ACEE/Information Theory/Chapter 1.md",
-    "docs/blog/ACEE/Information Theory/Chapter 10.md",
-    "docs/blog/Computer Science/Computer Architecture/Chapter 4.md",
-    "docs/blog/Computer Science/Computer Architecture/Chapter 3.md",
-    "docs/blog/Computer Science/Computer Architecture/Chapter 2.md",
-    "docs/blog/Computer Science/Computer Architecture/Chapter 1.md",
-    "docs/blog/ACEE/Information Theory/Chapter 7.md",
-    "docs/blog/ACEE/Information Theory/Homework 1.md",
-    "docs/blog/ACEE/Information Theory/Chapter 4.md",
-    "docs/blog/Computer Science/Database/Chapter 3.md",
-    "docs/blog/ACEE/Information Theory/Homework 3.md",
-    "docs/assets/Pasted image 20250612170535.png",
-    "docs/assets/Pasted image 20250612170148.png",
-    "docs/assets/Pasted image 20250612165832.png",
-    "docs/assets/Pasted image 20250612165206.png",
-    "docs/blog/ACEE/Information Theory/index.md",
-    "docs/blog/ACEE/Information Theory/Chapter 8.md",
-    "docs/assets/Pasted image 20250612135709.png",
-    "docs/blog/ACEE/Information Theory/Homework 2.md",
-    "docs/assets/Pasted image 20250612133547.png",
-    "docs/assets/Pasted image 20250612123201.png",
-    "docs/assets/Pasted image 20250612112451.png",
-    "docs/assets/Pasted image 20250612111503.png",
-    "docs/assets/Pasted image 20250612110121.png",
-    "docs/blog/ACEE/Information Theory/Chapter 9.md",
-    "docs/blog/Computer Science/Database/Chapter 15.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",

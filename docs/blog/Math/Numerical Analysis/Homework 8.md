@@ -103,4 +103,4 @@ $$
 \end{cases}
 $$
 
-$\therefore\int_0^1F(x)dx=0.1107936,\int_0^{0.1}e^{2x}dx=0.1107014$
+$\therefore\int_0^{0.1}F(x)dx=0.1107936,\int_0^{0.1}e^{2x}dx=0.1107014$
