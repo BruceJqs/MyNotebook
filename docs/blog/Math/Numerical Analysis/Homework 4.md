@@ -42,6 +42,7 @@ comments: true
 | Solving Ly=b        | $\frac{1}{2}n^2-\frac{1}{2}n$     | $\frac{1}{2}n^2-\frac{1}{2}n$                |
 | Solving Ux=y        | $\frac{1}{2}n^2+\frac{1}{2}n$     | $\frac{1}{2}n^2-\frac{1}{2}n$                |
 | Total               | $\frac{1}{3}n^3+n^2-\frac{1}{3}n$ | $\frac{1}{3}n^3+\frac{1}{2}n^2-\frac{5}{6}n$ |
+
 ***
 （d）
 
@@ -52,6 +53,7 @@ comments: true
 | Solving $Ly^{(k)}=b^{(k)}$ | $(\frac{1}{2}n^2-\frac{1}{2}n)m$   | $(\frac{1}{2}n^2-\frac{1}{2}n)m$                     |
 | Solving $Ux^{(k)}=y^{(k)}$ | $(\frac{1}{2}n^2+\frac{1}{2}n)m$   | $(\frac{1}{2}n^2-\frac{1}{2}n)m$                     |
 | Total                      | $\frac{1}{3}n^3+mn^2-\frac{1}{3}n$ | $\frac{1}{3}n^3+(m-\frac{1}{2})n^2-(m-\frac{1}{6})n$ |
+
 ***
 ## 6.6.17
 

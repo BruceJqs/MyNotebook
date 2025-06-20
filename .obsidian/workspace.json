@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 14.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homework 14"
+              "title": "Homework 4"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 14.md",
+                "file": "docs/blog/Math/Numerical Analysis/Homework 4.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Homework 14"
+              "title": "Outline of Homework 4"
             }
           },
           {
@@ -193,6 +193,7 @@
   },
   "active": "840939fa2f4ffc3a",
   "lastOpenFiles": [
+    "docs/blog/Math/Numerical Analysis/Homework 14.md",
     "docs/blog/Math/Numerical Analysis/Homework 13.md",
     "docs/blog/Math/Numerical Analysis/Homework 12.md",
     "docs/blog/Math/Numerical Analysis/Homework 11.md",
@@ -218,7 +219,6 @@
     "docs/assets/Pasted image 20250619220442.png",
     "docs/assets/Pasted image 20250619220432.png",
     "docs/assets/Pasted image 20250619220340.png",
-    "docs/blog/Math/Numerical Analysis/Homework 14.md",
     "docs/blog/ACEE/AI/Final Review.md",
     "docs/assets/Pasted image 20250619220228.png",
     "docs/blog/ACEE/Information Theory/Chapter 3.md",

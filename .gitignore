@@ -164,3 +164,4 @@ cython_debug/
 .obsidian/
 .cache/
 .github/
+workspace.json
