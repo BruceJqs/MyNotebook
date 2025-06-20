@@ -27,3 +27,4 @@ comments: true
 - [Chapter 08 : Operator Overloading](Chapter%208/)
 - [Chapter 09 : Templates](Chapter%209/)
 - [Chapter 10 : Exceptions](Chapter%2010/)
+- [Chapter 11 : Smart Pointers](Chapter%2011/)

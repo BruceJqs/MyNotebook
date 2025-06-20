@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "cec5e02d82fb17eb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Chapter 5.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 5"
-            }
-          },
-          {
             "id": "840939fa2f4ffc3a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 4.md",
+                "file": "docs/blog/Computer Science/OOP/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homework 4"
+              "title": "index"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Math/Numerical Analysis/Homework 4.md",
+                "file": "docs/blog/Computer Science/OOP/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Homework 4"
+              "title": "Outline of index"
             }
           },
           {
@@ -193,6 +178,14 @@
   },
   "active": "840939fa2f4ffc3a",
   "lastOpenFiles": [
+    "docs/blog/Computer Science/OOP/Chapter 1.md",
+    "docs/blog/Computer Science/OOP/index.md",
+    "docs/blog/Computer Science/OOP/Chapter 11.md",
+    "docs/assets/Pasted image 20250620131606.png",
+    "docs/assets/Pasted image 20250620122513.png",
+    "docs/blog/Math/Numerical Analysis/Chapter 5.md",
+    "docs/blog/Computer Science/OOP/Chapter 10.md",
+    "docs/blog/Math/Numerical Analysis/Homework 4.md",
     "docs/blog/Math/Numerical Analysis/Homework 14.md",
     "docs/blog/Math/Numerical Analysis/Homework 13.md",
     "docs/blog/Math/Numerical Analysis/Homework 12.md",
@@ -203,13 +196,11 @@
     "docs/blog/Math/Numerical Analysis/Homework 7.md",
     "docs/blog/Math/Numerical Analysis/Homework 6.md",
     "docs/blog/Math/Numerical Analysis/Homework 5.md",
-    "docs/blog/Math/Numerical Analysis/Homework 4.md",
     "docs/assets/Pasted image 20250620113154.png",
     "docs/assets/Pasted image 20250620113138.png",
     "docs/blog/Math/Numerical Analysis/Homework 3.md",
     "docs/blog/Math/Numerical Analysis/Homework 2.md",
     "docs/blog/Math/Numerical Analysis/Homework 1.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 5.md",
     "docs/blog/Math/Numerical Analysis/index.md",
     "docs/blog/Math/Numerical Analysis/Quiz.md",
     "docs/assets/Pasted image 20250620103846.png",
@@ -218,16 +209,11 @@
     "docs/assets/Pasted image 20250619222942.png",
     "docs/assets/Pasted image 20250619220442.png",
     "docs/assets/Pasted image 20250619220432.png",
-    "docs/assets/Pasted image 20250619220340.png",
     "docs/blog/ACEE/AI/Final Review.md",
-    "docs/assets/Pasted image 20250619220228.png",
     "docs/blog/ACEE/Information Theory/Chapter 3.md",
     "docs/blog/Math/Numerical Analysis/Chapter 4.md",
     "docs/blog/Math/Numerical Analysis/Chapter 8.md",
     "docs/blog/Math/Numerical Analysis/Chapter 3.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 7.md",
-    "docs/blog/Math/Numerical Analysis/Chapter 1.md",
-    "docs/blog/Computer Science/Database/Chapter 1.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",

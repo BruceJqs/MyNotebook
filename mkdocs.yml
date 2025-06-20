@@ -153,6 +153,8 @@ nav:
       - "Chapter 07: Copy Constructor": blog/Computer Science/OOP/Chapter 7.md
       - "Chapter 08: Operator Overloading": blog/Computer Science/OOP/Chapter 8.md
       - "Chapter 09: Templates": blog/Computer Science/OOP/Chapter 9.md
+      - "Chapter 10: Exceptions": blog/Computer Science/OOP/Chapter 10.md
+      - "Chapter 11: Smart Pointers": blog/Computer Science/OOP/Chapter 11.md
     - 计算机体系结构｜Computer Architecture:
       - blog/Computer Science/Computer Architecture/index.md
       - Notes:
