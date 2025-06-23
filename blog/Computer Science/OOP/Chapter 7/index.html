@@ -8088,6 +8088,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -8236,6 +8240,52 @@
   
   <span class="md-ellipsis">
     Chapter 05: DES 算法和 AES 算法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/Cryptography/Chapter%206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 06: RSA 算法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CTF/Cryptography/Chapter%207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 07: 椭圆曲线（Elliptic Curve）算法
     
   </span>
   
@@ -9731,7 +9781,7 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>需要 <code>delete[] name</code> 是因为 <code>name</code> 在赋值前已持有动态分配的内存（。若直接覆盖指针而不释放旧内存，原内存将无法被回收，导致内存泄漏</p>
+<p>需要 <code>delete[] name</code> 是因为 <code>name</code> 在赋值前已持有动态分配的内存。若直接覆盖指针而不释放旧内存，原内存将无法被回收，导致内存泄漏</p>
 <p>判断 <code>this != &amp;other</code> 是因为若出现 <code>person = person</code>（自我赋值），<code>delete[] name</code>会提前释放内存，后续复制时将访问已释放的内存（<code>other.name</code> 即 <code>name</code>），导致<strong>未定义行为</strong>​（如崩溃或数据损坏）</p>
 </details>
 </div>
@@ -9873,7 +9923,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年4月14日 15:35:38 CST">2025年4月14日 15:35:38</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月23日 12:18:39 CST">2025年6月23日 12:18:39</span>
   </span>
 
     
