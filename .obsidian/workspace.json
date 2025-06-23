@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/CTF/Cryptography/Chapter 7.md",
+                "file": "docs/blog/CTF/Cryptography/Chapter 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 7"
+              "title": "Chapter 5"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/CTF/Cryptography/Chapter 7.md",
+                "file": "docs/blog/CTF/Cryptography/Chapter 5.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 7"
+              "title": "Outline of Chapter 5"
             }
           },
           {
@@ -193,9 +193,10 @@
   },
   "active": "9bbed1dc04106d04",
   "lastOpenFiles": [
+    "docs/blog/CTF/Cryptography/Chapter 1.md",
+    "docs/blog/CTF/Cryptography/Chapter 7.md",
     "docs/blog/CTF/Cryptography/Chapter 6.md",
     "docs/blog/CTF/Cryptography/index.md",
-    "docs/blog/CTF/Cryptography/Chapter 7.md",
     "docs/assets/Pasted image 20250623110053.png",
     "docs/blog/CTF/Cryptography/Chapter 5.md",
     "docs/assets/Pasted image 20250622220242.png",
