@@ -373,51 +373,51 @@ public:
 	
 	!!! example "Examples"
 	
-	=== "Example 01"
-	
-		```c++
-		std::mutex m;
+		=== "Example 01"
 		
-		void bad(){
-			m.lock();
-			if(!everything_ok())
-				return; // early return without mutex release
-			m.unlock();
-		}
+			```c++
+			std::mutex m;
+			
+			void bad(){
+				m.lock();
+				if(!everything_ok())
+					return; // early return without mutex release
+				m.unlock();
+			}
+			
+			void good(){
+				std::lock_guard<std::mutex> lk(m);
+				if(!everything_ok())
+					return; // unlock
+			} // unlock
+			```
+			
+			- `std::lock_guard` 是一个 RAII 类，它在构造时获取锁，在析构时释放锁，这样就保证了锁的正确释放
 		
-		void good(){
-			std::lock_guard<std::mutex> lk(m);
-			if(!everything_ok())
-				return; // unlock
-		} // unlock
-		```
+		=== "Example 02"
 		
-		- `std::lock_guard` 是一个 RAII 类，它在构造时获取锁，在析构时释放锁，这样就保证了锁的正确释放
-	
-	=== "Example 02"
-	
-		```c++
-		void foo(const std::string& message){
-			std::ofstream file("example.txt");
-			if(!everything_ok())
-				return; // file close
-			file << message << std::endl;
-		} // file close
-		```
+			```c++
+			void foo(const std::string& message){
+				std::ofstream file("example.txt");
+				if(!everything_ok())
+					return; // file close
+				file << message << std::endl;
+			} // file close
+			```
+			
+			- 在构造时打开文件，在析构时关闭文件，这样就保证了文件的正确关闭
 		
-		- 在构造时打开文件，在析构时关闭文件，这样就保证了文件的正确关闭
-	
-	=== "Example 03"
-	
-		```c++
-		void bar(){
-			std::unique_ptr<int[]> up(new int[10]);
-			if(!everything_ok())
-				return; // delete[]
-		} // delete[]
-		```
+		=== "Example 03"
 		
-		- 在构造时分配内存，在析构时释放内存，这样就保证了内存的正确释放
+			```c++
+			void bar(){
+				std::unique_ptr<int[]> up(new int[10]);
+				if(!everything_ok())
+					return; // delete[]
+			} // delete[]
+			```
+			
+			- 在构造时分配内存，在析构时释放内存，这样就保证了内存的正确释放
 ***
 ## Initialization List
 
@@ -444,7 +444,7 @@ public:
 	Y y1[] = {Y(1), Y(2), Y(3)};
 	```
 
-事实上，在函数体当中的赋值并非真正意义上的初始化在构造函数中，我们可以使用初始化列表（Initialization List）来初始化成员变量，而不是在函数体中进行初始化
+事实上，在函数体当中的赋值并非真正意义上的初始化。在构造函数中，我们可以使用初始化列表（Initialization List）来初始化成员变量，而不是在函数体中进行初始化
 
 - 需要注意的是，初始化的顺序并不是按照初始化列表当中的顺序，而是按照声明的顺序进行初始化
 

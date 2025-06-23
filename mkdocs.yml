@@ -332,6 +332,8 @@ nav:
       - "Chapter 03: Hash 函数": blog/CTF/Cryptography/Chapter 3.md
       - "Chapter 04: 分组密码工作模式与流密码": blog/CTF/Cryptography/Chapter 4.md
       - "Chapter 05: DES 算法和 AES 算法": blog/CTF/Cryptography/Chapter 5.md
+      - "Chapter 06: RSA 算法": blog/CTF/Cryptography/Chapter 6.md
+      - "Chapter 07: 椭圆曲线（Elliptic Curve）算法": blog/CTF/Cryptography/Chapter 7.md
   - Research:
     - "Reading Papers":
       - blog/Research/Reading/index.md
