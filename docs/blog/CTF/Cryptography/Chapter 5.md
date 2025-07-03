@@ -74,7 +74,7 @@ DES 有如下缺点：
 ***
 ## AES 算法
 
-AES（Advanced Encryption Standard）是一种对称密钥加密算法，明文为 128 位，密文为 16 位，密钥长度有 128 位、 192 位和 256 位三种长度
+AES（Advanced Encryption Standard）是一种对称密钥加密算法，明文为 128 位，密文为 128 位，密钥长度有 128 位、 192 位和 256 位三种长度
 ***
 ### 数学基础
 

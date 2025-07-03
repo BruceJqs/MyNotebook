@@ -12,7 +12,7 @@ comments: true
 
 英文版：[Github](https://github.com/seed-labs/seed-labs)
 
-中文版（翻译中）：[Gitee](https://gitee.com/seedlab/seedlabs-chinese)
+中文版：[Gitee](https://gitee.com/seedlab/seedlabs-chinese)
 ***
 ### Requirement
 
@@ -24,6 +24,8 @@ comments: true
 
 ### Basic Knowledge
 - Hardware
+	- [Linux Security Basics](Knowledge/Hardware/Basic/)
+	- [Set UID](Knowledge/Hardware/Set%20UID/)
 	- [Meltdown Attack](Knowledge/Hardware/Meltdown%20Attack/)
 - Network
 	- [BGP and Attacks](Knowledge/Network/BGP%20Basic/)
