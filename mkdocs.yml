@@ -343,9 +343,10 @@ nav:
       - blog/Research/Seedlab/index.md
       - Knowledge:
         - Hardware:
+          - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md
+        - Software:
           - "Linux Security Basics": blog/Research/Seedlab/Knowledge/Hardware/Basic.md
           - "Set UID": blog/Research/Seedlab/Knowledge/Hardware/Set UID.md
-          - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md
         - Network:
           - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
           - "DNS Remote-Kaminsky Attack": blog/Research/Seedlab/Knowledge/Network/Kaminsky.md

@@ -23,10 +23,12 @@ comments: true
 ## Table of Contents
 
 ### Basic Knowledge
+
 - Hardware
-	- [Linux Security Basics](Knowledge/Hardware/Basic/)
-	- [Set UID](Knowledge/Hardware/Set%20UID/)
 	- [Meltdown Attack](Knowledge/Hardware/Meltdown%20Attack/)
+- Software
+	- [Linux Security Basics](Knowledge/Software/Basic/)
+	- [Set UID](Knowledge/Software/Set%20UID/)
 - Network
 	- [BGP and Attacks](Knowledge/Network/BGP%20Basic/)
 	- [DNS Remote-Kaminsky DNS Attack](Knowledge/Network/Kaminsky/)

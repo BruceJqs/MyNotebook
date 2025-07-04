@@ -11,7 +11,7 @@ comments: true
 
 !!! warning "Warning"
 
-	本实验 Task6 需要在 Ubuntu 20.04 或更低版本进行，Ubuntu 24.04 会有意想不到的效果
+	本实验需要在 Ubuntu 20.04 或更低版本进行，Ubuntu 24.04 会有意想不到的效果
 
 ## 任务 1：操作环境变量
 

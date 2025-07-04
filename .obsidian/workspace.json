@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Shellshock"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Shellshock"
             }
           },
           {
@@ -178,7 +178,11 @@
   },
   "active": "9bbed1dc04106d04",
   "lastOpenFiles": [
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
+    "docs/blog/Research/Seedlab/Knowledge/Software",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
+    "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
     "docs/assets/Pasted image 20250704230604.png",
     "docs/assets/Pasted image 20250704230526.png",
     "docs/assets/Pasted image 20250704230246.png",
@@ -187,15 +191,14 @@
     "docs/assets/Pasted image 20250704225623.png",
     "docs/assets/Pasted image 20250704224750.png",
     "docs/assets/Pasted image 20250704215538.png",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Set UID.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Basic.md",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Set UID.md",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Basic.md",
     "docs/assets/Pasted image 20250704214730.png",
     "docs/assets/Pasted image 20250704214527.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Sniffing Spoofing.md",
-    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/勘误.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
@@ -211,8 +214,6 @@
     "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/blog/Computer Science/OOP/Chapter 5.md",
     "docs/blog/Computer Science/OOP/Chapter 4.md",
-    "docs/blog/Computer Science/OOP/Chapter 8.md",
-    "docs/blog/Computer Science/OOP/Chapter 7.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",
@@ -224,7 +225,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Knowledge",
     "docs/blog/Research/Seedlab/Basic-Labs",
-    "docs/blog/Research/Seedlab",
     "未命名.canvas"
   ]
 }
