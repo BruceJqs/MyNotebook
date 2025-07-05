@@ -29,6 +29,7 @@ comments: true
 - Software
 	- [Linux Security Basics](Knowledge/Software/Basic/)
 	- [Set UID](Knowledge/Software/Set%20UID/)
+	- [Shellshock](Knowledge/Software/Shellshock/)
 - Network
 	- [BGP and Attacks](Knowledge/Network/BGP%20Basic/)
 	- [DNS Remote-Kaminsky DNS Attack](Knowledge/Network/Kaminsky/)
@@ -40,6 +41,7 @@ comments: true
 		- [DNS Remote](Knowledge/Reports/DNS%20Remote/)
 	- Software Security
 		- [Set UID](Knowledge/Reports/Set%20UID/)
+		- [Shellshock](Knowledge/Reports/Shellshock/)
 ***
 ### Emulator Labs
 

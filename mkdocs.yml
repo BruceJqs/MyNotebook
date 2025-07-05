@@ -345,8 +345,9 @@ nav:
         - Hardware:
           - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md
         - Software:
-          - "Linux Security Basics": blog/Research/Seedlab/Knowledge/Hardware/Basic.md
-          - "Set UID": blog/Research/Seedlab/Knowledge/Hardware/Set UID.md
+          - "Linux Security Basics": blog/Research/Seedlab/Knowledge/Software/Basic.md
+          - "Set UID": blog/Research/Seedlab/Knowledge/Software/Set UID.md
+          - "Shellshock": blog/Research/Seedlab/Knowledge/Software/Shellshock.md
         - Network:
           - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
           - "DNS Remote-Kaminsky Attack": blog/Research/Seedlab/Knowledge/Network/Kaminsky.md
@@ -358,6 +359,7 @@ nav:
             - "DNS Remote": blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md
           - "Software Security":
             - "Set UID": blog/Research/Seedlab/Knowledge/Reports/Set UID.md
+            - "Shellshock": blog/Research/Seedlab/Knowledge/Reports/Shellshock.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:
