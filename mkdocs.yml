@@ -348,6 +348,7 @@ nav:
           - "Linux Security Basics": blog/Research/Seedlab/Knowledge/Software/Basic.md
           - "Set UID": blog/Research/Seedlab/Knowledge/Software/Set UID.md
           - "Shellshock": blog/Research/Seedlab/Knowledge/Software/Shellshock.md
+          - "Buffer Overflow": blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md
         - Network:
           - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
           - "DNS Remote-Kaminsky Attack": blog/Research/Seedlab/Knowledge/Network/Kaminsky.md

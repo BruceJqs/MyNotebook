@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Buffer Overflow"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Buffer Overflow"
             }
           },
           {
@@ -178,28 +178,29 @@
   },
   "active": "9bbed1dc04106d04",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
+    "docs/assets/Pasted image 20250707012927.png",
+    "docs/assets/Pasted image 20250707011225.png",
+    "docs/assets/Pasted image 20250707011022.png",
+    "docs/assets/Pasted image 20250707010840.png",
+    "docs/assets/Pasted image 20250707010237.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
+    "docs/assets/Pasted image 20250707005156.png",
+    "docs/assets/Pasted image 20250707004744.png",
+    "docs/assets/Pasted image 20250707004431.png",
+    "docs/assets/Pasted image 20250707004148.png",
+    "docs/assets/Pasted image 20250707003430.png",
     "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
-    "docs/assets/Pasted image 20250705182238.png",
-    "docs/assets/Pasted image 20250705182055.png",
-    "docs/assets/Pasted image 20250705170509.png",
+    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Set UID.md",
-    "docs/assets/Pasted image 20250705170150.png",
-    "docs/assets/Pasted image 20250705165916.png",
-    "docs/assets/Pasted image 20250705165704.png",
-    "docs/assets/Pasted image 20250705165255.png",
-    "docs/assets/Pasted image 20250705165138.png",
-    "docs/assets/Pasted image 20250705164748.png",
-    "docs/assets/Pasted image 20250705164512.png",
-    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Research/Seedlab/勘误.md",
     "docs/blog/Research/Seedlab/Questions.md",
-    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Software",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Basic.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Sniffing Spoofing.md",
@@ -213,7 +214,6 @@
     "docs/blog/CTF/Cryptography/index.md",
     "docs/blog/CTF/Cryptography/Chapter 4.md",
     "docs/blog/Computer Science/OOP/Chapter 2.md",
-    "docs/blog/Computer Science/OOP/Chapter 3.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",
