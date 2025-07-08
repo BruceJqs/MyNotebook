@@ -238,9 +238,9 @@ int 0x80 ; 发起系统调用
 
 !!! example "Another Example"
 
-	如果我们想要执行命令 `/bin/bash -c '/bin/echo "Hello Wolrd"'`，汇编代码如下：
+	如果我们想要执行命令 `/bin/bash -c '/bin/echo "Hello World"'`，汇编代码如下：
 	
-	同理，我们只需要修改参数数组的部分即可，第一个元素为字符串 `/bin/bash`，第二个元素为字符串 `-c`，第三个元素为字符串 `/bin/echo "Hello Wolrd"`，最后一个元素为 0
+	同理，我们只需要修改参数数组的部分即可，第一个元素为字符串 `/bin/bash`，第二个元素为字符串 `-c`，第三个元素为字符串 `/bin/echo "Hello World"`，最后一个元素为 0
 	
 	![](../../../../../assets/Pasted%20image%2020250706235343.png)
 	

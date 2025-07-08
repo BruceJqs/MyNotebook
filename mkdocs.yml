@@ -361,6 +361,7 @@ nav:
           - "Software Security":
             - "Set UID": blog/Research/Seedlab/Knowledge/Reports/Set UID.md
             - "Shellshock": blog/Research/Seedlab/Knowledge/Reports/Shellshock.md
+            - "Shellcode": blog/Research/Seedlab/Knowledge/Reports/Shellcode.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:

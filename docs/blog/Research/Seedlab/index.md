@@ -43,6 +43,7 @@ comments: true
 	- Software Security
 		- [Set UID](Knowledge/Reports/Set%20UID/)
 		- [Shellshock](Knowledge/Reports/Shellshock/)
+		- [Shellcode](Knowledge/Reports/Shellcode/)
 ***
 ### Emulator Labs
 
