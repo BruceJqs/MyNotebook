@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Buffer Overflow"
+              "title": "Buffer Overflow Server"
             }
           },
           {
@@ -92,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 242.5
+    "width": 278.50390243530273
   },
   "right": {
     "id": "db8c2c75e178d5b7",
@@ -154,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Buffer Overflow"
+              "title": "Outline of Buffer Overflow Server"
             }
           },
           {
@@ -193,7 +193,8 @@
   "active": "9bbed1dc04106d04",
   "lastOpenFiles": [
     "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow.md",
+    "docs/blog/Research/Seedlab/index.md",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
     "docs/assets/Pasted image 20250711223745.png",
     "docs/assets/Pasted image 20250711223308.png",
     "docs/assets/Pasted image 20250711221546.png",
@@ -206,7 +207,6 @@
     "docs/assets/Pasted image 20250710155944.png",
     "docs/assets/Pasted image 20250710155808.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
-    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
     "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Research/Seedlab/Questions.md",
