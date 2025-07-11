@@ -362,6 +362,7 @@ nav:
             - "Set UID": blog/Research/Seedlab/Knowledge/Reports/Set UID.md
             - "Shellshock": blog/Research/Seedlab/Knowledge/Reports/Shellshock.md
             - "Shellcode": blog/Research/Seedlab/Knowledge/Reports/Shellcode.md
+            - "Buffer Overflow-Server": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:

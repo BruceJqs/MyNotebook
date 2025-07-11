@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shellcode"
+              "title": "Buffer Overflow"
             }
           },
           {
@@ -154,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Shellcode"
+              "title": "Outline of Buffer Overflow"
             }
           },
           {
@@ -192,20 +192,21 @@
   },
   "active": "9bbed1dc04106d04",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/index.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
-    "docs/assets/Pasted image 20250708161606.png",
     "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
-    "docs/assets/Pasted image 20250708141703.png",
-    "docs/assets/Pasted image 20250708135415.png",
-    "docs/assets/Pasted image 20250708135346.png",
-    "docs/assets/Pasted image 20250708135304.png",
-    "docs/assets/Pasted image 20250707183437.png",
-    "docs/assets/Pasted image 20250707183004.png",
-    "docs/assets/Pasted image 20250707181416.png",
-    "docs/assets/Pasted image 20250707180859.png",
-    "docs/assets/Pasted image 20250707180638.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow.md",
+    "docs/assets/Pasted image 20250711223745.png",
+    "docs/assets/Pasted image 20250711223308.png",
+    "docs/assets/Pasted image 20250711221546.png",
+    "docs/assets/Pasted image 20250711221536.png",
+    "docs/assets/Pasted image 20250710163256.png",
+    "docs/assets/Pasted image 20250710163000.png",
+    "docs/assets/Pasted image 20250710162929.png",
+    "docs/assets/Pasted image 20250710162453.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
+    "docs/assets/Pasted image 20250710155944.png",
+    "docs/assets/Pasted image 20250710155808.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
+    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
     "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Research/Seedlab/Questions.md",
@@ -227,7 +228,6 @@
     "docs/blog/CTF/Cryptography/Chapter 7.md",
     "docs/blog/CTF/Cryptography/Chapter 6.md",
     "docs/blog/CTF/Cryptography/index.md",
-    "docs/blog/CTF/Cryptography/Chapter 4.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",
