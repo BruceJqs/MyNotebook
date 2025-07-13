@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
+                "file": "docs/blog/Research/Reading/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Buffer Overflow Server"
+              "title": "index"
             }
           },
           {
@@ -154,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
+                "file": "docs/blog/Research/Reading/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Buffer Overflow Server"
+              "title": "Outline of index"
             }
           },
           {
@@ -192,24 +192,30 @@
   },
   "active": "9bbed1dc04106d04",
   "lastOpenFiles": [
+    "AURORA Notes.md",
+    "docs/blog/Research/Reading/index.md",
+    "docs/blog/Research/Reading/Others/SEED Emulator Notes.md",
+    "docs/blog/Research/Reading/Others",
+    "docs/assets/Pasted image 20250713111535.png",
+    "docs/assets/Pasted image 20250713111524.png",
+    "docs/assets/Pasted image 20250713111507.png",
+    "docs/assets/Pasted image 20250713111458.png",
+    "docs/assets/Pasted image 20250713111449.png",
+    "docs/assets/Pasted image 20250713111439.png",
+    "docs/assets/Pasted image 20250713111430.png",
+    "docs/assets/Pasted image 20250713111417.png",
+    "docs/assets/Pasted image 20250713111404.png",
+    "docs/assets/Pasted image 20250713111350.png",
+    "docs/blog/Research/Reading/Others/AURORA Notes.md",
+    "docs/blog/Research/Reading/RAG/Note01.md",
+    "docs/blog/Research/Seedlab/Questions.md",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
+    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
     "docs/blog/Research/Seedlab/index.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
-    "docs/assets/Pasted image 20250711223745.png",
-    "docs/assets/Pasted image 20250711223308.png",
-    "docs/assets/Pasted image 20250711221546.png",
-    "docs/assets/Pasted image 20250711221536.png",
-    "docs/assets/Pasted image 20250710163256.png",
-    "docs/assets/Pasted image 20250710163000.png",
-    "docs/assets/Pasted image 20250710162929.png",
-    "docs/assets/Pasted image 20250710162453.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
-    "docs/assets/Pasted image 20250710155944.png",
-    "docs/assets/Pasted image 20250710155808.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
-    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
-    "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Set UID.md",
@@ -224,10 +230,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Network/TCP Attack.md",
     "docs/blog/CTF/Cryptography/Chapter 5.md",
-    "docs/blog/CTF/Cryptography/Chapter 1.md",
-    "docs/blog/CTF/Cryptography/Chapter 7.md",
-    "docs/blog/CTF/Cryptography/Chapter 6.md",
-    "docs/blog/CTF/Cryptography/index.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",
@@ -238,7 +240,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Network",
     "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "docs/blog/Research/Seedlab/Knowledge",
-    "docs/blog/Research/Seedlab/Basic-Labs",
     "未命名.canvas"
   ]
 }

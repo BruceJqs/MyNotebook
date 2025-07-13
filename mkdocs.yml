@@ -339,6 +339,9 @@ nav:
       - blog/Research/Reading/index.md
       - RAG:
         - "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks": blog/Research/Reading/RAG/Note01.md
+      - Others:
+        - "SEED emulator : an internet emulator for research and education": blog/Research/Reading/Others/SEED Emulator Notes.md
+        - "From Sands to Mansions : Towards Automated Cyberattack Emulation with Classical Planning and Large Language Models": blog/Research/Reading/Others/AURORA Notes.md
     - Seedlab:
       - blog/Research/Seedlab/index.md
       - Knowledge:

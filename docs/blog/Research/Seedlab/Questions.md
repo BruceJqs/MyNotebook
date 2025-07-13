@@ -37,6 +37,7 @@ comments: true
 ```json
 {
   "registry-mirrors": [
+		  "https://docker.1ms.run",
           "https://docker.anyhub.us.kg",
           "https://dockerhub.icu",
           "https://docker.1panel.live"
