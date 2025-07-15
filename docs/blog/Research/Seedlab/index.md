@@ -45,6 +45,7 @@ comments: true
 		- [Shellshock](Knowledge/Reports/Shellshock/)
 		- [Shellcode](Knowledge/Reports/Shellcode/)
 		- [Buffer Overflow Server](Knowledge/Reports/Buffer%20Overflow%20Server/)
+		- [Buffer Overflow SetUID](Knowledge/Reports/Buffer%20Overflow%20SetUID/)
 ***
 ### Emulator Labs
 
