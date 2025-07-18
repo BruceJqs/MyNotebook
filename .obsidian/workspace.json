@@ -4,39 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "a8a607c36286f049",
+        "id": "32fa384bab074bbf",
         "type": "tabs",
         "children": [
           {
-            "id": "9bbed1dc04106d04",
+            "id": "961bd34cc10f8fe4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Return-to-Libc"
             }
           },
           {
-            "id": "678b6b2c9f91a8b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Buffer Overflow Server"
-            }
-          },
-          {
-            "id": "22964c189061dd81",
+            "id": "bf64ddc2115be711",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/index.md",
+                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Return-to-Libc"
             }
           },
           {
@@ -204,31 +190,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9bbed1dc04106d04",
+  "active": "961bd34cc10f8fe4",
   "lastOpenFiles": [
-    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow SetUID.md",
-    "docs/assets/Pasted image 20250715184516.png",
-    "docs/assets/Pasted image 20250715184003.png",
-    "docs/assets/Pasted image 20250715175318.png",
-    "docs/assets/Pasted image 20250715165204.png",
-    "docs/assets/Pasted image 20250715163326.png",
-    "docs/assets/Pasted image 20250715162947.png",
-    "docs/assets/Pasted image 20250715162452.png",
-    "docs/assets/Pasted image 20250715162427.png",
-    "docs/assets/Pasted image 20250715161923.png",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
+    "docs/blog/Research/Reading/index.md",
+    "docs/blog/Research/Reading/Others/PentestAgent Notes.md",
+    "docs/assets/Pasted image 20250718190016.png",
+    "docs/assets/Pasted image 20250718190004.png",
+    "docs/assets/Pasted image 20250718185952.png",
+    "docs/assets/Pasted image 20250718185936.png",
+    "docs/assets/Pasted image 20250718185922.png",
+    "docs/assets/Pasted image 20250718185906.png",
+    "docs/blog/Research/Reading/Others/AURORA Notes.md",
+    "docs/blog/Research/Reading/Others/SEED Emulator Notes.md",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
+    "docs/blog/Research/Reading/PentestAgent.md",
+    "docs/assets/Pasted image 20250717210546.png",
+    "docs/assets/Pasted image 20250717210450.png",
+    "docs/assets/Pasted image 20250717205353.png",
+    "docs/assets/Pasted image 20250717204559.png",
+    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
-    "docs/assets/Pasted image 20250715160151.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow SetUID.md",
     "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/勘误.md",
-    "docs/blog/Research/Seedlab/index.md",
-    "docs/blog/Research/Reading/index.md",
     "AURORA Notes.md",
-    "docs/blog/Research/Reading/Others/SEED Emulator Notes.md",
     "docs/blog/Research/Reading/Others",
-    "docs/blog/Research/Reading/Others/AURORA Notes.md",
     "docs/blog/Research/Reading/RAG/Note01.md",
-    "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
@@ -240,9 +229,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Software/Basic.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/Sniffing Spoofing.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",
