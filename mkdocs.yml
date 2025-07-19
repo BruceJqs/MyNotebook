@@ -353,6 +353,7 @@ nav:
           - "Set UID": blog/Research/Seedlab/Knowledge/Software/Set UID.md
           - "Shellshock": blog/Research/Seedlab/Knowledge/Software/Shellshock.md
           - "Buffer Overflow": blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md
+          - "Return-to-libc": blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md
         - Network:
           - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
           - "DNS Remote-Kaminsky Attack": blog/Research/Seedlab/Knowledge/Network/Kaminsky.md
@@ -368,6 +369,7 @@ nav:
             - "Shellcode": blog/Research/Seedlab/Knowledge/Reports/Shellcode.md
             - "Buffer Overflow-Server": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md
             - "Buffer Overflow-SetUID": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow SetUID.md
+            - "Return-to-libc": blog/Research/Seedlab/Knowledge/Reports/Return-to-libc.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:

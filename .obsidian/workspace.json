@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
+                "file": "docs/blog/Research/Seedlab/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Buffer Overflow"
+              "title": "index"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -154,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
+                "file": "docs/blog/Research/Seedlab/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Return-to-Libc"
+              "title": "Outline of index"
             }
           },
           {
@@ -190,30 +191,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "961bd34cc10f8fe4",
+  "active": "bf64ddc2115be711",
   "lastOpenFiles": [
+    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/Return-to-libc.md",
+    "docs/assets/Pasted image 20250719180957.png",
+    "docs/assets/Pasted image 20250719180751.png",
+    "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
+    "docs/assets/Pasted image 20250719130358.png",
+    "docs/assets/Pasted image 20250719122702.png",
+    "docs/assets/Pasted image 20250719122620.png",
+    "docs/assets/Pasted image 20250719122227.png",
+    "docs/assets/Pasted image 20250719120446.png",
+    "docs/assets/Pasted image 20250719120332.png",
+    "docs/assets/Pasted image 20250719114342.png",
+    "docs/assets/Pasted image 20250719111231.png",
+    "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
+    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
+    "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Reading/index.md",
     "docs/blog/Research/Reading/Others/PentestAgent Notes.md",
-    "docs/assets/Pasted image 20250718190016.png",
-    "docs/assets/Pasted image 20250718190004.png",
-    "docs/assets/Pasted image 20250718185952.png",
-    "docs/assets/Pasted image 20250718185936.png",
-    "docs/assets/Pasted image 20250718185922.png",
-    "docs/assets/Pasted image 20250718185906.png",
     "docs/blog/Research/Reading/Others/AURORA Notes.md",
     "docs/blog/Research/Reading/Others/SEED Emulator Notes.md",
-    "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
     "docs/blog/Research/Reading/PentestAgent.md",
-    "docs/assets/Pasted image 20250717210546.png",
-    "docs/assets/Pasted image 20250717210450.png",
-    "docs/assets/Pasted image 20250717205353.png",
-    "docs/assets/Pasted image 20250717204559.png",
-    "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow SetUID.md",
-    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
-    "docs/blog/Research/Seedlab/Questions.md",
     "docs/blog/Research/Seedlab/勘误.md",
     "AURORA Notes.md",
     "docs/blog/Research/Reading/Others",
@@ -221,14 +224,12 @@
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellcode.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Set UID.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Shellshock.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Set UID.md",
     "docs/blog/Research/Seedlab/Knowledge/Software",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Basic.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md",
-    "docs/blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md",
     "docs/blog/ACEE/AI",
     "Untitled 1.canvas",
     "Untitled.canvas",
