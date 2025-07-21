@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#meltdown" class="md-skip">
+        <a href="#meltdown-attack" class="md-skip">
           跳转至
         </a>
       
@@ -8830,7 +8830,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#meltdown_1" class="md-nav__link">
+  <a href="#meltdown" class="md-nav__link">
     <span class="md-ellipsis">
       Meltdown 攻击
     </span>
@@ -8859,7 +8859,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#meltdown_2" class="md-nav__link">
+  <a href="#meltdown_1" class="md-nav__link">
     <span class="md-ellipsis">
       汇编代码引发 Meltdown
     </span>
@@ -8911,6 +8911,8 @@
   
     
     
+      
+        
       
         
       
@@ -9061,6 +9063,29 @@
   
   <span class="md-ellipsis">
     Return-to-libc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/Race%20Condition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Race Condition
     
   </span>
   
@@ -9399,6 +9424,8 @@
       
         
       
+        
+      
     
     
     
@@ -9561,6 +9588,29 @@
   
   <span class="md-ellipsis">
     Return-to-libc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reports/Race%20Condition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Race Condition
     
   </span>
   
@@ -10286,7 +10336,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#meltdown_1" class="md-nav__link">
+  <a href="#meltdown" class="md-nav__link">
     <span class="md-ellipsis">
       Meltdown 攻击
     </span>
@@ -10315,7 +10365,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#meltdown_2" class="md-nav__link">
+  <a href="#meltdown_1" class="md-nav__link">
     <span class="md-ellipsis">
       汇编代码引发 Meltdown
     </span>
@@ -10376,9 +10426,9 @@
   
 
 
-<h1 id="meltdown">Meltdown 攻击<a class="headerlink" href="#meltdown" title="Permanent link">&para;</a></h1>
+<h1 id="meltdown-attack">Meltdown Attack<a class="headerlink" href="#meltdown-attack" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2385 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 180 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2384 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 180 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <h2 id="_1">概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
@@ -10589,7 +10639,7 @@
 从外部我们是看不到第 4 行被执行了的。</p>
 <p><img alt="" src="../../../../../../assets/Pasted%20image%2020241129182201.png" /></p>
 <hr />
-<h2 id="meltdown_1">Meltdown 攻击<a class="headerlink" href="#meltdown_1" title="Permanent link">&para;</a></h2>
+<h2 id="meltdown">Meltdown 攻击<a class="headerlink" href="#meltdown" title="Permanent link">&para;</a></h2>
 <p>Intel 和其他几家 CPU 制造商在设计乱序执行时犯了一个严重的错误：如果提前执行的指令被发现不应该被执行，那么 CPU 应该将这些指令的执行痕迹抹去。CPU 的确是抹去了指令对内存和寄存器的影响，但忘记了抹去在缓存上留下的痕迹。在进行乱序执行期间，引用的内存被加载到寄存器中并也被存储到了缓存中。如果这些乱序执行必须被丢弃，那么由这些执行导致的缓存也应该被清空。不幸的是，在大多数 CPU 中并非如此。因此这就留下了一个可观测的痕迹，使得 Meltdown 漏洞得以完成攻击。</p>
 <p>乱序执行为我们提供了从内核内存读取数据的机会，然后我们可以利用这些数据进行一些操作，从而在 CPU 缓存中产生可观测的痕迹。利用 CPU 缓存进行侧信道攻击，我们便可以观测到那个可观测的痕迹，从而可以得到内核内存中的秘密值，这便是 Meltdown 攻击。CPU 在完成访问检查之前能进行多久的乱序执行取决于访问检查的速度有多慢。这是一个典型的竞态条件情况，涉及乱序执行与访问检查之间的竞争。乱序执行越快，我们能够执行的指令就越多，从而更有可能创建一个可以帮助我们获取秘密的可观测痕迹。</p>
 <p>乱序执行的第一步包括将内核数据加载到寄存器中，并同时执行访问的安全检查。如果数据加载比安全检查慢，则当安全检查完成时，内核数据可能还在从内存传输至寄存器的过程中，这时乱序执行会因为访问检查失败被立即中断，Meltdown 攻击也会随之失败。以下是示例代码：</p>
@@ -10662,7 +10712,7 @@
 <h4 id="_5">将内核数据提前缓存<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>如果内核数据已经在 CPU 缓存中，那么将内核数据加载到寄存器中的操作会更快，我们可能会在安全检查完成之前就执行了关键的指令——用于读取数组的那一条指令。如果一个内核数据项未被缓存，使用 Meltdown 来窃取该数据将是非常困难的。所以我们可以让用户程序调用内核模块中的一个函数。这个函数将访问秘密数据但不会将其泄露给用户程序。这一访问的效果仅仅只是让该秘密数据放入 CPU 缓存中。</p>
 <hr />
-<h4 id="meltdown_2">汇编代码引发 Meltdown<a class="headerlink" href="#meltdown_2" title="Permanent link">&para;</a></h4>
+<h4 id="meltdown_1">汇编代码引发 Meltdown<a class="headerlink" href="#meltdown_1" title="Permanent link">&para;</a></h4>
 <p>即使内核数据已经在 CPU 缓存当中，我们仍然可能没法实现 Meltdown 攻击。</p>
 <p>根据<a href="https://github.com/paboldin/meltdown-exploit/issues/33">相关研究</a>我们可以在引发异常之前添加一些汇编代码（这些汇编代码没有任何作用，单纯就只是执行），这样能提升我们获得秘密值的概率（诡异至极），我们将 <code>meltdown()</code> 函数替换成如下 <code>meltdown_asm()</code> 函数：</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">meltdown_asm.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -10879,7 +10929,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年3月12日 10:03:25 CST">2025年3月12日 10:03:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年7月21日 22:38:12 CST">2025年7月21日 22:38:12</span>
   </span>
 
     
