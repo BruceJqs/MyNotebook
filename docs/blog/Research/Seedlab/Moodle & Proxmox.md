@@ -530,6 +530,8 @@ echo "✅ NAT + DHCP 配置完成！请将虚拟机网卡桥接到 $VM_BRIDGE �
 sudo truncate -s 0 /etc/machine-id
 sudo rm /var/lib/dbus/machine-id
 sudo rm /etc/ssh/ssh_host_*
+sudo mv /etc/localtime /etc/localtime.bak
+sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 cat /dev/null > ~/.bash_history && history -c
 ```
 ***
