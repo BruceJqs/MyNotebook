@@ -112,10 +112,10 @@ hide:
      </div> 
     </div>   
     <div class="card"> 
-    <img class="ava" src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F373dd668-206e-49a7-ab24-06206512ffab%2F29db38d2-d5fa-4fa6-8a92-3b527cfe80d1%2Ffavicon.svg?table=collection&id=1c6cf0a2-4bb7-4299-89cf-c1ab460a758f&t=1c6cf0a2-4bb7-4299-89cf-c1ab460a758f" /> 
+    <img class="ava" src="https://www.notion.so/image/attachment%3A500bfc4b-1a87-4acb-b6f5-44fb737cbc77%3Alxy.jpg?table=collection&id=1c6cf0a2-4bb7-4299-89cf-c1ab460a758f&t=1c6cf0a2-4bb7-4299-89cf-c1ab460a758f" /> 
      <div class="card-header"> 
       <div> 
-       <a href="https://www.xygg.top/" target="_blank">xygg's Blog</a> 
+       <a href="blog.mindorigin.top" target="_blank">MindOrigin's Blog</a> 
       </div> 
       <div class="info">
       xygg の个人主页！
