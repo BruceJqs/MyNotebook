@@ -115,7 +115,7 @@ hide:
     <img class="ava" src="https://www.notion.so/image/attachment%3A500bfc4b-1a87-4acb-b6f5-44fb737cbc77%3Alxy.jpg?table=collection&id=1c6cf0a2-4bb7-4299-89cf-c1ab460a758f&t=1c6cf0a2-4bb7-4299-89cf-c1ab460a758f" /> 
      <div class="card-header"> 
       <div> 
-       <a href="blog.mindorigin.top" target="_blank">MindOrigin's Blog</a> 
+       <a href="https://blog.mindorigin.top/" target="_blank">MindOrigin's Blog</a> 
       </div> 
       <div class="info">
       xygg の个人主页！
