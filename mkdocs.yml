@@ -356,6 +356,7 @@ nav:
           - "Return-to-libc": blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md
           - "Race Condition": blog/Research/Seedlab/Knowledge/Software/Race Condition.md
           - "Dirty COW": blog/Research/Seedlab/Knowledge/Software/Dirty COW.md
+          - "Format String": blog/Research/Seedlab/Knowledge/Software/Format String.md
         - Network:
           - "BGP and Attacks": blog/Research/Seedlab/Knowledge/Network/BGP Basic.md
           - "DNS Remote-Kaminsky Attack": blog/Research/Seedlab/Knowledge/Network/Kaminsky.md
@@ -374,6 +375,7 @@ nav:
             - "Return-to-libc": blog/Research/Seedlab/Knowledge/Reports/Return-to-libc.md
             - "Race Condition": blog/Research/Seedlab/Knowledge/Reports/Race Condition.md
             - "Dirty COW": blog/Research/Seedlab/Knowledge/Reports/Dirty COW.md
+            - "Format String": blog/Research/Seedlab/Knowledge/Reports/Format String.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:

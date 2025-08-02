@@ -528,18 +528,8 @@ echo "✅ NAT + DHCP 配置完成！请将虚拟机网卡桥接到 $VM_BRIDGE �
 
 ```bash
 sudo truncate -s 0 /etc/machine-id
-sudo rm /var/lib/dbus/machine-id
-sudo rm /etc/ssh/ssh_host_*
+sudo rm /var/lib/dbus/machine-idcsudo rm /etc/ssh/ssh_host_*
 sudo mv /etc/localtime /etc/localtime.bak
 sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 cat /dev/null > ~/.bash_history && history -c
 ```
-***
-## 需要改进的
-
-- 虚拟机 docker 换源
-- 虚拟机没有 HTTP Header Live 插件（？），要安装 firefox 版本还太低？
-- 插件位置是否能移动到内容中？（即放到实验环境块中）
-- 虚拟机剪贴板问题
-- Moodle 用户注册（用户名不能大写？电子邮件 zju 邮箱不支持？）
-- Moodle 编辑模式按钮有的时候点不了？
