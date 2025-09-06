@@ -26,6 +26,7 @@ comments: true
 
 - Hardware
 	- [Meltdown Attack](Knowledge/Hardware/Meltdown%20Attack/)
+	- [Spectre Attack](Knowledge/Hardware/Spectre%20Attack/)
 - Software
 	- [Linux Security Basics](Knowledge/Software/Basic/)
 	- [Set UID](Knowledge/Software/Set%20UID/)
@@ -54,6 +55,9 @@ comments: true
 		- [Race Condition](Knowledge/Reports/Race%20Condition/)
 		- [Dirty COW](Knowledge/Reports/Dirty%20COW/)
 		- [Format String](Knowledge/Reports/Format%20String/)
+	- Hardware Security
+		- [Meltdown Attack](Knowledge/Reports/Meltdown%20Attack/)
+		- [Spectre Attack](Knowledge/Reports/Spectre%20Attack/)
 ***
 ### Emulator Labs
 
