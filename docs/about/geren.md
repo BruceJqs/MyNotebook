@@ -23,6 +23,8 @@ status: new
   <p style="text-align: center; font-size: 30px; margin: 0px;"><strong>A college student in ZheJiang University</strong></p>
 </p>
 
+<img src="https://pic1.imgdb.cn/item/68bbc52958cb8da5c8827d3a.jpg" style="width: auto; height:auto">
+
 !!! pied-piper1 "About me"
     - [x] Hey, I'm Bruce!
     - [x] ZJU 23级 CS 小趴菜一个～
