@@ -348,6 +348,7 @@ nav:
       - Knowledge:
         - Hardware:
           - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Hardware/Meltdown Attack.md
+          - "Spectre Attack": blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md
         - Software:
           - "Linux Security Basics": blog/Research/Seedlab/Knowledge/Software/Basic.md
           - "Set UID": blog/Research/Seedlab/Knowledge/Software/Set UID.md
@@ -376,6 +377,9 @@ nav:
             - "Race Condition": blog/Research/Seedlab/Knowledge/Reports/Race Condition.md
             - "Dirty COW": blog/Research/Seedlab/Knowledge/Reports/Dirty COW.md
             - "Format String": blog/Research/Seedlab/Knowledge/Reports/Format String.md
+          - "System Security":
+            - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Reports/Meltdown Attack.md
+            - "Spectre Attack": blog/Research/Seedlab/Knowledge/Reports/Spectre Attack.md
       - Basic-labs:
         - "A00_simple_as": blog/Research/Seedlab/Basic-Labs/A00_simple_as.md
   # - Internship:
