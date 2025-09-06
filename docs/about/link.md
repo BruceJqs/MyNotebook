@@ -81,7 +81,7 @@ hide:
             <a href="https://wcowin.work/ " target="_blank">Wcowin's Web</a> 
             </div> 
             <div class="info">“循此苦旅，以达星辰”</div>
-            <div class="info">本站 Mkdocs 主题 & 教程来源～</div>
+            <div class="info">本站 Mkdocs 主题 & 教程</div>
           </div> 
         </div>
         <div class="card"> 
@@ -106,16 +106,16 @@ hide:
             <div> 
             <a href="https://github.com/BruceJqs/ZJU-Courses" target="_blank">BruceJin's ZJU-Course Repository</a> 
             </div> 
-            <div class="info">BruceJin 在 ZJU 学习各课程留下的笔记资源库～</div> 
+            <div class="info">BruceJin 在 ZJU 学习的资源库～</div> 
           </div> 
         </div> 
         <div class="card"> 
           <img class="ava" src="http://47.96.29.144/img/avatar.jpg" /> 
           <div class="card-header"> 
             <div>
-            <a href="http://47.96.29.144/" target="_blank">晚栀wingee~</a> 
+            <a href="http://47.96.29.144/" target="_blank">晚栀 wingee~</a> 
             </div> 
-            <div class="info">Bruce 亲爱的组爸 pygg 滴个人主页！</div> 
+            <div class="info"> pygg 滴个人主页！</div> 
           </div> 
         </div> 
         <div class="card"> 
