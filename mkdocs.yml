@@ -1,5 +1,6 @@
 #[Info]
 site_name: BruceJin's Notebook
+site_url: https://note.eternity1005.top/
 site_author: Eternity # your name
 #[UI]
 theme:
@@ -37,12 +38,9 @@ theme:
 
   features:
     - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
-    # - navigation.instant
-    #- header.autohide  #自动隐藏
     - navigation.tracking #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
     - navigation.tabs #顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
-    # - navigation.tabs.sticky  #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见
-    # - navigation.sections #启用部分后，顶级部分在边栏中呈现为1220px以上视口的组，但在移动设备上保持原样
+    - navigation.sections #启用部分后，顶级部分在边栏中呈现为1220px以上视口的组，但在移动设备上保持原样
     - navigation.top # 返回顶部的按钮 在上滑时出现
     - navigation.footer #页脚将呈现在边栏中，但在移动设备上保持原样
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
@@ -50,7 +48,7 @@ theme:
     - search.share #搜索分享按钮
     # - navigation.expand # 打开Tab时左侧目录全部展开
     - navigation.indexes #启用节索引页后，可以将文档直接附加到节
-    # - content.tabs.link
+    - content.tabs.link
     - content.tooltips
     - content.code.copy #代码复制
     - content.action.edit
@@ -410,17 +408,20 @@ nav:
 copyright: Copyright &copy; 2024 BruceJin/All Rights Reserved. # 左下角的版权声明
 
 extra:
+  alternate:
+    # - name: 中文
+    #   link: "javascript:translateTo('chinese_simplified');"
+    #   lang: zh
+    # - name: English
+    #   link: "javascript:translateTo('english');"
+    #   lang: en
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
-    # - icon: fontawesome/brands/x-twitter #联系方式图标 : https://fontawesome.com/ 去这里找图标
-    #   link: https://twitter.com/wcowin_
     - icon: fontawesome/brands/github
       link: https://github.com/BruceJqs
 
     - icon: fontawesome/regular/envelope #联系方式图标
       link: mailto:<brucejin1005@gmail.com> #邮件联系方式
-    # - icon: fontawesome/brands/bilibili
-    #   link: https://space.bilibili.com/1407028951?spm_id_from=333.1007.0.0
   analytics:
     provider: google #谷歌分析
     property:
@@ -449,7 +450,12 @@ extra:
 
 plugins:
   # - rss
-  - search #搜索配置
+  - search:
+      enabled: !ENV [CI, false]
+      separator: '[\s\u200b\-\u3000\u3001\u3002\uFF0C\uFF0E\uFF1F\uFF01\uFF1B]+'
+      lang:
+        - zh
+        - en
   - statistics:
       words_per_minute: 200
   - git-committers:
