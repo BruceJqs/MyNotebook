@@ -11373,8 +11373,7 @@ Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多�
       
         <!-- Footer -->
 <footer class="md-footer">
-
-  <!-- Link to previous and/or next page -->
+  <!-- Link to previous and/or next page - 移到最上面 -->
   
     
   
@@ -11382,38 +11381,58 @@ Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多�
   <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Copyright &copy; 2024 BruceJin/All Rights Reserved.
-    </div>
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-   
-    <font color="#B9B9B9">
-      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;">
-    本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
-    <span id="finicount_views"></span>    &nbsp;|&nbsp;
-    <footer>
-      <a href="https://icp.gov.moe/?keyword=20251066" target="_blank">萌ICP备20251066号</a>
-    </footer>
-  </div>
-      </font>
+      <div class="footer-wrapper">
+        <!-- 访问统计区域 -->
+        <div class="footer-content">
+          <div class="footer-visit-count">
+            <div class="footer-item">
+              <span>本站访问量：</span>
+              <span id="finicount_views" class="footer-highlight"></span>
+            </div>
 
-      <style>
-        .footer-visit-count {
-            height: fit-content;
-            min-height: 55px; /* 根据实际情况调整此高度 */
-        }
-        </style>
-      
-        
+            <div class="footer-item">
+              <a
+                href="https://icp.gov.moe/?keyword=20250166"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icp-link"
+              >萌ICP备20250166号</a>
+            </div>
+
+            <div class="footer-item runtime-info">
+              <span>本站已经运行</span>
+              <span id="box1" class="footer-highlight"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 移动端简洁布局 (仿 footercopy.html) -->
+        <div class="footer-visit-count-mobile">
+          <span>本站访问量：</span>
+          <span id="finicount_views_mobile" class="footer-highlight"></span>
+          |
+          <a
+            href="https://icp.gov.moe/?keyword=20250166"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icp-link"
+          >萌ICP备20250166号</a>
+          <!-- |&nbsp; -->
+          <span class="runtime-info">
+            <span>本站已经运行</span>
+            <span id="box1_mobile"></span>
+          </span>
+        </div>
+        <!-- 版权信息和社交媒体水平布局 -->
+        <div class="footer-bottom-section">
+          <div class="md-footer-copyright">
+            <p>Copyright © 2022-2025 Wcowin</p>
+            <p>Made with <a href="https://squidfunk.github.io/mkdocs-material/" style="color: #518FC1; text-decoration: none;">Material for MkDocs</a></p>
+          </div>
+
+          
+            <div class="footer-social">
+              
 <div class="md-social">
   
     
@@ -11436,7 +11455,319 @@ Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多�
     </a>
   
 </div>
-      
+            </div>
+          
+        </div>
+      </div>
+
+      <script>
+        (function() {
+          // 全局状态管理，避免重复初始化
+          if (window.footerInitialized) {
+            console.log('页脚已初始化，跳过重复执行');
+            return;
+          }
+          
+          // 性能优化：使用 RequestAnimationFrame 优化计时器
+          let animationFrameId;
+          let lastUpdateTime = 0;
+          const UPDATE_INTERVAL = 1000; // 1秒更新一次
+          
+          function timingTime() {
+            const start = "2022-10-20T00:00:00";
+            const startTime = new Date(start).getTime();
+            const now = Date.now();
+            let diff = Math.floor((now - startTime) / 1000);
+            const days = Math.floor(diff / 86400);
+            diff %= 86400;
+            const hours = Math.floor(diff / 3600);
+            diff %= 3600;
+            const minutes = Math.floor(diff / 60);
+            const seconds = diff % 60;
+            return `${days}天${hours}时${minutes}分${seconds}秒`;
+          }
+
+          // 优化的时间更新函数 - 使用 RAF 提升性能
+          function updateTime(timestamp) {
+            if (timestamp - lastUpdateTime >= UPDATE_INTERVAL) {
+              const el = document.getElementById("box1");
+              const elMobile = document.getElementById("box1_mobile");
+              const time = timingTime();
+
+              if (el) el.textContent = time;
+              if (elMobile) elMobile.textContent = time;
+              
+              lastUpdateTime = timestamp;
+            }
+            
+            animationFrameId = requestAnimationFrame(updateTime);
+          }
+
+          // 防抖的访问量计数器加载
+          let counterLoadTimeout;
+          async function loadVisitCounter() {
+            // 清除之前的超时
+            if (counterLoadTimeout) {
+              clearTimeout(counterLoadTimeout);
+            }
+            
+            // 防抖延迟加载
+            counterLoadTimeout = setTimeout(async () => {
+              try {
+                // 检查是否已经加载
+                if (window.finicounterLoaded) {
+                  console.log('计数器已加载，跳过重复加载');
+                  return;
+                }
+                
+                const script = document.createElement('script');
+                script.src = '//finicounter.eu.org/finicounter.js';
+                script.async = true;
+                script.onload = () => {
+                  window.finicounterLoaded = true;
+                  console.log('访问量计数器加载完成');
+                };
+                script.onerror = function() {
+                  console.log('访问量计数器加载失败，使用备用显示');
+                  const desktop = document.getElementById("finicount_views");
+                  const mobile = document.getElementById("finicount_views_mobile");
+                  if (desktop) desktop.textContent = '统计中...';
+                  if (mobile) mobile.textContent = '统计中...';
+                };
+                document.head.appendChild(script);
+              } catch (e) {
+                console.log('访问量计数器初始化失败:', e);
+              }
+            }, 300); // 300ms 防抖延迟
+          }
+
+          // 优化的访问量同步 - 使用节流
+          let syncThrottleTimeout;
+          function syncVisitCount() {
+            if (syncThrottleTimeout) return;
+            
+            syncThrottleTimeout = setTimeout(() => {
+              const desktop = document.getElementById("finicount_views");
+              const mobile = document.getElementById("finicount_views_mobile");
+              if (desktop && mobile && desktop.textContent && desktop.textContent !== '加载中...') {
+                mobile.textContent = desktop.textContent;
+              }
+              syncThrottleTimeout = null;
+            }, 100);
+          }
+
+          // 观察器设置 - 添加错误处理
+          function setupVisitCountObserver() {
+            try {
+              if (window._visitCountObserver) {
+                window._visitCountObserver.disconnect();
+              }
+              
+              const visitCountTarget = document.getElementById("finicount_views");
+              if (visitCountTarget) {
+                window._visitCountObserver = new MutationObserver(syncVisitCount);
+                window._visitCountObserver.observe(visitCountTarget, { 
+                  childList: true, 
+                  subtree: true,
+                  characterData: true 
+                });
+              }
+            } catch (e) {
+              console.log('访问量监听器设置失败:', e);
+            }
+          }
+
+          // 清理函数 - 完善资源清理
+          function cleanup() {
+            // 清除动画帧
+            if (animationFrameId) {
+              cancelAnimationFrame(animationFrameId);
+              animationFrameId = null;
+            }
+            
+            // 清除超时器
+            if (counterLoadTimeout) {
+              clearTimeout(counterLoadTimeout);
+              counterLoadTimeout = null;
+            }
+            
+            if (syncThrottleTimeout) {
+              clearTimeout(syncThrottleTimeout);
+              syncThrottleTimeout = null;
+            }
+            
+            // 清除观察器
+            if (window._visitCountObserver) {
+              window._visitCountObserver.disconnect();
+              window._visitCountObserver = null;
+            }
+            
+            console.log('页脚资源已清理');
+          }
+
+          // 初始化函数 - 添加性能监控
+          function init() {
+            const startTime = performance.now();
+            
+            cleanup();
+            
+            // 启动优化的计时器
+            animationFrameId = requestAnimationFrame(updateTime);
+
+            // 延迟加载访问量计数器
+            setTimeout(loadVisitCounter, 500);
+
+            // 设置访问量同步
+            setTimeout(setupVisitCountObserver, 600);
+
+            const endTime = performance.now();
+            console.log(`页脚初始化完成，耗时: ${(endTime - startTime).toFixed(2)}ms`);
+          }
+
+          // 页面导航处理 - 简化逻辑
+          function handleNavigation() {
+            // 延迟执行，确保 DOM 更新完成
+            setTimeout(() => {
+              console.log('页面导航检测到，重新初始化页脚');
+              init();
+            }, 100);
+          }
+
+          // 统一的导航事件处理
+          if (typeof window.document$ !== 'undefined' && !window.document$.isStopped) {
+            // Material for MkDocs 即时导航
+            window.document$.subscribe(handleNavigation);
+          } else {
+            // 标准页面加载
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', init);
+            } else {
+              init();
+            }
+          }
+
+          // 页面卸载清理
+          window.addEventListener('beforeunload', cleanup);
+          
+          // 标记初始化完成
+          window.footerInitialized = true;
+        })();
+      </script>
+
+      <!-- 优化后的样式 - 移除重复和未使用的样式 -->
+      <style>
+        /* 页脚背景 - 简化版本 */
+        .md-footer {
+          background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+        .md-footer-meta {
+          background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        /* 核心布局样式 */
+        .footer-wrapper {
+          width: 100%;
+          padding: 0.2rem 0;
+          text-align: center;
+        }
+
+        .footer-bottom-section {
+          max-width: 900px;
+          margin: 0.4rem auto 0;
+          padding: 0.4rem 1rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .footer-content {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 0.4rem 0 0;
+        }
+
+        /* 访问统计样式 */
+        .footer-visit-count {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.3rem;
+          font-size: 0.75rem;
+          color: var(--md-footer-fg-color--light);
+        }
+
+        .footer-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.4rem 0.8rem;
+          border-radius: 16px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          min-width: 160px;
+          font-size: 0.8rem;
+          transition: all 0.2s ease;
+          will-change: transform; /* 优化动画性能 */
+        }
+
+        .footer-highlight {
+          color: #C2C4C9;
+          font-weight: 600;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 76.1875em) {
+          .footer-visit-count { display: none; }
+          
+          .footer-visit-count-mobile {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4em 0.8em;
+            padding: 0.2em 0;
+            font-size: 0.75rem;
+            color: var(--md-footer-fg-color--light);
+            text-align: center;
+          }
+
+          .footer-bottom-section {
+            flex-direction: column;
+            gap: 0.6rem;
+            text-align: center;
+          }
+        }
+
+        @media (min-width: 76.1875em) {
+          .footer-visit-count-mobile { display: none; }
+          .footer-visit-count {
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem;
+          }
+        }
+
+        /* 其他必要样式保持不变 */
+        .md-footer-copyright {
+          text-align: left;
+          font-size: 0.75rem;
+          opacity: 0.8;
+          line-height: 1.2;
+        }
+
+        .footer-social {
+          display: flex;
+          gap: 0.3rem;
+          align-items: center;
+        }
+
+        .icp-link {
+          color: inherit;
+          text-decoration: none;
+        }
+      </style>
     </div>
   </div>
 </footer>
