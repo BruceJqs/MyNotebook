@@ -555,9 +555,12 @@ extra_javascript:
   - javascripts/glightbox.min.js
 
 extra_css:
-  - stylesheets/extra.css # 自定义CSS
-  - stylesheets/link.css #友链配置
-  - stylesheets/customize.css # 搜索圆角优化
+  # - stylesheets/extra.css # 自定义CSS
+  - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/extra.css # 自定义CSS
+  # - stylesheets/link.css #友链配置
+  - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/link.css #友链配置
+  # - stylesheets/customize.css # 搜索圆角优化
+  - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/customize.css # 搜索圆角优化
 
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css

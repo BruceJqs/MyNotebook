@@ -3,7 +3,7 @@ title: 友链
 comments: true
 hide:
 #   - navigation # 显示右
-#   - toc #显示左
+#   - toc # 显示左
   - footer
   - feedback
 ---
@@ -80,12 +80,8 @@ hide:
             <div> 
             <a href="https://wcowin.work/ " target="_blank">Wcowin's Web</a> 
             </div> 
-            <div class="info">
-            “循此苦旅，以达星辰”
-            </div>
-            <div class="info">
-            本站 Mkdocs 主题 & 教程来源～
-            </div>
+            <div class="info">“循此苦旅，以达星辰”</div>
+            <div class="info">本站 Mkdocs 主题 & 教程来源～</div>
           </div> 
         </div>
         <div class="card"> 
@@ -94,9 +90,7 @@ hide:
             <div> 
             <a href="https://note.isshikih.top/" target="_blank">IsshikiHugh's Notebook</a> 
             </div> 
-            <div class="info">
-            夏神我的神！
-            </div> 
+            <div class="info">夏神我的神！</div> 
           </div> 
         </div>
         <div class="card"> 
@@ -104,9 +98,7 @@ hide:
             <div> 
             <a href="https://isshikihugh.github.io/zju-cs-asio/" target="_blank">ZJU CS-All Sum In One!</a> 
             </div> 
-            <div class="info">
-            还是夏神！ASIO！
-            </div> 
+            <div class="info">还是夏神！ASIO！</div> 
           </div> 
         </div>
         <div class="card"> 
@@ -114,9 +106,7 @@ hide:
             <div> 
             <a href="https://github.com/BruceJqs/ZJU-Courses" target="_blank">BruceJin's ZJU-Course Repository</a> 
             </div> 
-            <div class="info">
-            BruceJin 在 ZJU 学习各课程留下的笔记资源库～
-            </div> 
+            <div class="info">BruceJin 在 ZJU 学习各课程留下的笔记资源库～</div> 
           </div> 
         </div> 
         <div class="card"> 
@@ -125,9 +115,7 @@ hide:
             <div>
             <a href="http://47.96.29.144/" target="_blank">晚栀wingee~</a> 
             </div> 
-            <div class="info">
-            Bruce 亲爱的组爸 pygg 滴个人主页！
-            </div> 
+            <div class="info">Bruce 亲爱的组爸 pygg 滴个人主页！</div> 
           </div> 
         </div> 
         <div class="card"> 
@@ -136,9 +124,7 @@ hide:
             <div> 
             <a href="https://zzw4257.cn/" target="_blank">zzw4257</a> 
             </div> 
-            <div class="info">
-            zwgg の个人主页！
-            </div> 
+            <div class="info">zwgg の个人主页！</div> 
           </div> 
         </div>  
         <div class="card"> 
@@ -147,9 +133,7 @@ hide:
             <div> 
             <a href="https://wbx0710.github.io/mymkdocs/" target="_blank">Bixing's Notebook</a> 
             </div> 
-            <div class="info">
-            bxgg の个人主页！
-            </div> 
+            <div class="info">bxgg の个人主页！</div> 
           </div> 
         </div>  
         <div class="card"> 
@@ -158,9 +142,7 @@ hide:
             <div> 
             <a href="https://xw-soleil.github.io/" target="_blank">Soleil's Blog</a> 
             </div> 
-            <div class="info">
-            xwgg の个人主页！
-            </div> 
+            <div class="info">xwgg の个人主页！</div> 
           </div> 
         </div> 
         <div class="card"> 
@@ -169,9 +151,7 @@ hide:
             <div> 
             <a href="https://www.aboatwithflow.top/" target="_blank">Aboat Withflow's Blog</a> 
             </div> 
-            <div class="info">
-            jmgg の个人主页！
-            </div> 
+            <div class="info">jmgg の个人主页！</div> 
           </div> 
         </div>   
         <div class="card"> 
@@ -180,9 +160,7 @@ hide:
             <div> 
             <a href="https://blog.mindorigin.top/" target="_blank">MindOrigin's Blog</a> 
             </div> 
-            <div class="info">
-            xygg の个人主页！
-            </div> 
+            <div class="info">xygg の个人主页！</div> 
           </div> 
         </div>   
       </div>
