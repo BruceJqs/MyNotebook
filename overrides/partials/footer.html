@@ -112,6 +112,45 @@
         </div>
       </div>
 
+      <!-- 页脚脚本部分 - 优化版本 -->
+
+      <!-- 翻译功能脚本 - 只加载一次 -->
+      <!-- <script>
+        // 检查翻译是否已初始化，避免重复加载
+        if (!window.translateInitialized) {
+          // 动态加载翻译脚本
+          const translateScript = document.createElement('script');
+          translateScript.src = 'https://cdn.staticfile.net/translate.js/3.12.0/translate.js';
+          translateScript.onload = function() {
+            // 翻译配置
+            translate.ignore.class.push('md-select', 'footer-highlight', 'md-footer-copyright');
+            
+            translate.nomenclature.append('chinese_simplified','english',`
+              快讯=Newsflash
+              访问量=Page Views
+              本站已经运行=Site has been running
+              天=days
+              时=hours
+              分=minutes
+              秒=seconds
+              萌ICP备=Moe ICP
+              版权所有=Copyright
+              制作工具=Made with
+            `);
+
+            translate.language.setLocal('chinese_simplified');
+            translate.setAutoDiscriminateLocalLanguage();
+            translate.selectLanguageTag.show = false;
+            translate.service.use('client.edge');
+            translate.execute();
+            
+            window.translateInitialized = true;
+            console.log('翻译功能已初始化');
+          };
+          document.head.appendChild(translateScript);
+        }
+      </script> -->
+
       <script>
         (function() {
           // 全局状态管理，避免重复初始化
