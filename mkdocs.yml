@@ -1,4 +1,6 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 #[Info]
+
 site_name: BruceJin's Notebook
 site_url: https://note.eternity1005.top/
 site_author: Eternity # your name
@@ -6,24 +8,17 @@ site_author: Eternity # your name
 theme:
   name: material
   custom_dir: docs/overrides #覆写路径
-  # font: #谷歌字体，自行搜索
-  #   text: Bitter  #文本字体
-  #   code: Roboto Mono  #代码字体
   logo: assets/头像.jpg #左上角logo，可插入图片链接
-
-  favicon: assets/头像.jpg # 网页icon
-
+  favicon: assets/头像.jpg 
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/link
         name: 关闭自动模式
-    #primary: blue grey
     - media: "(prefers-color-scheme: light)"
       scheme: default # 日间模式
-      primary: blue grey # 上方的
-      accent: blue # 链接等可交互元件的高亮色
-      # teal
+      primary: blue # 上方的
+      accent: indigo # 链接等可交互元件的高亮色
       toggle:
         icon: material/toggle-switch # 图标
         name: 切换至夜间模式 # 鼠标悬浮提示
@@ -31,7 +26,6 @@ theme:
       scheme: slate # 夜间模式
       primary: black
       accent: indigo
-      # teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: 切换至日间模式
@@ -54,11 +48,17 @@ theme:
     - content.action.edit
     - content.action.view
     - content.code.annotate
+    # - navigation.instant
+    #- header.autohide  #自动隐藏
+    # - navigation.tabs.sticky  #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见
   language: zh # 一些提示性的文字会变成中文
 
   icon:
     repo: fontawesome/brands/github #右上角图标
     logo: logo
+    previous: fontawesome/solid/angle-left
+    # top: fontawesome/solid/angles-up
+    alternate: fontawesome/solid/language
 # edit_uri: edit/main/docs # 编辑按钮跳转的链接
 repo_url: https://github.com/BruceJqs/MyNotebook # 右上角点击跳转的链接
 repo_name: BruceJqs/MyNotebook # 右上角的名字
@@ -405,16 +405,22 @@ nav:
     - 友链: about/link.md
       # - 功能测试: about/test.md
 
-copyright: Copyright &copy; 2024 BruceJin/All Rights Reserved. # 左下角的版权声明
+copyright: Copyright &copy; 2024-2025 BruceJin/All Rights Reserved. # 左下角的版权声明
 
 extra:
   alternate:
-    # - name: 中文
-    #   link: "javascript:translateTo('chinese_simplified');"
-    #   lang: zh
-    # - name: English
-    #   link: "javascript:translateTo('english');"
-    #   lang: en
+    - name: 中文
+      link: "javascript:translateTo('chinese_simplified');"
+      lang: zh
+    - name: English
+      link: "javascript:translateTo('english');"
+      lang: en
+    - name: 日本語
+      link: "javascript:translateTo('japanese');"
+      lang: ja
+    # - name: Deutsch
+    #   link: "javascript:translateTo('deutsch');"
+    #   lang: de
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
     - icon: fontawesome/brands/github
@@ -422,11 +428,11 @@ extra:
 
     - icon: fontawesome/regular/envelope #联系方式图标
       link: mailto:<brucejin1005@gmail.com> #邮件联系方式
-  analytics:
-    provider: google #谷歌分析
-    property:
+  # analytics:
+    # provider: google #谷歌分析
+    # property: G-29HZMNR0KG ##如果你 clone 了my模板，请将这个修改为你的
 
-    # 网页底部反馈
+    # # 网页底部反馈
     # feedback:
     #   title: 此页面有帮助吗？
     #   ratings:
@@ -449,15 +455,47 @@ extra:
   #     如果你同意,你可以帮助我们让我们的网站更好
 
 plugins:
-  # - rss
+  - ai-summary:
+      ai_service: "glm"  # or "openai", "gemini", "glm"
+      summary_language: "zh"  # or "en"
+      cache_enabled: true
+      local_enabled: true
+      cache_expire_days: 30
+      # debug: true # 是否显示调试信息（默认：false）
+      enabled_folders:
+        - blog/    # 添加blog文件夹
+        - develop/ # 添加develop文件夹
+        # - docs/    # 保留docs文件夹
+      exclude_patterns:
+        - about/
+        - index.md
+        - tag.md
+        - blog/posts/update.md
+        - blog/category/
+        - blog/posts/
   - search:
       enabled: !ENV [CI, false]
       separator: '[\s\u200b\-\u3000\u3001\u3002\uFF0C\uFF0E\uFF1F\uFF01\uFF1B]+'
       lang:
         - zh
         - en
-  - statistics:
-      words_per_minute: 200
+  # - glightbox:
+  #     enabled: !ENV [glightbox, false]
+  #     touchNavigation: true
+  #     loop: false
+  #     effect: fade
+  #     slide_effect: slide
+  #     width: 100%
+  #     height: auto
+  #     zoomable: true
+  #     draggable: true
+  #     skip_classes:
+  #       - custom-skip-class-name
+  #     auto_caption: false
+  #     caption_position: bottom
+  #     background: white
+  #     shadow: true
+  #     manual: false
   - git-committers:
       enabled: !ENV [CI, false]
       repository: BruceJqs/MyNotebook
@@ -465,21 +503,24 @@ plugins:
       exclude:
         - index.md
         - tag.md
+        - liuyanban.md
         - blog/posts/update.md
         - blog/posts/wkw.md
         - about/link.md
   - git-revision-date-localized:
-      type: datetime
-      timezone: Asia/Shanghai
-      locale: zh
-      enable_creation_date: true
+      enabled: !ENV [CI, false]
+      type: iso_date
+      enable_creation_date: false
       exclude:
-        - index.md
+        # - index.md
         - tag.md
+        - liuyanban.md
         - blog/posts/update.md
         - blog/posts/wkw.md
         - about/link.md
         - websitebeauty/linktech.md
+  # - statistics:
+  #     words_per_minute: 200
   - blog: #博客配置
       post_date_format: full #时间
       draft: true
@@ -492,8 +533,7 @@ plugins:
       #     case: lower
       pagination_url_format: "page/{page}"
       authors_file: "{blog}/.authors.yml" #作者信息
-  - tags:
-      tags_file: tag.md #分类标签
+  - tags
 
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
   - abbr
@@ -502,11 +542,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - def_list
   - footnotes
   - md_in_html
-  - toc:
-      permalink: true
-      toc_depth: 4
-  - sane_lists
-  - meta # 支持Markdown文件上方自定义标题标签等
+  # - meta # 支持Markdown文件上方自定义标题标签等
   - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
@@ -517,24 +553,20 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - pymdownx.snippets
   - pymdownx.smartsymbols
   - pymdownx.tilde
-  - pymdownx.magiclink
-
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format:
             !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-
   - pymdownx.arithmatex: # latex支持
       generic: true
   - toc:
-      permalink: true # 固定标题位置为当前位置
+      permalink: true
+      toc_depth: 4
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
       linenums: true # 显示行号
-      line_spans: __span
-      pygments_lang_class: true
       # auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -543,7 +575,6 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.pathconverter
   # - markdown.extensions.toc:
   #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   #     permalink: "\ue157"
@@ -587,3 +618,11 @@ extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css #字体
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css  #字体
+
+
+hooks:
+  - docs/overrides/hooks/socialmedia.py
+  - docs/overrides/hooks/reading_time.py
+  # - docs/overrides/hooks/ai_summary.py
+  # - docs/overrides/hooks/related_posts.py
+  - docs/overrides/hooks/comments.py       # 新添加的评论系统

@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 ---   
 
 # 用 VMware Fusion 安装 Ubuntu 虚拟机

@@ -1,35 +1,59 @@
-# Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+# 核心框架
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0
 
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to
-# deal in the Software without restriction, including without limitation the
-# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-# sell copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
+# 扩展功能
+pymdown-extensions>=10.0
+jinja2>=3.0.0
 
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-# IN THE SOFTWARE.
-
-# Requirements for core
-jinja2~=3.0
-markdown~=3.2
-mkdocs~=1.5.3
-mkdocs-material-extensions~=1.3
-pygments~=2.16
-pymdown-extensions~=10.2
-
-# Requirements for plugins
-babel~=2.10
-colorama~=0.4
-paginate~=0.5
-regex>=2022.4
-requests~=2.26
+# 内容增强插件
+mkdocs-encryptcontent-plugin
+mkdocs-glightbox
+mkdocs-git-committers-plugin-2
+mkdocs-git-revision-date-localized-plugin
 mkdocs-markdownextradata-plugin
+mkdocs-open-in-new-tab
+
+# 中文处理
+jieba>=0.42.1
+
+# 网络请求
+urllib3<2
+requests>=2.25.0
+
+# 数据处理和分析
+pyyaml>=6.0
+hashlib-compat  # 用于内容哈希计算
+
+# 自然语言处理 (用于您的推荐系统和阅读时间统计)
+nltk>=3.8
+scikit-learn>=1.0.0  # 用于相似度计算
+
+# 缓存和性能优化
+python-dateutil>=2.8.0
+markupsafe>=2.1.0
+
+# AI 功能支持 (基于您的 AI Summary 功能)
+openai>=1.0.0
+deepseek-api  # 如果使用 DeepSeek API
+
+# 图像处理 (如果需要)
+pillow>=9.0.0
+
+# 开发和调试工具
+mkdocs-minify-plugin  # 代码压缩
+mkdocs-awesome-pages-plugin  # 页面管理
+mkdocs-redirects  # 重定向管理
+
+# 数学公式支持
+python-markdown-math
+
+# RSS 和 Sitemap 支持
+mkdocs-rss-plugin>=1.10.0
+lxml>=4.9.0  # XML 处理
+
+# 搜索增强
+mkdocs-search-pro
+
+# 多语言支持
+mkdocs-static-i18n

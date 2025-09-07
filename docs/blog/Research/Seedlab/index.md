@@ -2,7 +2,7 @@
 hide:
   - footer
   - feedback
-comments: true
+# comments: true
 ---
 # Seed-labs
 
