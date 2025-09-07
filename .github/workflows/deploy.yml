@@ -33,13 +33,11 @@ jobs:
           pip install python-dotenv>=0.19.0
           pip install Pillow
           pip install neoteroi-mkdocs
-
           pip install mkdocs-document-dates==3.3
           pip install pymdown-extensions
           pip install mkdocs-material 
           pip install --upgrade --force-reinstall mkdocs-material
-
-        - run: pip install mkdocs-ai-summary-wcowin
+          pip install mkdocs-ai-summary-wcowin
 
       - name: Build MkDocs site
         run: mkdocs build
