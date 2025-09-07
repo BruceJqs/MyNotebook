@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 ---  
 
 # Crypto-1｜现代密码学入门指北

@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 ---  
 
 # 大学物理实验｜College Physical Experiments

@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 --- 
 # Chapter 02 : 数学规划
 ## 运筹学

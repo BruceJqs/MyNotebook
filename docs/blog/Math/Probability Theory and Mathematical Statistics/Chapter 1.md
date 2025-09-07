@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 ---  
 # Chapter 01 : 概率论的基本概念
 

@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 --- 
 
 # Chapter 07 : 椭圆曲线（Elliptic Curve）算法

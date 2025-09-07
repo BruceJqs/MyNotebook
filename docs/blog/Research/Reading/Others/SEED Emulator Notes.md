@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 ---  
 
 # SEED emulator : an internet emulator for research and education

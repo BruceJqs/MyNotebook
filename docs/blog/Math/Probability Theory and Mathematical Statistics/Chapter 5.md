@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 ---
 # Chapter 05 : 大数定律和中心极限定理
 

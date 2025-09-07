@@ -106,10 +106,10 @@ statistics: True
     </div>
 </div> 
 
-!!! info "站点统计"
+<!-- !!! info "站点统计"
     <center>
     本站目前共 {{pages}} 页，累计 {{words}} 字, {{codes}} 行代码！
-    </center>
+    </center> -->
 
 [^Knowing-that-loving-you-has-no-ending]:错过黄昏晚霞，还有漫天星辰 
 <!-- [^see-how-much-I-love-you]:All problems in computer science can be solved by another level of indirection -->

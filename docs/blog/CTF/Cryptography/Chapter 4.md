@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 --- 
 
 # Chapter 04 : 分组密码工作模式与流密码

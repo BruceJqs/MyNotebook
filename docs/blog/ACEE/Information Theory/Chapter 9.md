@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 --- 
 
 # Chapter 9 : 离散无记忆信道的编码定理

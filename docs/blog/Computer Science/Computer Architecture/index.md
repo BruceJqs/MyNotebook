@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 --- 
 
 # 计算机体系结构｜Computer Architecture

@@ -4,7 +4,7 @@ hide:
   #- toc #显示左
   - footer
   - feedback
-comments: true
+# comments: true
 --- 
 
 # Chapter 3 : 连续随机变量的互信息和微分熵
