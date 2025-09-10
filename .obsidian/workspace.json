@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c1822f1a6879c754",
+        "id": "fc3aa930f03432d5",
         "type": "tabs",
         "children": [
           {
-            "id": "3775925992b7a119",
+            "id": "aa1395f8e72e594c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
+                "file": "一面+二面面试手册.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Moodle & Proxmox"
+              "title": "一面+二面面试手册"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
+                "file": "一面+二面面试手册.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Moodle & Proxmox"
+              "title": "Outline of 一面+二面面试手册"
             }
           },
           {
@@ -176,27 +176,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3775925992b7a119",
+  "active": "aa1395f8e72e594c",
   "lastOpenFiles": [
+    "docs/assets/Pasted image 20250908203946.png",
+    "docs/assets/Pasted image 20250908203936.png",
+    "docs/assets/Pasted image 20250908203923.png",
+    "docs/assets/Pasted image 20250908203911.png",
+    "docs/assets/Pasted image 20250908203857.png",
+    "docs/assets/Pasted image 20250908203848.png",
+    "docs/assets/Pasted image 20250908203840.png",
+    "docs/assets/Pasted image 20250908203824.png",
+    "docs/assets/Pasted image 20250908203813.png",
+    "docs/assets/Pasted image 20250908203756.png",
+    "docs/assets/Pasted image 20250908203745.png",
+    "Users/bruce/Library/Application.md",
+    "一面+二面面试手册.md",
+    "Users/bruce/Library",
+    "Users/bruce",
+    "Users",
+    "README.md",
+    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Research/Seedlab/index.md",
     "docs/blog/Computer Science/AIGC/Chapter 1.md",
     "docs/blog/Computer Science/AIGC/index.md",
     "docs/blog/Computer Science/Database/index.md",
-    "docs/blog/Research/Seedlab/Moodle & Proxmox.md",
     "docs/blog/Computer Science/AIGC",
     "docs/blog/Computer Science/Untitled.md",
     "docs/blog/Research/Seedlab/Knowledge/Network/BGP Basic.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Spectre Attack.md",
-    "docs/assets/Pasted image 20250826141116.png",
-    "docs/assets/Pasted image 20250826141017.png",
-    "docs/assets/Pasted image 20250826135720.png",
-    "docs/assets/Pasted image 20250826135415.png",
-    "docs/assets/Pasted image 20250826135324.png",
-    "docs/assets/Pasted image 20250826135240.png",
-    "docs/assets/Pasted image 20250826135115.png",
-    "docs/assets/Pasted image 20250826134944.png",
-    "docs/assets/Pasted image 20250826134758.png",
-    "docs/assets/Pasted image 20250826133845.png",
     "docs/blog/Research/Seedlab/Knowledge/Reports/Meltdown Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md",
     "docs/blog/Research/Seedlab/Knowledge/Hardware/Spectre Attack.md",
@@ -211,10 +218,6 @@
     "docs/blog/Research/Seedlab/Knowledge/Reports/Format String.md",
     "docs/blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md",
     "docs/blog/Research/Seedlab/Knowledge/Software/Untitled.md",
-    "docs/blog/Research/Seedlab/Knowledge/Software/Buffer Overflow.md",
-    "docs/blog/Research/Seedlab/Knowledge/Software/Shellshock.md",
-    "docs/blog/Research/Seedlab/Knowledge/Software/Return-to-Libc.md",
-    "docs/about/link.md",
     "docs/blog/Research/Reading/Others",
     "docs/blog/Research/Seedlab/Knowledge/Software",
     "docs/blog/ACEE/AI",
@@ -223,9 +226,6 @@
     "Knowledge/Network",
     "Knowledge",
     "docs/blog/Research/Seedlab/Knowledge/Reports",
-    "docs/blog/Research/Reading/RAG",
-    "docs/blog/Research/Seedlab/Knowledge/Network",
-    "docs/blog/Research/Seedlab/Knowledge/Hardware",
     "未命名.canvas"
   ]
 }
