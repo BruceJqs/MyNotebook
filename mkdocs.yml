@@ -167,6 +167,10 @@ nav:
         - "Homework 03": blog/Computer Science/Computer Architecture/Homework 3.md
         - "Homework 04": blog/Computer Science/Computer Architecture/Homework 4.md
         - "Homework 05": blog/Computer Science/Computer Architecture/Homework 5.md
+    - 操作系统｜Operating System:
+      - blog/Computer Science/OS/index.md
+      - Notes:
+        - "Chapter 00: Introduction": blog/Computer Science/OS/Chapter 0.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:
