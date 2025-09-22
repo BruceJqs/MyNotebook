@@ -10730,7 +10730,7 @@
 <blockquote>
 <p>我们先前所学的所有排序算法，都是利用主存 (Main Memory) 运行的内部排序，在数据量不大（即主存能够容纳所有待排序数据）可以顺利地完成排序工作。</p>
 </blockquote>
-<p>然而，一旦数据量很大，主存无法容下所有待排序数据时，就需要用到<strong>外部排序</strong>(External Sorting) 算法。所谓“外部”，即用到磁盘的空间。我们在<a href="https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#memory-hierarchy-introduction">计算机组成</a>中也学过，磁盘相比主存空间更大，但访问速度更慢。举个例子：若要访问数组的某个元素 <code>a[i]</code>，它们所需的时间分别为：</p>
+<p>然而，一旦数据量很大，主存无法容下所有待排序数据时，就需要用到<strong>外部排序</strong>(External Sorting) 算法。所谓“外部”，即用到磁盘的空间。我们在<a href="https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%205/#memory-hierarchy-introduction">计算机组成</a>中也学过，磁盘相比主存空间更大，但访问速度更慢。举个例子：若要访问数组的某个元素 <code>a[i]</code>，它们所需的时间分别为：</p>
 <ul>
 <li>主存：<span class="arithmatex">\(O(1)\)</span>（用索引寻找，随机访问）</li>
 <li>磁盘：找到元素所在的迹（Track）<span class="arithmatex">\(\rightarrow\)</span> 找到对应的区（Sector）（磁盘存储信息的最小单位）<span class="arithmatex">\(\rightarrow\)</span> 找到元素 <code>a[i]</code> 并传输数据<ul>
@@ -11436,7 +11436,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月7日 11:32:05 UTC">2025-09-07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月22日 02:16:19 UTC">2025-09-22</span>
   </span>
 
     
