@@ -69,7 +69,7 @@ hide:
 
 索引顺序文件组织的主要缺点是：随着文件规模的增长，索引查找和数据顺序扫描的性能会下降。尽管可通过对文件的重新组织来解决这一问题，但是频繁的重复组织是不能被接受的。因此，我们转而采用 **B+ 树**这一被广泛使用的索引结构，它能够保证在插入和删除数据的情况下仍然能维持效率
 
-B+ 树我们在 [ADS](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%202/#b-tree) 当中也有所涉及，基本定义也大致相同（除了叶子节点的个数有一些不同），复杂度分析也可以见 ADS 笔记
+B+ 树我们在 [ADS](https://note.eternity1005.top/blog/Computer%20Science/ADS/Chapter%202/#b-tree) 当中也有所涉及，基本定义也大致相同（除了叶子节点的个数有一些不同），复杂度分析也可以见 ADS 笔记
 ***
 ### B+ Tree Node Structures
 

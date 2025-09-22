@@ -13,7 +13,7 @@ hide:
 
 !!! Abstract
 
-	正巧，Bruce 在数模课上面学过一点 NP 完全性了（虽然一点都没学懂），ADS 再来一遍，数模有关的笔记可转至 [数模 NP 笔记](https://brucejqs.github.io/MyNotebook/blog/ACEE/Mathematical%20Modeling/Chapter%203/#_9)
+	正巧，Bruce 在数模课上面学过一点 NP 完全性了（虽然一点都没学懂），ADS 再来一遍，数模有关的笔记可转至 [数模 NP 笔记](https://note.eternity1005.top/blog/ACEE/Mathematical%20Modeling/Chapter%203/#_9)
 ***
 ## Introduction
 
@@ -93,7 +93,7 @@ NPC 即 NP complete，NP 完全，是 NP 中最难的**决定性**问题（并�
 	
 	上图中，左侧电路满足条件，右侧电路不满足条件。
 	
-	或者，更抽象的来说，是判断一个具有 $n$ 个布尔变量的布尔表达式是否具有结果为 True 的解。(这跟离散当中的 [Propositional Satisfiability](https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch01/#propositional-satisfiability) 对应上了)
+	或者，更抽象的来说，是判断一个具有 $n$ 个布尔变量的布尔表达式是否具有结果为 True 的解。(这跟离散当中的 [Propositional Satisfiability](https://note.eternity1005.top/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch01/#propositional-satisfiability) 对应上了)
 	
 	特别地，[3-SAT](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability) 是 Circuit-SAT 问题的一个特例，它对布尔电路，或者说布尔表达式的形式有特殊要求，具体来说，它要求布尔表达式形如：
 	

@@ -173,4 +173,4 @@ NP–hard 可以是 NP 问题，也可以不是 NP 问题
 ***
 ### 近似算法
 
-同 ADS，更详细的笔记在 [ADS Chapter 11 : Approximation](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2011/)
+同 ADS，更详细的笔记在 [ADS Chapter 11 : Approximation](https://note.eternity1005.top/blog/Computer%20Science/ADS/Chapter%2011/)

@@ -11,7 +11,7 @@ hide:
 
 ## 做题历程 & 感想
 
-和 [Crypto-1｜现代密码学入门指北](https://brucejqs.github.io/MyNotebook/blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-1/#crypto-1/) 完全一致，就多了那么一步（笑）
+和 [Crypto-1｜现代密码学入门指北](https://note.eternity1005.top/blog/CTF/2024.9%20MoeCTF/Crypto/Crypto-1/#crypto-1/) 完全一致，就多了那么一步（笑）
 
 纯纯给 Bruce 送分涨信心（bushi
 ***

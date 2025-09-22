@@ -13,7 +13,7 @@ hide:
 
 > 我们先前所学的所有排序算法，都是利用主存 (Main Memory) 运行的内部排序，在数据量不大（即主存能够容纳所有待排序数据）可以顺利地完成排序工作。
 
-然而，一旦数据量很大，主存无法容下所有待排序数据时，就需要用到**外部排序**(External Sorting) 算法。所谓“外部”，即用到磁盘的空间。我们在[计算机组成](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#memory-hierarchy-introduction)中也学过，磁盘相比主存空间更大，但访问速度更慢。举个例子：若要访问数组的某个元素 `a[i]`，它们所需的时间分别为：
+然而，一旦数据量很大，主存无法容下所有待排序数据时，就需要用到**外部排序**(External Sorting) 算法。所谓“外部”，即用到磁盘的空间。我们在[计算机组成](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%205/#memory-hierarchy-introduction)中也学过，磁盘相比主存空间更大，但访问速度更慢。举个例子：若要访问数组的某个元素 `a[i]`，它们所需的时间分别为：
 
 - 主存：$O(1)$（用索引寻找，随机访问）
 - 磁盘：找到元素所在的迹（Track）$\rightarrow$ 找到对应的区（Sector）（磁盘存储信息的最小单位）$\rightarrow$ 找到元素 `a[i]` 并传输数据

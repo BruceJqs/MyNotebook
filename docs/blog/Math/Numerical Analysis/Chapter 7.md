@@ -372,7 +372,7 @@ $$
 \end{aligned}
 $$
 
-根据[定理](https://brucejqs.github.io/MyNotebook/blog/Math/Numerical%20Analysis/Chapter%207/#eigenvalues-and-eigenvectors)，我们有：
+根据[定理](https://note.eternity1005.top/blog/Math/Numerical%20Analysis/Chapter%207/#eigenvalues-and-eigenvectors)，我们有：
 
 $$
 \begin{aligned}

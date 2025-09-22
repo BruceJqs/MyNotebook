@@ -259,7 +259,7 @@ if p2 {
 ***
 ## Dynamic Branch Prediction
 
-在[计组](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%204/#control-hazards)当中我们介绍过简单的分支预测器（Predictors）；但对于更深层的流水线以及多发射处理器，我们需要更精确的分支预测，相对于计组中的简单的静态预测，动态预测更为精确，下面就介绍提高动态预测精度的高级技术
+在[计组](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%204/#control-hazards)当中我们介绍过简单的分支预测器（Predictors）；但对于更深层的流水线以及多发射处理器，我们需要更精确的分支预测，相对于计组中的简单的静态预测，动态预测更为精确，下面就介绍提高动态预测精度的高级技术
 ***
 ### Correlating Branch Predictors
 

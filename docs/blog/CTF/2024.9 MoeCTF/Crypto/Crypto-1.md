@@ -11,7 +11,7 @@ hide:
 
 ## 做题历程 & 感想
 
-这道题与[短学期 lab0 Crypto Challenge-2](https://brucejqs.github.io/MyNotebook/blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab0%20Report/#challenge-2_3) 完全相同，是一个非常基本的 RSA，公钥加密私钥解密。
+这道题与[短学期 lab0 Crypto Challenge-2](https://note.eternity1005.top/blog/CTF/2023-2024%E6%9A%91%E7%9F%AD%E5%AD%A6%E6%9C%9F/Lab0%20Report/#challenge-2_3) 完全相同，是一个非常基本的 RSA，公钥加密私钥解密。
 
 所以 Bruce 毫不费力地把它秒啦～
 ***

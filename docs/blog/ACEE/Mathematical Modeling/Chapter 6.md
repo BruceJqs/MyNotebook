@@ -98,7 +98,7 @@ $$
 ***
 ## 随机变量
 
-详见 [概统](https://brucejqs.github.io/MyNotebook/blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%202/) 笔记
+详见 [概统](https://note.eternity1005.top/blog/Math/Probability%20Theory%20and%20Mathematical%20Statistics/Chapter%202/) 笔记
 ***
 ## 赠券收集问题
 

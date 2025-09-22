@@ -11,7 +11,7 @@ hide:
 
 !!! abstract "Abstract"
 
-	感觉跟[计组](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%201/)大差不差，第一章都在扯有的没的（x），基本上是整个课程的大纲概览，也提到了计组学的一些概念
+	感觉跟[计组](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%201/)大差不差，第一章都在扯有的没的（x），基本上是整个课程的大纲概览，也提到了计组学的一些概念
 
 ![](../../../assets/Pasted%20image%2020250225133527.png)
 
@@ -154,7 +154,7 @@ $$
 - 任务级并行（Task-Level Parallelism, TLP）：工作的各项任务分别进行，但整体是并行的
 	- 在相同的数据上同时进行不同的任务
 	- e.g. 输入一个二进制串，一个处理器数 0 的个数，一个处理器计算其补码
-	- 有点像 ADS 并行算法中的 [PRAM](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2014/#pram) 
+	- 有点像 ADS 并行算法中的 [PRAM](https://note.eternity1005.top/blog/Computer%20Science/ADS/Chapter%2014/#pram) 
 ***
 ### Hardware Parallelism
 
@@ -278,7 +278,7 @@ $$
 
 	=== "Integrated Circuit Logic"
 	
-		- [摩尔定律（Moore's Law）](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Architecture/Chapter%201/#processor-perf-growth)
+		- [摩尔定律（Moore's Law）](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Architecture/Chapter%201/#processor-perf-growth)
 	
 	=== "Semiconductor DRAM"
 	
@@ -468,7 +468,7 @@ $$
 
 - 时间上：重复运算，观察是否仍然是错误的
 - 资源上：用其他部件替代故障的部件
-- 具体操作可以见[计组：RAID](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Appendix/#raid-redundant-arrays-of-inexpensive-disks)
+- 具体操作可以见[计组：RAID](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Appendix/#raid-redundant-arrays-of-inexpensive-disks)
 ***
 ## Measuring Performance
 
@@ -552,6 +552,6 @@ $$
 	$$
 	
 	- 推论：如果只改善任务的一小部分，那么对整个任务的提升至多不超过（1 - 该部分在整个任务的占比）的倒数​​
-- 处理器性能方程，具体见[计组](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%201/#cpu-time)
+- 处理器性能方程，具体见[计组](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%201/#cpu-time)
 
 

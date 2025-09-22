@@ -15,7 +15,7 @@ hide:
 
 所谓**并行**（Parallelism），就是指每一步能够同时完成多个操作。可以分为以下几类并行方式：
 
-- 机器并行（硬件层面）：包括了处理器并行、流水线、超长指令字 (VLIW) 等方法（详情请见[计组 Chapter 4](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%204/)）
+- 机器并行（硬件层面）：包括了处理器并行、流水线、超长指令字 (VLIW) 等方法（详情请见[计组 Chapter 4](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%204/)）
 - **并行算法**（Parallel algorithms）（软件层面）：
 	- 并行算法中常用的模型有：
 	    - **并行随机访问机**（Parallel Random Access Machine, PRAM）

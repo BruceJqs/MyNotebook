@@ -14,7 +14,7 @@ hide:
 ![](../../../assets/Pasted%20image%2020241208003910.png)
 
 
-同 [Homework 5 Question 1](https://brucejqs.github.io/MyNotebook/blog/ACEE/Mathematical%20Modeling/Homework%205/#question-01)
+同 [Homework 5 Question 1](https://note.eternity1005.top/blog/ACEE/Mathematical%20Modeling/Homework%205/#question-01)
 ***
 ## Question 2
 

@@ -363,7 +363,7 @@ Centers Greedy-Kcenter(Sites S[], int n, int K) {
 
 	实际上是不存在的，用归谬法证明：
 	
-	- 假如存在多项式时间的 $2−\epsilon$ 的近似算法，那么我们也能在多项式时间内解决[支配集 (dominating-set) 问题](https://en.wikipedia.org/wiki/Dominating_set)（它是一个 NPC 问题，这一结论来自 NPC 问题的[性质](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2010/#np-complete-problems)）
+	- 假如存在多项式时间的 $2−\epsilon$ 的近似算法，那么我们也能在多项式时间内解决[支配集 (dominating-set) 问题](https://en.wikipedia.org/wiki/Dominating_set)（它是一个 NPC 问题，这一结论来自 NPC 问题的[性质](https://note.eternity1005.top/blog/Computer%20Science/ADS/Chapter%2010/#np-complete-problems)）
 	- 当前仅当存在中心选择问题的最优中心点集半径 $r(C^∗)=1$ 时，规模为 $K$ 的支配集存在解
 ***
 ## Summary

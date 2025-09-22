@@ -42,7 +42,7 @@ hide:
 ***
 #### 中国剩余定理
 
-见[离散笔记](https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch04/#the-chinese-remainder-theorem)
+见[离散笔记](https://note.eternity1005.top/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch04/#the-chinese-remainder-theorem)
 ***
 ### 算法证明
 

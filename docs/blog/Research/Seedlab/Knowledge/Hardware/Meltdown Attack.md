@@ -25,7 +25,7 @@ CPU 缓存是一种硬件缓存，用于计算机中的 CPU 以减少访问主�
 能）。从主内存访问数据要比从缓存中快得多。当数据从主内存读取时，它们通常会被 CPU 缓存，因
 此如果再次使用相同的数据，访问速度将变得更快。因此，当 CPU 需要访问某些数据时，它会先查看
 其缓存。如果数据在缓存中（这被称为缓存命中），则它会被直接获取；如果没有找到数据（这被称为
-未命中），CPU 将去主内存获取数据。后者的花费时间明显更长。(相关详细课程笔记可见 [计算机组成](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#the-basics-of-cache))
+未命中），CPU 将去主内存获取数据。后者的花费时间明显更长。(相关详细课程笔记可见 [计算机组成](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%205/#the-basics-of-cache))
 
 ![](../../../../../assets/Pasted%20image%2020241129141154.png)
 

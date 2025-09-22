@@ -34,4 +34,4 @@ hide:
 	- 也称为离线存储
 	- 例如磁带、光存储
 
-这一块跟[计组](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/)真是一模一样，PPT 懒得整了（x）
+这一块跟[计组](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%205/)真是一模一样，PPT 懒得整了（x）

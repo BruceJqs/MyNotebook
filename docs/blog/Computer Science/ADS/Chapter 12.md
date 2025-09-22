@@ -68,7 +68,7 @@ Solution Type Gradient_descent() {
 
 ### Vertex Cover Problem
 
-在 [Chapter 10](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2010/#__tabbed_1_1) 当中我们已经提及过顶点覆盖问题并证明了它是一个 NPC 问题，但是这仅仅是它的判定版本，它还有一个最优版本：给定一个无向图 $G=(V,E)$，请找到一个最小的子集 $S\subseteq V$，使得 $E$ 中的任意一边 $(u,v)$，$u$ 和 $v$ 至少有一个属于 $S$。我们接下来考虑的是最优版本。
+在 [Chapter 10](https://note.eternity1005.top/blog/Computer%20Science/ADS/Chapter%2010/#__tabbed_1_1) 当中我们已经提及过顶点覆盖问题并证明了它是一个 NPC 问题，但是这仅仅是它的判定版本，它还有一个最优版本：给定一个无向图 $G=(V,E)$，请找到一个最小的子集 $S\subseteq V$，使得 $E$ 中的任意一边 $(u,v)$，$u$ 和 $v$ 至少有一个属于 $S$。我们接下来考虑的是最优版本。
 
 先定义一些量：
 

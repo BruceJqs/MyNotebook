@@ -306,7 +306,7 @@ hide:
 ***
 ### 着色问题
 
-> 和 [离散](https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch10/#graph-coloring) 有一定重合
+> 和 [离散](https://note.eternity1005.top/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch10/#graph-coloring) 有一定重合
 
 - 顶点着色
 	- 图 $G$ 的顶点 $k$ 着色是指将图 $G$ 的每一个顶点用 $k$ 种颜色之一着色，使得相邻的顶点不染同一种颜色

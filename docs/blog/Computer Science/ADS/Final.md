@@ -19,7 +19,7 @@ hide:
 
 ??? note "Answer"
 
-	True. 有意思，其实就是问 $x^n$ 该怎么求，我想到的想法是类似 [求和问题](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/Chapter%2014/#__tabbed_2_1)，并行计算，可以得到 $O(\log n)$ 复杂度
+	True. 有意思，其实就是问 $x^n$ 该怎么求，我想到的想法是类似 [求和问题](https://note.eternity1005.top/blog/Computer%20Science/ADS/Chapter%2014/#__tabbed_2_1)，并行计算，可以得到 $O(\log n)$ 复杂度
 ***
 ## Question 02
 

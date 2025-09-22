@@ -11,7 +11,7 @@ hide:
 
 !!! abstract "Abstract"
 
-	基本上都是一些数论基础，在[离散](https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch04/)中大部分都有涉及
+	基本上都是一些数论基础，在[离散](https://note.eternity1005.top/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch04/)中大部分都有涉及
 
 ## 补充内容
 

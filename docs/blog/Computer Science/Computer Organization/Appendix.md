@@ -52,7 +52,7 @@ I/O 设备的三大特性：
 
 ![](../../../assets/Pasted%20image%2020241211143544.png)
 
-- [阿姆达尔定律（Amdahl's Law）](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%201/#pitfalls)
+- [阿姆达尔定律（Amdahl's Law）](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%201/#pitfalls)
 ***
 ## Disk Storage and Dependability
 
@@ -113,7 +113,7 @@ I/O 设备的三大特性：
 ***
 ### Flash Storage
 
-见 [Chapter 5](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#flash) 闪存的介绍
+见 [Chapter 5](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%205/#flash) 闪存的介绍
 ***
 ### Dependability, Reliability, Availability
 

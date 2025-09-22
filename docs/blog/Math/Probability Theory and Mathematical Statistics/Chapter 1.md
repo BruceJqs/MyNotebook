@@ -10,7 +10,7 @@ hide:
 
 !!! Abstract
 
-	本章和离散数学集合知识非常相似，具体也可请移步：[Discrete mathmatics notes-Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices](https://brucejqs.github.io/MyNotebook/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch02/)
+	本章和离散数学集合知识非常相似，具体也可请移步：[Discrete mathmatics notes-Chapter 02: The Basic Structures:Sets,Functions,Sequences,Sums and Matrices](https://note.eternity1005.top/blog/Math/Discrete%20mathmatics/Discrete%20mathmatics%20notes-Ch02/)
 
 ## 随机试验
 

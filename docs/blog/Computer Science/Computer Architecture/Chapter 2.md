@@ -34,7 +34,7 @@ hide:
 - SRAM（Static Random Access Memory）
 	- 每比特六个晶体管，以防止信息在读取时受到干扰
 	- 不需要刷新，因此访问时间非常接近循环时间
-	- 有关缓存的内容可以看[计组](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Computer%20Organization/Chapter%205/#the-basics-of-cache)
+	- 有关缓存的内容可以看[计组](https://note.eternity1005.top/blog/Computer%20Science/Computer%20Organization/Chapter%205/#the-basics-of-cache)
 ***
 ### DRAM
 

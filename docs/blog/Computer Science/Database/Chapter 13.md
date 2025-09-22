@@ -260,7 +260,7 @@ SQL 标准提供了以下**隔离等级**（Isolation Level）：
 ***
 ## Concurrency Control Protocols
 
-> 在这里只是一个简单的概要，具体的实现和细节在[下一章](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/Database/Chapter%2014/)会详细介绍
+> 在这里只是一个简单的概要，具体的实现和细节在[下一章](https://note.eternity1005.top/blog/Computer%20Science/Database/Chapter%2014/)会详细介绍
 
 - 基于锁的协议
 	- 锁定整个数据库 vs 锁定数据项  
