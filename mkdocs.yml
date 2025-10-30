@@ -327,6 +327,40 @@ nav:
     - 2024.12 国赛初赛:
       - blog/CTF/2024.12国赛/index.md
       - "Crypto｜rasnd": blog/CTF/2024.12国赛/rasnd.md
+    - 2025.9 MoeCTF:
+      - Web:
+        - "Web-0｜Web 入门指北": blog/CTF/2025.9 MoeCTF/Web/Web-0.md
+        - "Web-1｜第一章 神秘的手镯": blog/CTF/2025.9 MoeCTF/Web/Web-1.md
+        - "Web-1-1｜第一章 神秘的手镯_revenge": blog/CTF/2025.9 MoeCTF/Web/Web-1-1.md
+        - "Web-2｜第二章 初识金曦玄轨": blog/CTF/2025.9 MoeCTF/Web/Web-2.md
+        - "Web-3｜第三章 问剑石！篡天改命！": blog/CTF/2025.9 MoeCTF/Web/Web-3.md
+        - "Web-4｜第四章 金曦破禁与七绝傀儡阵": blog/CTF/2025.9 MoeCTF/Web/Web-4.md
+        - "Web-5｜第五章 打上门来！": blog/CTF/2025.9 MoeCTF/Web/Web-5.md
+        - "Web-6｜第六章 藏经禁制？玄机初探！": blog/CTF/2025.9 MoeCTF/Web/Web-6.md
+        - "Web-7｜第七章 灵蛛探穴与阴阳双生符": blog/CTF/2025.9 MoeCTF/Web/Web-7.md
+        - "Web-8｜第八章 天衍真言，星图显圣": blog/CTF/2025.9 MoeCTF/Web/Web-8.md
+        - "Web-9｜第九章 星墟禁制·天机问路": blog/CTF/2025.9 MoeCTF/Web/Web-9.md
+        - "Web-10｜第十章 天机符阵": blog/CTF/2025.9 MoeCTF/Web/Web-10.md
+        - "Web-10-1｜第十章 天机符阵_revenge": blog/CTF/2025.9 MoeCTF/Web/Web-10-1.md
+        - "Web-11｜第十一章 千机变·破妄之眼": blog/CTF/2025.9 MoeCTF/Web/Web-11.md
+        - "Web-12｜第十二章 玉魄玄关·破妄": blog/CTF/2025.9 MoeCTF/Web/Web-12.md
+        - "Web-13｜第十三章 通幽关·灵纹诡影": blog/CTF/2025.9 MoeCTF/Web/Web-13.md
+        - "Web-14｜第十四章 御神关·补天玉碑": blog/CTF/2025.9 MoeCTF/Web/Web-14.md
+        - "Web-15｜第十五章 归真关·竞时净魔": blog/CTF/2025.9 MoeCTF/Web/Web-15.md
+        - "Web-16｜第十六章 昆仑星途": blog/CTF/2025.9 MoeCTF/Web/Web-16.md
+        - "Web-17｜第十七章 星骸迷阵·神念重构": blog/CTF/2025.9 MoeCTF/Web/Web-17.md
+        - "Web-18｜第十八章 万卷诡阁·功法连环": blog/CTF/2025.9 MoeCTF/Web/Web-18.md
+        - "Web-19｜第十九章 星穹真相·补天归源": blog/CTF/2025.9 MoeCTF/Web/Web-19.md
+        - "Web-19-1｜第十九章_revenge": blog/CTF/2025.9 MoeCTF/Web/Web-19-1.md
+        - "Web-20｜第二十章 幽冥血海·幻语心魔": blog/CTF/2025.9 MoeCTF/Web/Web-20.md
+        - "Web-21｜第二十一章 往生漩涡·言灵死局": blog/CTF/2025.9 MoeCTF/Web/Web-21.md
+        - "Web-22｜第二十二章 血海核心·千年手段": blog/CTF/2025.9 MoeCTF/Web/Web-22.md
+        - "Web-23｜第二十三章 幻境迷心·皇陨星沉(大结局)": blog/CTF/2025.9 MoeCTF/Web/Web-23.md
+        - "Web-23-1｜附加挑战": blog/CTF/2025.9 MoeCTF/Web/Web-23-1.md
+        - "Web-24｜Moe 笑传之猜猜爆": blog/CTF/2025.9 MoeCTF/Web/Web-24.md
+        - "Web-25｜摸金偶遇 FLAG，拼尽全力难战胜": blog/CTF/2025.9 MoeCTF/Web/Web-25.md
+        - "Web-26｜这是...Webshell？": blog/CTF/2025.9 MoeCTF/Web/Web-26.md
+        - "Web-26-1｜这是...Webshell?_revenge": blog/CTF/2025.9 MoeCTF/Web/Web-26-1.md
     - 密码学｜Cryptography:
       - blog/CTF/Cryptography/index.md
       - "Chapter 01: 数学基础": blog/CTF/Cryptography/Chapter 1.md
