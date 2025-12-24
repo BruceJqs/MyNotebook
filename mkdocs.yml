@@ -403,16 +403,16 @@ nav:
             - "ARP Attack": blog/Research/Seedlab/Knowledge/Reports/ARP Attack.md
             - "ICMP Redirect": blog/Research/Seedlab/Knowledge/Reports/ICMP Redirect.md
             - "DNS Remote": blog/Research/Seedlab/Knowledge/Reports/DNS Remote.md
-          # - "Software Security":
-          #   - "Set UID": blog/Research/Seedlab/Knowledge/Reports/Set UID.md
-          #   - "Shellshock": blog/Research/Seedlab/Knowledge/Reports/Shellshock.md
-          #   - "Shellcode": blog/Research/Seedlab/Knowledge/Reports/Shellcode.md
-          #   - "Buffer Overflow-Server": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md
-          #   - "Buffer Overflow-SetUID": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow SetUID.md
-          #   - "Return-to-libc": blog/Research/Seedlab/Knowledge/Reports/Return-to-libc.md
-          #   - "Race Condition": blog/Research/Seedlab/Knowledge/Reports/Race Condition.md
-          #   - "Dirty COW": blog/Research/Seedlab/Knowledge/Reports/Dirty COW.md
-          #   - "Format String": blog/Research/Seedlab/Knowledge/Reports/Format String.md
+          - "Software Security":
+            - "Set UID": blog/Research/Seedlab/Knowledge/Reports/Set UID.md
+            - "Shellshock": blog/Research/Seedlab/Knowledge/Reports/Shellshock.md
+            - "Shellcode": blog/Research/Seedlab/Knowledge/Reports/Shellcode.md
+            - "Buffer Overflow-Server": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow Server.md
+            - "Buffer Overflow-SetUID": blog/Research/Seedlab/Knowledge/Reports/Buffer Overflow SetUID.md
+            - "Return-to-libc": blog/Research/Seedlab/Knowledge/Reports/Return-to-libc.md
+            - "Race Condition": blog/Research/Seedlab/Knowledge/Reports/Race Condition.md
+            - "Dirty COW": blog/Research/Seedlab/Knowledge/Reports/Dirty COW.md
+            - "Format String": blog/Research/Seedlab/Knowledge/Reports/Format String.md
           - "System Security":
             - "Meltdown Attack": blog/Research/Seedlab/Knowledge/Reports/Meltdown Attack.md
             - "Spectre Attack": blog/Research/Seedlab/Knowledge/Reports/Spectre Attack.md
