@@ -80,25 +80,25 @@
 
 !!! note "Geometric Transformation"
 
-​	=== "Scale Matrix"
+	=== "Scale Matrix"
+	
+		![image-20251230153726892](../../../assets/image-20251230153726892.png)
 
-​		![image-20251230153726892](../../../assets/image-20251230153726892.png)
+	=== "Reflection Matrix"
 
-​	=== "Reflection Matrix"
+		![image-20251230153751675](../../../assets/image-20251230153751675.png)
 
-​		![image-20251230153751675](../../../assets/image-20251230153751675.png)
+	=== "Shear Matrix"
 
-​	=== "Shear Matrix"
+		![image-20251230153826979](../../../assets/image-20251230153826979.png)
 
-​		![image-20251230153826979](../../../assets/image-20251230153826979.png)
+	=== "Rotation Matrix"
 
-​	=== "Rotation Matrix"
+		![image-20251230153900246](../../../assets/image-20251230153900246.png)
 
-​		![image-20251230153900246](../../../assets/image-20251230153900246.png)
+	=== "Affine Transformation"
 
-​	=== "Affine Transformation"
-
-​		![image-20251230160515651](../../../assets/image-20251230160515651.png)
+		![image-20251230160515651](../../../assets/image-20251230160515651.png)
 
 ***
 
