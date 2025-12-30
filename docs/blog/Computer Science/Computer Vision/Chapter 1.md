@@ -7,6 +7,7 @@
 ![](../../../assets/image-20251230145836380.png)
 
 向量通常写作 $\vec{a}$，粗体 $\mathbf{a}$，或用起始和终止断点表示 $\overrightarrow{AB} = B - A$
+
 - 能同时表示方向和长度
 - 没有绝对的起始位置
 
@@ -44,8 +45,8 @@
 ![image-20251230151424168](../../../assets/image-20251230151424168.png)
 
 - $\mathbf{b}_\perp$：$\mathbf{b}$ 在 $\mathbf{a}$ 上的投影
-            - $\mathbf{b}_\perp$ 必须和 $\mathbf{a}$（或 $\hat{a}$）在同一直线上，$\mathbf{b}_\perp=k\mathbf{a}$
-                - 大小 $k = \|\mathbf{b}_\perp\| = \|\mathbf{b}\| \cos \theta$
+	- $\mathbf{b}_\perp$ 必须和 $\mathbf{a}$（或 $\hat{a}$）在同一直线上，$\mathbf{b}_\perp=k\mathbf{a}$
+		- 大小 $k = \|\mathbf{b}_\perp\| = \|\mathbf{b}\| \cos \theta$
 
 ***
 
@@ -59,6 +60,7 @@
 #### Multiplication
 
 - 矩阵-矩阵乘法：$A \times B$ 中，$A$（大小为 $M \times N$）的列数必须和 $B$（大小为 $N \times P$）的行数相等（结果大小为 $M \times P$）
+
     $$
     \begin{pmatrix}1 & 3 \\ 5 & 2 \\ 0 & 4\end{pmatrix} \begin{pmatrix}3 & 6 & 9 & 4 \\ 2 & 7 & 8 & 3\end{pmatrix} = \begin{pmatrix}9 & 27 & 33 & 13 \\ 19 & 44 & 61 & 26 \\ 8 & 28 & 32 & 12\end{pmatrix}
     $$
@@ -72,6 +74,7 @@
             - $(A+B)C = AC + BC$
 
 - 矩阵-向量乘法：将向量看作是一个只有一列的矩阵（$m \times 1$），乘法的结果也是一个向量
+
   $$
   \begin{pmatrix}-1 & 0 \\ 0 & 1\end{pmatrix} \begin{pmatrix}x \\ y\end{pmatrix} = \begin{pmatrix}-x \\ y\end{pmatrix}
   $$
@@ -83,21 +86,21 @@
 	=== "Scale Matrix"
 	
 		![image-20251230153726892](../../../assets/image-20251230153726892.png)
-
+	
 	=== "Reflection Matrix"
-
+	
 		![image-20251230153751675](../../../assets/image-20251230153751675.png)
-
+	
 	=== "Shear Matrix"
-
+	
 		![image-20251230153826979](../../../assets/image-20251230153826979.png)
-
+	
 	=== "Rotation Matrix"
-
+	
 		![image-20251230153900246](../../../assets/image-20251230153900246.png)
-
+	
 	=== "Affine Transformation"
-
+	
 		![image-20251230160515651](../../../assets/image-20251230160515651.png)
 
 ***
@@ -121,7 +124,7 @@
 
     ***
 
-    #### Eigenvalue and Eigenvector
+#### Eigenvalue and Eigenvector
 
 - $Ax = \lambda x\ (A\in \mathbb{R}^{n \times n}, x \neq 0)$，其中 $x$ 是 $A$ 的特征向量，对应的特征值为 $\lambda$
 
@@ -137,4 +140,4 @@
 
     - 主成分 = $A^T A$ 的特征向量
 
-![image-20251230164912571](../../../assets/image-20251230164912571.png)
+		![image-20251230164912571](../../../assets/image-20251230164912571.png)
