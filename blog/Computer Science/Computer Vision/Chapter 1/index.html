@@ -13903,9 +13903,11 @@
 <h2 id="review-of-linear-algebra">Review of Linear Algebra<a class="headerlink" href="#review-of-linear-algebra" title="Permanent link">&para;</a></h2>
 <h3 id="vectors">Vectors<a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../../../assets/image-20251230145836380.png" /></p>
-<p>向量通常写作 <span class="arithmatex">\(\vec{a}\)</span>，粗体 <span class="arithmatex">\(\mathbf{a}\)</span>，或用起始和终止断点表示 <span class="arithmatex">\(\overrightarrow{AB} = B - A\)</span>
-- 能同时表示方向和长度
-- 没有绝对的起始位置</p>
+<p>向量通常写作 <span class="arithmatex">\(\vec{a}\)</span>，粗体 <span class="arithmatex">\(\mathbf{a}\)</span>，或用起始和终止断点表示 <span class="arithmatex">\(\overrightarrow{AB} = B - A\)</span></p>
+<ul>
+<li>能同时表示方向和长度</li>
+<li>没有绝对的起始位置</li>
+</ul>
 <hr />
 <h4 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h4>
 <ul>
@@ -13938,9 +13940,13 @@
 <p>点积可以用于计算一个向量在另一个向量上的投影（Projection）：</p>
 <p><img alt="image-20251230151424168" src="../../../../assets/image-20251230151424168.png" /></p>
 <ul>
-<li><span class="arithmatex">\(\mathbf{b}_\perp\)</span>：<span class="arithmatex">\(\mathbf{b}\)</span> 在 <span class="arithmatex">\(\mathbf{a}\)</span> 上的投影
-            - <span class="arithmatex">\(\mathbf{b}_\perp\)</span> 必须和 <span class="arithmatex">\(\mathbf{a}\)</span>（或 <span class="arithmatex">\(\hat{a}\)</span>）在同一直线上，<span class="arithmatex">\(\mathbf{b}_\perp=k\mathbf{a}\)</span>
-                - 大小 <span class="arithmatex">\(k = \|\mathbf{b}_\perp\| = \|\mathbf{b}\| \cos \theta\)</span></li>
+<li><span class="arithmatex">\(\mathbf{b}_\perp\)</span>：<span class="arithmatex">\(\mathbf{b}\)</span> 在 <span class="arithmatex">\(\mathbf{a}\)</span> 上的投影<ul>
+<li><span class="arithmatex">\(\mathbf{b}_\perp\)</span> 必须和 <span class="arithmatex">\(\mathbf{a}\)</span>（或 <span class="arithmatex">\(\hat{a}\)</span>）在同一直线上，<span class="arithmatex">\(\mathbf{b}_\perp=k\mathbf{a}\)</span><ul>
+<li>大小 <span class="arithmatex">\(k = \|\mathbf{b}_\perp\| = \|\mathbf{b}\| \cos \theta\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr />
 <h3 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h3>
@@ -13952,10 +13958,10 @@
 <h4 id="multiplication">Multiplication<a class="headerlink" href="#multiplication" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p>矩阵-矩阵乘法：<span class="arithmatex">\(A \times B\)</span> 中，<span class="arithmatex">\(A\)</span>（大小为 <span class="arithmatex">\(M \times N\)</span>）的列数必须和 <span class="arithmatex">\(B\)</span>（大小为 <span class="arithmatex">\(N \times P\)</span>）的行数相等（结果大小为 <span class="arithmatex">\(M \times P\)</span>）
-    $$
-    \begin{pmatrix}1 &amp; 3 \ 5 &amp; 2 \ 0 &amp; 4\end{pmatrix} \begin{pmatrix}3 &amp; 6 &amp; 9 &amp; 4 \ 2 &amp; 7 &amp; 8 &amp; 3\end{pmatrix} = \begin{pmatrix}9 &amp; 27 &amp; 33 &amp; 13 \ 19 &amp; 44 &amp; 61 &amp; 26 \ 8 &amp; 28 &amp; 32 &amp; 12\end{pmatrix}
-    $$</p>
+<p>矩阵-矩阵乘法：<span class="arithmatex">\(A \times B\)</span> 中，<span class="arithmatex">\(A\)</span>（大小为 <span class="arithmatex">\(M \times N\)</span>）的列数必须和 <span class="arithmatex">\(B\)</span>（大小为 <span class="arithmatex">\(N \times P\)</span>）的行数相等（结果大小为 <span class="arithmatex">\(M \times P\)</span>）</p>
+<div class="arithmatex">\[
+\begin{pmatrix}1 &amp; 3 \\ 5 &amp; 2 \\ 0 &amp; 4\end{pmatrix} \begin{pmatrix}3 &amp; 6 &amp; 9 &amp; 4 \\ 2 &amp; 7 &amp; 8 &amp; 3\end{pmatrix} = \begin{pmatrix}9 &amp; 27 &amp; 33 &amp; 13 \\ 19 &amp; 44 &amp; 61 &amp; 26 \\ 8 &amp; 28 &amp; 32 &amp; 12\end{pmatrix}
+\]</div>
 <ul>
 <li>乘积中元素 <span class="arithmatex">\((i, j)\)</span> 是 <span class="arithmatex">\(A\)</span> 的第 <span class="arithmatex">\(i\)</span> 行和 <span class="arithmatex">\(B\)</span> 的第 <span class="arithmatex">\(j\)</span> 列的点积</li>
 <li>性质：<ul>
@@ -13971,14 +13977,14 @@
 </ul>
 </li>
 <li>
-<p>矩阵-向量乘法：将向量看作是一个只有一列的矩阵（<span class="arithmatex">\(m \times 1\)</span>），乘法的结果也是一个向量
-  $$
+<p>矩阵-向量乘法：将向量看作是一个只有一列的矩阵（<span class="arithmatex">\(m \times 1\)</span>），乘法的结果也是一个向量</p>
+</li>
+</ul>
+<p>$$
   \begin{pmatrix}-1 &amp; 0 \ 0 &amp; 1\end{pmatrix} \begin{pmatrix}x \ y\end{pmatrix} = \begin{pmatrix}-x \ y\end{pmatrix}
   $$</p>
-</li>
-<li>
-<p>每一个矩阵都可以被视为一个几何变换</p>
-</li>
+<ul>
+<li>每一个矩阵都可以被视为一个几何变换</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Geometric Transformation</p>
@@ -14019,8 +14025,10 @@
 </ul>
 <p><img alt="image-20251230161821906" src="../../../../assets/image-20251230161821906.png" /></p>
 <hr />
-<h4 id="eigenvalue-and-eigenvector">Eigenvalue and Eigenvector<a class="headerlink" href="#eigenvalue-and-eigenvector" title="Permanent link">&para;</a></h4>
 </li>
+</ul>
+<h4 id="eigenvalue-and-eigenvector">Eigenvalue and Eigenvector<a class="headerlink" href="#eigenvalue-and-eigenvector" title="Permanent link">&para;</a></h4>
+<ul>
 <li>
 <p><span class="arithmatex">\(Ax = \lambda x\ (A\in \mathbb{R}^{n \times n}, x \neq 0)\)</span>，其中 <span class="arithmatex">\(x\)</span> 是 <span class="arithmatex">\(A\)</span> 的特征向量，对应的特征值为 <span class="arithmatex">\(\lambda\)</span></p>
 </li>
@@ -14035,11 +14043,13 @@
 <p>应用——主成分分析（Principal Component Analysis）：找到数据的主方向</p>
 <p><img alt="image-20251230164901848" src="../../../../assets/image-20251230164901848.png" /></p>
 <ul>
-<li>主成分 = <span class="arithmatex">\(A^T A\)</span> 的特征向量</li>
+<li>
+<p>主成分 = <span class="arithmatex">\(A^T A\)</span> 的特征向量</p>
+<p><img alt="image-20251230164912571" src="../../../../assets/image-20251230164912571.png" /></p>
+</li>
 </ul>
 </li>
 </ul>
-<p><img alt="image-20251230164912571" src="../../../../assets/image-20251230164912571.png" /></p>
 <!-- Twikoo 评论系统 -->
 <div class="twikoo-container" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1);">
     <h3 style="margin-bottom: 1rem; font-size: 1.2rem; font-weight: 500;">💬 评论</h3>
@@ -14208,7 +14218,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月30日 14:46:07 UTC">2025-12-30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月30日 14:49:29 UTC">2025-12-30</span>
   </span>
 
     
