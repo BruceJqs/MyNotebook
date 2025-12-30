@@ -75,9 +75,9 @@
 
 - 矩阵-向量乘法：将向量看作是一个只有一列的矩阵（$m \times 1$），乘法的结果也是一个向量
 
-  $$
-  \begin{pmatrix}-1 & 0 \\ 0 & 1\end{pmatrix} \begin{pmatrix}x \\ y\end{pmatrix} = \begin{pmatrix}-x \\ y\end{pmatrix}
-  $$
+	$$
+	\begin{pmatrix}-1 & 0 \\ 0 & 1\end{pmatrix} \begin{pmatrix}x \\ y\end{pmatrix} = \begin{pmatrix}-x \\ y\end{pmatrix}
+	$$
 
 - 每一个矩阵都可以被视为一个几何变换
 
