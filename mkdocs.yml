@@ -171,6 +171,10 @@ nav:
       - blog/Computer Science/OS/index.md
       - Notes:
         - "Chapter 00: Introduction": blog/Computer Science/OS/Chapter 0.md
+    - 计算机视觉导论｜Introduction to Computer Vision:
+      - blog/Computer Science/Computer Vision/index.md
+      - Notes:
+        - "Chapter 01: Introduction": blog/Computer Science/Computer Vision/Chapter 1.md
     - 工具｜Tools:
       - blog/Computer Science/Tech/index.md
       - CTF 相关:

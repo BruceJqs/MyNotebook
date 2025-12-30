@@ -1,12 +1,3 @@
----
-hide:
-  #- navigation # 显示右
-  #- toc #显示左
-  - footer
-  - feedback
-# comments: true
----  
-
 # Format String
 
 ## 任务 1：使程序崩溃

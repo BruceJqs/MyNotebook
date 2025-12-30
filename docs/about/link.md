@@ -100,10 +100,10 @@
           </div> 
         </div> 
         <div class="card"> 
-          <img class="ava" src="http://47.96.29.144/img/avatar.jpg" /> 
+          <img class="ava" src="https://wing3e.github.io/img/avatar.jpg" /> 
           <div class="card-header"> 
             <div>
-            <a href="http://47.96.29.144/" target="_blank">晚栀 wingee~</a> 
+            <a href="https://wing3e.github.io/" target="_blank">晚栀 wingee~</a> 
             </div> 
             <div class="info"> pygg 滴个人主页！</div> 
           </div> 

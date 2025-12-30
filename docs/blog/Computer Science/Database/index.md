@@ -1,12 +1,3 @@
----
-hide:
-  #- navigation # 显示右
-  #- toc #显示左
-  - footer
-  - feedback
-# comments: true
---- 
-
 # 数据库系统｜Database System
 
 !!! 课程信息

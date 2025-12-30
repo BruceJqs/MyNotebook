@@ -2,7 +2,7 @@
 
 !!! 课程信息
 
-	授课教师：金小刚
+	授课教师：顾实
 	
 	教材：Elements of the Theory of Computation
 
