@@ -2,7 +2,7 @@
 
 ## Camera and lens
 
- ### Image Formation
+### Image Formation
 
 成像的第一步就是理解相机的原理，一种最简单的方法就是直接把一片薄膜（Film）放在物体面前，但是，由于我们没法做到物体上一点和薄膜上的点一一映射，因此这样的方法是不可行的。
 
@@ -47,7 +47,7 @@
 
 - 相机通过改变焦距来实现图像放大，因为 $\frac{1}{i}+\frac{1}{o}=\frac{1}{f}\Rightarrow i=\frac{of}{o-f}\Rightarrow m=\frac{i}{o}=\frac{f}{o-f}$，因此 $f$ 越大，分子越大，分母越小，$m$ 显然会变大
 
-  ![image-20260102111241461](../../../assets/image-20260102111241461.png)
+	![image-20260102111241461](../../../assets/image-20260102111241461.png)
 
 	- 从另一个角度看，调整焦距的同时也改变了**视场**（Field of View, **FOV**)：焦距越长，视角更窄；焦距越短，视角越宽。当然，除焦距外，FOV 还取决于传感器的大小
 	
@@ -114,9 +114,11 @@
 **透视投影**（Perspective Projection）：三维世界坐标 $\rightarrow$ 二维图像坐标
 
 ![image-20260102113714370](../../../assets/image-20260102113714370.png)
+
 $$
 p = \begin{bmatrix}u \\ v\end{bmatrix} = \begin{bmatrix}\dfrac{fx}{z} \\ \dfrac{fy}{z}\end{bmatrix}
 $$
+
 !!! note "Homogeneous Coordinates"
 
 	- 非齐次坐标 $\mathbf{x}$ $\rightarrow$ 齐次坐标 $\tilde{\mathbf{x}}$
@@ -144,6 +146,7 @@ $$
 $$
 \begin{bmatrix}f & 0 & 0 & 0 \\ 0 & f & 0 & 0 \\ 0 & 0 & 1 & 0\end{bmatrix} \begin{bmatrix}x \\ y \\ z \\ 1\end{bmatrix} = \begin{bmatrix}fx \\ fy \\ z\end{bmatrix} \cong \begin{bmatrix}\frac{fx}{z} \\ \frac{fy}{z} \\ 1\end{bmatrix}
 $$
+
 物体上两点在像平面上的透视投影：
 
 ![image-20260102115040857](../../../assets/image-20260102115040857.png)
@@ -170,11 +173,11 @@ $$
 
 - 但是**长度**和**角度**关系却被丢失了
 
-  - 长度
+	- 长度
 
 		![image-20260102115513497](../../../assets/image-20260102115513497.png)
 
-  - 角度
+	- 角度
   
 		![image-20260102115532367](../../../assets/image-20260102115532367.png)
 
@@ -203,9 +206,13 @@ $$
 
 	=== "地平线"
 	
+		地平线就是“地面（或水平地平面）的消失线”。透视投影下，地面上任意一组平行线（道路、铁轨、地砖缝）在图像中都会收敛到某个消失点；所有这些消失点共同落在一条直线上，这条直线就是地平线（消失线）
+	
 		![image-20260102120416806](../../../assets/image-20260102120416806.png)
 	
 	=== "透视效应"
+	
+		透视效应：平行于地面的线条在图像中会向远处“汇聚”，看起来越远越小
 	
 		![image-20260102120440622](../../../assets/image-20260102120440622.png)
 
