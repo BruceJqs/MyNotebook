@@ -9,3 +9,5 @@
 - [Chapter 01: Introduction](Chapter%201/)
 
 - [Chapter 02: Image Formation](Chapter%202/)
+
+- [Chapter 03: Image Processing](Chapter%203/)

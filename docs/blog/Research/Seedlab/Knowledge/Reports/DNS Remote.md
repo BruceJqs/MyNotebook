@@ -1,12 +1,3 @@
----
-hide:
-  #- navigation # 显示右
-  #- toc #显示左
-  - footer
-  - feedback
-# comments: true
----  
-
 # DNS Remote
 
 ## 配置容器
@@ -327,7 +318,6 @@ void send_raw_packet(char * buffer, int pkt_size)
 ![](../../../../../assets/Pasted%20image%2020250410180732.png)
 
 可以看到攻击已经成功，已经不是我们先前查到的服务器 IP 了
-
 
 
 

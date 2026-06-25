@@ -1,12 +1,3 @@
----
-hide:
-  #- navigation # 显示右
-  #- toc #显示左
-  - footer
-  - feedback
-# comments: true
----  
-
 # Sniffing Spoofing
 
 首先我们启动容器：
@@ -100,12 +91,12 @@ pkt = sniff(iface = 'br-1cf2b5a26687', filter = 'udp', prn = print_pkt)
 ***
 ## 任务 1.3：Traceroute
 
-我们直接在宿主机当中编写一个 traceroute.py 的程序，去寻找到达 www.baidu.com 的 IP 地址 223.109.82.16 的路径：
+我们直接在宿主机当中编写一个 traceroute.py 的程序，去寻找到达 www.baidu.com 的 IP 地址 182.61.200.110 的路径：
 
 ```python title="traceroute.py"
 from scapy.all import *
 
-target = '223.109.82.16'
+target = '182.61.200.110'
 
 for ttl in range(1, 100):
     pkt = IP(dst = target, ttl = ttl) / ICMP()
